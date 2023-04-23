@@ -53,8 +53,8 @@ body {
   font-style: normal;
   font-weight: 700;
 
-  /* &.desktop {
+  &.desktop {
     font-size: 72px;
     line-height: 80px;
-  } */
+  }
 }
