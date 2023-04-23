@@ -64,14 +64,86 @@ body {
 }
 
 .h2 {
-  /* Desktop/H2 */
-
-  font-family: "Outfit";
+  font-family: "Outfit", sans-serif;
   font-style: normal;
   font-weight: 400;
-  font-size: 48px;
-  line-height: 56px;
-  /* identical to box height, or 117% */
+  &.desktop {
+    font-size: 48px;
+    line-height: 56px;
+  }
+  &.mobile {
+    font-size: 24px;
+    line-height: 28px;
+  }
+}
 
-  color: #000000;
+.h3 {
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  &.desktop {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  &.mobile {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}
+
+.h4 {
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  &.desktop {
+    font-size: 30px;
+    line-height: 32px;
+  }
+  &.mobile {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.h5 {
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  &.desktop {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  &.mobile {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+.h6 {
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  &.desktop {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  &.mobile {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.p {
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+
+  &.desktop {
+    font-size: 26px;
+    line-height: 40px;
+  }
+  &.mobile {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
