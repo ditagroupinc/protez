@@ -1,11 +1,16 @@
 @tailwind base;
-@tailwind components;
+/* @tailwind components;  */
 @tailwind utilities;
 
 :root {
   --pink: #cd0062;
   --white: #ffffff;
   --black: #0d1125;
+}
+
+html,
+body {
+  font-family: "Outfit", sans-serif;
 }
 
 /* @media (prefers-color-scheme: dark) {

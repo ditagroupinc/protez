@@ -1,0 +1,44 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+  padding: 2rem 5%;
+}
+
+.headerNav {
+  & ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+.headerActionLang {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 55px;
+}
+.becomeAVolunteer {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.changeLanguageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 14px;
+  gap: 1rem;
+}
+
+.navRight {
+}
+
+.navLeft {
+}
