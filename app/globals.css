@@ -49,7 +49,7 @@ body {
 
 /* -------------------------------------------------------------------------------------- */
 .h1 {
-  font-family: "Outfit";
+  font-family: "Outfit", sans-serif;
   font-style: normal;
   font-weight: 700;
 
@@ -57,4 +57,21 @@ body {
     font-size: 72px;
     line-height: 80px;
   }
+  &.mobile {
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
+
+.h2 {
+  /* Desktop/H2 */
+
+  font-family: "Outfit";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 56px;
+  /* identical to box height, or 117% */
+
+  color: #000000;
 }

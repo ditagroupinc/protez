@@ -3,7 +3,7 @@ import "../../styles/fonts.css";
 import "../../styles/resetCSS.css";
 
 export default function Huy() {
-  return <h1 className="h1 desktop">huy</h1>;
+  return <h1 className="h1 desktop">Font - Outfit </h1>;
 }
 
 // import Image from "next/image";
