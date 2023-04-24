@@ -8,7 +8,11 @@ import { useContext, useState, createContext, useEffect } from "react";
 import Header from "@/sections/Header";
 
 const LanguageContext = createContext({ lang: "", changeLang: () => {} });
-const ScreenModeAndSizeContext = createContext({ width: null, height: null });
+const ScreenModeAndSizeContext = createContext({
+  width: null,
+  height: null,
+  mobile: false,
+});
 
 export default function Huy() {
   const [lang, setLang] = useState("eng");
@@ -27,6 +31,7 @@ export default function Huy() {
       setWindowSizes({
         width: windowWidth,
         height: windowHeight,
+        mobile: false,
       });
     };
     getSize();
@@ -35,9 +40,8 @@ export default function Huy() {
   return (
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
-        <div style={{ backgroundColor: "var(--black)", height: "100vh" }}>
-          <Header />
-        </div>
+        <Header />
+        <div style={{ backgroundColor: "var(--black)", height: "500vh" }}></div>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>
   );

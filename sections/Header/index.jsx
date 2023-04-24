@@ -1,7 +1,7 @@
-import Image from "next/image";
 import "./header.module.css";
 import { useContext } from "react";
 import { LanguageContext } from "../../contexts/LanguageContext";
+import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 
 import { Divider } from "@/components/Divider";
 
@@ -42,15 +42,18 @@ const headerText = {
       eng: "Потрібен протез",
     },
     back2top: {
-      eng: "Back to top",
+      eng: "Back to top   →",
     },
     lang: {
       eng: "English",
     },
   },
   organizationData: {
+    nonProfitOrganization: {
+      eng: "Nonprofit organization 501(c)(3)",
+    },
     ein: {
-      eng: "Nonprofit organization 501(c)(3) EIN: 88-2437069",
+      eng: "EIN: 88-2437069",
     },
     adress: {
       eng: "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
@@ -146,6 +149,11 @@ const socialMediaLinks = [
 
 export default function Header() {
   const lang = useContext(LanguageContext);
+  const { width, length, mobile } = useContext(ScreenModeAndSizeContext);
+  const mobileDesktopClass = () => {
+    if (mobile) return "mobile";
+    return "desktop";
+  };
   const navLinks = Object.keys(headerText.navigation).map(
     (el) => headerText.navigation[el]
   );
@@ -156,40 +164,67 @@ export default function Header() {
         <nav className={style.headerNav}>
           <ul>
             {navLinks.map((link, index) => (
-              <li key={index} className="h6">
-                <button>{link.eng}</button>
+              <li key={index} className={"h6 " + mobileDesktopClass()}>
+                <button>{link[lang]}</button>
               </li>
             ))}
           </ul>
         </nav>
         <div className={style.headerActionLang}>
-          <button>{headerText.actionButtons.becomeAVolunteer.eng}</button>
+          <button className={"h6 " + mobileDesktopClass()}>
+            {headerText.actionButtons.becomeAVolunteer[lang]}
+          </button>
           <Divider vertical />
           <button className={style.changeLanguageButton}>
             <IconWorld />
 
-            {headerText.actionButtons.lang.eng}
+            {headerText.actionButtons.lang[lang]}
           </button>
         </div>
       </header>
-      <div className={style.navRight}>
-        <div>
-          <p>{headerText.organizationData.ein.eng}</p>
-          <p>{headerText.organizationData.adress.eng}</p>
-        </div>
-        <button>{headerText.actionButtons.makeDonation.eng}</button>
-        <button>{headerText.actionButtons.needAProtez.eng}</button>
-      </div>
+
       <div className={style.navLeft}>
-        <ul>
-          {socialMediaLinks.map((link, index) => (
-            <li key={index}>
-              <a href={link.adress}>{link.icon()}</a>
-            </li>
-          ))}
-        </ul>
-        <button>{headerText.actionButtons.back2top.eng}</button>
+        <div className={style.adressContainer}>
+          <p>
+            <span className={"h6 " + mobileDesktopClass()}>
+              {headerText.organizationData.nonProfitOrganization[lang]}
+            </span>
+            <span className={"h6 " + mobileDesktopClass()}>
+              {headerText.organizationData.ein[lang]}
+            </span>
+          </p>
+          <Divider />
+          <p className={"h5 " + mobileDesktopClass()}>
+            {headerText.organizationData.adress[lang]}
+          </p>
+        </div>
+        <div className={style.buttonsContainer}>
+          <button
+            className={`squareButton h6 ${mobileDesktopClass()} ${
+              style.pinkButton
+            }`}
+          >
+            {headerText.actionButtons.makeDonation[lang]}
+          </button>
+          <button
+            className={`squareButton h6 ${mobileDesktopClass()} ${
+              style.transparentButton
+            }`}
+          >
+            {headerText.actionButtons.needAProtez[lang]}
+          </button>
+        </div>
       </div>
+      <ul className={style.socialMediaLinks}>
+        {socialMediaLinks.map((link, index) => (
+          <li key={index}>
+            <a href={link.adress}>{link.icon()}</a>
+          </li>
+        ))}
+      </ul>
+      <button className={`${style.backToTopButton} h6 ${mobileDesktopClass()}`}>
+        {headerText.actionButtons.back2top[lang]}
+      </button>
     </>
   );
 }
