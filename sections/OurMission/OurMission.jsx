@@ -1,4 +1,5 @@
-import TextBlock from "../../components/TextBlockComonent/TextBlock";
+import Title from "@/components/SectionHeaderTitle/Title";
+import TextBlock from "../../components/TextBlock/TextBlock";
 import styles from "./OurMission.module.css";
 // import { useContext } from "react";
 // import { LanguageContext } from "../../contexts/LanguageContext";
@@ -101,7 +102,7 @@ const OurMission = () => {
   // const lang = useContext(LanguageContext);
 
   const blocks = Object.keys(OurMissionText.blockInfo).map((text, i) => {
-    console.log(iconsObj[i]);
+    // console.log(iconsObj[i]);
     return (
       <TextBlock
         key={i}
@@ -114,12 +115,11 @@ const OurMission = () => {
   return (
     <div className={styles.section}>
       <div>
-        <p className={styles.font}>
-          <span className={styles.fontItalica}>
-            {OurMissionText.titleText.our.eng}
-          </span>
-          {OurMissionText.titleText.mission.eng}
-        </p>
+        <Title
+          style={styles.title}
+          italicText={OurMissionText.titleText.our.eng}
+          normalText={OurMissionText.titleText.mission.eng}
+        />
       </div>
       {blocks}
     </div>

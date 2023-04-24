@@ -4,8 +4,8 @@ import "../../app/globals.css";
 const TextBlock = ({ text, icon }) => {
   return (
     <div className={`${styles.block}`}>
-      <h5 className={`h5 `}>{text}</h5>
-      <div>{icon}</div>
+      <h5 className={`h5 desktop `}>{text}</h5>
+      {icon}
     </div>
   );
 };

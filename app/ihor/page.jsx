@@ -1,5 +1,5 @@
 // import Image from "next/image";
-import OurMissionSection from "@/sections/SectionOurMission/OurMission";
+import OurMissionSection from "@/sections/OurMission/OurMission";
 import "../../styles/fonts.css";
 import "../../styles/resetCSS.css";
 
