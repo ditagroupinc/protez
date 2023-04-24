@@ -11,7 +11,7 @@
 .italic {
   font-family: "Playfair Display", serif;
   font-style: italic;
-  font-weight: 600;
+  font-weight: normal;
   font-size: 132px;
   line-height: 94px;
 /* or 71% */

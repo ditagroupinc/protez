@@ -1,5 +1,5 @@
 import Title from "@/components/SectionHeaderTitle/Title";
-import TextBlock from "../../components/TextBlock/TextBlock";
+import Card from "../../components/Card/Card";
 import styles from "./OurMission.module.css";
 // import { useContext } from "react";
 // import { LanguageContext } from "../../contexts/LanguageContext";
@@ -104,7 +104,7 @@ const OurMission = () => {
   const blocks = Object.keys(OurMissionText.blockInfo).map((text, i) => {
     // console.log(iconsObj[i]);
     return (
-      <TextBlock
+      <Card
         key={i}
         icon={iconsObj[i]}
         text={OurMissionText.blockInfo[text].eng}
