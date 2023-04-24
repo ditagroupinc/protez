@@ -1,12 +1,14 @@
 // import Image from "next/image";
-import OurMissionSection from "@/sections/OurMission/OurMission";
+import OurMission from "@/sections/OurMission/OurMission";
 import "../../styles/fonts.css";
 import "../../styles/resetCSS.css";
+import OurResults from "@/sections/OurResults/OurResults";
 
 export default function Huy() {
   return (
     <>
-      <OurMissionSection />
+      <OurMission />
+      <OurResults />
     </>
   );
 }

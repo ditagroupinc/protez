@@ -1,11 +1,12 @@
-
+.title{
+  color: var(--white);
+}
 .normal{
   font-family: "Outfit", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 132px;
   line-height: 94px;
-  color: white;
 }
 
 .italic {
