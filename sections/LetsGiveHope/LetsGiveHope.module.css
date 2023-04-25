@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: calc(var(--navLeftWidth) + 8vw);
+  padding-left: var(--sectionPaddingLeft);
   padding-right: calc(var(--navRightWidth) + 4vw);
 }
 

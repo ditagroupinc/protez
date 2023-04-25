@@ -8,6 +8,8 @@
   --black: #0d1125;
   --navLeftWidth: 300px;
   --navRightWidth: 64px;
+  --sectionPaddingLeft: calc(300px + 8vw + 6.875vw);
+  --sectionPaddingRight: calc(64px + 4vw + 6.875vw);
 }
 
 html,
