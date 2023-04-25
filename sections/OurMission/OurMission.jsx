@@ -101,8 +101,11 @@ const OurMissionText = {
 };
 
 const iconsObj = [iconDisabledPerson, iconHand, iconHelpHeart, iconPeople];
-const OurMission = () => {
-  //! add hight props to component
+const OurMission = ({ height }) => {
+  const isHeight = () => {
+    if (height) return styles.height;
+  };
+  //! add {height} props to component
   const lang = useContext(LanguageContext);
   const { width, length, mobile } = useContext(ScreenModeAndSizeContext);
   const mobileDesktopClass = () => {
@@ -110,13 +113,13 @@ const OurMission = () => {
     return "desktop";
   };
 
-  const blocks = Object.keys(OurMissionText.blockInfo).map((text, i) => {
+  const cards = Object.keys(OurMissionText.blockInfo).map((text, i) => {
     return (
       <Card
         // reverse
         key={i}
         icon={iconsObj[i]}
-        text={OurMissionText.blockInfo[text].eng}
+        text={OurMissionText.blockInfo[text][lang]}
       />
     );
   });
@@ -125,12 +128,12 @@ const OurMission = () => {
     <div className={styles.section}>
       <div>
         <Title
-          // style
-          italicText={OurMissionText.titleText.our.eng}
-          normalText={OurMissionText.titleText.mission.eng}
+          // style={...}
+          italicText={OurMissionText.titleText.our[lang]}
+          normalText={OurMissionText.titleText.mission[lang]}
         />
       </div>
-      {blocks}
+      {cards}
     </div>
   );
 };
