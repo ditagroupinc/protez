@@ -44,7 +44,6 @@ export default function Home() {
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header />
-        <OurMission />
         <main
           className="flex min-h-screen flex-col items-center justify-between p-24"
           style={{ backgroundColor: "var(--black)", height: "500vh" }}

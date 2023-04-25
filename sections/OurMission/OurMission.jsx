@@ -102,6 +102,7 @@ const OurMissionText = {
 
 const iconsObj = [iconDisabledPerson, iconHand, iconHelpHeart, iconPeople];
 const OurMission = () => {
+  //! add hight props to component
   const lang = useContext(LanguageContext);
   const { width, length, mobile } = useContext(ScreenModeAndSizeContext);
   const mobileDesktopClass = () => {
