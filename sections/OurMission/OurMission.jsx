@@ -1,8 +1,11 @@
+"use client";
 import Title from "@/components/SectionHeaderTitle/Title";
 import Card from "../../components/Card/Card";
 import styles from "./OurMission.module.css";
-// import { useContext } from "react";
-// import { LanguageContext } from "../../contexts/LanguageContext";
+import { useContext } from "react";
+import { LanguageContext } from "../../contexts/LanguageContext";
+import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+
 const iconDisabledPerson = (
   <svg
     width="45"
@@ -99,12 +102,17 @@ const OurMissionText = {
 
 const iconsObj = [iconDisabledPerson, iconHand, iconHelpHeart, iconPeople];
 const OurMission = () => {
-  // const lang = useContext(LanguageContext);
+  const lang = useContext(LanguageContext);
+  const { width, length, mobile } = useContext(ScreenModeAndSizeContext);
+  const mobileDesktopClass = () => {
+    if (mobile) return "mobile";
+    return "desktop";
+  };
 
   const blocks = Object.keys(OurMissionText.blockInfo).map((text, i) => {
-    // console.log(iconsObj[i]);
     return (
       <Card
+        // reverse
         key={i}
         icon={iconsObj[i]}
         text={OurMissionText.blockInfo[text].eng}
@@ -116,7 +124,7 @@ const OurMission = () => {
     <div className={styles.section}>
       <div>
         <Title
-          style={styles.title}
+          // style
           italicText={OurMissionText.titleText.our.eng}
           normalText={OurMissionText.titleText.mission.eng}
         />

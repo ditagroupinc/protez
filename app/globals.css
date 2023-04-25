@@ -1,11 +1,16 @@
 @tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* @tailwind components;  */
+/* @tailwind utilities; */
 
 :root {
   --pink: #cd0062;
   --white: #ffffff;
   --black: #0d1125;
+}
+
+html,
+body {
+  font-family: "Outfit", sans-serif;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -126,4 +131,12 @@
     font-size: 18px;
     line-height: 28px;
   }
+}
+
+.squareButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 0;
 }

@@ -1,0 +1,108 @@
+.header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--white);
+  padding: 2rem 4vw;
+  & button {
+    text-transform: uppercase;
+  }
+}
+
+.headerNav {
+  & ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+  }
+}
+
+.headerActionLang {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 55px;
+}
+.becomeAVolunteer {
+  font-size: 20px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.changeLanguageButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 400;
+  font-size: 14px;
+  gap: 1rem;
+}
+
+.navLeft {
+  color: var(--white);
+  position: fixed;
+  left: 4vw;
+  left: 0;
+  bottom: 4vw;
+}
+
+.adressContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: calc(300px + 4vw);
+  width: 100%;
+
+  & p {
+    padding-left: 4vw;
+    & span {
+      display: block;
+      line-height: 32px;
+    }
+  }
+}
+
+.buttonsContainer {
+  margin-top: 4.375rem;
+  padding-left: 4vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.875rem;
+}
+
+.pinkButton {
+  background-color: var(--pink);
+}
+
+.transparentButton {
+  background-color: transparent;
+  border: 1px solid var(--white);
+}
+
+.socialMediaLinks {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  right: 4vw;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.backToTopButton {
+  color: var(--white);
+  position: fixed;
+  right: 4vw;
+  bottom: 4vw;
+  transform: rotate(-90deg) translate(100%, -50%);
+  transform-origin: bottom right;
+  text-transform: uppercase;
+}
+
+/*  */
