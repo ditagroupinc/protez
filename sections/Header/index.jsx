@@ -148,7 +148,7 @@ const socialMediaLinks = [
 ];
 
 export default function Header() {
-  const lang = useContext(LanguageContext);
+  const { lang, changeLang } = useContext(LanguageContext);
   const { width, length, mobile } = useContext(ScreenModeAndSizeContext);
   const mobileDesktopClass = () => {
     if (mobile) return "mobile";

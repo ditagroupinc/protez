@@ -6,11 +6,23 @@
   --pink: #cd0062;
   --white: #ffffff;
   --black: #0d1125;
+  --navLeftWidth: 300px;
+  --navRightWidth: 64px;
 }
 
 html,
 body {
   font-family: "Outfit", sans-serif;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 /* @media (prefers-color-scheme: dark) {
