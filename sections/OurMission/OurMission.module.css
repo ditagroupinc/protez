@@ -1,7 +1,7 @@
 .section {
   width: 100%;
   background-color: var(--black);
-  padding: 5.625vw var(--sectionPaddingRight) 5.625vw  var(--sectionPaddingLeft);
+  padding: 5.625vw calc(64px + 4vw + 176px) 5.625vw  calc(300px + 16.875vw);
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows:  34vh 25vh 17.5vh;
@@ -10,6 +10,7 @@
 .section div:nth-child(1) {
   grid-column-start: 1;
   grid-column-end: 3;
+  display: grid;
   justify-items: end;
 }
 .section div:nth-child(3) {

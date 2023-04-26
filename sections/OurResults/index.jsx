@@ -1,7 +1,7 @@
-import Title from "@/components/SectionHeaderTitle/Title";
+import Title from "@/components/SectionHeaderTitle";
 import "@/app/globals.css";
 import styles from "./OurResults.module.css";
-import CountResults from "@/components/CountResults/CountResults";
+import CountResults from "@/components/CountResults";
 import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
@@ -34,13 +34,7 @@ const OurResultsText = {
 const ResultsCounts = [76, 196, 290, 13000000];
 const OurResults = () => {
   const { lang } = useContext(LanguageContext);
-  const { height, mobile } = useContext(ScreenModeAndSizeContext);
-
-  const ifResize = () => {
-    if (height) {
-      return { height: height };
-    }
-  };
+  const { height } = useContext(ScreenModeAndSizeContext);
 
   const BlocksCounts = Object.keys(OurResultsText.blockInfo).map((text, i) => {
     return (
@@ -53,12 +47,11 @@ const OurResults = () => {
   });
 
   return (
-    <section style={ifResize()} className={`${styles.section}`}>
+    <section style={{ height: height }} className={`${styles.section}`}>
       <div className={`${styles.block}`}>
         <Title
           italicText={OurResultsText.titleText.our[lang]}
           normalText={OurResultsText.titleText.results[lang]}
-          style={styles.title}
         />
         {BlocksCounts}
       </div>

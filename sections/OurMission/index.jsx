@@ -1,6 +1,5 @@
-"use client";
-import Title from "@/components/SectionHeaderTitle/Title";
-import Card from "@/components/Card/Card";
+import Title from "@/components/SectionHeaderTitle";
+import Card from "@/components/Card";
 import styles from "./OurMission.module.css";
 import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
@@ -103,33 +102,25 @@ const OurMissionText = {
 const iconsObj = [iconDisabledPerson, iconHand, iconHelpHeart, iconPeople];
 const OurMission = () => {
   const { lang } = useContext(LanguageContext);
-  const { height, mobile } = useContext(ScreenModeAndSizeContext);
+  const { height } = useContext(ScreenModeAndSizeContext);
 
-  const ifResize = () => {
-    if (height) {
-      return { height: height };
-    }
-  };
-  const Cards = Object.keys(OurMissionText.blockInfo).map((text, i) => {
+  const Cards = Object.keys(OurMissionText.blockInfo).map((key, i) => {
     return (
       <Card
-        // reverse
         key={i}
         icon={iconsObj[i]}
-        text={OurMissionText.blockInfo[text][lang]}
+        text={OurMissionText.blockInfo[key][lang]}
       />
     );
   });
 
   return (
-    <section style={ifResize()} className={styles.section}>
-      <div>
-        <Title
-          style={styles.titleMod}
-          italicText={OurMissionText.titleText.our[lang]}
-          normalText={OurMissionText.titleText.mission[lang]}
-        />
-      </div>
+    <section style={{ height: height }} className={styles.section}>
+      <Title
+        italicText={OurMissionText.titleText.our[lang]}
+        normalText={OurMissionText.titleText.mission[lang]}
+        // style={{ justifyContent: "flex-end" }}
+      />
       {Cards}
     </section>
   );

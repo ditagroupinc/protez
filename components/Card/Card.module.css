@@ -23,8 +23,6 @@
 .block.reverseBlock{
   flex-direction: column-reverse;
   & svg{
-    width: 64px;
-    height: 64px;
     align-self: flex-start;
   } 
 }

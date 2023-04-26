@@ -15,7 +15,7 @@ const CountResults = ({ count, text }) => {
   };
 
   return (
-    <div className={` h2 ${styles.counter}   ${mobileDesktopClass()}`}>
+    <div  className={` h2 ${styles.counter}   ${mobileDesktopClass()}`}>
       <span>{text}</span> <span className={styles.digit}>{MyCounter()}</span>
     </div>
   );

@@ -1,8 +1,8 @@
 "use client";
-import OurMission from "@/sections/OurMission/OurMission";
+import OurMission from "@/sections/OurMission";
 import "@/styles/fonts.css";
 import "@/styles/resetCSS.css";
-import OurResults from "@/sections/OurResults/OurResults";
+import OurResults from "@/sections/OurResults";
 import style from "./index.module.css";
 import { throttle } from "@/utils";
 import { useContext, useState, createContext, useEffect } from "react";

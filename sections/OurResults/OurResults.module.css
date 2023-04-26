@@ -1,21 +1,25 @@
 .section {
-  width: 100%;
   display: grid;
-  grid-template-rows: 52.308vh 47.692vh;
+  grid-template-rows: 880px 420px;
+  align-items: stretch;
+  width: 100%;
   background-color: var(--black);
-}
 
-.block {
-  padding: 16.923vh var(--sectionPaddingRight) 0 var(--sectionPaddingLeft);
+}
+.colorBlock{
+  background-color: var(--pink);
+  width: 100%;
+  height: 100%;
+}
+.section + div {
   display: flex;
 
 }
 
-.colorBlock {
-  background-color: var(--pink);
-}
-
 .title {
-  justify-content: flex-end;
+  /* margin-top: 100%; */
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  align-self:flex-end;
 }
-
