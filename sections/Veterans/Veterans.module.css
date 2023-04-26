@@ -1,0 +1,92 @@
+.section {
+  color: var(--white);
+  padding-right: calc(64px + 4vw);
+  position: relative;
+}
+
+.slickSlider {
+  height: 100%;
+}
+
+.sliderCard {
+  display: flex;
+  padding: 0 5px;
+}
+
+.rightSide {
+  flex: 1 1 50%;
+}
+
+.ageRank {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.56);
+}
+
+.nameSurname {
+  margin-top: 3rem;
+  & span {
+    display: block;
+    line-height: 0.75;
+    font-size: 132px;
+    color: var(--white);
+    &:first-of-type {
+      font-family: "Playfair Display", serif;
+      font-weight: 400;
+      font-style: italic;
+    }
+    &:last-of-type {
+      font-family: "Outfit", sans-serif;
+      font-weight: 700;
+      padding-left: 111px;
+    }
+  }
+}
+
+.cardTitle {
+  margin-top: 3rem;
+}
+
+.cardText {
+  margin-top: 3rem;
+}
+
+.shareMe {
+  margin-top: 3rem;
+  & span {
+    color: rgba(255, 255, 255, 0.56);
+  }
+}
+
+.buttonsList {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 2rem;
+}
+
+.leftSide {
+  flex: 1 1 50%;
+  & img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.rightSide {
+  flex: 1 50%;
+}
+
+.photo {
+}
+
+.nextSlideButton {
+  background-color: var(--pink);
+  border-radius: 1rem;
+  font-size: 20px;
+  line-height: 32px;
+  padding: 0 1.5rem;
+  color: var(--white);
+  width: 100%;
+  max-width: 120px;
+  position: absolute;
+  bottom: 4vw;
+}
