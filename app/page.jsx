@@ -34,6 +34,7 @@ export default function Home() {
     getSize();
     window.addEventListener("resize", throttle(getSize, 150));
   }, []);
+
   return (
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>

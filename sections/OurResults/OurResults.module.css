@@ -1,6 +1,6 @@
 .section {
   display: grid;
-  grid-template-rows: 34.375vw 21.875vw;
+  grid-template-rows: 52.308vh 47.692vh;
   background-color: var(--black);
 }
 

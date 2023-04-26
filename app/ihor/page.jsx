@@ -3,16 +3,20 @@ import OurMission from "@/sections/OurMission/OurMission";
 import "../../styles/fonts.css";
 import "../../styles/resetCSS.css";
 import OurResults from "@/sections/OurResults/OurResults";
-
+import style from "./index.module.css";
 import { throttle } from "@/utils";
 import { useContext, useState, createContext, useEffect } from "react";
 
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+import Header from "@/sections/Header";
+import LetsGiveHope from "@/sections/LetsGiveHope";
+import Image from "next/image";
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
   const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
+  // console.log(windowSizes);
   useEffect(() => {
     const getSize = () => {
       const win = window;
@@ -36,7 +40,22 @@ export default function Home() {
     <>
       <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
         <ScreenModeAndSizeContext.Provider value={windowSizes}>
-          {/* <OurMission /> */}
+          <Header />
+          <main>
+            <div className={style.flagsBlock}>
+              <LetsGiveHope />
+              <Image
+                src="/flag-usa.png"
+                object-fit="contain"
+                priority
+                alt="Picture of the author"
+                width={1306}
+                height={1890}
+                className={style.americanFlag}
+              />
+            </div>
+          </main>
+          <OurMission />
           <OurResults />
         </ScreenModeAndSizeContext.Provider>
       </LanguageContext.Provider>

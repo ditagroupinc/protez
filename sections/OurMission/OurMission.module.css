@@ -1,5 +1,4 @@
 .section {
-  width: 100%;
   background-color: var(--black);
   padding: 5.625vw var(--sectionPaddingRight) 5.625vw  var(--sectionPaddingLeft);
   display: grid;

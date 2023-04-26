@@ -102,9 +102,15 @@ const OurMissionText = {
 
 const iconsObj = [iconDisabledPerson, iconHand, iconHelpHeart, iconPeople];
 const OurMission = () => {
-  const { lang, changeLang } = useContext(LanguageContext);
-  const { width, length, mobile } = useContext(ScreenModeAndSizeContext);
+  const { lang } = useContext(LanguageContext);
+  const { width, height, mobile } = useContext(ScreenModeAndSizeContext);
 
+  const ifResize = () => {
+    if (width && height) {
+      return { height: height, width: width };
+    }
+  };
+  console.log(width, height);
   const cards = Object.keys(OurMissionText.blockInfo).map((text, i) => {
     return (
       <Card
@@ -117,7 +123,7 @@ const OurMission = () => {
   });
 
   return (
-    <div className={styles.section}>
+    <div style={ifResize()} className={styles.section}>
       <div>
         <Title
           // style={...}

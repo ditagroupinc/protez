@@ -1,5 +1,5 @@
 .counter {
-  /* transform-origin: 0 0; */
+  transform-origin: 90px 90px;
   align-self: end;
   transform: rotate(-90deg);
   white-space: nowrap;

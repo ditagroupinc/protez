@@ -5,6 +5,7 @@ import styles from "./OurResults.module.css";
 import CountResults from "@/components/CountResults/CountResults";
 import { useContext } from "react";
 import { LanguageContext } from "../../contexts/LanguageContext";
+import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 
 const OurResultsText = {
   blockInfo: {
@@ -34,6 +35,13 @@ const OurResultsText = {
 const ResultsCounts = [76, 196, 290, 13000000];
 const OurResults = () => {
   const { lang } = useContext(LanguageContext);
+  const { width, height, mobile } = useContext(ScreenModeAndSizeContext);
+
+  const ifResize = () => {
+    if (width && height) {
+      return { height: height, width: width };
+    }
+  };
 
   const blocksCounts = Object.keys(OurResultsText.blockInfo).map((text, i) => {
     // console.log(iconsObj[i]);
@@ -47,7 +55,7 @@ const OurResults = () => {
   });
 
   return (
-    <div className={`${styles.section}`}>
+    <div style={ifResize()} className={`${styles.section}`}>
       <div className={`${styles.block}`}>
         <Title
           italicText={OurResultsText.titleText.our[lang]}
