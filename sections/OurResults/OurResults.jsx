@@ -1,10 +1,9 @@
 import Title from "@/components/SectionHeaderTitle/Title";
-// import Card from "../../components/Card/Card";
-import "../../app/globals.css";
+import "@/app/globals.css";
 import styles from "./OurResults.module.css";
 import CountResults from "@/components/CountResults/CountResults";
 import { useContext } from "react";
-import { LanguageContext } from "../../contexts/LanguageContext";
+import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 
 const OurResultsText = {
@@ -35,16 +34,15 @@ const OurResultsText = {
 const ResultsCounts = [76, 196, 290, 13000000];
 const OurResults = () => {
   const { lang } = useContext(LanguageContext);
-  const { width, height, mobile } = useContext(ScreenModeAndSizeContext);
+  const { height, mobile } = useContext(ScreenModeAndSizeContext);
 
   const ifResize = () => {
-    if (width && height) {
-      return { height: height, width: width };
+    if (height) {
+      return { height: height };
     }
   };
 
-  const blocksCounts = Object.keys(OurResultsText.blockInfo).map((text, i) => {
-    // console.log(iconsObj[i]);
+  const BlocksCounts = Object.keys(OurResultsText.blockInfo).map((text, i) => {
     return (
       <CountResults
         key={i}
@@ -55,18 +53,17 @@ const OurResults = () => {
   });
 
   return (
-    <div style={ifResize()} className={`${styles.section}`}>
+    <section style={ifResize()} className={`${styles.section}`}>
       <div className={`${styles.block}`}>
         <Title
           italicText={OurResultsText.titleText.our[lang]}
           normalText={OurResultsText.titleText.results[lang]}
           style={styles.title}
         />
-        {/* <div className={`${styles.counters}`}>{blocksCounts}</div> */}
-        {blocksCounts}
+        {BlocksCounts}
       </div>
       <div className={`${styles.colorBlock}`}></div>
-    </div>
+    </section>
   );
 };
 

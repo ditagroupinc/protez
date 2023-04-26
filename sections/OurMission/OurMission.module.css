@@ -1,4 +1,5 @@
 .section {
+  width: 100%;
   background-color: var(--black);
   padding: 5.625vw var(--sectionPaddingRight) 5.625vw  var(--sectionPaddingLeft);
   display: grid;
@@ -9,7 +10,6 @@
 .section div:nth-child(1) {
   grid-column-start: 1;
   grid-column-end: 3;
-  display: grid;
   justify-items: end;
 }
 .section div:nth-child(3) {
@@ -25,7 +25,6 @@
 .section div:nth-child(5) {
   grid-column-start: 3;
   grid-column-end: 4;
-
 }
 
 

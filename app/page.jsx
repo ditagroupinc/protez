@@ -11,6 +11,7 @@ import LetsGiveHope from "@/sections/LetsGiveHope";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./index.module.css";
+import OurMission from "@/sections/OurMission/OurMission";
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
@@ -53,6 +54,7 @@ export default function Home() {
             />
           </div>
         </main>
+        <OurMission />
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>
   );

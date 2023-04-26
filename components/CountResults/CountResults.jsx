@@ -1,4 +1,4 @@
-import "../../app/globals.css";
+import "@/app/globals.css";
 import styles from "./CountResults.module.css";
 import { useContext } from "react";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";

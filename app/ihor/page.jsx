@@ -1,7 +1,7 @@
 "use client";
 import OurMission from "@/sections/OurMission/OurMission";
-import "../../styles/fonts.css";
-import "../../styles/resetCSS.css";
+import "@/styles/fonts.css";
+import "@/styles/resetCSS.css";
 import OurResults from "@/sections/OurResults/OurResults";
 import style from "./index.module.css";
 import { throttle } from "@/utils";
@@ -16,7 +16,6 @@ import Image from "next/image";
 export default function Home() {
   const [lang, setLang] = useState("eng");
   const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
-  // console.log(windowSizes);
   useEffect(() => {
     const getSize = () => {
       const win = window;

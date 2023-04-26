@@ -5,10 +5,10 @@ const Title = ({ italicText, normalText, style }) => {
     return "";
   };
   return (
-    <p className={`${ifStyle()} ${styles.title}`}>
+    <div className={`${ifStyle()} ${styles.title}`}>
       <h2 className={styles.italic}>{italicText}</h2>
       <h2 className={styles.normal}>{normalText}</h2>
-    </p>
+    </div>
   );
 };
 

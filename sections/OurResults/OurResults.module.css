@@ -1,4 +1,5 @@
 .section {
+  width: 100%;
   display: grid;
   grid-template-rows: 52.308vh 47.692vh;
   background-color: var(--black);
@@ -14,13 +15,7 @@
   background-color: var(--pink);
 }
 
-/* .counters {
-  display: flex;
-} */
-
-
 .title {
   justify-content: flex-end;
-  /* margin-right: 3.906vw; */
 }
 
