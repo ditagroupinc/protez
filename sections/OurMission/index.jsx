@@ -119,7 +119,6 @@ const OurMission = () => {
       <Title
         italicText={OurMissionText.titleText.our[lang]}
         normalText={OurMissionText.titleText.mission[lang]}
-        // style={{ justifyContent: "flex-end" }}
       />
       {Cards}
     </section>

@@ -7,10 +7,9 @@
   grid-template-rows:  34vh 25vh 17.5vh;
 
 }
-.section div:nth-child(1) {
+.section h2:nth-child(1) {
   grid-column-start: 1;
   grid-column-end: 3;
-  display: grid;
   justify-items: end;
 }
 .section div:nth-child(3) {
@@ -27,5 +26,4 @@
   grid-column-start: 3;
   grid-column-end: 4;
 }
-
 
