@@ -1,17 +1,18 @@
 "use client";
-import OurMission from "@/sections/OurMission";
+import Image from "next/image";
 import "@/styles/fonts.css";
 import "@/styles/resetCSS.css";
-import OurResults from "@/sections/OurResults";
-import style from "./index.module.css";
 import { throttle } from "@/utils";
 import { useContext, useState, createContext, useEffect } from "react";
 
-import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import Header from "@/sections/Header";
 import LetsGiveHope from "@/sections/LetsGiveHope";
-import Image from "next/image";
+
+import { LanguageContext } from "@/contexts/LanguageContext";
+import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+import style from "./index.module.css";
+import OurMission from "@/sections/OurMission";
+import OurResults from "@/sections/OurResults";
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
@@ -35,32 +36,32 @@ export default function Home() {
     getSize();
     window.addEventListener("resize", throttle(getSize, 150));
   }, []);
+
   return (
-    <>
-      <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
-        <ScreenModeAndSizeContext.Provider value={windowSizes}>
-          <Header />
-          <main>
-            <div className={style.flagsBlock}>
-              <LetsGiveHope />
-              <Image
-                src="/flag-usa.png"
-                object-fit="contain"
-                priority
-                alt="Picture of the author"
-                width={1306}
-                height={1890}
-                className={style.americanFlag}
-              />
-            </div>
-          </main>
-          <OurMission />
-          <OurResults />
-        </ScreenModeAndSizeContext.Provider>
-      </LanguageContext.Provider>
-    </>
+    <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
+      <ScreenModeAndSizeContext.Provider value={windowSizes}>
+        <Header />
+        <main>
+          <div className={style.flagsBlock}>
+            <LetsGiveHope />
+            <Image
+              src="/flag-usa.png"
+              object-fit="contain"
+              priority
+              alt="Picture of the author"
+              width={1306}
+              height={1890}
+              className={style.americanFlag}
+            />
+          </div>
+        </main>
+        <OurMission />
+        <OurResults />
+      </ScreenModeAndSizeContext.Provider>
+    </LanguageContext.Provider>
   );
 }
+
 //
 //
 //

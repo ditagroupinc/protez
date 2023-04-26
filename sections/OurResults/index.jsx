@@ -52,6 +52,7 @@ const OurResults = () => {
         <Title
           italicText={OurResultsText.titleText.our[lang]}
           normalText={OurResultsText.titleText.results[lang]}
+          style={styles.title}
         />
         {BlocksCounts}
       </div>
