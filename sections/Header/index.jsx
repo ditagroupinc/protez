@@ -1,6 +1,6 @@
 import "./header.module.css";
 import { useContext } from "react";
-import { LanguageContext } from "../../contexts/LanguageContext";
+import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 
 import { Divider } from "@/components/Divider";
@@ -149,6 +149,7 @@ const socialMediaLinks = [
 
 export default function Header() {
   const { lang, changeLang } = useContext(LanguageContext);
+
   const { width, length, mobile } = useContext(ScreenModeAndSizeContext);
   const mobileDesktopClass = () => {
     if (mobile) return "mobile";

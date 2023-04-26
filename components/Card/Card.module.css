@@ -1,0 +1,28 @@
+.block {
+  margin: -1px -1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  & svg{
+    width: 64px;
+    height: 64px;
+    align-self: flex-end;
+  } 
+  &:hover{
+    background-color: var(--pink);
+    transition: all .5s ease;
+  } 
+}
+
+
+
+
+.block.reverseBlock{
+  flex-direction: column-reverse;
+  & svg{
+    align-self: flex-start;
+  } 
+}

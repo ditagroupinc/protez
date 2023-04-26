@@ -1,0 +1,12 @@
+.flagsBlock {
+  position: relative;
+}
+
+.americanFlag {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 50%;
+}

@@ -1,0 +1,27 @@
+.counter {
+  transform-origin: 90px 90px;
+  align-self: end;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+
+  max-width:  50.308vw;
+  color: var(--white);
+
+}
+
+.counter:hover {
+  background-color: var(--pink);
+  transition: all .5s ease;
+}
+
+.digit {
+  border-bottom: 4px solid var(--pink);
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 132px;
+  line-height: 130px;
+
+}

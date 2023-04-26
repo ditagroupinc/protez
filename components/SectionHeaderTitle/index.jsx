@@ -1,11 +1,10 @@
-import React from "react";
 import styles from "./Title.module.css";
-const Title = ({ italicText, normalText, style }) => {
+const Title = ({ italicText, normalText, style = "" }) => {
   return (
-    <p className={style}>
+    <h2 className={` ${styles.title}` + " " + `${style}`}>
       <span className={styles.italic}>{italicText}</span>
       <span className={styles.normal}>{normalText}</span>
-    </p>
+    </h2>
   );
 };
 

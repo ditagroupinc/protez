@@ -1,0 +1,20 @@
+.section {
+  width: 100%;
+  display: grid;
+  grid-template-rows: 52.308vh 47.692vh;
+  background-color: var(--black);
+}
+
+.block {
+  padding: 16.923vh var(--sectionPaddingRight) 0 var(--sectionPaddingLeft);
+  display: flex;
+
+}
+
+.colorBlock {
+  background-color: var(--pink);
+}
+
+.title {
+  justify-content: flex-end;
+}
