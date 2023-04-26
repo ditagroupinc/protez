@@ -19,13 +19,11 @@ const letsGiveHopeText = {
 
 export default function LetsGiveHope({}) {
   const { lang } = useContext(LanguageContext);
-  const { height, width, mobile } = useContext(ScreenModeAndSizeContext);
-  const mobileDesktopClass = () => {
-    if (mobile) return "mobile";
-    return "desktop";
-  };
+  const { height, width, mobile, screenModeClass } = useContext(
+    ScreenModeAndSizeContext
+  );
   return (
-    <section className={style.section} style={{ height: height }}>
+    <section className={style.section + " section"} style={{ height: height }}>
       <video autoPlay loop muted className={style.video}>
         <source src="flag-ukraine.mp4" type="video/mp4" />
       </video>

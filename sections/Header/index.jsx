@@ -1,6 +1,6 @@
 import "./header.module.css";
 import { useContext } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
+import { LanguageContext } from "../../contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 
 import { Divider } from "@/components/Divider";
@@ -149,8 +149,9 @@ const socialMediaLinks = [
 
 export default function Header() {
   const { lang, changeLang } = useContext(LanguageContext);
-
-  const { width, length, mobile } = useContext(ScreenModeAndSizeContext);
+  const { width, length, mobile, screenModeClass } = useContext(
+    ScreenModeAndSizeContext
+  );
   const mobileDesktopClass = () => {
     if (mobile) return "mobile";
     return "desktop";
@@ -165,14 +166,14 @@ export default function Header() {
         <nav className={style.headerNav}>
           <ul>
             {navLinks.map((link, index) => (
-              <li key={index} className={"h6 " + mobileDesktopClass()}>
+              <li key={index} className={"h6 " + screenModeClass}>
                 <button>{link[lang]}</button>
               </li>
             ))}
           </ul>
         </nav>
         <div className={style.headerActionLang}>
-          <button className={"h6 " + mobileDesktopClass()}>
+          <button className={"h6 " + screenModeClass}>
             {headerText.actionButtons.becomeAVolunteer[lang]}
           </button>
           <Divider vertical />
@@ -187,30 +188,26 @@ export default function Header() {
       <div className={style.navLeft}>
         <div className={style.adressContainer}>
           <p>
-            <span className={"h6 " + mobileDesktopClass()}>
+            <span className={"h6 " + screenModeClass}>
               {headerText.organizationData.nonProfitOrganization[lang]}
             </span>
-            <span className={"h6 " + mobileDesktopClass()}>
+            <span className={"h6 " + screenModeClass}>
               {headerText.organizationData.ein[lang]}
             </span>
           </p>
           <Divider />
-          <p className={"h5 " + mobileDesktopClass()}>
+          <p className={"h5 " + screenModeClass}>
             {headerText.organizationData.adress[lang]}
           </p>
         </div>
         <div className={style.buttonsContainer}>
           <button
-            className={`squareButton h6 ${mobileDesktopClass()} ${
-              style.pinkButton
-            }`}
+            className={`squareButton h6 ${screenModeClass} ${style.pinkButton}`}
           >
             {headerText.actionButtons.makeDonation[lang]}
           </button>
           <button
-            className={`squareButton h6 ${mobileDesktopClass()} ${
-              style.transparentButton
-            }`}
+            className={`squareButton h6 ${screenModeClass} ${style.transparentButton}`}
           >
             {headerText.actionButtons.needAProtez[lang]}
           </button>
@@ -223,7 +220,7 @@ export default function Header() {
           </li>
         ))}
       </ul>
-      <button className={`${style.backToTopButton} h6 ${mobileDesktopClass()}`}>
+      <button className={`${style.backToTopButton} h6 ${screenModeClass}`}>
         {headerText.actionButtons.back2top[lang]}
       </button>
     </>

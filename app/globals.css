@@ -159,3 +159,31 @@ body {
   justify-content: center;
   padding: 1.25rem 0;
 }
+
+.section {
+  padding-left: var(--sectionPaddingLeft);
+  padding-right: var(--sectionPaddingRight);
+  padding-top: 120px;
+}
+
+.slick-dots {
+  width: fit-content;
+}
+
+.slick-dots li.slick-active button:before {
+  color: var(--pink);
+}
+
+.slick-dots li button:before {
+  color: var(--white);
+  opacity: 1;
+}
+
+.slick-dots {
+  position: absolute;
+  margin-top: 7rem;
+  bottom: calc(4vw + 0.5rem);
+  /* left: calc(var(--sectionPaddingLeft) + 120px + 1rem); */
+  left: calc(120px + 1rem);
+  /* transform: translateY(50%); */
+}
