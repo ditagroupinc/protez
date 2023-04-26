@@ -3,8 +3,8 @@ import Title from "@/components/SectionHeaderTitle/Title";
 import "../../app/globals.css";
 import styles from "./OurResults.module.css";
 import CountResults from "@/components/CountResults/CountResults";
-// import { useContext } from "react";
-// import { LanguageContext } from "../../contexts/LanguageContext";
+import { useContext } from "react";
+import { LanguageContext } from "../../contexts/LanguageContext";
 
 const OurResultsText = {
   blockInfo: {
@@ -33,7 +33,7 @@ const OurResultsText = {
 
 const ResultsCounts = [76, 196, 290, 13000000];
 const OurResults = () => {
-  // const lang = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext);
 
   const blocksCounts = Object.keys(OurResultsText.blockInfo).map((text, i) => {
     // console.log(iconsObj[i]);
@@ -41,19 +41,20 @@ const OurResults = () => {
       <CountResults
         key={i}
         count={ResultsCounts[i]}
-        text={OurResultsText.blockInfo[text].eng}
+        text={OurResultsText.blockInfo[text][lang]}
       />
     );
   });
 
   return (
     <div className={`${styles.section}`}>
-      <div>
+      <div className={`${styles.block}`}>
         <Title
-          italicText={OurResultsText.titleText.our.eng}
-          normalText={OurResultsText.titleText.results.eng}
+          italicText={OurResultsText.titleText.our[lang]}
+          normalText={OurResultsText.titleText.results[lang]}
           style={styles.title}
         />
+        {/* <div className={`${styles.counters}`}>{blocksCounts}</div> */}
         {blocksCounts}
       </div>
       <div className={`${styles.colorBlock}`}></div>

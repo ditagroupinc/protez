@@ -101,17 +101,9 @@ const OurMissionText = {
 };
 
 const iconsObj = [iconDisabledPerson, iconHand, iconHelpHeart, iconPeople];
-const OurMission = ({ height }) => {
-  const isHeight = () => {
-    if (height) return styles.height;
-  };
-  //! add {height} props to component
-  const lang = useContext(LanguageContext);
+const OurMission = () => {
+  const { lang, changeLang } = useContext(LanguageContext);
   const { width, length, mobile } = useContext(ScreenModeAndSizeContext);
-  const mobileDesktopClass = () => {
-    if (mobile) return "mobile";
-    return "desktop";
-  };
 
   const cards = Object.keys(OurMissionText.blockInfo).map((text, i) => {
     return (

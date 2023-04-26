@@ -1,14 +1,45 @@
-// import Image from "next/image";
+"use client";
 import OurMission from "@/sections/OurMission/OurMission";
 import "../../styles/fonts.css";
 import "../../styles/resetCSS.css";
 import OurResults from "@/sections/OurResults/OurResults";
 
-export default function Huy() {
+import { throttle } from "@/utils";
+import { useContext, useState, createContext, useEffect } from "react";
+
+import { LanguageContext } from "@/contexts/LanguageContext";
+import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+
+export default function Home() {
+  const [lang, setLang] = useState("eng");
+  const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
+  useEffect(() => {
+    const getSize = () => {
+      const win = window;
+      const doc = document;
+      const docElem = doc.documentElement;
+      const body = doc.getElementsByTagName("body")[0];
+      const windowWidth =
+        win.innerWidth || docElem.clientWidth || body.clientWidth;
+      const windowHeight =
+        win.innerHeight || docElem.clientHeight || body.clientHeight;
+      setWindowSizes({
+        width: windowWidth,
+        height: windowHeight,
+        mobile: false,
+      });
+    };
+    getSize();
+    window.addEventListener("resize", throttle(getSize, 150));
+  }, []);
   return (
     <>
-      <OurMission />
-      <OurResults />
+      <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
+        <ScreenModeAndSizeContext.Provider value={windowSizes}>
+          {/* <OurMission /> */}
+          <OurResults />
+        </ScreenModeAndSizeContext.Provider>
+      </LanguageContext.Provider>
     </>
   );
 }
