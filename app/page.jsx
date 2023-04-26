@@ -16,30 +16,32 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./index.module.css";
 
+const getSize = () => {
+  const win = window;
+  const doc = document;
+  const docElem = doc.documentElement;
+  const body = doc.getElementsByTagName("body")[0];
+  const windowWidth = win.innerWidth || docElem.clientWidth || body.clientWidth;
+  const windowHeight =
+    win.innerHeight || docElem.clientHeight || body.clientHeight;
+  const mobile = false;
+  const screenModeClass = mobile ? "mobile" : "desktop";
+  return {
+    width: windowWidth,
+    height: windowHeight,
+    mobile: false,
+    screenModeClass,
+  };
+};
+
 export default function Home() {
   const [lang, setLang] = useState("eng");
-  const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
+  const [windowSizes, setWindowSizes] = useState(getSize());
+  const updateSized = () => {
+    setWindowSizes(getSize());
+  };
   useEffect(() => {
-    const getSize = () => {
-      const win = window;
-      const doc = document;
-      const docElem = doc.documentElement;
-      const body = doc.getElementsByTagName("body")[0];
-      const windowWidth =
-        win.innerWidth || docElem.clientWidth || body.clientWidth;
-      const windowHeight =
-        win.innerHeight || docElem.clientHeight || body.clientHeight;
-      const mobile = false;
-      const screenModeClass = mobile ? "mobile" : "desktop";
-      setWindowSizes({
-        width: windowWidth,
-        height: windowHeight,
-        mobile: false,
-        screenModeClass,
-      });
-    };
-    getSize();
-    window.addEventListener("resize", throttle(getSize, 150));
+    window.addEventListener("resize", throttle(updateSized, 150));
   }, []);
 
   return (

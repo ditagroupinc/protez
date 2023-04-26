@@ -164,7 +164,6 @@ body {
   padding-left: var(--sectionPaddingLeft);
   padding-right: var(--sectionPaddingRight);
   padding-top: 120px;
-  height: 100vh;
 }
 
 .section .slick-dots {
