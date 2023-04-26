@@ -179,7 +179,7 @@ export default function Veterans() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    lazyLoad: true,
+    // lazyLoad: true,
     arrows: false,
     nextArrow: <SampleNextArrow />,
     // dotsClass: `${style.sliderDots}`,
