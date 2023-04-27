@@ -15,7 +15,7 @@ const OurResultsText = {
       eng: `Prostheses`,
     },
     volontiers: {
-      eng: `Volontiers.`,
+      eng: `Volontiers`,
     },
     moneySpent: {
       eng: `Money spent`,
@@ -31,6 +31,12 @@ const OurResultsText = {
   },
 };
 
+const DividerSize = [
+  { width: "20.833vh", height: "0.156vw" },
+  { width: "26.389vh", height: "0.156vw" },
+  { width: "33.333vh", height: "0.156vw" },
+  { width: "45.417vh", height: "0.156vw" },
+];
 const ResultsCounts = [76, 196, 290, 13000000];
 const OurResults = () => {
   const { lang } = useContext(LanguageContext);
@@ -42,6 +48,7 @@ const OurResults = () => {
         key={i}
         count={ResultsCounts[i]}
         text={OurResultsText.blockInfo[text][lang]}
+        dividerSize={DividerSize[i]}
       />
     );
   });
@@ -54,7 +61,7 @@ const OurResults = () => {
           normalText={OurResultsText.titleText.results[lang]}
           style={styles.title}
         />
-        {BlocksCounts}
+        <div className={`${styles.countBlock}`}>{BlocksCounts}</div>
       </div>
       <div className={`${styles.colorBlock}`}></div>
     </section>
