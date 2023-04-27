@@ -15,6 +15,7 @@
 
 .headerNav {
   width: 55%;
+  max-width: 1150px;
   & ul {
     display: flex;
     align-items: center;
