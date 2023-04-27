@@ -14,17 +14,19 @@
 }
 
 .headerNav {
+  width: 55%;
   & ul {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 3rem;
+    /* justify-content: center; */
+    /* gap: 3rem; */
+    justify-content: space-between;
   }
 }
 
 .headerActionLang {
   display: flex;
-  /* align-items: center; */
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
   min-height: 55px;
