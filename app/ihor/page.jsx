@@ -50,7 +50,7 @@ export default function Home() {
         <main style={{ backgroundColor: "var(--black)" }}>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
-            <OurMission />
+            {/* <OurMission /> */}
             <Image
               src="/flag-usa.png"
               object-fit="contain"
@@ -62,7 +62,7 @@ export default function Home() {
             />
           </div>
           <OurResults />
-          <Veterans />
+          {/* <Veterans /> */}
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>

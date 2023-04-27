@@ -4,12 +4,9 @@
   flex-direction: column;
   justify-content: flex-end;
   white-space: nowrap;
-  /* border-bottom: 4px solid var(--pink); */
-  /* width:  fit-content; */
-  height: 9.492vw;
+  width: fit-content;
+  border-bottom: 4px solid var(--pink);
   padding-top: 2.246vw;
-  margin-bottom: -0.156vw;
-  margin-top: -0.156vw;
 }
 
 .counter:hover {
@@ -26,3 +23,13 @@
   line-height: 130px;
 
 }
+
+
+.styleMod span:nth-child(3)::before {
+  content: ' '; 
+}
+.styleMod span:nth-child(6)::before {
+  content: ' '; 
+}
+
+
