@@ -41,7 +41,7 @@ export default function Home() {
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header />
-        {/* <main>
+        <main>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
             <Image
@@ -54,8 +54,8 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
-        </main> */}
-        {/* <OurMission /> */}
+        </main>
+        <OurMission />
         <OurResults />
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>

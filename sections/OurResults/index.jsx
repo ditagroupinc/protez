@@ -26,7 +26,7 @@ const OurResultsText = {
       eng: "Our",
     },
     results: {
-      eng: "RESULTS",
+      eng: "Results",
     },
   },
 };

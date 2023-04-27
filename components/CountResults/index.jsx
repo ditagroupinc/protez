@@ -16,7 +16,7 @@ const CountResults = ({ count, text, dividerSize }) => {
 
   const MyCounter = () => {
     return (
-      <CountUp start={0} end={count} delay={1} duration={2.75} separator=" " />
+      <CountUp start={0} end={count} delay={1} duration={5} separator=" " />
     );
   };
 
