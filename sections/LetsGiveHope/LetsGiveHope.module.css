@@ -4,8 +4,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: var(--sectionPaddingLeft);
-  padding-right: calc(var(--navRightWidth) + 4vw);
 }
 
 .video {
