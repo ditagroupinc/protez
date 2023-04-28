@@ -1,6 +1,6 @@
 import "@/app/globals.css";
 import styles from "./CountResults.module.css";
-import { useRef, useState, useEffect, useContext } from "react";
+import React, { useRef, useState, useEffect, useContext } from "react";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import CountUp from "react-countup";
 
@@ -18,21 +18,20 @@ const CountResults = ({ count, text }) => {
 
   const MyCounter = () => {
     return digitArray.map((digit, index) => (
-      <>
+      <React.Fragment key={index}>
         {(digitArray.length == "7" && index === 1) ||
         (digitArray.length == "7" && index === 4) ? (
           <span> </span>
         ) : null}
         <CountUp
-          key={index}
           start={null}
           end={digit}
-          delay={2}
+          delay={1}
           duration={7}
           separator=" "
           scrollSpyOnce={true}
         />
-      </>
+      </React.Fragment>
     ));
   };
 
@@ -58,7 +57,7 @@ const CountResults = ({ count, text }) => {
     <>
       <div className={`h2 ${styles.counter} ${mobileDesktopClass()}`}>
         <span>{text}</span>{" "}
-        <span ref={ref} className={`${styles.digit} animat`}>
+        <span ref={ref} className={`${styles.digit}`}>
           {inViewport ? MyCounter() : 0}
         </span>
       </div>
