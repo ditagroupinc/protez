@@ -38,6 +38,9 @@ body {
 
 /* global classes */
 /* -------------------------------------------------------------------------------------- */
+.uppercase{
+  text-transform: uppercase;
+}
 
 .button-disabled {
   opacity: 0.75;

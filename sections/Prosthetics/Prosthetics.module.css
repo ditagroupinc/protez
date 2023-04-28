@@ -1,0 +1,112 @@
+.section {
+  width: 100%;
+  background-color: transparent;
+  color: var(--white);
+  font-family: "Outfit", sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  position: relative;
+}
+.block{
+padding: 6.667vh 0;
+display: flex;
+position: relative;
+justify-content: space-between;
+}
+.cards{
+  width: 100%;
+  max-width: 29.648vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.text{
+  padding: 9.792vh  0 7.222vh 0   ;
+  width: 100%;
+  max-width: 24.805vw;
+  position: relative;
+  align-self: flex-end;
+  height: 100%;
+}
+
+.textTitle{
+  width: 42.5vw;
+  position: absolute;
+  top: 6.667vh;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 8.611vh;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 132px;
+  line-height: 120px;
+  align-items: flex-end;
+  & h1:nth-child(1) {
+    position: relative;
+  }
+}
+.flag::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 8%;
+  left: -200px;
+  width: 185px;
+  height: 94px;
+  background: linear-gradient(180deg, #0D75FF 47.4%, #FFC327 47.41%);
+}
+
+.toLowerCaseItalic{
+  text-transform: lowercase;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 132px;
+  line-height: 120px;
+}
+.fontSizeBig{
+  font-weight: 700;
+  font-size: 82px;
+  line-height: 80px;
+}
+.fontPlayfair{
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 82px;
+  line-height: 80px;
+  color: var(--white);
+}
+
+.cards div:nth-child(1) {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  width: 14.805vw;
+  height: 30.903vh;
+  align-self: flex-end;
+}
+
+.cards div:nth-child(2) {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  height: 21.667vh;
+  width: 14.805vw;
+}
+
+.cards div:nth-child(3) {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  height: 19.375vh;
+  width: 14.805vw;
+  align-self: flex-end;
+}
+
+.ukrainianMap {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  right: 0;
+  /* transform: translateY(100%); */
+  width: 100%;
+  /* max-width: 100%; */
+}
