@@ -7,24 +7,7 @@ import CountUp from "react-countup";
 const CountResults = ({ count, text }) => {
   const { mobile } = useContext(ScreenModeAndSizeContext);
   const [inViewport, setInViewport] = useState(false);
-  const [digitLength, setDigitLength] = useState("");
   const ref = useRef(null);
-
-  // useEffect(() => {
-  //   if (ref.current?.childNodes?.length >= 6) {
-  //     setDigitLength(ref.current.childNodes.length);
-  //   }
-  //   styleModForBigNumber();
-  //   console.log(digitLength);
-  // }, [ref.current]);
-
-  const styleModForBigNumber = () => {
-    return styles.styleMod;
-  };
-  console.log(ref.current?.childNodes?.length);
-  if (ref.current?.childNodes?.length == "8") {
-    styleModForBigNumber();
-  }
 
   const mobileDesktopClass = () => {
     if (mobile) return "mobile";
@@ -35,15 +18,21 @@ const CountResults = ({ count, text }) => {
 
   const MyCounter = () => {
     return digitArray.map((digit, index) => (
-      <CountUp
-        key={index}
-        start={null}
-        end={digit}
-        delay={2}
-        duration={7}
-        separator=" "
-        scrollSpyOnce={true}
-      />
+      <>
+        {(digitArray.length == "7" && index === 1) ||
+        (digitArray.length == "7" && index === 4) ? (
+          <span> </span>
+        ) : null}
+        <CountUp
+          key={index}
+          start={null}
+          end={digit}
+          delay={2}
+          duration={7}
+          separator=" "
+          scrollSpyOnce={true}
+        />
+      </>
     ));
   };
 
@@ -69,11 +58,7 @@ const CountResults = ({ count, text }) => {
     <>
       <div className={`h2 ${styles.counter} ${mobileDesktopClass()}`}>
         <span>{text}</span>{" "}
-        <span
-          ref={ref}
-          id="styleMod"
-          className={`${styles.digit} ${styleModForBigNumber()}`}
-        >
+        <span ref={ref} className={`${styles.digit} animat`}>
           {inViewport ? MyCounter() : 0}
         </span>
       </div>

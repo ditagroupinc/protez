@@ -31,7 +31,7 @@ const OurResultsText = {
   },
 };
 
-const ResultsCounts = ["76", "196", "290", "13000000"];
+const ResultsCounts = ["76", "196", "290", "1300000"];
 const OurResults = () => {
   const { lang } = useContext(LanguageContext);
   const { height } = useContext(ScreenModeAndSizeContext);

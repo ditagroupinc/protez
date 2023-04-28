@@ -21,15 +21,10 @@
   font-weight: 700;
   font-size: 132px;
   line-height: 130px;
+  
 
 }
 
 
-.styleMod span:nth-child(3)::before {
-  content: ' '; 
-}
-.styleMod span:nth-child(6)::before {
-  content: ' '; 
-}
 
 
