@@ -74,7 +74,7 @@ const ProstheticsText = {
       eng: "prosthetics",
     },
     for: {
-      eng: "for",
+      eng: "for ",
     },
     ukrainians: {
       eng: "Ukrainians",
