@@ -15,7 +15,7 @@ import OurMission from "@/sections/OurMission";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./index.module.css";
-import { OurResults } from "@/sections/OurResults";
+import OurResults from "@/sections/OurResults";
 import Prosthetics from "@/sections/Prosthetics";
 
 export default function Home() {
@@ -51,7 +51,7 @@ export default function Home() {
         <main style={{ backgroundColor: "var(--black)" }}>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
-            {/* <OurMission /> */}
+            <OurMission />
             <Image
               src="/flag-usa.png"
               object-fit="contain"
@@ -62,8 +62,9 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
+          <OurResults />
           <Prosthetics />
-          {/* <Veterans /> */}
+          <Veterans />
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>

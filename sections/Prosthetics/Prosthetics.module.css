@@ -1,14 +1,16 @@
 .section {
   width: 100%;
-  background-color: transparent;
+  background: rgb(13,17,37);
+  background: linear-gradient(360deg, #0D1125 0%, rgba(13, 17, 37, 0) 40.45%);
   color: var(--white);
   font-family: "Outfit", sans-serif;
   font-weight: normal;
   font-style: normal;
   position: relative;
+  z-index: 5;
 }
 .block{
-padding: 6.667vh 0;
+padding-top: 11.667vh ;
 display: flex;
 position: relative;
 justify-content: space-between;
@@ -21,7 +23,7 @@ justify-content: space-between;
 }
 
 .text{
-  padding: 9.792vh  0 7.222vh 0   ;
+  padding: 9.792vh  0 0 0   ;
   width: 100%;
   max-width: 24.805vw;
   position: relative;
@@ -32,7 +34,7 @@ justify-content: space-between;
 .textTitle{
   width: 42.5vw;
   position: absolute;
-  top: 6.667vh;
+  top: 21.458vh;
   display: flex;
   flex-direction: column;
   margin-bottom: 8.611vh;
@@ -103,10 +105,8 @@ justify-content: space-between;
 
 .ukrainianMap {
   position: absolute;
-  pointer-events: none;
+  z-index: -5;
   top: 0;
   right: 0;
-  /* transform: translateY(100%); */
-  width: 100%;
-  /* max-width: 100%; */
+  width: 70%;
 }
