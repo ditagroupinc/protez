@@ -11,6 +11,7 @@ import Header from "@/sections/Header";
 import LetsGiveHope from "@/sections/LetsGiveHope";
 import Veterans from "@/sections/Veterans";
 import OurMission from "@/sections/OurMission";
+import MeetOurTeam from "@/sections/MeetOurTeam";
 
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
@@ -47,7 +48,7 @@ export default function Home() {
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header />
         <main style={{ backgroundColor: "var(--black)" }}>
-          <div className={style.flagsBlock}>
+          {/* <div className={style.flagsBlock}>
             <LetsGiveHope />
             <OurMission />
             <Image
@@ -60,7 +61,8 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
-          <Veterans />
+          <Veterans /> */}
+          <MeetOurTeam />
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>

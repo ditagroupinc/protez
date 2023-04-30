@@ -31,14 +31,10 @@ const MeetOurTeamText = {
   executives: [
     {
       photo: "yuryA.png",
-      links: [
-        {
-          facebook: "facebook.com",
-        },
-        {
-          instagram: "instagram.com",
-        },
-      ],
+      links: {
+        facebook: "facebook.com",
+        instagram: "instagram.com",
+      },
       name: {
         eng: "Yury Aroshidze",
       },
@@ -121,14 +117,14 @@ export default function MeetOurTeam({}) {
   );
   return (
     <section className={style.section + " section"} style={{ height: height }}>
-      <video autoPlay loop muted className={style.video}>
+      {/* <video autoPlay loop muted className={style.video}>
         <source src="flag-ukraine.mp4" type="video/mp4" />
       </video>
       <h1 className={style.mainTitle}>
         <span>{MeetOurTeamText.lets[lang]}</span>
         <span>{MeetOurTeamText.giveHope[lang]}</span>
         <span>{MeetOurTeamText.together[lang]}</span>
-      </h1>
+      </h1> */}
     </section>
   );
 }

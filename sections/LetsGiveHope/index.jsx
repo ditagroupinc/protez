@@ -3,8 +3,6 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./LetsGiveHope.module.css";
 
-// import video from "../../public/ukraine-110268.mp4";
-
 const letsGiveHopeText = {
   lets: {
     eng: "Let’s",
