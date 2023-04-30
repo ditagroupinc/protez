@@ -15,7 +15,7 @@
   flex-direction: column;
   transform-origin:bottom right;
   right:calc(9.437vw);
-  bottom:0;
+  bottom:-1px;
   transform: rotate(-90deg) translateX(100%);
 }
 .countBlock div:nth-child(1) {
@@ -42,8 +42,4 @@
   justify-content: flex-end;
   width: fit-content;
 }
-
-/* .digit.styleMod span:nth-child(3)::before {
-  content: ',   '; 
-} */
 

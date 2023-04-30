@@ -15,14 +15,11 @@
 }
 
 .digit {
-  /* border-bottom: 4px solid var(--pink); */
   font-family: "Outfit", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 132px;
   line-height: 130px;
-  
-
 }
 
 
