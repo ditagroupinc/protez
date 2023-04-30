@@ -13,7 +13,8 @@
   font-style: normal;
   font-weight: 700;
   font-size: 132px;
-  line-height: 94px;
+  line-height: 96px;
+  text-transform: uppercase;
 }
 
 .italic {

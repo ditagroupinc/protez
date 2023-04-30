@@ -115,12 +115,14 @@ const OurMission = () => {
   });
 
   return (
-    <section style={{ height: height }} className={styles.section}>
-      <Title
-        italicText={OurMissionText.titleText.our[lang]}
-        normalText={OurMissionText.titleText.mission[lang]}
-      />
-      {Cards}
+    <section style={{ height: height }} className={`${styles.section} section`}>
+      <div className={styles.block}>
+        <Title
+          italicText={OurMissionText.titleText.our[lang]}
+          normalText={OurMissionText.titleText.mission[lang]}
+        />
+        {Cards}
+      </div>
     </section>
   );
 };

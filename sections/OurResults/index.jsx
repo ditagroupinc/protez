@@ -15,7 +15,7 @@ const OurResultsText = {
       eng: `Prostheses`,
     },
     volontiers: {
-      eng: `Volontiers.`,
+      eng: `Volontiers`,
     },
     moneySpent: {
       eng: `Money spent`,
@@ -26,12 +26,12 @@ const OurResultsText = {
       eng: "Our",
     },
     results: {
-      eng: "RESULTS",
+      eng: "Results",
     },
   },
 };
 
-const ResultsCounts = [76, 196, 290, 13000000];
+const ResultsCounts = ["76", "196", "290", "1300000"];
 const OurResults = () => {
   const { lang } = useContext(LanguageContext);
   const { height } = useContext(ScreenModeAndSizeContext);
@@ -42,19 +42,20 @@ const OurResults = () => {
         key={i}
         count={ResultsCounts[i]}
         text={OurResultsText.blockInfo[text][lang]}
+        styleMod={styles.styleMod}
       />
     );
   });
 
   return (
     <section style={{ height: height }} className={`${styles.section}`}>
-      <div className={`${styles.block}`}>
+      <div className={`${styles.block} section`}>
         <Title
           italicText={OurResultsText.titleText.our[lang]}
           normalText={OurResultsText.titleText.results[lang]}
           style={styles.title}
         />
-        {BlocksCounts}
+        <div className={`${styles.countBlock}`}>{BlocksCounts}</div>
       </div>
       <div className={`${styles.colorBlock}`}></div>
     </section>
