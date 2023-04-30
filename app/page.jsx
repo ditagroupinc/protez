@@ -62,7 +62,7 @@ export default function Home() {
             />
           </div>
           <OurResults />
-          {/* <Veterans /> */}
+          <Veterans />
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>
