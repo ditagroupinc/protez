@@ -137,14 +137,6 @@ export default function MeetOurTeam({}) {
           ))}
         </div>
       </div>
-      {/* <video autoPlay loop muted className={style.video}>
-        <source src="flag-ukraine.mp4" type="video/mp4" />
-      </video>
-      <h1 className={style.mainTitle}>
-        <span>{MeetOurTeamText.lets[lang]}</span>
-        <span>{MeetOurTeamText.giveHope[lang]}</span>
-        <span>{MeetOurTeamText.together[lang]}</span>
-      </h1> */}
     </section>
   );
 }
