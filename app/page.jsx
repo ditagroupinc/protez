@@ -1,27 +1,25 @@
 "use client";
-import Image from "next/image";
-import "@/styles/fonts.css";
-import "@/styles/resetCSS.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { throttle } from "@/utils";
-import { useContext, useState, createContext, useEffect } from "react";
+// import Image from "next/image";
+// import "@/styles/fonts.css";
+// import "@/styles/resetCSS.css";
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+// import { throttle } from "@/utils";
+// import { useContext, useState, createContext, useEffect } from "react";
 
-import Header from "@/sections/Header";
-import LetsGiveHope from "@/sections/LetsGiveHope";
-import Veterans from "@/sections/Veterans";
-import OurMission from "@/sections/OurMission";
-import MeetOurTeam from "@/sections/MeetOurTeam";
+// import Header from "@/sections/Header";
+// import LetsGiveHope from "@/sections/LetsGiveHope";
+// import Veterans from "@/sections/Veterans";
+// import OurMission from "@/sections/OurMission";
+// import MeetOurTeam from "@/sections/MeetOurTeam";
 
-import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-import style from "./index.module.css";
-import OurResults from "@/sections/OurResults";
+// import { LanguageContext } from "@/contexts/LanguageContext";
+// import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+// import style from "./index.module.css";
 
 export default function Home() {
-  const [lang, setLang] = useState("eng");
-  const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
-
+  // const [lang, setLang] = useState("eng");
+  // const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
   // useEffect(() => {
   //   const getSize = () => {
   //     const win = window;
@@ -47,30 +45,29 @@ export default function Home() {
   //   }
   // }, []);
 
-
   return (
-    <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
-      <ScreenModeAndSizeContext.Provider value={windowSizes}>
-        <Header />
-        <main style={{ backgroundColor: "var(--black)" }}>
-          <div className={style.flagsBlock}>
-            <LetsGiveHope />
-            <OurMission />
-            <Image
-              src="/flag-usa.png"
-              object-fit="contain"
-              priority
-              alt="Picture of the author"
-              width={1306}
-              height={1890}
-              className={style.americanFlag}
-            />
-          </div>
-          <OurResults />
-          {/* <Veterans /> */}
-          <MeetOurTeam />
-        </main>
-      </ScreenModeAndSizeContext.Provider>
-    </LanguageContext.Provider>
+    // <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
+    //   <ScreenModeAndSizeContext.Provider value={windowSizes}>
+    //     <Header />
+    //     <main style={{ backgroundColor: "var(--black)" }}>
+    //       <div className={style.flagsBlock}>
+    //         <LetsGiveHope />
+    //         <OurMission />
+    //         <Image
+    //           src="/flag-usa.png"
+    //           object-fit="contain"
+    //           priority
+    //           alt="Picture of the author"
+    //           width={1306}
+    //           height={1890}
+    //           className={style.americanFlag}
+    //         />
+    //       </div>
+    //       {/* <Veterans /> */}
+    //       <MeetOurTeam />
+    //     </main>
+    //   </ScreenModeAndSizeContext.Provider>
+    // </LanguageContext.Provider>
+    <div>hello</div>
   );
 }
