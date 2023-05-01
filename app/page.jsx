@@ -11,6 +11,7 @@ import Header from "@/sections/Header";
 import LetsGiveHope from "@/sections/LetsGiveHope";
 import Veterans from "@/sections/Veterans";
 import OurMission from "@/sections/OurMission";
+import MeetOurTeam from "@/sections/MeetOurTeam";
 
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
@@ -63,6 +64,7 @@ export default function Home() {
           </div>
           <OurResults />
           <Veterans />
+          <MeetOurTeam />
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>

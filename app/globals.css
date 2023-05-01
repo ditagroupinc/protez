@@ -13,11 +13,6 @@
 
 }
 
-html,
-body {
-  font-family: "Outfit", sans-serif;
-}
-
 body::-webkit-scrollbar {
   display: none;
 }
@@ -32,6 +27,7 @@ html,
 body {
   font-family: "Outfit", sans-serif;
   font-style: normal;
+  color: var(--white);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -57,12 +53,14 @@ body {
 .h3,
 .h4 {
   font-weight: 700;
+  font-family: "Outfit", sans-serif;
 }
 .h2,
 .h5,
 .h6,
 .p {
   font-weight: 400;
+  font-family: "Outfit", sans-serif;
 }
 /* .h3 {
   font-weight: 700;
@@ -225,7 +223,7 @@ body {
 .section {
   padding-left: var(--sectionPaddingLeft);
   padding-right: var(--sectionPaddingRight);
-  padding-top: 120px;
+  padding-top: 9%;
 }
 
 .section .slick-dots {

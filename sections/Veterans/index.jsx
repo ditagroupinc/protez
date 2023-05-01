@@ -23,7 +23,8 @@ const veteransText = {
       text: {
         eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
       },
-      img: "vadim.png",
+      img: "vadimFedorov.png",
+      icon: "vadymFedorov.svg",
     },
     {
       ageRank: {
@@ -41,7 +42,8 @@ const veteransText = {
       text: {
         eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
       },
-      img: "vadim.png",
+      img: "vadimFedorov.png",
+      icon: "vadymFedorov.svg",
     },
     {
       ageRank: {
@@ -59,27 +61,11 @@ const veteransText = {
       text: {
         eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
       },
-      img: "vadim.png",
-    },
-    {
-      ageRank: {
-        eng: "30 years old, sergeant.",
-      },
-      name: {
-        eng: "Vadym",
-      },
-      surname: {
-        eng: "Fedorov",
-      },
-      title: {
-        eng: "Vadym has dedicated 10 years to the Ukrainian Army. ",
-      },
-      text: {
-        eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
-      },
-      img: "vadim.png",
+      img: "vadimFedorov.png",
+      icon: "vadymFedorov.svg",
     },
   ],
+
   share: {
     eng: "Share me",
   },
@@ -179,10 +165,8 @@ export default function Veterans() {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // lazyLoad: true,
     arrows: false,
     nextArrow: <SampleNextArrow />,
-    // dotsClass: `${style.sliderDots}`,
   };
   return (
     <section className={style.section + " section"} style={{ height: height }}>
@@ -195,8 +179,16 @@ export default function Veterans() {
                   {element.ageRank[lang]}
                 </h5>
                 <h3 className={style.nameSurname}>
-                  <span>{element.name[lang]}</span>
-                  <span>{element.surname[lang]}</span>
+                  <Image
+                    src={`/veterans/${element.icon}`}
+                    priority
+                    alt={element.name[lang] + " " + element.surname[lang]}
+                    width={692}
+                    height={194}
+                    // className={style.photo}
+                  />
+                  {/* <span>{element.name[lang]}</span>
+                  <span>{element.surname[lang]}</span> */}
                 </h3>
                 <h4 className={`h2 ${screenModeClass} ${style.cardTitle}`}>
                   {element.title[lang]}
@@ -226,19 +218,19 @@ export default function Veterans() {
                 </div>
               </div>
               <div className={style.rightSide}>
-                {/* <Image
-                src={`/veterans/${element.img}`}
-                priority
-                alt="Picture of the author"
-                className={style.photo}
-                width={1306}
-                height={1890}
-              /> */}
-                <img
+                <Image
+                  src={`/veterans/${element.img}`}
+                  priority
+                  alt={element.name[lang] + " " + element.surname[lang]}
+                  className={style.photo}
+                  width={1306}
+                  height={1890}
+                />
+                {/* <img
                   src={`/veterans/${element.img}`}
                   alt="Picture of the author"
                   className={style.photo}
-                />
+                /> */}
               </div>
             </div>
           </div>
