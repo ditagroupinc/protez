@@ -3,13 +3,14 @@ import style from "./TeamCard.module.css";
 import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+import { icons } from "@/public/socialMediaIcons";
 
-export default function TeamCard({ photo, links, name, position }) {
+export default function TeamCard({ photo, links = {}, name, position, black }) {
   const { lang } = useContext(LanguageContext);
   const { height, width, mobile, screenModeClass } = useContext(
     ScreenModeAndSizeContext
   );
-  console.log(links);
+  console.log(icons);
   return (
     <div className={`${screenModeClass} ${style.teamCard}`}>
       <Image
@@ -19,21 +20,16 @@ export default function TeamCard({ photo, links, name, position }) {
         alt="Picture of the author"
         width={264}
         height={220}
-        className={style.photo}
       />
-      <div className={`${screenModeClass} ${style.container}`}>
+      <div
+        className={`${screenModeClass} ${style.container} ${
+          black && style.black
+        }`}
+      >
         <div className={`${screenModeClass} ${style.linksList}`}>
           {Object.keys(links).map((key, index) => (
             <a href={links[key]} key={index}>
-              <Image
-                src={`/socialMediaIcons/${key}.svg`}
-                object-fit="contain"
-                priority
-                alt="Picture of the author"
-                width={33}
-                height={33}
-                className={style.photo}
-              />
+              {icons[key](style.icon, black && "#0D1125")}
             </a>
           ))}
         </div>
