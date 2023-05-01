@@ -48,7 +48,7 @@ export default function Home() {
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header />
         <main style={{ backgroundColor: "var(--black)" }}>
-          {/* <div className={style.flagsBlock}>
+          <div className={style.flagsBlock}>
             <LetsGiveHope />
             <OurMission />
             <Image
@@ -61,7 +61,7 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
-          <Veterans /> */}
+          <Veterans />
           <MeetOurTeam />
         </main>
       </ScreenModeAndSizeContext.Provider>

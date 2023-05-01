@@ -1,0 +1,24 @@
+.teamCard {
+  max-width: 264px;
+}
+
+.container {
+  box-sizing: content-box;
+  border-left: 1px solid var(--white);
+  border-right: 1px solid var(--white);
+  padding: 2rem 1rem;
+}
+
+.linksList {
+  display: flex;
+  gap: 1rem;
+}
+
+.name {
+  font-weight: 700;
+  margin-top: 1.25rem;
+}
+
+.position {
+  padding-top: 3rem;
+}

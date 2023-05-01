@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./MeetOurTeam.module.css";
+import TeamCard from "@/components/TeamCard";
 
 const MeetOurTeamIcon = () => {
   <svg
@@ -44,14 +45,10 @@ const MeetOurTeamText = {
     },
     {
       photo: "yakovG.png",
-      links: [
-        {
-          facebook: "facebook.com",
-        },
-        {
-          instagram: "instagram.com",
-        },
-      ],
+      links: {
+        facebook: "facebook.com",
+        instagram: "instagram.com",
+      },
       name: {
         eng: "Yakov Gradinar",
       },
@@ -125,6 +122,15 @@ export default function MeetOurTeam({}) {
         <span>{MeetOurTeamText.giveHope[lang]}</span>
         <span>{MeetOurTeamText.together[lang]}</span>
       </h1> */}
+      {MeetOurTeamText.executives.map((card, index) => (
+        <TeamCard
+          key={index}
+          photo={card.photo}
+          links={card.links}
+          name={card.name[lang]}
+          position={card.position[lang]}
+        />
+      ))}
     </section>
   );
 }
