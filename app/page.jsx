@@ -63,10 +63,12 @@ export default function Home() {
              />
            </div>
            <Veterans />
-    //       <MeetOurTeam />
+    
          </main>
        </ScreenModeAndSizeContext.Provider>
      </LanguageContext.Provider>
     
   );
 }
+
+//       <MeetOurTeam />
