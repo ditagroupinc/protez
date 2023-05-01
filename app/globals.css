@@ -226,6 +226,10 @@ body {
   padding-top: 9%;
 }
 
+.svgTextBlock {
+  max-width: 100%;
+}
+
 .section .slick-dots {
   width: fit-content;
 }
