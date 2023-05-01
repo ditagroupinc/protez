@@ -48,23 +48,23 @@ export default function Home() {
      <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
        <ScreenModeAndSizeContext.Provider value={windowSizes}>
          <Header />
-    //     <main style={{ backgroundColor: "var(--black)" }}>
-    //       <div className={style.flagsBlock}>
-    //         <LetsGiveHope />
-    //         <OurMission />
-    //         <Image
-    //           src="/flag-usa.png"
-    //           object-fit="contain"
-    //           priority
-    //           alt="Picture of the author"
-    //           width={1306}
-    //           height={1890}
-    //           className={style.americanFlag}
-    //         />
-    //       </div>
+         <main style={{ backgroundColor: "var(--black)" }}>
+           <div className={style.flagsBlock}>
+             <LetsGiveHope />
+             <OurMission />
+             <Image
+               src="/flag-usa.png"
+               object-fit="contain"
+               priority
+               alt="Picture of the author"
+               width={1306}
+               height={1890}
+               className={style.americanFlag}
+             />
+           </div>
     //       {/* <Veterans /> */}
     //       <MeetOurTeam />
-    //     </main>
+         </main>
        </ScreenModeAndSizeContext.Provider>
      </LanguageContext.Provider>
     
