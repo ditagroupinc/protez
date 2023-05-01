@@ -1,14 +1,12 @@
 .counter {
-  transform-origin: 90px 90px;
-  align-self: end;
-  transform: rotate(-90deg);
-  white-space: nowrap;
+  color: var(--white); 
   display: flex;
   flex-direction: column;
-
-  max-width:  50.308vw;
-  color: var(--white);
-
+  justify-content: flex-end;
+  white-space: nowrap;
+  width: fit-content;
+  border-bottom: 4px solid var(--pink);
+  padding-top: 2.246vw;
 }
 
 .counter:hover {
@@ -17,11 +15,13 @@
 }
 
 .digit {
-  border-bottom: 4px solid var(--pink);
   font-family: "Outfit", sans-serif;
   font-style: normal;
   font-weight: 700;
   font-size: 132px;
   line-height: 130px;
-
 }
+
+
+
+

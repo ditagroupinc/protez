@@ -1,15 +1,38 @@
 .section {
   width: 100%;
   display: grid;
-  grid-template-rows: 52.308vh 47.692vh;
+  grid-template-rows: 61.111% 38.889%;
   background-color: var(--black);
 }
 
 .block {
-  padding: 16.923vh var(--sectionPaddingRight) 0 var(--sectionPaddingLeft);
-  display: flex;
-
+  position:relative;
 }
+
+.countBlock{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  transform-origin:bottom right;
+  right:calc(9.437vw);
+  bottom:-1px;
+  transform: rotate(-90deg) translateX(100%);
+}
+.countBlock div:nth-child(1) {
+  width: 20vh;
+}
+.countBlock div:nth-child(2) {
+  width: 27vh;
+}
+
+.countBlock div:nth-child(3) {
+  width: 34vh;
+}
+
+.countBlock div:nth-child(4) {
+  width: 45.417vh;
+}
+
 
 .colorBlock {
   background-color: var(--pink);
@@ -17,4 +40,6 @@
 
 .title {
   justify-content: flex-end;
+  width: fit-content;
 }
+

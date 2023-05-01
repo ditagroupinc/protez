@@ -1,5 +1,4 @@
 .block {
-  margin: -1px -1px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
