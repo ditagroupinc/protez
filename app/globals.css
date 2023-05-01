@@ -106,6 +106,15 @@ body {
     font-size: calc(18px + 8 * ((100vw - 360px) / 2200));
     line-height: calc(28px + 12 * ((100vw - 360px) / 2200));
   }
+  .bigNumb{
+    font-size: calc(72px + 60 * ((100vw - 360px) / 2200));
+    line-height: calc(40px + 96 * ((100vw - 360px) / 2200));
+    font-weight: 600;
+  }
+  .BigTitle{
+    font-size: calc(52px + 80 * ((100vw - 360px) / 2200));
+    line-height: calc(40px + 56 * ((100vw - 360px) / 2200));
+  }
 }
 @media screen and (min-width: 2560px) {
   .h1 {
@@ -134,6 +143,15 @@ body {
   .p {
     font-size: 26px;
     line-height: 40px;
+  }
+  .bigNumb{
+    font-weight: 600;
+    font-size: 132px;
+    line-height: 130px;
+  }
+  .BigTitle{
+    font-size: 132px;
+    line-height: 96px;
   }
 }
 
