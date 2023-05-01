@@ -169,7 +169,10 @@ export default function Veterans() {
     nextArrow: <SampleNextArrow />,
   };
   return (
-    <section className={style.section + " section"} style={{ height: height }}>
+    <section
+      className={style.section + " section veterans"}
+      style={{ height: height }}
+    >
       <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
         {veteransText.veterans.map((element, index) => (
           <div key={index}>

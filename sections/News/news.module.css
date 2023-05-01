@@ -1,0 +1,12 @@
+.section {
+}
+.logoContainer {
+  display: flex;
+  justify-content: center;
+}
+.newsContainer {
+  margin-top: 100px;
+  /* display: flex;
+  justify-content: center;
+  gap: 2.5rem; */
+}
