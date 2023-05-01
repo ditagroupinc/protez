@@ -62,7 +62,7 @@ export default function Home() {
                className={style.americanFlag}
              />
            </div>
-    //       {/* <Veterans /> */}
+           <Veterans />
     //       <MeetOurTeam />
          </main>
        </ScreenModeAndSizeContext.Provider>
