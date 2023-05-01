@@ -21,26 +21,28 @@ export default function Home() {
   const [lang, setLang] = useState("eng");
   const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
   useEffect(() => {
-    const getSize = () => {
-      const win = window;
-      const doc = document;
-      const docElem = doc.documentElement;
-      const body = doc.getElementsByTagName("body")[0];
-      const windowWidth =
-        win.innerWidth || docElem.clientWidth || body.clientWidth;
-      const windowHeight =
-        win.innerHeight || docElem.clientHeight || body.clientHeight;
-      const mobile = false;
-      const screenModeClass = mobile ? "mobile" : "desktop";
-      setWindowSizes({
-        width: windowWidth,
-        height: windowHeight,
-        mobile: false,
-        screenModeClass,
-      });
-    };
-    getSize();
-    window.addEventListener("resize", throttle(getSize, 150));
+    // const getSize = () => {
+    //   const win = window;
+    //   const doc = document;
+    //   const docElem = doc.documentElement;
+    //   const body = doc.getElementsByTagName("body")[0];
+    //   const windowWidth =
+    //     win.innerWidth || docElem.clientWidth || body.clientWidth;
+    //   const windowHeight =
+    //     win.innerHeight || docElem.clientHeight || body.clientHeight;
+    //   const mobile = false;
+    //   const screenModeClass = mobile ? "mobile" : "desktop";
+    //   setWindowSizes({
+    //     width: windowWidth,
+    //     height: windowHeight,
+    //     mobile: false,
+    //     screenModeClass,
+    //   });
+    // };
+    // getSize();
+    // if (window) {
+    //   window.addEventListener("resize", throttle(getSize, 150));
+    // }
   }, []);
 
   return (
