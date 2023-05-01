@@ -41,7 +41,9 @@ export default function Home() {
       });
     };
     getSize();
-    window.addEventListener("resize", throttle(getSize, 150));
+    if (window) {
+      window.addEventListener("resize", throttle(getSize, 150));
+    }
   }, []);
 
   return (
