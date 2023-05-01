@@ -16,10 +16,12 @@ import MeetOurTeam from "@/sections/MeetOurTeam";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./index.module.css";
+import OurResults from "@/sections/OurResults";
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
   const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
+
   // useEffect(() => {
   //   const getSize = () => {
   //     const win = window;
@@ -45,6 +47,7 @@ export default function Home() {
   //   }
   // }, []);
 
+
   return (
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
@@ -63,6 +66,7 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
+          <OurResults />
           <Veterans />
           <MeetOurTeam />
         </main>
