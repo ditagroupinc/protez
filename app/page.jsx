@@ -1,21 +1,21 @@
 "use client";
-// import Image from "next/image";
-// import "@/styles/fonts.css";
-// import "@/styles/resetCSS.css";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-// import { throttle } from "@/utils";
-// import { useContext, useState, createContext, useEffect } from "react";
+import Image from "next/image";
+import "@/styles/fonts.css";
+import "@/styles/resetCSS.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { throttle } from "@/utils";
+import { useContext, useState, createContext, useEffect } from "react";
 
-// import Header from "@/sections/Header";
-// import LetsGiveHope from "@/sections/LetsGiveHope";
-// import Veterans from "@/sections/Veterans";
-// import OurMission from "@/sections/OurMission";
-// import MeetOurTeam from "@/sections/MeetOurTeam";
+import Header from "@/sections/Header";
+import LetsGiveHope from "@/sections/LetsGiveHope";
+import Veterans from "@/sections/Veterans";
+import OurMission from "@/sections/OurMission";
+import MeetOurTeam from "@/sections/MeetOurTeam";
 
-// import { LanguageContext } from "@/contexts/LanguageContext";
-// import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-// import style from "./index.module.css";
+import { LanguageContext } from "@/contexts/LanguageContext";
+import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+import style from "./index.module.css";
 
 export default function Home() {
   // const [lang, setLang] = useState("eng");
