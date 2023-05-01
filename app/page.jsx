@@ -45,9 +45,9 @@ export default function Home() {
    }, []);
 
   return (
-    // <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
-    //   <ScreenModeAndSizeContext.Provider value={windowSizes}>
-    //     <Header />
+     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
+       <ScreenModeAndSizeContext.Provider value={windowSizes}>
+         <Header />
     //     <main style={{ backgroundColor: "var(--black)" }}>
     //       <div className={style.flagsBlock}>
     //         <LetsGiveHope />
@@ -65,8 +65,8 @@ export default function Home() {
     //       {/* <Veterans /> */}
     //       <MeetOurTeam />
     //     </main>
-    //   </ScreenModeAndSizeContext.Provider>
-    // </LanguageContext.Provider>
-    <div>hello</div>
+       </ScreenModeAndSizeContext.Provider>
+     </LanguageContext.Provider>
+    
   );
 }
