@@ -17,6 +17,7 @@ import OurPartners from "@/sections/OurPartners";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./index.module.css";
+import MailingList from "@/sections/MailingList";
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
@@ -65,6 +66,7 @@ export default function Home() {
           <Veterans />
           <MeetOurTeam />
           <OurPartners />
+          <MailingList />
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>
