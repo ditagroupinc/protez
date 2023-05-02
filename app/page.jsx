@@ -67,12 +67,13 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
-          <OurResults />
+          <MailingList />
+          {/* <OurResults />
           <InNeed />
           <Veterans />
           <MeetOurTeam />
           <OurPartners />
-          <News />
+          <News /> */}
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>
