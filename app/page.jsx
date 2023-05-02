@@ -13,6 +13,8 @@ import Veterans from "@/sections/Veterans";
 import OurMission from "@/sections/OurMission";
 import MeetOurTeam from "@/sections/MeetOurTeam";
 import OurPartners from "@/sections/OurPartners";
+
+import News from "@/sections/News";
 import InNeed from "@/sections/InNeed";
 import OurResults from "@/sections/OurResults";
 
@@ -69,6 +71,7 @@ export default function Home() {
           <Veterans />
           <MeetOurTeam />
           <OurPartners />
+          <News />
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>
