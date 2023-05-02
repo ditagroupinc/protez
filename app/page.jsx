@@ -14,6 +14,10 @@ import OurMission from "@/sections/OurMission";
 import MeetOurTeam from "@/sections/MeetOurTeam";
 import OurPartners from "@/sections/OurPartners";
 
+import News from "@/sections/News";
+import InNeed from "@/sections/InNeed";
+import OurResults from "@/sections/OurResults";
+
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./index.module.css";
@@ -63,10 +67,12 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
+          <OurResults />
+          <InNeed />
           <Veterans />
           <MeetOurTeam />
           <OurPartners />
-          <MailingList />
+          <News />
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>

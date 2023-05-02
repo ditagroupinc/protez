@@ -106,6 +106,15 @@ body {
     font-size: calc(18px + 8 * ((100vw - 360px) / 2200));
     line-height: calc(28px + 12 * ((100vw - 360px) / 2200));
   }
+  .bigNumb{
+    font-size: calc(72px + 60 * ((100vw - 360px) / 2200));
+    line-height: calc(40px + 96 * ((100vw - 360px) / 2200));
+    font-weight: 600;
+  }
+  .BigTitle{
+    font-size: calc(52px + 80 * ((100vw - 360px) / 2200));
+    line-height: calc(40px + 56 * ((100vw - 360px) / 2200));
+  }
 }
 @media screen and (min-width: 2560px) {
   .h1 {
@@ -135,6 +144,15 @@ body {
     font-size: 26px;
     line-height: 40px;
   }
+  .bigNumb{
+    font-weight: 600;
+    font-size: 132px;
+    line-height: 130px;
+  }
+  .BigTitle{
+    font-size: 132px;
+    line-height: 96px;
+  }
 }
 
 .squareButton {
@@ -155,24 +173,40 @@ body {
   max-width: 100%;
 }
 
-.section .slick-dots {
-  width: fit-content;
-}
-
-.section .slick-dots li.slick-active button:before {
+.veterans .slick-dots li.slick-active button:before {
   color: var(--pink);
 }
 
-.section .slick-dots li button:before {
+.veterans .slick-dots li button:before {
   color: var(--white);
   opacity: 1;
 }
 
-.section .slick-dots {
+.veterans .slick-dots {
+  width: fit-content;
   position: absolute;
   margin-top: 7rem;
   bottom: calc(4vw + 0.5rem);
   /* left: calc(var(--sectionPaddingLeft) + 120px + 1rem); */
   left: calc(120px + 1rem);
+
   /* transform: translateY(50%); */
+}
+.news .slick-slider {
+  height: 100%;
+}
+
+.news .slick-dots {
+  width: fit-content;
+  position: static;
+  margin-top: 7rem;
+}
+
+.news .slick-dots li.slick-active button:before {
+  color: var(--pink);
+}
+
+.news .slick-dots li button:before {
+  color: var(--white);
+  opacity: 1;
 }

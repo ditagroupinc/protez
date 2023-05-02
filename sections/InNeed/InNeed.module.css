@@ -1,0 +1,61 @@
+.section {
+  width: 100%;
+  background-color: var(--pink);
+  display: flex;
+
+}
+.block{
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  color: var(--white);
+  gap: 1.172vw;
+}
+
+.title{
+  flex: 1 1 45%;
+}
+.text{
+  flex: 1 1 45%;
+
+}
+.colorModBlack{
+  color: var(--black);
+}
+
+
+.fontPlayfair{
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  color: var(--white);
+  font-weight: 600;
+}
+.lineHeight{
+  line-height: 132px;
+}
+@media screen and (min-width: 360px) {
+  .fontSizeBig {
+    font-size: calc(52px + 30 * ((100vw - 360px) / 2200));
+    line-height: calc(40px + 40 * ((100vw - 360px) / 2200));
+  }
+  .fontPlayfair {
+    font-size: calc(52px + 30 * ((100vw - 360px) / 2200));
+    line-height: calc(40px + 40 * ((100vw - 360px) / 2200));
+  }
+  .lineHeight{
+    line-height: calc(60px + 72 * ((100vw - 360px) / 2200));
+  }
+}
+@media screen and (min-width: 2560px) {
+  .fontSizeBig {
+    font-size: 84px;
+    line-height: 80px;
+  }
+  .fontPlayfair {
+    font-size: 84px;
+    line-height: 80px;
+  }
+  .lineHeight{
+    line-height: 132px;
+  }
+}
