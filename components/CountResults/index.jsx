@@ -56,8 +56,8 @@ const CountResults = ({ count, text }) => {
   return (
     <>
       <div className={`h2 ${styles.counter} ${mobileDesktopClass()}`}>
-        <span>{text}</span>{" "}
-        <span ref={ref} className={`${styles.digit}`}>
+        <span className={`${styles.title}`}>{text}</span>
+        <span ref={ref} className={`bigNumb`}>
           {inViewport ? MyCounter() : 0}
         </span>
       </div>

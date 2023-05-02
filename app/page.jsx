@@ -16,6 +16,7 @@ import OurPartners from "@/sections/OurPartners";
 
 import News from "@/sections/News";
 import InNeed from "@/sections/InNeed";
+import OurResults from "@/sections/OurResults";
 
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
@@ -65,6 +66,7 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
+          <OurResults />
           <InNeed />
           <Veterans />
           <MeetOurTeam />
