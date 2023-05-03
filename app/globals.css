@@ -170,6 +170,20 @@ body {
   padding-right: var(--sectionPaddingRight);
   padding-top: 9%;
 }
+@media screen and (max-width: 1180px) {
+  .section {
+    padding-left: calc(8vw + 6.875vw);
+    padding-right: calc(4vw + 6.875vw);
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .section {
+    padding-top: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
 
 .svgTextBlock {
   max-width: 100%;
