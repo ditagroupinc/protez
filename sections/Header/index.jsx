@@ -184,7 +184,9 @@ export default function Header() {
         </>
       )}
 
-      <button className={`${style.backToTopButton} h6 ${screenModeClass}`}>
+      <button
+        className={`${style.backToTopButton} h6 ${mobile ? style.mobile : ""}`}
+      >
         {headerText.actionButtons.back2top[lang]}
       </button>
     </>

@@ -223,6 +223,9 @@
     /* transform: scale(var(--textScale)); */
     transition: color var(--transitionProps);
   }
+  &.mobile {
+    right: 0.5rem;
+  }
 }
 
 .socialMediaLinksFixed,

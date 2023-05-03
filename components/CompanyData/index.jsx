@@ -34,29 +34,25 @@ export default function CompanyData({ className }) {
     useContext(ScreenModeAndSizeContext);
   return (
     <div className={style.container + " " + className}>
-      <div className={style.adressContainer}>
+      <div className={`${style.adressContainer} ${mobile ? style.mobile : ""}`}>
         <p>
-          <span className={"h6 " + screenModeClass}>
+          <span className={"h6 "}>
             {companyDataText.organizationData.nonProfitOrganization[lang]}
           </span>
-          <span className={"h6 " + screenModeClass}>
+          <span className={"h6 "}>
             {companyDataText.organizationData.ein[lang]}
           </span>
         </p>
         <Divider />
-        <p className={"h5 " + screenModeClass}>
-          {companyDataText.organizationData.adress[lang]}
-        </p>
+        <p className={"h5 "}>{companyDataText.organizationData.adress[lang]}</p>
       </div>
-      <div className={style.buttonsContainer}>
-        <button
-          className={`squareButton h6 ${screenModeClass} ${style.pinkButton}`}
-        >
+      <div
+        className={`${style.buttonsContainer} ${mobile ? style.mobile : ""}`}
+      >
+        <button className={`squareButton h6 ${style.pinkButton}`}>
           {companyDataText.actionButtons.makeDonation[lang]}
         </button>
-        <button
-          className={`squareButton h6 ${screenModeClass} ${style.transparentButton}`}
-        >
+        <button className={`squareButton h6 ${style.transparentButton}`}>
           {companyDataText.actionButtons.needAProtez[lang]}
         </button>
       </div>
