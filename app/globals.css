@@ -96,7 +96,7 @@ body {
     line-height: calc(24px + 8 * ((100vw - 360px) / 2200));
   }
   .h5 {
-    font-size: calc(18px + 10 * ((100vw - 360px) / 2200));
+    font-size: calc(16px + 12 * ((100vw - 360px) / 2200));
     line-height: calc(24px + 16 * ((100vw - 360px) / 2200));
   }
   .h6 {
