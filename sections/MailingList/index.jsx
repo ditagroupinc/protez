@@ -84,15 +84,8 @@ const MailingList = () => {
       <div className={styles.images}>
         <Images />
       </div>
-      <div className={`${styles.title} `}>
+      <div className={`${styles.title} h6`}>
         {TitleSVG()}
-        {/* <h2>{MailingListText.titleText.join[lang]}</h2>
-        <h2>
-          {MailingListText.titleText.mailing[lang]}
-          <span className={`${styles.uppercase} `}>
-            {MailingListText.titleText.list[lang]}
-          </span>
-        </h2> */}
         <form className={`${styles.form} h6`} action="POST">
           <input
             className="p"
@@ -101,11 +94,7 @@ const MailingList = () => {
             name="email"
             required
           />
-          <button
-            className={`squareButton  ${mobileDesktopClass()} ${
-              styles.pinkButton
-            }`}
-          >
+          <button className={`squareButton p  ${mobileDesktopClass()} `}>
             {MailingListText.titleText.subcribe[lang]}
           </button>
         </form>

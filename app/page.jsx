@@ -52,7 +52,7 @@ export default function Home() {
   return (
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
-        <Header />
+        {/* <Header /> */}
         <main style={{ backgroundColor: "var(--black)" }}>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
