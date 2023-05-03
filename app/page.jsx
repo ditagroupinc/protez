@@ -37,10 +37,13 @@ export default function Home() {
         win.innerHeight || docElem.clientHeight || body.clientHeight;
       const mobile = false;
       const screenModeClass = mobile ? "mobile" : "desktop";
+
       setWindowSizes({
         width: windowWidth,
         height: windowHeight,
-        mobile: false,
+        mobile: windowWidth <= 420,
+        tablet: windowWidth <= 1180,
+        desktop: windowWidth >= 1181,
         screenModeClass,
       });
     };

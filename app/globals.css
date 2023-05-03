@@ -10,6 +10,8 @@
   --navRightWidth: 64px;
   --sectionPaddingLeft: calc(300px + 8vw + 6.875vw);
   --sectionPaddingRight: calc(64px + 4vw + 6.875vw);
+  --transitionProps: 0.3s;
+  --textScale: 1.01;
 }
 
 body::-webkit-scrollbar {
@@ -106,12 +108,12 @@ body {
     font-size: calc(18px + 8 * ((100vw - 360px) / 2200));
     line-height: calc(28px + 12 * ((100vw - 360px) / 2200));
   }
-  .bigNumb{
+  .bigNumb {
     font-size: calc(72px + 60 * ((100vw - 360px) / 2200));
     line-height: calc(40px + 96 * ((100vw - 360px) / 2200));
     font-weight: 600;
   }
-  .BigTitle{
+  .BigTitle {
     font-size: calc(52px + 80 * ((100vw - 360px) / 2200));
     line-height: calc(40px + 56 * ((100vw - 360px) / 2200));
   }
@@ -144,12 +146,12 @@ body {
     font-size: 26px;
     line-height: 40px;
   }
-  .bigNumb{
+  .bigNumb {
     font-weight: 600;
     font-size: 132px;
     line-height: 130px;
   }
-  .BigTitle{
+  .BigTitle {
     font-size: 132px;
     line-height: 96px;
   }

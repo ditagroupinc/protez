@@ -10,7 +10,7 @@ export default function TeamCard({ photo, links = {}, name, position, black }) {
   const { height, width, mobile, screenModeClass } = useContext(
     ScreenModeAndSizeContext
   );
-  console.log(icons);
+
   return (
     <div className={`${screenModeClass} ${style.teamCard}`}>
       <Image
