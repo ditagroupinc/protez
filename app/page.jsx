@@ -41,7 +41,11 @@ export default function Home() {
       setWindowSizes({
         width: windowWidth,
         height: windowHeight,
-        mobile: false,
+        mobile: windowWidth <= 420,
+        tablet: windowWidth <= 1180,
+        tabletLarge: windowWidth <= 1366,
+        desktopSmall: windowWidth <= 1920,
+        desktop: windowWidth >= 1921,
         screenModeClass,
       });
     };
@@ -52,11 +56,11 @@ export default function Home() {
   return (
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
-        {/* <Header /> */}
+        <Header />
         <main style={{ backgroundColor: "var(--black)" }}>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
-            <OurMission />
+            {/* <OurMission /> */}
             <Image
               src="/flag-usa.png"
               object-fit="contain"
@@ -67,13 +71,13 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
-          <MailingList />
           {/* <OurResults />
           <InNeed />
           <Veterans />
           <MeetOurTeam />
           <OurPartners />
           <News /> */}
+          <MailingList />
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>

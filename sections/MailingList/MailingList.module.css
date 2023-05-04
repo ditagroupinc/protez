@@ -126,8 +126,8 @@
   }
 }
 
-@media  screen and (max-width: 1920px) {
-  .title{
+/* @media  screen and (max-width: 1920px) { */
+  .title.desktopSmall {
     width: calc(350px + 480 * ((100vw - 360px) /2500));
     margin-top: 0vh;
     & svg{
@@ -135,7 +135,7 @@
     }
   }
   
-  .form{
+  .form.desktopSmall {
     margin-top: 1vh;
     column-gap: 5%;
     & input{
@@ -147,11 +147,14 @@
       flex: 1 1 30%;
     }
   }
-  .images{
-    padding: 0 0 0 0;
+  .images.desktopSmall {
+    padding: 0 0;
   }
-}
+/* } */
 @media  screen and (max-width: 1366px) {
+  .section{
+    padding: 0 33.5px;
+  }
   .title{
     width: calc(220px + 350 * ((100vh - 360px) /2200));;
     margin-top: 0vh;
@@ -162,6 +165,7 @@
   }
   
   .form{
+    
     margin-top: 0vh;
     padding-bottom: 0.2em;
     column-gap: 2%;

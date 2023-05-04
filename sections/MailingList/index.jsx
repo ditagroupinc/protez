@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import Image from "next/image";
+import { switchWindowSize } from "@/utils/switchWindowSize";
 
 const MailingListText = {
   titleText: {
@@ -57,10 +58,25 @@ const imgRoute = [
 const MailingList = () => {
   const { lang } = useContext(LanguageContext);
   const { height } = useContext(ScreenModeAndSizeContext);
-  const { mobile } = useContext(ScreenModeAndSizeContext);
+  const { mobile, tablet, tabletLarge, desktopSmall } = useContext(
+    ScreenModeAndSizeContext
+  );
+  const switchWindowSize = (mobile, tablet, tabletLarge, desktopSmall) => {
+    switch (true) {
+      case mobile:
+        return "mobile";
+      case tablet:
+        return "tablet";
+      case tabletLarge:
+        return "tabletLarge";
+      case desktopSmall:
+        return "desktopSmall";
+      default:
+        return "desktop";
+    }
+  };
   const mobileDesktopClass = () => {
-    if (mobile) return "mobile";
-    return "desktop";
+    return switchWindowSize(mobile, tablet, tabletLarge, desktopSmall);
   };
 
   const Images = () => {
@@ -70,6 +86,7 @@ const MailingList = () => {
           <Image
             src={path}
             alt="troops"
+            priority
             width={2560}
             height={1440}
             className={styles.troopsImg}
@@ -80,13 +97,19 @@ const MailingList = () => {
   };
 
   return (
-    <section style={{ height: height }} className={`${styles.section} `}>
-      <div className={styles.images}>
+    <section
+      style={{ height: height }}
+      className={`${styles.section} ${mobileDesktopClass()} `}
+    >
+      <div className={`${styles.images} ${mobileDesktopClass()}`}>
         <Images />
       </div>
-      <div className={`${styles.title} h6`}>
+      <div className={`${styles.title} ${mobileDesktopClass()} h6`}>
         {TitleSVG()}
-        <form className={`${styles.form} h6`} action="POST">
+        <form
+          className={`${styles.form} ${mobileDesktopClass()} h6`}
+          action="POST"
+        >
           <input
             className="p"
             placeholder={MailingListText.titleText.email[lang]}
