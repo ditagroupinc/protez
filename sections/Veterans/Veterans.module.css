@@ -1,7 +1,6 @@
 .section {
   color: var(--white);
   padding-right: calc(64px + 4vw);
-  position: relative;
 }
 
 .slickSlider {

@@ -4,6 +4,7 @@ import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./Veterans.module.css";
 import Image from "next/image";
 import Slider from "react-slick";
+import SmokeBackground from "@/components/SmokeBackground";
 
 const veteransText = {
   veterans: [
@@ -173,10 +174,12 @@ export default function Veterans() {
       className={style.section + " section veterans"}
       style={{ height: height }}
     >
+      <SmokeBackground />
       <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
         {veteransText.veterans.map((element, index) => (
           <div key={index}>
             <div className={style.sliderCard}>
+              {/* <SmokeBackground /> */}
               <div className={style.leftSide}>
                 <h5 className={`h5 ${screenModeClass} ${style.ageRank}`}>
                   {element.ageRank[lang]}
