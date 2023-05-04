@@ -32,7 +32,10 @@ export default function OurPartners({}) {
     ScreenModeAndSizeContext
   );
   return (
-    <section className={style.section + " section"} style={{ height: height }}>
+    <section
+      className={style.section + " section"}
+      style={{ maxHeight: height }}
+    >
       <div className={style.container}>
         <div className={style.specialThanks}>
           {icons.specialThanks("svgTextBlock")}

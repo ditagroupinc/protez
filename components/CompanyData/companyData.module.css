@@ -2,10 +2,10 @@
   color: var(--white);
   position: fixed;
   z-index: 9;
-  left: 4vw;
+  left: var(--paddingVW);
   left: 0;
-  bottom: 4vw;
-  max-width: calc(var(--navLeftWidth) + 4vw);
+  bottom: var(--paddingVW);
+  max-width: calc(var(--navLeftWidth) + var(--paddingVW));
 }
 
 .adressContainer {
@@ -16,7 +16,7 @@
   width: 100%;
 
   & p {
-    padding-left: 4vw;
+    padding-left: var(--paddingVW);
     & span {
       display: block;
       line-height: 32px;
@@ -32,7 +32,7 @@
 
 .buttonsContainer {
   margin-top: 4.375rem;
-  padding-left: 4vw;
+  padding-left: var(--paddingVW);
   display: flex;
   flex-direction: column;
   gap: 1.875rem;

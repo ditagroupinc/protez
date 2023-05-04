@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: space-between;
   color: var(--white);
-  padding: 2rem 4vw;
+  padding: 2rem var(--paddingVW);
   & button {
     /* text-transform: uppercase; */
   }
@@ -184,7 +184,7 @@
   flex-direction: column;
   width: fit-content;
   max-width: var(--navRightWidth);
-  right: 4vw;
+  right: var(--paddingVW);
   top: 50%;
   transform: translateY(-50%);
 }
@@ -212,8 +212,8 @@
 .backToTopButton {
   color: var(--white);
   position: fixed;
-  right: 4vw;
-  bottom: 4vw;
+  right: var(--paddingVW);
+  bottom: var(--paddingVW);
   transform: rotate(-90deg) translate(100%, -50%);
   transform-origin: bottom right;
   text-transform: uppercase;

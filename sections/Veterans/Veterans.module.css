@@ -1,10 +1,15 @@
 .section {
   color: var(--white);
-  padding-right: calc(64px + 4vw);
+  padding-bottom: 6rem;
+  padding-top: 140px;
 }
 
-.slickSlider {
-  height: 100%;
+#veterans {
+  padding-right: 0;
+}
+
+.sliderWrapper {
+  position: relative;
 }
 
 .sliderCard {
@@ -12,8 +17,16 @@
   padding: 0 5px;
 }
 
+.leftSide {
+  flex: 1 1 55%;
+  & img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
 .rightSide {
-  flex: 1 1 50%;
+  flex: 1 45%;
 }
 
 .ageRank {
@@ -21,35 +34,21 @@
   color: rgba(255, 255, 255, 0.56);
 }
 
-.nameSurname {
-  margin-top: 3rem;
-  & span {
-    display: block;
-    line-height: 0.75;
-    font-size: 132px;
-    color: var(--white);
-    &:first-of-type {
-      font-family: "Playfair Display", serif;
-      font-weight: 400;
-      font-style: italic;
-    }
-    &:last-of-type {
-      font-family: "Outfit", sans-serif;
-      font-weight: 700;
-      padding-left: 111px;
-    }
-  }
+.veteranLogo {
+  margin-top: 1.5rem;
+  max-width: 75%;
 }
 
 .cardTitle {
-  margin-top: 3rem;
+  margin-top: 2.5rem;
 }
 
 .cardText {
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
 .shareMe {
+  /* display: none; */
   margin-top: 3rem;
   & span {
     color: rgba(255, 255, 255, 0.56);
@@ -60,18 +59,6 @@
   margin-top: 1.5rem;
   display: flex;
   gap: 2rem;
-}
-
-.leftSide {
-  flex: 1 1 50%;
-  & img {
-    width: 100%;
-    object-fit: cover;
-  }
-}
-
-.rightSide {
-  flex: 1 50%;
 }
 
 .photo {
@@ -87,5 +74,18 @@
   width: 100%;
   max-width: 120px;
   position: absolute;
-  bottom: 4vw;
+  bottom: -4rem;
+  /* bottom: 0; */
+}
+
+@media screen and (max-width: 1180px) {
+  #veterans {
+    padding-top: 140px;
+  }
+  .rightSide {
+    flex: 1 1 50%;
+  }
+  .leftSide {
+    flex: 1 1 50%;
+  }
 }
