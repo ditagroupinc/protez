@@ -10,7 +10,10 @@ export default function LetsGiveHope({}) {
     ScreenModeAndSizeContext
   );
   return (
-    <section className={style.section + " section"} style={{ height: height }}>
+    <section
+      className={style.section + " section"}
+      style={{ maxHeight: height }}
+    >
       <video autoPlay loop muted className={style.video}>
         <source src="flag-ukraine.mp4" type="video/mp4" />
       </video>
