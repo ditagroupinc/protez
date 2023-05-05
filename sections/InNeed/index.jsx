@@ -69,7 +69,10 @@ const InNeed = () => {
   };
 
   return (
-    <section style={{ height: height }} className={`${styles.section} section`}>
+    <section
+      style={{ maxHeight: height }}
+      className={`${styles.section} section`}
+    >
       <div className={`${styles.block}`}>
         <div className={`${styles.title} h1 ${mobileDesktopClass()}`}>
           <h1 className={`bigNumb ${styles.lineHeight}`}>

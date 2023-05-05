@@ -21,6 +21,7 @@ import OurResults from "@/sections/OurResults";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./index.module.css";
+import MailingList from "@/sections/MailingList";
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
@@ -37,10 +38,16 @@ export default function Home() {
         win.innerHeight || docElem.clientHeight || body.clientHeight;
       const mobile = false;
       const screenModeClass = mobile ? "mobile" : "desktop";
+
       setWindowSizes({
         width: windowWidth,
         height: windowHeight,
-        mobile: false,
+        // height: "100%",
+        mobile: windowWidth <= 420,
+        tablet: windowWidth <= 1180,
+        desktop: windowWidth >= 1181,
+        tabletLarge: windowWidth <= 1366,
+        desktopSmall: windowWidth <= 1920,
         screenModeClass,
       });
     };
@@ -66,12 +73,13 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
-          {/* <OurResults /> */}
-          {/* <InNeed />
+          <OurResults />
+          <InNeed />
           <Veterans />
           <MeetOurTeam />
           <OurPartners />
-          <News /> */}
+          <News />
+          <MailingList />
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>

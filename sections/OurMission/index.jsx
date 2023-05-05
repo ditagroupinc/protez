@@ -1,9 +1,10 @@
-import Title from "@/components/SectionHeaderTitle";
 import Card from "@/components/Card";
 import styles from "./OurMission.module.css";
 import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+import { switchWindowSize } from "@/utils/switchWindowSize";
+import SmokeBackground from "@/components/SmokeBackground";
 
 const iconDisabledPerson = () => (
   <svg
@@ -117,7 +118,12 @@ const TitleSVG = () => {
 const iconsObj = [iconDisabledPerson, iconHand, iconHelpHeart, iconPeople];
 const OurMission = () => {
   const { lang } = useContext(LanguageContext);
-  const { height } = useContext(ScreenModeAndSizeContext);
+  const { height, mobile, tablet, tabletLarge, desktopSmall } = useContext(
+    ScreenModeAndSizeContext
+  );
+  const mobileDesktopClass = () => {
+    return switchWindowSize(styles, mobile, tablet, tabletLarge, desktopSmall);
+  };
 
   const Cards = Object.keys(OurMissionText.blockInfo).map((key, i) => {
     return (
@@ -132,9 +138,12 @@ const OurMission = () => {
   return (
     <section
       style={{ height: height }}
-      className={`${styles.section} ${styles.respons_section} section`}
+      className={
+        `${styles.section}` + " " + mobileDesktopClass() + " " + `section`
+      }
     >
-      <div className={styles.block}>
+      <SmokeBackground />
+      <div className={styles.block + " " + mobileDesktopClass()}>
         {TitleSVG()}
         {Cards}
       </div>
