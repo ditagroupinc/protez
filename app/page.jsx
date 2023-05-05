@@ -22,6 +22,7 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./index.module.css";
 import MailingList from "@/sections/MailingList";
+import Prosthetics from "@/sections/Prosthetics";
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
@@ -61,8 +62,8 @@ export default function Home() {
         <Header />
         <main style={{ backgroundColor: "var(--black)" }}>
           <div className={style.flagsBlock}>
-            <LetsGiveHope />
-            <OurMission />
+            {/* <LetsGiveHope />
+            <OurMission /> */}
             <Image
               src="/flag-usa.png"
               object-fit="contain"
@@ -73,13 +74,14 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
-          <OurResults />
+          <Prosthetics />
+          {/* <OurResults />
           <InNeed />
           <Veterans />
           <MeetOurTeam />
           <OurPartners />
           <News />
-          <MailingList />
+          <MailingList /> */}
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>
