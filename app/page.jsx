@@ -21,6 +21,7 @@ import OurResults from "@/sections/OurResults";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./index.module.css";
+import MailingList from "@/sections/MailingList";
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
@@ -40,11 +41,13 @@ export default function Home() {
 
       setWindowSizes({
         width: windowWidth,
-        // height: windowHeight,
-        height: "100%",
+        height: windowHeight,
+        // height: "100%",
         mobile: windowWidth <= 420,
         tablet: windowWidth <= 1180,
         desktop: windowWidth >= 1181,
+        tabletLarge: windowWidth <= 1366,
+        desktopSmall: windowWidth <= 1920,
         screenModeClass,
       });
     };
@@ -76,6 +79,7 @@ export default function Home() {
           <MeetOurTeam />
           <OurPartners />
           <News />
+          <MailingList />
         </main>
       </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>
