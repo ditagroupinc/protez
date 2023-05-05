@@ -48,7 +48,7 @@ const OurResults = () => {
   });
 
   return (
-    <section style={{ height: height }} className={`${styles.section}`}>
+    <section style={{ maxHeight: height }} className={`${styles.section}`}>
       <div className={`${styles.block} section`}>
         <Title
           italicText={OurResultsText.titleText.our[lang]}

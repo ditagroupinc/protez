@@ -115,7 +115,10 @@ const OurMission = () => {
   });
 
   return (
-    <section style={{ height: height }} className={`${styles.section} section`}>
+    <section
+      style={{ maxHeight: height }}
+      className={`${styles.section} section`}
+    >
       <div className={styles.block}>
         <Title
           italicText={OurMissionText.titleText.our[lang]}

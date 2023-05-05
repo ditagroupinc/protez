@@ -6,7 +6,6 @@
   white-space: nowrap;
   width: fit-content;
   border-bottom: 4px solid var(--pink);
-  padding-top: 2.246vw;
 }
 
 .counter:hover {
@@ -14,12 +13,9 @@
   transition: all .5s ease;
 }
 
-.digit {
-  font-family: "Outfit", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 132px;
-  line-height: 130px;
+.title{
+  line-height: calc(34px + 80 * ((100vw - 360px) / 2200));
+  transform: translateY(calc(10px + 5* ((100vw - 360px) / 2200)));
 }
 
 

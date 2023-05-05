@@ -1,0 +1,41 @@
+.newsCard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 300px;
+  &.short {
+    padding-top: 4rem;
+  }
+}
+
+.newsPicture {
+  flex-grow: 1;
+  width: 100%;
+  object-position: center;
+  object-fit: cover;
+  max-height: 500px;
+  &.short {
+    max-height: 230px;
+  }
+}
+
+.date {
+  padding: 1rem 0;
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--white);
+}
+
+.logo {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.text {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.icon {
+  margin: 0.5rem;
+}

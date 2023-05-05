@@ -8,14 +8,14 @@
   --black: #0d1125;
   --navLeftWidth: 300px;
   --navRightWidth: 64px;
-  --sectionPaddingLeft: calc(300px + 8vw + 6.875vw);
-  --sectionPaddingRight: calc(64px + 4vw + 6.875vw);
-
+  --paddingVW: 2vw;
+  --transitionProps: 0.3s;
+  --textScale: 1.01;
 }
-
-html,
-body {
-  font-family: "Outfit", sans-serif;
+@media screen and (min-width: 1981px) {
+  :root {
+    --paddingVW: 4vw;
+  }
 }
 
 body::-webkit-scrollbar {
@@ -32,6 +32,7 @@ html,
 body {
   font-family: "Outfit", sans-serif;
   font-style: normal;
+  color: var(--white);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -60,12 +61,14 @@ body {
 .h3,
 .h4 {
   font-weight: 700;
+  font-family: "Outfit", sans-serif;
 }
 .h2,
 .h5,
 .h6,
 .p {
   font-weight: 400;
+  font-family: "Outfit", sans-serif;
 }
 /* .h3 {
   font-weight: 700;
@@ -112,6 +115,15 @@ body {
     font-size: calc(18px + 8 * ((100vw - 360px) / 2200));
     line-height: calc(28px + 12 * ((100vw - 360px) / 2200));
   }
+  .bigNumb {
+    font-size: calc(72px + 60 * ((100vw - 360px) / 2200));
+    line-height: calc(40px + 96 * ((100vw - 360px) / 2200));
+    font-weight: 600;
+  }
+  .BigTitle {
+    font-size: calc(52px + 80 * ((100vw - 360px) / 2200));
+    line-height: calc(40px + 56 * ((100vw - 360px) / 2200));
+  }
 }
 @media screen and (min-width: 2560px) {
   .h1 {
@@ -141,81 +153,16 @@ body {
     font-size: 26px;
     line-height: 40px;
   }
+  .bigNumb {
+    font-weight: 600;
+    font-size: 132px;
+    line-height: 130px;
+  }
+  .BigTitle {
+    font-size: 132px;
+    line-height: 96px;
+  }
 }
-/* 
-.h1 {
-  &.desktop {
-    font-size: 72px;
-    line-height: 80px;
-  }
-  &.mobile {
-    font-size: 32px;
-    line-height: 40px;
-  }
-} */
-/* .h2 {
-  &.desktop {
-    font-size: 48px;
-    line-height: 56px;
-  }
-  &.mobile {
-    font-size: 24px;
-    line-height: 28px;
-  }
-} */
-/* .h3 {
-  &.desktop {
-    font-size: 40px;
-    line-height: 48px;
-  }
-  &.mobile {
-    font-size: 22px;
-    line-height: 28px;
-  }
-} */
-/* .h4 {
-  &.desktop {
-    font-size: 30px;
-    line-height: 32px;
-  }
-  &.mobile {
-    font-size: 20px;
-    line-height: 24px;
-  }
-} */
-/* .h5 {
-  &.desktop {
-    font-size: 28px;
-    line-height: 40px;
-  }
-  &.mobile {
-    font-size: 18px;
-    line-height: 24px;
-  }
-} */
-/* 
-.h6 {
-  font-weight: 400;
-  &.desktop {
-    font-size: 20px;
-    line-height: 24px;
-  }
-  &.mobile {
-    font-size: 16px;
-    line-height: 24px;
-  }
-} */
-/* .p {
-  font-weight: 400;
-  &.desktop {
-    font-size: 26px;
-    line-height: 40px;
-  }
-  &.mobile {
-    font-size: 18px;
-    line-height: 28px;
-  }
-} */
 
 .squareButton {
   width: 100%;
@@ -226,29 +173,66 @@ body {
 }
 
 .section {
-  padding-left: var(--sectionPaddingLeft);
-  padding-right: var(--sectionPaddingRight);
-  padding-top: 120px;
+  padding-left: calc(300px + calc(var(--paddingVW) * 2) + 6.875vw);
+  padding-right: calc(64px + var(--paddingVW) + 6.875vw);
+  padding-top: 9%;
+  min-height: 100vh;
+  position: relative;
+}
+@media screen and (max-width: 1180px) {
+  .section {
+    padding-left: calc(calc(var(--paddingVW) * 2) + 6.875vw);
+    padding-right: calc(var(--paddingVW) + 6.875vw);
+  }
 }
 
-.section .slick-dots {
-  width: fit-content;
+@media screen and (max-width: 420px) {
+  .section {
+    padding-top: 30px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
-.section .slick-dots li.slick-active button:before {
+.svgTextBlock {
+  max-width: 100%;
+}
+
+.veterans .slick-dots li.slick-active button:before {
   color: var(--pink);
 }
 
-.section .slick-dots li button:before {
+.veterans .slick-dots li button:before {
   color: var(--white);
   opacity: 1;
 }
 
-.section .slick-dots {
+.veterans .slick-dots {
+  width: fit-content;
   position: absolute;
   margin-top: 7rem;
-  bottom: calc(4vw + 0.5rem);
-  /* left: calc(var(--sectionPaddingLeft) + 120px + 1rem); */
+
+  /* bottom: calc(var(--paddingVW) + 0.5rem); */
+  bottom: calc(-4rem + 0.5rem);
   left: calc(120px + 1rem);
+  /* bottom: 0; */
   /* transform: translateY(50%); */
+}
+.news .slick-slider {
+  height: 100%;
+}
+
+.news .slick-dots {
+  width: fit-content;
+  position: static;
+  margin-top: 7rem;
+}
+
+.news .slick-dots li.slick-active button:before {
+  color: var(--pink);
+}
+
+.news .slick-dots li button:before {
+  color: var(--white);
+  opacity: 1;
 }
