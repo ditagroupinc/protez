@@ -4,6 +4,7 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import Image from "next/image";
 import { switchWindowSize } from "@/utils/switchWindowSize";
+import SmokeBackground from "@/components/SmokeBackground";
 
 const MailingListText = {
   titleText: {
@@ -108,6 +109,7 @@ const MailingList = () => {
           </button>
         </form>
       </div>
+      <SmokeBackground />
     </section>
   );
 };

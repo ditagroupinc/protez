@@ -103,7 +103,7 @@ export default function News({}) {
   return (
     <section
       className={style.section + " section news"}
-      style={{ height: height }}
+      style={{ maxHeight: height }}
     >
       <div className={style.container}>
         <div className={style.logoContainer}>

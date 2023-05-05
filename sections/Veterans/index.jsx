@@ -4,6 +4,8 @@ import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./Veterans.module.css";
 import Image from "next/image";
 import Slider from "react-slick";
+import SmokeBackground from "@/components/SmokeBackground";
+import { icons } from "./icons";
 
 const veteransText = {
   veterans: [
@@ -23,8 +25,8 @@ const veteransText = {
       text: {
         eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
       },
-      img: "vadimFedorov.png",
-      icon: "vadymFedorov.svg",
+      img: "vadymFedorov.png",
+      icon: "vadymFedorov",
     },
     {
       ageRank: {
@@ -42,8 +44,8 @@ const veteransText = {
       text: {
         eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
       },
-      img: "vadimFedorov.png",
-      icon: "vadymFedorov.svg",
+      img: "vadymFedorov.png",
+      icon: "vadymFedorov",
     },
     {
       ageRank: {
@@ -61,8 +63,8 @@ const veteransText = {
       text: {
         eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
       },
-      img: "vadimFedorov.png",
-      icon: "vadymFedorov.svg",
+      img: "vadymFedorov.png",
+      icon: "vadymFedorov",
     },
   ],
 
@@ -170,78 +172,66 @@ export default function Veterans() {
   };
   return (
     <section
-      className={style.section + " section veterans"}
-      style={{ height: height }}
+      id={style.veterans}
+      className={` ${style.section} section veterans`}
+      // style={{ maxHeight: height }}
     >
-      <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
-        {veteransText.veterans.map((element, index) => (
-          <div key={index}>
-            <div className={style.sliderCard}>
-              <div className={style.leftSide}>
-                <h5 className={`h5 ${screenModeClass} ${style.ageRank}`}>
-                  {element.ageRank[lang]}
-                </h5>
-                <h3 className={style.nameSurname}>
-                  <Image
+      <SmokeBackground />
+      <div className={style.sliderWrapper}>
+        <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
+          {veteransText.veterans.map((element, index) => (
+            <div key={index}>
+              <div className={style.sliderCard}>
+                <div className={style.leftSide}>
+                  <h5 className={`h5 ${screenModeClass} ${style.ageRank}`}>
+                    {element.ageRank[lang]}
+                  </h5>
+                  {icons[element.icon](style.veteranLogo)}
+                  {/* <Image
                     src={`/veterans/${element.icon}`}
                     priority
                     alt={element.name[lang] + " " + element.surname[lang]}
                     width={692}
                     height={194}
-                    // className={style.photo}
-                  />
-                  {/* <span>{element.name[lang]}</span>
-                  <span>{element.surname[lang]}</span> */}
-                </h3>
-                <h4 className={`h2 ${screenModeClass} ${style.cardTitle}`}>
-                  {element.title[lang]}
-                </h4>
-                <p className={`p ${screenModeClass} ${style.cardText}`}>
-                  {element.text[lang]}
-                </p>
+                    className={style.veteranLogo}
+                  /> */}
+                  <h4 className={`h2 ${screenModeClass} ${style.cardTitle}`}>
+                    {element.title[lang]}
+                  </h4>
+                  <p className={`p ${screenModeClass} ${style.cardText}`}>
+                    {element.text[lang]}
+                  </p>
 
-                <div className={style.shareMe}>
-                  <span className={`h5 ${screenModeClass}`}>
-                    {veteransText.share[lang]}
-                  </span>
-                  <div className={`${screenModeClass} ${style.buttonsList}`}>
-                    <a href="#">
-                      <IconTwitter />
-                    </a>
-                    <a href="#">
-                      <IconLinkedin />
-                    </a>
-                    <a href="#">
-                      <IconFB />
-                    </a>
-                    <a href="#">
-                      <IconLink />
-                    </a>
+                  <div className={style.shareMe}>
+                    <span className={`h5 ${screenModeClass}`}>
+                      {veteransText.share[lang]}
+                    </span>
+                    <div className={`${screenModeClass} ${style.buttonsList}`}>
+                      <a href="#">{icons.iconTwitter()}</a>
+                      <a href="#">{icons.iconLinkedin()}</a>
+                      <a href="#">{icons.iconFacebook()}</a>
+                      <a href="#">{icons.iconLink()}</a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className={style.rightSide}>
-                <Image
-                  src={`/veterans/${element.img}`}
-                  priority
-                  alt={element.name[lang] + " " + element.surname[lang]}
-                  className={style.photo}
-                  width={1306}
-                  height={1890}
-                />
-                {/* <img
-                  src={`/veterans/${element.img}`}
-                  alt="Picture of the author"
-                  className={style.photo}
-                /> */}
+                <div className={style.rightSide}>
+                  <Image
+                    src={`/veterans/${element.img}`}
+                    priority
+                    alt={element.name[lang] + " " + element.surname[lang]}
+                    className={style.photo}
+                    width={1306}
+                    height={1890}
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
-      <button onClick={gotoNext} className={style.nextSlideButton}>
-        {veteransText.next[lang]}
-      </button>
+          ))}
+        </Slider>
+        <button onClick={gotoNext} className={style.nextSlideButton}>
+          {veteransText.next[lang]}
+        </button>
+      </div>
     </section>
   );
 }
