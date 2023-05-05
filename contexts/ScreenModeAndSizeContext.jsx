@@ -5,8 +5,8 @@ export const ScreenModeAndSizeContext = createContext({
   height: null,
   mobile: false,
   tablet: false,
+  desktop: false,
   tabletLarge: false,
   desktopSmall: false,
-  desktop: false,
   screenModeClass: "",
 });

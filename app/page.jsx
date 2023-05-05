@@ -38,14 +38,15 @@ export default function Home() {
         win.innerHeight || docElem.clientHeight || body.clientHeight;
       const mobile = false;
       const screenModeClass = mobile ? "mobile" : "desktop";
+
       setWindowSizes({
         width: windowWidth,
         height: windowHeight,
         mobile: windowWidth <= 420,
         tablet: windowWidth <= 1180,
+        desktop: windowWidth >= 1181,
         tabletLarge: windowWidth <= 1366,
         desktopSmall: windowWidth <= 1920,
-        desktop: windowWidth >= 1921,
         screenModeClass,
       });
     };
@@ -60,7 +61,7 @@ export default function Home() {
         <main style={{ backgroundColor: "var(--black)" }}>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
-            {/* <OurMission /> */}
+            <OurMission />
             <Image
               src="/flag-usa.png"
               object-fit="contain"
@@ -71,12 +72,12 @@ export default function Home() {
               className={style.americanFlag}
             />
           </div>
-          {/* <OurResults />
+          <OurResults />
           <InNeed />
           <Veterans />
           <MeetOurTeam />
           <OurPartners />
-          <News /> */}
+          <News />
           <MailingList />
         </main>
       </ScreenModeAndSizeContext.Provider>

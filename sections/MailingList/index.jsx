@@ -61,22 +61,8 @@ const MailingList = () => {
   const { mobile, tablet, tabletLarge, desktopSmall } = useContext(
     ScreenModeAndSizeContext
   );
-  const switchWindowSize = (mobile, tablet, tabletLarge, desktopSmall) => {
-    switch (true) {
-      case mobile:
-        return "mobile";
-      case tablet:
-        return "tablet";
-      case tabletLarge:
-        return "tabletLarge";
-      case desktopSmall:
-        return "desktopSmall";
-      default:
-        return "desktop";
-    }
-  };
   const mobileDesktopClass = () => {
-    return switchWindowSize(mobile, tablet, tabletLarge, desktopSmall);
+    return switchWindowSize(styles, mobile, tablet, tabletLarge, desktopSmall);
   };
 
   const Images = () => {
@@ -99,15 +85,15 @@ const MailingList = () => {
   return (
     <section
       style={{ height: height }}
-      className={`${styles.section} ${mobileDesktopClass()} `}
+      className={`${styles.section}  ` + mobileDesktopClass()}
     >
-      <div className={`${styles.images} ${mobileDesktopClass()}`}>
+      <div className={`${styles.images} ` + mobileDesktopClass()}>
         <Images />
       </div>
-      <div className={`${styles.title} ${mobileDesktopClass()} h6`}>
+      <div className={`${styles.title} ` + mobileDesktopClass() + " " + "h6"}>
         {TitleSVG()}
         <form
-          className={`${styles.form} ${mobileDesktopClass()} h6`}
+          className={`${styles.form} ` + mobileDesktopClass() + " " + "h6"}
           action="POST"
         >
           <input
@@ -117,7 +103,7 @@ const MailingList = () => {
             name="email"
             required
           />
-          <button className={`squareButton p  ${mobileDesktopClass()} `}>
+          <button className={`squareButton p `}>
             {MailingListText.titleText.subcribe[lang]}
           </button>
         </form>
