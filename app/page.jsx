@@ -22,6 +22,7 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./index.module.css";
 import MailingList from "@/sections/MailingList";
+import Prosthetics from "@/sections/Prosthetics";
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
@@ -75,6 +76,7 @@ export default function Home() {
           </div>
           <OurResults />
           <InNeed />
+          <Prosthetics />
           <Veterans />
           <MeetOurTeam />
           <OurPartners />
