@@ -45,7 +45,7 @@ export default function Home() {
         width: windowWidth,
         height: windowHeight,
         // height: "100%",
-        mobile: windowWidth <= 420,
+        mobile: windowWidth <= 480,
         tablet: windowWidth <= 1180,
         desktop: windowWidth >= 1181,
         tabletLarge: windowWidth <= 1366,

@@ -2,9 +2,28 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 300px;
+  padding: 0 20px;
+
   &.short {
     padding-top: 4rem;
+  }
+  & div {
+    overflow: hidden;
+  }
+  transform-origin: center;
+  opacity: 0.4;
+  transition: transform var(--transitionProps), opacity var(--transitionProps);
+  &:hover {
+    opacity: 1;
+    transform: scale(1.01);
+    transition: transform var(--transitionProps), opacity var(--transitionProps);
+    & .title {
+      color: var(--pink);
+      transition: color var(--transitionProps);
+    }
+    & .icon path {
+      fill: var(--pink);
+    }
   }
 }
 
@@ -26,9 +45,15 @@
   border-bottom: 2px solid var(--white);
 }
 
+.title {
+}
+
 .logo {
   margin-top: 1rem;
   margin-bottom: 1.5rem;
+  /* width: auto; */
+  /* height: auto; */
+  max-width: 100%;
 }
 
 .text {
@@ -38,4 +63,10 @@
 
 .icon {
   margin: 0.5rem;
+}
+
+@media screen and (max-width: 500px) {
+  .newsCard {
+    opacity: 1;
+  }
 }

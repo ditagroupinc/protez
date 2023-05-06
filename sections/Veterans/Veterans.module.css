@@ -194,7 +194,7 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 500px) {
   .roundButton {
     max-width: 100px;
     top: 0;
