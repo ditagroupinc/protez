@@ -117,6 +117,7 @@ export default function News({}) {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
+          dots: false,
         },
       },
     ],

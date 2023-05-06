@@ -6,7 +6,6 @@
   left: 0;
   overflow: hidden;
   pointer-events: none;
-  background-color: var(--black);
 }
 
 .bg {
