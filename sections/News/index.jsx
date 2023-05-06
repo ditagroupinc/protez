@@ -97,13 +97,35 @@ export default function News({}) {
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    slidesToScroll: 1,
+    // slidesToScroll: 1,
+    swipeToSlide: true,
     arrows: false,
+    responsive: [
+      {
+        breakpoint: 1920,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
   return (
     <section
-      className={style.section + " section news"}
-      style={{ maxHeight: height }}
+      className={"section news"}
+      // style={{ maxHeight: height }}
+      id={style.news}
     >
       <div className={style.container}>
         <div className={style.logoContainer}>
@@ -112,7 +134,9 @@ export default function News({}) {
         <div className={style.newsContainer}>
           <Slider {...settings} className={style.slickSlider}>
             {wereInNews.cards.map((card, index) => (
-              <NewsCard cardData={card} key={index} short={index % 2 === 0} />
+              <div key={index}>
+                <NewsCard cardData={card} short={index % 2 === 0} />
+              </div>
             ))}
           </Slider>
         </div>

@@ -170,20 +170,27 @@ body {
 }
 
 .section {
-  padding-left: calc(300px + calc(var(--paddingVW) * 2) + 6.875vw);
-  padding-right: calc(64px + var(--paddingVW) + 6.875vw);
+  padding-left: calc(300px + var(--paddingVW) + 6vw);
+  padding-right: calc(64px + var(--paddingVW) + 6vw);
   padding-top: 9%;
   min-height: 100vh;
   position: relative;
 }
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1920px) {
   .section {
-    padding-left: calc(calc(var(--paddingVW) * 2) + 6.875vw);
-    padding-right: calc(var(--paddingVW) + 6.875vw);
+    padding-left: calc(300px + var(--paddingVW) + 4vw);
+    padding-right: calc(64px + var(--paddingVW) + 4vw);
   }
 }
 
-@media screen and (max-width: 420px) {
+@media screen and (max-width: 1180px) {
+  .section {
+    padding-left: var(--paddingVW);
+    padding-right: var(--paddingVW);
+  }
+}
+
+@media screen and (max-width: 480px) {
   .section {
     padding-top: 30px;
     padding-left: 24px;
