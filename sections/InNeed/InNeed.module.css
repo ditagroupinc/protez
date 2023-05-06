@@ -6,56 +6,42 @@
 }
 .block{
   display: flex;
-  justify-content: space-between;
   align-items: center; 
   color: var(--white);
-  gap: 1.172vw;
+  gap: 40px;
 }
 
 .title{
-  flex: 1 1 45%;
+  flex: 1 1 50%;
+  & svg{
+    width: 100%;
+    height: 100%;
+  }
 }
 .text{
-  flex: 1 1 45%;
+  flex: 1 1 50%;
 
 }
 .colorModBlack{
   color: var(--black);
 }
 
+.title.tablet{
+  flex: 1 1 60%;
+  & svg{
+    width: 100%;
+    height: 100%;
+  }
+}
 
-.fontPlayfair{
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  color: var(--white);
-  font-weight: 600;
+.title.mobile{
+  width: 86.667vw;
+
 }
-.lineHeight{
-  line-height: 132px;
-}
-@media screen and (min-width: 360px) {
-  .fontSizeBig {
-    font-size: calc(52px + 30 * ((100vw - 360px) / 2200));
-    line-height: calc(40px + 40 * ((100vw - 360px) / 2200));
-  }
-  .fontPlayfair {
-    font-size: calc(52px + 30 * ((100vw - 360px) / 2200));
-    line-height: calc(40px + 40 * ((100vw - 360px) / 2200));
-  }
-  .lineHeight{
-    line-height: calc(60px + 72 * ((100vw - 360px) / 2200));
-  }
-}
-@media screen and (min-width: 2560px) {
-  .fontSizeBig {
-    font-size: 84px;
-    line-height: 80px;
-  }
-  .fontPlayfair {
-    font-size: 84px;
-    line-height: 80px;
-  }
-  .lineHeight{
-    line-height: 132px;
+
+@media screen and (max-width: 900px) {
+  .block{
+    flex-direction: column;
+    margin-top: 60px;
   }
 }
