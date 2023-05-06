@@ -137,7 +137,7 @@ const OurMission = () => {
 
   return (
     <section
-      style={{ height: height }}
+      style={{ minHeight: height }}
       className={
         `${styles.section}` + " " + mobileDesktopClass() + " " + `section`
       }
