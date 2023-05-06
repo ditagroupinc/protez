@@ -195,26 +195,6 @@ body {
   max-width: 100%;
 }
 
-.veterans .slick-dots li.slick-active button:before {
-  color: var(--pink);
-}
-
-.veterans .slick-dots li button:before {
-  color: var(--white);
-  opacity: 1;
-}
-
-.veterans .slick-dots {
-  width: fit-content;
-  position: absolute;
-  margin-top: 7rem;
-
-  /* bottom: calc(var(--paddingVW) + 0.5rem); */
-  bottom: calc(-4rem + 0.5rem);
-  left: calc(120px + 1rem);
-  /* bottom: 0; */
-  /* transform: translateY(50%); */
-}
 .news .slick-slider {
   height: 100%;
 }
