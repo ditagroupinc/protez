@@ -3,15 +3,16 @@ import styles from "./CountResults.module.css";
 import React, { useRef, useState, useEffect, useContext } from "react";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import CountUp from "react-countup";
+import { switchWindowSize } from "@/utils/switchWindowSize";
 
 const CountResults = ({ count, text }) => {
-  const { mobile } = useContext(ScreenModeAndSizeContext);
   const [inViewport, setInViewport] = useState(false);
   const ref = useRef(null);
-
+  const { mobile, tablet, tabletLarge, desktopSmall } = useContext(
+    ScreenModeAndSizeContext
+  );
   const mobileDesktopClass = () => {
-    if (mobile) return "mobile";
-    return "desktop";
+    return switchWindowSize(styles, mobile, tablet, tabletLarge, desktopSmall);
   };
 
   const digitArray = count.split("");
@@ -56,8 +57,13 @@ const CountResults = ({ count, text }) => {
   return (
     <>
       <div className={`h2 ${styles.counter} ${mobileDesktopClass()}`}>
-        <span className={`${styles.title}`}>{text}</span>
-        <span ref={ref} className={`bigNumb`}>
+        <div>
+          <span className={`${styles.title} ${mobileDesktopClass()} h2`}>
+            {text}
+          </span>
+        </div>
+
+        <span ref={ref} className={`${styles.bigNumb} ${mobileDesktopClass()}`}>
           {inViewport ? MyCounter() : 0}
         </span>
       </div>
