@@ -49,4 +49,7 @@
     transform: none;
     margin-top: 2.5rem;
   }
+  #news {
+    padding-bottom: 2rem;
+  }
 }

@@ -112,7 +112,6 @@ body {
     font-size: calc(18px + 8 * ((100vw - 360px) / 2200));
     line-height: calc(28px + 12 * ((100vw - 360px) / 2200));
   }
-
 }
 @media screen and (min-width: 2560px) {
   .h1 {
@@ -142,9 +141,7 @@ body {
     font-size: 26px;
     line-height: 40px;
   }
-
 }
-
 
 .squareButton {
   width: 100%;
@@ -180,6 +177,8 @@ body {
     padding-top: 30px;
     padding-left: 24px;
     padding-right: 24px;
+    min-height: auto;
+    padding-bottom: 5rem;
   }
 }
 

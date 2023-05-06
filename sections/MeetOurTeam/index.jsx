@@ -103,7 +103,7 @@ export default function MeetOurTeam({}) {
   return (
     <section
       className={style.section + " section"}
-      style={{ maxHeight: height }}
+      // style={{ maxHeight: height }}
     >
       <div className={style.container}>
         <div>{icons.meetOurTeamLogo(`${style.logo} svgTextBlock`)}</div>
