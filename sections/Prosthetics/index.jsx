@@ -209,9 +209,18 @@ const Prosthetics = () => {
         {Cards}
       </div>
       <Image
+        src="/Prosthetics_for_UkrainianS.png"
+        object-fit="contain"
+        priority
+        alt="Picture of the author"
+        width={2560}
+        height={1440}
+        className={`${styles.prostheticsImg} ${mobileDesktopClass()}`}
+      />
+      <Image
         src="/img-ukraine-map.png"
         object-fit="contain"
-        // priority
+        priority
         alt="Picture of the author"
         width={2560}
         height={1440}

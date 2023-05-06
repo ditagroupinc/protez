@@ -1,23 +1,73 @@
 .counter {
   color: var(--white); 
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  flex-direction: row-reverse;
+  transform: translate(0 , 0) rotate(180deg) ;
   white-space: nowrap;
-  width: fit-content;
-  border-bottom: 4px solid var(--pink);
+  align-content: flex-start;
+  max-height: 100%;
+  max-width: 100%;
+  border-right: -1px;
+  border-left: 4px solid var(--pink);
+  margin-right: -1px;
+  & > div{
+    padding-right: 1em;
+    text-align: top;
+  }
+
 }
+.counter.tabletLarge {
+  & > div{
+    padding-right: .5em;
+  }
+}
+.counter.tablet {
+  & > div{
+    padding-right: 1em;
+  }
+}
+.bigNumb {
+  writing-mode: vertical-lr;
+  font-size: calc(80px + 52 * ((100vw - 360px) / 2200));
+  line-height: calc(70px + 60 * ((100vw - 360px) / 2200));
+  font-weight: 600;
+}
+.bigNumb.desktopSmall {
+
+  font-size: calc(80px + 34 * ((100vw - 360px) / 2200));
+  line-height: calc(70px + 46 * ((100vw - 360px) / 2200));
+}
+.bigNumb.tabletLarge {
+  font-size: 52px;
+  line-height: 60px;
+}
+
 
 .counter:hover {
   background-color: var(--pink);
   transition: all .5s ease;
+
 }
 
 .title{
-  line-height: calc(34px + 80 * ((100vw - 360px) / 2200));
-  transform: translateY(calc(10px + 5* ((100vw - 360px) / 2200)));
+  writing-mode: vertical-lr;
+  align-self:flex-start;
+}
+.numb{
+  writing-mode: vertical-lr;
 }
 
-
+@media screen and (max-width: 500px) {
+  .counter.tablet {
+    & > div{
+      padding-right: 5px;
+    }
+  
+  }
+  .bigNumb.tabletLarge {
+    font-size: 52px;
+    line-height: 48px;
+  }
+}
 
 
