@@ -13,8 +13,10 @@ const Card = ({ text, icon, reverse }) => {
     return;
   };
   return (
-    <div className={`${styles.block} ${ifReverse()}`}>
-      <h5 className={`h5 ` + mobileDesktopClass()}>{text}</h5>
+    <div
+      className={` h5  ${mobileDesktopClass()} ${styles.block} ${ifReverse()}`}
+    >
+      <h5>{text}</h5>
       {icon()}
     </div>
   );
