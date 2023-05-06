@@ -166,7 +166,7 @@ const iconsArr = [iconIntegra, iconHeart, iconPeople];
 const Prosthetics = () => {
   const { lang } = useContext(LanguageContext);
   const { height } = useContext(ScreenModeAndSizeContext);
-  const { mobile, tablet, tabletLarge, desktopSmall } = useContext(
+  const { mobile, width, tablet, tabletLarge, desktopSmall } = useContext(
     ScreenModeAndSizeContext
   );
   const mobileDesktopClass = () => {
@@ -186,14 +186,22 @@ const Prosthetics = () => {
 
   return (
     <section
-      style={{ height: height }}
+      style={{ minHeight: height }}
       className={`${styles.section} ${mobileDesktopClass()} section`}
     >
-      <div className={`${styles.block} ${mobileDesktopClass()}`}>
+      <div
+        className={`${styles.block} ${mobileDesktopClass()} ${
+          width < 700 ? styles.mobMod : ""
+        }`}
+      >
         <div className={`${styles.title} ${mobileDesktopClass()}`}>
           {!desktopSmall ? TitleDeskyop() : TitleTablet()}
         </div>
-        <div className={`${styles.text} ${mobileDesktopClass()} h2`}>
+        <div
+          className={`${styles.text} ${mobileDesktopClass()} ${
+            !tablet ? "h2" : "h5"
+          }`}
+        >
           <h2>{ProstheticsText.paragraph.top[lang]}</h2>
           <br />
           <h2>{ProstheticsText.paragraph.bottom[lang]}</h2>
@@ -207,7 +215,7 @@ const Prosthetics = () => {
         alt="Picture of the author"
         width={2560}
         height={1440}
-        className={styles.ukrainianMap}
+        className={`${styles.ukrainianMap} ${mobileDesktopClass()}`}
       />
     </section>
   );
