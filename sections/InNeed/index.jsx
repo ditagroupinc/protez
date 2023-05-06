@@ -120,7 +120,7 @@ const InNeed = () => {
 
   return (
     <section
-      style={{ maxHeight: height }}
+      style={{ minHeight: height }}
       className={
         `${styles.section}` + " " + mobileDesktopClass() + " " + `section`
       }
