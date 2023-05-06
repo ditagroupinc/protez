@@ -23,6 +23,7 @@ import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./index.module.css";
 import MailingList from "@/sections/MailingList";
 import Prosthetics from "@/sections/Prosthetics";
+// import CustomCursor from "@/components/CustomCursor";
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
@@ -60,6 +61,7 @@ export default function Home() {
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header />
+        {/* <CustomCursor /> */}
         <main style={{ backgroundColor: "var(--black)" }}>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
