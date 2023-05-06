@@ -9,6 +9,7 @@
   max-width: 100%;
   border-right: -1px;
   border-left: 4px solid var(--pink);
+  margin-right: -1px;
   & > div{
     padding-right: 1em;
     text-align: top;

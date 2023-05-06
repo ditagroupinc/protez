@@ -58,8 +58,7 @@ const imgRoute = [
 
 const MailingList = () => {
   const { lang } = useContext(LanguageContext);
-  const { height } = useContext(ScreenModeAndSizeContext);
-  const { mobile, tablet, tabletLarge, desktopSmall } = useContext(
+  const { height, mobile, tablet, tabletLarge, desktopSmall } = useContext(
     ScreenModeAndSizeContext
   );
   const mobileDesktopClass = () => {
@@ -88,6 +87,7 @@ const MailingList = () => {
       style={{ height: height }}
       className={`${styles.section}  ` + mobileDesktopClass()}
     >
+      <SmokeBackground />
       <div className={`${styles.images} ` + mobileDesktopClass()}>
         <Images />
       </div>
@@ -109,7 +109,6 @@ const MailingList = () => {
           </button>
         </form>
       </div>
-      <SmokeBackground />
     </section>
   );
 };
