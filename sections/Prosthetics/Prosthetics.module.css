@@ -8,8 +8,17 @@
   position: relative;
   z-index: 5;
   display: flex;
+  &::before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:  linear-gradient(360deg, #0D1125 0%, rgba(13, 17, 37, 0) 40.45%);
+  }
 }
-
 .block {
   height: 100%;
   align-self: center;
@@ -18,6 +27,8 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1.59fr 1.11fr 1fr;
   padding-bottom: 40px;
+  position: relative;
+  z-index: 6;
 }
 
 
@@ -88,6 +99,7 @@
   right: 0;
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 .ukrainianMap.tabletLarge {
@@ -101,7 +113,7 @@
 .block.desktopSmall {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 1fr 1.65fr;
-  padding: 0;
+  padding: 0 0 40px;
 
   & div:nth-last-child(-n+3) {
     padding: 40px;
@@ -115,7 +127,6 @@
 .block.desktopSmall div:nth-child(1) {
   grid-column-start: 1;
   grid-column-end: 3;
-
   & svg {
     max-height: 100%;
     width: 100%;
