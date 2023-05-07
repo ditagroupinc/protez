@@ -5,15 +5,12 @@ import style from "./LetsGiveHope.module.css";
 import { icons } from "./icons";
 import CompanyData from "@/components/CompanyData";
 
-export default function LetsGiveHope({}) {
+export default function LetsGiveHope({ id }) {
   const { height, width, mobile, tablet, screenModeClass } = useContext(
     ScreenModeAndSizeContext
   );
   return (
-    <section
-      className={style.section + " section"}
-      style={{ maxHeight: height }}
-    >
+    <section className={`${style.section} section`} id={id}>
       <video autoPlay loop muted className={style.video}>
         <source src="flag-ukraine.mp4" type="video/mp4" />
       </video>

@@ -16,31 +16,51 @@ const headerText = {
     eng: "Get in touch",
   },
   navigation: {
-    aboutUs: {
-      eng: "About us",
+    giveHope: {
+      eng: "Give hope",
+      id: "letsGiveHope",
     },
-    prostheticsForUkrainians: {
+    mission: {
+      eng: "Mission",
+      id: "ourMission",
+    },
+    results: {
+      eng: "Results",
+      id: "ourResults",
+    },
+    ukraine: {
+      eng: "Ukraine",
+      id: "inNeed",
+    },
+    whatWeDo: {
       eng: "Prosthetics for Ukrainians",
+      id: "prosthetics",
     },
     stories: {
       eng: "Stories",
-    },
-    news: {
-      eng: "News",
-    },
-    getInvolved: {
-      eng: "Get Involved",
-    },
-    partners: {
-      eng: "Partners",
+      id: "veterans",
     },
     team: {
       eng: "Team",
+      id: "meetOurTeam",
+    },
+    partners: {
+      eng: "Partners",
+      id: "ourPartners",
+    },
+    news: {
+      eng: "News",
+      id: "news",
+    },
+    getInvolved: {
+      eng: "Get Involved",
+      id: "mailingList",
     },
   },
+
   actionButtons: {
     becomeAVolunteer: {
-      eng: "Become a Volunteer",
+      eng: "Protez Academy",
     },
 
     back2top: {
@@ -71,9 +91,9 @@ const BurgerButton = ({ close, onClick }) => {
 };
 
 const socialMediaLinks = [
-  { adress: "facebook.com", icon: icons.iconFaceBook },
-  { adress: "instagram.com", icon: icons.iconInstagram },
-  { adress: "linkedin.com", icon: icons.iconLinkedin },
+  { adress: "https://facebook.com", icon: icons.iconFaceBook },
+  { adress: "https://instagram.com", icon: icons.iconInstagram },
+  { adress: "https://linkedin.com", icon: icons.iconLinkedin },
 ];
 
 export default function Header() {
@@ -81,10 +101,7 @@ export default function Header() {
   const { width, length, mobile, tablet, desktop, screenModeClass } =
     useContext(ScreenModeAndSizeContext);
   const [headerIsOpened, setHeaderIsOpened] = useState(false);
-  const mobileDesktopClass = () => {
-    if (mobile) return "mobile";
-    return "desktop";
-  };
+
   const navLinks = Object.keys(headerText.navigation).map(
     (el) => headerText.navigation[el]
   );
@@ -93,7 +110,7 @@ export default function Header() {
   };
   return (
     <>
-      <header className={style.header}>
+      <header className={style.header} id="header">
         {icons.protezFoundationLogo(
           `${style.foundationLogo} ${
             width <= 920 && headerIsOpened ? style.black : ""
@@ -104,9 +121,13 @@ export default function Header() {
           <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
         ) : (
           <div className={style.headerActionLang}>
-            <button className={"h6 " + style.becomeAVolunteer}>
+            <a
+              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              target="blank"
+              className={"h6 " + style.becomeAVolunteer}
+            >
               {headerText.actionButtons.becomeAVolunteer[lang]}
-            </button>
+            </a>
             <Divider vertical />
             <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
           </div>
@@ -119,7 +140,13 @@ export default function Header() {
             <ul className={style.ancorList}>
               {navLinks.map((link, index) => (
                 <li key={index} className={"h4"}>
-                  <button className={style.navAncor}>{link[lang]}</button>
+                  <a
+                    className={style.navAncor}
+                    href={`#${link.id}`}
+                    onClick={toggleHeader}
+                  >
+                    {link[lang]}
+                  </a>
                 </li>
               ))}
               {mobile && (
@@ -176,11 +203,13 @@ export default function Header() {
         </>
       )}
 
-      <button
+      <a
         className={`${style.backToTopButton} h6 ${mobile ? style.mobile : ""}`}
+        target="blank"
+        href={`#${headerText.navigation.giveHope.id}`}
       >
         {headerText.actionButtons.back2top[lang]}
-      </button>
+      </a>
     </>
   );
 }

@@ -23,13 +23,16 @@ export default function NewsCard({ cardData, short }) {
         height={544}
         className={`${style.newsPicture} ${shortClass()}`}
       />
-      <div className={`${style.date} h6`}>
+      <div className={`${style.date} h6 textContainer`}>
         <span>{time}</span>|<span>{adress}</span>
       </div>
-      {icons[logo](style.logo)}
-      <h3 className={`h3 ${style.title}`}>{title}</h3>
-      <p className={`p ${style.text}`}>{text}</p>
-
+      <div className="textContainer">{icons[logo](style.logo)}</div>
+      <div className="textContainer">
+        <h3 className={`h3 ${style.title}`}>{title}</h3>
+      </div>
+      <div className="textContainer">
+        <p className={`p ${style.text}`}>{text}</p>
+      </div>
       {icons.arrow(`${style.icon}`)}
     </div>
   );

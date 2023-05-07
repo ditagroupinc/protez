@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { LanguageContext } from "../../contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-
+import SquareButton from "@/components/SquareButton";
 import { Divider } from "@/components/Divider";
 
 import style from "./companyData.module.css";
@@ -30,8 +30,10 @@ const companyDataText = {
 
 export default function CompanyData({ className }) {
   const { lang, changeLang } = useContext(LanguageContext);
-  const { width, length, mobile, tablet, desktop, screenModeClass } =
-    useContext(ScreenModeAndSizeContext);
+  const { mobile } = useContext(ScreenModeAndSizeContext);
+
+  const handleClick = () => console.log("clicked");
+
   return (
     <div className={style.container + " " + className}>
       <div className={`${style.adressContainer} ${mobile ? style.mobile : ""}`}>
@@ -49,12 +51,15 @@ export default function CompanyData({ className }) {
       <div
         className={`${style.buttonsContainer} ${mobile ? style.mobile : ""}`}
       >
-        <button className={`squareButton h6 ${style.pinkButton}`}>
-          {companyDataText.actionButtons.makeDonation[lang]}
-        </button>
-        <button className={`squareButton h6 ${style.transparentButton}`}>
-          {companyDataText.actionButtons.needAProtez[lang]}
-        </button>
+        <SquareButton
+          pink
+          onClick={handleClick}
+          text={companyDataText.actionButtons.makeDonation[lang]}
+        />
+        <SquareButton
+          onClick={handleClick}
+          text={companyDataText.actionButtons.needAProtez[lang]}
+        />
       </div>
     </div>
   );

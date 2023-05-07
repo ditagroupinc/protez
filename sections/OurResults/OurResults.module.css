@@ -1,4 +1,4 @@
-#ourResults {
+.section:global(.section) {
   min-height: auto;
   margin-bottom: -1px;
 }
@@ -12,6 +12,7 @@
   align-self: flex-end;
   min-width: 200px;
   flex: 1 1 35%;
+  overflow: hidden;
 }
 
 .countBlock {
@@ -25,5 +26,11 @@
   .block {
     gap: 100px;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .section:global(.section) {
+    padding-bottom: 0;
   }
 }

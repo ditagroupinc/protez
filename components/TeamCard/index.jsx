@@ -1,16 +1,9 @@
 import Image from "next/image";
 import style from "./TeamCard.module.css";
-import { useContext } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import { icons } from "@/public/socialMediaIcons";
 
 export default function TeamCard({ photo, links = {}, name, position, black }) {
-  const { lang } = useContext(LanguageContext);
-  const { height, width, mobile, screenModeClass } = useContext(
-    ScreenModeAndSizeContext
-  );
-  // console.log(icons);
+  const cardColor = () => (black ? "#0D1125" : "#fff");
   return (
     <div className={`${style.teamCard}`}>
       <Image
@@ -21,11 +14,13 @@ export default function TeamCard({ photo, links = {}, name, position, black }) {
         width={264}
         height={220}
       />
-      <div className={`${style.container} ${black && style.black}`}>
+      <div
+        className={`${style.container} ${black && style.black} textContainer`}
+      >
         <div className={`${style.linksList}`}>
           {Object.keys(links).map((key, index) => (
-            <a href={links[key]} key={index}>
-              {icons[key](style.icon, black && "#0D1125")}
+            <a href={links[key]} target="blank" key={index}>
+              {icons[key](style.icon, cardColor())}
             </a>
           ))}
         </div>

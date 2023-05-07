@@ -1,12 +1,9 @@
 import styles from "./CountResults.module.css";
-import React, { useRef, useState, useEffect } from "react";
+import React from "react";
 
 import CountUp from "react-countup";
 
-const CountResults = ({ count, text }) => {
-  const [inViewport, setInViewport] = useState(false);
-  const ref = useRef(null);
-
+const CountResults = ({ count, text, inViewport }) => {
   const digitArray = count.split("");
 
   const MyCounter = () => {
@@ -28,31 +25,13 @@ const CountResults = ({ count, text }) => {
     ));
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        setInViewport(true);
-      }
-    });
-
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
-    };
-  }, []);
-
   return (
     <div className={`h2 ${styles.counter}`}>
       <div>
         <span className={`${styles.title} h2`}>{text}</span>
       </div>
 
-      <span ref={ref} className={`${styles.bigNumb}`}>
+      <span className={`${styles.bigNumb}`}>
         {inViewport ? MyCounter() : 0}
       </span>
     </div>

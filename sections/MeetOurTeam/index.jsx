@@ -1,10 +1,9 @@
-import { useContext } from "react";
+import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./MeetOurTeam.module.css";
 import TeamCard from "@/components/TeamCard";
 import { icons } from "./icons";
-import Slider from "react-slick";
 
 const MeetOurTeamText = {
   lets: {
@@ -20,8 +19,8 @@ const MeetOurTeamText = {
     {
       photo: "yuryA.png",
       links: {
-        facebook: "facebook.com",
-        instagram: "instagram.com",
+        facebook: "https://facebook.com",
+        instagram: "https://instagram.com",
       },
       name: {
         eng: "Yury Aroshidze",
@@ -33,8 +32,8 @@ const MeetOurTeamText = {
     {
       photo: "yakovG.png",
       links: {
-        facebook: "facebook.com",
-        instagram: "instagram.com",
+        facebook: "https://facebook.com",
+        instagram: "https://instagram.com",
       },
       name: {
         eng: "Yakov Gradinar",
@@ -48,9 +47,9 @@ const MeetOurTeamText = {
     {
       photo: "andreyM.png",
       links: {
-        facebook: "facebook.com",
-        instagram: "instagram.com",
-        linkedin: "linkedin.com",
+        facebook: "https://facebook.com",
+        instagram: "https://instagram.com",
+        linkedin: "https://linkedin.com",
       },
       name: {
         eng: "Andrey Madan",
@@ -72,8 +71,8 @@ const MeetOurTeamText = {
     {
       photo: "valentynaP.png",
       links: {
-        facebook: "facebook.com",
-        instagram: "instagram.com",
+        facebook: "https://facebook.com",
+        instagram: "https://instagram.com",
       },
 
       name: {
@@ -86,7 +85,7 @@ const MeetOurTeamText = {
   ],
 };
 
-export default function MeetOurTeam({}) {
+const MeetOurTeam = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
   const { height, width, mobile, tablet, screenModeClass } = useContext(
     ScreenModeAndSizeContext
@@ -102,11 +101,14 @@ export default function MeetOurTeam({}) {
   };
   return (
     <section
-      className={style.section + " section"}
-      // style={{ maxHeight: height }}
+      className={`${style.section} section ${visible ? "showText" : ""}`}
+      id={id}
+      ref={ref}
     >
       <div className={style.container}>
-        <div>{icons.meetOurTeamLogo(`${style.logo} svgTextBlock`)}</div>
+        <div className="textContainer">
+          {icons.meetOurTeamLogo(`${style.logo} svgTextBlock`)}
+        </div>
         <div className={style.membersContainer}>
           {MeetOurTeamText.executives.map((card, index) => (
             <TeamCard
@@ -138,4 +140,7 @@ export default function MeetOurTeam({}) {
       </div>
     </section>
   );
-}
+});
+
+MeetOurTeam.displayName = "MeetOurTeam";
+export default MeetOurTeam;

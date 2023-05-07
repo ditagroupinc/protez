@@ -1,6 +1,5 @@
-import { useContext } from "react";
+import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./news.module.css";
 import NewsCard from "@/components/NewsCard";
 import { icons } from "./icons";
@@ -9,7 +8,7 @@ import Slider from "react-slick";
 const wereInNews = {
   cards: [
     {
-      link: "nytimes.com",
+      link: "https://nytimes.com",
       photo: "nyt-pic.png",
       time: "16.03.2023",
       adress: "nytimes.com",
@@ -19,7 +18,7 @@ const wereInNews = {
       text: "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
     },
     {
-      link: "1plus1.ua",
+      link: "https://1plus1.ua",
       photo: "1plus1-pic.png",
       time: "19.03.2023",
       adress: "plus1.ua",
@@ -28,7 +27,7 @@ const wereInNews = {
       text: "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
     },
     {
-      link: "globalminnesota.org",
+      link: "https://globalminnesota.org",
       photo: "globalminesota-pic.png",
       time: "27.03.2023",
       adress: "globalminnesota.org",
@@ -37,7 +36,7 @@ const wereInNews = {
       text: "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
     },
     {
-      link: "eplocalnews.org",
+      link: "https://eplocalnews.org",
       photo: "eplocalnews-pic.png",
       time: "27.03.2023",
       adress: "eplocalnews.org",
@@ -46,7 +45,7 @@ const wereInNews = {
       text: "Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",
     },
     {
-      link: "nytimes.com",
+      link: "https://nytimes.com",
       photo: "nyt-pic.png",
       time: "16.03.2023",
       adress: "nytimes.com",
@@ -56,7 +55,7 @@ const wereInNews = {
       text: "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
     },
     {
-      link: "1plus1.ua",
+      link: "https://1plus1.ua",
       photo: "1plus1-pic.png",
       time: "19.03.2023",
       adress: "plus1.ua",
@@ -65,7 +64,7 @@ const wereInNews = {
       text: "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
     },
     {
-      link: "globalminnesota.org",
+      link: "https://globalminnesota.org",
       photo: "globalminesota-pic.png",
       time: "27.03.2023",
       adress: "globalminnesota.org",
@@ -74,7 +73,7 @@ const wereInNews = {
       text: "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
     },
     {
-      link: "eplocalnews.org",
+      link: "https://eplocalnews.org",
       photo: "eplocalnews-pic.png",
       time: "27.03.2023",
       adress: "eplocalnews.org",
@@ -86,12 +85,8 @@ const wereInNews = {
   ],
 };
 
-export default function News({}) {
+const News = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
-  const { height, width, mobile, screenModeClass } = useContext(
-    ScreenModeAndSizeContext
-  );
-  //
   const settings = {
     dots: true,
     infinite: true,
@@ -124,12 +119,12 @@ export default function News({}) {
   };
   return (
     <section
-      className={"section news"}
-      // style={{ maxHeight: height }}
-      id={style.news}
+      className={`${style.section} section ${visible ? "showText" : ""}`}
+      id={id}
+      ref={ref}
     >
       <div className={style.container}>
-        <div className={style.logoContainer}>
+        <div className={style.logoContainer + " textContainer"}>
           {icons.wereInNews("svgTextBlock")}
         </div>
         <div className={style.newsContainer}>
@@ -144,4 +139,7 @@ export default function News({}) {
       </div>
     </section>
   );
-}
+});
+
+News.displayName = "News";
+export default News;

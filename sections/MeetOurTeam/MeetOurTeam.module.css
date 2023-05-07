@@ -1,4 +1,4 @@
-.section {
+.section:global(.section) {
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0.9) 0%,
@@ -35,7 +35,7 @@
 }
 
 @media screen and (max-width: 1180px) {
-  .section {
+  .section:global(.section) {
     background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.9),

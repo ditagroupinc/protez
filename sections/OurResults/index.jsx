@@ -1,13 +1,11 @@
 // import "@/app/globals.css";
 import style from "./OurResults.module.css";
 import CountResults from "@/components/CountResults";
-import { useContext } from "react";
+import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-import { switchWindowSize } from "@/utils/switchWindowSize";
 import SmokeBackground from "@/components/SmokeBackground";
 import { icons } from "./icons";
-const OurResultsText = {
+const ourResultsText = {
   blockInfo: {
     prosthetics: {
       eng: `Prosthetics`,
@@ -33,36 +31,35 @@ const OurResultsText = {
 };
 
 const ResultsCounts = ["76", "196", "290", "1300000"];
-const OurResults = () => {
+const OurResults = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
-  const { mobile, tablet, tabletLarge, desktopSmall } = useContext(
-    ScreenModeAndSizeContext
-  );
-  const mobileDesktopClass = () => {
-    return switchWindowSize(style, mobile, tablet, tabletLarge, desktopSmall);
-  };
-
-  const BlocksCounts = Object.keys(OurResultsText.blockInfo).map((text, i) => {
-    return (
-      <CountResults
-        key={i}
-        count={ResultsCounts[i]}
-        text={OurResultsText.blockInfo[text][lang]}
-        styleMod={style.styleMod}
-      />
-    );
-  });
 
   return (
-    <section className={` section`} id={style.ourResults}>
+    <section
+      className={`${style.section} section ${visible ? "showText" : ""}`}
+      id={id}
+      ref={ref}
+    >
       <SmokeBackground />
       <div className={`${style.block}`}>
-        <div className={style.leftBlock}>{icons.titleSVG("svgTextBlock")}</div>
+        <div className={`${style.leftBlock} textContainer`}>
+          {icons.titleSVG("svgTextBlock")}
+        </div>
 
-        <div className={`${style.countBlock}`}>{BlocksCounts}</div>
+        <div className={`${style.countBlock}`}>
+          {Object.keys(ourResultsText.blockInfo).map((text, i) => (
+            <CountResults
+              inViewport={visible}
+              key={i}
+              count={ResultsCounts[i]}
+              text={ourResultsText.blockInfo[text][lang]}
+              styleMod={style.styleMod}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
-};
-
+});
+OurResults.displayName = "OurResults";
 export default OurResults;

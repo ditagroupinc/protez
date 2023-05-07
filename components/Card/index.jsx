@@ -10,13 +10,15 @@ const Card = ({ text, icon, reverse }) => {
   };
   const ifReverse = () => {
     if (reverse) return styles.reverseBlock;
-    return;
+    return "";
   };
   return (
     <div
       className={` h5  ${mobileDesktopClass()} ${styles.block} ${ifReverse()}`}
     >
-      <h5>{text}</h5>
+      <div className="textContainer">
+        <h5>{text}</h5>
+      </div>
       {icon()}
     </div>
   );

@@ -1,11 +1,11 @@
-#ourPartners {
+.section:global(.section) {
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0.9),
     rgba(255, 255, 255, 0.9)
   );
   background-blend-mode: normal, screen;
-  padding-bottom: var(--paddingVW);
+  padding-bottom: 80px;
 }
 
 .specialThanks {
@@ -74,8 +74,6 @@
 }
 
 .membersContainer {
-  /* display: flex;
-  justify-content: center; */
 }
 
 @media screen and (max-width: 850px) {

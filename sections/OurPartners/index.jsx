@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import style from "./ourPartners.module.css";
 import { icons } from "./icons";
@@ -11,7 +11,7 @@ const ourPartners = {
 };
 
 const PartnerCard = ({ image }) => (
-  <div className={style.partnerCard}>
+  <div className={style.partnerCard + " textContainer"}>
     <Image
       src={`/partnersLogos/${image}`}
       object-fit="contain"
@@ -24,12 +24,16 @@ const PartnerCard = ({ image }) => (
   </div>
 );
 
-export default function OurPartners({}) {
+const OurPartners = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
   return (
-    <section id={style.ourPartners} className={"section"}>
+    <section
+      className={`${style.section} section ${visible ? "showText" : ""}`}
+      id={id}
+      ref={ref}
+    >
       <div className={style.container}>
-        <div className={style.specialThanks}>
+        <div className={style.specialThanks + " textContainer"}>
           {icons.specialThanks("svgTextBlock")}
         </div>
         <PartnerCard image="ottobock.png" />
@@ -46,4 +50,7 @@ export default function OurPartners({}) {
       </div>
     </section>
   );
-}
+});
+
+OurPartners.displayName = "OurPartners";
+export default OurPartners;

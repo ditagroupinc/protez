@@ -1,0 +1,25 @@
+.button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem 2.5rem;
+  background-color: transparent;
+  border: 1px solid var(--white);
+  transform-origin: center;
+  transition: transform var(--transitionProps);
+  &:hover {
+    transform: scale(var(--textScale));
+    transition: transform var(--transitionProps);
+  }
+}
+
+.button.pink {
+  border: 1px solid var(--pink);
+  background-color: var(--pink);
+}
+
+.button.black {
+  border: 1px solid var(--black);
+  background-color: var(--black);
+}

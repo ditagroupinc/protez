@@ -55,7 +55,6 @@
   }
   &:hover {
     transform-origin: center;
-    /* transform: scale(var(--textScale)); */
     transition: transform var(--transitionProps);
     & span {
       background-color: var(--pink);
@@ -83,16 +82,17 @@
   padding: 16px 24px;
   background-color: transparent;
   transform-origin: center;
-  transition: background-color var(--transitionProps),
-    transform var(--transitionProps);
+  transition: color var(--transitionProps), transform var(--transitionProps);
   &:hover {
-    background-color: var(--pink);
+    color: var(--pink);
     /* transform: scale(var(--textScale)); */
-    transition: background-color var(--transitionProps),
-      transform var(--transitionProps);
+    transition: color var(--transitionProps), transform var(--transitionProps);
   }
   &.black {
     color: var(--black);
+    &:hover {
+      color: var(--pink);
+    }
   }
   &.short {
     padding: 16px 0;

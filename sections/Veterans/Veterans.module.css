@@ -1,4 +1,4 @@
-#veterans {
+.section:global(.section) {
   padding-right: 0;
   color: var(--white);
   padding-bottom: 6rem;
@@ -124,16 +124,16 @@
   /* bottom: 0; */
 }
 
-#veterans :global(.slick-dots li.slick-active button:before) {
+.section:global(.section) :global(.slick-dots li.slick-active button:before) {
   color: var(--pink);
 }
 
-#veterans :global(.slick-dots li button:before) {
+.section:global(.section) :global(.slick-dots li button:before) {
   color: var(--white);
   opacity: 1;
 }
 
-#veterans :global(.slick-dots) {
+.section:global(.section) :global(.slick-dots) {
   width: fit-content;
   position: absolute;
   margin-top: 7rem;
@@ -143,7 +143,7 @@
 }
 
 @media screen and (max-width: 1180px) {
-  #veterans {
+  .section:global(.section) {
     padding-top: 140px;
   }
   .rightSide {
@@ -157,7 +157,7 @@
   }
 }
 @media screen and (max-width: 850px) {
-  #veterans {
+  .section:global(.section) {
     padding-bottom: 0;
   }
   .sliderCard {
@@ -189,7 +189,7 @@
     margin-top: 2.5rem;
   }
 
-  #veterans :global(.slick-dots) {
+  .section:global(.section) :global(.slick-dots) {
     bottom: calc(5rem + 0.5rem);
   }
 }

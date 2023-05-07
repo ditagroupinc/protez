@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from "react";
+import { useContext, useRef, useState, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./Veterans.module.css";
@@ -94,7 +94,7 @@ function SampleNextArrow(props) {
   );
 }
 
-export default function Veterans() {
+const Veterans = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
   const { height, width, mobile, tablet } = useContext(
     ScreenModeAndSizeContext
@@ -118,7 +118,11 @@ export default function Veterans() {
     nextArrow: <SampleNextArrow />,
   };
   return (
-    <section id={style.veterans} className={` section`}>
+    <section
+      className={`${style.section} section ${visible ? "showText" : ""}`}
+      id={id}
+      ref={ref}
+    >
       {/* <CustomCursor id={style.veterans} /> */}
       <SmokeBackground />
       <div className={style.sliderWrapper}>
@@ -126,11 +130,11 @@ export default function Veterans() {
           {veteransText.veterans.map((element, index) => (
             <div key={index}>
               <div className={style.sliderCard}>
-                <div className={style.leftSide}>
+                <div className={`${style.leftSide} textContainer`}>
                   <h5 className={`h5 ${style.ageRank}`}>
                     {element.ageRank[lang]}
                   </h5>
-                  {icons[element.icon](style.veteranLogo)}
+                  {icons[element.icon](`${style.veteranLogo} svgTextBlock`)}
                   <h4 className={`h2 ${style.cardTitle}`}>
                     {element.title[lang]}
                   </h4>
@@ -139,10 +143,18 @@ export default function Veterans() {
                   <div className={style.shareMe}>
                     <span className={`h5`}>{veteransText.share[lang]}</span>
                     <div className={`${style.buttonsList}`}>
-                      <a href="#">{icons.iconTwitter()}</a>
-                      <a href="#">{icons.iconLinkedin()}</a>
-                      <a href="#">{icons.iconFacebook()}</a>
-                      <a href="#">{icons.iconLink()}</a>
+                      <a target="blank" href="#">
+                        {icons.iconTwitter()}
+                      </a>
+                      <a target="blank" href="#">
+                        {icons.iconLinkedin()}
+                      </a>
+                      <a target="blank" href="#">
+                        {icons.iconFacebook()}
+                      </a>
+                      <a target="blank" href="#">
+                        {icons.iconLink()}
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -192,4 +204,7 @@ export default function Veterans() {
       )}
     </section>
   );
-}
+});
+
+Veterans.displayName = "Veterans";
+export default Veterans;

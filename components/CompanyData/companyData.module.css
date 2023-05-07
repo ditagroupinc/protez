@@ -42,24 +42,3 @@
     padding-left: 0;
   }
 }
-
-.pinkButton {
-  background-color: var(--pink);
-  transform-origin: center;
-  transition: transform var(--transitionProps);
-  &:hover {
-    transform: scale(var(--textScale));
-    transition: transform var(--transitionProps);
-  }
-}
-
-.transparentButton {
-  background-color: transparent;
-  border: 1px solid var(--white);
-  transform-origin: center;
-  transition: transform var(--transitionProps);
-  &:hover {
-    transform: scale(var(--textScale));
-    transition: transform var(--transitionProps);
-  }
-}
