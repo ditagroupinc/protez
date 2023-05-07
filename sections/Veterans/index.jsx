@@ -29,6 +29,10 @@ const veteransText = {
       img: "vadymFedorov.png",
       icon: "vadymFedorov",
       video: "https://www.youtube.com/embed/D1zR9DkYgu4",
+      facebook: "https://facebook.com",
+      instagram: "https://instagram.com",
+      linkedin: "https://linkedin.com",
+      twitter: "https://twitter.com",
     },
     {
       ageRank: {
@@ -143,16 +147,16 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                   <div className={style.shareMe}>
                     <span className={`h5`}>{veteransText.share[lang]}</span>
                     <div className={`${style.buttonsList}`}>
-                      <a target="blank" href="#">
+                      <a target="blank" href={element.twitter}>
                         {icons.iconTwitter()}
                       </a>
-                      <a target="blank" href="#">
+                      <a target="blank" href={element.linkedin}>
                         {icons.iconLinkedin()}
                       </a>
-                      <a target="blank" href="#">
+                      <a target="blank" href={element.facebook}>
                         {icons.iconFacebook()}
                       </a>
-                      <a target="blank" href="#">
+                      <a target="blank" href={element.linkedin}>
                         {icons.iconLink()}
                       </a>
                     </div>
