@@ -44,7 +44,6 @@ export default function Home() {
       setWindowSizes({
         width: windowWidth,
         height: windowHeight,
-        // height: "100%",
         mobile: windowWidth <= 480,
         tablet: windowWidth <= 1180,
         desktop: windowWidth >= 1181,

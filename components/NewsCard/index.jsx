@@ -15,7 +15,7 @@ export default function NewsCard({ cardData, short }) {
   const shortClass = () => (short ? style.short : "");
 
   return (
-    <div className={`${screenModeClass} ${style.newsCard} ${shortClass()}`}>
+    <div className={`${style.newsCard} ${shortClass()}`}>
       <Image
         src={`/news/photos/${photo}`}
         alt="article picture"

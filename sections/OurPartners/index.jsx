@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./ourPartners.module.css";
-import TeamCard from "@/components/TeamCard";
 import { icons } from "./icons";
 import Image from "next/image";
 
@@ -28,9 +26,6 @@ const PartnerCard = ({ image }) => (
 
 export default function OurPartners({}) {
   const { lang } = useContext(LanguageContext);
-  const { height, width, mobile, screenModeClass } = useContext(
-    ScreenModeAndSizeContext
-  );
   return (
     <section id={style.ourPartners} className={"section"}>
       <div className={style.container}>

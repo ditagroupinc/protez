@@ -184,23 +184,23 @@ body {
 
 .svgTextBlock {
   max-width: 100%;
+  width: 100%;
+  height: auto;
 }
 
-.news .slick-slider {
-  height: 100%;
-}
+/* desktop */
+/* @media screen and (max-width: 1920px) {
+} */
+/* beforeTablet */
+/* @media screen and (max-width: 1366px) {
+  .countBlock {
+    align-self: center;
+  }
+} */
 
-.news .slick-dots {
-  width: fit-content;
-  position: static;
-  margin-top: 7rem;
-}
-
-.news .slick-dots li.slick-active button:before {
-  color: var(--pink);
-}
-
-.news .slick-dots li button:before {
-  color: var(--white);
-  opacity: 1;
-}
+/* tablet */
+/* @media screen and (max-width: 1180px) {
+} */
+/* phobe */
+/* @media screen and (max-width: 480px) {
+} */

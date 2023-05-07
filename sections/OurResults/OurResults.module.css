@@ -1,101 +1,29 @@
-
-#ourResults{
+#ourResults {
   min-height: auto;
-  display: flex;
   margin-bottom: -1px;
-  justify-content: center;
 }
-#ourResults.tabletLarge{
-  justify-content: center;
-}
+
 .block {
+  display: flex;
+  gap: 1rem;
+}
+
+.leftBlock {
   align-self: flex-end;
-  display: flex;
-  position:relative;
-  gap: 1.5vw;
-  & svg{
-    align-self: flex-end;
-    min-width:  18.719vw;
-    width: 100%;
-    height: auto;
-  }
+  min-width: 200px;
+  flex: 1 1 35%;
 }
 
-
-.countBlock{
-  max-width:  100%;
-  max-height:  100%;
-  align-self:flex-end;
+.countBlock {
+  flex: 1 1 60%;
   display: flex;
-  height: fit-content;
   align-items: flex-end;
-
-}
-.countBlock div:nth-child(1) {
-  padding-bottom: 1em;
-}
-.countBlock div:nth-child(2) {
-  padding-bottom: 3em;
 }
 
-.countBlock div:nth-child(3) {
-  padding-bottom: 6em;
-}
-.countBlock div:nth-child(4) {
-  padding-bottom: 4em;
-}
-
-
-.block.desktopSmall {
-
-  flex-direction: column;
-  gap: 100px;
-  & svg{
-    align-self: flex-end;
-    width: 60%;
-    height: 100%    ;
-  }
-}
-.block.tabletLarge {
-
-  flex-direction: row;
-  gap: 20px;
-  & svg{
-    align-self: flex-end;
-    width: 60%;
-    height: 100%    ;
-  }
-}
-@media screen and (max-width: 900px) {
-  .block.tabletLarge {
-    flex-direction: column;
+/* tablet */
+@media screen and (max-width: 1180px) {
+  .block {
     gap: 100px;
-    & svg{
-      align-self: flex-end;
-      width: 60%;
-      height: 100%    ;
-    }
-    & div{
-      max-width: 100%;
-    }
+    flex-direction: column;
   }
-}
-
-.countBlock.tabletLarge{
-  align-self: center;
-  
-
-}
-.countBlock.tabletLarge div:nth-child(1) {
-  padding-bottom: 1em;
-}
-.countBlock.tabletLarge div:nth-child(2) {
-  padding-bottom: 2em;
-}
-
-.countBlock.tabletLarge div:nth-child(3) {
-  padding-bottom: 4em;
-}
-.countBlock.tabletLarge div:nth-child(4) {
-  padding-bottom: 4em;
 }

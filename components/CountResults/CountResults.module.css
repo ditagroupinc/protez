@@ -1,73 +1,66 @@
 .counter {
-  color: var(--white); 
+  color: var(--white);
   display: flex;
   flex-direction: row-reverse;
-  transform: translate(0 , 0) rotate(180deg) ;
+  transform: rotate(180deg);
   white-space: nowrap;
   align-content: flex-start;
-  max-height: 100%;
-  max-width: 100%;
-  border-right: -1px;
   border-left: 4px solid var(--pink);
   margin-right: -1px;
-  & > div{
-    padding-right: 1em;
-    text-align: top;
+  flex: 1 1 24%;
+  justify-content: center;
+  &:first-of-type {
+    padding-bottom: 2rem;
   }
+  &:nth-of-type(2) {
+    padding-bottom: 6rem;
+  }
+  &:nth-of-type(3) {
+    padding-bottom: 12rem;
+  }
+}
 
-}
-.counter.tabletLarge {
-  & > div{
-    padding-right: .5em;
-  }
-}
-.counter.tablet {
-  & > div{
-    padding-right: 1em;
-  }
-}
 .bigNumb {
   writing-mode: vertical-lr;
-  font-size: calc(80px + 52 * ((100vw - 360px) / 2200));
-  line-height: calc(70px + 60 * ((100vw - 360px) / 2200));
+  font-size: calc(52px + 82 * ((100vw - 360px) / 2200));
+  line-height: 1;
   font-weight: 600;
 }
-.bigNumb.desktopSmall {
-
-  font-size: calc(80px + 34 * ((100vw - 360px) / 2200));
-  line-height: calc(70px + 46 * ((100vw - 360px) / 2200));
-}
-.bigNumb.tabletLarge {
-  font-size: 52px;
-  line-height: 60px;
-}
-
 
 .counter:hover {
   background-color: var(--pink);
-  transition: all .5s ease;
-
+  transition: all var(--transitionProps);
 }
 
-.title{
+.title {
   writing-mode: vertical-lr;
-  align-self:flex-start;
+  align-self: flex-start;
 }
-.numb{
+.numb {
   writing-mode: vertical-lr;
 }
-
-@media screen and (max-width: 500px) {
-  .counter.tablet {
-    & > div{
-      padding-right: 5px;
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .counter {
+    &:first-of-type {
+      padding-bottom: 6rem;
     }
-  
+    &:nth-of-type(2) {
+      padding-bottom: 14rem;
+    }
+    &:nth-of-type(3) {
+      padding-bottom: 22rem;
+    }
+    &:last-of-type {
+      padding-bottom: 12.5rem;
+    }
   }
-  .bigNumb.tabletLarge {
+}
+
+/* phobe */
+@media screen and (max-width: 480px) {
+  .bigNumb {
     font-size: 52px;
     line-height: 48px;
   }
 }
-
-

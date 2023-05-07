@@ -104,9 +104,7 @@ export default function Header() {
           <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
         ) : (
           <div className={style.headerActionLang}>
-            <button
-              className={"h6 " + screenModeClass + " " + style.becomeAVolunteer}
-            >
+            <button className={"h6 " + style.becomeAVolunteer}>
               {headerText.actionButtons.becomeAVolunteer[lang]}
             </button>
             <Divider vertical />
@@ -120,12 +118,12 @@ export default function Header() {
             <span className={style.menuText}>{headerText.menu[lang]}</span>
             <ul className={style.ancorList}>
               {navLinks.map((link, index) => (
-                <li key={index} className={"h4 " + screenModeClass}>
+                <li key={index} className={"h4"}>
                   <button className={style.navAncor}>{link[lang]}</button>
                 </li>
               ))}
               {mobile && (
-                <li className={"h4 " + screenModeClass}>
+                <li className={"h4"}>
                   <button className={style.navAncor + " " + style.underlined}>
                     {headerText.actionButtons.lang[lang]}
                   </button>
@@ -139,13 +137,7 @@ export default function Header() {
             </span>
             <button
               className={
-                screenModeClass +
-                " " +
-                style.becomeAVolunteer +
-                " " +
-                style.short +
-                " " +
-                style.black
+                style.becomeAVolunteer + " " + style.short + " " + style.black
               }
             >
               {headerText.actionButtons.becomeAVolunteer[lang]}
