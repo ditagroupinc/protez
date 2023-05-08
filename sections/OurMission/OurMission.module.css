@@ -49,6 +49,17 @@
   }
 }
 
+@media screen and (max-width: 1366px) {
+  .block {
+    & div:global(.textContainer) {
+      height: 100%;
+      & .logo {
+        width: 100%;
+      }
+    }
+  }
+}
+
 /* tablet */
 @media screen and (max-width: 800px) {
   .block {
@@ -59,7 +70,7 @@
     & div:nth-child(1) {
       grid-column: 1 / 7;
       justify-self: flex-end;
-      max-height: 83px;
+      /* max-height: 83px; */
     }
 
     & div:nth-child(2) {

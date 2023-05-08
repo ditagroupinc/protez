@@ -42,7 +42,7 @@ const headerText = {
     },
     team: {
       eng: "Team",
-      id: "meetOurTeam",
+      id: "ourTeam",
     },
     partners: {
       eng: "Partners",
@@ -205,7 +205,6 @@ export default function Header() {
 
       <a
         className={`${style.backToTopButton} h6 ${mobile ? style.mobile : ""}`}
-        target="blank"
         href={`#${headerText.navigation.giveHope.id}`}
       >
         {headerText.actionButtons.back2top[lang]}

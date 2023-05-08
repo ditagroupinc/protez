@@ -1,11 +1,11 @@
 import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-import style from "./MeetOurTeam.module.css";
+import style from "./ourTeam.module.css";
 import TeamCard from "@/components/TeamCard";
-import { icons } from "./icons";
+import { icons } from "./icons.js";
 
-const MeetOurTeamText = {
+const ourTeamText = {
   lets: {
     eng: "Let’s",
   },
@@ -82,10 +82,25 @@ const MeetOurTeamText = {
         eng: "Strategic Advisor",
       },
     },
+    {
+      photo: "ruslanS.png",
+      links: {
+        facebook: "https://facebook.com",
+        instagram: "https://instagram.com",
+        linkedin: "https://linkedin.com",
+      },
+
+      name: {
+        eng: "Ruslan Sychov",
+      },
+      position: {
+        eng: "Digital/IT Advisor",
+      },
+    },
   ],
 };
 
-const MeetOurTeam = forwardRef(function ({ visible, id }, ref) {
+const OurTeam = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
   const { height, width, mobile, tablet, screenModeClass } = useContext(
     ScreenModeAndSizeContext
@@ -107,10 +122,10 @@ const MeetOurTeam = forwardRef(function ({ visible, id }, ref) {
     >
       <div className={style.container}>
         <div className="textContainer">
-          {icons.meetOurTeamLogo(`${style.logo} svgTextBlock`)}
+          {icons.ourTeamLogo(`${style.logo} svgTextBlock`)}
         </div>
         <div className={style.membersContainer}>
-          {MeetOurTeamText.executives.map((card, index) => (
+          {ourTeamText.executives.map((card, index) => (
             <TeamCard
               key={index}
               photo={card.photo}
@@ -127,7 +142,7 @@ const MeetOurTeam = forwardRef(function ({ visible, id }, ref) {
           mobile ? style.scrollable : ""
         }`}
       >
-        {MeetOurTeamText.members.map((card, index) => (
+        {ourTeamText.members.map((card, index) => (
           <TeamCard
             key={index}
             photo={card.photo}
@@ -142,5 +157,5 @@ const MeetOurTeam = forwardRef(function ({ visible, id }, ref) {
   );
 });
 
-MeetOurTeam.displayName = "MeetOurTeam";
-export default MeetOurTeam;
+OurTeam.displayName = "OurTeam";
+export default OurTeam;

@@ -43,7 +43,7 @@ const ProstheticsText = {
 const iconsArr = [icons.iconIntegration, icons.iconHeart, icons.iconPeople];
 const Prosthetics = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
-  const { tablet, desktopSmall } = useContext(ScreenModeAndSizeContext);
+  const { tablet } = useContext(ScreenModeAndSizeContext);
 
   return (
     <section
@@ -53,7 +53,7 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
     >
       <div className={`${styles.block}`}>
         <div className={`${styles.title} textContainer`}>
-          {!desktopSmall ? icons.titleDesktop() : icons.titleTablet()}
+          {!tablet ? icons.titleDesktop() : icons.titleTablet()}
         </div>
         <div
           className={`${styles.text} textContainer ${!tablet ? "h2" : "h5"} `}

@@ -19,6 +19,9 @@
   justify-content: center;
   align-items: center;
   padding: 2.5rem;
+  &:global(.textContainer) {
+    height: 100%;
+  }
 }
 
 .partnerLogo {
@@ -28,7 +31,7 @@
 .container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 4.5fr 3.5fr 2.5fr;
+  grid-template-rows: 4.5fr 3.5fr 2.5fr 2.5fr;
 }
 
 .discoverCard {
@@ -78,6 +81,7 @@
 
 @media screen and (max-width: 850px) {
   .container {
+    grid-template-rows: 4.5fr repeat(4, 3.5fr);
     & div {
       display: inline-flex;
     }
@@ -113,6 +117,10 @@
     & div:nth-of-type(7) {
       grid-column-start: 3;
       grid-column-end: 5;
+    }
+    & div:nth-of-type(8) {
+      grid-column-start: 1;
+      grid-column-end: 3;
     }
   }
 }

@@ -11,7 +11,7 @@ import Header from "@/sections/Header";
 import LetsGiveHope from "@/sections/LetsGiveHope";
 import Veterans from "@/sections/Veterans";
 import OurMission from "@/sections/OurMission";
-import MeetOurTeam from "@/sections/MeetOurTeam";
+import OurTeam from "@/sections/OurTeam";
 import OurPartners from "@/sections/OurPartners";
 
 import News from "@/sections/News";
@@ -39,7 +39,7 @@ export default function Home() {
   const ourMission = useRef(null);
   const prosthetics = useRef(null);
   const veterans = useRef(null);
-  const meetOurTeam = useRef(null);
+  const ourTeam = useRef(null);
   const ourPartners = useRef(null);
   const news = useRef(null);
   const mailingList = useRef(null);
@@ -52,7 +52,7 @@ export default function Home() {
       inNeed: inNeed,
       prosthetics: prosthetics,
       veterans: veterans,
-      meetOurTeam: meetOurTeam,
+      ourTeam: ourTeam,
       ourPartners: ourPartners,
       news: news,
       mailingList: mailingList,
@@ -150,11 +150,7 @@ export default function Home() {
             id="veterans"
             visible={isVisible("veterans")}
           />
-          <MeetOurTeam
-            ref={meetOurTeam}
-            id="meetOurTeam"
-            visible={isVisible("meetOurTeam")}
-          />
+          <OurTeam ref={ourTeam} id="ourTeam" visible={isVisible("ourTeam")} />
           <OurPartners
             ref={ourPartners}
             id="ourPartners"

@@ -1,4 +1,4 @@
-const meetOurTeamLogo = (className = "") => (
+const ourTeamLogo = (className = "") => (
   <svg
     width="744"
     height="190"
@@ -15,5 +15,5 @@ const meetOurTeamLogo = (className = "") => (
 );
 
 export const icons = {
-  meetOurTeamLogo: meetOurTeamLogo,
+  ourTeamLogo: ourTeamLogo,
 };

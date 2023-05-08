@@ -1,5 +1,6 @@
 import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
+import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./ourPartners.module.css";
 import { icons } from "./icons";
 import Image from "next/image";
@@ -26,6 +27,7 @@ const PartnerCard = ({ image }) => (
 
 const OurPartners = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
+  const { tablet } = useContext(ScreenModeAndSizeContext);
   return (
     <section
       className={`${style.section} section ${visible ? "showText" : ""}`}
@@ -34,7 +36,9 @@ const OurPartners = forwardRef(function ({ visible, id }, ref) {
     >
       <div className={style.container}>
         <div className={style.specialThanks + " textContainer"}>
-          {icons.specialThanks("svgTextBlock")}
+          {tablet
+            ? icons.specialThanksTablet("svgTextBlock")
+            : icons.specialThanks("svgTextBlock")}
         </div>
         <PartnerCard image="ottobock.png" />
         <div>
@@ -46,6 +50,7 @@ const OurPartners = forwardRef(function ({ visible, id }, ref) {
         <PartnerCard image="paradise.png" />
         <PartnerCard image="klmb.png" />
         <PartnerCard image="antonovGroup.png" />
+        <PartnerCard image="ditaGroup.png" />
         <PartnerCard image="chaliceOfMercy.png" />
       </div>
     </section>

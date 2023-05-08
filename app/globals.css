@@ -76,24 +76,24 @@ body::-webkit-scrollbar {
 .textContainer {
   height: fit-content;
 }
-@media screen and (min-width: 1180px) {
-  .textContainer {
-    overflow: hidden;
-    & * {
-      transform: translateY(100vh);
-    }
-  }
-
-  .showText .textContainer {
-    & * {
-      transform: translateY(0);
-      transition: transform var(--transitionProps);
-      transition-delay: 0.5s;
-    }
+/* @media screen and (min-width: 1180px) { */
+.textContainer {
+  overflow: hidden;
+  & * {
+    transform: translateY(100vh);
   }
 }
 
-@media screen and (min-width: 360px) {
+.showText .textContainer {
+  & * {
+    transform: translateY(0);
+    transition: transform var(--transitionProps);
+    transition-delay: 0.5s;
+  }
+}
+/* } */
+
+@media screen and (min-width: 1366px) {
   .h1 {
     font-size: calc(32px + 40 * ((100vw - 360px) / 2200));
     line-height: calc(40px + 40 * ((100vw - 360px) / 2200));

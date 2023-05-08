@@ -96,24 +96,27 @@
   object-fit: cover;
 }
 
-/* desktop */
-@media screen and (max-width: 1920px) {
-  .text {
-    padding-right: 5px;
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .ukrainianMap {
+    width: 85%;
   }
-
   .block {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr 1.65fr;
-    padding: 0 0 40px;
+    padding: 5vh 0;
 
     & div:nth-last-child(-n + 3) {
-      padding: 40px;
+      padding: 16px;
+      & h5 {
+        font-size: 18px;
+      }
+      & svg {
+        width: 40px;
+        height: 40px;
+      }
     }
 
-    & div:nth-last-child(-n + 3) h5 {
-      font-size: 18px;
-    }
     & div:nth-child(1) {
       grid-column-start: 1;
       grid-column-end: 3;
@@ -159,34 +162,6 @@
       grid-column-start: 4;
       grid-column-end: 5;
     }
-    & div:global(.textContainer) {
-      padding: 0;
-    }
-  }
-}
-/* beforeTablet */
-@media screen and (max-width: 1366px) {
-  .ukrainianMap {
-    width: 85%;
-  }
-  .block {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1fr 1.65fr;
-    padding: 5vh 0;
-
-    & div:nth-last-child(-n + 3) svg {
-      width: 40px;
-      height: 40px;
-    }
-
-    & div:nth-last-child(-n + 3) {
-      padding: 18px;
-    }
-
-    & div:nth-last-child(-n + 3) h5 {
-      font-size: 18px;
-    }
-
     & div:global(.textContainer) {
       padding: 0;
     }
