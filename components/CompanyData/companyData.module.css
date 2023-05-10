@@ -2,10 +2,9 @@
   color: var(--white);
   position: fixed;
   z-index: 9;
-  left: var(--paddingVW);
   left: 0;
-  bottom: var(--paddingVW);
-  max-width: calc(var(--navLeftWidth) + var(--paddingVW));
+  bottom: var(--headerPaddingSide);
+  max-width: calc(var(--navLeftWidth) + var(--headerPaddingSide));
 }
 
 .adressContainer {
@@ -16,23 +15,17 @@
   width: 100%;
 
   & p {
-    padding-left: var(--paddingVW);
+    padding-left: var(--headerPaddingSide);
     & span {
       display: block;
       line-height: 32px;
-    }
-  }
-  &.mobile {
-    gap: 1rem;
-    p {
-      padding-left: 0;
     }
   }
 }
 
 .buttonsContainer {
   margin-top: 4.375rem;
-  padding-left: var(--paddingVW);
+  padding-left: var(--headerPaddingSide);
   display: flex;
   flex-direction: column;
   gap: 1.875rem;
@@ -40,5 +33,19 @@
     margin-top: 1rem;
     gap: 1rem;
     padding-left: 0;
+  }
+}
+
+/* tablet */
+@media screen and (max-width: 1180px) {
+  .buttonsContainer {
+    margin-top: 1rem;
+    gap: 1rem;
+    padding-left: 0;
+  }
+  .adressContainer {
+    & p {
+      padding-left: 0;
+    }
   }
 }

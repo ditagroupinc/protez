@@ -35,7 +35,7 @@ export default function CompanyData({ className }) {
   const handleClick = () => console.log("clicked");
 
   return (
-    <div className={style.container + " " + className}>
+    <div className={`${style.container} ${className}`}>
       <div className={`${style.adressContainer} ${mobile ? style.mobile : ""}`}>
         <p>
           <span className={"h6 "}>

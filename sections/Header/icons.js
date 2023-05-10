@@ -67,6 +67,23 @@ const iconLinkedin = (className) => (
   </svg>
 );
 
+const iconYoutube = (className) => (
+  <svg
+    width="64"
+    height="64"
+    viewBox="0 0 64 64"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <rect width="64" height="64" rx="32" fill="#0D1125" />
+    <path
+      d="M44.4564 25.86C44.158 24.7343 43.276 23.848 42.1577 23.5466C40.1309 23 32 23 32 23C32 23 23.8691 23 21.8423 23.5466C20.724 23.848 19.842 24.7343 19.5436 25.86C19 27.9016 19 32.1591 19 32.1591C19 32.1591 19 36.4166 19.5436 38.4582C19.842 39.5839 20.724 40.4702 21.8423 40.7716C23.8706 41.3182 32 41.3182 32 41.3182C32 41.3182 40.1309 41.3182 42.1577 40.7716C43.276 40.4702 44.158 39.5839 44.4564 38.4582C45 36.4181 45 32.1591 45 32.1591C45 32.1591 45 27.9016 44.4564 25.86ZM29.3409 36.0251V28.2931L36.1364 32.1591L29.3409 36.0251Z"
+      fill="white"
+    />
+  </svg>
+);
+
 const iconWorld = (className) => (
   <svg
     width="32"
@@ -104,6 +121,7 @@ export const icons = {
   iconFaceBook: iconFaceBook,
   iconInstagram: iconInstagram,
   iconLinkedin: iconLinkedin,
+  iconYoutube: iconYoutube,
   iconWorld: iconWorld,
   menuClose: menuClose,
 };

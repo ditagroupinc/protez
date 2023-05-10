@@ -26,7 +26,7 @@ const CountResults = ({ count, text, inViewport }) => {
   };
 
   return (
-    <div className={`h2 ${styles.counter}`}>
+    <div className={`${styles.counter}`}>
       <div>
         <span className={`${styles.title} h2`}>{text}</span>
       </div>

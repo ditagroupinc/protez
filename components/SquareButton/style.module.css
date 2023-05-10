@@ -7,19 +7,35 @@
   background-color: transparent;
   border: 1px solid var(--white);
   transform-origin: center;
-  transition: transform var(--transitionProps);
-  &:hover {
-    transform: scale(var(--textScale));
-    transition: transform var(--transitionProps);
+  transition: background-color var(--transitionProps),
+    border var(--transitionProps), color var(--transitionProps);
+  &:hover,
+  &:active {
+    color: var(--black);
+    border: 1px solid var(--black);
+    transition: background-color var(--transitionProps),
+      border var(--transitionProps), color var(--transitionProps);
   }
 }
 
 .button.pink {
   border: 1px solid var(--pink);
   background-color: var(--pink);
+  &:hover,
+  &:active {
+    color: var(--white);
+    border: 1px solid var(--black);
+    background-color: var(--black);
+  }
 }
 
 .button.black {
   border: 1px solid var(--black);
   background-color: var(--black);
+  &:hover,
+  &:active {
+    border: 1px solid var(--white);
+    background-color: var(--white);
+    color: var(--pink);
+  }
 }

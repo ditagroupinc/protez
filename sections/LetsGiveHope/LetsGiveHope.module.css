@@ -26,23 +26,41 @@
   opacity: 0.5;
 }
 
-.mainTitle {
+svg.mainTitle {
   position: relative;
   z-index: 1;
+  max-width: 1185px;
 }
 
 .companyData {
   position: static;
   max-width: 100%;
   z-index: 8;
-  padding: 0 6vw 1rem 6vw;
+  /* padding: 0 6vw 1rem 6vw; */
+  padding-top: 1rem;
 }
 
+/* desktop */
+@media screen and (max-width: 1920px) {
+  svg.mainTitle {
+    max-width: 910px;
+  }
+}
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  svg.mainTitle {
+    max-width: 726px;
+  }
+}
+/* phone */
 @media screen and (max-width: 480px) {
   .section:global(.section) {
     min-height: 100vh;
-    padding-bottom: 0;
+    padding-bottom: 30px;
     justify-content: flex-end;
     gap: 100px;
+  }
+  svg.mainTitle {
+    max-width: 100%;
   }
 }

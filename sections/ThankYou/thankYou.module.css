@@ -1,4 +1,4 @@
-.footer:global(.section) {
+.colorContainer {
   min-height: auto;
   background-color: var(--pink);
   padding-top: 4rem;
@@ -21,6 +21,22 @@
   justify-content: center;
   max-width: 80%;
   white-space: nowrap;
+}
+
+.copyright {
+  width: 100%;
+  background-color: var(--black);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.copyrightText {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
 }
 
 /* beforeTablet */

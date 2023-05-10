@@ -116,10 +116,37 @@ const titleTablet = (className) => (
   </svg>
 );
 
+const flag = (className) => (
+  <svg
+    width="63"
+    height="32"
+    viewBox="0 0 63 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
+    <rect width="62.9787" height="32" fill="url(#paint0_linear_1244_6939)" />
+    <defs>
+      <linearGradient
+        id="paint0_linear_1244_6939"
+        x1="31.4894"
+        y1="0"
+        x2="31.4894"
+        y2="32"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop offset="0.473958" stop-color="#0D75FF" />
+        <stop offset="0.474058" stop-color="#FFC327" />
+      </linearGradient>
+    </defs>
+  </svg>
+);
+
 export const icons = {
   iconHeart: iconHeart,
   iconIntegration: iconIntegration,
   iconPeople: iconPeople,
   titleDesktop: titleDesktop,
   titleTablet: titleTablet,
+  flag: flag,
 };

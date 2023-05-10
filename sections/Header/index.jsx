@@ -59,7 +59,7 @@ const headerText = {
   },
 
   actionButtons: {
-    becomeAVolunteer: {
+    protezAcademy: {
       eng: "Protez Academy",
     },
 
@@ -91,6 +91,7 @@ const BurgerButton = ({ close, onClick }) => {
 };
 
 const socialMediaLinks = [
+  { adress: "https://youtube.com", icon: icons.iconYoutube },
   { adress: "https://facebook.com", icon: icons.iconFaceBook },
   { adress: "https://instagram.com", icon: icons.iconInstagram },
   { adress: "https://linkedin.com", icon: icons.iconLinkedin },
@@ -124,9 +125,9 @@ export default function Header() {
             <a
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
               target="blank"
-              className={"h6 " + style.becomeAVolunteer}
+              className={style.protezAcademy}
             >
-              {headerText.actionButtons.becomeAVolunteer[lang]}
+              {headerText.actionButtons.protezAcademy[lang]}
             </a>
             <Divider vertical />
             <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
@@ -164,10 +165,10 @@ export default function Header() {
             </span>
             <button
               className={
-                style.becomeAVolunteer + " " + style.short + " " + style.black
+                style.protezAcademy + " " + style.short + " " + style.black
               }
             >
-              {headerText.actionButtons.becomeAVolunteer[lang]}
+              {headerText.actionButtons.protezAcademy[lang]}
             </button>
             <Divider className={style.headerDivider} />
             <div className={style.socialMediaLinksHeader}>
@@ -178,7 +179,7 @@ export default function Header() {
                   className={style.socialMediaLink}
                   target="blank"
                 >
-                  {link.icon()}
+                  {link.icon(style.socialMediaIcon)}
                 </a>
               ))}
             </div>
@@ -196,7 +197,7 @@ export default function Header() {
                 className={style.socialMediaLink}
                 target="blank"
               >
-                {link.icon()}
+                {link.icon(style.socialMediaIcon)}
               </a>
             ))}
           </div>

@@ -18,28 +18,31 @@ const ThankYou = forwardRef(function ({ visible, id }, ref) {
 
   const handleClick = () => console.log("clicked");
   return (
-    <footer
-      className={`section ${style.footer} ${visible ? "showText" : ""}`}
-      id={id}
-      ref={ref}
-    >
-      <div className={style.container}>
-        <div className="textContainer">
-          {icons.thankYouIcon("svgTextBlock")}
+    <footer className={`${visible ? "showText" : ""}`} id={id} ref={ref}>
+      <div className={`${style.colorContainer} ${style.colorContainer}`}>
+        <div className={style.container}>
+          <div className="textContainer">
+            {icons.thankYouIcon("svgTextBlock")}
+          </div>
+          <div className={style.buttonsContainer}>
+            <SquareButton
+              link
+              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              onClick={handleClick}
+              text={ourResultsText.becomeAVolunteer[lang]}
+            />
+            <SquareButton
+              black
+              onClick={handleClick}
+              text={ourResultsText.giveHope[lang]}
+            />
+          </div>
         </div>
-        <div className={style.buttonsContainer}>
-          <SquareButton
-            link
-            href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-            onClick={handleClick}
-            text={ourResultsText.becomeAVolunteer[lang]}
-          />
-          <SquareButton
-            black
-            onClick={handleClick}
-            text={ourResultsText.giveHope[lang]}
-          />
-        </div>
+      </div>
+      <div className={style.copyright}>
+        <span className={style.copyrightText}>
+          2023 © Made by DITA GROUP Inc.
+        </span>
       </div>
     </footer>
   );

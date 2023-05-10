@@ -8,10 +8,8 @@
   align-items: center;
   justify-content: space-between;
   color: var(--white);
-  padding: 2rem var(--paddingVW);
-  & button {
-    /* text-transform: uppercase; */
-  }
+  padding: 0 var(--headerPaddingSide);
+  padding-top: var(--headerPaddingTop);
 }
 
 .foundationLogo {
@@ -75,11 +73,10 @@
   }
 }
 
-.becomeAVolunteer {
-  font-size: 24px;
+.protezAcademy {
   line-height: 28px;
-  /* mix-blend-mode: difference; */
   padding: 16px 24px;
+  text-transform: uppercase;
   background-color: transparent;
   transform-origin: center;
   transition: color var(--transitionProps), transform var(--transitionProps);
@@ -96,6 +93,18 @@
   }
   &.short {
     padding: 16px 0;
+  }
+}
+
+@media screen and (min-width: 1366px) {
+  .protezAcademy {
+    font-size: calc(16px + 8 * ((100vw - 1366px) / 1194));
+  }
+}
+@media screen and (min-width: 2560px) {
+  .protezAcademy {
+    font-size: 20px;
+    line-height: 24px;
   }
 }
 
@@ -187,26 +196,28 @@
   right: var(--paddingVW);
   top: 50%;
   transform: translateY(-50%);
+  gap: 40px;
 }
 
 .socialMediaLinksHeader {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
-  & svg {
+  & .socialMediaIcon {
     max-width: 40px;
     max-height: 40px;
   }
 }
 
 .socialMediaLink {
-  & svg rect {
-    transition: fill var(--transitionProps);
-  }
-  &:hover svg rect {
+  &:hover .socialMediaIcon rect {
     transition: fill var(--transitionProps);
     fill: var(--pink);
   }
+}
+
+.socialMediaIcon {
+  transition: fill var(--transitionProps);
 }
 
 .backToTopButton {
@@ -231,4 +242,36 @@
 .socialMediaLinksFixed,
 .backToTopButton {
   z-index: 9;
+}
+
+/* desktop */
+@media screen and (max-width: 1920px) {
+  .foundationLogo {
+    max-width: 290px;
+  }
+  .socialMediaLinksFixed {
+    gap: 24px;
+  }
+  .socialMediaIcon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .socialMediaIcon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* phone */
+@media screen and (max-width: 480px) {
+  .foundationLogo {
+    max-width: 116px;
+  }
+  .burgerButton {
+    max-width: 24px;
+  }
 }

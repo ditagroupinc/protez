@@ -11,7 +11,31 @@
   --paddingVW: 2vw;
   --transitionProps: 0.3s;
   --textScale: 1.01;
+  --headerPaddingSide: 108px;
+  --headerPaddingTop: 90px;
 }
+
+@media screen and (max-width: 1920px) {
+  :root {
+    --headerPaddingSide: 42px;
+    --headerPaddingTop: 42px;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  :root {
+    --navLeftWidth: 264px;
+    --headerPaddingTop: 21px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --headerPaddingSide: 30px;
+    --headerPaddingTop: 17px;
+  }
+}
+
 @media screen and (min-width: 1981px) {
   :root {
     --paddingVW: 4vw;
@@ -41,18 +65,6 @@ body::-webkit-scrollbar {
 
 /* global classes */
 /* -------------------------------------------------------------------------------------- */
-
-.button-disabled {
-  opacity: 0.75;
-}
-
-.hidden {
-  display: none;
-}
-
-.invisible {
-  opacity: 0;
-}
 
 /* -------------------------------------------------------------------------------------- */
 .h1,
@@ -87,39 +99,39 @@ body::-webkit-scrollbar {
 .showText .textContainer {
   & * {
     transform: translateY(0);
-    transition: transform var(--transitionProps);
-    transition-delay: 0.5s;
+    transition: transform 2s;
+    /* transition-delay: 0.5s; */
   }
 }
 /* } */
 
 @media screen and (min-width: 1366px) {
   .h1 {
-    font-size: calc(32px + 40 * ((100vw - 360px) / 2200));
-    line-height: calc(40px + 40 * ((100vw - 360px) / 2200));
+    font-size: calc(32px + 40 * ((100vw - 1366px) / 1194));
+    line-height: calc(40px + 40 * ((100vw - 1366px) / 1194));
   }
   .h2 {
-    font-size: calc(24px + 24 * ((100vw - 360px) / 2200));
-    line-height: calc(28px + 28 * ((100vw - 360px) / 2200));
+    font-size: calc(24px + 24 * ((100vw - 1366px) / 1194));
+    line-height: calc(28px + 28 * ((100vw - 1366px) / 1194));
   }
   .h3 {
-    font-size: calc(22px + 18 * ((100vw - 360px) / 2200));
-    line-height: calc(28px + 20 * ((100vw - 360px) / 2200));
+    font-size: calc(22px + 18 * ((100vw - 1366px) / 1194));
+    line-height: calc(28px + 20 * ((100vw - 1366px) / 1194));
   }
   .h4 {
-    font-size: calc(20px + 10 * ((100vw - 360px) / 2200));
-    line-height: calc(24px + 8 * ((100vw - 360px) / 2200));
+    font-size: calc(20px + 10 * ((100vw - 1366px) / 1194));
+    line-height: calc(24px + 8 * ((100vw - 1366px) / 1194));
   }
   .h5 {
-    font-size: calc(18px + 10 * ((100vw - 360px) / 2200));
-    line-height: calc(24px + 16 * ((100vw - 360px) / 2200));
+    font-size: calc(18px + 10 * ((100vw - 1366px) / 1194));
+    line-height: calc(24px + 16 * ((100vw - 1366px) / 1194));
   }
   .h6 {
-    font-size: calc(16px + 4 * ((100vw - 360px) / 2200));
+    font-size: calc(16px + 4 * ((100vw - 1366px) / 1194));
   }
   .p {
-    font-size: calc(18px + 8 * ((100vw - 360px) / 2200));
-    line-height: calc(28px + 12 * ((100vw - 360px) / 2200));
+    font-size: calc(18px + 8 * ((100vw - 1366px) / 1194));
+    line-height: calc(28px + 12 * ((100vw - 1366px) / 1194));
   }
 }
 @media screen and (min-width: 2560px) {
@@ -153,29 +165,38 @@ body::-webkit-scrollbar {
 }
 
 .section {
-  padding-left: calc(300px + var(--paddingVW) + 6vw);
-  padding-right: calc(64px + var(--paddingVW) + 6vw);
+  padding-left: calc(300px + var(--headerPaddingSide) + 280px);
+  padding-right: calc(64px + var(--headerPaddingSide) + 175px);
   padding-top: 9%;
   min-height: 100vh;
   position: relative;
 }
 @media screen and (max-width: 1920px) {
   .section {
-    padding-left: calc(300px + var(--paddingVW) + 4vw);
-    padding-right: calc(64px + var(--paddingVW) + 4vw);
+    padding-left: calc(300px + var(--headerPaddingSide) + 120px);
+    padding-right: calc(64px + var(--headerPaddingSide) + 80px);
+  }
+}
+
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .section {
+    padding-left: calc(300px + var(--headerPaddingSide) + 80px);
+    padding-right: calc(64px + var(--headerPaddingSide) + 80px);
   }
 }
 
 @media screen and (max-width: 1180px) {
   .section {
-    padding-left: var(--paddingVW);
-    padding-right: var(--paddingVW);
+    padding-left: var(--headerPaddingSide);
+    padding-right: var(--headerPaddingSide);
   }
 }
 
 @media screen and (max-width: 480px) {
   .section {
-    padding-top: 30px;
+    /* padding-top: 30px; */
+    padding-top: 160px;
     padding-left: 24px;
     padding-right: 24px;
     min-height: auto;
@@ -194,9 +215,6 @@ body::-webkit-scrollbar {
 } */
 /* beforeTablet */
 /* @media screen and (max-width: 1366px) {
-  .countBlock {
-    align-self: center;
-  }
 } */
 
 /* tablet */

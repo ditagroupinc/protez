@@ -1,5 +1,5 @@
 import Card from "@/components/Card";
-import styles from "./Prosthetics.module.css";
+import style from "./Prosthetics.module.css";
 import { useContext, useRef, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
@@ -40,6 +40,13 @@ const ProstheticsText = {
   },
 };
 
+const TabletLogo = () => (
+  <div className={style.logoTablet}>
+    {/* {icons.flag()} */}
+    {icons.titleTablet()}
+  </div>
+);
+
 const iconsArr = [icons.iconIntegration, icons.iconHeart, icons.iconPeople];
 const Prosthetics = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
@@ -47,16 +54,16 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
 
   return (
     <section
-      className={`${styles.section} section ${visible ? "showText" : ""}`}
+      className={`${style.section} section ${visible ? "showText" : ""}`}
       id={id}
       ref={ref}
     >
-      <div className={`${styles.block}`}>
-        <div className={`${styles.title} textContainer`}>
-          {!tablet ? icons.titleDesktop() : icons.titleTablet()}
+      <div className={`${style.block}`}>
+        <div className={`${style.title} textContainer`}>
+          {!tablet ? icons.titleDesktop() : <TabletLogo />}
         </div>
         <div
-          className={`${styles.text} textContainer ${!tablet ? "h2" : "h5"} `}
+          className={`${style.text} textContainer ${!tablet ? "h2" : "h5"} `}
         >
           <div className="textContainer">
             <h2>{ProstheticsText.paragraph.top[lang]}</h2>
@@ -80,7 +87,7 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
         alt="Picture of the author"
         width={2560}
         height={1440}
-        className={`${styles.prostheticsImg}`}
+        className={`${style.prostheticsImg}`}
       />
       <Image
         src="/img-ukraine-map.png"
@@ -89,7 +96,7 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
         alt="Picture of the author"
         width={2560}
         height={1440}
-        className={`${styles.ukrainianMap}`}
+        className={`${style.ukrainianMap}`}
       />
     </section>
   );

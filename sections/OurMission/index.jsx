@@ -47,8 +47,8 @@ const OurMission = forwardRef(function ({ visible, id }, ref) {
     >
       <SmokeBackground />
       <div className={`${style.block}`}>
-        <div className="textContainer">
-          {icons.TitleSVG(`"svgTextBlock" ${style.logo}`)}
+        <div className={`${style.logo} textContainer`}>
+          {icons.TitleSVG(`"svgTextBlock" `)}
         </div>
         {Object.keys(OurMissionText.blockInfo).map((key, i) => (
           <Card
