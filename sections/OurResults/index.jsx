@@ -13,8 +13,8 @@ const ourResultsText = {
     prostheses: {
       eng: `Prostheses`,
     },
-    volontiers: {
-      eng: `Volontiers`,
+    volunteers: {
+      eng: `Volunteers`,
     },
     moneySpent: {
       eng: `Money spent`,
