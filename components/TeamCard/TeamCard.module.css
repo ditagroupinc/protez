@@ -22,33 +22,46 @@
 
 .linksList {
   display: flex;
-  gap: 1rem;
+  gap: 8px;
   min-height: 33px;
+  & a svg {
+    width: 32px;
+    height: 32px;
+  }
 }
 
-.name {
+h5.name {
   font-weight: 700;
-  margin-top: 1.25rem;
+  margin-top: 24px;
 }
 
 .position {
-  margin-top: 3rem;
+  margin-top: 24px;
 }
 
-@media screen and (max-width: 1180px) {
-  .linksList {
-    min-height: 26px;
-    & a svg {
-      width: 26px;
-      height: 26px;
-    }
+@media screen and (max-width: 1920px) {
+}
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .name {
+    font-weight: 700;
+    margin-top: 24px;
+  }
+  .container {
+    padding: 16px;
   }
 
   .position {
-    margin-top: 0.5rem;
+    margin-top: 8px;
   }
-  .container {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
+}
+
+/* tablet */
+@media screen and (max-width: 1180px) {
+}
+/* phone */
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 1180px) {
 }

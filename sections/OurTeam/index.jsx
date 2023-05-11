@@ -1,6 +1,7 @@
 import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+import { useRef, useEffect } from "react";
 import style from "./ourTeam.module.css";
 import TeamCard from "@/components/TeamCard";
 import { icons } from "./icons.js";
@@ -105,7 +106,10 @@ const OurTeam = forwardRef(function ({ visible, id }, ref) {
   const { height, width, mobile, tablet, screenModeClass } = useContext(
     ScreenModeAndSizeContext
   );
-
+  const scrollableContainer = useRef(null);
+  useEffect(() => {
+    if (width < 600) scrollableContainer.current.scrollLeft += 50;
+  }, [width]);
   return (
     <section
       className={`${style.section} section ${visible ? "showText" : ""}`}
@@ -131,8 +135,9 @@ const OurTeam = forwardRef(function ({ visible, id }, ref) {
       </div>
       <div
         className={`${style.membersContainer} ${
-          mobile ? style.scrollable : ""
+          width < 600 ? style.scrollable : ""
         }`}
+        ref={scrollableContainer}
       >
         {ourTeamText.members.map((card, index) => (
           <TeamCard
