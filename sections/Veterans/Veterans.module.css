@@ -74,7 +74,7 @@
   color: rgba(255, 255, 255, 0.56);
 }
 
-.veteranLogo {
+svg.veteranLogo {
   margin-top: 1.5rem;
   max-width: 75%;
 }
@@ -142,6 +142,32 @@
   left: calc(120px + 1rem);
 }
 
+/* desktop */
+@media screen and (max-width: 1920px) {
+  .roundButton {
+    & svg {
+      width: 151px;
+      height: 151px;
+    }
+  }
+}
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  svg.veteranLogo {
+    max-width: 50%;
+  }
+  .roundButton {
+    & svg {
+      width: 96px;
+      height: 96px;
+    }
+  }
+  .buttonsList a svg {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 @media screen and (max-width: 1180px) {
   .section:global(.section) {
     padding-top: 140px;
@@ -168,11 +194,6 @@
     transform: translateY(-25%);
   }
 
-  .buttonsList a svg {
-    width: 40px;
-    height: 40px;
-  }
-
   .nextSlideButton {
     bottom: 5rem;
   }
@@ -181,7 +202,7 @@
     bottom: 30%;
   }
 
-  .veteranLogo {
+  svg.veteranLogo {
     width: auto;
     height: auto;
     margin-top: 1rem;
