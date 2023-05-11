@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
 const useInViewPort = (arrayOfRefs) => {
-  console.log("started");
+  // console.log("started");
   const [inViewport, setInViewport] = useState({});
   const refsAreReady =
     arrayOfRefs.every((e) => e !== null) &&
     arrayOfRefs.every((e) => !!e.current);
-  console.log(refsAreReady);
+  // console.log(refsAreReady);
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
@@ -14,7 +14,7 @@ const useInViewPort = (arrayOfRefs) => {
           !inViewport.hasOwnProperty(entry.target.id) &&
           inViewport[[entry.target.id]] !== true
         ) {
-          console.log(entry.target.id);
+          // console.log(entry.target.id);
           setInViewport({ [entry.target.id]: true });
         }
       }
@@ -25,7 +25,7 @@ const useInViewPort = (arrayOfRefs) => {
         observer.observe(ref.current);
       });
       return () => {
-        console.log("stoped");
+        // console.log("stoped");
         arrayOfRefs.forEach((ref) => {
           observer.unobserve(ref.current);
         });

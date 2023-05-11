@@ -33,7 +33,7 @@ export default function NewsCard({ cardData, short }) {
       <div className="textContainer">
         <p className={`p ${style.text}`}>{text}</p>
       </div>
-      {icons.arrow(`${style.icon}`)}
+      {icons.arrow(`${style.icon} arrow`)}
     </div>
   );
 }

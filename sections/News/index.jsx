@@ -1,5 +1,6 @@
 import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
+import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./news.module.css";
 import NewsCard from "@/components/NewsCard";
 import { icons } from "./icons";
@@ -87,12 +88,14 @@ const wereInNews = {
 
 const News = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
+  const { height, width, mobile, tablet, screenModeClass } = useContext(
+    ScreenModeAndSizeContext
+  );
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
-    // slidesToScroll: 1,
     swipeToSlide: true,
     arrows: false,
     responsive: [
@@ -111,6 +114,8 @@ const News = forwardRef(function ({ visible, id }, ref) {
       {
         breakpoint: 480,
         settings: {
+          centerMode: true,
+
           slidesToShow: 1,
           dots: false,
         },
@@ -131,7 +136,10 @@ const News = forwardRef(function ({ visible, id }, ref) {
           <Slider {...settings} className={style.slickSlider}>
             {wereInNews.cards.map((card, index) => (
               <div key={index}>
-                <NewsCard cardData={card} short={index % 2 === 0} />
+                <NewsCard
+                  cardData={card}
+                  short={index % 2 === 0 || width < 480}
+                />
               </div>
             ))}
           </Slider>

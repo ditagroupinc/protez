@@ -6,6 +6,10 @@
   justify-content: center;
   position: relative;
   z-index: 1;
+  margin-bottom: 104px;
+  & svg {
+    max-width: 840px;
+  }
 }
 .newsContainer {
   position: relative;
@@ -32,6 +36,18 @@
   opacity: 1;
 }
 
+.section:global(.section) :global(.slick-center) {
+  transform: scale(1.2);
+  transition: transform var(--transitionProps);
+  & :global(.textContainer) h3 {
+    color: var(--pink);
+  }
+  & :global(.arrow) path {
+    fill: var(--pink);
+  }
+}
+
+/* desktop */
 @media screen and (max-width: 1920px) {
   .section:global(.section) :global(.slick-dots) {
     margin-top: 3rem;
@@ -39,17 +55,37 @@
   .newsContainer {
     transform: translateY(-80px);
   }
+  .logoContainer {
+    margin-bottom: 0;
+  }
 }
 
-/* @media screen and (max-width: 1360) {
-} */
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .logoContainer {
+    & svg {
+      max-width: 312px;
+    }
+  }
+  .newsContainer {
+    transform: translateY(-80px);
+  }
+}
 
 @media screen and (max-width: 500px) {
+  .section:global(.section) {
+    padding-bottom: 70px;
+  }
+  .section:global(.section) :global(.slick-slide) {
+    padding-bottom: 50px;
+  }
+  .logoContainer {
+    & svg {
+      max-width: 100%;
+    }
+  }
   .newsContainer {
     transform: none;
     margin-top: 2.5rem;
-  }
-  .section:global(.section) {
-    padding-bottom: 2rem;
   }
 }

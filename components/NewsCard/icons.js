@@ -76,15 +76,15 @@ const nytLogo = (className) => (
 
 const arrow = (className) => (
   <svg
-    width="48"
-    height="48"
-    viewBox="0 0 48 48"
+    width="56"
+    height="56"
+    viewBox="0 0 56 56"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
     <path
-      d="M12.3998 35.7L10.2998 33.6L30.8998 13H11.9998V10H35.9998V34H32.9998V15.1L12.3998 35.7Z"
+      d="M14.4666 41.6503L12.0166 39.2003L36.0499 15.167H13.9999V11.667H41.9999V39.667H38.4999V17.617L14.4666 41.6503Z"
       fill="white"
     />
   </svg>
