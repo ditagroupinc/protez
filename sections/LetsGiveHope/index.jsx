@@ -4,6 +4,7 @@ import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./LetsGiveHope.module.css";
 import { icons } from "./icons";
 import CompanyData from "@/components/CompanyData";
+import VideoAndFilter from "@/components/VideoAndFilter";
 
 export default function LetsGiveHope({ id }) {
   const { height, width, mobile, tablet, screenModeClass } = useContext(
@@ -11,9 +12,7 @@ export default function LetsGiveHope({ id }) {
   );
   return (
     <section className={`${style.section} section`} id={id}>
-      <video autoPlay loop muted className={style.video}>
-        <source src="flag-ukraine.mp4" type="video/mp4" />
-      </video>
+      <VideoAndFilter src={"flag-ukraine.mp4"} />
       <div className={style.filter} />
       {icons.letsGiveHopeLogo(`${style.mainTitle} svgTextBlock`)}
       {tablet && <CompanyData className={style.companyData} />}

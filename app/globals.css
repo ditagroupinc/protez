@@ -134,6 +134,37 @@ body::-webkit-scrollbar {
     line-height: calc(28px + 12 * ((100vw - 1366px) / 1194));
   }
 }
+
+@media screen and (max-width: 1366px) {
+  .h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .h2 {
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .h3 {
+    font-size: 22px;
+    line-height: 28px;
+  }
+  .h4 {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .h5 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .h6 {
+    font-size: 16px;
+  }
+  .p {
+    font-size: 18px;
+    line-height: 28px;
+  }
+}
+
 @media screen and (min-width: 2560px) {
   .h1 {
     font-size: 72px;

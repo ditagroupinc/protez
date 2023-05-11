@@ -25,7 +25,7 @@
   flex: 1 1 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 43.5% 33.5% 23%;
+  grid-template-rows: 43.5fr 33.5fr 23fr;
 
   & div:nth-child(1) {
     grid-column-start: 1;
@@ -58,7 +58,7 @@
     }
   }
   .block {
-    grid-template-columns: 30% 40% 30%;
+    grid-template-columns: 30fr 40fr 30fr;
   }
 }
 
@@ -71,7 +71,7 @@
       }
     }
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 40% 24% 36%;
+    grid-template-rows: 40fr 24fr 36fr;
 
     & div:nth-child(1) {
       grid-column: 1 / 5;
@@ -108,7 +108,7 @@
     }
   }
   .block {
-    grid-template-rows: 13% 23.5% 25.5% 38%;
+    grid-template-rows: 13fr 23.5fr 25.5fr 38fr;
     grid-template-columns: repeat(4, 1fr);
     & div :global(.textContainer) {
       height: 100%;

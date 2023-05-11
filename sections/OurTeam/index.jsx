@@ -83,7 +83,7 @@ const ourTeamText = {
       },
     },
     {
-      photo: "ruslanS.png",
+      photo: "ruslanSychov.png",
       links: {
         facebook: "https://facebook.com",
         instagram: "https://instagram.com",
@@ -106,14 +106,6 @@ const OurTeam = forwardRef(function ({ visible, id }, ref) {
     ScreenModeAndSizeContext
   );
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    arrows: false,
-  };
   return (
     <section
       className={`${style.section} section ${visible ? "showText" : ""}`}
