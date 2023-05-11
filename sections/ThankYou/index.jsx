@@ -3,6 +3,7 @@ import SquareButton from "@/components/SquareButton";
 import { icons } from "./icons";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { useContext, forwardRef } from "react";
+import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 
 const ourResultsText = {
   becomeAVolunteer: {
@@ -15,6 +16,9 @@ const ourResultsText = {
 
 const ThankYou = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
+  const { height, mobile, tablet, tabletLarge, desktopSmall } = useContext(
+    ScreenModeAndSizeContext
+  );
 
   const handleClick = () => console.log("clicked");
   return (
@@ -22,7 +26,9 @@ const ThankYou = forwardRef(function ({ visible, id }, ref) {
       <div className={`${style.colorContainer} ${style.colorContainer}`}>
         <div className={style.container}>
           <div className="textContainer">
-            {icons.thankYouIcon("svgTextBlock")}
+            {mobile
+              ? icons.thankYouIconMobile("svgTextBlock")
+              : icons.thankYouIcon("svgTextBlock")}
           </div>
           <div className={style.buttonsContainer}>
             <SquareButton
@@ -30,11 +36,13 @@ const ThankYou = forwardRef(function ({ visible, id }, ref) {
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
               onClick={handleClick}
               text={ourResultsText.becomeAVolunteer[lang]}
+              className={style.button}
             />
             <SquareButton
               black
               onClick={handleClick}
               text={ourResultsText.giveHope[lang]}
+              className={style.button}
             />
           </div>
         </div>

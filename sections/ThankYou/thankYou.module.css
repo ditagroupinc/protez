@@ -1,26 +1,30 @@
 .colorContainer {
   min-height: auto;
   background-color: var(--pink);
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding: 160px 0;
 }
 
 .container {
   margin: 0 auto;
-  max-width: 50%;
+  max-width: 1213px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1.5rem;
+  gap: 64px;
+  & div:global(.textContainer) {
+    width: 100%;
+  }
 }
 
 .buttonsContainer {
   display: flex;
-  gap: 1.5rem;
+  gap: 34px;
   justify-content: center;
-  max-width: 80%;
   white-space: nowrap;
+  & .button {
+    width: 312px;
+  }
 }
 
 .copyright {
@@ -39,16 +43,44 @@
   text-transform: uppercase;
 }
 
+/* desktop */
+@media screen and (max-width: 1920px) {
+  .container {
+    max-width: 1030px;
+  }
+}
+
 /* beforeTablet */
 @media screen and (max-width: 1366px) {
   .container {
-    max-width: 75%;
+    gap: 48px;
+    max-width: 478px;
+    padding: 64px 0;
+  }
+  .buttonsContainer {
+    gap: 24px;
+    & .button {
+      width: 272px;
+    }
   }
 }
 
 /* phobe */
 @media screen and (max-width: 480px) {
+  .container {
+    justify-content: center;
+    align-items: stretch;
+    padding: 0 24px;
+    & svg {
+      width: 95%;
+      margin: 0 auto;
+    }
+  }
+
   .buttonsContainer {
     flex-direction: column;
+    & .button {
+      width: 100%;
+    }
   }
 }

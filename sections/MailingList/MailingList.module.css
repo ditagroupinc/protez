@@ -15,11 +15,13 @@
 
 .title {
   color: var(--white);
-  position: relative;
-  width: 29vw;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 742px;
   z-index: 5;
-  margin-top: 6vh;
-
   & svg {
     max-width: 100%;
   }
@@ -58,14 +60,15 @@
 }
 
 .images {
-  padding: 4.7vh 1vw 0 1.4vw;
+  padding: 0 36px;
+  /* padding-top: 68px; */
   height: 100%;
   width: 100%;
-  display: -ms-grid;
   display: grid;
   position: absolute;
   left: 0;
   top: 0;
+  pointer-events: none;
 
   grid-template-columns: 16.6fr 14.6fr 9.6fr 14.6fr 16.6fr;
 
@@ -175,8 +178,7 @@
 /* desktop */
 @media screen and (max-width: 1920px) {
   .title {
-    width: calc(350px + 480 * ((100vw - 360px) / 2500));
-    margin-top: 0;
+    max-width: 630px;
   }
 
   .form {
@@ -207,13 +209,7 @@
   }
 
   .title {
-    width: calc(220px + 350 * ((100vh - 360px) / 2200));
-    margin-top: 0;
-
-    & svg {
-      max-height: 15vh;
-      width: 100%;
-    }
+    max-width: 293px;
   }
 
   .form {
@@ -251,10 +247,18 @@
 
 /* tablet */
 @media screen and (max-width: 1180px) {
-  .images.tablet {
+  .images {
     grid-template-columns: 16.6fr 10.6fr 6.6fr 10.6fr 16.6fr;
     row-gap: calc(40px + 95 * ((100vh - 360px) / 2200));
 
     column-gap: calc(60px + 136 * ((100vw - 360px) / 2200));
+  }
+}
+
+/* phobe */
+@media screen and (max-width: 480px) {
+  .section {
+    min-height: auto;
+    height: 85vh;
   }
 }
