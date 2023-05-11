@@ -4,6 +4,7 @@ import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./ourPartners.module.css";
 import { icons } from "./icons";
 import Image from "next/image";
+import Link from "next/link";
 
 const ourPartners = {
   discover: {
@@ -42,10 +43,10 @@ const OurPartners = forwardRef(function ({ visible, id }, ref) {
         </div>
         <PartnerCard image="ottobock.png" />
         <div>
-          <a className={`${style.discoverCard} h3`}>
+          <Link href="/Partners" className={`${style.discoverCard} h3`}>
             <p>{ourPartners.discover[lang]}</p>
             {icons.arrow()}
-          </a>
+          </Link>
         </div>
         <PartnerCard image="paradise.png" />
         <PartnerCard image="klmb.png" />

@@ -34,20 +34,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 4.5fr 3.5fr 2.5fr 2.5fr;
-}
-
-.discoverCard {
-  width: 100%;
-  padding: 2.5rem;
-  background-color: var(--black);
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  height: fit-content;
-  align-self: flex-end;
-}
-
-.container {
   & div {
     display: inline-flex;
   }
@@ -78,6 +64,17 @@
     grid-column-start: 4;
     grid-column-end: 5;
   }
+}
+
+.discoverCard {
+  width: 100%;
+  padding: 2.5rem;
+  background-color: var(--black);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: fit-content;
+  align-self: flex-end;
 }
 
 /* desktop */

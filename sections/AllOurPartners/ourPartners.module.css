@@ -1,0 +1,41 @@
+.section:global(.section) {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.9)
+  );
+  background-blend-mode: normal, screen;
+  padding-bottom: 80px;
+}
+
+.specialThanks {
+  display: flex;
+  justify-content: flex-end;
+}
+.logo:global(.svgTextBlock) {
+  max-width: 70%;
+}
+.container {
+  margin-top: 104px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+}
+
+.partnerCard {
+  border: var(--greyBorder);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding: 1.5rem;
+  grid-column: span 4;
+  &:nth-of-type(n + 4):not(&:nth-of-type(n + 8)),
+  &:nth-of-type(n + 11):not(&:nth-of-type(n + 14)) {
+    grid-column: span 3;
+  }
+}
+
+.partnerLogo {
+  max-width: 100%;
+}

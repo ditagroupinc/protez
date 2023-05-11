@@ -10,6 +10,9 @@
   color: var(--white);
   padding: 0 var(--headerPaddingSide);
   padding-top: var(--headerPaddingTop);
+  &.backToMain {
+    color: var(--black);
+  }
 }
 
 .foundationLogo {

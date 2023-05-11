@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
-import { LanguageContext } from "../../contexts/LanguageContext";
+import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import { icons } from "./icons";
 
 import { Divider } from "@/components/Divider";
 import CompanyData from "@/components/CompanyData";
+import Link from "next/link";
 
 import style from "./header.module.css";
 
@@ -97,7 +98,7 @@ const socialMediaLinks = [
   { adress: "https://linkedin.com", icon: icons.iconLinkedin },
 ];
 
-export default function Header() {
+export default function Header({ backToMain }) {
   const { lang, changeLang } = useContext(LanguageContext);
   const { width, length, mobile, tablet, desktop, screenModeClass } =
     useContext(ScreenModeAndSizeContext);
@@ -111,7 +112,10 @@ export default function Header() {
   };
   return (
     <>
-      <header className={style.header} id="header">
+      <header
+        className={`${style.header} ${backToMain ? style.backToMain : ""}`}
+        id="header"
+      >
         {icons.protezFoundationLogo(
           `${style.foundationLogo} ${
             width <= 920 && headerIsOpened ? style.black : ""
@@ -141,13 +145,23 @@ export default function Header() {
             <ul className={style.ancorList}>
               {navLinks.map((link, index) => (
                 <li key={index} className={"h4"}>
-                  <a
-                    className={style.navAncor}
-                    href={`#${link.id}`}
-                    onClick={toggleHeader}
-                  >
-                    {link[lang]}
-                  </a>
+                  {backToMain ? (
+                    <Link
+                      className={style.navAncor}
+                      href="/"
+                      onClick={toggleHeader}
+                    >
+                      {link[lang]}
+                    </Link>
+                  ) : (
+                    <a
+                      className={style.navAncor}
+                      href={`#${link.id}`}
+                      onClick={toggleHeader}
+                    >
+                      {link[lang]}
+                    </a>
+                  )}
                 </li>
               ))}
               {mobile && (

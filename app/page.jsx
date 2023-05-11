@@ -103,10 +103,11 @@ export default function Home() {
     window.addEventListener("resize", throttle(getSize, 150));
     window.scrollTo(0, 0);
 
-    window.addEventListener(
-      "scroll",
-      throttle((e) => console.log(e), 150)
-    );
+    // window.addEventListener(
+    //   "scroll",
+    //   throttle((e) => console.log(e), 150)
+    // );
+    return window.removeEventListener("resize", throttle(getSize, 150));
   }, []);
 
   useEffect(() => {
