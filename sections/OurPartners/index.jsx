@@ -27,7 +27,7 @@ const PartnerCard = ({ image }) => (
 
 const OurPartners = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
-  const { tablet } = useContext(ScreenModeAndSizeContext);
+  const { tablet, tabletLarge } = useContext(ScreenModeAndSizeContext);
   return (
     <section
       className={`${style.section} section ${visible ? "showText" : ""}`}
@@ -36,9 +36,9 @@ const OurPartners = forwardRef(function ({ visible, id }, ref) {
     >
       <div className={style.container}>
         <div className={style.specialThanks + " textContainer"}>
-          {tablet
-            ? icons.specialThanksTablet("svgTextBlock")
-            : icons.specialThanks("svgTextBlock")}
+          {tabletLarge
+            ? icons.specialThanksTablet(`${style.logo} svgTextBlock`)
+            : icons.specialThanks(`${style.logo} svgTextBlock`)}
         </div>
         <PartnerCard image="ottobock.png" />
         <div>

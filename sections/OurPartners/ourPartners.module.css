@@ -9,12 +9,14 @@
 }
 
 .specialThanks {
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+}
+.logo:global(.svgTextBlock) {
+  max-width: 90%;
 }
 
 .partnerCard {
-  border: 1px solid rgba(13, 17, 37, 0.24);
+  border: var(--greyBorder);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,6 +42,7 @@
   background-color: var(--black);
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   height: fit-content;
   align-self: flex-end;
 }
@@ -51,6 +54,7 @@
   & div:first-of-type {
     grid-column-start: 1;
     grid-column-end: 4;
+    align-self: center;
   }
   & div:nth-of-type(2) {
     grid-column-start: 4;
@@ -76,10 +80,69 @@
   }
 }
 
-.membersContainer {
+/* desktop */
+@media screen and (max-width: 1920px) {
+  .partnerCard {
+    padding: 24px;
+  }
+  .container {
+    grid-template-rows: 34fr 31fr 26fr 26fr;
+
+    & div:first-of-type {
+      align-self: flex-end;
+    }
+  }
+}
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .container {
+    & div:nth-of-type(8) {
+      grid-column-start: 3;
+      grid-column-end: 4;
+      grid-row-start: 3;
+      grid-row-end: 3;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+  }
+  .partnerCard {
+    padding: 8px;
+  }
+  .discoverCard {
+    padding: 16px;
+    & svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  .logo:global(.svgTextBlock) {
+    max-width: 40%;
+  }
+}
+
+/* phone */
+@media screen and (max-width: 480px) {
 }
 
 @media screen and (max-width: 850px) {
+  .container {
+    & div:nth-of-type(8) {
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 5;
+      grid-row-end: 5;
+      border-left: var(--greyBorder);
+      border-right: var(--greyBorder);
+    }
+  }
+  .logo:global(.svgTextBlock) {
+    max-width: 80%;
+  }
+  .discoverCard {
+    padding: 8px;
+    padding-top: 28px;
+  }
   .container {
     grid-template-rows: 4.5fr repeat(4, 3.5fr);
     & div {
@@ -120,7 +183,7 @@
     }
     & div:nth-of-type(8) {
       grid-column-start: 1;
-      grid-column-end: 3;
+      grid-column-end: 5;
     }
   }
 }
