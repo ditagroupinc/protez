@@ -40,7 +40,7 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
 
     window.myInterval = setInterval(myTimer, 700);
 
-    if (imagesToShow === veteransImages.length) {
+    if (imagesToShow.length === veteransImages.length) {
       clearInterval(window.myInterval);
     }
     return () => clearInterval(window.myInterval);
