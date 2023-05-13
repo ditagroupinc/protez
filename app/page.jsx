@@ -24,10 +24,19 @@ import ThankYou from "@/sections/ThankYou";
 
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+import BackToTopButton from "@/components/BackToTopButton";
 import style from "./index.module.css";
-import useInViewPort from "@/hooks/useInViewPort";
 
 // import CustomCursor from "@/components/CustomCursor";
+
+const homeText = {
+  backToTop: {
+    eng: "back to top  →",
+  },
+  exploreMore: {
+    eng: "← Explore more about us",
+  },
+};
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
@@ -36,6 +45,7 @@ export default function Home() {
   const [disableCompanyData, setDisableCompanyData] = useState(false);
 
   const sectionRefs = {
+    letsGiveHope: useRef(null),
     ourResults: useRef(null),
     inNeed: useRef(null),
     ourMission: useRef(null),
@@ -107,6 +117,16 @@ export default function Home() {
       }
 
       if (
+        key === "letsGiveHope" &&
+        bottom < 0 &&
+        visitedSections.letsGiveHope === true
+      ) {
+        setVisitedSections((prevState) => {
+          return { ...prevState, letsGiveHope: false };
+        });
+      }
+
+      if (
         (sectionChecker && notAddedToStateChecker) ||
         (footerChecker && notAddedToStateChecker)
       ) {
@@ -118,9 +138,9 @@ export default function Home() {
   };
   const throttledSectionIsVisible = throttle((e) => {
     sectionIsVisible();
-  }, 200);
+  }, 100);
 
-  console.log(disableCompanyData);
+  console.log(visitedSections.letsGiveHope);
 
   useEffect(() => {
     getSize();
@@ -150,6 +170,7 @@ export default function Home() {
             <LetsGiveHope
               id={"letsGiveHope"}
               visible={isVisible("letsGiveHope")}
+              ref={sectionRefs.letsGiveHope}
             />
             <OurMission
               ref={sectionRefs.ourMission}
@@ -201,6 +222,15 @@ export default function Home() {
             ref={sectionRefs.mailingList}
             id="mailingList"
             visible={isVisible("mailingList")}
+          />
+          <BackToTopButton
+            text={
+              visitedSections.letsGiveHope
+                ? homeText.exploreMore.eng
+                : homeText.backToTop.eng
+            }
+            href={visitedSections.letsGiveHope ? "prosthetics" : "letsGiveHope"}
+            onClick={sectionIsVisible}
           />
         </main>
         <ThankYou

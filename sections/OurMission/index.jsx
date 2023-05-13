@@ -45,7 +45,7 @@ const OurMission = forwardRef(function ({ visible, id }, ref) {
       id={id}
       ref={ref}
     >
-      <SmokeBackground />
+      {/* <SmokeBackground /> */}
       <div className={`${style.block}`}>
         <div className={`${style.logo} textContainer`}>
           {icons.TitleSVG(`"svgTextBlock" `)}

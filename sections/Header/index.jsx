@@ -233,17 +233,6 @@ export default function Header({ partnersPage, disableCompanyData }) {
           </div>
         </>
       )}
-
-      <a
-        className={`${style.backToTopButton} h6 ${mobile ? style.mobile : ""} ${
-          partnersPage ? style.black : ""
-        }`}
-        href={`#${
-          partnersPage ? "allOurPartners" : headerText.navigation.giveHope.id
-        }`}
-      >
-        {headerText.actionButtons.back2top[lang]}
-      </a>
     </>
   );
 }

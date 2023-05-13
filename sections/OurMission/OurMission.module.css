@@ -1,6 +1,5 @@
 .section:global(.section) {
   width: 100%;
-  background-color: var(--black);
   display: flex;
   align-items: stretch;
   padding-bottom: var(--headerPaddingSide);

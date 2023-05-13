@@ -10,6 +10,7 @@ import { throttle } from "@/utils";
 import Copyright from "@/components/Copyright";
 
 import OurPartners from "@/sections/OurPartners";
+import BackToTopButton from "@/components/BackToTopButton";
 
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
@@ -60,6 +61,11 @@ export default function Partners() {
         <Header partnersPage />
         <main>
           <AllOurPartners visible />
+          <BackToTopButton
+            text={"back to top  →"}
+            href={"allOurPartners"}
+            black
+          />
         </main>
         <footer>
           <Copyright />
