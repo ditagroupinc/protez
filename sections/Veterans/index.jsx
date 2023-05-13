@@ -128,7 +128,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
       ref={ref}
     >
       {/* <CustomCursor id={style.veterans} /> */}
-      <SmokeBackground />
+      {/* <SmokeBackground /> */}
       <div className={style.sliderWrapper}>
         <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
           {veteransText.veterans.map((element, index) => (

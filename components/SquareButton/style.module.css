@@ -6,6 +6,7 @@
   padding: 1.25rem 2.5rem;
   background-color: transparent;
   border: 1px solid var(--white);
+  color: var(--white);
   transform-origin: center;
   transition: background-color var(--transitionProps),
     border var(--transitionProps), color var(--transitionProps);
@@ -36,6 +37,17 @@
   &:active {
     border: 1px solid var(--white);
     background-color: var(--white);
+    color: var(--pink);
+  }
+}
+
+.button.emptyBlack {
+  border: 1px solid var(--black);
+  background-color: transparent;
+  color: var(--black);
+  &:hover,
+  &:active {
+    border: 1px solid var(--pink);
     color: var(--pink);
   }
 }

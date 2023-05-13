@@ -22,8 +22,12 @@ const partnersLogos = [
   "ukraine.png",
 ];
 
-const PartnerCard = ({ image }) => (
-  <div className={style.partnerCard + " textContainer"}>
+const PartnerCard = ({ image, mobile }) => (
+  <div
+    className={`${mobile ? style.mobile : style.desktop} ${
+      style.partnerCard
+    } textContainer`}
+  >
     <Image
       src={`/partnersLogos/${image}`}
       object-fit="contain"
@@ -38,7 +42,7 @@ const PartnerCard = ({ image }) => (
 
 export default function AllOurPartners({ visible }) {
   const { lang } = useContext(LanguageContext);
-  const { tablet, tabletLarge } = useContext(ScreenModeAndSizeContext);
+  const { tablet, tabletLarge, mobile } = useContext(ScreenModeAndSizeContext);
   return (
     <section
       className={`${style.section} section ${visible ? "showText" : ""}`}
@@ -51,7 +55,7 @@ export default function AllOurPartners({ visible }) {
       </div>
       <div className={style.container}>
         {partnersLogos.map((logo, index) => (
-          <PartnerCard key={index} image={logo} />
+          <PartnerCard key={index} image={logo} mobile={mobile} />
         ))}
       </div>
     </section>

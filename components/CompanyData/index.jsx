@@ -28,14 +28,16 @@ const companyDataText = {
   },
 };
 
-export default function CompanyData({ className }) {
+export default function CompanyData({ className, black }) {
   const { lang, changeLang } = useContext(LanguageContext);
   const { mobile } = useContext(ScreenModeAndSizeContext);
 
   const handleClick = () => console.log("clicked");
 
   return (
-    <div className={`${style.container} ${className}`}>
+    <div
+      className={`${style.container} ${black ? style.black : ""} ${className}`}
+    >
       <div className={`${style.adressContainer} ${mobile ? style.mobile : ""}`}>
         <p>
           <span className={"h6 "}>
@@ -59,6 +61,7 @@ export default function CompanyData({ className }) {
         <SquareButton
           onClick={handleClick}
           text={companyDataText.actionButtons.needAProtez[lang]}
+          emptyBlack={black}
         />
       </div>
     </div>

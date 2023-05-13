@@ -5,6 +5,8 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import { useContext, forwardRef } from "react";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 
+import Copyright from "@/components/Copyright";
+
 const ourResultsText = {
   becomeAVolunteer: {
     eng: "Protez Academy",
@@ -47,11 +49,7 @@ const ThankYou = forwardRef(function ({ visible, id }, ref) {
           </div>
         </div>
       </div>
-      <div className={style.copyright}>
-        <span className={style.copyrightText}>
-          2023 © Made by DITA GROUP Inc.
-        </span>
-      </div>
+      <Copyright />
     </footer>
   );
 });

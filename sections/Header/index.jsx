@@ -73,10 +73,13 @@ const headerText = {
   },
 };
 
-const BurgerButton = ({ close, onClick }) => {
+const BurgerButton = ({ close, onClick, black }) => {
   if (!close) {
     return (
-      <button className={style.burgerButton} onClick={onClick}>
+      <button
+        className={`${style.burgerButton} ${black ? style.black : ""}`}
+        onClick={onClick}
+      >
         <span />
         <span />
         <span />
@@ -98,7 +101,7 @@ const socialMediaLinks = [
   { adress: "https://linkedin.com", icon: icons.iconLinkedin },
 ];
 
-export default function Header({ backToMain }) {
+export default function Header({ partnersPage, disableCompanyData }) {
   const { lang, changeLang } = useContext(LanguageContext);
   const { width, length, mobile, tablet, desktop, screenModeClass } =
     useContext(ScreenModeAndSizeContext);
@@ -113,17 +116,25 @@ export default function Header({ backToMain }) {
   return (
     <>
       <header
-        className={`${style.header} ${backToMain ? style.backToMain : ""}`}
+        className={`${style.header} ${partnersPage ? style.partnersPage : ""}`}
         id="header"
       >
-        {icons.protezFoundationLogo(
-          `${style.foundationLogo} ${
-            width <= 920 && headerIsOpened ? style.black : ""
-          } ${mobile ? style.small : ""}`
-        )}
+        <Link href="/">
+          {icons.protezFoundationLogo(
+            `${style.foundationLogo} ${
+              (width <= 920 && headerIsOpened) || partnersPage
+                ? style.black
+                : ""
+            } ${mobile ? style.small : ""}`
+          )}
+        </Link>
 
         {mobile ? (
-          <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
+          <BurgerButton
+            onClick={toggleHeader}
+            close={headerIsOpened}
+            black={partnersPage}
+          />
         ) : (
           <div className={style.headerActionLang}>
             <a
@@ -134,7 +145,11 @@ export default function Header({ backToMain }) {
               {headerText.actionButtons.protezAcademy[lang]}
             </a>
             <Divider vertical />
-            <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
+            <BurgerButton
+              onClick={toggleHeader}
+              close={headerIsOpened}
+              black={partnersPage}
+            />
           </div>
         )}
         <nav
@@ -145,7 +160,7 @@ export default function Header({ backToMain }) {
             <ul className={style.ancorList}>
               {navLinks.map((link, index) => (
                 <li key={index} className={"h4"}>
-                  {backToMain ? (
+                  {partnersPage ? (
                     <Link
                       className={style.navAncor}
                       href="/"
@@ -202,7 +217,8 @@ export default function Header({ backToMain }) {
       </header>
       {desktop && (
         <>
-          <CompanyData />
+          {!disableCompanyData && <CompanyData black={partnersPage} />}
+
           <div className={`${style.socialMediaLinksFixed}`}>
             {socialMediaLinks.map((link, index) => (
               <a
@@ -219,8 +235,12 @@ export default function Header({ backToMain }) {
       )}
 
       <a
-        className={`${style.backToTopButton} h6 ${mobile ? style.mobile : ""}`}
-        href={`#${headerText.navigation.giveHope.id}`}
+        className={`${style.backToTopButton} h6 ${mobile ? style.mobile : ""} ${
+          partnersPage ? style.black : ""
+        }`}
+        href={`#${
+          partnersPage ? "allOurPartners" : headerText.navigation.giveHope.id
+        }`}
       >
         {headerText.actionButtons.back2top[lang]}
       </a>

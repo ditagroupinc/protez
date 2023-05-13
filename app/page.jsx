@@ -33,39 +33,20 @@ export default function Home() {
   const [lang, setLang] = useState("eng");
   const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
   const [visitedSections, setVisitedSections] = useState({});
+  const [disableCompanyData, setDisableCompanyData] = useState(false);
 
-  const ourResults = useRef(null);
-  const inNeed = useRef(null);
-  const ourMission = useRef(null);
-  const prosthetics = useRef(null);
-  const veterans = useRef(null);
-  const ourTeam = useRef(null);
-  const ourPartners = useRef(null);
-  const news = useRef(null);
-  const mailingList = useRef(null);
-  const thankYou = useRef(null);
-
-  const paramsForObserver = () => {
-    const refs = {
-      ourMission: ourMission,
-      ourResults: ourResults,
-      inNeed: inNeed,
-      prosthetics: prosthetics,
-      veterans: veterans,
-      ourTeam: ourTeam,
-      ourPartners: ourPartners,
-      news: news,
-      mailingList: mailingList,
-      thankYou: thankYou,
-      ourPartners: ourPartners,
-    };
-    Object.keys(visitedSections).forEach((key) => {
-      delete refs[key];
-    });
-    return Object.values(refs);
+  const sectionRefs = {
+    ourResults: useRef(null),
+    inNeed: useRef(null),
+    ourMission: useRef(null),
+    prosthetics: useRef(null),
+    veterans: useRef(null),
+    ourTeam: useRef(null),
+    ourPartners: useRef(null),
+    news: useRef(null),
+    mailingList: useRef(null),
+    thankYou: useRef(null),
   };
-
-  const visibleSection = useInViewPort(paramsForObserver());
 
   const getSize = () => {
     const win = window;
@@ -91,6 +72,8 @@ export default function Home() {
     });
   };
 
+  const throttledgetSize = throttle(getSize, 150);
+
   const isVisible = (id) => {
     if (visitedSections[id]) {
       return true;
@@ -98,26 +81,69 @@ export default function Home() {
     return false;
   };
 
+  const sectionIsVisible = (margin = 200) => {
+    Object.keys(sectionRefs).forEach((key, index) => {
+      const { top, bottom } = sectionRefs[key]?.current.getBoundingClientRect();
+
+      const notAddedToStateChecker = !visitedSections[key];
+      const footerChecker =
+        key === "thankYou" && top <= window.innerHeight + margin;
+      const sectionChecker = top <= margin && bottom >= margin;
+
+      if (
+        key === "thankYou" &&
+        top <= window.innerHeight &&
+        !disableCompanyData
+      ) {
+        setDisableCompanyData(true);
+      }
+
+      if (
+        key === "thankYou" &&
+        top >= window.innerHeight &&
+        disableCompanyData
+      ) {
+        setDisableCompanyData(false);
+      }
+
+      if (
+        (sectionChecker && notAddedToStateChecker) ||
+        (footerChecker && notAddedToStateChecker)
+      ) {
+        setVisitedSections((prevState) => {
+          return { ...prevState, [key]: true };
+        });
+      }
+    });
+  };
+  const throttledSectionIsVisible = throttle((e) => {
+    sectionIsVisible();
+  }, 200);
+
+  console.log(disableCompanyData);
+
   useEffect(() => {
     getSize();
-    window.addEventListener("resize", throttle(getSize, 150));
-    window.scrollTo(0, 0);
+    sectionIsVisible();
+    window.addEventListener("resize", throttledgetSize);
 
-    // window.addEventListener(
-    //   "scroll",
-    //   throttle((e) => console.log(e), 150)
-    // );
-    return window.removeEventListener("resize", throttle(getSize, 150));
+    return () => {
+      window.removeEventListener("resize", throttledgetSize);
+    };
   }, []);
 
   useEffect(() => {
-    setVisitedSections({ ...visitedSections, ...visibleSection });
-  }, [visibleSection]);
+    window.removeEventListener("scroll", throttledSectionIsVisible);
+    window.addEventListener("scroll", throttledSectionIsVisible);
+    return () => {
+      window.removeEventListener("scroll", throttledSectionIsVisible);
+    };
+  }, [visitedSections, disableCompanyData]);
 
   return (
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
-        <Header />
+        <Header disableCompanyData={disableCompanyData} />
         {/* <CustomCursor /> */}
         <main style={{ backgroundColor: "var(--black)" }}>
           <div className={style.flagsBlock}>
@@ -126,7 +152,7 @@ export default function Home() {
               visible={isVisible("letsGiveHope")}
             />
             <OurMission
-              ref={ourMission}
+              ref={sectionRefs.ourMission}
               id="ourMission"
               visible={isVisible("ourMission")}
             />
@@ -141,36 +167,44 @@ export default function Home() {
             />
           </div>
           <OurResults
-            ref={ourResults}
+            ref={sectionRefs.ourResults}
             visible={isVisible("ourResults")}
             id="ourResults"
           />
-          <InNeed ref={inNeed} visible={isVisible("inNeed")} id="inNeed" />
+          <InNeed
+            ref={sectionRefs.inNeed}
+            visible={isVisible("inNeed")}
+            id="inNeed"
+          />
           <Prosthetics
-            ref={prosthetics}
+            ref={sectionRefs.prosthetics}
             id="prosthetics"
             visible={isVisible("prosthetics")}
           />
           <Veterans
-            ref={veterans}
+            ref={sectionRefs.veterans}
             id="veterans"
             visible={isVisible("veterans")}
           />
-          <OurTeam ref={ourTeam} id="ourTeam" visible={isVisible("ourTeam")} />
+          <OurTeam
+            ref={sectionRefs.ourTeam}
+            id="ourTeam"
+            visible={isVisible("ourTeam")}
+          />
           <OurPartners
-            ref={ourPartners}
+            ref={sectionRefs.ourPartners}
             id="ourPartners"
             visible={isVisible("ourPartners")}
           />
-          <News ref={news} id="news" visible={isVisible("news")} />
+          <News ref={sectionRefs.news} id="news" visible={isVisible("news")} />
           <MailingList
-            ref={mailingList}
+            ref={sectionRefs.mailingList}
             id="mailingList"
             visible={isVisible("mailingList")}
           />
         </main>
         <ThankYou
-          ref={thankYou}
+          ref={sectionRefs.thankYou}
           id="thankYou"
           visible={isVisible("thankYou")}
         />

@@ -10,7 +10,7 @@
   color: var(--white);
   padding: 0 var(--headerPaddingSide);
   padding-top: var(--headerPaddingTop);
-  &.backToMain {
+  &.partnersPage {
     color: var(--black);
   }
 }
@@ -50,6 +50,9 @@
     background-color: var(--white);
     width: 100%;
     transition: background-color var(--transitionProps);
+    &.black {
+      background-color: var(--black);
+    }
     &:last-of-type {
       max-width: 20px;
     }
@@ -239,6 +242,9 @@
   }
   &.mobile {
     right: 0.5rem;
+  }
+  &.black {
+    color: var(--black);
   }
 }
 

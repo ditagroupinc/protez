@@ -71,7 +71,7 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
       id={id}
       ref={ref}
     >
-      <SmokeBackground />
+      {/* <SmokeBackground /> */}
       <div className={`${styles.images}`}>
         <Images />
       </div>

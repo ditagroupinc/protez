@@ -3,6 +3,7 @@ import style from "./style.module.css";
 export default function SquareButton({
   pink,
   black,
+  emptyBlack,
   className,
   onClick,
   text,
@@ -16,8 +17,8 @@ export default function SquareButton({
         target="blank"
         type="button"
         className={`h6 ${style.button} ${pink ? style.pink : ""} ${
-          black ? style.black : ""
-        } ${className}`}
+          emptyBlack ? style.emptyBlack : ""
+        } ${black ? style.black : ""} ${className}`}
         onClick={onClick}
       >
         {text}
@@ -27,8 +28,8 @@ export default function SquareButton({
     <button
       type="button"
       className={`h6 ${style.button} ${pink ? style.pink : ""} ${
-        black ? style.black : ""
-      } ${className}`}
+        emptyBlack ? style.emptyBlack : ""
+      } ${black ? style.black : ""} ${className}`}
       onClick={onClick}
     >
       {text}

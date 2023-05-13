@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick-theme.css";
 import { useContext, useState, createContext, useEffect, useRef } from "react";
 import AllOurPartners from "@/sections/AllOurPartners";
 import Header from "@/sections/Header";
+import { throttle } from "@/utils";
+import Copyright from "@/components/Copyright";
 
 import OurPartners from "@/sections/OurPartners";
 
@@ -14,25 +16,55 @@ import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 
 // import CustomCursor from "@/components/CustomCursor";
 
-export default function Home() {
+export default function Partners() {
   const [lang, setLang] = useState("eng");
+  const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
+  const getSize = () => {
+    const win = window;
+    const doc = document;
+    const docElem = doc.documentElement;
+    const body = doc.getElementsByTagName("body")[0];
+    const windowWidth =
+      win.innerWidth || docElem.clientWidth || body.clientWidth;
+    const windowHeight =
+      win.innerHeight || docElem.clientHeight || body.clientHeight;
+    const mobile = false;
+    const screenModeClass = mobile ? "mobile" : "desktop";
 
-  const isVisible = (id) => {
-    if (visitedSections[id]) {
-      return true;
-    }
-    return false;
+    setWindowSizes({
+      width: windowWidth,
+      height: windowHeight,
+      mobile: windowWidth <= 480,
+      tablet: windowWidth <= 1180,
+      desktop: windowWidth >= 1181,
+      tabletLarge: windowWidth <= 1366,
+      desktopSmall: windowWidth <= 1920,
+      screenModeClass,
+    });
   };
+
+  const throttledgetSize = throttle(getSize, 150);
+
+  useEffect(() => {
+    getSize();
+    window.addEventListener("resize", throttledgetSize);
+
+    return () => {
+      window.removeEventListener("resize", throttledgetSize);
+    };
+  }, []);
 
   return (
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
-      {/* <ScreenModeAndSizeContext.Provider value={windowSizes}> */}
-      <Header backToMain />
-      <main style={{ backgroundColor: "var(--black)" }}>
-        <AllOurPartners visible />
-      </main>
-      <footer />
-      {/* </ScreenModeAndSizeContext.Provider> */}
+      <ScreenModeAndSizeContext.Provider value={windowSizes}>
+        <Header partnersPage />
+        <main>
+          <AllOurPartners visible />
+        </main>
+        <footer>
+          <Copyright />
+        </footer>
+      </ScreenModeAndSizeContext.Provider>
     </LanguageContext.Provider>
   );
 }

@@ -116,8 +116,8 @@ const flag = (className) => (
         y2="32"
         gradientUnits="userSpaceOnUse"
       >
-        <stop offset="0.473958" stop-color="#0D75FF" />
-        <stop offset="0.474058" stop-color="#FFC327" />
+        <stop offset="0.473958" stopColor="#0D75FF" />
+        <stop offset="0.474058" stopColor="#FFC327" />
       </linearGradient>
     </defs>
   </svg>

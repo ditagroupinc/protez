@@ -100,7 +100,7 @@ body::-webkit-scrollbar {
 .showText .textContainer {
   & * {
     transform: translateY(0);
-    transition: transform 2s;
+    transition: transform 1s;
     /* transition-delay: 0.5s; */
   }
 }

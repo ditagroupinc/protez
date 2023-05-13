@@ -15,6 +15,7 @@
   height: 100%;
   left: 0;
   top: 0;
-  background-color: #0d1125;
-  opacity: 0.5;
+  background: linear-gradient(360deg, #0d1125 0%, rgba(13, 17, 37, 0) 40.45%),
+    #0d112580;
+  /* opacity: 0.5; */
 }
