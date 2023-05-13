@@ -2,19 +2,18 @@
 import "@/styles/fonts.css";
 import "@/styles/resetCSS.css";
 import { useContext, useState, createContext, useEffect, useRef } from "react";
-import AllOurPartners from "@/sections/AllOurPartners";
+import Script from "next/script";
+
 import Header from "@/sections/Header";
 import { throttle } from "@/utils";
 import Copyright from "@/components/Copyright";
 
-import OurPartners from "@/sections/OurPartners";
-import BackToTopButton from "@/components/BackToTopButton";
-
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-
 import CompanyData from "@/components/CompanyData";
+
 import SocialMediaLinks from "@/components/SocialMediaLinks";
+import DonorBox from "@/sections/Donorbox";
 
 // import CustomCursor from "@/components/CustomCursor";
 
@@ -60,15 +59,10 @@ export default function Partners() {
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header notMainPage />
-        {windowSizes.desktop && <CompanyData black />}
+        {/* {windowSizes.desktop && <CompanyData black />} */}
         {windowSizes.desktop && <SocialMediaLinks />}
         <main>
-          <AllOurPartners visible />
-          <BackToTopButton
-            text={"back to top  →"}
-            href={"allOurPartners"}
-            black
-          />
+          <DonorBox />
         </main>
         <footer>
           <Copyright />

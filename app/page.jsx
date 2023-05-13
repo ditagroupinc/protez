@@ -26,6 +26,8 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import BackToTopButton from "@/components/BackToTopButton";
 import style from "./index.module.css";
+import CompanyData from "@/components/CompanyData";
+import SocialMediaLinks from "@/components/SocialMediaLinks";
 
 // import CustomCursor from "@/components/CustomCursor";
 
@@ -163,9 +165,11 @@ export default function Home() {
   return (
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
-        <Header disableCompanyData={disableCompanyData} />
+        <Header />
         {/* <CustomCursor /> */}
         <main style={{ backgroundColor: "var(--black)" }}>
+          {windowSizes.desktop && !disableCompanyData && <CompanyData />}
+          {windowSizes.desktop && <SocialMediaLinks />}
           <div className={style.flagsBlock}>
             <LetsGiveHope
               id={"letsGiveHope"}
@@ -226,8 +230,8 @@ export default function Home() {
           <BackToTopButton
             text={
               visitedSections.letsGiveHope
-                ? homeText.exploreMore.eng
-                : homeText.backToTop.eng
+                ? homeText.exploreMore[lang]
+                : homeText.backToTop[lang]
             }
             href={visitedSections.letsGiveHope ? "prosthetics" : "letsGiveHope"}
             onClick={sectionIsVisible}

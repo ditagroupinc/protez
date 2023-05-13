@@ -66,7 +66,7 @@ const OurResults = forwardRef(function ({ visible, id }, ref) {
         <div className={`${style.countBlock}`}>
           {Object.keys(ourResultsText.results).map((card, i) => (
             <NumberCard
-              text={ourResultsText.results[card].eng}
+              text={ourResultsText.results[card][lang]}
               number={ourResultsText.results[card].number}
               key={i}
             />

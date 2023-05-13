@@ -27,22 +27,6 @@
   }
 }
 
-.copyright {
-  width: 100%;
-  background-color: var(--black);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.copyrightText {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 24px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
 /* desktop */
 @media screen and (max-width: 1920px) {
   .container {

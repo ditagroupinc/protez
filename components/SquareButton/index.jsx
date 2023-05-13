@@ -1,20 +1,22 @@
 import style from "./style.module.css";
+import Link from "next/link";
 
 export default function SquareButton({
   pink,
   black,
   emptyBlack,
-  className,
+  className = "",
   onClick,
   text,
   link,
+  blank,
   href,
 }) {
   if (link && href)
     return (
-      <a
+      <Link
         href={href}
-        target="blank"
+        target={blank ? "blank" : "_self"}
         type="button"
         className={`h6 ${style.button} ${pink ? style.pink : ""} ${
           emptyBlack ? style.emptyBlack : ""
@@ -22,7 +24,7 @@ export default function SquareButton({
         onClick={onClick}
       >
         {text}
-      </a>
+      </Link>
     );
   return (
     <button

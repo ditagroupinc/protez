@@ -2,9 +2,9 @@ import { useContext, useState } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import { icons } from "./icons";
+import texts from "@/texts&svg";
 
 import { Divider } from "@/components/Divider";
-import CompanyData from "@/components/CompanyData";
 import Link from "next/link";
 
 import style from "./header.module.css";
@@ -94,14 +94,7 @@ const BurgerButton = ({ close, onClick, black }) => {
   }
 };
 
-const socialMediaLinks = [
-  { adress: "https://youtube.com", icon: icons.iconYoutube },
-  { adress: "https://facebook.com", icon: icons.iconFaceBook },
-  { adress: "https://instagram.com", icon: icons.iconInstagram },
-  { adress: "https://linkedin.com", icon: icons.iconLinkedin },
-];
-
-export default function Header({ partnersPage, disableCompanyData }) {
+export default function Header({ notMainPage }) {
   const { lang, changeLang } = useContext(LanguageContext);
   const { width, length, mobile, tablet, desktop, screenModeClass } =
     useContext(ScreenModeAndSizeContext);
@@ -116,15 +109,13 @@ export default function Header({ partnersPage, disableCompanyData }) {
   return (
     <>
       <header
-        className={`${style.header} ${partnersPage ? style.partnersPage : ""}`}
+        className={`${style.header} ${notMainPage ? style.notMainPage : ""}`}
         id="header"
       >
         <Link href="/">
           {icons.protezFoundationLogo(
             `${style.foundationLogo} ${
-              (width <= 920 && headerIsOpened) || partnersPage
-                ? style.black
-                : ""
+              (width <= 920 && headerIsOpened) || notMainPage ? style.black : ""
             } ${mobile ? style.small : ""}`
           )}
         </Link>
@@ -133,7 +124,7 @@ export default function Header({ partnersPage, disableCompanyData }) {
           <BurgerButton
             onClick={toggleHeader}
             close={headerIsOpened}
-            black={partnersPage}
+            black={notMainPage}
           />
         ) : (
           <div className={style.headerActionLang}>
@@ -148,7 +139,7 @@ export default function Header({ partnersPage, disableCompanyData }) {
             <BurgerButton
               onClick={toggleHeader}
               close={headerIsOpened}
-              black={partnersPage}
+              black={notMainPage}
             />
           </div>
         )}
@@ -160,7 +151,7 @@ export default function Header({ partnersPage, disableCompanyData }) {
             <ul className={style.ancorList}>
               {navLinks.map((link, index) => (
                 <li key={index} className={"h4"}>
-                  {partnersPage ? (
+                  {notMainPage ? (
                     <Link
                       className={style.navAncor}
                       href="/"
@@ -201,7 +192,7 @@ export default function Header({ partnersPage, disableCompanyData }) {
             </button>
             <Divider className={style.headerDivider} />
             <div className={style.socialMediaLinksHeader}>
-              {socialMediaLinks.map((link, index) => (
+              {texts.socialMediaLinks.map((link, index) => (
                 <a
                   key={index}
                   href={link.adress}
@@ -215,24 +206,6 @@ export default function Header({ partnersPage, disableCompanyData }) {
           </div>
         </nav>
       </header>
-      {desktop && (
-        <>
-          {!disableCompanyData && <CompanyData black={partnersPage} />}
-
-          <div className={`${style.socialMediaLinksFixed}`}>
-            {socialMediaLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.adress}
-                className={style.socialMediaLink}
-                target="blank"
-              >
-                {link.icon(style.socialMediaIcon)}
-              </a>
-            ))}
-          </div>
-        </>
-      )}
     </>
   );
 }

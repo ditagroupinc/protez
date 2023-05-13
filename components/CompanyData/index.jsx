@@ -28,7 +28,7 @@ const companyDataText = {
   },
 };
 
-export default function CompanyData({ className, black }) {
+export default function CompanyData({ className = "", black }) {
   const { lang, changeLang } = useContext(LanguageContext);
   const { mobile } = useContext(ScreenModeAndSizeContext);
 
@@ -54,10 +54,13 @@ export default function CompanyData({ className, black }) {
         className={`${style.buttonsContainer} ${mobile ? style.mobile : ""}`}
       >
         <SquareButton
+          link
+          href="DonorBox"
           pink
           onClick={handleClick}
           text={companyDataText.actionButtons.makeDonation[lang]}
         />
+
         <SquareButton
           onClick={handleClick}
           text={companyDataText.actionButtons.needAProtez[lang]}

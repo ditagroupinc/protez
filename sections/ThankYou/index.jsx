@@ -34,6 +34,7 @@ const ThankYou = forwardRef(function ({ visible, id }, ref) {
           </div>
           <div className={style.buttonsContainer}>
             <SquareButton
+              blank
               link
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
               onClick={handleClick}

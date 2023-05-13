@@ -1,5 +1,5 @@
 import style from "./VideoAndFilter.module.css";
-export default function VideoAndFilter({ src, className }) {
+export default function VideoAndFilter({ src, className = "" }) {
   return (
     <>
       <video autoPlay loop muted className={`${style.video} ${className}`}>

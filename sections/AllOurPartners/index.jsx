@@ -24,9 +24,7 @@ const partnersLogos = [
 
 const PartnerCard = ({ image, mobile }) => (
   <div
-    className={`${mobile ? style.mobile : style.desktop} ${
-      style.partnerCard
-    } textContainer`}
+    className={`${mobile ? style.mobile : style.desktop} ${style.partnerCard}`}
   >
     <Image
       src={`/partnersLogos/${image}`}
@@ -40,15 +38,12 @@ const PartnerCard = ({ image, mobile }) => (
   </div>
 );
 
-export default function AllOurPartners({ visible }) {
+export default function AllOurPartners({}) {
   const { lang } = useContext(LanguageContext);
   const { tablet, tabletLarge, mobile } = useContext(ScreenModeAndSizeContext);
   return (
-    <section
-      className={`${style.section} section ${visible ? "showText" : ""}`}
-      id="allOurPartners"
-    >
-      <div className={style.specialThanks + " textContainer"}>
+    <section className={`${style.section} section `} id="allOurPartners">
+      <div className={style.specialThanks}>
         {tabletLarge
           ? icons.specialThanksTablet(`${style.logo} svgTextBlock`)
           : icons.specialThanks(`${style.logo} svgTextBlock`)}

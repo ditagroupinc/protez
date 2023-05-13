@@ -1,0 +1,42 @@
+.container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: var(--navRightWidth);
+  right: var(--paddingVW);
+  top: 50%;
+  transform: translateY(-50%);
+  gap: 40px;
+  z-index: 9;
+}
+
+.link {
+  &:hover .icon rect {
+    transition: fill var(--transitionProps);
+    fill: var(--pink);
+  }
+}
+
+.icon {
+  transition: fill var(--transitionProps);
+}
+
+/* desktop */
+@media screen and (max-width: 1920px) {
+  .container {
+    gap: 24px;
+  }
+  .icon {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .icon {
+    width: 48px;
+    height: 48px;
+  }
+}
