@@ -6,18 +6,22 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import SmokeBackground from "@/components/SmokeBackground";
 import { icons } from "./icons";
 const ourResultsText = {
-  blockInfo: {
+  results: {
     prosthetics: {
       eng: `Prosthetics`,
+      number: "76",
     },
     prostheses: {
       eng: `Prostheses`,
+      number: "196",
     },
     volunteers: {
       eng: `Volunteers`,
+      number: "290",
     },
     moneySpent: {
       eng: `Money spent`,
+      number: "1300000",
     },
   },
   titleText: {
@@ -30,7 +34,20 @@ const ourResultsText = {
   },
 };
 
-const ResultsCounts = ["76", "196", "290", "1300000"];
+// const ResultsCounts = ["76", "196", "290", "1300000"];
+// -------------
+
+const NumberCard = ({ text, number }) => (
+  <div className={`${style.counter} textContainer`}>
+    <div>
+      <span className={`${style.title} h2`}>{text}</span>
+    </div>
+
+    <span className={`${style.bigNumb}`}>{number}</span>
+  </div>
+);
+
+// -----------
 const OurResults = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
 
@@ -40,21 +57,26 @@ const OurResults = forwardRef(function ({ visible, id }, ref) {
       id={id}
       ref={ref}
     >
-      <SmokeBackground />
+      {/* <SmokeBackground /> */}
       <div className={`${style.block}`}>
         <div className={`${style.leftBlock} textContainer`}>
           {icons.titleSVG("svgTextBlock")}
         </div>
 
         <div className={`${style.countBlock}`}>
-          {Object.keys(ourResultsText.blockInfo).map((text, i) => (
-            <CountResults
-              inViewport={visible}
+          {Object.keys(ourResultsText.results).map((card, i) => (
+            <NumberCard
+              text={ourResultsText.results[card].eng}
+              number={ourResultsText.results[card].number}
               key={i}
-              count={ResultsCounts[i]}
-              text={ourResultsText.blockInfo[text][lang]}
-              styleMod={style.styleMod}
             />
+            // <CountResults
+            //   inViewport={visible}
+            //   key={i}
+            //   count={ResultsCounts[i]}
+            //   card={ourResultsText.results[card.eng][lang]}
+            //   styleMod={style.styleMod}
+            // />
           ))}
         </div>
       </div>
