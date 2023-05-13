@@ -91,7 +91,7 @@ export default function Home() {
     return false;
   };
 
-  const sectionIsVisible = (margin = 200) => {
+  const sectionIsVisible = (margin = 300) => {
     Object.keys(sectionRefs).forEach((key, index) => {
       const { top, bottom } = sectionRefs[key]?.current.getBoundingClientRect();
 

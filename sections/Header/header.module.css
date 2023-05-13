@@ -12,6 +12,9 @@
   padding-top: var(--headerPaddingTop);
   &.partnersPage {
     color: var(--black);
+    & .headerNav.opened {
+      border-left: var(--greyBorder);
+    }
   }
 }
 
@@ -203,6 +206,7 @@
   top: 50%;
   transform: translateY(-50%);
   gap: 40px;
+  z-index: 9;
 }
 
 .socialMediaLinksHeader {
@@ -224,33 +228,6 @@
 
 .socialMediaIcon {
   transition: fill var(--transitionProps);
-}
-
-.backToTopButton {
-  color: var(--white);
-  position: fixed;
-  right: var(--paddingVW);
-  bottom: var(--paddingVW);
-  transform: rotate(-90deg) translate(100%, -50%);
-  transform-origin: bottom right;
-  text-transform: uppercase;
-  transition: color var(--transitionProps);
-  &:hover {
-    color: var(--pink);
-    /* transform: scale(var(--textScale)); */
-    transition: color var(--transitionProps);
-  }
-  &.mobile {
-    right: 0.5rem;
-  }
-  &.black {
-    color: var(--black);
-  }
-}
-
-.socialMediaLinksFixed,
-.backToTopButton {
-  z-index: 9;
 }
 
 /* desktop */
