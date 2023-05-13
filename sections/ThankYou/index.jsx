@@ -5,16 +5,9 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import { useContext, forwardRef } from "react";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 
-import Copyright from "@/components/Copyright";
+import texts from "@/texts&svg";
 
-const ourResultsText = {
-  becomeAVolunteer: {
-    eng: "Protez Academy",
-  },
-  giveHope: {
-    eng: "Give Hope",
-  },
-};
+import Copyright from "@/components/Copyright";
 
 const ThankYou = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
@@ -38,13 +31,13 @@ const ThankYou = forwardRef(function ({ visible, id }, ref) {
               link
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
               onClick={handleClick}
-              text={ourResultsText.becomeAVolunteer[lang]}
+              text={texts.thankYou.becomeAVolunteer[lang]}
               className={style.button}
             />
             <SquareButton
               black
               onClick={handleClick}
-              text={ourResultsText.giveHope[lang]}
+              text={texts.thankYou.giveHope[lang]}
               className={style.button}
             />
           </div>

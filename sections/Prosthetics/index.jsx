@@ -6,40 +6,7 @@ import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import Image from "next/image";
 import { icons } from "./icons";
 import VideoAndFilter from "@/components/VideoAndFilter";
-
-const ProstheticsText = {
-  cards: {
-    free: {
-      eng: `Free prosthetics for those who lost their limbs as a result of the war. `,
-    },
-    psychological: {
-      eng: `Psychological support and emotional recovery of victims.`,
-    },
-    unite: {
-      eng: `Unite as many people as possible to help victims of war.`,
-    },
-  },
-  titleText: {
-    prosthetics: {
-      eng: "prosthetics",
-    },
-    for: {
-      eng: "for ",
-    },
-    ukrainians: {
-      eng: "Ukrainians",
-    },
-  },
-  paragraph: {
-    top: {
-      eng: `Our current project is Prosthetics for Ukrainians.
-      `,
-    },
-    bottom: {
-      eng: `The goal of the project is to help Ukrainian children, soldiers and civilians who have lost their limbs during the war to get free quality prosthetics in the USA.`,
-    },
-  },
-};
+import texts from "@/texts&svg";
 
 const TabletLogo = () => (
   <div className={style.logoTablet}>{icons.titleTablet(style.logoTablet)}</div>
@@ -78,21 +45,23 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
               </div>
               <div className={`${style.text}`}>
                 <div className="textContainer">
-                  <h2 className="h2">{ProstheticsText.paragraph.top[lang]}</h2>
+                  <h2 className="h2">
+                    {texts.prosthetics.paragraph.top[lang]}
+                  </h2>
                 </div>
                 <div className="textContainer">
                   <h2 className="h2">
-                    {ProstheticsText.paragraph.bottom[lang]}
+                    {texts.prosthetics.paragraph.bottom[lang]}
                   </h2>
                 </div>
               </div>
             </div>
             <div className={`${style.rightSide}`}>
-              {Object.keys(ProstheticsText.cards).map((key, i) => (
+              {Object.keys(texts.prosthetics.cards).map((key, i) => (
                 <Card
                   key={i}
                   icon={iconsArr[i]}
-                  text={ProstheticsText.cards[key][lang]}
+                  text={texts.prosthetics.cards[key][lang]}
                   reverse
                 />
               ))}
@@ -106,18 +75,18 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
           </div>
           <div className={`${style.text} ${!tabletLarge ? "h2" : "h5"} `}>
             <div className="textContainer">
-              <h2>{ProstheticsText.paragraph.top[lang]}</h2>
+              <h2>{texts.prosthetics.paragraph.top[lang]}</h2>
             </div>
             <br />
             <div className="textContainer">
-              <h2>{ProstheticsText.paragraph.bottom[lang]}</h2>
+              <h2>{texts.prosthetics.paragraph.bottom[lang]}</h2>
             </div>
           </div>
-          {Object.keys(ProstheticsText.cards).map((key, i) => (
+          {Object.keys(texts.prosthetics.cards).map((key, i) => (
             <Card
               key={i}
               icon={iconsArr[i]}
-              text={ProstheticsText.cards[key][lang]}
+              text={texts.prosthetics.cards[key][lang]}
               reverse
             />
           ))}

@@ -6,24 +6,7 @@ import Image from "next/image";
 import SmokeBackground from "@/components/SmokeBackground";
 import { icons } from "./icons";
 import SquareButton from "@/components/SquareButton";
-
-const MailingListText = {
-  join: {
-    eng: "Join our",
-  },
-  mailing: {
-    eng: "Mailing ",
-  },
-  list: {
-    eng: "list",
-  },
-  subcribe: {
-    eng: "Subcribe!",
-  },
-  email: {
-    eng: "Your email",
-  },
-};
+import texts from "@/texts&svg";
 
 const imgRoute = [
   "/veterans/troops1.png",
@@ -80,7 +63,7 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
         <form className={`${styles.form} h6`} action="POST">
           <input
             className="p"
-            placeholder={MailingListText.email[lang]}
+            placeholder={texts.mailingList.email[lang]}
             type="email"
             name="email"
             required
@@ -88,7 +71,7 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
           <SquareButton
             pink
             onClick={handleClick}
-            text={MailingListText.subcribe[lang]}
+            text={texts.mailingList.subcribe[lang]}
           />
         </form>
       </div>

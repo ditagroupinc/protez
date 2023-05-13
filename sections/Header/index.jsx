@@ -9,70 +9,6 @@ import Link from "next/link";
 
 import style from "./header.module.css";
 
-const headerText = {
-  menu: {
-    eng: "Menu",
-  },
-  getInTouch: {
-    eng: "Get in touch",
-  },
-  navigation: {
-    giveHope: {
-      eng: "Give hope",
-      id: "letsGiveHope",
-    },
-    mission: {
-      eng: "Mission",
-      id: "ourMission",
-    },
-    results: {
-      eng: "Results",
-      id: "ourResults",
-    },
-    ukraine: {
-      eng: "Ukraine",
-      id: "inNeed",
-    },
-    whatWeDo: {
-      eng: "Prosthetics for Ukrainians",
-      id: "prosthetics",
-    },
-    stories: {
-      eng: "Stories",
-      id: "veterans",
-    },
-    team: {
-      eng: "Team",
-      id: "ourTeam",
-    },
-    partners: {
-      eng: "Partners",
-      id: "ourPartners",
-    },
-    news: {
-      eng: "News",
-      id: "news",
-    },
-    getInvolved: {
-      eng: "Get Involved",
-      id: "mailingList",
-    },
-  },
-
-  actionButtons: {
-    protezAcademy: {
-      eng: "Protez Academy",
-    },
-
-    back2top: {
-      eng: "Back to top   →",
-    },
-    lang: {
-      eng: "Language",
-    },
-  },
-};
-
 const BurgerButton = ({ close, onClick, black }) => {
   if (!close) {
     return (
@@ -100,8 +36,8 @@ export default function Header({ notMainPage }) {
     useContext(ScreenModeAndSizeContext);
   const [headerIsOpened, setHeaderIsOpened] = useState(false);
 
-  const navLinks = Object.keys(headerText.navigation).map(
-    (el) => headerText.navigation[el]
+  const navLinks = Object.keys(texts.header.navigation).map(
+    (el) => texts.header.navigation[el]
   );
   const toggleHeader = () => {
     setHeaderIsOpened(!headerIsOpened);
@@ -133,7 +69,7 @@ export default function Header({ notMainPage }) {
               target="blank"
               className={style.protezAcademy}
             >
-              {headerText.actionButtons.protezAcademy[lang]}
+              {texts.header.actionButtons.protezAcademy[lang]}
             </a>
             <Divider vertical />
             <BurgerButton
@@ -147,7 +83,7 @@ export default function Header({ notMainPage }) {
           className={`${style.headerNav} ${headerIsOpened ? style.opened : ""}`}
         >
           <div>
-            <span className={style.menuText}>{headerText.menu[lang]}</span>
+            <span className={style.menuText}>{texts.header.menu[lang]}</span>
             <ul className={style.ancorList}>
               {navLinks.map((link, index) => (
                 <li key={index} className={"h4"}>
@@ -173,7 +109,7 @@ export default function Header({ notMainPage }) {
               {mobile && (
                 <li className={"h4"}>
                   <button className={style.navAncor + " " + style.underlined}>
-                    {headerText.actionButtons.lang[lang]}
+                    {texts.header.actionButtons.lang[lang]}
                   </button>
                 </li>
               )}
@@ -181,14 +117,14 @@ export default function Header({ notMainPage }) {
           </div>
           <div>
             <span className={style.menuText}>
-              {headerText.getInTouch[lang]}
+              {texts.header.getInTouch[lang]}
             </span>
             <button
               className={
                 style.protezAcademy + " " + style.short + " " + style.black
               }
             >
-              {headerText.actionButtons.protezAcademy[lang]}
+              {texts.header.actionButtons.protezAcademy[lang]}
             </button>
             <Divider className={style.headerDivider} />
             <div className={style.socialMediaLinksHeader}>

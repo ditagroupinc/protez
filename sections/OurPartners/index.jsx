@@ -5,12 +5,7 @@ import style from "./ourPartners.module.css";
 import { icons } from "./icons";
 import Image from "next/image";
 import Link from "next/link";
-
-const ourPartners = {
-  discover: {
-    eng: "Discover all Partners",
-  },
-};
+import texts from "@/texts&svg";
 
 const PartnerCard = ({ image }) => (
   <div className={style.partnerCard + " textContainer"}>
@@ -44,7 +39,7 @@ const OurPartners = forwardRef(function ({ visible, id }, ref) {
         <PartnerCard image="ottobock.png" />
         <div>
           <Link href="/Partners" className={`${style.discoverCard} h3`}>
-            <p>{ourPartners.discover[lang]}</p>
+            <p>{texts.ourPartners.discover[lang]}</p>
             {icons.arrow()}
           </Link>
         </div>

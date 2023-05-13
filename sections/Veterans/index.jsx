@@ -7,85 +7,7 @@ import Slider from "react-slick";
 import SmokeBackground from "@/components/SmokeBackground";
 import { icons } from "./icons";
 import CustomCursor from "@/components/CustomCursor";
-
-const veteransText = {
-  veterans: [
-    {
-      ageRank: {
-        eng: "30 years old, sergeant.",
-      },
-      name: {
-        eng: "Vadym",
-      },
-      surname: {
-        eng: "Fedorov",
-      },
-      title: {
-        eng: "Vadym has dedicated 10 years to the Ukrainian Army. ",
-      },
-      text: {
-        eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
-      },
-      img: "vadymFedorov.png",
-      icon: "vadymFedorov",
-      video: "https://www.youtube.com/embed/D1zR9DkYgu4",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
-    },
-    {
-      ageRank: {
-        eng: "30 years old, sergeant.",
-      },
-      name: {
-        eng: "Vadym",
-      },
-      surname: {
-        eng: "Fedorov",
-      },
-      title: {
-        eng: "Vadym has dedicated 10 years to the Ukrainian Army. ",
-      },
-      text: {
-        eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
-      },
-      img: "vadymFedorov.png",
-      icon: "vadymFedorov",
-      video: "https://www.youtube.com/embed/D1zR9DkYgu4",
-    },
-    {
-      ageRank: {
-        eng: "30 years old, sergeant.",
-      },
-      name: {
-        eng: "Vadym",
-      },
-      surname: {
-        eng: "Fedorov",
-      },
-      title: {
-        eng: "Vadym has dedicated 10 years to the Ukrainian Army. ",
-      },
-      text: {
-        eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
-      },
-      img: "vadymFedorov.png",
-      icon: "vadymFedorov",
-      video: "https://www.youtube.com/embed/D1zR9DkYgu4",
-    },
-  ],
-
-  share: {
-    eng: "Share me",
-  },
-  next: {
-    eng: "Next  →",
-  },
-  videoButton: {
-    eng: "get better known",
-  },
-};
+import texts from "@/texts&svg";
 
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
@@ -131,7 +53,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
       {/* <SmokeBackground /> */}
       <div className={style.sliderWrapper}>
         <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
-          {veteransText.veterans.map((element, index) => (
+          {texts.veterans.veterans.map((element, index) => (
             <div key={index}>
               <div className={style.sliderCard}>
                 <div className={`${style.leftSide} textContainer`}>
@@ -145,7 +67,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                   <p className={`p ${style.cardText}`}>{element.text[lang]}</p>
 
                   <div className={style.shareMe}>
-                    <span className={`h5`}>{veteransText.share[lang]}</span>
+                    <span className={`h5`}>{texts.veterans.share[lang]}</span>
                     <div className={`${style.buttonsList}`}>
                       <a target="blank" href={element.twitter}>
                         {icons.iconTwitter()}
@@ -186,7 +108,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
           ))}
         </Slider>
         <button onClick={gotoNext} className={style.nextSlideButton}>
-          {veteransText.next[lang]}
+          {texts.veterans.next[lang]}
         </button>
       </div>
       {frameOpened && (
