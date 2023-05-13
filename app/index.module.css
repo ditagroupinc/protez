@@ -10,3 +10,11 @@
   transform: translateY(-50%);
   max-width: 50%;
 }
+
+/* phone */
+@media screen and (max-width: 480px) {
+  .americanFlag {
+    max-width: 90%;
+    top: 55%;
+  }
+}
