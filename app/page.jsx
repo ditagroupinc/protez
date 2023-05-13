@@ -142,7 +142,7 @@ export default function Home() {
     sectionIsVisible();
   }, 100);
 
-  console.log(visitedSections.letsGiveHope);
+  // console.log(visitedSections.letsGiveHope);
 
   useEffect(() => {
     getSize();
