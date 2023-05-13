@@ -5,37 +5,7 @@ import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import SmokeBackground from "@/components/SmokeBackground";
 import { icons } from "./icons";
-const ourResultsText = {
-  results: {
-    prosthetics: {
-      eng: `Prosthetics`,
-      number: "76",
-    },
-    prostheses: {
-      eng: `Prostheses`,
-      number: "196",
-    },
-    volunteers: {
-      eng: `Volunteers`,
-      number: "290",
-    },
-    moneySpent: {
-      eng: `Money spent`,
-      number: "1300000",
-    },
-  },
-  titleText: {
-    our: {
-      eng: "Our",
-    },
-    results: {
-      eng: "Results",
-    },
-  },
-};
-
-// const ResultsCounts = ["76", "196", "290", "1300000"];
-// -------------
+import texts from "@/texts&svg";
 
 const NumberCard = ({ text, number }) => (
   <div className={`${style.counter} textContainer`}>
@@ -64,19 +34,12 @@ const OurResults = forwardRef(function ({ visible, id }, ref) {
         </div>
 
         <div className={`${style.countBlock}`}>
-          {Object.keys(ourResultsText.results).map((card, i) => (
+          {Object.keys(texts.ourResults.results).map((card, i) => (
             <NumberCard
-              text={ourResultsText.results[card][lang]}
-              number={ourResultsText.results[card].number}
+              text={texts.ourResults.results[card][lang]}
+              number={texts.ourResults.results[card].number}
               key={i}
             />
-            // <CountResults
-            //   inViewport={visible}
-            //   key={i}
-            //   count={ResultsCounts[i]}
-            //   card={ourResultsText.results[card.eng][lang]}
-            //   styleMod={style.styleMod}
-            // />
           ))}
         </div>
       </div>
