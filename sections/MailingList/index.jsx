@@ -75,20 +75,22 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
       </div>
       <div className={`${style.title} h6`}>
         <div className="textContainer">{icons.titleSVG("svgTextBlock")}</div>
-        <form className={`${style.form} h6`} action="POST">
-          <input
-            className="p"
-            placeholder={texts.mailingList.email[lang]}
-            type="email"
-            name="email"
-            required
-          />
-          <SquareButton
-            pink
-            onClick={handleClick}
-            text={texts.mailingList.subcribe[lang]}
-          />
-        </form>
+        <div className="textContainer">
+          <form className={`${style.form} h6 `} action="POST">
+            <input
+              className="p"
+              placeholder={texts.mailingList.email[lang]}
+              type="email"
+              name="email"
+              required
+            />
+            <SquareButton
+              pink
+              onClick={handleClick}
+              text={texts.mailingList.subcribe[lang]}
+            />
+          </form>
+        </div>
       </div>
     </section>
   );
