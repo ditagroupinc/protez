@@ -28,7 +28,7 @@ export default function SquareButton({
     );
   return (
     <button
-      type="button"
+      // type="button"
       className={`h6 ${style.button} ${pink ? style.pink : ""} ${
         emptyBlack ? style.emptyBlack : ""
       } ${black ? style.black : ""} ${className}`}

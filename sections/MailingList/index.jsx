@@ -7,6 +7,7 @@ import SmokeBackground from "@/components/SmokeBackground";
 import { icons } from "./icons";
 import SquareButton from "@/components/SquareButton";
 import texts from "@/texts&svg";
+import { sendContactForm } from "@/lib/api";
 
 const veteransImages = [
   "/veterans/troops1.png",
@@ -38,7 +39,7 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
   useEffect(() => {
     if (!visible) return;
 
-    window.myInterval = setInterval(myTimer, 700);
+    window.myInterval = setInterval(myTimer, 400);
 
     if (imagesToShow.length === veteransImages.length) {
       clearInterval(window.myInterval);
@@ -47,6 +48,15 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
   }, [visible, imagesToShow]);
 
   const addClass = (index) => (index <= imagesToShow.length ? style.show : "");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const data = {
+      email: e.target[0].value,
+    };
+    await sendContactForm(data);
+  };
 
   return (
     <section
@@ -74,12 +84,17 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
       <div className={`${style.title} h6`}>
         <div className="textContainer">{icons.titleSVG("svgTextBlock")}</div>
         <div className="textContainer">
-          <form className={`${style.form} h6 `} action="POST">
+          <form
+            className={`${style.form} h6 `}
+            action="POST"
+            onSubmit={handleSubmit}
+          >
             <input
               className="p"
               placeholder={texts.mailingList.email[lang]}
               type="email"
               name="email"
+              id="email"
               required
             />
             <SquareButton
