@@ -203,21 +203,12 @@ const thankYou = {
 };
 
 const ourTeam = {
-  lets: {
-    eng: "Let’s",
-  },
-  giveHope: {
-    eng: "give hope",
-  },
-  together: {
-    eng: "together",
-  },
   executives: [
     {
       photo: "yuryA.png",
       links: {
-        facebook: "https://facebook.com",
-        instagram: "https://instagram.com",
+        facebook: "https://www.facebook.com/yra.aroshidze",
+        instagram: "https://www.instagram.com/u.aroshidze/",
       },
       name: {
         eng: "Yury Aroshidze",
@@ -229,8 +220,8 @@ const ourTeam = {
     {
       photo: "yakovG.png",
       links: {
-        facebook: "https://facebook.com",
-        instagram: "https://instagram.com",
+        facebook: "https://www.facebook.com/yakovjacob.gradinar",
+        instagram: "https://www.instagram.com/yakovgradinar/",
       },
       name: {
         eng: "Yakov Gradinar",
@@ -244,9 +235,9 @@ const ourTeam = {
     {
       photo: "andreyM.png",
       links: {
-        facebook: "https://facebook.com",
-        instagram: "https://instagram.com",
-        linkedin: "https://linkedin.com",
+        facebook: "https://www.facebook.com/profile.php?id=13740119",
+        instagram: "https://www.instagram.com/andrey.madan.mn/",
+        linkedin: "https://www.linkedin.com/in/andreymadan/",
       },
       name: {
         eng: "Andrey Madan",
@@ -268,8 +259,8 @@ const ourTeam = {
     {
       photo: "valentynaP.png",
       links: {
-        facebook: "https://facebook.com",
-        instagram: "https://instagram.com",
+        facebook: "https://www.facebook.com/valentyna.pavsyukova/",
+        instagram: "https://www.instagram.com/valentyna_pavsyukova/",
       },
 
       name: {
@@ -282,9 +273,9 @@ const ourTeam = {
     {
       photo: "ruslanSychov.png",
       links: {
-        facebook: "https://facebook.com",
-        instagram: "https://instagram.com",
-        linkedin: "https://linkedin.com",
+        facebook: "https://www.facebook.com/ruslan.sychov",
+        instagram: "https://www.instagram.com/ruslan.sychov/",
+        linkedin: "https://www.linkedin.com/in/ruslan-sychov/",
       },
 
       name: {
