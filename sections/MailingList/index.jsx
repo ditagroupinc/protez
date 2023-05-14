@@ -48,8 +48,6 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
 
   const addClass = (index) => (index <= imagesToShow.length ? style.show : "");
 
-  console.log(imagesToShow);
-
   return (
     <section
       className={`${style.section} ${visible ? "showText" : ""}`}

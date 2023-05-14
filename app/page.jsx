@@ -71,7 +71,6 @@ export default function Home() {
       win.innerHeight || docElem.clientHeight || body.clientHeight;
     const mobile = false;
     const screenModeClass = mobile ? "mobile" : "desktop";
-    console.log("worls");
     setWindowSizes({
       width: windowWidth,
       height: windowHeight,

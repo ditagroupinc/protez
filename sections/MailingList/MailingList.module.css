@@ -13,7 +13,7 @@
   }
   &:global(.showText .textContainer) {
     & * {
-      transition-delay: 8.4s;
+      transition-delay: 4.8s;
     }
   }
 }
@@ -180,7 +180,7 @@
   height: 100%;
   opacity: 0.1;
   transform: translateY(150%);
-  transition: opacity 0.7s, transform 0.7s;
+  transition: opacity 0.4s, transform 0.4s;
   &.show {
     transform: translateY(0);
     opacity: 1;

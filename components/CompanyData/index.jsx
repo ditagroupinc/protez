@@ -65,6 +65,9 @@ export default function CompanyData({ className = "", black }) {
           onClick={handleClick}
           text={companyDataText.actionButtons.needAProtez[lang]}
           emptyBlack={black}
+          link
+          blank
+          href="https://docs.google.com/forms/d/e/1FAIpQLSf_ESrB0vY6973GQSYfDY-WtWYE8UXnaeHJzxIQrEWPaQ_UXw/viewform"
         />
       </div>
     </div>

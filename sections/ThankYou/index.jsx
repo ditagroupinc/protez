@@ -35,6 +35,8 @@ const ThankYou = forwardRef(function ({ visible, id }, ref) {
               className={style.button}
             />
             <SquareButton
+              link
+              href="DonorBox"
               black
               onClick={handleClick}
               text={texts.thankYou.giveHope[lang]}
