@@ -1,4 +1,6 @@
 .copyright {
+  font-family: "Outfit", sans-serif;
+  font-style: normal;
   width: 100%;
   background-color: var(--black);
   display: flex;

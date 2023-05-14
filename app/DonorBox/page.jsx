@@ -1,5 +1,6 @@
 "use client";
 import "@/styles/fonts.css";
+
 import "@/styles/resetCSS.css";
 import { useContext, useState, createContext, useEffect, useRef } from "react";
 import Script from "next/script";
