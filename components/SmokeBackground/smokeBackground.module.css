@@ -8,14 +8,6 @@
   pointer-events: none;
 }
 
-.bg {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background: url() center center no-repeat;
-  background-size: cover;
-}
-
 .smoke,
 .smokeBg {
   position: absolute;
