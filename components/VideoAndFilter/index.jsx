@@ -7,6 +7,7 @@ export default function VideoAndFilter({ src, className = "" }) {
         preload
         loop
         muted
+        playsInline
         className={`${style.video} ${className}`}
       >
         <source src={src} type="video/mp4" />

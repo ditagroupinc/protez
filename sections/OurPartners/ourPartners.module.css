@@ -1,4 +1,14 @@
 .section:global(.section) {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.9)
+  );
+  background-blend-mode: normal, screen;
+  padding-bottom: 80px;
+}
+/* 
+.section:global(.section) {
   padding-bottom: 80px;
   position: relative;
   z-index: 2;
@@ -45,7 +55,7 @@
       opacity: 0;
     }
   }
-}
+} */
 
 .specialThanks {
   justify-content: flex-end;

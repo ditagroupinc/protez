@@ -1,4 +1,13 @@
 .section:global(.section) {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0) 96.74%
+  );
+  background-blend-mode: normal, screen;
+}
+/* 
+.section:global(.section) {
   position: relative;
   z-index: 2;
   &:before {
@@ -43,7 +52,7 @@
       opacity: 0;
     }
   }
-}
+} */
 
 .container {
   display: flex;
