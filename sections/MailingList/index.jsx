@@ -24,14 +24,27 @@ const veteransImages = [
   "/veterans/troops3.png",
 ];
 
+const SpinnerButton = () => (
+  <button type="button" className={`${style.button} ${style.spinnerButton}`}>
+    <Image src={"/spinner.gif"} alt="spinner" width={40} height={40} />
+  </button>
+);
+
+const SuccessButton = () => (
+  <button type="button" className={`${style.button} ${style.successButton}`}>
+    Sent
+  </button>
+);
+
 const MailingList = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
+  const [formStatus, setFormStatus] = useState("");
   const [imagesToShow, setImagesToShow] = useState([]);
   const { height, mobile, tablet, tabletLarge, desktopSmall } = useContext(
     ScreenModeAndSizeContext
   );
 
-  const handleClick = () => console.log("click");
+  const handleClick = () => {};
 
   const myTimer = () => {
     setImagesToShow((prevState) => [...prevState, "img"]);
@@ -39,7 +52,7 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
   useEffect(() => {
     if (!visible) return;
 
-    window.myInterval = setInterval(myTimer, 400);
+    window.myInterval = setInterval(myTimer, 200);
 
     if (imagesToShow.length === veteransImages.length) {
       clearInterval(window.myInterval);
@@ -49,13 +62,37 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
 
   const addClass = (index) => (index <= imagesToShow.length ? style.show : "");
 
+  const getButton = () => {
+    if (formStatus === "isLoading") {
+      return <SpinnerButton />;
+    } else if (formStatus === "error") {
+      return <SpinnerButton />;
+    } else if (formStatus === "sent") {
+      return <SuccessButton />;
+    } else {
+      return (
+        <SquareButton
+          pink
+          onClick={handleClick}
+          text={texts.mailingList.subcribe[lang]}
+        />
+      );
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setFormStatus("isLoading");
     const data = {
       email: e.target[0].value,
     };
-    await sendContactForm(data);
+
+    try {
+      await sendContactForm(data);
+      setFormStatus("sent");
+    } catch (error) {
+      setFormStatus("error");
+    }
   };
 
   return (
@@ -97,11 +134,7 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
               id="email"
               required
             />
-            <SquareButton
-              pink
-              onClick={handleClick}
-              text={texts.mailingList.subcribe[lang]}
-            />
+            {getButton()}
           </form>
         </div>
       </div>

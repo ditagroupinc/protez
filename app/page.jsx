@@ -1,9 +1,6 @@
 "use client";
 import Image from "next/image";
-import "@/styles/fonts.css";
-import "@/styles/resetCSS.css";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 import { throttle } from "@/utils";
 import { useContext, useState, createContext, useEffect, useRef } from "react";
 
@@ -92,7 +89,7 @@ export default function Home() {
     return false;
   };
 
-  const sectionIsVisible = (margin = 300) => {
+  const sectionIsVisible = (margin = 200) => {
     Object.keys(sectionRefs).forEach((key, index) => {
       const { top, bottom } = sectionRefs[key]?.current.getBoundingClientRect();
 
@@ -103,7 +100,7 @@ export default function Home() {
 
       if (
         key === "thankYou" &&
-        top <= window.innerHeight &&
+        top <= window.innerHeight - margin &&
         !disableCompanyData
       ) {
         setDisableCompanyData(true);

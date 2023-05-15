@@ -11,7 +11,6 @@ import Copyright from "@/components/Copyright";
 
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-import CompanyData from "@/components/CompanyData";
 
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import DonorBox from "@/sections/Donorbox";
@@ -50,7 +49,7 @@ export default function Partners() {
   useEffect(() => {
     getSize();
     window.addEventListener("resize", throttledgetSize);
-
+    window.scrollTo(0, 0);
     return () => {
       window.removeEventListener("resize", throttledgetSize);
     };

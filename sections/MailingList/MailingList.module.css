@@ -13,7 +13,7 @@
   }
   &:global(.showText .textContainer) {
     & * {
-      transition-delay: 4.8s;
+      transition-delay: 2s;
     }
   }
 }
@@ -178,12 +178,54 @@
 .image {
   width: fit-content;
   height: 100%;
-  opacity: 0.1;
-  transform: translateY(150%);
-  transition: opacity 0.4s, transform 0.4s;
+  opacity: 0;
+  /* transform: translateY(150%); */
+  transform-origin: center;
+  transform: scale(0.5, 0.5);
+  transition: opacity 0.1s, transform 0.1s;
+  transition-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
   &.show {
-    transform: translateY(0);
+    /* transform: translateY(0); */
+    transform: scale(1, 1);
     opacity: 1;
+  }
+}
+
+.animate.pop {
+  animation-name: animate-pop;
+  animation-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+  animation-duration: 0.5s;
+}
+
+@keyframes animate-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.spinnerButton {
+    padding: 0 2.5rem;
+    background-color: #ffffff33;
+    border: 1px solid var(--white);
+    & img {
+      opacity: 0.5;
+    }
+  }
+  &.successButton {
+    padding: 1.25rem 2.5rem;
+    background-color: #4caf50;
+    border: 1px solid #4caf50;
   }
 }
 

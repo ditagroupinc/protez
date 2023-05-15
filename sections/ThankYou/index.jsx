@@ -15,7 +15,7 @@ const ThankYou = forwardRef(function ({ visible, id }, ref) {
     ScreenModeAndSizeContext
   );
 
-  const handleClick = () => console.log("clicked");
+  const handleClick = () => {};
   return (
     <footer className={`${visible ? "showText" : ""}`} id={id} ref={ref}>
       <div className={`${style.colorContainer} ${style.colorContainer}`}>

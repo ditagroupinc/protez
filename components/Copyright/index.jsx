@@ -7,7 +7,7 @@ export default function Copyright() {
       className={style.copyright}
     >
       <span className={style.copyrightText}>
-        2023 © Made by DITA GROUP Inc.
+        2023 © Made by <span className={style.underline}>DITA GROUP Inc.</span>
       </span>
     </a>
   );

@@ -1,5 +1,4 @@
 .copyright {
-  font-family: "Outfit", sans-serif;
   font-style: normal;
   width: 100%;
   background-color: var(--black);
@@ -14,4 +13,7 @@
   line-height: 24px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
+}
+.underline {
+  text-decoration: underline;
 }

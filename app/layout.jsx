@@ -1,3 +1,7 @@
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "@/styles/resetCSS.css";
+import "@/styles/fonts.css";
 import "./globals.css";
 export const metadata = {
   title: "Prosthetics for Ukraine",

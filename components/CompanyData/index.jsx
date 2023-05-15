@@ -32,7 +32,7 @@ export default function CompanyData({ className = "", black }) {
   const { lang, changeLang } = useContext(LanguageContext);
   const { mobile } = useContext(ScreenModeAndSizeContext);
 
-  const handleClick = () => console.log("clicked");
+  const handleClick = () => {};
 
   return (
     <div
