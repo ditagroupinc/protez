@@ -25,6 +25,7 @@ import BackToTopButton from "@/components/BackToTopButton";
 import style from "./index.module.css";
 import CompanyData from "@/components/CompanyData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
+import useGetSize from "@/hooks/useGetScreenSizes";
 
 // import CustomCursor from "@/components/CustomCursor";
 
@@ -39,7 +40,9 @@ const homeText = {
 
 export default function Home() {
   const [lang, setLang] = useState("eng");
-  const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
+
+  const windowSizes = useGetSize();
+
   const [visitedSections, setVisitedSections] = useState({});
   const [disableCompanyData, setDisableCompanyData] = useState(false);
 
@@ -57,31 +60,6 @@ export default function Home() {
     thankYou: useRef(null),
   };
 
-  const getSize = () => {
-    const win = window;
-    const doc = document;
-    const docElem = doc.documentElement;
-    const body = doc.getElementsByTagName("body")[0];
-    const windowWidth =
-      win.innerWidth || docElem.clientWidth || body.clientWidth;
-    const windowHeight =
-      win.innerHeight || docElem.clientHeight || body.clientHeight;
-    const mobile = false;
-    const screenModeClass = mobile ? "mobile" : "desktop";
-    setWindowSizes({
-      width: windowWidth,
-      height: windowHeight,
-      mobile: windowWidth <= 480,
-      tablet: windowWidth <= 1180,
-      desktop: windowWidth >= 1181,
-      tabletLarge: windowWidth <= 1366,
-      desktopSmall: windowWidth <= 1920,
-      screenModeClass,
-    });
-  };
-
-  const throttledgetSize = throttle(getSize, 150);
-
   const isVisible = (id) => {
     if (visitedSections[id]) {
       return true;
@@ -98,33 +76,19 @@ export default function Home() {
         key === "thankYou" && top <= window.innerHeight + margin;
       const sectionChecker = top <= margin && bottom >= margin;
 
-      if (
-        key === "thankYou" &&
-        top <= window.innerHeight - margin &&
-        !disableCompanyData
-      ) {
-        setDisableCompanyData(true);
-      }
-
-      if (
-        key === "thankYou" &&
-        top >= window.innerHeight &&
-        disableCompanyData
-      ) {
-        setDisableCompanyData(false);
-      }
-
-      if (
-        key === "letsGiveHope" &&
-        bottom < 0 &&
-        visitedSections.letsGiveHope === true
-      ) {
-        setVisitedSections((prevState) => {
-          return { ...prevState, letsGiveHope: false };
-        });
-      }
-
-      if (
+      if (key === "thankYou") {
+        if (top <= window.innerHeight - margin && !disableCompanyData) {
+          setDisableCompanyData(true);
+        } else if (top >= window.innerHeight && disableCompanyData) {
+          setDisableCompanyData(false);
+        }
+      } else if (key === "letsGiveHope") {
+        if (bottom < 0 && visitedSections.letsGiveHope === true) {
+          setVisitedSections((prevState) => {
+            return { ...prevState, letsGiveHope: false };
+          });
+        }
+      } else if (
         (sectionChecker && notAddedToStateChecker) ||
         (footerChecker && notAddedToStateChecker)
       ) {
@@ -139,13 +103,7 @@ export default function Home() {
   }, 100);
 
   useEffect(() => {
-    getSize();
     sectionIsVisible();
-    window.addEventListener("resize", throttledgetSize);
-
-    return () => {
-      window.removeEventListener("resize", throttledgetSize);
-    };
   }, []);
 
   useEffect(() => {
