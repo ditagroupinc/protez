@@ -4,7 +4,6 @@ export default function VideoAndFilter({ src, className = "" }) {
     <>
       <video
         autoPlay
-        preload
         loop
         muted
         playsInline
