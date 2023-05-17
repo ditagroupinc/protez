@@ -44,7 +44,8 @@ export default function Home() {
   const windowSizes = useGetSize();
 
   const [visitedSections, setVisitedSections] = useState({});
-  const [disableCompanyData, setDisableCompanyData] = useState(false);
+  const [thankYouInViewport, setThankYouInViewport] = useState(false);
+  const [sectionInViewPort, setSectionInViewPort] = useState("");
 
   const sectionRefs = {
     letsGiveHope: useRef(null),
@@ -77,10 +78,15 @@ export default function Home() {
       const sectionChecker = top <= margin && bottom >= margin;
 
       if (key === "thankYou") {
-        if (top <= window.innerHeight - margin && !disableCompanyData) {
-          setDisableCompanyData(true);
-        } else if (top >= window.innerHeight && disableCompanyData) {
-          setDisableCompanyData(false);
+        if (top <= window.innerHeight - margin && !thankYouInViewport) {
+          console.log("setTrue");
+          setVisitedSections((prevState) => {
+            return { ...prevState, thankYou: true };
+          });
+          setThankYouInViewport(true);
+        } else if (top >= window.innerHeight && thankYouInViewport) {
+          console.log("seFalse");
+          setThankYouInViewport(false);
         }
       } else if (key === "letsGiveHope") {
         if (bottom < 0 && visitedSections.letsGiveHope === true) {
@@ -112,7 +118,7 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", throttledSectionIsVisible);
     };
-  }, [visitedSections, disableCompanyData]);
+  }, [visitedSections, thankYouInViewport]);
 
   return (
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
@@ -120,7 +126,7 @@ export default function Home() {
         <Header />
         {/* <CustomCursor /> */}
         <main style={{ backgroundColor: "var(--black)" }}>
-          {windowSizes.desktop && !disableCompanyData && <CompanyData />}
+          {windowSizes.desktop && !thankYouInViewport && <CompanyData />}
           {windowSizes.desktop && <SocialMediaLinks />}
           <div className={style.flagsBlock}>
             <LetsGiveHope
