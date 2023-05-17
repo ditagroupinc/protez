@@ -1,9 +1,5 @@
 "use client";
-import "@/styles/fonts.css";
-
-import "@/styles/resetCSS.css";
 import { useContext, useState, createContext, useEffect, useRef } from "react";
-import Script from "next/script";
 
 import Header from "@/sections/Header";
 import { throttle } from "@/utils";
@@ -17,7 +13,7 @@ import DonorBox from "@/sections/Donorbox";
 
 // import CustomCursor from "@/components/CustomCursor";
 
-export default function Partners() {
+export default function Donate() {
   const [lang, setLang] = useState("eng");
   const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
   const getSize = () => {

@@ -1,6 +1,4 @@
 "use client";
-import "@/styles/fonts.css";
-import "@/styles/resetCSS.css";
 import { useContext, useState, createContext, useEffect, useRef } from "react";
 import AllOurPartners from "@/sections/AllOurPartners";
 import Header from "@/sections/Header";

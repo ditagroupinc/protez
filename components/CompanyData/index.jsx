@@ -55,7 +55,7 @@ export default function CompanyData({ className = "", black }) {
       >
         <SquareButton
           link
-          href="DonorBox"
+          href="Donate"
           pink
           onClick={handleClick}
           text={companyDataText.actionButtons.makeDonation[lang]}
