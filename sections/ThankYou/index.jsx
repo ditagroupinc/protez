@@ -27,19 +27,19 @@ const ThankYou = forwardRef(function ({ visible, id }, ref) {
           </div>
           <div className={style.buttonsContainer}>
             <SquareButton
-              blank
-              link
-              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-              onClick={handleClick}
-              text={texts.thankYou.becomeAVolunteer[lang]}
-              className={style.button}
-            />
-            <SquareButton
               link
               href="DonorBox"
               black
               onClick={handleClick}
               text={texts.thankYou.giveHope[lang]}
+              className={style.button}
+            />
+            <SquareButton
+              blank
+              link
+              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              onClick={handleClick}
+              text={texts.thankYou.becomeAVolunteer[lang]}
               className={style.button}
             />
           </div>
