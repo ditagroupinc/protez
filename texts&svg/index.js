@@ -205,7 +205,7 @@ const thankYou = {
 const ourTeam = {
   executives: [
     {
-      photo: "yuryA.png",
+      photo: "yuriy.png",
       links: {
         facebook: "https://www.facebook.com/yra.aroshidze",
         instagram: "https://www.instagram.com/u.aroshidze/",
@@ -218,7 +218,7 @@ const ourTeam = {
       },
     },
     {
-      photo: "yakovG.png",
+      photo: "yakov.png",
       links: {
         facebook: "https://www.facebook.com/yakovjacob.gradinar",
         instagram: "https://www.instagram.com/yakovgradinar/",
@@ -227,7 +227,7 @@ const ourTeam = {
         eng: "Yakov Gradinar",
       },
       position: {
-        eng: "Certified Prosthetist and Orthotist. Chief Medical Officer",
+        eng: "Co-Founder, Certified Prosthetist and Orthotist & Chief Medical Officer",
       },
     },
   ],
@@ -271,7 +271,7 @@ const ourTeam = {
       },
     },
     {
-      photo: "ruslanSychov.png",
+      photo: "ruslan.png",
       links: {
         facebook: "https://www.facebook.com/ruslan.sychov",
         instagram: "https://www.instagram.com/ruslan.sychov/",

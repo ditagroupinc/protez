@@ -11,7 +11,6 @@ const partnersLogos = [
   "businessBus.png",
   "chaliceOfMercy.png",
   "ditaGrey.png",
-  "ditaGroup.png",
   "klmb.png",
   "klmbGrey.png",
   "ossur.png",

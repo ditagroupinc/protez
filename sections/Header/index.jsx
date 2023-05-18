@@ -1,6 +1,7 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+import useOutsideClick from "@/hooks/useOutsideClick";
 import { icons } from "./icons";
 import texts from "@/texts&svg";
 import SquareButton from "@/components/SquareButton";
@@ -36,6 +37,7 @@ export default function Header({ notMainPage }) {
   const { width, length, mobile, tablet, desktop, screenModeClass } =
     useContext(ScreenModeAndSizeContext);
   const [headerIsOpened, setHeaderIsOpened] = useState(false);
+  const ref = useOutsideClick(() => setHeaderIsOpened(false));
 
   const navLinks = Object.keys(texts.header.navigation).map(
     (el) => texts.header.navigation[el]
@@ -44,125 +46,120 @@ export default function Header({ notMainPage }) {
     setHeaderIsOpened(!headerIsOpened);
   };
   return (
-    <>
-      <header
-        className={`${style.header} ${notMainPage ? style.notMainPage : ""}`}
-        id="header"
-      >
-        {notMainPage ? (
-          <Link href={"/"}>
-            {icons.protezFoundationLogo(
-              `${style.foundationLogo} ${
-                (width <= 920 && headerIsOpened) || notMainPage
-                  ? style.black
-                  : ""
-              } ${mobile ? style.small : ""}`
-            )}
-          </Link>
-        ) : (
-          <a href={"#letsGiveHope"}>
-            {icons.protezFoundationLogo(
-              `${style.foundationLogo} ${
-                (width <= 920 && headerIsOpened) || notMainPage
-                  ? style.black
-                  : ""
-              } ${mobile ? style.small : ""}`
-            )}
+    <header
+      className={`${style.header} ${notMainPage ? style.notMainPage : ""}`}
+      id="header"
+    >
+      {notMainPage ? (
+        <Link href={"/"}>
+          {icons.protezFoundationLogo(
+            `${style.foundationLogo} ${
+              (width <= 920 && headerIsOpened) || notMainPage ? style.black : ""
+            } ${mobile ? style.small : ""}`
+          )}
+        </Link>
+      ) : (
+        <a href={"#letsGiveHope"}>
+          {icons.protezFoundationLogo(
+            `${style.foundationLogo} ${
+              (width <= 920 && headerIsOpened) || notMainPage ? style.black : ""
+            } ${mobile ? style.small : ""}`
+          )}
+        </a>
+      )}
+      {mobile ? (
+        <BurgerButton
+          onClick={toggleHeader}
+          close={headerIsOpened}
+          black={notMainPage}
+        />
+      ) : (
+        <div className={style.headerActionLang}>
+          <a
+            href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+            target="blank"
+            className={`${style.protezAcademy}`}
+          >
+            {texts.header.actionButtons.protezAcademy[lang]}
           </a>
-        )}
-        {mobile ? (
+          <Divider vertical />
           <BurgerButton
             onClick={toggleHeader}
             close={headerIsOpened}
             black={notMainPage}
           />
-        ) : (
-          <div className={style.headerActionLang}>
-            <a
-              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-              target="blank"
-              className={style.protezAcademy}
-            >
-              {texts.header.actionButtons.protezAcademy[lang]}
-            </a>
-            <Divider vertical />
-            <BurgerButton
-              onClick={toggleHeader}
-              close={headerIsOpened}
-              black={notMainPage}
-            />
-          </div>
-        )}
-        <nav
-          className={`${style.headerNav} ${headerIsOpened ? style.opened : ""}`}
-        >
-          <div>
-            <span className={style.menuText}>{texts.header.menu[lang]}</span>
-            <ul className={style.ancorList}>
-              {navLinks.map((link, index) => (
-                <li key={index} className={"h4"}>
-                  {notMainPage ? (
-                    <Link
-                      className={style.navAncor}
-                      href="/"
-                      onClick={toggleHeader}
-                    >
-                      {link[lang]}
-                    </Link>
-                  ) : (
-                    <a
-                      className={style.navAncor}
-                      href={`#${link.id}`}
-                      onClick={toggleHeader}
-                    >
-                      {link[lang]}
-                    </a>
-                  )}
-                </li>
-              ))}
-              {mobile && (
-                <li className={"h4"}>
-                  <button className={style.navAncor + " " + style.underlined}>
-                    {texts.header.actionButtons.lang[lang]}
-                  </button>
-                </li>
-              )}
-            </ul>
-          </div>
-          <div>
-            <SquareButton
-              link
-              href="Donate"
-              pink
-              text={texts.header.actionButtons.makeDonation[lang]}
-            />
+        </div>
+      )}
+      <nav
+        ref={ref}
+        className={`${style.headerNav} ${headerIsOpened ? style.opened : ""}`}
+      >
+        <div>
+          <span className={style.menuText}>{texts.header.menu[lang]}</span>
+          <ul className={style.ancorList}>
+            {navLinks.map((link, index) => (
+              <li key={index} className={"h4"}>
+                {notMainPage ? (
+                  <Link
+                    className={style.navAncor}
+                    href="/"
+                    onClick={toggleHeader}
+                  >
+                    {link[lang]}
+                  </Link>
+                ) : (
+                  <a
+                    className={style.navAncor}
+                    href={`#${link.id}`}
+                    onClick={toggleHeader}
+                  >
+                    {link[lang]}
+                  </a>
+                )}
+              </li>
+            ))}
+            {mobile && (
+              <li className={"h4"}>
+                <button className={style.navAncor + " " + style.underlined}>
+                  {texts.header.actionButtons.lang[lang]}
+                </button>
+              </li>
+            )}
+          </ul>
+        </div>
+        <div>
+          <SquareButton
+            link
+            href="Donate"
+            pink
+            text={texts.header.actionButtons.makeDonation[lang]}
+          />
 
-            <button
-              className={
-                style.protezAcademy + " " + style.short + " " + style.black
-              }
-            >
-              {texts.header.actionButtons.protezAcademy[lang]}
-            </button>
-            <Divider className={style.headerDivider} />
-            <span className={style.menuText}>
-              {texts.header.getInTouch[lang]}
-            </span>
-            <div className={style.socialMediaLinks}>
-              {texts.socialMediaLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.adress}
-                  className={style.socialMediaLink}
-                  target="blank"
-                >
-                  {link.icon(style.socialMediaIcon)}
-                </a>
-              ))}
-            </div>
+          <button
+            className={
+              style.protezAcademy + " " + style.short + " " + style.black
+            }
+          >
+            {texts.header.actionButtons.protezAcademy[lang]}
+          </button>
+          <Divider className={style.headerDivider} />
+          <span className={style.menuText}>
+            {texts.header.getInTouch[lang]}
+          </span>
+          <div className={style.socialMediaLinks}>
+            {texts.socialMediaLinks.map((link, index) => (
+              <a
+                key={index}
+                href={link.adress}
+                className={style.socialMediaLink}
+                target="blank"
+              >
+                {link.icon(style.socialMediaIcon)}
+              </a>
+            ))}
           </div>
-        </nav>
-      </header>
-    </>
+        </div>
+      </nav>
+    </header>
   );
 }

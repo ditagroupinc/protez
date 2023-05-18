@@ -216,6 +216,9 @@ svg.veteranLogo {
 }
 
 @media screen and (max-width: 500px) {
+  .iFrame {
+    position: fixed;
+  }
   .roundButton {
     max-width: 100px;
     top: 0;

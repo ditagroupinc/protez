@@ -9,17 +9,6 @@ import { icons } from "./icons";
 import CustomCursor from "@/components/CustomCursor";
 import texts from "@/texts&svg";
 
-function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
-      onClick={onClick}
-    />
-  );
-}
-
 const Veterans = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
   const { height, width, mobile, tablet } = useContext(
@@ -29,7 +18,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
 
   const frameLink = useRef("");
 
-  const sliderRef = useRef();
+  const sliderRef = useRef(null);
   const gotoNext = () => {
     sliderRef.current.slickNext();
   };
@@ -41,7 +30,6 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    nextArrow: <SampleNextArrow />,
   };
   return (
     <section

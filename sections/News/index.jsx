@@ -1,4 +1,4 @@
-import { useContext, forwardRef } from "react";
+import { useContext, useRef, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./news.module.css";
@@ -12,6 +12,12 @@ const News = forwardRef(function ({ visible, id }, ref) {
   const { height, width, mobile, tablet, screenModeClass } = useContext(
     ScreenModeAndSizeContext
   );
+
+  const sliderRef = useRef(null);
+  const gotoNext = () => {
+    sliderRef.current.slickNext();
+  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -54,7 +60,7 @@ const News = forwardRef(function ({ visible, id }, ref) {
           {icons.wereInNews("svgTextBlock")}
         </div>
         <div className={style.newsContainer}>
-          <Slider {...settings} className={style.slickSlider}>
+          <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
             {texts.news.cards.map((card, index) => (
               <div key={index}>
                 <NewsCard
@@ -71,6 +77,9 @@ const News = forwardRef(function ({ visible, id }, ref) {
               </div>
             ))}
           </Slider>
+          <button onClick={gotoNext} className={style.nextSlideButton}>
+            {texts.veterans.next[lang]}
+          </button>
         </div>
       </div>
     </section>
