@@ -10,18 +10,18 @@ import texts from "@/texts&svg";
 import { sendContactForm } from "@/lib/api";
 
 const veteransImages = [
-  "/veterans/troops1.png",
-  "/veterans/troops2.png",
-  "/veterans/troops4.png",
-  "/veterans/troops5.png",
-  "/veterans/troops3.png",
-  "/veterans/troops4.png",
-  "/veterans/troops5.png",
-  "/veterans/troops1.png",
-  "/veterans/troops2.png",
-  "/veterans/troops4.png",
-  "/veterans/troops5.png",
-  "/veterans/troops3.png",
+  "/veterans/mailingList/soldiers1.png",
+  "/veterans/mailingList/soldiers2.png",
+  "/veterans/mailingList/soldiers3.png",
+  "/veterans/mailingList/soldiers4.png",
+  "/veterans/mailingList/soldiers5.png",
+  "/veterans/mailingList/soldiers6.png",
+  "/veterans/mailingList/soldiers7.png",
+  "/veterans/mailingList/soldiers8.png",
+  "/veterans/mailingList/soldiers9.png",
+  "/veterans/mailingList/soldiers10.png",
+  "/veterans/mailingList/soldiers11.png",
+  "/veterans/mailingList/soldiers12.png",
 ];
 
 const SpinnerButton = () => (
@@ -39,28 +39,28 @@ const SuccessButton = () => (
 const MailingList = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
   const [formStatus, setFormStatus] = useState("");
-  const [imagesToShow, setImagesToShow] = useState([]);
+  // const [imagesToShow, setImagesToShow] = useState([]);
   const { height, mobile, tablet, tabletLarge, desktopSmall } = useContext(
     ScreenModeAndSizeContext
   );
 
   const handleClick = () => {};
 
-  const myTimer = () => {
-    setImagesToShow((prevState) => [...prevState, "img"]);
-  };
-  useEffect(() => {
-    if (!visible) return;
+  // const myTimer = () => {
+  //   setImagesToShow((prevState) => [...prevState, "img"]);
+  // };
+  // useEffect(() => {
+  //   if (!visible) return;
 
-    window.myInterval = setInterval(myTimer, 200);
+  //   window.myInterval = setInterval(myTimer, 200);
 
-    if (imagesToShow.length === veteransImages.length) {
-      clearInterval(window.myInterval);
-    }
-    return () => clearInterval(window.myInterval);
-  }, [visible, imagesToShow]);
+  //   if (imagesToShow.length === veteransImages.length) {
+  //     clearInterval(window.myInterval);
+  //   }
+  //   return () => clearInterval(window.myInterval);
+  // }, [visible, imagesToShow]);
 
-  const addClass = (index) => (index <= imagesToShow.length ? style.show : "");
+  // const addClass = (index) => (index <= imagesToShow.length ? style.show : "");
 
   const getButton = () => {
     if (formStatus === "isLoading") {
@@ -112,7 +112,8 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
                 priority
                 width={2560}
                 height={1440}
-                className={`${style.image} ${addClass(i)}`}
+                // ${addClass(i)}
+                className={`${style.image} ${visible ? style.show : ""}`}
               />
             </div>
           );

@@ -67,10 +67,10 @@
   font-weight: 600;
 }
 
-.counter:hover {
+/* .counter:hover {
   background-color: var(--pink);
   transition: all var(--transitionProps);
-}
+} */
 
 .title {
   writing-mode: vertical-lr;

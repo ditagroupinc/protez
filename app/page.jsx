@@ -126,7 +126,7 @@ export default function Home() {
         <Header />
         {/* <CustomCursor /> */}
         <main style={{ backgroundColor: "var(--black)" }}>
-          {windowSizes.desktop && !thankYouInViewport && <CompanyData />}
+          {windowSizes.width > 700 && !thankYouInViewport && <CompanyData />}
           {windowSizes.desktop && <SocialMediaLinks />}
           <div className={style.flagsBlock}>
             <LetsGiveHope
@@ -194,6 +194,13 @@ export default function Home() {
             href={visitedSections.letsGiveHope ? "prosthetics" : "letsGiveHope"}
             onClick={sectionIsVisible}
           />
+          {/* {visitedSections.letsGiveHope && (
+            <BackToTopButton
+              text={homeText.backToTop[lang]}
+              href={"letsGiveHope"}
+              onClick={sectionIsVisible}
+            />
+          )} */}
         </main>
         <ThankYou
           ref={sectionRefs.thankYou}

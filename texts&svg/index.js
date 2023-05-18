@@ -413,7 +413,7 @@ const header = {
   },
   navigation: {
     giveHope: {
-      eng: "Give hope",
+      eng: "Home",
       id: "letsGiveHope",
     },
     mission: {
@@ -429,7 +429,7 @@ const header = {
       id: "inNeed",
     },
     whatWeDo: {
-      eng: "Prosthetics for Ukrainians",
+      eng: "What we do",
       id: "prosthetics",
     },
     stories: {
@@ -448,15 +448,18 @@ const header = {
       eng: "News",
       id: "news",
     },
-    getInvolved: {
-      eng: "Get Involved",
-      id: "mailingList",
-    },
+    // getInvolved: {
+    //   eng: "Get Involved",
+    //   id: "mailingList",
+    // },
   },
 
   actionButtons: {
     protezAcademy: {
       eng: "Protez Academy",
+    },
+    makeDonation: {
+      eng: "Make Donation",
     },
 
     back2top: {
@@ -465,6 +468,27 @@ const header = {
     lang: {
       eng: "Language",
     },
+  },
+};
+
+const donate = {
+  title: {
+    eng: "All charitable contributions are tax-deductible.",
+  },
+  organizationData: {
+    sendChecks: {
+      eng: "Please send checks to:",
+    },
+    nonProfitOrganization: {
+      eng: "Nonprofit organization 501(c)(3)",
+    },
+    ein: {
+      eng: "EIN: 88-2437069",
+    },
+    adress: {
+      eng: "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
+    },
+    email: "info@protezfoundation.com",
   },
 };
 
@@ -481,6 +505,7 @@ const texts = {
   news: news,
   mailingList: mailingList,
   header: header,
+  donate: donate,
 };
 
 export default texts;

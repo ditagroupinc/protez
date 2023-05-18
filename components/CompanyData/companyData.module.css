@@ -3,52 +3,27 @@
   position: fixed;
   z-index: 9;
   left: 0;
-  bottom: var(--headerPaddingSide);
+  width: 100%;
+  bottom: calc(2 * var(--headerPaddingSide));
   max-width: calc(var(--navLeftWidth) + var(--headerPaddingSide));
   &.black {
     color: var(--black);
   }
 }
 
-.adressContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 2.5rem;
-
-  width: 100%;
-
-  & p {
-    padding-left: var(--headerPaddingSide);
-    & span {
-      display: block;
-      line-height: 32px;
-    }
-  }
-}
-
 .buttonsContainer {
-  margin-top: 4.375rem;
+  margin-top: 40px;
   padding-left: var(--headerPaddingSide);
   display: flex;
   flex-direction: column;
-  gap: 1.875rem;
-  &.mobile {
-    margin-top: 1rem;
-    gap: 1rem;
-    padding-left: 0;
-  }
+  gap: 40px;
 }
 
 /* tablet */
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 700px) {
   .buttonsContainer {
     margin-top: 1rem;
     gap: 1rem;
     padding-left: 0;
-  }
-  .adressContainer {
-    & p {
-      padding-left: 0;
-    }
   }
 }

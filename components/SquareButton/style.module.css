@@ -10,44 +10,55 @@
   transform-origin: center;
   transition: background-color var(--transitionProps),
     border var(--transitionProps), color var(--transitionProps);
-  &:hover,
-  &:active {
-    color: var(--black);
-    border: 1px solid var(--black);
-    transition: background-color var(--transitionProps),
-      border var(--transitionProps), color var(--transitionProps);
-  }
 }
 
 .button.pink {
   border: 1px solid var(--pink);
   background-color: var(--pink);
-  &:hover,
-  &:active {
-    color: var(--white);
-    border: 1px solid var(--black);
-    background-color: var(--black);
-  }
 }
 
 .button.black {
   border: 1px solid var(--black);
   background-color: var(--black);
-  &:hover,
-  &:active {
-    border: 1px solid var(--white);
-    background-color: var(--white);
-    color: var(--pink);
-  }
 }
 
 .button.emptyBlack {
   border: 1px solid var(--black);
   background-color: transparent;
   color: var(--black);
-  &:hover,
-  &:active {
-    border: 1px solid var(--pink);
-    color: var(--pink);
+}
+
+/* hovers */
+@media screen and (min-width: 480px) {
+  .button {
+    &:hover {
+      color: var(--black);
+      border: 1px solid var(--black);
+      transition: background-color var(--transitionProps),
+        border var(--transitionProps), color var(--transitionProps);
+    }
+  }
+
+  .button.pink {
+    &:hover {
+      color: var(--white);
+      border: 1px solid var(--black);
+      background-color: var(--black);
+    }
+  }
+
+  .button.black {
+    &:hover {
+      border: 1px solid var(--white);
+      background-color: var(--white);
+      color: var(--pink);
+    }
+  }
+
+  .button.emptyBlack {
+    &:hover {
+      border: 1px solid var(--pink);
+      color: var(--pink);
+    }
   }
 }

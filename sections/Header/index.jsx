@@ -3,8 +3,9 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import { icons } from "./icons";
 import texts from "@/texts&svg";
+import SquareButton from "@/components/SquareButton";
 
-import { Divider } from "@/components/Divider";
+import Divider from "@/components/Divider";
 import Link from "next/link";
 
 import style from "./header.module.css";
@@ -48,14 +49,27 @@ export default function Header({ notMainPage }) {
         className={`${style.header} ${notMainPage ? style.notMainPage : ""}`}
         id="header"
       >
-        <Link href="/">
-          {icons.protezFoundationLogo(
-            `${style.foundationLogo} ${
-              (width <= 920 && headerIsOpened) || notMainPage ? style.black : ""
-            } ${mobile ? style.small : ""}`
-          )}
-        </Link>
-
+        {notMainPage ? (
+          <Link href={"/"}>
+            {icons.protezFoundationLogo(
+              `${style.foundationLogo} ${
+                (width <= 920 && headerIsOpened) || notMainPage
+                  ? style.black
+                  : ""
+              } ${mobile ? style.small : ""}`
+            )}
+          </Link>
+        ) : (
+          <a href={"#letsGiveHope"}>
+            {icons.protezFoundationLogo(
+              `${style.foundationLogo} ${
+                (width <= 920 && headerIsOpened) || notMainPage
+                  ? style.black
+                  : ""
+              } ${mobile ? style.small : ""}`
+            )}
+          </a>
+        )}
         {mobile ? (
           <BurgerButton
             onClick={toggleHeader}
@@ -116,9 +130,13 @@ export default function Header({ notMainPage }) {
             </ul>
           </div>
           <div>
-            <span className={style.menuText}>
-              {texts.header.getInTouch[lang]}
-            </span>
+            <SquareButton
+              link
+              href="Donate"
+              pink
+              text={texts.header.actionButtons.makeDonation[lang]}
+            />
+
             <button
               className={
                 style.protezAcademy + " " + style.short + " " + style.black
@@ -127,7 +145,10 @@ export default function Header({ notMainPage }) {
               {texts.header.actionButtons.protezAcademy[lang]}
             </button>
             <Divider className={style.headerDivider} />
-            <div className={style.socialMediaLinksHeader}>
+            <span className={style.menuText}>
+              {texts.header.getInTouch[lang]}
+            </span>
+            <div className={style.socialMediaLinks}>
               {texts.socialMediaLinks.map((link, index) => (
                 <a
                   key={index}

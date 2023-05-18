@@ -101,7 +101,8 @@
     }
   }
   &.short {
-    padding: 16px 0;
+    padding: 0;
+    margin-top: 40px;
   }
 }
 
@@ -120,19 +121,18 @@
 /* --------- */
 
 .headerNav {
-  padding-top: 120px;
+  padding: 120px 40px 40px;
   position: fixed;
   z-index: 11;
   right: 0;
   top: 0;
   transform: translateX(100%);
   transition: transform 0.5s;
-  max-width: 650px;
+  max-width: 440px;
   width: 100%;
   height: 100%;
   background-color: var(--white);
-  padding-left: 5%;
-  padding-bottom: 40px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -173,6 +173,7 @@
 
 .headerDivider {
   max-width: 360px;
+  margin: 24px 0;
 }
 
 .headerActionLang {
@@ -196,14 +197,10 @@
   gap: 1rem;
 } */
 
-.socialMediaLinksHeader {
+.socialMediaLinks {
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
-  & .socialMediaIcon {
-    max-width: 40px;
-    max-height: 40px;
-  }
 }
 
 .socialMediaLink {
@@ -214,6 +211,10 @@
 }
 
 .socialMediaIcon {
+  width: 100%;
+  height: 100%;
+  max-width: 40px;
+  max-height: 40px;
   transition: fill var(--transitionProps);
 }
 
@@ -222,22 +223,17 @@
   .foundationLogo {
     max-width: 290px;
   }
-  .socialMediaIcon {
-    width: 56px;
-    height: 56px;
-  }
 }
 
 /* beforeTablet */
 @media screen and (max-width: 1366px) {
-  .socialMediaIcon {
-    width: 48px;
-    height: 48px;
-  }
 }
 
 /* phone */
 @media screen and (max-width: 480px) {
+  .socialMediaLinks {
+    margin-top: 24px;
+  }
   .foundationLogo {
     max-width: 116px;
   }

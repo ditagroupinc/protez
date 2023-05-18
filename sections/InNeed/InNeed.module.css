@@ -25,7 +25,10 @@
 }
 
 /* tablet */
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 750px) {
+  .section:global(.section) {
+    padding-bottom: 5rem;
+  }
   .title {
     align-self: flex-start;
     max-width: 80%;
@@ -37,5 +40,12 @@
   .title,
   .text {
     flex-basis: 100%;
+  }
+}
+
+/* phone */
+@media screen and (max-width: 480px) {
+  .section:global(.section) {
+    display: block;
   }
 }

@@ -15,7 +15,7 @@ const LetsGiveHope = forwardRef(function ({ id }, ref) {
       <VideoAndFilter src={"flag-ukraine.mp4"} />
       <div className={style.filter} />
       {icons.letsGiveHopeLogo(`${style.mainTitle} svgTextBlock`)}
-      {tablet && <CompanyData className={style.companyData} />}
+      {width < 700 && <CompanyData className={style.companyData} />}
     </section>
   );
 });

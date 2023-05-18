@@ -14,9 +14,6 @@ const companyDataText = {
     needAProtez: {
       eng: "Потрібен протез",
     },
-    protezAcademy: {
-      eng: "Protez Academy",
-    },
   },
   organizationData: {
     nonProfitOrganization: {
@@ -31,9 +28,9 @@ const companyDataText = {
   },
 };
 
-export default function CompanyData({ className = "", black }) {
+export function CompanyData({ className = "", black }) {
   const { lang, changeLang } = useContext(LanguageContext);
-  const { width } = useContext(ScreenModeAndSizeContext);
+  const { mobile } = useContext(ScreenModeAndSizeContext);
 
   const handleClick = () => {};
 
@@ -41,8 +38,22 @@ export default function CompanyData({ className = "", black }) {
     <div
       className={`${style.container} ${black ? style.black : ""} ${className}`}
     >
-      {width > 700 && <Divider />}
-      <div className={`${style.buttonsContainer}`}>
+      {/* <div className={`${style.adressContainer} ${mobile ? style.mobile : ""}`}>
+        <p>
+          <span className={"h6 "}>
+            {companyDataText.organizationData.nonProfitOrganization[lang]}
+          </span>
+          <span className={"h6 "}>
+            {companyDataText.organizationData.ein[lang]}
+          </span>
+        </p>
+        <Divider />
+        <p className={"h5 "}>{companyDataText.organizationData.adress[lang]}</p>
+      </div> */}
+      <Divider />
+      <div
+        className={`${style.buttonsContainer} ${mobile ? style.mobile : ""}`}
+      >
         <SquareButton
           link
           href="Donate"
@@ -59,17 +70,6 @@ export default function CompanyData({ className = "", black }) {
           blank
           href="https://docs.google.com/forms/d/e/1FAIpQLSf_ESrB0vY6973GQSYfDY-WtWYE8UXnaeHJzxIQrEWPaQ_UXw/viewform"
         />
-        {width < 700 && (
-          <SquareButton
-            onClick={handleClick}
-            text={companyDataText.actionButtons.protezAcademy[lang]}
-            emptyBlack={black}
-            link
-            blank
-            black
-            href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-          />
-        )}
       </div>
     </div>
   );

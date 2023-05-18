@@ -1,5 +1,5 @@
 import style from "./divider.module.css";
-export const Divider = ({ vertical, className = "" }) => {
+export default function Divider({ vertical, className = "" }) {
   return (
     <div
       className={`${style.divider} ${
@@ -7,4 +7,4 @@ export const Divider = ({ vertical, className = "" }) => {
       } ${className}`}
     />
   );
-};
+}

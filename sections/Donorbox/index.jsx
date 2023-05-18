@@ -4,11 +4,37 @@ import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./donorbox.module.css";
 import icons from "./icons";
 import Script from "next/script";
-import CompanyData from "@/components/CompanyData";
-const donorBoxText = {
-  title: {
-    eng: "All charitable contributions are tax-deductible.",
-  },
+import texts from "@/texts&svg";
+import Divider from "@/components/Divider";
+
+const CompanyData = ({ className = "" }) => {
+  const { lang, changeLang } = useContext(LanguageContext);
+
+  return (
+    <div className={`${style.companyData} ${className}`}>
+      <div className={`${style.adressContainer}`}>
+        <p>
+          <span className={"h6 "}>
+            {texts.donate.organizationData.nonProfitOrganization[lang]}
+          </span>
+          <span className={"h6 "}>
+            {texts.donate.organizationData.ein[lang]}
+          </span>
+        </p>
+        <Divider className={style.divider} />
+        <p className={style.sendChecks}>
+          {texts.donate.organizationData.sendChecks[lang]}
+        </p>
+        <p className={"h5 "}>{texts.donate.organizationData.adress[lang]}</p>
+      </div>
+      <a
+        href={`mailto:${texts.donate.organizationData.email}`}
+        className={`${style.emailLink} h6`}
+      >
+        {texts.donate.organizationData.email}
+      </a>
+    </div>
+  );
 };
 
 export default function DonorBox({}) {
@@ -19,9 +45,9 @@ export default function DonorBox({}) {
       {mobile
         ? icons.letsGiveHopeLogoMobile(`${style.logo} svgTextBlock`)
         : icons.letsGiveHopeLogo(`${style.logo} svgTextBlock`)}
-      <h1 className={style.title}>{donorBoxText.title[lang]}</h1>
+      <h1 className={style.title}>{texts.donate.title[lang]}</h1>
       <div className={style.flexContainer}>
-        <CompanyData className={style.companyData} black />
+        <CompanyData />
 
         <Script src="https://donorbox.org/widget.js" paypalExpress="false" />
         <iframe
