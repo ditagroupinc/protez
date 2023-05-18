@@ -1,24 +1,11 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 .button {
   color: var(--white);
   position: fixed;
   right: var(--paddingVW);
   bottom: var(--paddingVW);
-  -webkit-transform: rotate(-90deg) translate(100%, -50%);
-  -ms-transform: rotate(-90deg) translate(100%, -50%);
   transform: rotate(-90deg) translate(100%, -50%);
-  -webkit-transform-origin: bottom right;
-  -ms-transform-origin: bottom right;
   transform-origin: bottom right;
   text-transform: uppercase;
-  -webkit-transition: color var(--transitionProps);
-  -o-transition: color var(--transitionProps);
   transition: color var(--transitionProps);
   z-index: 9;
   &.black {
@@ -27,8 +14,6 @@
   &:hover {
     color: var(--pink);
     /* transform: scale(var(--textScale)); */
-    -webkit-transition: color var(--transitionProps);
-    -o-transition: color var(--transitionProps);
     transition: color var(--transitionProps);
   }
 }

@@ -1,20 +1,7 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 .section {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   position: relative;
   z-index: 5;
@@ -31,8 +18,6 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 100%;
   max-width: 742px;
@@ -49,23 +34,13 @@
   display: flex;
   margin-top: 5vh;
 
-  -webkit-box-pack: justify;
-
-  -ms-flex-pack: justify;
-
   justify-content: space-between;
   border-bottom: 2px solid #ffffff;
   padding-bottom: 0.8em;
 
-  -webkit-column-gap: 5%;
-
-  -moz-column-gap: 5%;
-
   column-gap: 5%;
 
   & input {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 58%;
     flex: 1 1 58%;
     height: 3.3em;
     padding-left: 1.3em;
@@ -80,8 +55,6 @@
   }
 
   & button {
-    -webkit-box-flex: 1;
-    -ms-flex: 1 1 37%;
     flex: 1 1 37%;
   }
 }
@@ -91,29 +64,16 @@
   /* padding-top: 68px; */
   height: 100%;
   width: 100%;
-  display: -ms-grid;
   display: grid;
   position: absolute;
   left: 0;
   top: 0;
   pointer-events: none;
 
-  -ms-grid-columns: 16.6fr calc(30px + 136 * ((100vw - 360px) / 2200)) 14.6fr
-    calc(30px + 136 * ((100vw - 360px) / 2200)) 9.6fr
-    calc(30px + 136 * ((100vw - 360px) / 2200)) 14.6fr
-    calc(30px + 136 * ((100vw - 360px) / 2200)) 16.6fr;
-
   grid-template-columns: 16.6fr 14.6fr 9.6fr 14.6fr 16.6fr;
-
-  -ms-grid-rows: 1fr calc(50px + 95 * ((100vh - 360px) / 2200)) 1fr
-    calc(50px + 95 * ((100vh - 360px) / 2200)) 1fr;
 
   grid-template-rows: repeat(3, 1fr);
   row-gap: calc(50px + 95 * ((100vh - 360px) / 2200));
-
-  -webkit-column-gap: calc(30px + 136 * ((100vw - 360px) / 2200));
-
-  -moz-column-gap: calc(30px + 136 * ((100vw - 360px) / 2200));
 
   column-gap: calc(30px + 136 * ((100vw - 360px) / 2200));
   z-index: 4;
@@ -123,154 +83,56 @@
   }
 
   & div:nth-child(1) {
-    -ms-flex-item-align: end;
-    -ms-grid-row-align: end;
     align-self: end;
   }
 
   & div:nth-child(2) {
-    -ms-flex-item-align: end;
-    -ms-grid-row-align: end;
     align-self: end;
   }
 
   & div:nth-child(3) {
-    -ms-flex-item-align: end;
-    -ms-grid-row-align: end;
     align-self: end;
   }
 
   & div:nth-child(4) {
-    -ms-flex-item-align: end;
-    -ms-grid-row-align: end;
     align-self: end;
   }
 
   & div:nth-child(5) {
-    -ms-flex-item-align: end;
-    -ms-grid-row-align: end;
     align-self: end;
   }
 
   & div:nth-child(6) {
-    -ms-grid-column: 1;
     grid-column-start: 1;
-    -ms-grid-column-span: 1;
     grid-column-end: 2;
-    -ms-grid-row-align: center;
     align-self: center;
   }
 
   & div:nth-child(7) {
-    -ms-grid-column: 5;
     grid-column-start: 5;
-    -ms-grid-column-span: 1;
     grid-column-end: 6;
-    -ms-grid-row-align: center;
     align-self: center;
   }
 
   & div:nth-child(8) {
-    -ms-flex-item-align: start;
     align-self: flex-start;
   }
 
   & div:nth-child(9) {
-    -ms-flex-item-align: start;
-    -ms-grid-row-align: start;
     align-self: start;
   }
 
   & div:nth-child(10) {
-    -ms-flex-item-align: start;
-    -ms-grid-row-align: start;
     align-self: start;
   }
 
   & div:nth-child(11) {
-    -ms-flex-item-align: start;
     align-self: flex-start;
   }
 
   & div:nth-child(12) {
-    -ms-flex-item-align: start;
     align-self: flex-start;
   }
-}
-
-.images > *:nth-child(1) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-}
-
-.images > *:nth-child(2) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-}
-
-.images > *:nth-child(3) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 5;
-}
-
-.images > *:nth-child(4) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 7;
-}
-
-.images > *:nth-child(5) {
-  -ms-grid-row: 1;
-  -ms-grid-column: 9;
-}
-
-.images > *:nth-child(6) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
-}
-
-.images > *:nth-child(7) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 3;
-}
-
-.images > *:nth-child(8) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 5;
-}
-
-.images > *:nth-child(9) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 7;
-}
-
-.images > *:nth-child(10) {
-  -ms-grid-row: 3;
-  -ms-grid-column: 9;
-}
-
-.images > *:nth-child(11) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 1;
-}
-
-.images > *:nth-child(12) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 3;
-}
-
-.images > *:nth-child(13) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 5;
-}
-
-.images > *:nth-child(14) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 7;
-}
-
-.images > *:nth-child(15) {
-  -ms-grid-row: 5;
-  -ms-grid-column: 9;
 }
 
 /* desktop */
@@ -282,43 +144,24 @@
     & div:nth-child(7) .image,
     & div:nth-child(8) .image,
     & div:nth-child(12) .image {
-      -webkit-transition-delay: 0.75s;
-      -o-transition-delay: 0.75s;
       transition-delay: 0.75s;
     }
   }
 }
 
 .image {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
   width: fit-content;
   height: 100%;
   opacity: 0;
-  -o-object-fit: contain;
   object-fit: contain;
   /* transform: translateY(150%); */
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-transform: scale(0.5, 0.5);
-  -ms-transform: scale(0.5, 0.5);
   transform: scale(0.5, 0.5);
-  -webkit-transition: opacity 0.25s, -webkit-transform 0.25s;
-  transition: opacity 0.25s, -webkit-transform 0.25s;
-  -o-transition: opacity 0.25s, transform 0.25s;
   transition: opacity 0.25s, transform 0.25s;
-  transition: opacity 0.25s, transform 0.25s, -webkit-transform 0.25s;
-  -webkit-transition-delay: 0.5s;
-  -o-transition-delay: 0.5s;
   transition-delay: 0.5s;
-  -webkit-transition-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
-  -o-transition-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
   transition-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
   &.show {
     /* transform: translateY(0); */
-    -webkit-transform: scale(1, 1);
-    -ms-transform: scale(1, 1);
     transform: scale(1, 1);
     opacity: 1;
   }
@@ -326,14 +169,8 @@
 
 .button {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   &.spinnerButton {
     padding: 0 2.5rem;
@@ -359,23 +196,15 @@
   .form {
     margin-top: 0;
 
-    -webkit-column-gap: 5%;
-
-    -moz-column-gap: 5%;
-
     column-gap: 5%;
 
     & input {
-      -webkit-box-flex: 1;
-      -ms-flex: 1 1 65%;
       flex: 1 1 65%;
       height: 3.3em;
       padding-left: 1.3em;
     }
 
     & button {
-      -webkit-box-flex: 1;
-      -ms-flex: 1 1 30%;
       flex: 1 1 30%;
     }
   }
@@ -399,18 +228,10 @@
     margin-top: 0;
     padding-bottom: 0.2em;
 
-    -webkit-column-gap: 2%;
-
-    -moz-column-gap: 2%;
-
     column-gap: 2%;
 
     & input {
       font-size: 16px;
-
-      -webkit-box-flex: 1;
-
-      -ms-flex: 1 1 70%;
 
       flex: 1 1 70%;
       height: 2.5em;
@@ -418,8 +239,6 @@
     }
 
     & button {
-      -webkit-box-flex: 1;
-      -ms-flex: 1 1 30%;
       flex: 1 1 30%;
       font-size: 16px;
       padding: 0 0;
@@ -434,10 +253,6 @@
     top: unset;
     bottom: 0;
 
-    -webkit-transform: translate(0, 0);
-
-    -ms-transform: translate(0, 0);
-
     transform: translate(0, 0);
   }
 }
@@ -445,16 +260,8 @@
 /* tablet */
 @media screen and (max-width: 1180px) {
   .images {
-    -ms-grid-columns: 16.6fr calc(60px + 136 * ((100vw - 360px) / 2200)) 10.6fr
-      calc(60px + 136 * ((100vw - 360px) / 2200)) 6.6fr
-      calc(60px + 136 * ((100vw - 360px) / 2200)) 10.6fr
-      calc(60px + 136 * ((100vw - 360px) / 2200)) 16.6fr;
     grid-template-columns: 16.6fr 10.6fr 6.6fr 10.6fr 16.6fr;
     row-gap: calc(40px + 95 * ((100vh - 360px) / 2200));
-
-    -webkit-column-gap: calc(60px + 136 * ((100vw - 360px) / 2200));
-
-    -moz-column-gap: calc(60px + 136 * ((100vw - 360px) / 2200));
 
     column-gap: calc(60px + 136 * ((100vw - 360px) / 2200));
   }

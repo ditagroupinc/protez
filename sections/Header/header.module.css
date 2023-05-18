@@ -1,24 +1,11 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 .header {
   position: fixed;
   z-index: 10;
   width: 100%;
   left: 0;
   top: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   color: var(--white);
   padding: 0 var(--headerPaddingSide);
@@ -46,8 +33,6 @@
         height: 3.5px;
         background-color: var(--black);
         width: 100%;
-        -webkit-transition: background-color var(--transitionProps);
-        -o-transition: background-color var(--transitionProps);
         transition: background-color var(--transitionProps);
         &:last-of-type {
           max-width: 20px;
@@ -58,18 +43,6 @@
 
   &.notMainPage {
     padding-bottom: var(--headerPaddingTop);
-    background: -webkit-gradient(
-      linear,
-      left bottom,
-      left top,
-      from(rgba(255, 255, 255, 0.9)),
-      to(rgba(255, 255, 255, 0.9))
-    );
-    background: -o-linear-gradient(
-      bottom,
-      rgba(255, 255, 255, 0.9),
-      rgba(255, 255, 255, 0.9)
-    );
     background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.9),
@@ -84,13 +57,9 @@
 .foundationLogo {
   position: relative;
   z-index: 20;
-  -webkit-transition: fill var(--transitionProps);
-  -o-transition: fill var(--transitionProps);
   transition: fill var(--transitionProps);
   &:hover path {
     fill: var(--pink);
-    -webkit-transition: fill var(--transitionProps);
-    -o-transition: fill var(--transitionProps);
     transition: fill var(--transitionProps);
   }
   &.black {
@@ -108,33 +77,17 @@
   z-index: 20;
   margin-left: 1rem;
   width: 33.5px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: end;
-  -ms-flex-align: end;
   align-items: flex-end;
-  -ms-flex-item-align: center;
-  -ms-grid-row-align: center;
   align-self: center;
   gap: 6px;
-  -webkit-transition: -webkit-transform var(--transitionProps);
-  transition: -webkit-transform var(--transitionProps);
-  -o-transition: transform var(--transitionProps);
   transition: transform var(--transitionProps);
-  transition: transform var(--transitionProps),
-    -webkit-transform var(--transitionProps);
   & span {
     display: block;
     height: 3.5px;
     background-color: var(--white);
     width: 100%;
-    -webkit-transition: background-color var(--transitionProps);
-    -o-transition: background-color var(--transitionProps);
     transition: background-color var(--transitionProps);
     &.black {
       background-color: var(--black);
@@ -144,19 +97,10 @@
     }
   }
   &:hover {
-    -webkit-transform-origin: center;
-    -ms-transform-origin: center;
     transform-origin: center;
-    -webkit-transition: -webkit-transform var(--transitionProps);
-    transition: -webkit-transform var(--transitionProps);
-    -o-transition: transform var(--transitionProps);
     transition: transform var(--transitionProps);
-    transition: transform var(--transitionProps),
-      -webkit-transform var(--transitionProps);
     & span {
       background-color: var(--pink);
-      -webkit-transition: background-color var(--transitionProps);
-      -o-transition: background-color var(--transitionProps);
       transition: background-color var(--transitionProps);
     }
   }
@@ -166,8 +110,6 @@
       height: 3.5px;
       background-color: var(--black);
       width: 100%;
-      -webkit-transition: background-color var(--transitionProps);
-      -o-transition: background-color var(--transitionProps);
       transition: background-color var(--transitionProps);
       &:last-of-type {
         max-width: 20px;
@@ -181,29 +123,12 @@
   padding: 16px 24px;
   text-transform: uppercase;
   background-color: transparent;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-transition: color var(--transitionProps),
-    -webkit-transform var(--transitionProps);
-  transition: color var(--transitionProps),
-    -webkit-transform var(--transitionProps);
-  -o-transition: color var(--transitionProps), transform var(--transitionProps);
   transition: color var(--transitionProps), transform var(--transitionProps);
-  transition: color var(--transitionProps), transform var(--transitionProps),
-    -webkit-transform var(--transitionProps);
   &:hover {
     color: var(--pink);
     /* transform: scale(var(--textScale)); */
-    -webkit-transition: color var(--transitionProps),
-      -webkit-transform var(--transitionProps);
-    transition: color var(--transitionProps),
-      -webkit-transform var(--transitionProps);
-    -o-transition: color var(--transitionProps),
-      transform var(--transitionProps);
     transition: color var(--transitionProps), transform var(--transitionProps);
-    transition: color var(--transitionProps), transform var(--transitionProps),
-      -webkit-transform var(--transitionProps);
   }
   &.black {
     color: var(--black);
@@ -237,78 +162,37 @@
   z-index: 11;
   right: 0;
   top: 0;
-  -webkit-transform: translateX(100%);
-  -ms-transform: translateX(100%);
   transform: translateX(100%);
-  -webkit-transition: -webkit-transform 0.5s;
-  transition: -webkit-transform 0.5s;
-  -o-transition: transform 0.5s;
   transition: transform 0.5s;
-  transition: transform 0.5s, -webkit-transform 0.5s;
   max-width: 440px;
   width: 100%;
   height: 100%;
   background-color: var(--white);
 
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   &.opened {
-    -webkit-transform: none;
-    -ms-transform: none;
     transform: none;
   }
 }
 
 .ancorList {
   margin-top: 1.5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
   align-items: flex-start;
   gap: 0.5rem;
 }
 .navAncor {
   color: var(--black);
   font-weight: 400;
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
   transform-origin: center;
-  -webkit-transition: color var(--transitionProps),
-    -webkit-transform var(--transitionProps);
-  transition: color var(--transitionProps),
-    -webkit-transform var(--transitionProps);
-  -o-transition: color var(--transitionProps), transform var(--transitionProps);
   transition: color var(--transitionProps), transform var(--transitionProps);
-  transition: color var(--transitionProps), transform var(--transitionProps),
-    -webkit-transform var(--transitionProps);
   &:hover {
     color: var(--pink);
     /* transform: scale(var(--textScale)); */
-    -webkit-transition: color var(--transitionProps),
-      -webkit-transform var(--transitionProps);
-    transition: color var(--transitionProps),
-      -webkit-transform var(--transitionProps);
-    -o-transition: color var(--transitionProps),
-      transform var(--transitionProps);
     transition: color var(--transitionProps), transform var(--transitionProps);
-    transition: color var(--transitionProps), transform var(--transitionProps),
-      -webkit-transform var(--transitionProps);
   }
   &.underlined {
     text-decoration: underline;
@@ -329,14 +213,8 @@
 }
 
 .headerActionLang {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
   align-items: stretch;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   min-height: 55px;
 }
@@ -356,8 +234,6 @@
 } */
 
 .socialMediaLinks {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   gap: 1rem;
   margin-top: 2rem;
@@ -365,8 +241,6 @@
 
 .socialMediaLink {
   &:hover .socialMediaIcon rect {
-    -webkit-transition: fill var(--transitionProps);
-    -o-transition: fill var(--transitionProps);
     transition: fill var(--transitionProps);
     fill: var(--pink);
   }
@@ -377,8 +251,6 @@
   height: 100%;
   max-width: 40px;
   max-height: 40px;
-  -webkit-transition: fill var(--transitionProps);
-  -o-transition: fill var(--transitionProps);
   transition: fill var(--transitionProps);
 }
 

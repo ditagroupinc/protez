@@ -1,20 +1,6 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 .block {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
   padding: 1.563vw;
   color: var(--white);
@@ -22,24 +8,17 @@
   & svg {
     width: 2.3em;
     height: 2.3em;
-    -ms-flex-item-align: end;
     align-self: flex-end;
   }
   &:hover {
     background-color: var(--pink);
-    -webkit-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
   }
 }
 
 .block.reverseBlock {
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: column-reverse;
   flex-direction: column-reverse;
   & svg {
-    -ms-flex-item-align: start;
     align-self: flex-start;
   }
 }

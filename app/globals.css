@@ -1,10 +1,3 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -95,30 +88,20 @@ body::-webkit-scrollbar {
 }
 
 .textContainer {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
   height: fit-content;
 }
 /* @media screen and (min-width: 1180px) { */
 .textContainer {
   overflow: hidden;
   & * :not(rect):not(path) {
-    -webkit-transform: translateY(100vh);
-    -ms-transform: translateY(100vh);
     transform: translateY(100vh);
   }
 }
 
 .showText .textContainer {
   & * :not(rect):not(path) {
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
     transform: translateY(0);
-    -webkit-transition: -webkit-transform 0.5s;
-    transition: -webkit-transform 0.5s;
-    -o-transition: transform 0.5s;
     transition: transform 0.5s;
-    transition: transform 0.5s, -webkit-transform 0.5s;
     /* transition-delay: 0.5s; */
   }
 }
