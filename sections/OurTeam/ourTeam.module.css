@@ -1,4 +1,23 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .section:global(.section) {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(rgba(255, 255, 255, 0.9)),
+    color-stop(96.74%, rgba(255, 255, 255, 0))
+  );
+  background: -o-linear-gradient(
+    bottom,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(255, 255, 255, 0) 96.74%
+  );
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0.9) 0%,
@@ -55,22 +74,36 @@
 } */
 
 .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   gap: 8px;
   padding: 0 var(--paddingVW);
   border-bottom: 1px solid rgba(0, 0, 0, 0.24);
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   & div {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 45%;
     flex: 1 1 45%;
   }
   &:first-of-type .membersContainer {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
     justify-content: flex-start;
   }
 }
 
 .membersContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   padding: 0 0.5rem;
   border-bottom: 1px solid rgba(0, 0, 0, 0.24);
@@ -78,12 +111,28 @@
     overflow-x: auto;
     padding-left: 12rem;
 
+    -webkit-box-pack: center;
+
+    -ms-flex-pack: center;
+
     justify-content: center;
   }
 }
 
 @media screen and (max-width: 1180px) {
   .section:global(.section) {
+    background: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      from(rgba(255, 255, 255, 0.9)),
+      to(rgba(255, 255, 255, 0.9))
+    );
+    background: -o-linear-gradient(
+      bottom,
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    );
     background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.9),
@@ -102,6 +151,9 @@
     fill: var(--black);
   }
   .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
     flex-direction: column;
     gap: 80px;
   }

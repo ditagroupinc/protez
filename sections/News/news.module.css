@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .section:global(.section) {
   padding-bottom: var(--paddingVW);
 }
@@ -6,7 +13,11 @@
 }
 
 .logoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   position: relative;
   z-index: 1;
@@ -25,6 +36,8 @@
 }
 
 .section:global(.section) :global(.slick-dots) {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   position: static;
   margin-top: 7rem;
@@ -42,8 +55,15 @@
 }
 
 .section:global(.section) :global(.slick-center) {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
   transform: scale(1.2);
+  -webkit-transition: -webkit-transform var(--transitionProps);
+  transition: -webkit-transform var(--transitionProps);
+  -o-transition: transform var(--transitionProps);
   transition: transform var(--transitionProps);
+  transition: transform var(--transitionProps),
+    -webkit-transform var(--transitionProps);
   & :global(.textContainer) h3 {
     color: var(--pink);
   }
@@ -71,6 +91,8 @@
     margin-top: 3rem;
   }
   .newsContainer {
+    -webkit-transform: translateY(-80px);
+    -ms-transform: translateY(-80px);
     transform: translateY(-80px);
   }
   .logoContainer {
@@ -86,6 +108,8 @@
     }
   }
   .newsContainer {
+    -webkit-transform: translateY(-80px);
+    -ms-transform: translateY(-80px);
     transform: translateY(-80px);
   }
 }
@@ -103,6 +127,8 @@
     }
   }
   .newsContainer {
+    -webkit-transform: none;
+    -ms-transform: none;
     transform: none;
     margin-top: 2.5rem;
   }

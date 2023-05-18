@@ -1,4 +1,23 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .section {
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(rgba(255, 255, 255, 0.9)),
+    to(rgba(255, 255, 255, 0.9))
+  );
+  background: -o-linear-gradient(
+    bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.9)
+  );
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 0.9),
@@ -25,6 +44,8 @@
   color: var(--black);
   margin: 0 auto;
   margin-top: 64px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
 }
 @media screen and (min-width: 1366px) {
@@ -47,8 +68,14 @@
 }
 
 .flexContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   margin: 0 auto;
   margin-top: 128px;
@@ -57,6 +84,8 @@
 /* --------- */
 
 .companyData {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 50%;
   flex: 1 1 50%;
   color: var(--black);
   max-width: 400px;
@@ -95,8 +124,14 @@
 /* -------- */
 
 .form {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 50%;
   flex: 1 1 50%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
   max-width: fit-content;
   min-height: 500px;
 }
@@ -204,7 +239,12 @@
 
   .flexContainer {
     margin-top: 40px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
+    -webkit-box-align: stretch;
+    -ms-flex-align: stretch;
     align-items: stretch;
     gap: 24px;
   }

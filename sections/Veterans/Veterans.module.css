@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .section:global(.section) {
   padding-right: 0;
   color: var(--white);
@@ -11,14 +18,19 @@
 }
 
 .sliderCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 0 5px;
 }
 
 .leftSide {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 55%;
   flex: 1 1 55%;
   & img {
     width: 100%;
+    -o-object-fit: cover;
     object-fit: cover;
   }
   position: relative;
@@ -26,10 +38,19 @@
 }
 
 .rightSide {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 45%;
   flex: 1 45%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   z-index: 0;
 }
@@ -37,6 +58,8 @@
 .roundButton {
   position: absolute;
   left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
   transform: translateX(-50%);
   bottom: 25%;
   & svg {
@@ -54,6 +77,8 @@
   left: 50%;
   top: 50%;
   z-index: 11;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.9);
 }
@@ -62,6 +87,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   z-index: 12;
 
@@ -97,13 +124,19 @@ svg.veteranLogo {
 
 .buttonsList {
   margin-top: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 2rem;
   & svg {
+    -webkit-transition: fill var(--transitionProps);
+    -o-transition: fill var(--transitionProps);
     transition: fill var(--transitionProps);
   }
   & a:hover svg path {
     fill: var(--pink);
+    -webkit-transition: fill var(--transitionProps);
+    -o-transition: fill var(--transitionProps);
     transition: fill var(--transitionProps);
   }
 }
@@ -135,6 +168,8 @@ svg.veteranLogo {
 }
 
 .section:global(.section) :global(.slick-dots) {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   position: absolute;
   margin-top: 7rem;
@@ -174,9 +209,13 @@ svg.veteranLogo {
     padding-top: 140px;
   }
   .rightSide {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 50%;
     flex: 1 1 50%;
   }
   .leftSide {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 50%;
     flex: 1 1 50%;
   }
   .roundButton {
@@ -188,10 +227,15 @@ svg.veteranLogo {
     padding-bottom: 0;
   }
   .sliderCard {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
     flex-direction: column-reverse;
     padding-right: 24px;
   }
   .leftSide {
+    -webkit-transform: translateY(-25%);
+    -ms-transform: translateY(-25%);
     transform: translateY(-25%);
   }
 
@@ -224,6 +268,8 @@ svg.veteranLogo {
     max-width: 100px;
     top: 0;
     left: 0;
+    -webkit-transform: none;
+    -ms-transform: none;
     transform: none;
     bottom: auto;
   }

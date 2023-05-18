@@ -1,13 +1,35 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
   flex-direction: row-reverse;
+  -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
+  -webkit-transform-origin: center;
+  -ms-transform-origin: center;
   transform-origin: center;
   white-space: nowrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
   align-items: flex-start;
   border-left: 4px solid var(--pink);
   margin-right: -1px;
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 24%;
   flex: 1 1 24%;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
   &:first-of-type {
     padding-bottom: 40px;
@@ -25,6 +47,8 @@
 }
 
 .bigNumb {
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
   writing-mode: vertical-lr;
   font-size: calc(52px + 82 * ((100vw - 1366px) / 1194));
   line-height: 1;
@@ -33,14 +57,21 @@
 
 .counter:hover {
   background-color: var(--pink);
+  -webkit-transition: all var(--transitionProps);
+  -o-transition: all var(--transitionProps);
   transition: all var(--transitionProps);
 }
 
 .title {
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
   writing-mode: vertical-lr;
+  -ms-flex-item-align: start;
   align-self: flex-start;
 }
 .numb {
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
   writing-mode: vertical-lr;
 }
 
