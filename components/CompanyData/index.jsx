@@ -38,7 +38,9 @@ export default function CompanyData({ className = "", black, colorInverted }) {
   const handleClick = () => {};
 
   return (
-    <div className={`${style.container} ${black && style.black} ${className}`}>
+    <div
+      className={`${style.container} ${black ? style.black : ""} ${className}`}
+    >
       {width > 700 && <Divider />}
       <div className={`${style.buttonsContainer}`}>
         <SquareButton

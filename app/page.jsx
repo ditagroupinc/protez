@@ -118,12 +118,14 @@ export default function Home() {
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header black={bgIsWhite()} />
-        {/* <CustomCursor /> */}
         <main style={{ backgroundColor: "var(--black)" }}>
-          {windowSizes.width > 700 && showCompanyData && (
-            <CompanyData black={bgIsWhite()} />
-          )}
-          {windowSizes.desktop && <SocialMediaLinks />}
+          <CompanyData
+            black={bgIsWhite()}
+            className={
+              windowSizes.width > 700 && showCompanyData ? "" : "hidden"
+            }
+          />
+          <SocialMediaLinks className={windowSizes.desktop ? "" : "hidden"} />
           <div className={style.flagsBlock}>
             <LetsGiveHope
               id={"letsGiveHope"}

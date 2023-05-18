@@ -260,6 +260,10 @@ body::-webkit-scrollbar {
   height: auto;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* desktop */
 /* @media screen and (max-width: 1920px) {
 } */

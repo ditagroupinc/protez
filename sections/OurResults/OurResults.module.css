@@ -174,7 +174,7 @@
 /* phobe */
 @media screen and (max-width: 480px) {
   .bigNumb {
-    font-size: 45px;
+    font-size: 40px;
     line-height: 100%;
   }
   .counter {
@@ -185,7 +185,7 @@
       padding-bottom: 158px;
     }
     &:last-of-type {
-      padding-bottom: 160px;
+      padding-bottom: 180px;
     }
   }
   .section:global(.section) {
