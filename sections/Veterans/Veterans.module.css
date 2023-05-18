@@ -121,7 +121,7 @@ svg.veteranLogo {
   width: 100%;
   max-width: 120px;
   position: absolute;
-  bottom: -4rem;
+  bottom: 0;
   /* bottom: 0; */
 }
 
@@ -139,7 +139,7 @@ svg.veteranLogo {
   position: absolute;
   margin-top: 7rem;
 
-  bottom: calc(-4rem + 0.5rem);
+  bottom: 0.5rem;
   left: calc(120px + 1rem);
 }
 

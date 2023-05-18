@@ -13,6 +13,7 @@ svg.mainTitle {
 }
 
 .companyData {
+  display: none;
   position: absolute;
   left: 0;
   /* bottom: 24px; */
@@ -34,6 +35,13 @@ svg.mainTitle {
     max-width: 726px;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .companyData {
+    display: block;
+  }
+}
+
 /* phone */
 @media screen and (max-width: 480px) {
   .section:global(.section) {

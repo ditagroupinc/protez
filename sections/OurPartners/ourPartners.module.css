@@ -25,6 +25,10 @@
     height: 100%;
   }
 }
+
+.dita svg rect:global(.purpleFrame) {
+  transform: translate(344.078px, 21.5918px) !important;
+}
 .dita:hover > svg rect:global(.purpleFrame) {
   fill: #3f29b0;
 }

@@ -34,7 +34,7 @@ const OurTeam = forwardRef(function ({ visible, id }, ref) {
               links={card.links}
               name={card.name[lang]}
               position={card.position[lang]}
-              black={tablet}
+              black
             />
           ))}
         </div>
