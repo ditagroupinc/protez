@@ -143,7 +143,7 @@
 }
 
 /* iPhone 12 PRO */
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   .bigNumb {
     font-size: 45px;
   }
