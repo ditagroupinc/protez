@@ -45,10 +45,13 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
             <div key={index}>
               <div className={style.sliderCard}>
                 <div className={`${style.leftSide} textContainer`}>
+                  {/* <h5 className={`h5 ${style.ageRank}`}>
+                    {element.ageRank[lang]}
+                  </h5> */}
+                  {icons[element.icon](`${style.veteranLogo} svgTextBlock`)}
                   <h5 className={`h5 ${style.ageRank}`}>
                     {element.ageRank[lang]}
                   </h5>
-                  {icons[element.icon](`${style.veteranLogo} svgTextBlock`)}
                   <h4 className={`h2 ${style.cardTitle}`}>
                     {element.title[lang]}
                   </h4>
@@ -66,7 +69,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                       <a target="blank" href={element.facebook}>
                         {icons.iconFacebook()}
                       </a>
-                      <a target="blank" href={element.linkedin}>
+                      <a target="blank" href={element.instagram}>
                         {icons.iconLink()}
                       </a>
                     </div>

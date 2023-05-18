@@ -31,22 +31,21 @@ const companyDataText = {
   },
 };
 
-export default function CompanyData({ className = "", black }) {
+export default function CompanyData({ className = "", black, colorInverted }) {
   const { lang, changeLang } = useContext(LanguageContext);
   const { width } = useContext(ScreenModeAndSizeContext);
 
   const handleClick = () => {};
 
   return (
-    <div
-      className={`${style.container} ${black ? style.black : ""} ${className}`}
-    >
+    <div className={`${style.container} ${black && style.black} ${className}`}>
       {width > 700 && <Divider />}
       <div className={`${style.buttonsContainer}`}>
         <SquareButton
           link
           href="Donate"
           pink
+          black={colorInverted}
           onClick={handleClick}
           text={companyDataText.actionButtons.makeDonation[lang]}
         />

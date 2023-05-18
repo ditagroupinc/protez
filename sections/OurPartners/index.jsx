@@ -2,22 +2,27 @@ import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./ourPartners.module.css";
-import { icons } from "./icons";
+import icons from "./icons";
+import globalIcons from "@/texts&svg/icons";
 import Image from "next/image";
 import Link from "next/link";
 import texts from "@/texts&svg";
 
-const PartnerCard = ({ image }) => (
-  <div className={style.partnerCard + " textContainer"}>
-    <Image
-      src={`/partnersLogos/${image}`}
-      object-fit="contain"
-      priority
-      alt="Picture of the author"
-      width={300}
-      height={230}
-      className={style.partnerLogo}
-    />
+const PartnerCard = ({ image, dita }) => (
+  <div className={`${style.partnerCard} textContainer ${dita && style.dita}`}>
+    {dita ? (
+      globalIcons.ditaLogo(`${style.partnerLogo}`)
+    ) : (
+      <Image
+        src={`/partnersLogos/${image}`}
+        object-fit="contain"
+        priority
+        alt={image}
+        width={300}
+        height={230}
+        className={style.partnerLogo}
+      />
+    )}
   </div>
 );
 
@@ -36,18 +41,18 @@ const OurPartners = forwardRef(function ({ visible, id }, ref) {
             ? icons.specialThanksTablet(`${style.logo} svgTextBlock`)
             : icons.specialThanks(`${style.logo} svgTextBlock`)}
         </div>
-        <PartnerCard image="ottobock.png" />
+        <PartnerCard image="ottobock.svg" />
         <div>
           <Link href="/Partners" className={`${style.discoverCard} h3`}>
             <p>{texts.ourPartners.discover[lang]}</p>
             {icons.arrow()}
           </Link>
         </div>
-        <PartnerCard image="paradise.png" />
-        <PartnerCard image="klmb.png" />
-        <PartnerCard image="antonovGroup.png" />
-        <PartnerCard image="ditaGroup.png" />
-        <PartnerCard image="chaliceOfMercy.png" />
+        <PartnerCard image="paradise.svg" />
+        <PartnerCard image="klmb.svg" />
+        <PartnerCard image="antonovGroup.svg" />
+        <PartnerCard dita />
+        <PartnerCard image="chaliceOfMercy.svg" />
       </div>
     </section>
   );

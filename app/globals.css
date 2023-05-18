@@ -93,13 +93,13 @@ body::-webkit-scrollbar {
 /* @media screen and (min-width: 1180px) { */
 .textContainer {
   overflow: hidden;
-  & * {
+  & * :not(rect):not(path) {
     transform: translateY(100vh);
   }
 }
 
 .showText .textContainer {
-  & * {
+  & * :not(rect):not(path) {
     transform: translateY(0);
     transition: transform 0.5s;
     /* transition-delay: 0.5s; */

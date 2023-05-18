@@ -16,6 +16,31 @@
       border-left: var(--greyBorder);
     }
   }
+
+  &.black {
+    & .foundationLogo {
+      & path {
+        fill: var(--black);
+      }
+    }
+    & .protezAcademy {
+      color: var(--black);
+    }
+    & .burgerButton {
+      & span {
+        background-color: var(--black);
+        display: block;
+        height: 3.5px;
+        background-color: var(--black);
+        width: 100%;
+        transition: background-color var(--transitionProps);
+        &:last-of-type {
+          max-width: 20px;
+        }
+      }
+    }
+  }
+
   &.notMainPage {
     padding-bottom: var(--headerPaddingTop);
     background: linear-gradient(

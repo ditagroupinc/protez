@@ -1,21 +1,21 @@
-import icons from "./icons";
+import globalIcons from "./icons";
 
 const socialMediaLinks = [
   {
     adress: "https://www.youtube.com/@Protezfoundation",
-    icon: icons.iconYoutube,
+    icon: globalIcons.iconYoutube,
   },
   {
     adress: "https://www.facebook.com/prostheticsforukrainians/",
-    icon: icons.iconFaceBook,
+    icon: globalIcons.iconFaceBook,
   },
   {
     adress: "https://www.instagram.com/protezfoundation/?igshid=YmMyMTA2M2Y%3D",
-    icon: icons.iconInstagram,
+    icon: globalIcons.iconInstagram,
   },
   {
     adress: "https://www.linkedin.com/company/protez-foundation/",
-    icon: icons.iconLinkedin,
+    icon: globalIcons.iconLinkedin,
   },
 ];
 
@@ -135,8 +135,9 @@ const veterans = {
       img: "vadymFedorov.png",
       icon: "vadymFedorov",
       video: "https://www.youtube.com/embed/D1zR9DkYgu4",
-      facebook: "https://facebook.com",
-      instagram: "https://instagram.com",
+      facebook: "https://www.facebook.com/prostheticsforukrainians",
+      instagram:
+        "https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==",
       linkedin: "https://linkedin.com",
       twitter: "https://twitter.com",
     },

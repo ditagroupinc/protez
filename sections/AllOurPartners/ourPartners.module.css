@@ -46,6 +46,15 @@
 
 .partnerLogo {
   max-width: 100%;
+  & svg,
+  & path,
+  & rect {
+    transition: fill var(--transitionProps);
+  }
+}
+
+.dita:hover > svg rect:global(.purpleFrame) {
+  fill: #3f29b0;
 }
 
 /* phone */

@@ -2,38 +2,44 @@ import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./ourPartners.module.css";
-import { icons } from "./icons";
+import icons from "./icons";
 import Image from "next/image";
 import Link from "next/link";
+import globalIcons from "@/texts&svg/icons";
 
 const partnersLogos = [
-  "antonovGroup.png",
-  "businessBus.png",
-  "chaliceOfMercy.png",
-  "ditaGrey.png",
-  "klmb.png",
-  "klmbGrey.png",
-  "ossur.png",
-  "ottobock.png",
-  "paradise.png",
-  "proteor.png",
-  "slumberland.png",
-  "ukraine.png",
+  "antonovGroup.svg",
+  "businessBus.svg",
+  "chaliceOfMercy.svg",
+  "dita.svg",
+  "klmb.svg",
+  "ossur.svg",
+  "ottobock.svg",
+  "paradise.svg",
+  "proteor.svg",
+  "slumberland.svg",
+  "ukraine.svg",
 ];
 
 const PartnerCard = ({ image, mobile }) => (
   <div
-    className={`${mobile ? style.mobile : style.desktop} ${style.partnerCard}`}
+    className={`${mobile ? style.mobile : style.desktop} ${style.partnerCard} ${
+      image.includes("dita") && style.dita
+    }`}
   >
-    <Image
-      src={`/partnersLogos/${image}`}
-      object-fit="contain"
-      priority
-      alt="Picture of the author"
-      width={300}
-      height={230}
-      className={style.partnerLogo}
-    />
+    {image.includes("dita") ? (
+      globalIcons.ditaLogo(style.partnerLogo)
+    ) : (
+      <Image
+        src={`/partnersLogos/${image}`}
+        object-fit="contain"
+        priority
+        alt={image}
+        width={300}
+        height={230}
+        className={style.partnerLogo}
+      />
+    )}
   </div>
 );
 

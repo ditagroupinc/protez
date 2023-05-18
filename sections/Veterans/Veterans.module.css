@@ -72,15 +72,16 @@
 .ageRank {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.56);
+  padding-left: 40px;
+  margin-top: 8px;
 }
 
 svg.veteranLogo {
-  margin-top: 1.5rem;
   max-width: 75%;
 }
 
 .cardTitle {
-  margin-top: 2.5rem;
+  margin-top: 40px;
 }
 
 .cardText {

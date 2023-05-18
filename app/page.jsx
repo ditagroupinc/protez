@@ -84,7 +84,7 @@ export default function Home() {
             setVisitedSections((prevState) => {
               return { ...prevState, thankYou: true };
             });
-        } else {
+        } else if (top >= window.innerHeight - margin) {
           !showCompanyData && setShowCompanyData(true);
         }
       } else if (sectionChecker && notInViewPort) {
@@ -111,13 +111,18 @@ export default function Home() {
       window.removeEventListener("scroll", throttledSectionIsVisible);
     };
   }, [visitedSections, sectionInViewPort, showCompanyData]);
+
+  const bgIsWhite = () =>
+    sectionInViewPort === "ourTeam" || sectionInViewPort === "ourPartners";
   return (
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
-        <Header />
+        <Header black={bgIsWhite()} />
         {/* <CustomCursor /> */}
         <main style={{ backgroundColor: "var(--black)" }}>
-          {windowSizes.width > 700 && showCompanyData && <CompanyData />}
+          {windowSizes.width > 700 && showCompanyData && (
+            <CompanyData black={bgIsWhite()} />
+          )}
           {windowSizes.desktop && <SocialMediaLinks />}
           <div className={style.flagsBlock}>
             <LetsGiveHope
@@ -181,16 +186,9 @@ export default function Home() {
               text={homeText.backToTop[lang]}
               href={"letsGiveHope"}
               onClick={sectionIsVisible}
+              black={bgIsWhite()}
             />
           )}
-
-          {/* {visitedSections.letsGiveHope && (
-            <BackToTopButton
-              text={homeText.backToTop[lang]}
-              href={"letsGiveHope"}
-              onClick={sectionIsVisible}
-            />
-          )} */}
         </main>
         <ThankYou
           ref={sectionRefs.thankYou}

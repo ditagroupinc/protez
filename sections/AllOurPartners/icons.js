@@ -30,7 +30,8 @@ const specialThanksTablet = (className) => (
   </svg>
 );
 
-export const icons = {
+const icons = {
   specialThanks: specialThanks,
   specialThanksTablet: specialThanksTablet,
 };
+export default icons;

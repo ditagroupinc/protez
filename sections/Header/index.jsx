@@ -11,13 +11,10 @@ import Link from "next/link";
 
 import style from "./header.module.css";
 
-const BurgerButton = ({ close, onClick, black }) => {
+const BurgerButton = ({ close, onClick }) => {
   if (!close) {
     return (
-      <button
-        className={`${style.burgerButton} ${black ? style.black : ""}`}
-        onClick={onClick}
-      >
+      <button className={`${style.burgerButton}`} onClick={onClick}>
         <span />
         <span />
         <span />
@@ -32,7 +29,7 @@ const BurgerButton = ({ close, onClick, black }) => {
   }
 };
 
-export default function Header({ notMainPage }) {
+export default function Header({ notMainPage, black }) {
   const { lang, changeLang } = useContext(LanguageContext);
   const { width, length, mobile, tablet, desktop, screenModeClass } =
     useContext(ScreenModeAndSizeContext);
@@ -45,34 +42,35 @@ export default function Header({ notMainPage }) {
   const toggleHeader = () => {
     setHeaderIsOpened(!headerIsOpened);
   };
+
+  const blackClassName = () => {
+    if (notMainPage || black || (width <= 920 && headerIsOpened))
+      return style.black;
+    return "";
+  };
+
   return (
     <header
-      className={`${style.header} ${notMainPage ? style.notMainPage : ""}`}
+      className={`${style.header} ${
+        notMainPage ? style.notMainPage : ""
+      } ${blackClassName()}`}
       id="header"
     >
       {notMainPage ? (
         <Link href={"/"}>
           {icons.protezFoundationLogo(
-            `${style.foundationLogo} ${
-              (width <= 920 && headerIsOpened) || notMainPage ? style.black : ""
-            } ${mobile ? style.small : ""}`
+            `${style.foundationLogo} ${mobile ? style.small : ""}`
           )}
         </Link>
       ) : (
         <a href={"#letsGiveHope"}>
           {icons.protezFoundationLogo(
-            `${style.foundationLogo} ${
-              (width <= 920 && headerIsOpened) || notMainPage ? style.black : ""
-            } ${mobile ? style.small : ""}`
+            `${style.foundationLogo} ${mobile ? style.small : ""}`
           )}
         </a>
       )}
       {mobile ? (
-        <BurgerButton
-          onClick={toggleHeader}
-          close={headerIsOpened}
-          black={notMainPage}
-        />
+        <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
       ) : (
         <div className={style.headerActionLang}>
           <a
@@ -83,11 +81,7 @@ export default function Header({ notMainPage }) {
             {texts.header.actionButtons.protezAcademy[lang]}
           </a>
           <Divider vertical />
-          <BurgerButton
-            onClick={toggleHeader}
-            close={headerIsOpened}
-            black={notMainPage}
-          />
+          <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
         </div>
       )}
       <nav
@@ -135,11 +129,7 @@ export default function Header({ notMainPage }) {
             text={texts.header.actionButtons.makeDonation[lang]}
           />
 
-          <button
-            className={
-              style.protezAcademy + " " + style.short + " " + style.black
-            }
-          >
+          <button className={`${style.protezAcademy} ${style.short}`}>
             {texts.header.actionButtons.protezAcademy[lang]}
           </button>
           <Divider className={style.headerDivider} />

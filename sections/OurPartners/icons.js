@@ -46,8 +46,10 @@ const arrow = (className) => (
   </svg>
 );
 
-export const icons = {
+const icons = {
   specialThanks: specialThanks,
   specialThanksTablet: specialThanksTablet,
   arrow: arrow,
 };
+
+export default icons;
