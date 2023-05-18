@@ -44,8 +44,8 @@ export default function Home() {
   const windowSizes = useGetSize();
 
   const [visitedSections, setVisitedSections] = useState({});
-  const [thankYouInViewport, setThankYouInViewport] = useState(false);
   const [sectionInViewPort, setSectionInViewPort] = useState("");
+  const [showCompanyData, setShowCompanyData] = useState(true);
 
   const sectionRefs = {
     letsGiveHope: useRef(null),
@@ -72,35 +72,27 @@ export default function Home() {
     Object.keys(sectionRefs).forEach((key, index) => {
       const { top, bottom } = sectionRefs[key]?.current.getBoundingClientRect();
 
-      const notAddedToStateChecker = !visitedSections[key];
-      const footerChecker =
-        key === "thankYou" && top <= window.innerHeight + margin;
+      const notVisited = !visitedSections[key];
+      const notInViewPort = key !== sectionInViewPort;
       const sectionChecker = top <= margin && bottom >= margin;
 
       if (key === "thankYou") {
-        if (top <= window.innerHeight - margin && !thankYouInViewport) {
-          console.log("setTrue");
-          setVisitedSections((prevState) => {
-            return { ...prevState, thankYou: true };
-          });
-          setThankYouInViewport(true);
-        } else if (top >= window.innerHeight && thankYouInViewport) {
-          console.log("seFalse");
-          setThankYouInViewport(false);
+        if (top <= window.innerHeight - margin && notInViewPort) {
+          setSectionInViewPort("thankYou");
+          showCompanyData && setShowCompanyData(false);
+          notVisited &&
+            setVisitedSections((prevState) => {
+              return { ...prevState, thankYou: true };
+            });
+        } else {
+          !showCompanyData && setShowCompanyData(true);
         }
-      } else if (key === "letsGiveHope") {
-        if (bottom < 0 && visitedSections.letsGiveHope === true) {
+      } else if (sectionChecker && notInViewPort) {
+        setSectionInViewPort(key);
+        notVisited &&
           setVisitedSections((prevState) => {
-            return { ...prevState, letsGiveHope: false };
+            return { ...prevState, [key]: true };
           });
-        }
-      } else if (
-        (sectionChecker && notAddedToStateChecker) ||
-        (footerChecker && notAddedToStateChecker)
-      ) {
-        setVisitedSections((prevState) => {
-          return { ...prevState, [key]: true };
-        });
       }
     });
   };
@@ -118,15 +110,14 @@ export default function Home() {
     return () => {
       window.removeEventListener("scroll", throttledSectionIsVisible);
     };
-  }, [visitedSections, thankYouInViewport]);
-
+  }, [visitedSections, sectionInViewPort, showCompanyData]);
   return (
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header />
         {/* <CustomCursor /> */}
         <main style={{ backgroundColor: "var(--black)" }}>
-          {windowSizes.width > 700 && !thankYouInViewport && <CompanyData />}
+          {windowSizes.width > 700 && showCompanyData && <CompanyData />}
           {windowSizes.desktop && <SocialMediaLinks />}
           <div className={style.flagsBlock}>
             <LetsGiveHope
@@ -185,15 +176,14 @@ export default function Home() {
             id="mailingList"
             visible={isVisible("mailingList")}
           />
-          <BackToTopButton
-            text={
-              visitedSections.letsGiveHope
-                ? homeText.exploreMore[lang]
-                : homeText.backToTop[lang]
-            }
-            href={visitedSections.letsGiveHope ? "prosthetics" : "letsGiveHope"}
-            onClick={sectionIsVisible}
-          />
+          {sectionInViewPort !== "letsGiveHope" && (
+            <BackToTopButton
+              text={homeText.backToTop[lang]}
+              href={"letsGiveHope"}
+              onClick={sectionIsVisible}
+            />
+          )}
+
           {/* {visitedSections.letsGiveHope && (
             <BackToTopButton
               text={homeText.backToTop[lang]}
