@@ -42,7 +42,7 @@
   }
 
   &.notMainPage {
-    padding-bottom: var(--headerPaddingTop);
+    padding-bottom: 24px;
     background: linear-gradient(
       0deg,
       rgba(255, 255, 255, 0.9),

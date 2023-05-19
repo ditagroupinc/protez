@@ -70,7 +70,9 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                       <a target="blank" href={element.facebook}>
                         {icons.iconFacebook()}
                       </a>
-                      <Link href="VadymFedorov">{icons.iconLink()}</Link>
+                      <Link target="blank" href="VadymFedorov">
+                        {icons.iconLink()}
+                      </Link>
                       {/* <a target="blank" href={element.instagram}>
                         
                       </a> */}
