@@ -8,6 +8,7 @@ import SmokeBackground from "@/components/SmokeBackground";
 import { icons } from "./icons";
 import CustomCursor from "@/components/CustomCursor";
 import texts from "@/texts&svg";
+import Link from "next/link";
 
 const Veterans = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
@@ -69,9 +70,10 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                       <a target="blank" href={element.facebook}>
                         {icons.iconFacebook()}
                       </a>
-                      <a target="blank" href={element.instagram}>
-                        {icons.iconLink()}
-                      </a>
+                      <Link href="VadymFedorov">{icons.iconLink()}</Link>
+                      {/* <a target="blank" href={element.instagram}>
+                        
+                      </a> */}
                     </div>
                   </div>
                 </div>

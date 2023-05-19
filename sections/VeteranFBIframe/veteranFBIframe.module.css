@@ -1,0 +1,24 @@
+.section:global(.section) {
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.9)
+  );
+  background-blend-mode: normal, screen;
+  padding-top: 160px;
+  min-height: calc(100vh - 24px);
+}
+
+.iframe {
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .section:global(.section) {
+    padding-top: 120px;
+  }
+  .iframe {
+    height: 900px;
+  }
+}
