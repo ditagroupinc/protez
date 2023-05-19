@@ -6,7 +6,7 @@ const socialMediaLinks = [
     icon: globalIcons.iconYoutube,
   },
   {
-    adress: "https://www.facebook.com/prostheticsforukrainians/",
+    adress: "https://www.facebook.com/donate/238890858497931/199310116131457//",
     icon: globalIcons.iconFaceBook,
   },
   {
@@ -135,11 +135,12 @@ const veterans = {
       img: "vadymFedorov.png",
       icon: "vadymFedorov",
       video: "https://www.youtube.com/embed/D1zR9DkYgu4",
-      facebook: "https://www.facebook.com/prostheticsforukrainians",
+      facebook:
+        "https://www.facebook.com/donate/238890858497931/199310116131457/",
       instagram:
         "https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
+      // linkedin: "https://linkedin.com",
+      // twitter: "https://twitter.com",
     },
     {
       ageRank: {
@@ -160,6 +161,12 @@ const veterans = {
       img: "vadymFedorov.png",
       icon: "vadymFedorov",
       video: "https://www.youtube.com/embed/D1zR9DkYgu4",
+      facebook:
+        "https://www.facebook.com/donate/238890858497931/199310116131457/",
+      instagram:
+        "https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==",
+      // linkedin: "https://linkedin.com",
+      // twitter: "https://twitter.com",
     },
     {
       ageRank: {
@@ -180,6 +187,12 @@ const veterans = {
       img: "vadymFedorov.png",
       icon: "vadymFedorov",
       video: "https://www.youtube.com/embed/D1zR9DkYgu4",
+      facebook:
+        "https://www.facebook.com/donate/238890858497931/199310116131457/",
+      instagram:
+        "https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==",
+      // linkedin: "https://linkedin.com",
+      // twitter: "https://twitter.com",
     },
   ],
 

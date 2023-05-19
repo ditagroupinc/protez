@@ -15,7 +15,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
   const { height, width, mobile, tablet } = useContext(
     ScreenModeAndSizeContext
   );
-  const [frameOpened, setFrameOpened] = useState(false);
+  // const [frameOpened, setFrameOpened] = useState(false);
 
   const frameLink = useRef("");
 
@@ -70,9 +70,11 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                       <a target="blank" href={element.facebook}>
                         {icons.iconFacebook()}
                       </a>
-                      <Link target="blank" href="VadymFedorov">
-                        {icons.iconLink()}
-                      </Link>
+                      <a target="blank" href={element.instagram}>
+                        {icons.iconInstagram()}
+                      </a>
+
+                      <Link href="/VadymFedorov">{icons.iconLink()}</Link>
                       {/* <a target="blank" href={element.instagram}>
                         
                       </a> */}
@@ -88,7 +90,10 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                     width={1306}
                     height={1890}
                   />
-                  <button
+                  <Link className={style.roundButton} href="/VadymFedorov">
+                    {icons[`${element.icon}Icon`]()}
+                  </Link>
+                  {/* <button
                     className={style.roundButton}
                     onClick={() => {
                       frameLink.current = element.video;
@@ -96,7 +101,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                     }}
                   >
                     {icons[`${element.icon}Icon`]()}
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -106,7 +111,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
           {texts.veterans.next[lang]}
         </button>
       </div>
-      {frameOpened && (
+      {/* {frameOpened && (
         <>
           <div
             className={style.mask}
@@ -122,7 +127,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
             allowFullScreen={true}
           />
         </>
-      )}
+      )} */}
     </section>
   );
 });
