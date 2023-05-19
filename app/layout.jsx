@@ -12,15 +12,20 @@ export const metadata = {
     title: "Prosthetics for Ukraine",
     description: `Main page of the "Prosthetics for Ukraine" foundation`,
     url: "http://www.protezfoundation.com/",
-    siteName: "ProtezFoundation.com",
-    images: "/og-image.png",
+    siteName: "protezfoundation.com",
+    images: "https://dita-group.com/ogdita2.png",
+    image: "https://dita-group.com/ogdita2.png",
     locale: "en-US",
     type: "website",
-    // url: "http://protezfoundation.com",
-    // title: "Prosthetics for Ukraine",
-    // description:
-    //   "Main page of the &quot;Prosthetics for Ukraine&quot; foundation",
-    // type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    domain: "protezfoundation.com",
+    url: "http://www.protezfoundation.com/",
+    image: "https://dita-group.com/ogdita2.png",
+    title: "Prosthetics for Ukraine",
+    description: `Main page of the "Prosthetics for Ukraine" foundation`,
+    images: "https://dita-group.com/ogdita2.png",
   },
 };
 
