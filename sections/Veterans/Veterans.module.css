@@ -4,6 +4,13 @@
   padding-bottom: 6rem;
   padding-top: 140px;
   position: relative;
+  background: linear-gradient(
+    179.5deg,
+    #0d1125 0.29%,
+    rgba(13, 17, 37, 0) 50.9%,
+    #0d1125 99.44%
+  );
+  background-blend-mode: normal, lighten;
 }
 
 .sliderWrapper {

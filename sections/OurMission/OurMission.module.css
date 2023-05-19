@@ -3,6 +3,13 @@
   display: flex;
   align-items: stretch;
   padding-bottom: var(--headerPaddingSide);
+
+  /* background: linear-gradient(360deg, #0d1125 0%, rgba(13, 17, 37, 0) 40.45%); */
+  background: linear-gradient(
+    180.65deg,
+    #0d1125 0.73%,
+    rgba(13, 17, 37, 0) 59.61%
+  );
 }
 .logo {
   display: inline-flex;

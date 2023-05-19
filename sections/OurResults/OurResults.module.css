@@ -7,6 +7,7 @@
 
 .section:global(.section) {
   min-height: auto;
+  background: linear-gradient(360deg, #0d1125 0%, rgba(13, 17, 37, 0) 40.45%);
 }
 .section:global(.section.showText) {
   & .counter:global(.textContainer) {

@@ -1,5 +1,10 @@
 .section:global(.section) {
   padding-bottom: var(--paddingVW);
+  background: linear-gradient(
+    180.65deg,
+    #0d1125 0.73%,
+    rgba(13, 17, 37, 0) 59.61%
+  );
 }
 .container {
   position: relative;

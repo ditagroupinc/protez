@@ -17,8 +17,9 @@
 
 .smokeBlock {
   position: relative;
-  background: linear-gradient(360deg, rgba(13, 17, 37, 0) 40.45%, #0d1125 0%);
-  background-position: top calc(100% - 100vh) left;
+}
+
+.smoke {
 }
 
 .smokeTop {

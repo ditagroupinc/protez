@@ -171,11 +171,14 @@ export default function Home() {
             id="prosthetics"
             visible={isVisible("prosthetics")}
           />
-          <Veterans
-            ref={sectionRefs.veterans}
-            id="veterans"
-            visible={isVisible("veterans")}
-          />
+          <div className={style.smokeBlock}>
+            <SmokeBackground className={style.smoke} />
+            <Veterans
+              ref={sectionRefs.veterans}
+              id="veterans"
+              visible={isVisible("veterans")}
+            />
+          </div>
           <OurTeam
             ref={sectionRefs.ourTeam}
             id="ourTeam"
@@ -186,12 +189,19 @@ export default function Home() {
             id="ourPartners"
             visible={isVisible("ourPartners")}
           />
-          <News ref={sectionRefs.news} id="news" visible={isVisible("news")} />
-          <MailingList
-            ref={sectionRefs.mailingList}
-            id="mailingList"
-            visible={isVisible("mailingList")}
-          />
+          <div className={style.smokeBlock}>
+            <SmokeBackground className={style.smoke} />
+            <News
+              ref={sectionRefs.news}
+              id="news"
+              visible={isVisible("news")}
+            />
+            <MailingList
+              ref={sectionRefs.mailingList}
+              id="mailingList"
+              visible={isVisible("mailingList")}
+            />
+          </div>
           {sectionInViewPort !== "letsGiveHope" && (
             <BackToTopButton
               text={homeText.backToTop[lang]}
