@@ -42,6 +42,8 @@ export default function CompanyData({ className = "", black }) {
       className={`${style.container} ${black ? style.black : ""} ${className}`}
     >
       <div className={`${style.adressContainer} ${mobile ? style.mobile : ""}`}>
+        {/* <p className={"h5 "}>{companyDataText.organizationData.adress[lang]}</p> */}
+
         <p>
           <span className={"h6 "}>
             {companyDataText.organizationData.nonProfitOrganization[lang]}
@@ -51,7 +53,6 @@ export default function CompanyData({ className = "", black }) {
           </span>
         </p>
         <Divider />
-        <p className={"h5 "}>{companyDataText.organizationData.adress[lang]}</p>
       </div>
       <div
         className={`${style.buttonsContainer} ${mobile ? style.mobile : ""}`}

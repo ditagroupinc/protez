@@ -15,7 +15,7 @@
   max-width: 50%;
 }
 
-/* .smokeBlock {
+.smokeBlock {
   position: relative;
   background: linear-gradient(360deg, rgba(13, 17, 37, 0) 40.45%, #0d1125 0%);
 }
@@ -24,7 +24,7 @@
   height: calc(100% - 100vh);
   top: auto;
   bottom: 0;
-} */
+}
 
 /* tablet */
 @media screen and (max-width: 1180px) {
