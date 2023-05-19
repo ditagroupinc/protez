@@ -23,7 +23,7 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import BackToTopButton from "@/components/BackToTopButton";
 import style from "./index.module.css";
-import CompanyData from "@/components/CompanyData";
+import SmokeBackground from "@/components/SmokeBackground";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import useGetSize from "@/hooks/useGetScreenSizes";
 import CompanyDataNonProfit from "@/components/CompanyDataNonProfit";
@@ -132,32 +132,35 @@ export default function Home() {
           />
 
           <SocialMediaLinks className={windowSizes.desktop ? "" : "hidden"} />
-          <div className={style.flagsBlock}>
-            <LetsGiveHope
-              id={"letsGiveHope"}
-              visible={isVisible("letsGiveHope")}
-              ref={sectionRefs.letsGiveHope}
-            />
-            <OurMission
-              ref={sectionRefs.ourMission}
-              id="ourMission"
-              visible={isVisible("ourMission")}
-            />
-            <Image
-              src="/flag-usa.png"
-              object-fit="contain"
-              priority
-              alt="Picture of the author"
-              width={1306}
-              height={1890}
-              className={style.americanFlag}
+          <div className={style.smokeBlock}>
+            <SmokeBackground />
+            <div className={style.flagsBlock}>
+              <LetsGiveHope
+                id={"letsGiveHope"}
+                visible={isVisible("letsGiveHope")}
+                ref={sectionRefs.letsGiveHope}
+              />
+              <OurMission
+                ref={sectionRefs.ourMission}
+                id="ourMission"
+                visible={isVisible("ourMission")}
+              />
+              <Image
+                src="/flag-usa.png"
+                object-fit="contain"
+                priority
+                alt="Picture of the author"
+                width={1306}
+                height={1890}
+                className={style.americanFlag}
+              />
+            </div>
+            <OurResults
+              ref={sectionRefs.ourResults}
+              visible={isVisible("ourResults")}
+              id="ourResults"
             />
           </div>
-          <OurResults
-            ref={sectionRefs.ourResults}
-            visible={isVisible("ourResults")}
-            id="ourResults"
-          />
           <InNeed
             ref={sectionRefs.inNeed}
             visible={isVisible("inNeed")}
