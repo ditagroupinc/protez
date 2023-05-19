@@ -276,6 +276,12 @@
 
 /* phone */
 @media screen and (max-width: 480px) {
+  .menuText {
+    display: none;
+  }
+  .ancorList {
+    margin-top: 0;
+  }
   .socialMediaLinks {
     margin-top: 24px;
   }
