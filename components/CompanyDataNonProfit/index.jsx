@@ -22,8 +22,11 @@ const companyDataText = {
     ein: {
       eng: "EIN: 88-2437069",
     },
+    // adress: {
+    //   eng: "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
+    // },
     adress: {
-      eng: "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
+      eng: "Protez Foundation",
     },
   },
 };
@@ -48,7 +51,7 @@ export default function CompanyData({ className = "", black }) {
           </span>
         </p>
         <Divider />
-        {/* <p className={"h5 "}>{companyDataText.organizationData.adress[lang]}</p> */}
+        <p className={"h5 "}>{companyDataText.organizationData.adress[lang]}</p>
       </div>
       <div
         className={`${style.buttonsContainer} ${mobile ? style.mobile : ""}`}
