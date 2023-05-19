@@ -119,7 +119,7 @@ export default function Home() {
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header black={bgIsWhite()} />
-        <main style={{ backgroundColor: "var(--black)" }}>
+        <main className={style.main}>
           {/* <CompanyData
             black={bgIsWhite()}
             className={
@@ -133,7 +133,7 @@ export default function Home() {
 
           <SocialMediaLinks className={windowSizes.desktop ? "" : "hidden"} />
           <div className={style.smokeBlock}>
-            <SmokeBackground />
+            <SmokeBackground className={style.smokeTop} />
             <div className={style.flagsBlock}>
               <LetsGiveHope
                 id={"letsGiveHope"}

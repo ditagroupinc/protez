@@ -48,7 +48,7 @@ export default function CompanyData({ className = "", black }) {
           </span>
         </p>
         <Divider />
-        <p className={"h5 "}>{companyDataText.organizationData.adress[lang]}</p>
+        {/* <p className={"h5 "}>{companyDataText.organizationData.adress[lang]}</p> */}
       </div>
       <div
         className={`${style.buttonsContainer} ${mobile ? style.mobile : ""}`}
