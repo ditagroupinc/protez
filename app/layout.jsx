@@ -13,7 +13,7 @@ export const metadata = {
     description: `Main page of the "Prosthetics for Ukraine" foundation`,
     url: "http://www.protezfoundation.com/",
     siteName: "protezfoundation.com",
-    images: "https://dita-group.com/ogdita2.png",
+    images: "https://dita-group.com/ogdita5.png",
     locale: "en-US",
     type: "website",
   },
@@ -21,10 +21,10 @@ export const metadata = {
     card: "summary_large_image",
     domain: "protezfoundation.com",
     url: "http://www.protezfoundation.com/",
-    image: "https://dita-group.com/ogdita2.png",
+    image: "https://dita-group.com/ogdita5.png",
     title: "Prosthetics for Ukraine",
     description: `Main page of the "Prosthetics for Ukraine" foundation`,
-    images: "https://dita-group.com/ogdita2.png",
+    images: "https://dita-group.com/ogdita5.png",
   },
 };
 

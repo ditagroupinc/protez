@@ -25,7 +25,13 @@ const CompanyData = ({ className = "" }) => {
         <p className={style.sendChecks}>
           {texts.donate.organizationData.sendChecks[lang]}
         </p>
-        <p className={"h5 "}>{texts.donate.organizationData.adress[lang]}</p>
+        <p className={"h5 "}>
+          <span className={style.protez}>PROTEZ Foundation</span>
+          <span>
+            3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America
+          </span>
+          {/* {texts.donate.organizationData.adress[lang]} */}
+        </p>
       </div>
       <a
         href={`mailto:${texts.donate.organizationData.email}`}

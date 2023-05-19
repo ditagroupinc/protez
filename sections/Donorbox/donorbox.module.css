@@ -27,6 +27,11 @@
   margin-top: 64px;
   width: fit-content;
 }
+
+.protez {
+  display: block;
+}
+
 @media screen and (min-width: 1366px) {
   .title {
     font-size: calc(24px + 24 * ((100vw - 1366px) / 1194));
