@@ -56,7 +56,6 @@ export default function Donate() {
     <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header notMainPage />
-        {/* {windowSizes.desktop && <CompanyData black />} */}
         {windowSizes.desktop && <SocialMediaLinks />}
         <main>
           <VeteranFBIframe />

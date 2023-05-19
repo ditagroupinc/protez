@@ -11,12 +11,34 @@
 }
 .iframe {
   margin: 0 auto;
+  margin-top: 40px;
   max-width: 100%;
 }
 
+.logo:global(.svgTextBlock) {
+  max-width: 1256px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1920px) {
+  .logo:global(.svgTextBlock) {
+    max-width: 1066px;
+  }
+}
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .logo:global(.svgTextBlock) {
+    max-width: 500px;
+  }
+}
+
+/* phone */
 @media screen and (max-width: 500px) {
+  .logo:global(.svgTextBlock) {
+    max-width: 80%;
+  }
   .section {
-    padding-top: 120px;
+    padding-top: 160px;
   }
   .iframe {
     height: 900px;

@@ -53,7 +53,7 @@
   }
 }
 
-.dita:hover > svg rect:global(.purpleFrame) {
+.dita:hover svg rect:global(.purpleFrame) {
   fill: #3f29b0;
 }
 

@@ -21,15 +21,26 @@ const partnersLogos = [
   "ukraine.svg",
 ];
 
-const PartnerCard = ({ image, mobile }) => (
-  <div
-    className={`${mobile ? style.mobile : style.desktop} ${style.partnerCard} ${
-      image.includes("dita") && style.dita
-    }`}
-  >
-    {image.includes("dita") ? (
-      globalIcons.ditaLogo(style.partnerLogo)
-    ) : (
+const PartnerCard = ({ image, mobile }) => {
+  if (image.includes("dita"))
+    return (
+      <div
+        className={`${mobile ? style.mobile : style.desktop} ${
+          style.partnerCard
+        } ${style.dita}`}
+      >
+        <Link href="https://dita-group.com/" target="blank">
+          {globalIcons.ditaLogo(`${style.partnerLogo}`)}
+        </Link>
+      </div>
+    );
+
+  return (
+    <div
+      className={`${mobile ? style.mobile : style.desktop} ${
+        style.partnerCard
+      } `}
+    >
       <Image
         src={`/partnersLogos/${image}`}
         object-fit="contain"
@@ -39,9 +50,9 @@ const PartnerCard = ({ image, mobile }) => (
         height={230}
         className={style.partnerLogo}
       />
-    )}
-  </div>
-);
+    </div>
+  );
+};
 
 export default function AllOurPartners({}) {
   const { lang } = useContext(LanguageContext);

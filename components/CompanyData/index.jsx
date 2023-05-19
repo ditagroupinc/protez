@@ -45,7 +45,7 @@ export default function CompanyData({ className = "", black, colorInverted }) {
       <div className={`${style.buttonsContainer}`}>
         <SquareButton
           link
-          href="Donate"
+          href="donate"
           pink
           black={colorInverted}
           onClick={handleClick}

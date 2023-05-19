@@ -124,7 +124,7 @@ export default function Header({ notMainPage, black }) {
         <div>
           <SquareButton
             link
-            href="Donate"
+            href="donate"
             pink
             text={texts.header.actionButtons.makeDonation[lang]}
           />

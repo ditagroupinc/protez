@@ -6,11 +6,11 @@ const socialMediaLinks = [
     icon: globalIcons.iconYoutube,
   },
   {
-    adress: "https://www.facebook.com/donate/238890858497931/199310116131457//",
+    adress: "https://www.facebook.com/prostheticsforukrainians/",
     icon: globalIcons.iconFaceBook,
   },
   {
-    adress: "https://www.instagram.com/protezfoundation/?igshid=YmMyMTA2M2Y%3D",
+    adress: "https://www.instagram.com/protezfoundation/",
     icon: globalIcons.iconInstagram,
   },
   {
