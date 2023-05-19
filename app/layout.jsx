@@ -6,6 +6,13 @@ import "./globals.css";
 export const metadata = {
   title: "Prosthetics for Ukraine",
   description: `Main page of the "Prosthetics for Ukraine" foundation`,
+  openGraph: {
+    url: "http://protezfoundation.com",
+    title: "Prosthetics for Ukraine",
+    description:
+      "Main page of the &quot;Prosthetics for Ukraine&quot; foundation",
+    type: "website",
+  },
 };
 
 export default function RootLayout({ children }) {
