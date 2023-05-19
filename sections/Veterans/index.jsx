@@ -58,14 +58,14 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                   <p className={`p ${style.cardText}`}>{element.text[lang]}</p>
 
                   <div className={style.shareMe}>
-                    <span className={`h5`}>{texts.veterans.share[lang]}</span>
+                    {/* <span className={`h5`}>{texts.veterans.share[lang]}</span> */}
                     <div className={`${style.buttonsList}`}>
-                      <a target="blank" href={element.twitter}>
+                      {/* <a target="blank" href={element.twitter}>
                         {icons.iconTwitter()}
-                      </a>
-                      <a target="blank" href={element.linkedin}>
+                      </a> */}
+                      {/* <a target="blank" href={element.linkedin}>
                         {icons.iconLinkedin()}
-                      </a>
+                      </a> */}
                       <a target="blank" href={element.facebook}>
                         {icons.iconFacebook()}
                       </a>

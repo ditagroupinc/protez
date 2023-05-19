@@ -112,13 +112,13 @@ export default function Header({ notMainPage, black }) {
                 )}
               </li>
             ))}
-            {mobile && (
+            {/* {mobile && (
               <li className={"h4"}>
                 <button className={style.navAncor + " " + style.underlined}>
                   {texts.header.actionButtons.lang[lang]}
                 </button>
               </li>
-            )}
+            )} */}
           </ul>
         </div>
         <div>
