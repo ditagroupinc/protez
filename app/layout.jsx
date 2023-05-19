@@ -14,7 +14,7 @@ export const metadata = {
     url: "http://www.protezfoundation.com/",
     siteName: "protezfoundation.com",
     images: "https://dita-group.com/ogdita2.png",
-    image: "https://dita-group.com/ogdita2.png",
+    image: "https://dita-group.com/ogdit.png",
     locale: "en-US",
     type: "website",
   },
