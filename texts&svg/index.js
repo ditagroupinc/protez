@@ -472,7 +472,7 @@ const header = {
       eng: "Protez Academy",
     },
     makeDonation: {
-      eng: "Make Donation",
+      eng: "Donate Now",
     },
 
     back2top: {

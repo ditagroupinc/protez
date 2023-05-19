@@ -9,7 +9,7 @@ import style from "./companyData.module.css";
 const companyDataText = {
   actionButtons: {
     makeDonation: {
-      eng: "Make Donation!",
+      eng: "Donate Now",
     },
     needAProtez: {
       eng: "Потрібен протез",

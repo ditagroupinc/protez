@@ -128,7 +128,9 @@ export default function Home() {
           /> */}
           <CompanyDataNonProfit
             black={bgIsWhite()}
-            className={style.companyDataNonProfit}
+            className={`${style.companyDataNonProfit} ${
+              windowSizes.width > 700 && showCompanyData ? "" : "hidden"
+            }`}
           />
 
           <SocialMediaLinks className={windowSizes.desktop ? "" : "hidden"} />
