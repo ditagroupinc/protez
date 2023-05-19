@@ -13,7 +13,5 @@ export const transporter = nodemailer.createTransport({
 
 export const mailOptions = {
   from: email,
-  to: "bogdanleontovich@gmail.com",
+  to: "info@protezfoundation.com",
 };
-
-//  $mailto = "info@protezfoundation.com";  //My email address
