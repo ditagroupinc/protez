@@ -60,17 +60,17 @@ export default function CompanyData({ className = "", black, colorInverted }) {
           blank
           href="https://docs.google.com/forms/d/e/1FAIpQLSf_ESrB0vY6973GQSYfDY-WtWYE8UXnaeHJzxIQrEWPaQ_UXw/viewform"
         />
-        {width < 700 && (
-          <SquareButton
-            onClick={handleClick}
-            text={companyDataText.actionButtons.protezAcademy[lang]}
-            emptyBlack={black}
-            link
-            blank
-            black
-            href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-          />
-        )}
+
+        <SquareButton
+          onClick={handleClick}
+          text={companyDataText.actionButtons.protezAcademy[lang]}
+          emptyBlack={black}
+          link
+          blank
+          black
+          href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+          className={`${style.thirdButton}`}
+        />
       </div>
     </div>
   );

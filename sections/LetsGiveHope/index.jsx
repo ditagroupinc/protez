@@ -13,9 +13,10 @@ const LetsGiveHope = forwardRef(function ({ id }, ref) {
   return (
     <section className={`${style.section} section`} id={id} ref={ref}>
       <VideoAndFilter src={"flag-ukraine.mp4"} />
-      <div className={style.filter} />
-      {icons.letsGiveHopeLogo(`${style.mainTitle} svgTextBlock`)}
-      {width < 700 && <CompanyData className={style.companyData} />}
+      <div className={style.logoContainer}>
+        {icons.letsGiveHopeLogo(`${style.mainTitle} svgTextBlock`)}
+      </div>
+      <CompanyData className={style.companyData} />
     </section>
   );
 });

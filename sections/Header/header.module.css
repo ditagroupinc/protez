@@ -136,10 +136,10 @@
       color: var(--pink);
     }
   }
-  &.short {
-    padding: 0;
-    margin-top: 40px;
-  }
+}
+
+.protezAcademyMenuButton {
+  margin-top: 16px;
 }
 
 @media screen and (min-width: 1366px) {
@@ -263,6 +263,15 @@
 
 /* beforeTablet */
 @media screen and (max-width: 1366px) {
+}
+
+@media (min-width: 480px) and (max-height: 800px) {
+  .headerNav {
+    padding-top: 90px;
+  }
+  .socialMediaLinks {
+    margin-top: 16px;
+  }
 }
 
 /* phone */

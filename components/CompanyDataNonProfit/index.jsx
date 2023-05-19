@@ -4,7 +4,7 @@ import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import SquareButton from "@/components/SquareButton";
 import Divider from "@/components/Divider";
 
-import style from "./companyData.module.css";
+import style from "./companyDataNonProfit.module.css";
 
 const companyDataText = {
   actionButtons: {
@@ -28,7 +28,7 @@ const companyDataText = {
   },
 };
 
-export function CompanyData({ className = "", black }) {
+export default function CompanyData({ className = "", black }) {
   const { lang, changeLang } = useContext(LanguageContext);
   const { mobile } = useContext(ScreenModeAndSizeContext);
 
@@ -38,7 +38,7 @@ export function CompanyData({ className = "", black }) {
     <div
       className={`${style.container} ${black ? style.black : ""} ${className}`}
     >
-      {/* <div className={`${style.adressContainer} ${mobile ? style.mobile : ""}`}>
+      <div className={`${style.adressContainer} ${mobile ? style.mobile : ""}`}>
         <p>
           <span className={"h6 "}>
             {companyDataText.organizationData.nonProfitOrganization[lang]}
@@ -49,8 +49,7 @@ export function CompanyData({ className = "", black }) {
         </p>
         <Divider />
         <p className={"h5 "}>{companyDataText.organizationData.adress[lang]}</p>
-      </div> */}
-      <Divider />
+      </div>
       <div
         className={`${style.buttonsContainer} ${mobile ? style.mobile : ""}`}
       >

@@ -234,6 +234,19 @@ const ourTeam = {
   ],
   members: [
     {
+      photo: "valentynaP.png",
+      links: {
+        facebook: "https://www.facebook.com/valentyna.pavsyukova/",
+        instagram: "https://www.instagram.com/valentyna_pavsyukova/",
+      },
+      name: {
+        eng: "Valentyna Pavsyukova",
+      },
+      position: {
+        eng: "Strategic Advisor",
+      },
+    },
+    {
       photo: "andreyM.png",
       links: {
         facebook: "https://www.facebook.com/profile.php?id=13740119",
@@ -255,20 +268,6 @@ const ourTeam = {
       },
       position: {
         eng: "Financial Director",
-      },
-    },
-    {
-      photo: "valentynaP.png",
-      links: {
-        facebook: "https://www.facebook.com/valentyna.pavsyukova/",
-        instagram: "https://www.instagram.com/valentyna_pavsyukova/",
-      },
-
-      name: {
-        eng: "Valentyna Pavsyukova",
-      },
-      position: {
-        eng: "Strategic Advisor",
       },
     },
     {
@@ -413,10 +412,10 @@ const header = {
     eng: "Get in touch",
   },
   navigation: {
-    giveHope: {
-      eng: "Home",
-      id: "letsGiveHope",
-    },
+    // giveHope: {
+    //   eng: "Home",
+    //   id: "letsGiveHope",
+    // },
     mission: {
       eng: "Mission",
       id: "ourMission",

@@ -11,6 +11,13 @@
   max-width: 50%;
 }
 
+/* tablet */
+@media screen and (max-width: 1180px) {
+  .companyDataNonProfit {
+    display: none;
+  }
+}
+
 /* phone */
 @media screen and (max-width: 480px) {
   .americanFlag {

@@ -129,9 +129,15 @@ export default function Header({ notMainPage, black }) {
             text={texts.header.actionButtons.makeDonation[lang]}
           />
 
-          <button className={`${style.protezAcademy} ${style.short}`}>
-            {texts.header.actionButtons.protezAcademy[lang]}
-          </button>
+          <SquareButton
+            link
+            blank
+            href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+            black
+            text={texts.header.actionButtons.protezAcademy[lang]}
+            className={style.protezAcademyMenuButton}
+          />
+
           <Divider className={style.headerDivider} />
           <span className={style.menuText}>
             {texts.header.getInTouch[lang]}

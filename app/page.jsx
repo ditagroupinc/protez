@@ -26,6 +26,7 @@ import style from "./index.module.css";
 import CompanyData from "@/components/CompanyData";
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import useGetSize from "@/hooks/useGetScreenSizes";
+import CompanyDataNonProfit from "@/components/CompanyDataNonProfit";
 
 // import CustomCursor from "@/components/CustomCursor";
 
@@ -119,12 +120,17 @@ export default function Home() {
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header black={bgIsWhite()} />
         <main style={{ backgroundColor: "var(--black)" }}>
-          <CompanyData
+          {/* <CompanyData
             black={bgIsWhite()}
             className={
               windowSizes.width > 700 && showCompanyData ? "" : "hidden"
             }
+          /> */}
+          <CompanyDataNonProfit
+            black={bgIsWhite()}
+            className={style.companyDataNonProfit}
           />
+
           <SocialMediaLinks className={windowSizes.desktop ? "" : "hidden"} />
           <div className={style.flagsBlock}>
             <LetsGiveHope

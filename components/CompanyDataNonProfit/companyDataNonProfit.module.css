@@ -41,7 +41,7 @@
 
 /* tablet */
 @media screen and (max-width: 1180px) {
-  .buttonsContainer {
+  /* .buttonsContainer {
     margin-top: 1rem;
     gap: 1rem;
     padding-left: 0;
@@ -50,5 +50,5 @@
     & p {
       padding-left: 0;
     }
-  }
+  } */
 }

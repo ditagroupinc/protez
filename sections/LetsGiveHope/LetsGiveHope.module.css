@@ -13,14 +13,14 @@ svg.mainTitle {
 }
 
 .companyData {
-  display: none;
-  position: absolute;
-  left: 0;
+  visibility: hidden;
+  /* position: absolute; */
+  /* left: 0; */
   /* bottom: 24px; */
-  bottom: 0;
+  /* bottom: 0; */
   max-width: 100%;
-  z-index: 8;
-  padding: 6vw;
+  /* z-index: 8; */
+  /* padding: 6vw; */
 }
 
 /* desktop */
@@ -36,9 +36,19 @@ svg.mainTitle {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1180px) {
   .companyData {
-    display: block;
+    visibility: visible;
+    position: static;
+  }
+  .section:global(.section) {
+    justify-content: space-between;
+    padding-bottom: 6vw;
+  }
+  .logoContainer {
+    flex: 1 1 50%;
+    display: flex;
+    align-items: center;
   }
 }
 
@@ -46,9 +56,6 @@ svg.mainTitle {
 @media screen and (max-width: 480px) {
   .section:global(.section) {
     min-height: 100vh;
-    /* padding-bottom: 30px; */
-    /* justify-content: flex-end; */
-    /* gap: 100px; */
   }
   svg.mainTitle {
     max-width: 100%;

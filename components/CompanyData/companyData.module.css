@@ -19,8 +19,15 @@
   gap: 40px;
 }
 
+.thirdButton {
+  visibility: hidden;
+}
+
 /* tablet */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1180px) {
+  .thirdButton {
+    visibility: visible;
+  }
   .buttonsContainer {
     margin-top: 1rem;
     gap: 1rem;
