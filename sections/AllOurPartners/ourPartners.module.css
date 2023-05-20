@@ -32,13 +32,20 @@
   &.desktop {
     grid-column: span 4;
     &:nth-of-type(n + 4):not(&:nth-of-type(n + 8)),
-    &:nth-of-type(n + 11):not(&:nth-of-type(n + 14)) {
+    &:nth-of-type(n + 11):not(&:nth-of-type(n + 15)),
+    &:nth-of-type(n + 18):not(&:nth-of-type(n + 22)),
+    &:nth-of-type(n + 25):not(&:nth-of-type(n + 29)) {
       grid-column: span 3;
     }
+    &:nth-of-type(11) {
+      padding: 1.5rem 2.5rem;
+    }
   }
+
   &.mobile {
     grid-column: span 2;
     &:nth-of-type(3n) {
+      padding: 1.5rem 2.5rem;
       grid-column: span 4;
     }
   }
@@ -55,6 +62,9 @@
 
 .dita:hover svg rect:global(.purpleFrame) {
   fill: #3f29b0;
+}
+.dita svg {
+  height: fit-content;
 }
 
 /* phone */

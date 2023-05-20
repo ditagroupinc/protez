@@ -19,6 +19,21 @@ const partnersLogos = [
   "proteor.svg",
   "slumberland.svg",
   "ukraine.svg",
+  "4front.svg",
+  "blatchfold.svg",
+  "cerebral.svg",
+  "cozen.svg",
+  "directRelief.svg",
+  "evangelicalChurch.svg",
+  "humanaTravel.svg",
+  "monarch.svg",
+  "printing.svg",
+  "smak.svg",
+  "sTconstantin.svg",
+  "stMaron.svg",
+  "ticketToAmerica.svg",
+  "ukrainianHabitat.svg",
+  "ukrsib.svg",
 ];
 
 const PartnerCard = ({ image, mobile }) => {
