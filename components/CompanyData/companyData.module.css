@@ -28,6 +28,9 @@
   .thirdButton {
     visibility: visible;
   }
+  .container {
+    max-width: 100%;
+  }
   .buttonsContainer {
     margin-top: 1rem;
     gap: 1rem;

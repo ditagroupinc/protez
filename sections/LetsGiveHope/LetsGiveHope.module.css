@@ -39,7 +39,7 @@ svg.mainTitle {
 @media screen and (max-width: 1180px) {
   .companyData {
     visibility: visible;
-    position: static;
+    position: static !important;
   }
   .section:global(.section) {
     justify-content: space-between;

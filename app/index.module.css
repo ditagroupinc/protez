@@ -38,9 +38,9 @@
 }
 
 /* tablet */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 1180px) {
   .companyDataNonProfit {
-    display: none !important;
+    display: none;
   }
 }
 
