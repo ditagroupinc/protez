@@ -11,6 +11,8 @@
 .specialThanks {
   display: flex;
   justify-content: flex-end;
+
+  margin-top: 80px;
 }
 .logo:global(.svgTextBlock) {
   max-width: 70%;
@@ -23,6 +25,7 @@
 }
 
 .partnerCard {
+  height: fit-content;
   border: var(--greyBorder);
   display: inline-flex;
   justify-content: center;
