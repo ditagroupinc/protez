@@ -217,6 +217,8 @@
   .form {
     width: 100%;
     max-width: 100% !important;
+    height: 900px !important;
+    min-height: 900px !important;
   }
 
   .companyData {
