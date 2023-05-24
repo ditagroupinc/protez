@@ -72,6 +72,9 @@
 
 /* phone */
 @media screen and (max-width: 480px) {
+  .specialThanks {
+    margin-top: 0;
+  }
   .container {
     margin-top: 0;
     grid-template-columns: repeat(4, 1fr);
