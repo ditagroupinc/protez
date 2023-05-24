@@ -419,13 +419,14 @@ const mailingList = {
 
 const thankYouPage = {
   thankYou: {
-    eng: `Thank You for your Gift.`,
+    eng: `Thank You.`,
   },
   message: {
-    eng: `Your gift to a new life for a soldier from Ukraine who needs prosthetics,`,
+    eng: `You have offered someone a new shot at life, 
+    and `,
   },
   pink: {
-    eng: ` has been succeeded.`,
+    eng: `your gift has been successful.`,
   },
 };
 

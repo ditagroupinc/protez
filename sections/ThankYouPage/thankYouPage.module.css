@@ -13,7 +13,7 @@
 }
 
 .contentWrapper {
-  max-width: 1450px;
+  max-width: 951px;
 }
 
 .heart {
@@ -39,7 +39,6 @@
   & span {
     color: var(--pink);
   }
-  max-width: 85%;
   margin-top: 56px;
 }
 
@@ -56,7 +55,7 @@
 /* desktop */
 @media screen and (max-width: 1920px) {
   .contentWrapper {
-    max-width: 1228px;
+    max-width: 627px;
   }
   .heart {
     width: 112px;
@@ -79,7 +78,7 @@
 /* beforeTablet */
 @media screen and (max-width: 1366px) {
   .contentWrapper {
-    max-width: 567px;
+    max-width: 476px;
   }
   .heart {
     width: 64px;
