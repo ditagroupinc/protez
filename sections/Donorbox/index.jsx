@@ -63,8 +63,8 @@ export default function DonorBox({}) {
           seamless="seamless"
           frameBorder="0"
           scrolling="no"
-          height="900px"
-          width="100%"
+          // height="900px"
+          // width="100%"
           className={style.form}
           style={{
             maxWidth: 425,
