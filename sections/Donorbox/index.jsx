@@ -61,15 +61,11 @@ export default function DonorBox({}) {
           name="donorbox"
           allowpaymentrequest="allowpaymentrequest"
           seamless="seamless"
-          frameBorder="0"
           scrolling="no"
-          // height="900px"
-          // width="100%"
           className={style.form}
           style={{
             maxWidth: 425,
             minWidth: 250,
-            maxHeight: "none!important",
           }}
         />
       </div>
