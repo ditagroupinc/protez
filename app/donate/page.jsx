@@ -1,5 +1,5 @@
 "use client";
-import { useContext, useState, createContext, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "@/sections/Header";
 import { throttle } from "@/utils";
@@ -10,9 +10,6 @@ import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 
 import SocialMediaLinks from "@/components/SocialMediaLinks";
 import DonorBox from "@/sections/Donorbox";
-
-// import CustomCursor from "@/components/CustomCursor";
-
 export default function Donate() {
   const [lang, setLang] = useState("eng");
   const [windowSizes, setWindowSizes] = useState({ width: null, height: null });

@@ -417,6 +417,18 @@ const mailingList = {
   },
 };
 
+const thankYouPage = {
+  thankYou: {
+    eng: `Thank You for your Gift.`,
+  },
+  message: {
+    eng: `Your gift to a new life for a soldier from Ukraine who needs prosthetics,`,
+  },
+  pink: {
+    eng: ` has been succeeded.`,
+  },
+};
+
 const header = {
   menu: {
     eng: "Menu",
@@ -517,6 +529,7 @@ const texts = {
   ourPartners: ourPartners,
   news: news,
   mailingList: mailingList,
+  thankYouPage: thankYouPage,
   header: header,
   donate: donate,
 };

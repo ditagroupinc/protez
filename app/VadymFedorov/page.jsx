@@ -1,5 +1,5 @@
 "use client";
-import { useContext, useState, createContext, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 
 import Header from "@/sections/Header";
 import { throttle } from "@/utils";
@@ -9,7 +9,6 @@ import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 
 import SocialMediaLinks from "@/components/SocialMediaLinks";
-import DonorBox from "@/sections/Donorbox";
 import VeteranFBIframe from "@/sections/VeteranFBIframe";
 
 // import CustomCursor from "@/components/CustomCursor";
