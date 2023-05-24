@@ -3,6 +3,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "@/styles/resetCSS.css";
 import "@/styles/fonts.css";
 import "./globals.css";
+// https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
 export const metadata = {
   title: "Prosthetics for Ukraine",
   description: `Main page of the "Prosthetics for Ukraine" foundation`,

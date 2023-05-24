@@ -46,11 +46,40 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 25%;
-  & svg {
+  /* & svg {
     width: auto;
     height: auto;
     max-width: 100%;
     max-height: 100%;
+    animation: spin 5s linear infinite;
+    position: relative;
+  } */
+}
+.spinningName {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  animation: spin 7s linear infinite;
+  position: relative;
+}
+
+.triangle {
+  position: absolute;
+  width: 37%;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-40%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
 
@@ -151,11 +180,9 @@ svg.veteranLogo {
 
 /* desktop */
 @media screen and (max-width: 1920px) {
-  .roundButton {
-    & svg {
-      width: 151px;
-      height: 151px;
-    }
+  .spinningName {
+    width: 151px;
+    height: 151px;
   }
 }
 /* beforeTablet */
@@ -163,11 +190,9 @@ svg.veteranLogo {
   svg.veteranLogo {
     max-width: 50%;
   }
-  .roundButton {
-    & svg {
-      width: 96px;
-      height: 96px;
-    }
+  .spinningName {
+    width: 96px;
+    height: 96px;
   }
   .buttonsList a svg {
     width: 40px;

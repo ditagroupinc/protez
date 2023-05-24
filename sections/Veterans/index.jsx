@@ -91,7 +91,8 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                     height={1890}
                   />
                   <Link className={style.roundButton} href="/VadymFedorov">
-                    {icons[`${element.icon}Icon`]()}
+                    {icons[`${element.icon}Icon`](style.spinningName)}
+                    {icons.triangle(style.triangle)}
                   </Link>
                   {/* <button
                     className={style.roundButton}

@@ -108,11 +108,22 @@ const vadymFedorovIcon = (className) => (
       fill="white"
     />
     <path
-      d="M208.454 107.327C208.193 105.556 206.54 104.328 204.799 104.585C203.028 104.846 201.8 106.499 202.061 108.27C202.318 110.01 203.971 111.239 205.742 110.978C207.482 110.721 208.711 109.068 208.454 107.327Z"
+      d="M208.454 107.327C208.711 109.068 207.482 110.721 205.742 110.978C203.971 111.239 202.318 110.01 202.061 108.27C201.8 106.499 203.028 104.846 204.799 104.585C206.54 104.328 208.193 105.556 208.454 107.327Z"
       fill="white"
     />
+  </svg>
+);
+const triangle = (className) => (
+  <svg
+    width="62"
+    height="72"
+    viewBox="0 0 62 72"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={className}
+  >
     <path
-      d="M146.74 103.888L85.8982 139.016L85.8982 68.7613L146.74 103.888Z"
+      d="M61.7402 35.8885L0.898221 71.0156L0.898224 0.761335L61.7402 35.8885Z"
       fill="#CD0062"
     />
   </svg>
@@ -206,4 +217,5 @@ export const icons = {
   iconLink: iconLink,
   iconTwitter: iconTwitter,
   iconInstagram: iconInstagram,
+  triangle: triangle,
 };
