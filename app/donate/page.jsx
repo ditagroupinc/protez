@@ -53,7 +53,7 @@ export default function Donate() {
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header notMainPage />
         {/* {windowSizes.desktop && <CompanyData black />} */}
-        {windowSizes.desktop && <SocialMediaLinks />}
+        <SocialMediaLinks className={!windowSizes.desktop && "hidden"} />
         <main>
           <DonorBox />
         </main>

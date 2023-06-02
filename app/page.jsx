@@ -133,7 +133,10 @@ export default function Home() {
             }`}
           />
 
-          <SocialMediaLinks className={windowSizes.desktop ? "" : "hidden"} />
+          <SocialMediaLinks
+            className={style.socialMediaLinks}
+            // className={windowSizes.desktop ? "" : "hidden"}
+          />
           <div className={style.smokeBlock}>
             <SmokeBackground className={style.smokeTop} />
             <div className={style.flagsBlock}>

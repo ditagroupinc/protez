@@ -59,14 +59,14 @@ export default function Partners() {
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header notMainPage />
         {windowSizes.desktop && <CompanyData black />}
-        {windowSizes.desktop && <SocialMediaLinks />}
+        <SocialMediaLinks className={!windowSizes.desktop && "hidden"} />
         <main>
           <AllOurPartners visible />
-          <BackToTopButton
+          {/* <BackToTopButton
             text={"back to top  →"}
             href={"allOurPartners"}
             black
-          />
+          /> */}
         </main>
         <footer>
           <Copyright />
