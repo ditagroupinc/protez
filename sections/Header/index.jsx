@@ -5,6 +5,7 @@ import useOutsideClick from "@/hooks/useOutsideClick";
 import { icons } from "./icons";
 import texts from "@/texts&svg";
 import SquareButton from "@/components/SquareButton";
+import SocialMediaLinks from "@/components/SocialMediaLinks";
 
 import Divider from "@/components/Divider";
 import Link from "next/link";
@@ -50,112 +51,115 @@ export default function Header({ notMainPage, black }) {
   };
 
   return (
-    <header
-      className={`${style.header} ${
-        notMainPage ? style.notMainPage : ""
-      } ${blackClassName()}`}
-      id="header"
-    >
-      {notMainPage ? (
-        <Link href={"/"}>
-          {icons.protezFoundationLogo(
-            `${style.foundationLogo} ${mobile ? style.small : ""}`
-          )}
-        </Link>
-      ) : (
-        <a href={"#letsGiveHope"}>
-          {icons.protezFoundationLogo(
-            `${style.foundationLogo} ${mobile ? style.small : ""}`
-          )}
-        </a>
-      )}
-      {mobile ? (
-        <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
-      ) : (
-        <div className={style.headerActionLang}>
-          <a
-            href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-            target="blank"
-            className={`${style.protezAcademy}`}
-          >
-            {texts.header.actionButtons.protezAcademy[lang]}
-          </a>
-          <Divider vertical />
-          <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
-        </div>
-      )}
-      <nav
-        ref={ref}
-        className={`${style.headerNav} ${headerIsOpened ? style.opened : ""}`}
+    <>
+      <header
+        className={`${style.header} ${
+          notMainPage ? style.notMainPage : ""
+        } ${blackClassName()}`}
+        id="header"
       >
-        <div>
-          <span className={style.menuText}>{texts.header.menu[lang]}</span>
-          <ul className={style.ancorList}>
-            {navLinks.map((link, index) => (
-              <li key={index} className={"h4"}>
-                {notMainPage ? (
-                  <Link
-                    className={style.navAncor}
-                    href="/"
-                    onClick={toggleHeader}
-                  >
-                    {link[lang]}
-                  </Link>
-                ) : (
-                  <a
-                    className={style.navAncor}
-                    href={`#${link.id}`}
-                    onClick={toggleHeader}
-                  >
-                    {link[lang]}
-                  </a>
-                )}
-              </li>
-            ))}
-            {/* {mobile && (
+        {notMainPage ? (
+          <Link href={"/"}>
+            {icons.protezFoundationLogo(
+              `${style.foundationLogo} ${mobile ? style.small : ""}`
+            )}
+          </Link>
+        ) : (
+          <a href={"#letsGiveHope"}>
+            {icons.protezFoundationLogo(
+              `${style.foundationLogo} ${mobile ? style.small : ""}`
+            )}
+          </a>
+        )}
+        {mobile ? (
+          <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
+        ) : (
+          <div className={style.headerActionLang}>
+            <a
+              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              target="blank"
+              className={`${style.protezAcademy}`}
+            >
+              {texts.header.actionButtons.protezAcademy[lang]}
+            </a>
+            <Divider vertical />
+            <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
+          </div>
+        )}
+        <nav
+          ref={ref}
+          className={`${style.headerNav} ${headerIsOpened ? style.opened : ""}`}
+        >
+          <div>
+            <span className={style.menuText}>{texts.header.menu[lang]}</span>
+            <ul className={style.ancorList}>
+              {navLinks.map((link, index) => (
+                <li key={index} className={"h4"}>
+                  {notMainPage ? (
+                    <Link
+                      className={style.navAncor}
+                      href="/"
+                      onClick={toggleHeader}
+                    >
+                      {link[lang]}
+                    </Link>
+                  ) : (
+                    <a
+                      className={style.navAncor}
+                      href={`#${link.id}`}
+                      onClick={toggleHeader}
+                    >
+                      {link[lang]}
+                    </a>
+                  )}
+                </li>
+              ))}
+              {/* {mobile && (
               <li className={"h4"}>
                 <button className={style.navAncor + " " + style.underlined}>
                   {texts.header.actionButtons.lang[lang]}
                 </button>
               </li>
             )} */}
-          </ul>
-        </div>
-        <div>
-          <SquareButton
-            link
-            href="donate"
-            pink
-            text={texts.header.actionButtons.makeDonation[lang]}
-          />
-
-          <SquareButton
-            link
-            blank
-            href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-            black
-            text={texts.header.actionButtons.protezAcademy[lang]}
-            className={style.protezAcademyMenuButton}
-          />
-
-          <Divider className={style.headerDivider} />
-          <span className={style.menuText}>
-            {texts.header.getInTouch[lang]}
-          </span>
-          <div className={style.socialMediaLinks}>
-            {texts.socialMediaLinks.map((link, index) => (
-              <a
-                key={index}
-                href={link.adress}
-                className={style.socialMediaLink}
-                target="blank"
-              >
-                {link.icon(style.socialMediaIcon)}
-              </a>
-            ))}
+            </ul>
           </div>
-        </div>
-      </nav>
-    </header>
+          <div>
+            <SquareButton
+              link
+              href="donate"
+              pink
+              text={texts.header.actionButtons.makeDonation[lang]}
+            />
+
+            <SquareButton
+              link
+              blank
+              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              black
+              text={texts.header.actionButtons.protezAcademy[lang]}
+              className={style.protezAcademyMenuButton}
+            />
+
+            <Divider className={style.headerDivider} />
+            <span className={style.menuText}>
+              {texts.header.getInTouch[lang]}
+            </span>
+            <div className={style.socialMediaLinks}>
+              {texts.socialMediaLinks.map((link, index) => (
+                <a
+                  key={index}
+                  href={link.adress}
+                  className={style.socialMediaLink}
+                  target="blank"
+                >
+                  {link.icon(style.socialMediaIcon)}
+                </a>
+              ))}
+            </div>
+          </div>
+        </nav>
+      </header>
+      <SocialMediaLinks className={headerIsOpened ? " hidden" : ""} />
+    </>
   );
 }
