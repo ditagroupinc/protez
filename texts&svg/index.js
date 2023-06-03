@@ -61,7 +61,7 @@ const ourResults = {
     },
     moneySpent: {
       eng: `Spent on survivors`,
-      number: "$1 640 00",
+      number: "$1 640 000",
     },
   },
   titleText: {
