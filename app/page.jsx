@@ -45,7 +45,8 @@ export default function Home() {
   const windowSizes = useGetSize();
 
   const [visitedSections, setVisitedSections] = useState({});
-  const [sectionInViewPort, setSectionInViewPort] = useState("");
+
+  const [sectionInViewPort, setSectionInViewPort] = useState("letsGiveHope");
   const [showCompanyData, setShowCompanyData] = useState(true);
 
   const sectionRefs = {
