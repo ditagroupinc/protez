@@ -26,6 +26,10 @@
   margin: 0 auto;
   margin-top: 64px;
   width: fit-content;
+  &.monthlyPayment {
+    margin-top: 0;
+    color: var(--pink);
+  }
 }
 
 .block {

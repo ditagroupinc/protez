@@ -43,21 +43,33 @@ const CompanyData = ({ className = "" }) => {
   );
 };
 
-export default function DonorBox({}) {
+export default function DonorBox({ monthly = false }) {
   const { lang } = useContext(LanguageContext);
-  const { tablet, tabletLarge, mobile } = useContext(ScreenModeAndSizeContext);
+  const { mobile } = useContext(ScreenModeAndSizeContext);
   return (
     <section className={`${style.section}`} id="donorBox">
       {mobile
         ? icons.letsGiveHopeLogoMobile(`${style.logo} svgTextBlock`)
         : icons.letsGiveHopeLogo(`${style.logo} svgTextBlock`)}
       <h1 className={style.title}>{texts.donate.title[lang]}</h1>
+      {monthly ? (
+        <h2 className={`${style.title} ${style.monthlyPayment}`}>
+          {texts.donate.monthlyPayment[lang]}
+        </h2>
+      ) : (
+        ""
+      )}
+
       <div className={style.flexContainer}>
         <CompanyData />
 
         <Script src="https://donorbox.org/widget.js" paypalExpress="false" />
         <iframe
-          src="https://donorbox.org/embed/website-donation-64"
+          src={
+            monthly
+              ? "https://donorbox.org/embed/website-donation-64-2"
+              : "https://donorbox.org/embed/website-donation-64"
+          }
           name="donorbox"
           allowpaymentrequest="allowpaymentrequest"
           seamless="seamless"

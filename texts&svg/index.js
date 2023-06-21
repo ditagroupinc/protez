@@ -501,6 +501,9 @@ const donate = {
   title: {
     eng: "All charitable contributions are tax-deductible.",
   },
+  monthlyPayment: {
+    eng: "Please note that monthly payments are the default option.",
+  },
   organizationData: {
     sendChecks: {
       eng: "Please send checks to:",
