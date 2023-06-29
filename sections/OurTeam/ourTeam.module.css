@@ -35,8 +35,9 @@
   &.scrollable {
     overflow-x: auto;
     padding-left: 12rem;
-
-    justify-content: center;
+  }
+  &:nth-of-type(3) {
+    padding: 0 var(--paddingVW);
   }
 }
 
@@ -55,10 +56,25 @@
     padding-left: var(--headerPaddingSide);
     padding-right: var(--headerPaddingSide);
   }
+  .membersContainer {
+    &:nth-of-type(3) {
+      padding-left: var(--headerPaddingSide);
+      padding-right: calc(var(--headerPaddingSide) + 65px);
+    }
+  }
 
   .container {
     flex-direction: column;
     gap: 80px;
+  }
+}
+
+/* phone */
+@media screen and (max-width: 480px) {
+  .membersContainer {
+    &:nth-of-type(3) {
+      padding-right: var(--headerPaddingSide);
+    }
   }
 }
 

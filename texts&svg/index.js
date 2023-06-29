@@ -49,7 +49,7 @@ const ourResults = {
   results: {
     prosthetics: {
       eng: `Individuals served`,
-      number: "76",
+      number: "90",
     },
     prostheses: {
       eng: `Prosthetic limbs`,
@@ -245,60 +245,90 @@ const ourTeam = {
       },
     },
   ],
-  members: [
-    {
-      photo: "valentynaP.png",
-      links: {
-        facebook: "https://www.facebook.com/valentyna.pavsyukova/",
-        instagram: "https://www.instagram.com/valentyna_pavsyukova/",
+  members: {
+    firstRow: [
+      {
+        photo: "valentynaP.png",
+        links: {
+          facebook: "https://www.facebook.com/valentyna.pavsyukova/",
+          instagram: "https://www.instagram.com/valentyna_pavsyukova/",
+        },
+        name: {
+          eng: "Valentyna Pavsyukova",
+        },
+        position: {
+          eng: "Strategic Advisor",
+        },
       },
-      name: {
-        eng: "Valentyna Pavsyukova",
+      {
+        photo: "andreyM.png",
+        links: {
+          facebook: "https://www.facebook.com/profile.php?id=13740119",
+          instagram: "https://www.instagram.com/andrey.madan.mn/",
+          linkedin: "https://www.linkedin.com/in/andreymadan/",
+        },
+        name: {
+          eng: "Andrey Madan",
+        },
+        position: {
+          eng: "Executive Program Director",
+        },
       },
-      position: {
-        eng: "Strategic Advisor",
+      {
+        photo: "ivannaG.png",
+        links: {},
+        name: {
+          eng: "Ivanna Gradinar",
+        },
+        position: {
+          eng: "Financial Director",
+        },
       },
-    },
-    {
-      photo: "andreyM.png",
-      links: {
-        facebook: "https://www.facebook.com/profile.php?id=13740119",
-        instagram: "https://www.instagram.com/andrey.madan.mn/",
-        linkedin: "https://www.linkedin.com/in/andreymadan/",
-      },
-      name: {
-        eng: "Andrey Madan",
-      },
-      position: {
-        eng: "Executive Program Director",
-      },
-    },
-    {
-      photo: "ivannaG.png",
-      links: {},
-      name: {
-        eng: "Ivanna Gradinar",
-      },
-      position: {
-        eng: "Financial Director",
-      },
-    },
-    {
-      photo: "ruslan.png",
-      links: {
-        facebook: "https://www.facebook.com/ruslan.sychov",
-        instagram: "https://www.instagram.com/ruslan.sychov/",
-        linkedin: "https://www.linkedin.com/in/ruslan-sychov/",
-      },
+      {
+        photo: "ruslan.png",
+        links: {
+          facebook: "https://www.facebook.com/ruslan.sychov",
+          instagram: "https://www.instagram.com/ruslan.sychov/",
+          linkedin: "https://www.linkedin.com/in/ruslan-sychov/",
+        },
 
-      name: {
-        eng: "Ruslan Sychov",
+        name: {
+          eng: "Ruslan Sychov",
+        },
+        position: {
+          eng: "Digital/IT Advisor",
+        },
       },
-      position: {
-        eng: "Digital/IT Advisor",
+    ],
+    secondRow: [
+      {
+        photo: "mykolaS.png",
+        links: {
+          facebook: "https://www.facebook.com/mykola.sarazhynskyy",
+          linkedin: "https://www.linkedin.com/in/mykolasarazhynskyy/",
+        },
+        name: {
+          eng: "Mykola Sarazhynskyy",
+        },
+        position: {
+          eng: "Director of Community Events",
+        },
       },
-    },
-  ],
+      {
+        photo: "tolyDzyuba.png",
+        links: {
+          linkedin: "https://www.linkedin.com/in/anatoliy-dzyuba-71880789/",
+          instagram: "https://www.instagram.com/tolydzyuba/?hl=en",
+        },
+        name: {
+          eng: "Toly Dzyuba",
+        },
+        position: {
+          eng: "Director of Events and Property Management",
+        },
+      },
+    ],
+  },
 };
 
 const ourPartners = {

@@ -16,6 +16,10 @@ const OurTeam = forwardRef(function ({ visible, id }, ref) {
   useEffect(() => {
     if (width < 600) scrollableContainer.current.scrollLeft += 50;
   }, [width]);
+
+  const membersList = Object.keys(texts.ourTeam.members).map(
+    (e) => texts.ourTeam.members[e]
+  );
   return (
     <section
       className={`${style.section} section ${visible ? "showText" : ""}`}
@@ -39,23 +43,26 @@ const OurTeam = forwardRef(function ({ visible, id }, ref) {
           ))}
         </div>
       </div>
-      <div
-        className={`${style.membersContainer} ${
-          width < 600 ? style.scrollable : ""
-        }`}
-        ref={scrollableContainer}
-      >
-        {texts.ourTeam.members.map((card, index) => (
-          <TeamCard
-            key={index}
-            photo={card.photo}
-            links={card.links}
-            name={card.name[lang]}
-            position={card.position[lang]}
-            black
-          />
-        ))}
-      </div>
+      {membersList.map((row, index) => (
+        <div
+          key={index}
+          className={`${style.membersContainer} ${
+            width < 600 && row.length > 3 ? style.scrollable : ""
+          }`}
+          ref={scrollableContainer}
+        >
+          {row.map((card, index) => (
+            <TeamCard
+              key={index}
+              photo={card.photo}
+              links={card.links}
+              name={card.name[lang]}
+              position={card.position[lang]}
+              black
+            />
+          ))}
+        </div>
+      ))}
     </section>
   );
 });
