@@ -228,7 +228,7 @@ const ourTeam = {
         eng: "Yury Aroshidze",
       },
       position: {
-        eng: "CEO “PROTEZ Foundation”",
+        eng: "CEO “Protez Foundation”",
       },
     },
     {
