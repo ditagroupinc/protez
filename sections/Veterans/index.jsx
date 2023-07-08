@@ -1,23 +1,17 @@
 import { useContext, useRef, useState, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+
 import style from "./Veterans.module.css";
 import Image from "next/image";
 import Slider from "react-slick";
-import SmokeBackground from "@/components/SmokeBackground";
+
 import { icons } from "./icons";
-import CustomCursor from "@/components/CustomCursor";
+
 import texts from "@/texts&svg";
 import Link from "next/link";
 
 const Veterans = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
-  const { height, width, mobile, tablet } = useContext(
-    ScreenModeAndSizeContext
-  );
-  // const [frameOpened, setFrameOpened] = useState(false);
-
-  const frameLink = useRef("");
 
   const sliderRef = useRef(null);
   const gotoNext = () => {

@@ -9,9 +9,7 @@ import texts from "@/texts&svg";
 
 const OurTeam = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
-  const { height, width, mobile, tablet, screenModeClass } = useContext(
-    ScreenModeAndSizeContext
-  );
+  const { width } = useContext(ScreenModeAndSizeContext);
   const scrollableContainer = useRef(null);
   useEffect(() => {
     if (width < 600) scrollableContainer.current.scrollLeft += 50;

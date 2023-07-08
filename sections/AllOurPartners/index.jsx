@@ -1,4 +1,4 @@
-import { useContext, forwardRef } from "react";
+import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./ourPartners.module.css";

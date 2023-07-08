@@ -5,9 +5,6 @@ import Header from "@/sections/Header";
 import { throttle } from "@/utils";
 import Copyright from "@/components/Copyright";
 
-import OurPartners from "@/sections/OurPartners";
-import BackToTopButton from "@/components/BackToTopButton";
-
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 

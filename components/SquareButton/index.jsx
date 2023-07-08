@@ -21,7 +21,6 @@ export default function SquareButton({
         className={`h6 ${style.button} ${pink ? style.pink : ""} ${
           emptyBlack ? style.emptyBlack : ""
         } ${black ? style.black : ""} ${className}`}
-        onClick={onClick}
       >
         {text}
       </Link>

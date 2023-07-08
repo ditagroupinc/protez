@@ -11,9 +11,7 @@ import Copyright from "@/components/Copyright";
 
 const ThankYou = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
-  const { height, mobile, tablet, tabletLarge, desktopSmall } = useContext(
-    ScreenModeAndSizeContext
-  );
+  const { mobile } = useContext(ScreenModeAndSizeContext);
 
   const handleClick = () => {};
   return (

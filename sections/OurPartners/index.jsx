@@ -38,7 +38,7 @@ const PartnerCard = ({ image, dita }) => {
 
 const OurPartners = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
-  const { tablet, tabletLarge } = useContext(ScreenModeAndSizeContext);
+  const { tabletLarge } = useContext(ScreenModeAndSizeContext);
   return (
     <section
       className={`${style.section} section ${visible ? "showText" : ""}`}

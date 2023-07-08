@@ -23,6 +23,12 @@
   visibility: hidden;
 }
 
+@media screen and (max-width: 700px) {
+  .container .divider {
+    display: none;
+  }
+}
+
 /* tablet */
 @media screen and (max-width: 1180px) {
   .thirdButton {

@@ -1,10 +1,6 @@
 import Image from "next/image";
 import style from "./newsCard.module.css";
-import { useContext } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import { icons } from "./icons";
-import Link from "next/link";
 
 export default function NewsCard({
   link,
@@ -16,11 +12,6 @@ export default function NewsCard({
   text,
   short,
 }) {
-  const { lang } = useContext(LanguageContext);
-  const { height, width, mobile, screenModeClass } = useContext(
-    ScreenModeAndSizeContext
-  );
-
   const shortClass = () => (short ? style.short : "");
 
   return (

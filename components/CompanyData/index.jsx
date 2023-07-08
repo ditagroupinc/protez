@@ -1,60 +1,30 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { LanguageContext } from "../../contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import SquareButton from "@/components/SquareButton";
 import Divider from "@/components/Divider";
+import texts from "@/texts&svg";
 
 import style from "./companyData.module.css";
 
-const companyDataText = {
-  actionButtons: {
-    makeDonation: {
-      eng: "Donate Now",
-    },
-    needAProtez: {
-      eng: "Потрібен протез",
-    },
-    protezAcademy: {
-      eng: "Protez Academy",
-    },
-  },
-  organizationData: {
-    nonProfitOrganization: {
-      eng: "Nonprofit organization 501(c)(3)",
-    },
-    ein: {
-      eng: "EIN: 88-2437069",
-    },
-    adress: {
-      eng: "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
-    },
-  },
-};
-
 export default function CompanyData({ className = "", black, colorInverted }) {
-  const { lang, changeLang } = useContext(LanguageContext);
-  const { width } = useContext(ScreenModeAndSizeContext);
-
-  const handleClick = () => {};
+  const { lang } = useContext(LanguageContext);
 
   return (
     <div
       className={`${style.container} ${black ? style.black : ""} ${className}`}
     >
-      {width > 700 && <Divider />}
+      <Divider className={style.divider} />
       <div className={`${style.buttonsContainer}`}>
         <SquareButton
           link
           href="donate"
           pink
           black={colorInverted}
-          onClick={handleClick}
-          text={companyDataText.actionButtons.makeDonation[lang]}
+          text={texts.companyData.actionButtons.makeDonation[lang]}
         />
 
         <SquareButton
-          onClick={handleClick}
-          text={companyDataText.actionButtons.needAProtez[lang]}
+          text={texts.companyData.actionButtons.needAProtez[lang]}
           emptyBlack={black}
           link
           blank
@@ -62,8 +32,7 @@ export default function CompanyData({ className = "", black, colorInverted }) {
         />
 
         <SquareButton
-          onClick={handleClick}
-          text={companyDataText.actionButtons.protezAcademy[lang]}
+          text={texts.companyData.actionButtons.protezAcademy[lang]}
           emptyBlack={black}
           link
           blank

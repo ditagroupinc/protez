@@ -1,9 +1,9 @@
 // import "@/app/globals.css";
 import style from "./OurResults.module.css";
-import CountResults from "@/components/CountResults";
+
 import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
-import SmokeBackground from "@/components/SmokeBackground";
+
 import { icons } from "./icons";
 import texts from "@/texts&svg";
 

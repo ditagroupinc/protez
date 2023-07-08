@@ -1,9 +1,7 @@
 import style from "./MailingList.module.css";
-import { useContext, forwardRef, useState, useEffect } from "react";
+import { useContext, forwardRef, useState } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import Image from "next/image";
-import SmokeBackground from "@/components/SmokeBackground";
 import { icons } from "./icons";
 import SquareButton from "@/components/SquareButton";
 import texts from "@/texts&svg";
@@ -39,28 +37,8 @@ const SuccessButton = () => (
 const MailingList = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
   const [formStatus, setFormStatus] = useState("");
-  // const [imagesToShow, setImagesToShow] = useState([]);
-  const { height, mobile, tablet, tabletLarge, desktopSmall } = useContext(
-    ScreenModeAndSizeContext
-  );
 
   const handleClick = () => {};
-
-  // const myTimer = () => {
-  //   setImagesToShow((prevState) => [...prevState, "img"]);
-  // };
-  // useEffect(() => {
-  //   if (!visible) return;
-
-  //   window.myInterval = setInterval(myTimer, 200);
-
-  //   if (imagesToShow.length === veteransImages.length) {
-  //     clearInterval(window.myInterval);
-  //   }
-  //   return () => clearInterval(window.myInterval);
-  // }, [visible, imagesToShow]);
-
-  // const addClass = (index) => (index <= imagesToShow.length ? style.show : "");
 
   const getButton = () => {
     if (formStatus === "isLoading") {

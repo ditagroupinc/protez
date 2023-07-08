@@ -24,7 +24,7 @@ import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import BackToTopButton from "@/components/BackToTopButton";
 import style from "./index.module.css";
 import SmokeBackground from "@/components/SmokeBackground";
-import SocialMediaLinks from "@/components/SocialMediaLinks";
+
 import useGetSize from "@/hooks/useGetScreenSizes";
 import CompanyDataNonProfit from "@/components/CompanyDataNonProfit";
 
@@ -121,12 +121,6 @@ export default function Home() {
       <ScreenModeAndSizeContext.Provider value={windowSizes}>
         <Header black={bgIsWhite()} />
         <main className={style.main}>
-          {/* <CompanyData
-            black={bgIsWhite()}
-            className={
-              windowSizes.width > 700 && showCompanyData ? "" : "hidden"
-            }
-          /> */}
           <CompanyDataNonProfit
             black={bgIsWhite()}
             className={`${style.companyDataNonProfit} ${

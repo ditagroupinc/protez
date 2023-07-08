@@ -1,136 +1,110 @@
 import globalIcons from "./icons";
 
-const socialMediaLinks = [
-  {
-    adress: "https://www.youtube.com/@Protezfoundation",
-    icon: globalIcons.iconYoutube,
-  },
-  {
-    adress: "https://www.facebook.com/prostheticsforukrainians/",
-    icon: globalIcons.iconFaceBook,
-  },
-  {
-    adress: "https://www.instagram.com/protezfoundation/",
-    icon: globalIcons.iconInstagram,
-  },
-  {
-    adress: "https://www.linkedin.com/company/protez-foundation/",
-    icon: globalIcons.iconLinkedin,
-  },
-];
-
-const ourMission = {
+const ourMissionSection = {
   blockInfo: {
     ourGoal: {
       eng: `Our goal is to help people who
       have lost limbs to restore their quality of life`,
+      ua: "",
     },
     providingState: {
       eng: `We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.`,
+      ua: "",
     },
     providePsychological: {
       eng: `We provide mental health and emotional support during recovery.`,
+      ua: "",
     },
     unite: {
       eng: `We bring people together to help support victims of war.`,
-    },
-  },
-  titleText: {
-    our: {
-      eng: "Our",
-    },
-    mission: {
-      eng: "MISSION",
+      ua: "",
     },
   },
 };
 
-const ourResults = {
+const ourResultsSection = {
   results: {
     prosthetics: {
       eng: `Individuals served`,
+      ua: "",
       number: "90",
     },
     prostheses: {
       eng: `Prosthetic limbs`,
+      ua: "",
       number: "196",
     },
     volunteers: {
       eng: `Volunteers`,
+      ua: "",
       number: "150",
     },
     moneySpent: {
       eng: `Spent on survivors`,
+      ua: "",
       number: "$1 640 000",
     },
   },
-  titleText: {
-    our: {
-      eng: "Our",
-    },
-    results: {
-      eng: "Results",
-    },
-  },
 };
 
-const inNeed = {
+const inNeedSection = {
   paragraph: {
     eng: `Today thousands of children, civilians, and soldiers have been left without homes, without their families, and without limbs.`,
+    ua: "",
   },
 };
 
-const prosthetics = {
+const prostheticsSection = {
   cards: {
     free: {
       eng: `Free prosthetics for those who need them as a result of the war in Ukraine.`,
+      ua: "",
     },
     psychological: {
       eng: `Mental health and emotional support for victims of war during their recovery.`,
+      ua: "",
     },
     unite: {
       eng: `Bring people together to help and support victims of war.`,
+      ua: "",
     },
   },
-  titleText: {
-    prosthetics: {
-      eng: "prosthetics",
-    },
-    for: {
-      eng: "for ",
-    },
-    ukrainians: {
-      eng: "Ukrainians",
-    },
-  },
+
   paragraph: {
     top: {
       eng: `We provide care for Ukrainians who have lost limbs and need prosthetics: from submitting an application through full rehabilitation.
       `,
+      ua: "",
     },
     bottom: {
       eng: `The goal of our work is to help Ukrainian children, civilians and soldiers who have lost limbs as a result of the war receive high quality prosthetics in the US free of charge.`,
+      ua: "",
     },
   },
 };
 
-const veterans = {
+const veteransSection = {
   veterans: [
     {
       ageRank: {
         eng: "30 years old, sergeant.",
+        ua: "",
       },
       name: {
         eng: "Vadym",
+        ua: "",
       },
       surname: {
         eng: "Fedorov",
+        ua: "",
       },
       title: {
         eng: "Vadym has dedicated 10 years to the Ukrainian Army. ",
+        ua: "",
       },
       text: {
         eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
+        ua: "",
       },
       img: "vadymFedorov.png",
       icon: "vadymFedorov",
@@ -145,18 +119,23 @@ const veterans = {
     {
       ageRank: {
         eng: "30 years old, sergeant.",
+        ua: "",
       },
       name: {
         eng: "Vadym",
+        ua: "",
       },
       surname: {
         eng: "Fedorov",
+        ua: "",
       },
       title: {
         eng: "Vadym has dedicated 10 years to the Ukrainian Army. ",
+        ua: "",
       },
       text: {
         eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
+        ua: "",
       },
       img: "vadymFedorov.png",
       icon: "vadymFedorov",
@@ -171,18 +150,23 @@ const veterans = {
     {
       ageRank: {
         eng: "30 years old, sergeant.",
+        ua: "",
       },
       name: {
         eng: "Vadym",
+        ua: "",
       },
       surname: {
         eng: "Fedorov",
+        ua: "",
       },
       title: {
         eng: "Vadym has dedicated 10 years to the Ukrainian Army. ",
+        ua: "",
       },
       text: {
         eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
+        ua: "",
       },
       img: "vadymFedorov.png",
       icon: "vadymFedorov",
@@ -198,25 +182,19 @@ const veterans = {
 
   share: {
     eng: "Share me",
+    ua: "",
   },
   next: {
     eng: "Next  →",
+    ua: "",
   },
   videoButton: {
     eng: "get better known",
+    ua: "",
   },
 };
 
-const thankYou = {
-  becomeAVolunteer: {
-    eng: "Protez Academy",
-  },
-  giveHope: {
-    eng: "Give Hope",
-  },
-};
-
-const ourTeam = {
+const ourTeamSection = {
   executives: [
     {
       photo: "yuriy.png",
@@ -226,9 +204,11 @@ const ourTeam = {
       },
       name: {
         eng: "Yury Aroshidze",
+        ua: "",
       },
       position: {
         eng: "CEO “Protez Foundation”",
+        ua: "",
       },
     },
     {
@@ -239,9 +219,11 @@ const ourTeam = {
       },
       name: {
         eng: "Yakov Gradinar",
+        ua: "",
       },
       position: {
         eng: "Co-Founder, Certified Prosthetist and Orthotist & Chief Medical Officer",
+        ua: "",
       },
     },
   ],
@@ -255,9 +237,11 @@ const ourTeam = {
         },
         name: {
           eng: "Valentyna Pavsyukova",
+          ua: "",
         },
         position: {
           eng: "Strategic Advisor",
+          ua: "",
         },
       },
       {
@@ -269,9 +253,11 @@ const ourTeam = {
         },
         name: {
           eng: "Andrey Madan",
+          ua: "",
         },
         position: {
           eng: "Executive Program Director",
+          ua: "",
         },
       },
       {
@@ -279,9 +265,11 @@ const ourTeam = {
         links: {},
         name: {
           eng: "Ivanna Gradinar",
+          ua: "",
         },
         position: {
           eng: "Financial Director",
+          ua: "",
         },
       },
       {
@@ -309,9 +297,11 @@ const ourTeam = {
         },
         name: {
           eng: "Mykola Sarazhynskyy",
+          ua: "",
         },
         position: {
           eng: "Director of Community Events",
+          ua: "",
         },
       },
       {
@@ -322,22 +312,25 @@ const ourTeam = {
         },
         name: {
           eng: "Toly Dzyuba",
+          ua: "",
         },
         position: {
           eng: "Director of Events and Property Management",
+          ua: "",
         },
       },
     ],
   },
 };
 
-const ourPartners = {
+const ourPartnersSection = {
   discover: {
     eng: "Discover all Partners",
+    ua: "",
   },
 };
 
-const news = {
+const newsSection = {
   cards: [
     {
       link: "https://www.nytimes.com/2023/03/24/world/europe/ukraine-war-amputees.html",
@@ -347,10 +340,12 @@ const news = {
       logo: "nyt",
       title: {
         eng: "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
+        ua: "",
       },
       text: {
         eng: "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
       },
+      ua: "",
     },
     {
       link: "https://tsn.ua/ru/video/video-novini/stoim-dokumentalnyy-film-o-ranenyh-voennyh-i-ih-vospominaniyah-o-voyne.html",
@@ -360,9 +355,11 @@ const news = {
       logo: "onePlusOne",
       title: {
         eng: "Oakdale foundation helps hurt Ukrainian soldiers walk again",
+        ua: "",
       },
       text: {
         eng: "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
+        ua: "",
       },
     },
     {
@@ -371,9 +368,13 @@ const news = {
       time: "27.03.2023",
       adress: "globalminnesota.org",
       logo: "cbs",
-      title: { eng: "Global Minnesota Welcomes Ukrainian Prosthetics Experts" },
+      title: {
+        eng: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
+        ua: "",
+      },
       text: {
         eng: "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
+        ua: "",
       },
     },
     {
@@ -382,9 +383,10 @@ const news = {
       time: "27.03.2023",
       adress: "eplocalnews.org",
       logo: "onePlusOne",
-      title: { eng: "Standing with Ukraine in MN" },
+      title: { eng: "Standing with Ukraine in MN", ua: "" },
       text: {
         eng: '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
+        ua: "",
       },
     },
     {
@@ -395,9 +397,11 @@ const news = {
       logo: "nyt",
       title: {
         eng: "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
+        ua: "",
       },
       text: {
         eng: "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
+        ua: "",
       },
     },
     {
@@ -408,9 +412,11 @@ const news = {
       logo: "onePlusOne",
       title: {
         eng: "Oakdale foundation helps hurt Ukrainian soldiers walk again",
+        ua: "",
       },
       text: {
         eng: "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
+        ua: "",
       },
     },
     {
@@ -419,9 +425,13 @@ const news = {
       time: "27.03.2023",
       adress: "globalminnesota.org",
       logo: "cbs",
-      title: { eng: "Global Minnesota Welcomes Ukrainian Prosthetics Experts" },
+      title: {
+        eng: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
+        ua: "",
+      },
       text: {
         eng: "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
+        ua: "",
       },
     },
     {
@@ -433,39 +443,42 @@ const news = {
       title: { eng: "Standing with Ukraine in MN" },
       text: {
         eng: '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
+        ua: "",
       },
     },
   ],
 };
 
-const mailingList = {
+const mailingListSection = {
   subcribe: {
     eng: "Subcribe!",
+    ua: "",
   },
   email: {
     eng: "Your email",
+    ua: "",
   },
 };
 
-const thankYouPage = {
-  thankYou: {
-    eng: `Thank You.`,
+const thankYouSection = {
+  becomeAVolunteer: {
+    eng: "Protez Academy",
+    ua: "",
   },
-  message: {
-    eng: `You have offered someone a new shot at life, 
-    and `,
-  },
-  pink: {
-    eng: `your gift has been successful.`,
+  giveHope: {
+    eng: "Give Hope",
+    ua: "",
   },
 };
-
-const header = {
+// ---
+const headerComponent = {
   menu: {
     eng: "Menu",
+    ua: "",
   },
   getInTouch: {
     eng: "Get in touch",
+    ua: "",
   },
   navigation: {
     // giveHope: {
@@ -474,34 +487,42 @@ const header = {
     // },
     mission: {
       eng: "Mission",
+      ua: "",
       id: "ourMission",
     },
     results: {
       eng: "Results",
+      ua: "",
       id: "ourResults",
     },
     ukraine: {
       eng: "Ukraine",
+      ua: "",
       id: "inNeed",
     },
     whatWeDo: {
       eng: "What we do",
+      ua: "",
       id: "prosthetics",
     },
     stories: {
       eng: "Stories",
+      ua: "",
       id: "veterans",
     },
     team: {
       eng: "Team",
+      ua: "",
       id: "ourTeam",
     },
     partners: {
       eng: "Partners",
+      ua: "",
       id: "ourPartners",
     },
     news: {
       eng: "News",
+      ua: "",
       id: "news",
     },
     // getInvolved: {
@@ -513,59 +534,142 @@ const header = {
   actionButtons: {
     protezAcademy: {
       eng: "Protez Academy",
+      ua: "",
     },
     makeDonation: {
       eng: "Donate Now",
+      ua: "",
     },
 
     back2top: {
       eng: "Back to top   →",
+      ua: "",
     },
     lang: {
       eng: "Language",
+      ua: "",
     },
   },
 };
 
-const donate = {
+const companyDataComponent = {
+  actionButtons: {
+    makeDonation: {
+      eng: "Donate Now",
+      ua: "",
+    },
+    needAProtez: {
+      eng: "Need a prosthesis",
+      ua: "",
+    },
+    protezAcademy: {
+      eng: "Protez Academy",
+      ua: "",
+    },
+  },
+  organizationData: {
+    nonProfitOrganization: {
+      eng: "Nonprofit organization 501(c)(3)",
+      ua: "",
+    },
+    ein: {
+      eng: "EIN: 88-2437069",
+      ua: "",
+    },
+    adress: {
+      eng: "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
+      ua: "",
+    },
+    adressNonProfit: {
+      eng: "Protez Foundation",
+      ua: "",
+    },
+  },
+};
+
+const socialMediaLinksComponent = [
+  {
+    adress: "https://www.youtube.com/@Protezfoundation",
+    icon: globalIcons.iconYoutube,
+  },
+  {
+    adress: "https://www.facebook.com/prostheticsforukrainians/",
+    icon: globalIcons.iconFaceBook,
+  },
+  {
+    adress: "https://www.instagram.com/protezfoundation/",
+    icon: globalIcons.iconInstagram,
+  },
+  {
+    adress: "https://www.linkedin.com/company/protez-foundation/",
+    icon: globalIcons.iconLinkedin,
+  },
+];
+// ---
+const donatePage = {
   title: {
     eng: "All charitable contributions are tax-deductible.",
+    ua: "",
   },
   monthlyPayment: {
     eng: "Please note that monthly payments are the default option.",
+    ua: "",
   },
   organizationData: {
     sendChecks: {
       eng: "Please send checks to:",
+      ua: "",
     },
     nonProfitOrganization: {
       eng: "Nonprofit organization 501(c)(3)",
+      ua: "",
     },
     ein: {
       eng: "EIN: 88-2437069",
+      ua: "",
     },
     adress: {
       eng: "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
+      ua: "",
     },
     email: "info@protezfoundation.com",
   },
 };
 
+const thankYouPage = {
+  thankYou: {
+    eng: `Thank You.`,
+    ua: "",
+  },
+  message: {
+    eng: `You have offered someone a new shot at life, 
+    and `,
+    ua: "",
+  },
+  pink: {
+    eng: `your gift has been successful.`,
+    ua: "",
+  },
+};
+
 const texts = {
-  socialMediaLinks: socialMediaLinks,
-  ourMission: ourMission,
-  ourResults: ourResults,
-  inNeed: inNeed,
-  prosthetics: prosthetics,
-  veterans: veterans,
-  thankYou: thankYou,
-  ourTeam: ourTeam,
-  ourPartners: ourPartners,
-  news: news,
-  mailingList: mailingList,
+  ourMission: ourMissionSection,
+  ourResults: ourResultsSection,
+  inNeed: inNeedSection,
+  prosthetics: prostheticsSection,
+  veterans: veteransSection,
+  ourTeam: ourTeamSection,
+  ourPartners: ourPartnersSection,
+  news: newsSection,
+  mailingList: mailingListSection,
+  thankYou: thankYouSection,
+  // ---
+  header: headerComponent,
+  socialMediaLinks: socialMediaLinksComponent,
+  companyData: companyDataComponent,
+  // ----
+  donate: donatePage,
   thankYouPage: thankYouPage,
-  header: header,
-  donate: donate,
 };
 
 export default texts;

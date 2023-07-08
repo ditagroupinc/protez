@@ -1,6 +1,6 @@
 import Card from "@/components/Card";
 import style from "./Prosthetics.module.css";
-import { useContext, useRef, forwardRef } from "react";
+import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import Image from "next/image";

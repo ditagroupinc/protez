@@ -2,7 +2,7 @@ import Card from "@/components/Card";
 import style from "./OurMission.module.css";
 import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
-import SmokeBackground from "@/components/SmokeBackground";
+
 import { icons } from "./icons";
 import texts from "@/texts&svg";
 

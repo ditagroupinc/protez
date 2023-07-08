@@ -1,10 +1,5 @@
 import styles from "./Card.module.css";
-import { useContext } from "react";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 const Card = ({ text, icon, reverse }) => {
-  // prop 'reverse" used to reverse the component's text and icon
-  const { mobile } = useContext(ScreenModeAndSizeContext);
-
   const ifReverse = () => {
     if (reverse) return styles.reverseBlock;
     return "";
