@@ -59,6 +59,10 @@ export default function DonorBox({ monthly = false }) {
       ) : (
         ""
       )}
+      <h5 className={`h5 ${style.support}`}>
+        {texts.donate.strongSupport[lang]}{" "}
+        <span className={style.pink}>{texts.donate.under8[lang]}</span>.
+      </h5>
 
       <div className={style.flexContainer}>
         <CompanyData />

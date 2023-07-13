@@ -615,6 +615,14 @@ const donatePage = {
     eng: "Please note that monthly payments are the default option.",
     ua: "",
   },
+  strongSupport: {
+    eng: "Strong support from community volunteers and partners around the globe allowed us to cap our administrative expenses",
+    ua: "",
+  },
+  under8: {
+    eng: "under 8%",
+    ua: "",
+  },
   organizationData: {
     sendChecks: {
       eng: "Please send checks to:",

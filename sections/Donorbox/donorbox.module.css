@@ -26,6 +26,7 @@
   margin: 0 auto;
   margin-top: 64px;
   width: fit-content;
+  text-align: center;
   &.monthlyPayment {
     margin-top: 0;
     color: var(--pink);
@@ -34,6 +35,19 @@
 
 .block {
   display: block;
+}
+
+.support {
+  margin: 0 auto;
+  color: var(--black);
+  margin-top: 64px;
+  max-width: 990px;
+  text-align: center;
+}
+
+.pink {
+  color: var(--pink);
+  font-weight: bold;
 }
 
 @media screen and (min-width: 1366px) {
@@ -60,7 +74,7 @@
   justify-content: center;
   align-items: flex-start;
   margin: 0 auto;
-  margin-top: 128px;
+  margin-top: 144px;
 }
 
 /* --------- */
@@ -122,6 +136,12 @@
     margin-top: 24px;
   }
 
+  .support {
+    margin-top: 24px;
+    max-width: 560px;
+    font-size: 18px;
+  }
+
   .flexContainer {
     margin-top: 48px;
   }
@@ -155,6 +175,11 @@
 
   .title {
     margin-top: 16px;
+    font-size: 16px;
+  }
+
+  .support {
+    max-width: 540px;
   }
 
   .flexContainer {
@@ -206,6 +231,11 @@
 
   .title {
     margin-top: 24px;
+    max-width: 95%;
+  }
+
+  .support {
+    margin-top: 40px;
     max-width: 95%;
   }
 
