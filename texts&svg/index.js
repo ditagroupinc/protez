@@ -113,68 +113,44 @@ const veteransSection = {
         "https://www.facebook.com/donate/238890858497931/199310116131457/",
       instagram:
         "https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==",
+      url: "VadymFedorov",
+      videoLink:
+        "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F3490463647948673%2F%3Fidorvanity%3D238890858497931&show_text=false&width=267&t=0",
       // linkedin: "https://linkedin.com",
       // twitter: "https://twitter.com",
     },
     {
       ageRank: {
-        eng: "30 years old, sergeant.",
+        eng: "16 years old, MAriupol.",
         ua: "",
       },
       name: {
-        eng: "Vadym",
+        eng: "Artem",
         ua: "",
       },
       surname: {
-        eng: "Fedorov",
+        eng: "Svergun",
         ua: "",
       },
       title: {
-        eng: "Vadym has dedicated 10 years to the Ukrainian Army. ",
+        eng: "Artem played for the Mariupol youth soccer club, and he wanted to be a professional soccer player.",
         ua: "",
       },
       text: {
-        eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
+        eng: "Artem’s dream was to dedicate his life to soccer.  On March 2nd, 2022, he went to the local field to play a scrimmage match with his friends. While they were warming up, a Russian drone dropped a grenade on the field. Artem’s best friend Ilya, a boy of 15, was killed. Artem and another boy were severely injured. As a result of the injuries, Artem’s left leg was amputated above the knee, and his right leg is paralyzed. Artem’s dream is now to be able to walk again.",
         ua: "",
       },
-      img: "vadymFedorov.png",
-      icon: "vadymFedorov",
+      img: "artemSvergun.png",
+      icon: "artemSvergun",
       video: "https://www.youtube.com/embed/D1zR9DkYgu4",
-      facebook:
-        "https://www.facebook.com/donate/238890858497931/199310116131457/",
       instagram:
-        "https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==",
-      // linkedin: "https://linkedin.com",
-      // twitter: "https://twitter.com",
-    },
-    {
-      ageRank: {
-        eng: "30 years old, sergeant.",
-        ua: "",
-      },
-      name: {
-        eng: "Vadym",
-        ua: "",
-      },
-      surname: {
-        eng: "Fedorov",
-        ua: "",
-      },
-      title: {
-        eng: "Vadym has dedicated 10 years to the Ukrainian Army. ",
-        ua: "",
-      },
-      text: {
-        eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
-        ua: "",
-      },
-      img: "vadymFedorov.png",
-      icon: "vadymFedorov",
-      video: "https://www.youtube.com/embed/D1zR9DkYgu4",
+        "https://www.instagram.com/p/CuGu1bEuIaf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA%3D%3D=",
       facebook:
-        "https://www.facebook.com/donate/238890858497931/199310116131457/",
-      instagram:
-        "https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==",
+        "https://www.facebook.com/prostheticsforukrainians/posts/pfbid02ABFsNzJ81L8tBotVsVVbDwhuoeGWLsrzjbq8WRhXBYS327eFWUskaHVGXHxe9KLtl",
+      url: "ArtemSvergun",
+      videoLink:
+        "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F778775984044964%2F&show_text=false&width=267&t=0",
+
       // linkedin: "https://linkedin.com",
       // twitter: "https://twitter.com",
     },

@@ -2,7 +2,7 @@
 import Image from "next/image";
 
 import { throttle } from "@/utils";
-import { useContext, useState, createContext, useEffect, useRef } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 
 import Header from "@/sections/Header";
 import LetsGiveHope from "@/sections/LetsGiveHope";
@@ -20,15 +20,12 @@ import Prosthetics from "@/sections/Prosthetics";
 import ThankYou from "@/sections/ThankYou";
 
 import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+
 import BackToTopButton from "@/components/BackToTopButton";
 import style from "./index.module.css";
 import SmokeBackground from "@/components/SmokeBackground";
 
-import useGetSize from "@/hooks/useGetScreenSizes";
 import CompanyDataNonProfit from "@/components/CompanyDataNonProfit";
-
-// import CustomCursor from "@/components/CustomCursor";
 
 const homeText = {
   backToTop: {
@@ -40,9 +37,7 @@ const homeText = {
 };
 
 export default function Home() {
-  const [lang, setLang] = useState("eng");
-
-  const windowSizes = useGetSize();
+  const { lang } = useContext(LanguageContext);
 
   const [visitedSections, setVisitedSections] = useState({});
 
@@ -117,103 +112,97 @@ export default function Home() {
   const bgIsWhite = () =>
     sectionInViewPort === "ourTeam" || sectionInViewPort === "ourPartners";
   return (
-    <LanguageContext.Provider value={{ lang: lang, changeLang: setLang }}>
-      <ScreenModeAndSizeContext.Provider value={windowSizes}>
-        <Header black={bgIsWhite()} />
-        <main className={style.main}>
-          <CompanyDataNonProfit
-            black={bgIsWhite()}
-            className={`${style.companyDataNonProfit} ${
-              showCompanyData ? "" : "hidden"
-            }`}
-          />
-
-          {/* <SocialMediaLinks /> */}
-          <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smokeTop} />
-            <div className={style.flagsBlock}>
-              <LetsGiveHope
-                id={"letsGiveHope"}
-                visible={isVisible("letsGiveHope")}
-                ref={sectionRefs.letsGiveHope}
-              />
-              <OurMission
-                ref={sectionRefs.ourMission}
-                id="ourMission"
-                visible={isVisible("ourMission")}
-              />
-              <Image
-                src="/flag-usa.png"
-                object-fit="contain"
-                priority
-                alt="Picture of the author"
-                width={1306}
-                height={1890}
-                className={style.americanFlag}
-              />
-            </div>
-            <OurResults
-              ref={sectionRefs.ourResults}
-              visible={isVisible("ourResults")}
-              id="ourResults"
-            />
-          </div>
-          <InNeed
-            ref={sectionRefs.inNeed}
-            visible={isVisible("inNeed")}
-            id="inNeed"
-          />
-          <Prosthetics
-            ref={sectionRefs.prosthetics}
-            id="prosthetics"
-            visible={isVisible("prosthetics")}
-          />
-          <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smoke} />
-            <Veterans
-              ref={sectionRefs.veterans}
-              id="veterans"
-              visible={isVisible("veterans")}
-            />
-          </div>
-          <OurTeam
-            ref={sectionRefs.ourTeam}
-            id="ourTeam"
-            visible={isVisible("ourTeam")}
-          />
-          <OurPartners
-            ref={sectionRefs.ourPartners}
-            id="ourPartners"
-            visible={isVisible("ourPartners")}
-          />
-          <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smoke} />
-            <News
-              ref={sectionRefs.news}
-              id="news"
-              visible={isVisible("news")}
-            />
-            <MailingList
-              ref={sectionRefs.mailingList}
-              id="mailingList"
-              visible={isVisible("mailingList")}
-            />
-          </div>
-          {sectionInViewPort !== "letsGiveHope" && (
-            <BackToTopButton
-              text={homeText.backToTop[lang]}
-              href={"letsGiveHope"}
-              onClick={sectionIsVisible}
-              black={bgIsWhite()}
-            />
-          )}
-        </main>
-        <ThankYou
-          ref={sectionRefs.thankYou}
-          id="thankYou"
-          visible={isVisible("thankYou")}
+    <>
+      <Header black={bgIsWhite()} />
+      <main className={style.main}>
+        <CompanyDataNonProfit
+          black={bgIsWhite()}
+          className={`${style.companyDataNonProfit} ${
+            showCompanyData ? "" : "hidden"
+          }`}
         />
-      </ScreenModeAndSizeContext.Provider>
-    </LanguageContext.Provider>
+
+        {/* <SocialMediaLinks /> */}
+        <div className={style.smokeBlock}>
+          <SmokeBackground className={style.smokeTop} />
+          <div className={style.flagsBlock}>
+            <LetsGiveHope
+              id={"letsGiveHope"}
+              visible={isVisible("letsGiveHope")}
+              ref={sectionRefs.letsGiveHope}
+            />
+            <OurMission
+              ref={sectionRefs.ourMission}
+              id="ourMission"
+              visible={isVisible("ourMission")}
+            />
+            <Image
+              src="/flag-usa.png"
+              object-fit="contain"
+              priority
+              alt="Picture of the author"
+              width={1306}
+              height={1890}
+              className={style.americanFlag}
+            />
+          </div>
+          <OurResults
+            ref={sectionRefs.ourResults}
+            visible={isVisible("ourResults")}
+            id="ourResults"
+          />
+        </div>
+        <InNeed
+          ref={sectionRefs.inNeed}
+          visible={isVisible("inNeed")}
+          id="inNeed"
+        />
+        <Prosthetics
+          ref={sectionRefs.prosthetics}
+          id="prosthetics"
+          visible={isVisible("prosthetics")}
+        />
+        <div className={style.smokeBlock}>
+          <SmokeBackground className={style.smoke} />
+          <Veterans
+            ref={sectionRefs.veterans}
+            id="veterans"
+            visible={isVisible("veterans")}
+          />
+        </div>
+        <OurTeam
+          ref={sectionRefs.ourTeam}
+          id="ourTeam"
+          visible={isVisible("ourTeam")}
+        />
+        <OurPartners
+          ref={sectionRefs.ourPartners}
+          id="ourPartners"
+          visible={isVisible("ourPartners")}
+        />
+        <div className={style.smokeBlock}>
+          <SmokeBackground className={style.smoke} />
+          <News ref={sectionRefs.news} id="news" visible={isVisible("news")} />
+          <MailingList
+            ref={sectionRefs.mailingList}
+            id="mailingList"
+            visible={isVisible("mailingList")}
+          />
+        </div>
+        {sectionInViewPort !== "letsGiveHope" && (
+          <BackToTopButton
+            text={homeText.backToTop[lang]}
+            href={"letsGiveHope"}
+            onClick={sectionIsVisible}
+            black={bgIsWhite()}
+          />
+        )}
+      </main>
+      <ThankYou
+        ref={sectionRefs.thankYou}
+        id="thankYou"
+        visible={isVisible("thankYou")}
+      />
+    </>
   );
 }

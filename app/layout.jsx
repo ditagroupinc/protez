@@ -3,6 +3,8 @@ import "slick-carousel/slick/slick-theme.css";
 import "@/styles/resetCSS.css";
 import "@/styles/fonts.css";
 import "./globals.css";
+import LanguageContextProvider from "@/contexts/LanguageContext";
+import ScreenModeAndSizeContextProvider from "@/contexts/ScreenModeAndSizeContext";
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
 export const metadata = {
   title: "Prosthetics for Ukraine",
@@ -31,8 +33,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
+    <LanguageContextProvider>
+      <ScreenModeAndSizeContextProvider>
+        <html lang="en">
+          <body>{children}</body>
+        </html>
+      </ScreenModeAndSizeContextProvider>
+    </LanguageContextProvider>
   );
 }
