@@ -128,6 +128,12 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             allowFullScreen="true"
           />
+          <button
+            className={style.closeVideo}
+            onClick={() => setIframeData(!iframeData)}
+          >
+            {icons.closeVideo()}
+          </button>
 
           {/* <iframe
             className={style.iFrame}

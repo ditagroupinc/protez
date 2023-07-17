@@ -105,6 +105,14 @@
   max-height: 100%;
 }
 
+.closeVideo {
+  display: none;
+  position: fixed;
+  z-index: 13;
+  right: 20px;
+  top: 20px;
+}
+
 .ageRank {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.56);
@@ -250,6 +258,9 @@ svg.veteranLogo {
 @media screen and (max-width: 500px) {
   .iFrame {
     position: fixed;
+  }
+  .closeVideo {
+    display: block;
   }
   .roundButton {
     max-width: 100px;
