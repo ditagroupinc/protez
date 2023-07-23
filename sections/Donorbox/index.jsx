@@ -43,11 +43,11 @@ const CompanyData = ({ className = "" }) => {
   );
 };
 
-export default function DonorBox({ monthly = false }) {
+export default function DonorBox({ monthly = false, className }) {
   const { lang } = useContext(LanguageContext);
   const { mobile } = useContext(ScreenModeAndSizeContext);
   return (
-    <section className={`${style.section}`} id="donorBox">
+    <section className={`${style.section} ${className}`} id="donorBox">
       {mobile
         ? icons.letsGiveHopeLogoMobile(`${style.logo} svgTextBlock`)
         : icons.letsGiveHopeLogo(`${style.logo} svgTextBlock`)}

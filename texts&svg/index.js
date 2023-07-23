@@ -175,8 +175,15 @@ const ourTeamSection = {
     {
       photo: "yuriy.png",
       links: {
-        facebook: "https://www.facebook.com/yra.aroshidze",
-        instagram: "https://www.instagram.com/u.aroshidze/",
+        facebook: {
+          icon: "iconFaceBookSquare",
+          href: "https://www.facebook.com/yra.aroshidze",
+        },
+
+        instagram: {
+          icon: "iconInstagramSquare",
+          href: "https://www.instagram.com/u.aroshidze/",
+        },
       },
       name: {
         eng: "Yury Aroshidze",
@@ -190,8 +197,14 @@ const ourTeamSection = {
     {
       photo: "yakov.png",
       links: {
-        facebook: "https://www.facebook.com/yakovjacob.gradinar",
-        instagram: "https://www.instagram.com/yakovgradinar/",
+        facebook: {
+          icon: "iconFaceBookSquare",
+          href: "https://www.facebook.com/yakovjacob.gradinar",
+        },
+        instagram: {
+          icon: "iconInstagramSquare",
+          href: "https://www.instagram.com/yakovgradinar/",
+        },
       },
       name: {
         eng: "Yakov Gradinar",
@@ -208,8 +221,15 @@ const ourTeamSection = {
       {
         photo: "valentynaP.png",
         links: {
-          facebook: "https://www.facebook.com/valentyna.pavsyukova/",
-          instagram: "https://www.instagram.com/valentyna_pavsyukova/",
+          facebook: {
+            icon: "iconFaceBookSquare",
+            href: "https://www.facebook.com/valentyna.pavsyukova/",
+          },
+
+          instagram: {
+            icon: "iconInstagramSquare",
+            href: "https://www.instagram.com/valentyna_pavsyukova/",
+          },
         },
         name: {
           eng: "Valentyna Pavsyukova",
@@ -223,9 +243,19 @@ const ourTeamSection = {
       {
         photo: "andreyM.png",
         links: {
-          facebook: "https://www.facebook.com/profile.php?id=13740119",
-          instagram: "https://www.instagram.com/andrey.madan.mn/",
-          linkedin: "https://www.linkedin.com/in/andreymadan/",
+          facebook: {
+            icon: "iconFaceBookSquare",
+            href: "https://www.facebook.com/profile.php?id=13740119",
+          },
+
+          instagram: {
+            icon: "iconInstagramSquare",
+            href: "https://www.instagram.com/andrey.madan.mn/",
+          },
+          linkedin: {
+            icon: "iconLinkedinSquare",
+            href: "https://www.linkedin.com/in/andreymadan/",
+          },
         },
         name: {
           eng: "Andrey Madan",
@@ -251,9 +281,20 @@ const ourTeamSection = {
       {
         photo: "ruslan.png",
         links: {
-          facebook: "https://www.facebook.com/ruslan.sychov",
-          instagram: "https://www.instagram.com/ruslan.sychov/",
-          linkedin: "https://www.linkedin.com/in/ruslan-sychov/",
+          facebook: {
+            icon: "iconFaceBookSquare",
+            href: "https://www.facebook.com/ruslan.sychov",
+          },
+
+          instagram: {
+            icon: "iconInstagramSquare",
+            href: "https://www.instagram.com/ruslan.sychov/",
+          },
+
+          linkedin: {
+            icon: "iconLinkedinSquare",
+            href: "https://www.linkedin.com/in/ruslan-sychov/",
+          },
         },
 
         name: {
@@ -268,8 +309,15 @@ const ourTeamSection = {
       {
         photo: "mykolaS.png",
         links: {
-          facebook: "https://www.facebook.com/mykola.sarazhynskyy",
-          linkedin: "https://www.linkedin.com/in/mykolasarazhynskyy/",
+          facebook: {
+            icon: "iconFaceBookSquare",
+            href: "https://www.facebook.com/mykola.sarazhynskyy",
+          },
+
+          linkedin: {
+            icon: "iconLinkedinSquare",
+            href: "https://www.linkedin.com/in/mykolasarazhynskyy/",
+          },
         },
         name: {
           eng: "Mykola Sarazhynskyy",
@@ -283,8 +331,15 @@ const ourTeamSection = {
       {
         photo: "tolyDzyuba.png",
         links: {
-          linkedin: "https://www.linkedin.com/in/anatoliy-dzyuba-71880789/",
-          instagram: "https://www.instagram.com/tolydzyuba/?hl=en",
+          linkedin: {
+            icon: "iconLinkedinSquare",
+            href: "https://www.linkedin.com/in/anatoliy-dzyuba-71880789/",
+          },
+
+          instagram: {
+            icon: "iconInstagramSquare",
+            href: "https://www.instagram.com/tolydzyuba/?hl=en",
+          },
         },
         name: {
           eng: "Toly Dzyuba",

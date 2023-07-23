@@ -1,4 +1,3 @@
-"use client";
 import VeteranFBIframe from "@/sections/VeteranFBIframe";
 
 export default function Donate() {

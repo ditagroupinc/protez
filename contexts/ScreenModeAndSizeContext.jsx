@@ -32,7 +32,7 @@ const ScreenModeAndSizeContextProvider = ({ children }) => {
     setWindowSizes({
       width: windowWidth,
       height: windowHeight,
-      mobile: windowWidth <= 480,
+      mobile: windowWidth <= 500,
       tablet: windowWidth <= 1180,
       desktop: windowWidth >= 1181,
       tabletLarge: windowWidth <= 1366,

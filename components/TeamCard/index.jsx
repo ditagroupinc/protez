@@ -1,7 +1,7 @@
 import Image from "next/image";
 import style from "./TeamCard.module.css";
-import { icons } from "@/public/socialMediaIcons";
 
+import globalIcons from "@/texts&svg/icons";
 export default function TeamCard({ photo, links = {}, name, position, black }) {
   const cardColor = () => (black ? "#0D1125" : "#fff");
   return (
@@ -19,8 +19,8 @@ export default function TeamCard({ photo, links = {}, name, position, black }) {
       >
         <div className={`${style.linksList}`}>
           {Object.keys(links).map((key, index) => (
-            <a href={links[key]} target="blank" key={index}>
-              {icons[key](style.icon, cardColor())}
+            <a href={links[key].href} target="blank" key={index}>
+              {globalIcons[links[key].icon](style.icon, cardColor())}
             </a>
           ))}
         </div>
