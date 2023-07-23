@@ -212,7 +212,7 @@ const ourTeamSection = {
       },
       position: {
         english: "CEO “Protez Foundation”",
-        english: "CEO “Protez Foundation”",
+        ukrainian: "CEO “Protez Foundation”",
       },
     },
     {
