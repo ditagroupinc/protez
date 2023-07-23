@@ -8,10 +8,6 @@ import { icons } from "./icons";
 import VideoAndFilter from "@/components/VideoAndFilter";
 import texts from "@/texts&svg";
 
-const TabletLogo = () => (
-  <div className={style.logoTablet}>{icons.titleTablet(style.logoTablet)}</div>
-);
-
 const iconsArr = [icons.iconIntegration, icons.iconHeart, icons.iconPeople];
 const Prosthetics = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
@@ -41,16 +37,16 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
           <div className={style.flexContainer}>
             <div className={`${style.leftSide}`}>
               <div className={`${style.title} textContainer`}>
-                {icons.titleTablet(style.logoTablet)}
+                {icons.prostheticsLogo.tablet[lang](style.logoTablet)}
               </div>
               <div className={`${style.text}`}>
                 <div className="textContainer">
-                  <h2 className="h2">
+                  <h2 className={`h2 ${lang === "ua" ? style.ua : ""}`}>
                     {texts.prosthetics.paragraph.top[lang]}
                   </h2>
                 </div>
                 <div className="textContainer">
-                  <h2 className="h2">
+                  <h2 className={`h2 ${lang === "ua" ? style.ua : ""}`}>
                     {texts.prosthetics.paragraph.bottom[lang]}
                   </h2>
                 </div>
@@ -71,7 +67,13 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
       ) : (
         <div className={`${style.block}`}>
           <div className={`${style.title} textContainer`}>
-            {!tabletLarge ? icons.titleDesktop() : <TabletLogo />}
+            {
+              !tabletLarge
+                ? icons.prostheticsLogo.desktop[lang]()
+                : // <div className={style.logoTablet}>
+                  icons.prostheticsLogo.tablet[lang](style.logoTablet)
+              // </div>
+            }
           </div>
           <div className={`${style.text} ${!tabletLarge ? "h2" : "h5"} `}>
             <div className="textContainer">

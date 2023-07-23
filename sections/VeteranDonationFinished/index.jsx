@@ -18,11 +18,11 @@ export default function VeteranDonationFinished({ iframeLink }) {
     <>
       <section className={`${style.section} section`}>
         {mobile
-          ? icons.letsGiveHopeLogoMobile(`${style.logo} svgTextBlock`)
-          : icons.letsGiveHopeLogo(`${style.logo} svgTextBlock`)}
+          ? icons.letsGiveHopeLogo.mobile[lang](`${style.logo} svgTextBlock`)
+          : icons.letsGiveHopeLogo.desktop[lang](`${style.logo} svgTextBlock`)}
         <div className={style.container}>
           <div className={`${style.leftSide}`}>
-            {icons.vadymFedorov(`${style.veteranLogo} svgTextBlock`)}
+            {icons.vadymFedorov[lang](`${style.veteranLogo} svgTextBlock`)}
             <h5 className={`h5 ${style.ageRank}`}>
               {vadymFedorovTexts.ageRank[lang]}
             </h5>

@@ -3,21 +3,26 @@ import globalIcons from "./icons";
 const ourMissionSection = {
   blockInfo: {
     ourGoal: {
-      eng: `Our goal is to help people who
-      have lost limbs to restore their quality of life`,
-      ua: "",
+      english:
+        "Our goal is to help people who have lost limbs to restore their quality of life",
+      ukrainian:
+        "Наша мета - допомогти відновити якість життя людям, які втратили кінцівки.",
     },
     providingState: {
-      eng: `We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.`,
-      ua: "",
+      english:
+        "We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.",
+      ukrainian:
+        "Ми надаємо передові протези в США, супроводжуючи це індивідуальною підготовкою та підтримкою, а також забезпечуємо послідовний догляд у Україні.",
     },
     providePsychological: {
-      eng: `We provide mental health and emotional support during recovery.`,
-      ua: "",
+      english:
+        "We provide mental health and emotional support during recovery.",
+      ukrainian:
+        "Ми надаємо психологічну та емоційну підтримку під час відновлення.",
     },
     unite: {
-      eng: `We bring people together to help support victims of war.`,
-      ua: "",
+      english: "We bring people together to help support victims of war.",
+      ukrainian: "Ми об'єднуємо людей для допомоги жертвам війни.",
     },
   },
 };
@@ -25,23 +30,23 @@ const ourMissionSection = {
 const ourResultsSection = {
   results: {
     prosthetics: {
-      eng: `Individuals served`,
-      ua: "",
+      english: "Individuals served",
+      ukrainian: "Запротезовано пацієнтів",
       number: "90",
     },
     prostheses: {
-      eng: `Prosthetic limbs`,
-      ua: "",
+      english: "Prosthetic limbs",
+      ukrainian: "Встановлено протезів",
       number: "196",
     },
     volunteers: {
-      eng: `Volunteers`,
-      ua: "",
+      english: "Volunteers",
+      ukrainian: "Волонтерів",
       number: "150",
     },
     moneySpent: {
-      eng: `Spent on survivors`,
-      ua: "",
+      english: "Spent on survivors",
+      ukrainian: "Витрачено на допомогу ",
       number: "$1 640 000",
     },
   },
@@ -49,36 +54,45 @@ const ourResultsSection = {
 
 const inNeedSection = {
   paragraph: {
-    eng: `Today thousands of children, civilians, and soldiers have been left without homes, without their families, and without limbs.`,
-    ua: "",
+    english:
+      "Today thousands of children, civilians, and soldiers have been left without homes, without their families, and without limbs.",
+    ukrainian:
+      "Сьогодні тисячі дітей, цивільних та військових залишилися без домівок, без сімей, без кінцівок.",
   },
 };
 
 const prostheticsSection = {
   cards: {
     free: {
-      eng: `Free prosthetics for those who need them as a result of the war in Ukraine.`,
-      ua: "",
+      english:
+        "Free prosthetics for those who need them as a result of the war in Ukraine.",
+      ukrainian:
+        "езкоштовні протези для тих, хто потребує їх унаслідок війни в Україні.",
     },
     psychological: {
-      eng: `Mental health and emotional support for victims of war during their recovery.`,
-      ua: "",
+      english:
+        "Mental health and emotional support for victims of war during their recovery.",
+      ukrainian:
+        "Психологічна та емоційна підтримка жертв війни під час їх реабілітації.",
     },
     unite: {
-      eng: `Bring people together to help and support victims of war.`,
-      ua: "",
+      english: "Bring people together to help and support victims of war.",
+      ukrainian: "Об'єднуємо людей для допомоги та підтримки жертв війни.",
     },
   },
 
   paragraph: {
     top: {
-      eng: `We provide care for Ukrainians who have lost limbs and need prosthetics: from submitting an application through full rehabilitation.
-      `,
-      ua: "",
+      english:
+        "We provide care for Ukrainians who have lost limbs and need prosthetics: from submitting an application through full rehabilitation.",
+      ukrainian:
+        "Ми надаємо повний спектр підтримки українцям, які втратили кінцівки та мають потребу в протезуванні: від моменту подачі заявки до повного відновлення здоров'я.",
     },
     bottom: {
-      eng: `The goal of our work is to help Ukrainian children, civilians and soldiers who have lost limbs as a result of the war receive high quality prosthetics in the US free of charge.`,
-      ua: "",
+      english:
+        "The goal of our work is to help ukrainian children, civilians and soldiers who have lost limbs as a result of the war receive high quality prosthetics in the US free of charge.",
+      ukrainian:
+        "Наша місія полягає в тому, щоб надати можливість українським дітям, цивільним та військовим безкоштовно отримати протези високої якості в США.",
     },
   },
 };
@@ -87,24 +101,26 @@ const veteransSection = {
   veterans: [
     {
       ageRank: {
-        eng: "30 years old, sergeant.",
-        ua: "",
+        english: "30 years old, sergeant.",
+        ukrainian: "30 років, сержант.",
       },
       name: {
-        eng: "Vadym",
-        ua: "",
+        english: "Vadym",
+        ukrainian: "Вадим",
       },
       surname: {
-        eng: "Fedorov",
-        ua: "",
+        english: "Fedorov",
+        ukrainian: "Федоров",
       },
       title: {
-        eng: "Vadym has dedicated 10 years to the Ukrainian Army. ",
-        ua: "",
+        english: "Vadym has dedicated 10 years to the Ukrainian Army. ",
+        ukrainian: "Вадим присвятив 10 років Збройним Силам України.",
       },
       text: {
-        eng: "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
-        ua: "",
+        english:
+          "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
+        ukrainian:
+          "Захищаючи Україну, Вадим став обтяженним високими ампутаціями обох ніг. Але він продемонстрував мотивацію і відмову від здачі, ставши натхненням для всіх навколо своїм прикладом. Зараз Вадим перебуває в США, де проходить протезування та реабілітацію. Лише завдяки вашій підтримці ми зможемо оснастити Вадима сучасними біонічними протезами та повернути його до активного життя. Разом ми становимо сильну і єдину силу. Дякуємо вам за поширення цього повідомлення та ваші пожертви.",
       },
       img: "vadymFedorov.png",
       icon: "vadymFedorov",
@@ -121,24 +137,28 @@ const veteransSection = {
     },
     {
       ageRank: {
-        eng: "16 years old, MAriupol.",
-        ua: "",
+        english: "16 years old, Mariupol.",
+        ukrainian: "16 років, Маріуполь",
       },
       name: {
-        eng: "Artem",
-        ua: "",
+        english: "Artem",
+        ukrainian: "Артем",
       },
       surname: {
-        eng: "Svergun",
-        ua: "",
+        english: "Svergun",
+        ukrainian: "Свергун",
       },
       title: {
-        eng: "Artem played for the Mariupol youth soccer club, and he wanted to be a professional soccer player.",
-        ua: "",
+        english:
+          "Artem played for the Mariupol youth soccer club, and he wanted to be a professional soccer player.",
+        ukrainian:
+          "Займався професійним футболом у складі команди Маріуполь юнацької збірної та мріяв присвятити своє життя футболу.",
       },
       text: {
-        eng: "Artem’s dream was to dedicate his life to soccer.  On March 2nd, 2022, he went to the local field to play a scrimmage match with his friends. While they were warming up, a Russian drone dropped a grenade on the field. Artem’s best friend Ilya, a boy of 15, was killed. Artem and another boy were severely injured. As a result of the injuries, Artem’s left leg was amputated above the knee, and his right leg is paralyzed. Artem’s dream is now to be able to walk again.",
-        ua: "",
+        english:
+          "Artem’s dream was to dedicate his life to soccer.  On March 2nd, 2022, he went to the local field to play a scrimmage match with his friends. While they were warming up, a Russian drone dropped a grenade on the field. Artem’s best friend Ilya, a boy of 15, was killed. Artem and another boy were severely injured. As a result of the injuries, Artem’s left leg was amputated above the knee, and his right leg is paralyzed. Artem’s dream is now to be able to walk again.",
+        ukrainian:
+          "2 березня 2022 року пішов грати у футбол на стадіон разом із своїми друзями. У момент підготовки до гри до них кинули гранату з дрона. Найкращий друг Артема, Ілля, 15 років, загинув, а другий отримав поранення. Внаслідок травм ліву ногу Артему довелося ампутувати вище коліна, а права нога залишилася паралізованою. Єдина мрія Артема зараз - знову змогти ходити.",
       },
       img: "artemSvergun.png",
       icon: "artemSvergun",
@@ -155,18 +175,19 @@ const veteransSection = {
       // twitter: "https://twitter.com",
     },
   ],
-
   share: {
-    eng: "Share me",
-    ua: "",
+    english: "Share me",
+    ukrainian: "Поділитися",
   },
+
   next: {
-    eng: "Next  →",
-    ua: "",
+    english: "Next  →",
+    ukrainian: "Далі  →",
   },
+
   videoButton: {
-    eng: "get better known",
-    ua: "",
+    english: "get better known",
+    ukrainian: " get better known ",
   },
 };
 
@@ -186,12 +207,12 @@ const ourTeamSection = {
         },
       },
       name: {
-        eng: "Yury Aroshidze",
-        ua: "",
+        english: "Yury Aroshidze",
+        ukrainian: "Юрій Арошідзе",
       },
       position: {
-        eng: "CEO “Protez Foundation”",
-        ua: "",
+        english: "CEO “Protez Foundation”",
+        english: "CEO “Protez Foundation”",
       },
     },
     {
@@ -207,12 +228,14 @@ const ourTeamSection = {
         },
       },
       name: {
-        eng: "Yakov Gradinar",
-        ua: "",
+        english: "Yakov Gradinar",
+        ukrainian: "Яков Градинар",
       },
       position: {
-        eng: "Co-Founder, Certified Prosthetist and Orthotist & Chief Medical Officer",
-        ua: "",
+        english:
+          "Co-Founder, Certified Prosthetist and Orthotist & Chief Medical Officer",
+        ukrainian:
+          "Співзасновник, сертифікований протезист-ортезист та головний лікар",
       },
     },
   ],
@@ -232,12 +255,12 @@ const ourTeamSection = {
           },
         },
         name: {
-          eng: "Valentyna Pavsyukova",
-          ua: "",
+          english: "Valentyna Pavsyukova",
+          ukrainian: "Валентина Павсюкова",
         },
         position: {
-          eng: "Strategic Advisor",
-          ua: "",
+          english: "Strategic Advisor",
+          ukrainian: "Стратегічний консультант",
         },
       },
       {
@@ -258,24 +281,24 @@ const ourTeamSection = {
           },
         },
         name: {
-          eng: "Andrey Madan",
-          ua: "",
+          english: "Andrey Madan",
+          ukrainian: "Андрій Мадан",
         },
         position: {
-          eng: "Executive Program Director",
-          ua: "",
+          english: "Executive Program Director",
+          ukrainian: "Виконавчий директор",
         },
       },
       {
         photo: "ivannaG.png",
         links: {},
         name: {
-          eng: "Ivanna Gradinar",
-          ua: "",
+          english: "Ivanna Gradinar",
+          ukrainian: "Іванна Градинар",
         },
         position: {
-          eng: "Financial Director",
-          ua: "",
+          english: "Financial Director",
+          ukrainian: "Фінансовий директор",
         },
       },
       {
@@ -298,10 +321,12 @@ const ourTeamSection = {
         },
 
         name: {
-          eng: "Ruslan Sychov",
+          english: "Ruslan Sychov",
+          ukrainian: "Руслан Сичов",
         },
         position: {
-          eng: "Digital/IT Advisor",
+          english: "Digital/IT Advisor",
+          ukrainian: "Digital / ІТ консультант",
         },
       },
     ],
@@ -320,12 +345,12 @@ const ourTeamSection = {
           },
         },
         name: {
-          eng: "Mykola Sarazhynskyy",
-          ua: "",
+          english: "Mykola Sarazhynskyy",
+          ukrainian: "Микола Саразинський",
         },
         position: {
-          eng: "Director of Community Events",
-          ua: "",
+          english: "Director of Community Events",
+          ukrainian: "Директор з організації заходів для спільноти",
         },
       },
       {
@@ -342,12 +367,12 @@ const ourTeamSection = {
           },
         },
         name: {
-          eng: "Toly Dzyuba",
-          ua: "",
+          english: "Toly Dzyuba",
+          ukrainian: "Толі Дзюба",
         },
         position: {
-          eng: "Director of Events and Property Management",
-          ua: "",
+          english: "Director of Events and Property Management",
+          ukrainian: "Керівник з організації заходів та управління",
         },
       },
     ],
@@ -356,8 +381,8 @@ const ourTeamSection = {
 
 const ourPartnersSection = {
   discover: {
-    eng: "Discover all Partners",
-    ua: "",
+    english: "Discover all Partners",
+    ukrainian: "Дізнатися про всіх партнерів",
   },
 };
 
@@ -370,13 +395,17 @@ const newsSection = {
       adress: "nytimes.com",
       logo: "nyt",
       title: {
-        eng: "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
-        ua: "",
+        english:
+          "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
+        ukrainian:
+          "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
       },
       text: {
-        eng: "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
+        english:
+          "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
       },
-      ua: "",
+      ukrainian:
+        "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
     },
     {
       link: "https://tsn.ua/ru/video/video-novini/stoim-dokumentalnyy-film-o-ranenyh-voennyh-i-ih-vospominaniyah-o-voyne.html",
@@ -385,12 +414,15 @@ const newsSection = {
       adress: "plus1.ua",
       logo: "onePlusOne",
       title: {
-        eng: "Oakdale foundation helps hurt Ukrainian soldiers walk again",
-        ua: "",
+        english: "Oakdale foundation helps hurt ukrainian soldiers walk again",
+        ukrainian:
+          "Oakdale foundation helps hurt ukrainian soldiers walk again",
       },
       text: {
-        eng: "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
-        ua: "",
+        english:
+          "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
+        ukrainian:
+          "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
       },
     },
     {
@@ -400,12 +432,14 @@ const newsSection = {
       adress: "globalminnesota.org",
       logo: "cbs",
       title: {
-        eng: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
-        ua: "",
+        english: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
+        ukrainian: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
       },
       text: {
-        eng: "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
-        ua: "",
+        english:
+          "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
+        ukrainian:
+          "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
       },
     },
     {
@@ -414,10 +448,15 @@ const newsSection = {
       time: "27.03.2023",
       adress: "eplocalnews.org",
       logo: "onePlusOne",
-      title: { eng: "Standing with Ukraine in MN", ua: "" },
+      title: {
+        english: "Standing with Ukraine in MN",
+        ukrainian: "Standing with Ukraine in MN",
+      },
       text: {
-        eng: '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
-        ua: "",
+        english:
+          '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
+        ukrainian:
+          '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
       },
     },
     {
@@ -427,12 +466,16 @@ const newsSection = {
       adress: "nytimes.com",
       logo: "nyt",
       title: {
-        eng: "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
-        ua: "",
+        english:
+          "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
+        ukrainian:
+          "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
       },
       text: {
-        eng: "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
-        ua: "",
+        english:
+          "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
+        ukrainian:
+          "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
       },
     },
     {
@@ -442,12 +485,15 @@ const newsSection = {
       adress: "plus1.ua",
       logo: "onePlusOne",
       title: {
-        eng: "Oakdale foundation helps hurt Ukrainian soldiers walk again",
-        ua: "",
+        english: "Oakdale foundation helps hurt ukrainian soldiers walk again",
+        ukrainian:
+          "Oakdale foundation helps hurt ukrainian soldiers walk again",
       },
       text: {
-        eng: "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
-        ua: "",
+        english:
+          "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
+        ukrainian:
+          "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
       },
     },
     {
@@ -457,12 +503,14 @@ const newsSection = {
       adress: "globalminnesota.org",
       logo: "cbs",
       title: {
-        eng: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
-        ua: "",
+        english: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
+        ukrainian: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
       },
       text: {
-        eng: "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
-        ua: "",
+        english:
+          "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
+        ukrainian:
+          "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
       },
     },
     {
@@ -471,10 +519,15 @@ const newsSection = {
       time: "27.03.2023",
       adress: "eplocalnews.org",
       logo: "onePlusOne",
-      title: { eng: "Standing with Ukraine in MN" },
+      title: {
+        english: "Standing with Ukraine in MN",
+        ukrainian: "Standing with Ukraine in MN",
+      },
       text: {
-        eng: '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
-        ua: "",
+        english:
+          '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
+        ukrainian:
+          '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
       },
     },
   ],
@@ -482,103 +535,103 @@ const newsSection = {
 
 const mailingListSection = {
   subcribe: {
-    eng: "Subcribe!",
-    ua: "",
+    english: "Subcribe!",
+    ukrainian: "Subcribe!",
   },
   email: {
-    eng: "Your email",
-    ua: "",
+    english: "Your email",
+    ukrainian: "Your email",
   },
 };
 
 const thankYouSection = {
   becomeAVolunteer: {
-    eng: "Protez Academy",
-    ua: "",
+    english: "Protez Academy",
+    ukrainian: "Protez Academy",
   },
   giveHope: {
-    eng: "Give Hope",
-    ua: "",
+    english: "Give Hope",
+    ukrainian: "Give Hope",
   },
 };
 // ---
 const headerComponent = {
   menu: {
-    eng: "Menu",
-    ua: "",
+    english: "Menu",
+    ukrainian: "Menu",
   },
   getInTouch: {
-    eng: "Get in touch",
-    ua: "",
+    english: "Get in touch",
+    ukrainian: "Get in touch",
   },
   navigation: {
     // giveHope: {
-    //   eng: "Home",
-    //   id: "letsGiveHope",
+    //   english: "Home",
+    //   id: "lets"Home",eHope",
     // },
     mission: {
-      eng: "Mission",
-      ua: "",
+      english: "Mission",
+      ukrainian: "Mission",
       id: "ourMission",
     },
     results: {
-      eng: "Results",
-      ua: "",
+      english: "Results",
+      ukrainian: "Results",
       id: "ourResults",
     },
     ukraine: {
-      eng: "Ukraine",
-      ua: "",
+      english: "Ukraine",
+      ukrainian: "Ukraine",
       id: "inNeed",
     },
     whatWeDo: {
-      eng: "What we do",
-      ua: "",
+      english: "What we do",
+      ukrainian: "What we do",
       id: "prosthetics",
     },
     stories: {
-      eng: "Stories",
-      ua: "",
+      english: "Stories",
+      ukrainian: "Stories",
       id: "veterans",
     },
     team: {
-      eng: "Team",
-      ua: "",
+      english: "Team",
+      ukrainian: "Team",
       id: "ourTeam",
     },
     partners: {
-      eng: "Partners",
-      ua: "",
+      english: "Partners",
+      ukrainian: "Partners",
       id: "ourPartners",
     },
     news: {
-      eng: "News",
-      ua: "",
+      english: "News",
+      ukrainian: "News",
       id: "news",
     },
     // getInvolved: {
-    //   eng: "Get Involved",
-    //   id: "mailingList",
+    //   english: "Get Involved",
+    //   id: "mailingLis"Get Involved",
     // },
   },
 
   actionButtons: {
     protezAcademy: {
-      eng: "Protez Academy",
-      ua: "",
+      english: "Protez Academy",
+      ukrainian: "Protez Academy",
     },
     makeDonation: {
-      eng: "Donate Now",
-      ua: "",
+      english: "Donate Now",
+      ukrainian: "Donate Now",
     },
 
     back2top: {
-      eng: "Back to top   →",
-      ua: "",
+      english: "Back to top   →",
+      ukrainian: "Back to top   →",
     },
     lang: {
-      eng: "Language",
-      ua: "",
+      english: "Language",
+      ukrainian: "Language",
     },
   },
 };
@@ -586,34 +639,36 @@ const headerComponent = {
 const companyDataComponent = {
   actionButtons: {
     makeDonation: {
-      eng: "Donate Now",
-      ua: "",
+      english: "Donate Now",
+      ukrainian: "Donate Now",
     },
     needAProtez: {
-      eng: "Need a prosthesis",
-      ua: "",
+      english: "Need a prosthesis",
+      ukrainian: "Need a prosthesis",
     },
     protezAcademy: {
-      eng: "Protez Academy",
-      ua: "",
+      english: "Protez Academy",
+      ukrainian: "Protez Academy",
     },
   },
   organizationData: {
     nonProfitOrganization: {
-      eng: "Nonprofit organization 501(c)(3)",
-      ua: "",
+      english: "Nonprofit organization 501(c)(3)",
+      ukrainian: "Nonprofit organization 501(c)(3)",
     },
     ein: {
-      eng: "EIN: 88-2437069",
-      ua: "",
+      english: "EIN: 88-2437069",
+      ukrainian: "EIN: 88-2437069",
     },
     adress: {
-      eng: "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
-      ua: "",
+      english:
+        "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
+      ukrainian:
+        "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
     },
     adressNonProfit: {
-      eng: "Protez Foundation",
-      ua: "",
+      english: "Protez Foundation",
+      ukrainian: "Protez Foundation",
     },
   },
 };
@@ -637,39 +692,45 @@ const socialMediaLinksComponent = [
   },
 ];
 // ---
+
 const donatePage = {
   title: {
-    eng: "All charitable contributions are tax-deductible.",
-    ua: "",
+    english: "All charitable contributions are tax-deductible.",
+    ukrainian: "Всі благодійні внески у США є податковими знижками.",
   },
   monthlyPayment: {
-    eng: "Please note that monthly payments are the default option.",
-    ua: "",
+    english: "Please note that monthly payments are the default option.",
+    ukrainian:
+      "Зверніть увагу, що щомісячні платежі є параметром за замовчуванням.",
   },
   strongSupport: {
-    eng: "Strong support from community volunteers and partners around the globe allowed us to cap our administrative expenses",
-    ua: "",
+    english:
+      "Strong support from community volunteers and partners around the globe allowed us to cap our administrative expenses",
+    ukrainian:
+      "Strong support from community volunteers and partners around the globe allowed us to cap our administrative expenses",
   },
   under8: {
-    eng: "under 8%",
-    ua: "",
+    english: "under 8%",
+    ukrainian: "under 8%",
   },
   organizationData: {
     sendChecks: {
-      eng: "Please send checks to:",
-      ua: "",
+      english: "Please send checks to:",
+      ukrainian: "Будь ласка, надсилайте чеки за адресою:",
     },
     nonProfitOrganization: {
-      eng: "Nonprofit organization 501(c)(3)",
-      ua: "",
+      english: "Nonprofit organization 501(c)(3)",
+      ukrainian: "Nonprofit organization 501(c)(3)",
     },
     ein: {
-      eng: "EIN: 88-2437069",
-      ua: "",
+      english: "EIN: 88-2437069",
+      ukrainian: "EIN: 88-2437069",
     },
     adress: {
-      eng: "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
-      ua: "",
+      english:
+        "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
+      ukrainian:
+        "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
     },
     email: "info@protezfoundation.com",
   },
@@ -677,17 +738,18 @@ const donatePage = {
 
 const thankYouPage = {
   thankYou: {
-    eng: `Thank You.`,
-    ua: "",
+    english: "Thank You.",
+    ukrainian: "Дякуємо.",
   },
   message: {
-    eng: `You have offered someone a new shot at life, 
-    and `,
-    ua: "",
+    english: `You have offered someone a new shot at life, 
+      and `,
+    ukrainian: `You have offered someone a new shot at life, 
+      and `,
   },
   pink: {
-    eng: `your gift has been successful.`,
-    ua: "",
+    english: `your gift has been successful.`,
+    ukrainian: "Ваше внесок був успішним",
   },
 };
 

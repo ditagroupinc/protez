@@ -24,6 +24,19 @@
   color: var(--black);
 }
 
+h2.ua {
+  font-size: 32px;
+  line-height: 45px;
+}
+
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  h2.ua {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+
 /* tablet */
 @media screen and (max-width: 750px) {
   .section:global(.section) {

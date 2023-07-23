@@ -48,8 +48,10 @@ const OurPartners = forwardRef(function ({ visible, id }, ref) {
       <div className={style.container}>
         <div className={style.specialThanks + " textContainer"}>
           {tabletLarge
-            ? icons.specialThanksTablet(`${style.logo} svgTextBlock`)
-            : icons.specialThanks(`${style.logo} svgTextBlock`)}
+            ? icons.specialThanksLogo.tablet[lang](`${style.logo} svgTextBlock`)
+            : icons.specialThanksLogo.desktop[lang](
+                `${style.logo} svgTextBlock`
+              )}
         </div>
         <PartnerCard image="ottobock.svg" />
         <div>

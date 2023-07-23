@@ -31,9 +31,18 @@ const BurgerButton = ({ close, onClick }) => {
 };
 
 export default function Header({ notMainPage, black }) {
-  const { lang, changeLang } = useContext(LanguageContext);
-  const { width, length, mobile, tablet, desktop, screenModeClass } =
-    useContext(ScreenModeAndSizeContext);
+  const { lang, setLang } = useContext(LanguageContext);
+  const handleLanguageChange = () => {
+    setLang((prevState) => {
+      if (prevState === "english") {
+        return "ukrainian";
+      } else {
+        return "english";
+      }
+    });
+  };
+
+  const { width, mobile } = useContext(ScreenModeAndSizeContext);
   const [headerIsOpened, setHeaderIsOpened] = useState(false);
   const ref = useOutsideClick(() => setHeaderIsOpened(false));
 
@@ -156,6 +165,18 @@ export default function Header({ notMainPage, black }) {
                 </a>
               ))}
             </div>
+          </div>
+          <div className={style.languageButtonContainer}>
+            <button
+              className={style.languageButton}
+              onClick={handleLanguageChange}
+            >
+              {icons.iconWorld(style.languageButtonIcon)}{" "}
+              <span className={`h6 ${style.languageButtonText}`}>
+                {/* {texts.header.actionButtons.lang[lang]} */}
+                {lang}
+              </span>
+            </button>
           </div>
         </nav>
       </header>

@@ -29,10 +29,10 @@ import CompanyDataNonProfit from "@/components/CompanyDataNonProfit";
 
 const homeText = {
   backToTop: {
-    eng: "back to top  →",
+    english: "back to top  →",
   },
   exploreMore: {
-    eng: "← Explore more about us",
+    english: "← Explore more about us",
   },
 };
 

@@ -112,16 +112,20 @@
   right: 20px;
   top: 20px;
 }
-
+.logoAndRankContainer {
+  max-width: 75%;
+}
 .ageRank {
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.56);
-  padding-left: 40px;
-  margin-top: 8px;
+  width: fit-content;
+
+  margin-left: auto;
+  margin-top: 40px;
 }
 
 svg.veteranLogo {
-  max-width: 75%;
+  max-width: 100%;
 }
 
 .cardTitle {
@@ -195,7 +199,7 @@ svg.veteranLogo {
 }
 /* beforeTablet */
 @media screen and (max-width: 1366px) {
-  svg.veteranLogo {
+  .logoAndRankContainer {
     max-width: 50%;
   }
   .spinningName {
@@ -241,7 +245,9 @@ svg.veteranLogo {
   .roundButton {
     bottom: 30%;
   }
-
+  .logoAndRankContainer {
+    max-width: 100%;
+  }
   svg.veteranLogo {
     width: auto;
     height: auto;
@@ -268,5 +274,9 @@ svg.veteranLogo {
     left: 0;
     transform: none;
     bottom: auto;
+  }
+  .cardText.ua {
+    font-size: 16px;
+    line-height: 24px; /* 150% */
   }
 }

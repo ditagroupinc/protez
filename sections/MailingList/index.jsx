@@ -98,7 +98,9 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
         })}
       </div>
       <div className={`${style.title} h6`}>
-        <div className="textContainer">{icons.titleSVG("svgTextBlock")}</div>
+        <div className="textContainer">
+          {icons.mailingListLogo[lang]("svgTextBlock")}
+        </div>
         <div className="textContainer">
           <form
             className={`${style.form} h6 `}

@@ -57,7 +57,7 @@ const News = forwardRef(function ({ visible, id }, ref) {
     >
       <div className={style.container}>
         <div className={style.logoContainer + " textContainer"}>
-          {icons.wereInNews("svgTextBlock")}
+          {icons.wereInNewsLogo[lang]("svgTextBlock")}
         </div>
         <div className={style.newsContainer}>
           <Slider {...settings} ref={sliderRef} className={style.slickSlider}>

@@ -80,6 +80,10 @@
   width: 70%;
 }
 
+h2.ua {
+  font-size: 32px;
+  line-height: 45px;
+}
 /* beforeTablet */
 @media screen and (max-width: 1366px) {
   .section:global(.section) {
@@ -156,6 +160,11 @@
 
   .text {
     padding-right: 5px;
+  }
+
+  h2.ua {
+    font-size: 20px;
+    line-height: 28px;
   }
 }
 @media screen and (max-width: 650px) {

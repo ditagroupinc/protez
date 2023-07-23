@@ -30,7 +30,7 @@ const OurResults = forwardRef(function ({ visible, id }, ref) {
       {/* <SmokeBackground /> */}
       <div className={`${style.block}`}>
         <div className={`${style.leftBlock} textContainer`}>
-          {icons.titleSVG("svgTextBlock")}
+          {icons.ourResultsLogo[lang]("svgTextBlock")}
         </div>
 
         <div className={`${style.countBlock}`}>

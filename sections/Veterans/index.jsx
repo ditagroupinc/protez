@@ -45,14 +45,22 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                     {/* <h5 className={`h5 ${style.ageRank}`}>
                     {element.ageRank[lang]}
                   </h5> */}
-                    {icons[element.icon](`${style.veteranLogo} svgTextBlock`)}
-                    <h5 className={`h5 ${style.ageRank}`}>
-                      {element.ageRank[lang]}
-                    </h5>
+                    <div className={style.logoAndRankContainer}>
+                      {icons[element.icon][lang](
+                        `${style.veteranLogo} svgTextBlock`
+                      )}
+                      <h5 className={`h5 ${style.ageRank}`}>
+                        {element.ageRank[lang]}
+                      </h5>
+                    </div>
                     <h4 className={`h2 ${style.cardTitle}`}>
                       {element.title[lang]}
                     </h4>
-                    <p className={`p ${style.cardText}`}>
+                    <p
+                      className={`p ${style.cardText} ${
+                        lang === "ua" ? style.ua : ""
+                      }`}
+                    >
                       {element.text[lang]}
                     </p>
 

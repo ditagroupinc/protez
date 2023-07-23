@@ -26,7 +26,7 @@ const OurTeam = forwardRef(function ({ visible, id }, ref) {
     >
       <div className={style.container}>
         <div className="textContainer">
-          {icons.ourTeamLogo(`${style.logo} svgTextBlock`)}
+          {icons.ourTeamLogo[lang](`${style.logo} svgTextBlock`)}
         </div>
         <div className={style.membersContainer}>
           {texts.ourTeam.executives.map((card, index) => (

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { LanguageContext } from "../../contexts/LanguageContext";
+import { LanguageContext } from "@/contexts/LanguageContext";
 import SquareButton from "@/components/SquareButton";
 import Divider from "@/components/Divider";
 import texts from "@/texts&svg";

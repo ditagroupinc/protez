@@ -222,7 +222,8 @@
   }
 
   .title {
-    max-width: 293px;
+    /* max-width: 293px; */
+    max-width: 453px;
   }
 
   .form {
@@ -268,10 +269,13 @@
   }
 }
 
-/* phobe */
-@media screen and (max-width: 480px) {
+/* phone */
+@media screen and (max-width: 500px) {
   .section {
     min-height: auto;
     height: 85vh;
+  }
+  .title {
+    padding: 0 24px;
   }
 }

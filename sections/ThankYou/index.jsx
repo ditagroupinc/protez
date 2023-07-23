@@ -20,8 +20,8 @@ const ThankYou = forwardRef(function ({ visible, id }, ref) {
         <div className={style.container}>
           <div className="textContainer">
             {mobile
-              ? icons.thankYouIconMobile("svgTextBlock")
-              : icons.thankYouIcon("svgTextBlock")}
+              ? icons.thankYouLogo.mobile[lang]("svgTextBlock")
+              : icons.thankYouLogo.desktop[lang]("svgTextBlock")}
           </div>
           <div className={style.buttonsContainer}>
             <SquareButton

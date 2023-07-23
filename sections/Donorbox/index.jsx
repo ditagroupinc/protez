@@ -49,8 +49,8 @@ export default function DonorBox({ monthly = false, className }) {
   return (
     <section className={`${style.section} ${className}`} id="donorBox">
       {mobile
-        ? icons.letsGiveHopeLogoMobile(`${style.logo} svgTextBlock`)
-        : icons.letsGiveHopeLogo(`${style.logo} svgTextBlock`)}
+        ? icons.letsGiveHopeLogo.mobile[lang](`${style.logo} svgTextBlock`)
+        : icons.letsGiveHopeLogo.desktop[lang](`${style.logo} svgTextBlock`)}
       <h1 className={style.title}>{texts.donate.title[lang]}</h1>
       {monthly ? (
         <h2 className={`${style.title} ${style.monthlyPayment}`}>

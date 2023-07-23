@@ -76,8 +76,8 @@ export default function AllOurPartners({}) {
     <section className={`${style.section} section `} id="allOurPartners">
       <div className={style.specialThanks}>
         {tabletLarge
-          ? icons.specialThanksTablet(`${style.logo} svgTextBlock`)
-          : icons.specialThanks(`${style.logo} svgTextBlock`)}
+          ? icons.specialThanksLogo.tablet[lang](`${style.logo} svgTextBlock`)
+          : icons.specialThanksLogo.desktop[lang](`${style.logo} svgTextBlock`)}
       </div>
       <div className={style.container}>
         {partnersLogos.map((logo, index) => (
