@@ -571,42 +571,42 @@ const headerComponent = {
     // },
     mission: {
       english: "Mission",
-      ukrainian: "Mission",
+      ukrainian: "Місія",
       id: "ourMission",
     },
     results: {
       english: "Results",
-      ukrainian: "Results",
+      ukrainian: "Досягнення",
       id: "ourResults",
     },
     ukraine: {
       english: "Ukraine",
-      ukrainian: "Ukraine",
+      ukrainian: "Україна",
       id: "inNeed",
     },
     whatWeDo: {
       english: "What we do",
-      ukrainian: "What we do",
+      ukrainian: "Наша робота",
       id: "prosthetics",
     },
     stories: {
       english: "Stories",
-      ukrainian: "Stories",
+      ukrainian: "Історії",
       id: "veterans",
     },
     team: {
       english: "Team",
-      ukrainian: "Team",
+      ukrainian: "Команда",
       id: "ourTeam",
     },
     partners: {
       english: "Partners",
-      ukrainian: "Partners",
+      ukrainian: "Партнери",
       id: "ourPartners",
     },
     news: {
       english: "News",
-      ukrainian: "News",
+      ukrainian: "Новини",
       id: "news",
     },
     // getInvolved: {
@@ -622,7 +622,7 @@ const headerComponent = {
     },
     makeDonation: {
       english: "Donate Now",
-      ukrainian: "Donate Now",
+      ukrainian: "Зробити внесок!",
     },
 
     back2top: {
@@ -644,7 +644,7 @@ const companyDataComponent = {
     },
     needAProtez: {
       english: "Need a prosthesis",
-      ukrainian: "Need a prosthesis",
+      ukrainian: "Потрібен протез",
     },
     protezAcademy: {
       english: "Protez Academy",
@@ -707,11 +707,11 @@ const donatePage = {
     english:
       "Strong support from community volunteers and partners around the globe allowed us to cap our administrative expenses",
     ukrainian:
-      "Strong support from community volunteers and partners around the globe allowed us to cap our administrative expenses",
+      "Міцна підтримка від добровольців та партнерів з усього світу дозволила нам знизити адміністративні витрати",
   },
   under8: {
     english: "under 8%",
-    ukrainian: "under 8%",
+    ukrainian: "до 8%",
   },
   organizationData: {
     sendChecks: {

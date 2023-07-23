@@ -33,13 +33,16 @@ const BurgerButton = ({ close, onClick }) => {
 export default function Header({ notMainPage, black }) {
   const { lang, setLang } = useContext(LanguageContext);
   const handleLanguageChange = () => {
-    setLang((prevState) => {
-      if (prevState === "english") {
-        return "ukrainian";
-      } else {
-        return "english";
-      }
-    });
+    // setLang((prevState) => {
+    //   if (prevState === "english") {
+    //     return "ukrainian";
+    //   } else {
+    //     return "english";
+    //   }
+    // });
+    const langToSet = lang === "english" ? "ukrainian" : "english";
+    setLang(langToSet);
+    localStorage.setItem("lang", langToSet);
   };
 
   const { width, mobile } = useContext(ScreenModeAndSizeContext);
