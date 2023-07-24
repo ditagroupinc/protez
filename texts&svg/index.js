@@ -640,7 +640,7 @@ const companyDataComponent = {
   actionButtons: {
     makeDonation: {
       english: "Donate Now",
-      ukrainian: "Donate Now",
+      ukrainian: "Зробити Внесок!",
     },
     needAProtez: {
       english: "Need a prosthesis",
