@@ -534,9 +534,9 @@ const newsSection = {
 };
 
 const mailingListSection = {
-  subcribe: {
-    english: "Subcribe!",
-    ukrainian: "Subcribe!",
+  subscribe: {
+    english: "Subscribe!",
+    ukrainian: "Підписатись!",
   },
   email: {
     english: "Your email",
@@ -551,7 +551,7 @@ const thankYouSection = {
   },
   giveHope: {
     english: "Give Hope",
-    ukrainian: "Give Hope",
+    ukrainian: "Дати Надію",
   },
 };
 // ---

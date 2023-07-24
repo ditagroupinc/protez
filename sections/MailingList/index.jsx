@@ -52,7 +52,7 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
         <SquareButton
           pink
           onClick={handleClick}
-          text={texts.mailingList.subcribe[lang]}
+          text={texts.mailingList.subscribe[lang]}
         />
       );
     }
