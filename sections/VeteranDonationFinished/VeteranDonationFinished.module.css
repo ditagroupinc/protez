@@ -211,6 +211,11 @@
   .section {
     padding-top: 104px;
   }
+
+  .iframeContainer {
+    aspect-ratio: auto;
+  }
+
   .ageRank {
     font-size: 18px;
   }
