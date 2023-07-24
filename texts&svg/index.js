@@ -101,42 +101,6 @@ const veteransSection = {
   veterans: [
     {
       ageRank: {
-        english: "30 years old, sergeant.",
-        ukrainian: "30 років, сержант.",
-      },
-      name: {
-        english: "Vadym",
-        ukrainian: "Вадим",
-      },
-      surname: {
-        english: "Fedorov",
-        ukrainian: "Федоров",
-      },
-      title: {
-        english: "Vadym has dedicated 10 years to the Ukrainian Army. ",
-        ukrainian: "Вадим присвятив 10 років Збройним Силам України.",
-      },
-      text: {
-        english:
-          "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
-        ukrainian:
-          "Захищаючи Україну, Вадим став обтяженним високими ампутаціями обох ніг. Але він продемонстрував мотивацію і відмову від здачі, ставши натхненням для всіх навколо своїм прикладом. Зараз Вадим перебуває в США, де проходить протезування та реабілітацію. Лише завдяки вашій підтримці ми зможемо оснастити Вадима сучасними біонічними протезами та повернути його до активного життя. Разом ми становимо сильну і єдину силу. Дякуємо вам за поширення цього повідомлення та ваші пожертви.",
-      },
-      img: "vadymFedorov.png",
-      icon: "vadymFedorov",
-      video: "https://www.youtube.com/embed/D1zR9DkYgu4",
-      facebook:
-        "https://www.facebook.com/donate/238890858497931/199310116131457/",
-      instagram:
-        "https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==",
-      url: "VadymFedorov",
-      videoLink:
-        "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F3490463647948673%2F%3Fidorvanity%3D238890858497931&show_text=false&width=267&t=0",
-      // linkedin: "https://linkedin.com",
-      // twitter: "https://twitter.com",
-    },
-    {
-      ageRank: {
         english: "16 years old, Mariupol.",
         ukrainian: "16 років, Маріуполь",
       },
@@ -171,13 +135,56 @@ const veteransSection = {
       videoLink:
         "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F778775984044964%2F&show_text=false&width=267&t=0",
 
-      // linkedin: "https://linkedin.com",
+      linkedin:
+        "https://www.linkedin.com/posts/protez-foundation_our-young-hero-artem-16-years-old-activity-7086077525998583808-kZBW/?utm_source=share&utm_medium=member_ios",
+      // twitter: "https://twitter.com",
+    },
+    {
+      ageRank: {
+        english: "30 years old, sergeant.",
+        ukrainian: "30 років, сержант.",
+      },
+      name: {
+        english: "Vadym",
+        ukrainian: "Вадим",
+      },
+      surname: {
+        english: "Fedorov",
+        ukrainian: "Федоров",
+      },
+      title: {
+        english: "Vadym has dedicated 10 years to the Ukrainian Army. ",
+        ukrainian: "Вадим присвятив 10 років Збройним Силам України.",
+      },
+      text: {
+        english:
+          "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations",
+        ukrainian:
+          "Захищаючи Україну, Вадим став обтяженним високими ампутаціями обох ніг. Але він продемонстрував мотивацію і відмову від здачі, ставши натхненням для всіх навколо своїм прикладом. Зараз Вадим перебуває в США, де проходить протезування та реабілітацію. Лише завдяки вашій підтримці ми зможемо оснастити Вадима сучасними біонічними протезами та повернути його до активного життя. Разом ми становимо сильну і єдину силу. Дякуємо вам за поширення цього повідомлення та ваші пожертви.",
+      },
+      img: "vadymFedorov.png",
+      icon: "vadymFedorov",
+      video: "https://www.youtube.com/embed/D1zR9DkYgu4",
+      facebook:
+        "https://www.facebook.com/donate/238890858497931/199310116131457/",
+      instagram:
+        "https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==",
+      url: "VadymFedorov",
+      videoLink:
+        "https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F3490463647948673%2F%3Fidorvanity%3D238890858497931&show_text=false&width=267&t=0",
+      linkedin:
+        "https://www.linkedin.com/posts/protez-foundation_vadym-fedorov-30-years-old-sergeant-vadym-activity-7045965954194784256-D_hH?utm_source=share&utm_medium=member_desktop",
       // twitter: "https://twitter.com",
     },
   ],
   share: {
     english: "Share me",
     ukrainian: "Поділитися",
+  },
+
+  giveHope: {
+    english: "Give Hope!",
+    ukrainian: "Дати Надію!",
   },
 
   next: {

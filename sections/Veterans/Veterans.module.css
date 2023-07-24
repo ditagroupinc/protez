@@ -146,13 +146,33 @@ svg.veteranLogo {
 .buttonsList {
   margin-top: 1.5rem;
   display: flex;
-  gap: 2rem;
+  align-items: center;
+
+  gap: 24px;
   & svg {
     transition: fill var(--transitionProps);
   }
   & a:hover svg path {
     fill: var(--pink);
     transition: fill var(--transitionProps);
+  }
+}
+.iconsList {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.squareButton {
+  padding: 16px 24px;
+  width: fit-content;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  &:hover {
+    color: var(--pink);
+    border-color: var(--pink);
   }
 }
 
@@ -210,6 +230,10 @@ svg.veteranLogo {
     width: 40px;
     height: 40px;
   }
+
+  .squareButton {
+    font-size: 16px;
+  }
 }
 
 @media screen and (max-width: 1180px) {
@@ -262,6 +286,15 @@ svg.veteranLogo {
 }
 
 @media screen and (max-width: 500px) {
+  .buttonsList {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .squareButton {
+    width: 100%;
+  }
+
   .iFrame {
     position: fixed;
   }

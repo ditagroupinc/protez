@@ -1,5 +1,6 @@
 import { useContext, useRef, useState, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
+import SquareButton from "@/components/SquareButton";
 
 import style from "./Veterans.module.css";
 import Image from "next/image";
@@ -26,6 +27,8 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000,
   };
   return (
     <>
@@ -70,20 +73,25 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                         {/* <a target="blank" href={element.twitter}>
                         {icons.iconTwitter()}
                       </a> */}
-                        {/* <a target="blank" href={element.linkedin}>
-                        {icons.iconLinkedin()}
-                      </a> */}
-                        <a target="blank" href={element.facebook}>
-                          {icons.iconFacebook()}
-                        </a>
-                        <a target="blank" href={element.instagram}>
-                          {icons.iconInstagram()}
-                        </a>
-
-                        <Link href={element.url}>{icons.iconLink()}</Link>
-                        {/* <a target="blank" href={element.instagram}>
-                        
-                      </a> */}
+                        <SquareButton
+                          text={texts.veterans.giveHope[lang]}
+                          className={style.squareButton}
+                          link
+                          blank
+                          href={element.url}
+                        />
+                        <div className={style.iconsList}>
+                          <a target="blank" href={element.linkedin}>
+                            {icons.iconLinkedin()}
+                          </a>
+                          <a target="blank" href={element.facebook}>
+                            {icons.iconFacebook()}
+                          </a>
+                          <a target="blank" href={element.instagram}>
+                            {icons.iconInstagram()}
+                          </a>
+                        </div>
+                        {/* <Link href={element.url}>{icons.iconLink()}</Link> */}
                       </div>
                     </div>
                   </div>
