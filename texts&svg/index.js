@@ -67,7 +67,7 @@ const prostheticsSection = {
       english:
         "Free prosthetics for those who need them as a result of the war in Ukraine.",
       ukrainian:
-        "езкоштовні протези для тих, хто потребує їх унаслідок війни в Україні.",
+        "Безкоштовні протези для тих, хто потребує їх унаслідок війни в Україні.",
     },
     psychological: {
       english:
