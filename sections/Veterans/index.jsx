@@ -28,7 +28,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
     slidesToScroll: 1,
     arrows: false,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 10000,
   };
   return (
     <>
