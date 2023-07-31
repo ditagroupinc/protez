@@ -209,6 +209,16 @@
       color: var(--pink);
     }
   }
+  &.upper {
+    background-color: transparent;
+    padding: 16px 24px;
+    text-transform: uppercase;
+    width: fit-content;
+    & .languageButtonIcon {
+      width: 32px;
+      height: 32px;
+    }
+  }
 }
 .languageButtonIcon {
   width: 24px;
@@ -262,6 +272,10 @@
   align-items: stretch;
   justify-content: space-between;
   min-height: 55px;
+  &.transparent a:not([class*="burgerButton"]),
+  &.transparent button:not([class*="burgerButton"]) {
+    opacity: 0;
+  }
 }
 /* .becomeAVolunteer {
   font-size: 20px;

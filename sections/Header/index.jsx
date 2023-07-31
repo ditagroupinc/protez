@@ -33,13 +33,6 @@ const BurgerButton = ({ close, onClick }) => {
 export default function Header({ notMainPage, black }) {
   const { lang, setLang } = useContext(LanguageContext);
   const handleLanguageChange = () => {
-    // setLang((prevState) => {
-    //   if (prevState === "english") {
-    //     return "ukrainian";
-    //   } else {
-    //     return "english";
-    //   }
-    // });
     const langToSet = lang === "english" ? "ukrainian" : "english";
     setLang(langToSet);
     localStorage.setItem("lang", langToSet);
@@ -86,7 +79,11 @@ export default function Header({ notMainPage, black }) {
         {mobile ? (
           <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
         ) : (
-          <div className={style.headerActionLang}>
+          <div
+            className={`${style.headerActionLang} ${
+              headerIsOpened ? style.transparent : ""
+            }`}
+          >
             <a
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
               target="blank"
@@ -94,6 +91,14 @@ export default function Header({ notMainPage, black }) {
             >
               {texts.header.actionButtons.protezAcademy[lang]}
             </a>
+            <Divider vertical />
+            <button
+              className={`${style.languageButton} ${style.upper}`}
+              onClick={handleLanguageChange}
+            >
+              {icons.iconWorld(style.languageButtonIcon)}
+              <span className={`h6 ${style.languageButtonText}`}>{lang}</span>
+            </button>
             <Divider vertical />
             <BurgerButton onClick={toggleHeader} close={headerIsOpened} />
           </div>
