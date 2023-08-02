@@ -26,6 +26,7 @@ import style from "./index.module.css";
 import SmokeBackground from "@/components/SmokeBackground";
 
 import CompanyDataNonProfit from "@/components/CompanyDataNonProfit";
+import UpcomingEvents from "@/sections/UpcomingEvents";
 
 const homeText = {
   backToTop: {
@@ -56,6 +57,7 @@ export default function Home() {
     news: useRef(null),
     mailingList: useRef(null),
     thankYou: useRef(null),
+    upcomingEvents: useRef(null),
   };
 
   const isVisible = (id) => {
@@ -109,12 +111,54 @@ export default function Home() {
     };
   }, [visitedSections, sectionInViewPort, showCompanyData]);
 
+  // ---- WP
+  const fetcher = async () => {
+    const { data } = await fetch("https://protez.wpengine.com/graphql", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        query: `
+      query getPosts {
+        posts {
+          edges {
+            node {
+              title
+              excerpt
+              slug
+              date
+            }
+          }
+        }
+      }
+    `,
+      }),
+      next: { revalidate: 10 },
+    }).then((res) => {
+      // res.json()
+    });
+    console.log(data);
+  };
+
+  useEffect(() => {
+    fetcher();
+  }, []);
+  // ____ WP
+
+  // console.log(isVisible("upcomingEvents"));
+
   const bgIsWhite = () =>
     sectionInViewPort === "ourTeam" || sectionInViewPort === "ourPartners";
   return (
     <>
       <Header black={bgIsWhite()} />
       <main className={style.main}>
+        <UpcomingEvents
+          ref={sectionRefs.upcomingEvents}
+          id="upcomingEvents"
+          visible={isVisible("upcomingEvents")}
+        />
         <CompanyDataNonProfit
           black={bgIsWhite()}
           className={`${style.companyDataNonProfit} ${
@@ -122,7 +166,6 @@ export default function Home() {
           }`}
         />
 
-        {/* <SocialMediaLinks /> */}
         <div className={style.smokeBlock}>
           <SmokeBackground className={style.smokeTop} />
           <div className={style.flagsBlock}>
@@ -157,6 +200,7 @@ export default function Home() {
           visible={isVisible("inNeed")}
           id="inNeed"
         />
+
         <Prosthetics
           ref={sectionRefs.prosthetics}
           id="prosthetics"

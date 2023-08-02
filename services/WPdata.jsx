@@ -1,4 +1,4 @@
-// // as a function
+// as a function
 // const fetcher = async () => {
 //   const { data } = await fetch("", {
 //     method: "POST",
