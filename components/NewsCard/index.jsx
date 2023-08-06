@@ -32,6 +32,17 @@ export default function NewsCard({
         <span>{date}</span>|<span>{address}</span>
       </div>
       {/* <div className="textContainer">{icons[logo](style.logo)}</div> */}
+
+      <div className="textContainer">
+        <img
+          src={logo}
+          alt="article picture"
+          // width={96}
+          // height={32}
+          className={`${style.logo}`}
+        />
+      </div>
+
       <div className="textContainer">
         <h3 className={`h3 ${style.title}`}>{title}</h3>
       </div>

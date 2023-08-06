@@ -61,6 +61,7 @@
   margin-top: 1rem;
   margin-bottom: 1.5rem;
   max-width: 100%;
+  width: auto;
 }
 
 .text {

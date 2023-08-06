@@ -38,7 +38,6 @@ const homeText = {
 };
 
 export default function ClientSections({ news }) {
-  console.log(news);
   const { lang } = useContext(LanguageContext);
 
   const [visitedSections, setVisitedSections] = useState({});

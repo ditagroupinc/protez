@@ -163,7 +163,7 @@ svg.veteranLogo {
   gap: 24px;
 }
 
-.squareButton {
+a.squareButton {
   padding: 16px 24px;
   width: fit-content;
   font-size: 24px;
@@ -172,7 +172,7 @@ svg.veteranLogo {
   line-height: 40px;
   &:hover {
     color: var(--pink);
-    border-color: var(--pink);
+    border: 1px solid var(--pink);
   }
 }
 
