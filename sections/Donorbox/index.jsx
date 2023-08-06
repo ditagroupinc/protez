@@ -12,7 +12,7 @@ const CompanyData = ({ className = "" }) => {
 
   return (
     <div className={`${style.companyData} ${className}`}>
-      <div className={`${style.adressContainer}`}>
+      <div className={`${style.addressContainer}`}>
         <p>
           <span className={"h6 "}>
             {texts.donate.organizationData.nonProfitOrganization[lang]}
@@ -30,7 +30,7 @@ const CompanyData = ({ className = "" }) => {
           <span className={style.block}>3510 Hopkins Pl, W130D</span>
           <span className={style.block}>Oakdale, MN 55128</span>
           <span className={style.block}>United States of America</span>
-          {/* {texts.donate.organizationData.adress[lang]} */}
+          {/* {texts.donate.organizationData.address[lang]} */}
         </p>
       </div>
       <a

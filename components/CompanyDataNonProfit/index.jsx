@@ -13,7 +13,7 @@ export default function CompanyDataNonProfit({ className = "", black }) {
     <div
       className={`${style.container} ${black ? style.black : ""} ${className}`}
     >
-      <div className={style.adressContainer}>
+      <div className={style.addressContainer}>
         <p>
           <span className={"h6 "}>
             {texts.companyData.organizationData.nonProfitOrganization[lang]}

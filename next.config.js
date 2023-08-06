@@ -4,6 +4,10 @@ const nextConfig = {
     appDir: true,
     scrollRestoration: true,
   },
+  images: {
+    domains: ["protez.wpengine.com"],
+  },
+
   reactStrictMode: false,
 };
 

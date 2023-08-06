@@ -5,8 +5,8 @@ import { icons } from "./icons";
 export default function NewsCard({
   link,
   photo,
-  time,
-  adress,
+  date,
+  address,
   logo,
   title,
   text,
@@ -21,16 +21,17 @@ export default function NewsCard({
       className={`${style.newsCard} ${shortClass()}`}
     >
       <Image
-        src={`/news/photos/${photo}`}
+        // src={`/news/photos/${photo}`}
+        src={photo}
         alt="article picture"
         width={390}
         height={544}
         className={`${style.newsPicture} ${shortClass()}`}
       />
       <div className={`${style.date} h6 textContainer`}>
-        <span>{time}</span>|<span>{adress}</span>
+        <span>{date}</span>|<span>{address}</span>
       </div>
-      <div className="textContainer">{icons[logo](style.logo)}</div>
+      {/* <div className="textContainer">{icons[logo](style.logo)}</div> */}
       <div className="textContainer">
         <h3 className={`h3 ${style.title}`}>{title}</h3>
       </div>

@@ -130,7 +130,7 @@ const UpcomingEvents = forwardRef(function ({ visible, id }, ref) {
                 photo={event.image}
                 date={event.date}
                 time={event.time}
-                adress={event.adress}
+                address={event.address}
                 title={event.title}
                 opened={false}
               />
@@ -149,7 +149,7 @@ const UpcomingEvents = forwardRef(function ({ visible, id }, ref) {
             photo={events.recentEvent.image}
             date={events.recentEvent.date}
             time={events.recentEvent.time}
-            adress={events.recentEvent.adress}
+            address={events.recentEvent.address}
             title={events.recentEvent.title}
             opened
           />
@@ -164,7 +164,7 @@ const UpcomingEvents = forwardRef(function ({ visible, id }, ref) {
                   photo={event.image}
                   date={event.date}
                   time={event.time}
-                  adress={event.adress}
+                  address={event.address}
                   title={event.title}
                   opened={false}
                 />

@@ -7,12 +7,12 @@ export default function EventsCard({
   photo,
   date,
   time,
-  adress,
+  address,
   title,
   opened,
 }) {
   const openedClass = opened ? style.opened : "";
-  console.log(photo);
+
   return (
     <a
       href={link}
@@ -43,7 +43,7 @@ export default function EventsCard({
         )}
         <div className={`${style.locationText}`}>
           {icons.location(`${style.iconLocation}`)}
-          <span>{adress}</span>
+          <span>{address}</span>
         </div>
       </h6>
       <div className="textContainer">
