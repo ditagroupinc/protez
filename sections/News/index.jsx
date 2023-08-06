@@ -1,3 +1,4 @@
+"use client";
 import { useContext, useRef, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
@@ -6,8 +7,9 @@ import NewsCard from "@/components/NewsCard";
 import { icons } from "./icons";
 import Slider from "react-slick";
 import texts from "@/texts&svg";
+import { parseNews } from "@/utils/parsers";
 
-const News = forwardRef(function ({ visible, id }, ref) {
+const News = forwardRef(function ({ visible, id, news }, ref) {
   const { lang } = useContext(LanguageContext);
   const { height, width, mobile, tablet, screenModeClass } = useContext(
     ScreenModeAndSizeContext
@@ -61,16 +63,17 @@ const News = forwardRef(function ({ visible, id }, ref) {
         </div>
         <div className={style.newsContainer}>
           <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
-            {texts.news.cards.map((card, index) => (
+            {/* texts.news.cards */}
+            {news.map((card, index) => (
               <div key={index}>
                 <NewsCard
                   link={card.link}
-                  photo={card.photo}
-                  time={card.time}
-                  adress={card.adress}
+                  photo={card.image}
+                  date={card.date}
+                  address={card.address}
                   logo={card.logo}
-                  title={card.title[lang]}
-                  text={card.text[lang]}
+                  title={card.title}
+                  text={card.text}
                   cardData={card}
                   short={index % 2 === 0 || width < 480}
                 />

@@ -398,8 +398,8 @@ const newsSection = {
     {
       link: "https://www.nytimes.com/2023/03/24/world/europe/ukraine-war-amputees.html",
       photo: "nyt-pic.png",
-      time: "16.03.2023",
-      adress: "nytimes.com",
+      date: "16.03.2023",
+      address: "nytimes.com",
       logo: "nyt",
       title: {
         english:
@@ -410,15 +410,15 @@ const newsSection = {
       text: {
         english:
           "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
+        ukrainian:
+          "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
       },
-      ukrainian:
-        "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
     },
     {
       link: "https://tsn.ua/ru/video/video-novini/stoim-dokumentalnyy-film-o-ranenyh-voennyh-i-ih-vospominaniyah-o-voyne.html",
       photo: "1plus1-pic.png",
-      time: "19.03.2023",
-      adress: "plus1.ua",
+      date: "19.03.2023",
+      address: "1plus1.ua",
       logo: "onePlusOne",
       title: {
         english: "Oakdale foundation helps hurt ukrainian soldiers walk again",
@@ -435,8 +435,8 @@ const newsSection = {
     {
       link: "https://www.cbsnews.com/minnesota/news/5-ukrainian-solders-receive-prosthetic-limbs-in-minneapolis/",
       photo: "globalminesota-pic.png",
-      time: "27.03.2023",
-      adress: "globalminnesota.org",
+      date: "27.03.2023",
+      address: "globalminnesota.org",
       logo: "cbs",
       title: {
         english: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
@@ -452,8 +452,8 @@ const newsSection = {
     {
       link: "https://www.eplocalnews.org/2023/03/27/standing-with-ukraine-in-mn/",
       photo: "eplocalnews-pic.png",
-      time: "27.03.2023",
-      adress: "eplocalnews.org",
+      date: "27.03.2023",
+      address: "eplocalnews.org",
       logo: "onePlusOne",
       title: {
         english: "Standing with Ukraine in MN",
@@ -469,8 +469,8 @@ const newsSection = {
     {
       link: "https://www.nytimes.com/2023/03/24/world/europe/ukraine-war-amputees.html",
       photo: "nyt-pic.png",
-      time: "16.03.2023",
-      adress: "nytimes.com",
+      date: "16.03.2023",
+      address: "nytimes.com",
       logo: "nyt",
       title: {
         english:
@@ -488,8 +488,8 @@ const newsSection = {
     {
       link: "https://tsn.ua/ru/video/video-novini/stoim-dokumentalnyy-film-o-ranenyh-voennyh-i-ih-vospominaniyah-o-voyne.html",
       photo: "1plus1-pic.png",
-      time: "19.03.2023",
-      adress: "plus1.ua",
+      date: "19.03.2023",
+      address: "1plus1.ua",
       logo: "onePlusOne",
       title: {
         english: "Oakdale foundation helps hurt ukrainian soldiers walk again",
@@ -506,8 +506,8 @@ const newsSection = {
     {
       link: "https://www.cbsnews.com/minnesota/news/5-ukrainian-solders-receive-prosthetic-limbs-in-minneapolis/",
       photo: "globalminesota-pic.png",
-      time: "27.03.2023",
-      adress: "globalminnesota.org",
+      date: "27.03.2023",
+      address: "globalminnesota.org",
       logo: "cbs",
       title: {
         english: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
@@ -523,8 +523,8 @@ const newsSection = {
     {
       link: "https://www.eplocalnews.org/2023/03/27/standing-with-ukraine-in-mn/",
       photo: "eplocalnews-pic.png",
-      time: "27.03.2023",
-      adress: "eplocalnews.org",
+      date: "27.03.2023",
+      address: "eplocalnews.org",
       logo: "onePlusOne",
       title: {
         english: "Standing with Ukraine in MN",
@@ -667,13 +667,13 @@ const companyDataComponent = {
       english: "EIN: 88-2437069",
       ukrainian: "EIN: 88-2437069",
     },
-    adress: {
+    address: {
       english:
         "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
       ukrainian:
         "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
     },
-    adressNonProfit: {
+    addressNonProfit: {
       english: "Protez Foundation",
       ukrainian: "Protez Foundation",
     },
@@ -682,19 +682,19 @@ const companyDataComponent = {
 
 const socialMediaLinksComponent = [
   {
-    adress: "https://www.youtube.com/@Protezfoundation",
+    address: "https://www.youtube.com/@Protezfoundation",
     icon: globalIcons.iconYoutube,
   },
   {
-    adress: "https://www.facebook.com/prostheticsforukrainians/",
+    address: "https://www.facebook.com/prostheticsforukrainians/",
     icon: globalIcons.iconFaceBook,
   },
   {
-    adress: "https://www.instagram.com/protezfoundation/",
+    address: "https://www.instagram.com/protezfoundation/",
     icon: globalIcons.iconInstagram,
   },
   {
-    adress: "https://www.linkedin.com/company/protez-foundation/",
+    address: "https://www.linkedin.com/company/protez-foundation/",
     icon: globalIcons.iconLinkedin,
   },
 ];
@@ -733,7 +733,7 @@ const donatePage = {
       english: "EIN: 88-2437069",
       ukrainian: "EIN: 88-2437069",
     },
-    adress: {
+    address: {
       english:
         "PROTEZ Foundation 3510 Hopkins Pl, W130D Oakdale, MN 55128 United States of America",
       ukrainian:

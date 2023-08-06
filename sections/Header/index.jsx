@@ -165,7 +165,7 @@ export default function Header({ notMainPage, black }) {
               {texts.socialMediaLinks.map((link, index) => (
                 <a
                   key={index}
-                  href={link.adress}
+                  href={link.address}
                   className={style.socialMediaLink}
                   target="blank"
                 >
