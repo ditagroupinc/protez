@@ -32,7 +32,7 @@
 
 @media screen and (max-width: 1366px) {
   :root {
-    --navLeftWidth: 264px;
+    /* --navLeftWidth: 264px; */
     --headerPaddingTop: 21px;
   }
 }
@@ -215,24 +215,26 @@ body::-webkit-scrollbar {
 }
 
 .section {
-  padding-left: calc(300px + var(--headerPaddingSide) + 280px);
-  padding-right: calc(64px + var(--headerPaddingSide) + 175px);
+  /* padding-left: calc(300px + var(--headerPaddingSide) + 280px); */
+  padding-left: calc(366px + 309 * ((100vw - 1366px) / 1194));
+  padding-right: calc(175px + 150 * ((100vw - 1366px) / 1194));
+  /* padding-right: calc(64px + var(--headerPaddingSide) + 175px); */
   padding-top: 9%;
   min-height: 100vh;
   position: relative;
 }
 @media screen and (max-width: 1920px) {
   .section {
-    padding-left: calc(300px + var(--headerPaddingSide) + 120px);
-    padding-right: calc(64px + var(--headerPaddingSide) + 80px);
+    /* padding-left: calc(300px + var(--headerPaddingSide) + 120px); */
+    /* padding-right: calc(64px + var(--headerPaddingSide) + 80px); */
   }
 }
 
 /* beforeTablet */
 @media screen and (max-width: 1366px) {
   .section {
-    padding-left: calc(300px + var(--headerPaddingSide) + 80px);
-    padding-right: calc(64px + var(--headerPaddingSide) + 80px);
+    /* padding-left: calc(300px + var(--headerPaddingSide) + 80px); */
+    /* padding-right: calc(64px + var(--headerPaddingSide) + 80px); */
   }
 }
 

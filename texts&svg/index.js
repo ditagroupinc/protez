@@ -30,25 +30,39 @@ const ourMissionSection = {
 const ourResultsSection = {
   results: {
     prosthetics: {
-      english: "Individuals served",
+      english: "Prosthetics",
       ukrainian: "Запротезовано пацієнтів",
-      number: "90",
+      number: "92",
     },
     prostheses: {
-      english: "Prosthetic limbs",
+      english: "Prostheses",
       ukrainian: "Встановлено протезів",
-      number: "196",
+      number: "254",
     },
-    volunteers: {
-      english: "Volunteers",
-      ukrainian: "Волонтерів",
-      number: "150",
+    // volunteers: {
+    //   english: "Volunteers",
+    //   ukrainian: "Волонтерів",
+    //   number: "150",
+    // },
+    clinics: {
+      english: "Clinics opened",
+      ukrainian: "Відкрито клінік",
+      number: "2",
+    },
+    specialistsTrained: {
+      english: "Specialists trained",
+      ukrainian: "Підготовлено спеціалістів",
+      number: "18",
     },
     moneySpent: {
-      english: "Spent on survivors",
-      ukrainian: "Витрачено на допомогу ",
-      number: "$1 640 000",
+      english: "Money spent",
+      ukrainian: "Витрачено на допомогу",
+      number: "$3 050 000",
     },
+  },
+  date: {
+    english: "(May 2022 - July 2023)",
+    ukrainian: "(Травень 2022 - Липень 2023)",
   },
 };
 
@@ -656,6 +670,10 @@ const companyDataComponent = {
     protezAcademy: {
       english: "Protez Academy",
       ukrainian: "Protez Academy",
+    },
+    supportWith: {
+      english: "Support with",
+      ukrainian: "Support with",
     },
   },
   organizationData: {

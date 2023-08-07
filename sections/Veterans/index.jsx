@@ -74,12 +74,13 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                         {icons.iconTwitter()}
                       </a> */}
                         <SquareButton
-                          text={texts.veterans.giveHope[lang]}
                           className={style.squareButton}
                           link
                           blank
                           href={element.url}
-                        />
+                        >
+                          {texts.veterans.giveHope[lang]}
+                        </SquareButton>
                         <div className={style.iconsList}>
                           <a target="blank" href={element.linkedin}>
                             {icons.iconLinkedin()}

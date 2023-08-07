@@ -1,4 +1,4 @@
-import style from "./style.module.css";
+import style from "./style.module.scss";
 import Link from "next/link";
 
 export default function SquareButton({
@@ -7,7 +7,7 @@ export default function SquareButton({
   emptyBlack,
   className = "",
   onClick,
-  text,
+  children,
   link,
   blank,
   href,
@@ -22,7 +22,7 @@ export default function SquareButton({
           emptyBlack ? style.emptyBlack : ""
         } ${black ? style.black : ""} ${className}`}
       >
-        {text}
+        {children}
       </Link>
     );
   return (
@@ -33,7 +33,7 @@ export default function SquareButton({
       } ${black ? style.black : ""} ${className}`}
       onClick={onClick}
     >
-      {text}
+      {children}
     </button>
   );
 }

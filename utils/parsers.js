@@ -4,7 +4,7 @@ export function parseNews(postContent) {
 
   const news = [];
 
-  $(".wp-block-group.newCard").each((index, element) => {
+  $(".wp-block-group.newsCard").each((index, element) => {
     const $element = $(element);
 
     const image = $element.find(".newsCardImage img").attr("src");

@@ -34,6 +34,20 @@
   gap: 1.875rem;
 }
 
+.amazonButton {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.amazonButtonText {
+  transform: translateY(-5px);
+}
+
 /* phone */
 @media screen and (max-width: 480px) {
   .buttonsContainer {

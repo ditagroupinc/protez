@@ -29,17 +29,19 @@ const ThankYou = forwardRef(function ({ visible, id }, ref) {
               href="donate"
               black
               onClick={handleClick}
-              text={texts.thankYou.giveHope[lang]}
               className={style.button}
-            />
+            >
+              {texts.thankYou.giveHope[lang]}
+            </SquareButton>
             <SquareButton
               blank
               link
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
               onClick={handleClick}
-              text={texts.thankYou.becomeAVolunteer[lang]}
               className={style.button}
-            />
+            >
+              {texts.thankYou.becomeAVolunteer[lang]}
+            </SquareButton>
           </div>
         </div>
       </div>

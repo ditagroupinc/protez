@@ -10,7 +10,7 @@ import SocialMediaLinks from "@/components/SocialMediaLinks";
 import Divider from "@/components/Divider";
 import Link from "next/link";
 
-import style from "./header.module.css";
+import style from "./header.module.scss";
 
 const BurgerButton = ({ close, onClick }) => {
   if (!close) {
@@ -50,7 +50,7 @@ export default function Header({ notMainPage, black }) {
   };
 
   const blackClassName = () => {
-    if (notMainPage || black || (width <= 920 && headerIsOpened))
+    if (notMainPage || black || (width <= 750 && headerIsOpened))
       return style.black;
     return "";
   };
@@ -141,21 +141,19 @@ export default function Header({ notMainPage, black }) {
             </ul>
           </div>
           <div>
-            <SquareButton
-              link
-              href="donate"
-              pink
-              text={texts.header.actionButtons.makeDonation[lang]}
-            />
+            <SquareButton link href="donate" pink>
+              {texts.header.actionButtons.makeDonation[lang]}
+            </SquareButton>
 
             <SquareButton
               link
               blank
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
               black
-              text={texts.header.actionButtons.protezAcademy[lang]}
               className={style.protezAcademyMenuButton}
-            />
+            >
+              {texts.header.actionButtons.protezAcademy[lang]}
+            </SquareButton>
 
             <Divider className={style.headerDivider} />
             <span className={style.menuText}>
@@ -173,6 +171,9 @@ export default function Header({ notMainPage, black }) {
                 </a>
               ))}
             </div>
+            <a className={`${style.phoneNumber} h6`} href="tel:+16127724777">
+              +1 612-772-4777
+            </a>
           </div>
           <div className={style.languageButtonContainer}>
             <button

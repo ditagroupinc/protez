@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-import style from "./donorbox.module.css";
+import style from "./donorbox.module.scss";
 import icons from "./icons";
 import Script from "next/script";
 import texts from "@/texts&svg";
@@ -33,12 +33,18 @@ const CompanyData = ({ className = "" }) => {
           {/* {texts.donate.organizationData.address[lang]} */}
         </p>
       </div>
-      <a
-        href={`mailto:${texts.donate.organizationData.email}`}
-        className={`${style.emailLink} h6`}
-      >
-        {texts.donate.organizationData.email}
-      </a>
+      <div className={style.links}>
+        <a className={`${style.link} h6`} href="tel:+16127724777">
+          +1 612-772-4777
+        </a>
+
+        <a
+          href={`mailto:${texts.donate.organizationData.email}`}
+          className={`${style.link} h6`}
+        >
+          {texts.donate.organizationData.email}
+        </a>
+      </div>
     </div>
   );
 };

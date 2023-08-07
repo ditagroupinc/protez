@@ -313,6 +313,12 @@
   transition: fill var(--transitionProps);
 }
 
+.phoneNumber {
+  display: block;
+  margin-top: 24px;
+  color: var(--black);
+}
+
 /* desktop */
 @media screen and (max-width: 1920px) {
   .foundationLogo {
@@ -330,6 +336,17 @@
   }
   .socialMediaLinks {
     margin-top: 16px;
+  }
+}
+
+@media (max-width: 750px) {
+  .headerNav {
+    max-width: 100%;
+    width: 100%;
+  }
+  .languageButton.upper,
+  .protezAcademy {
+    display: none;
   }
 }
 

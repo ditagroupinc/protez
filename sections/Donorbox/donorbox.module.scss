@@ -109,11 +109,20 @@
   margin-bottom: 16px;
 }
 
-.emailLink {
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.link {
   display: block;
   color: var(--pink);
-  text-decoration: underline;
-  margin-top: 40px;
+  transition: text-decoration var(--transitionProps);
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 /* -------- */

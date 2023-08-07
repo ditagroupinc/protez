@@ -49,11 +49,9 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
       return <SuccessButton />;
     } else {
       return (
-        <SquareButton
-          pink
-          onClick={handleClick}
-          text={texts.mailingList.subscribe[lang]}
-        />
+        <SquareButton pink onClick={handleClick}>
+          {texts.mailingList.subscribe[lang]}
+        </SquareButton>
       );
     }
   };
