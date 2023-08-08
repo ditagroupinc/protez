@@ -75,9 +75,9 @@
   -webkit-box-flex: 1;
   -ms-flex: 1 1 24%;
   flex: 1 1 24%;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
+  -webkit-box-pack: flex-end;
+  -ms-flex-pack: flex-end;
+  justify-content: flex-end;
 
   &:first-of-type {
     padding-bottom: 40px;
@@ -127,8 +127,11 @@
   writing-mode: vertical-lr;
   /* font-size: calc(52px + 82 * ((100vw - 1366px) / 1194)); */
   font-size: 134px;
-  line-height: 100%;
+  // line-height: 100%;
   font-weight: 600;
+  height: fit-content;
+  width: fit-content;
+  line-height: 77%;
 }
 
 /* .counter:hover {
