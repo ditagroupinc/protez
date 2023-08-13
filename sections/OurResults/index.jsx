@@ -5,7 +5,6 @@ import { useContext, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 
 import { icons } from "./icons";
-import texts from "@/texts&svg";
 
 const NumberCard = ({ text, number, className }) => (
   <div className={`${style.counter} textContainer ${className}`}>
@@ -18,7 +17,7 @@ const NumberCard = ({ text, number, className }) => (
 );
 
 // -----------
-const OurResults = forwardRef(function ({ visible, id }, ref) {
+const OurResults = forwardRef(function ({ visible, id, results }, ref) {
   const { lang } = useContext(LanguageContext);
 
   const getUkraininClassName = () =>
@@ -37,14 +36,13 @@ const OurResults = forwardRef(function ({ visible, id }, ref) {
           } textContainer ${getUkraininClassName()}`}
         >
           {icons.ourResultsLogo[lang](`svgTextBlock `)}
-          <h2 className={`h2 ${style.date}`}>{texts.ourResults.date[lang]}</h2>
+          <h2 className={`h2 ${style.date}`}>{results.statisticsDate[lang]}</h2>
         </div>
-
         <div className={`${style.countBlock}`}>
-          {Object.keys(texts.ourResults.results).map((card, i) => (
+          {results.statisticsData.map((card, i) => (
             <NumberCard
-              text={texts.ourResults.results[card][lang]}
-              number={texts.ourResults.results[card].number}
+              text={card.statisticsDataLabel[lang]}
+              number={card.statisticsDataValue}
               key={i}
               className={getUkraininClassName()}
             />

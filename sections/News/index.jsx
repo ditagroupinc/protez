@@ -7,7 +7,6 @@ import NewsCard from "@/components/NewsCard";
 import { icons } from "./icons";
 import Slider from "react-slick";
 import texts from "@/texts&svg";
-import { parseNews } from "@/utils/parsers";
 
 const News = forwardRef(function ({ visible, id, news }, ref) {
   const { lang } = useContext(LanguageContext);

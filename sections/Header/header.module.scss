@@ -26,6 +26,12 @@
     & .protezAcademy {
       color: var(--black);
     }
+    & .languageButton {
+      color: var(--black);
+      & svg path {
+        fill: var(--black);
+      }
+    }
     & .burgerButton {
       & span {
         background-color: var(--black);
@@ -89,9 +95,7 @@
     background-color: var(--white);
     width: 100%;
     transition: background-color var(--transitionProps);
-    &.black {
-      background-color: var(--black);
-    }
+
     &:last-of-type {
       max-width: 20px;
     }
@@ -104,18 +108,6 @@
       transition: background-color var(--transitionProps);
     }
   }
-  &.black {
-    & span {
-      display: block;
-      height: 3.5px;
-      background-color: var(--black);
-      width: 100%;
-      transition: background-color var(--transitionProps);
-      &:last-of-type {
-        max-width: 20px;
-      }
-    }
-  }
 }
 
 .protezAcademy {
@@ -126,15 +118,9 @@
   transform-origin: center;
   transition: color var(--transitionProps), transform var(--transitionProps);
   &:hover {
-    color: var(--pink);
+    color: var(--pink) !important;
     /* transform: scale(var(--textScale)); */
     transition: color var(--transitionProps), transform var(--transitionProps);
-  }
-  &.black {
-    color: var(--black);
-    &:hover {
-      color: var(--pink);
-    }
   }
 }
 
@@ -201,12 +187,12 @@
   text-transform: capitalize;
   &:hover {
     .languageButtonIcon path {
-      fill: var(--pink);
+      fill: var(--pink) !important;
     }
   }
   &:hover {
     .languageButtonText {
-      color: var(--pink);
+      color: var(--pink) !important;
     }
   }
   &.upper {
@@ -229,7 +215,7 @@
 }
 .languageButtonText {
   transition: color var(--transitionProps);
-  color: var(--white);
+  // color: var(--white);
 }
 
 .ancorList {

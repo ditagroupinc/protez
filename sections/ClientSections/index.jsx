@@ -37,7 +37,7 @@ const homeText = {
   },
 };
 
-export default function ClientSections({ news }) {
+export default function ClientSections({ news, statistics, upcomingEvents }) {
   const { lang } = useContext(LanguageContext);
 
   const [visitedSections, setVisitedSections] = useState({});
@@ -67,7 +67,7 @@ export default function ClientSections({ news }) {
     return false;
   };
 
-  const sectionIsVisible = (margin = 200) => {
+  const sectionIsVisible = (margin = 500) => {
     Object.keys(sectionRefs).forEach((key, index) => {
       const { top, bottom } = sectionRefs[key]?.current.getBoundingClientRect();
 
@@ -124,6 +124,7 @@ export default function ClientSections({ news }) {
         /> */}
         <CompanyDataNonProfit
           black={bgIsWhite()}
+          bgIsPink={sectionInViewPort === "inNeed"}
           className={`${style.companyDataNonProfit} ${
             showCompanyData ? "" : "hidden"
           }`}
@@ -153,6 +154,7 @@ export default function ClientSections({ news }) {
             />
           </div>
           <OurResults
+            results={statistics}
             ref={sectionRefs.ourResults}
             visible={isVisible("ourResults")}
             id="ourResults"

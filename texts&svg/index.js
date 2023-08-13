@@ -780,13 +780,13 @@ const thankYouPage = {
 
 const texts = {
   ourMission: ourMissionSection,
-  ourResults: ourResultsSection,
+  // ourResults: ourResultsSection,
   inNeed: inNeedSection,
   prosthetics: prostheticsSection,
   veterans: veteransSection,
   ourTeam: ourTeamSection,
   ourPartners: ourPartnersSection,
-  news: newsSection,
+  // news: newsSection,
   mailingList: mailingListSection,
   thankYou: thankYouSection,
   // ---

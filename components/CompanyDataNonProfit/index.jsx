@@ -7,7 +7,11 @@ import icons from "./icons";
 
 import style from "./companyDataNonProfit.module.scss";
 
-export default function CompanyDataNonProfit({ className = "", black }) {
+export default function CompanyDataNonProfit({
+  className = "",
+  black,
+  bgIsPink,
+}) {
   const { lang } = useContext(LanguageContext);
 
   return (
@@ -26,7 +30,7 @@ export default function CompanyDataNonProfit({ className = "", black }) {
         <Divider />
       </div>
       <div className={style.buttonsContainer}>
-        <SquareButton link href="donate" pink>
+        <SquareButton link href="donate" pink={!bgIsPink} black={bgIsPink}>
           {texts.companyData.actionButtons.makeDonation[lang]}
         </SquareButton>
 
