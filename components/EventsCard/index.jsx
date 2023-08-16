@@ -1,60 +1,62 @@
+"use client";
 import Image from "next/image";
 import style from "./eventsCard.module.scss";
 import icons from "./icons";
+import texts from "@/texts&svg";
+
+import { useContext } from "react";
+import { LanguageContext } from "@/contexts/LanguageContext";
 
 export default function EventsCard({
   link,
   photo,
   date,
-  time,
   address,
   title,
-  opened,
+  status,
 }) {
-  const openedClass = opened ? style.opened : "";
+  const { lang } = useContext(LanguageContext);
+
+  const pastClass = status === "past" ? style.past : "";
+
+  const statusText = `${texts.upcomingEvents[status][lang]} ${texts.upcomingEvents.event[lang]}`;
 
   return (
-    <a
-      href={link}
-      target="blank"
-      className={`${style.eventsCard} ${openedClass}`}
-    >
-      {opened ? (
+    <div className={style.eventsCardWrapper}>
+      <a
+        href={link}
+        target="blank"
+        className={`${style.eventsCard} ${pastClass}`}
+      >
         <Image
           src={photo}
           alt="article picture"
-          width={390}
-          height={544}
-          className={`${style.newsPicture} ${openedClass}`}
+          width={400}
+          height={432}
+          className={`${style.eventsCardPicture}`}
         />
-      ) : (
-        ""
-      )}
-
-      <h6 className={`${style.dateTimeLocation} h6 textContainer`}>
-        <span>{date}</span>
-        {opened ? (
-          <>
-            <span>|</span>
-            <span>{time}</span>
-          </>
-        ) : (
-          ""
-        )}
-        <div className={`${style.locationText}`}>
-          {icons.location(`${style.iconLocation}`)}
-          <span>{address}</span>
+        <div className={style.eventsCardFlexContainer}>
+          <div className={`textContainer ${style.eventsCardHeader}`}>
+            <span className={`h6 ${style.eventsCardStatus}`}>{statusText}</span>
+            <h3 className={`h3`}>{date}</h3>
+          </div>
+          <div className="textContainer">
+            <h4 className={`h4 textContainer ${style.title}`}>{title}</h4>
+          </div>
+          {icons.arrow(`${style.arrowIcon} textContainer arrow`)}
         </div>
-      </h6>
-      <div className="textContainer">
-        <h4 className={` ${style.title}`}>{title}</h4>
-      </div>
 
-      {opened ? (
-        <>{icons.arrow(`${style.arrowIcon} arrow ${openedClass}`)}</>
-      ) : (
-        ""
-      )}
-    </a>
+        <h5 className={`${style.location} h5 textContainer`}>
+          <div className={`${style.locationText}`}>
+            {icons.location(`${style.locationIcon}`)}
+            <span>{address}</span>
+          </div>
+        </h5>
+
+        <span className={`h6 ${style.more}`}>
+          {texts.upcomingEvents.more[lang]}
+        </span>
+      </a>
+    </div>
   );
 }

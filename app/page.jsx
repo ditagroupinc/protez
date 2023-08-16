@@ -1,41 +1,26 @@
 import { getNews, getAllSections } from "@/lib/api";
 import ClientSections from "@/sections/ClientSections";
-import {
-  parseNews,
-  parseStatistics,
-  // parseUpcomingEvents,
-} from "@/utils/parsers";
+import { parseNews, parseStatistics, parseEvents } from "@/utils/parsers";
 
 export default async function Home() {
-  const { news, statistics, upcomingEvents } = await getPosts();
+  const { news, statistics, events } = await getPosts();
 
-  return (
-    <ClientSections
-      news={news}
-      statistics={statistics}
-      upcomingEvents={upcomingEvents}
-    />
-  );
-}
-
-async function getData() {
-  const news = await getNews();
-  return news;
+  return <ClientSections news={news} statistics={statistics} events={events} />;
 }
 
 async function getPosts() {
   const posts = await getAllSections();
 
   let newsData = {};
-  // let upcomingEventsData = {};
+  let eventsData = {};
   let statisticsData = {};
 
   posts.forEach((post, index) => {
     const node = post.node;
     if (node.title === "Statistics") {
       statisticsData = node.content;
-      // } else if (node.title === "Upcoming events") {
-      //   upcomingEventsData = node.content;
+    } else if (node.title === "Events") {
+      eventsData = node.content;
     } else if (node.title === "News") {
       newsData = node.content;
     }
@@ -44,6 +29,6 @@ async function getPosts() {
   return {
     news: parseNews(newsData),
     statistics: parseStatistics(statisticsData),
-    // upcomingEvents: parseUpcomingEvents(upcomingEventsData),
+    events: parseEvents(eventsData),
   };
 }

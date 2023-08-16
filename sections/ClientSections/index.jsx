@@ -22,11 +22,11 @@ import ThankYou from "@/sections/ThankYou";
 import { LanguageContext } from "@/contexts/LanguageContext";
 
 import BackToTopButton from "@/components/BackToTopButton";
-import style from "./clientSections.module.css";
+import style from "./clientSections.module.scss";
 import SmokeBackground from "@/components/SmokeBackground";
 
 import CompanyDataNonProfit from "@/components/CompanyDataNonProfit";
-// import UpcomingEvents from "@/sections/UpcomingEvents";
+import Events from "@/sections/Events";
 
 const homeText = {
   backToTop: {
@@ -37,7 +37,7 @@ const homeText = {
   },
 };
 
-export default function ClientSections({ news, statistics, upcomingEvents }) {
+export default function ClientSections({ news, statistics, events }) {
   const { lang } = useContext(LanguageContext);
 
   const [visitedSections, setVisitedSections] = useState({});
@@ -57,7 +57,7 @@ export default function ClientSections({ news, statistics, upcomingEvents }) {
     news: useRef(null),
     mailingList: useRef(null),
     thankYou: useRef(null),
-    // upcomingEvents: useRef(null),
+    events: useRef(null),
   };
 
   const isVisible = (id) => {
@@ -117,11 +117,6 @@ export default function ClientSections({ news, statistics, upcomingEvents }) {
     <>
       <Header black={bgIsWhite()} />
       <main className={style.main}>
-        {/* <UpcomingEvents
-          ref={sectionRefs.upcomingEvents}
-          id="upcomingEvents"
-          visible={isVisible("upcomingEvents")}
-        /> */}
         <CompanyDataNonProfit
           black={bgIsWhite()}
           bgIsPink={sectionInViewPort === "inNeed"}
@@ -171,12 +166,18 @@ export default function ClientSections({ news, statistics, upcomingEvents }) {
           id="prosthetics"
           visible={isVisible("prosthetics")}
         />
-        <div className={style.smokeBlock}>
+        <div className={`${style.smokeBlock} ${style.veteransAndEventsBlock}`}>
           <SmokeBackground className={style.smoke} />
           <Veterans
             ref={sectionRefs.veterans}
             id="veterans"
             visible={isVisible("veterans")}
+          />
+          <Events
+            events={events}
+            ref={sectionRefs.events}
+            id="events"
+            visible={isVisible("events")}
           />
         </div>
         <OurTeam

@@ -27,44 +27,44 @@ const ourMissionSection = {
   },
 };
 
-const ourResultsSection = {
-  results: {
-    prosthetics: {
-      english: "Prosthetics",
-      ukrainian: "Запротезовано пацієнтів",
-      number: "92",
-    },
-    prostheses: {
-      english: "Prostheses",
-      ukrainian: "Встановлено протезів",
-      number: "254",
-    },
-    // volunteers: {
-    //   english: "Volunteers",
-    //   ukrainian: "Волонтерів",
-    //   number: "150",
-    // },
-    clinics: {
-      english: "Clinics opened",
-      ukrainian: "Відкрито клінік",
-      number: "2",
-    },
-    specialistsTrained: {
-      english: "Specialists trained",
-      ukrainian: "Підготовлено спеціалістів",
-      number: "18",
-    },
-    moneySpent: {
-      english: "Money spent",
-      ukrainian: "Витрачено на допомогу",
-      number: "$3 050 000",
-    },
-  },
-  date: {
-    english: "(May 2022 - July 2023)",
-    ukrainian: "(Травень 2022 - Липень 2023)",
-  },
-};
+// const ourResultsSection = {
+//   results: {
+//     prosthetics: {
+//       english: "Prosthetics",
+//       ukrainian: "Запротезовано пацієнтів",
+//       number: "92",
+//     },
+//     prostheses: {
+//       english: "Prostheses",
+//       ukrainian: "Встановлено протезів",
+//       number: "254",
+//     },
+//     // volunteers: {
+//     //   english: "Volunteers",
+//     //   ukrainian: "Волонтерів",
+//     //   number: "150",
+//     // },
+//     clinics: {
+//       english: "Clinics opened",
+//       ukrainian: "Відкрито клінік",
+//       number: "2",
+//     },
+//     specialistsTrained: {
+//       english: "Specialists trained",
+//       ukrainian: "Підготовлено спеціалістів",
+//       number: "18",
+//     },
+//     moneySpent: {
+//       english: "Money spent",
+//       ukrainian: "Витрачено на допомогу",
+//       number: "$3 050 000",
+//     },
+//   },
+//   date: {
+//     english: "(May 2022 - July 2023)",
+//     ukrainian: "(Травень 2022 - Липень 2023)",
+//   },
+// };
 
 const inNeedSection = {
   paragraph: {
@@ -209,6 +209,25 @@ const veteransSection = {
   videoButton: {
     english: "get better known",
     ukrainian: " get better known ",
+  },
+};
+
+const upcomingEventsSection = {
+  past: {
+    english: "Past",
+    ukrainian: "Past",
+  },
+  upcoming: {
+    english: "Upcoming",
+    ukrainian: "Upcoming",
+  },
+  event: {
+    english: "event",
+    ukrainian: "event",
+  },
+  more: {
+    english: "more",
+    ukrainian: "more",
   },
 };
 
@@ -407,152 +426,152 @@ const ourPartnersSection = {
   },
 };
 
-const newsSection = {
-  cards: [
-    {
-      link: "https://www.nytimes.com/2023/03/24/world/europe/ukraine-war-amputees.html",
-      photo: "nyt-pic.png",
-      date: "16.03.2023",
-      address: "nytimes.com",
-      logo: "nyt",
-      title: {
-        english:
-          "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
-        ukrainian:
-          "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
-      },
-      text: {
-        english:
-          "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
-        ukrainian:
-          "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
-      },
-    },
-    {
-      link: "https://tsn.ua/ru/video/video-novini/stoim-dokumentalnyy-film-o-ranenyh-voennyh-i-ih-vospominaniyah-o-voyne.html",
-      photo: "1plus1-pic.png",
-      date: "19.03.2023",
-      address: "1plus1.ua",
-      logo: "onePlusOne",
-      title: {
-        english: "Oakdale foundation helps hurt ukrainian soldiers walk again",
-        ukrainian:
-          "Oakdale foundation helps hurt ukrainian soldiers walk again",
-      },
-      text: {
-        english:
-          "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
-        ukrainian:
-          "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
-      },
-    },
-    {
-      link: "https://www.cbsnews.com/minnesota/news/5-ukrainian-solders-receive-prosthetic-limbs-in-minneapolis/",
-      photo: "globalminesota-pic.png",
-      date: "27.03.2023",
-      address: "globalminnesota.org",
-      logo: "cbs",
-      title: {
-        english: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
-        ukrainian: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
-      },
-      text: {
-        english:
-          "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
-        ukrainian:
-          "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
-      },
-    },
-    {
-      link: "https://www.eplocalnews.org/2023/03/27/standing-with-ukraine-in-mn/",
-      photo: "eplocalnews-pic.png",
-      date: "27.03.2023",
-      address: "eplocalnews.org",
-      logo: "onePlusOne",
-      title: {
-        english: "Standing with Ukraine in MN",
-        ukrainian: "Standing with Ukraine in MN",
-      },
-      text: {
-        english:
-          '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
-        ukrainian:
-          '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
-      },
-    },
-    {
-      link: "https://www.nytimes.com/2023/03/24/world/europe/ukraine-war-amputees.html",
-      photo: "nyt-pic.png",
-      date: "16.03.2023",
-      address: "nytimes.com",
-      logo: "nyt",
-      title: {
-        english:
-          "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
-        ukrainian:
-          "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
-      },
-      text: {
-        english:
-          "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
-        ukrainian:
-          "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
-      },
-    },
-    {
-      link: "https://tsn.ua/ru/video/video-novini/stoim-dokumentalnyy-film-o-ranenyh-voennyh-i-ih-vospominaniyah-o-voyne.html",
-      photo: "1plus1-pic.png",
-      date: "19.03.2023",
-      address: "1plus1.ua",
-      logo: "onePlusOne",
-      title: {
-        english: "Oakdale foundation helps hurt ukrainian soldiers walk again",
-        ukrainian:
-          "Oakdale foundation helps hurt ukrainian soldiers walk again",
-      },
-      text: {
-        english:
-          "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
-        ukrainian:
-          "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
-      },
-    },
-    {
-      link: "https://www.cbsnews.com/minnesota/news/5-ukrainian-solders-receive-prosthetic-limbs-in-minneapolis/",
-      photo: "globalminesota-pic.png",
-      date: "27.03.2023",
-      address: "globalminnesota.org",
-      logo: "cbs",
-      title: {
-        english: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
-        ukrainian: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
-      },
-      text: {
-        english:
-          "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
-        ukrainian:
-          "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
-      },
-    },
-    {
-      link: "https://www.eplocalnews.org/2023/03/27/standing-with-ukraine-in-mn/",
-      photo: "eplocalnews-pic.png",
-      date: "27.03.2023",
-      address: "eplocalnews.org",
-      logo: "onePlusOne",
-      title: {
-        english: "Standing with Ukraine in MN",
-        ukrainian: "Standing with Ukraine in MN",
-      },
-      text: {
-        english:
-          '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
-        ukrainian:
-          '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
-      },
-    },
-  ],
-};
+// const newsSection = {
+//   cards: [
+//     {
+//       link: "https://www.nytimes.com/2023/03/24/world/europe/ukraine-war-amputees.html",
+//       photo: "nyt-pic.png",
+//       date: "16.03.2023",
+//       address: "nytimes.com",
+//       logo: "nyt",
+//       title: {
+//         english:
+//           "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
+//         ukrainian:
+//           "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
+//       },
+//       text: {
+//         english:
+//           "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
+//         ukrainian:
+//           "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
+//       },
+//     },
+//     {
+//       link: "https://tsn.ua/ru/video/video-novini/stoim-dokumentalnyy-film-o-ranenyh-voennyh-i-ih-vospominaniyah-o-voyne.html",
+//       photo: "1plus1-pic.png",
+//       date: "19.03.2023",
+//       address: "1plus1.ua",
+//       logo: "onePlusOne",
+//       title: {
+//         english: "Oakdale foundation helps hurt ukrainian soldiers walk again",
+//         ukrainian:
+//           "Oakdale foundation helps hurt ukrainian soldiers walk again",
+//       },
+//       text: {
+//         english:
+//           "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
+//         ukrainian:
+//           "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
+//       },
+//     },
+//     {
+//       link: "https://www.cbsnews.com/minnesota/news/5-ukrainian-solders-receive-prosthetic-limbs-in-minneapolis/",
+//       photo: "globalminesota-pic.png",
+//       date: "27.03.2023",
+//       address: "globalminnesota.org",
+//       logo: "cbs",
+//       title: {
+//         english: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
+//         ukrainian: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
+//       },
+//       text: {
+//         english:
+//           "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
+//         ukrainian:
+//           "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
+//       },
+//     },
+//     {
+//       link: "https://www.eplocalnews.org/2023/03/27/standing-with-ukraine-in-mn/",
+//       photo: "eplocalnews-pic.png",
+//       date: "27.03.2023",
+//       address: "eplocalnews.org",
+//       logo: "onePlusOne",
+//       title: {
+//         english: "Standing with Ukraine in MN",
+//         ukrainian: "Standing with Ukraine in MN",
+//       },
+//       text: {
+//         english:
+//           '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
+//         ukrainian:
+//           '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
+//       },
+//     },
+//     {
+//       link: "https://www.nytimes.com/2023/03/24/world/europe/ukraine-war-amputees.html",
+//       photo: "nyt-pic.png",
+//       date: "16.03.2023",
+//       address: "nytimes.com",
+//       logo: "nyt",
+//       title: {
+//         english:
+//           "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
+//         ukrainian:
+//           "How Minnesotans are helping meet the demand for prosthetics in Ukraine",
+//       },
+//       text: {
+//         english:
+//           "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
+//         ukrainian:
+//           "Delegates from Ukraine are in Minnesota this week. The topic? The huge demand for limb prosthetics d ...",
+//       },
+//     },
+//     {
+//       link: "https://tsn.ua/ru/video/video-novini/stoim-dokumentalnyy-film-o-ranenyh-voennyh-i-ih-vospominaniyah-o-voyne.html",
+//       photo: "1plus1-pic.png",
+//       date: "19.03.2023",
+//       address: "1plus1.ua",
+//       logo: "onePlusOne",
+//       title: {
+//         english: "Oakdale foundation helps hurt ukrainian soldiers walk again",
+//         ukrainian:
+//           "Oakdale foundation helps hurt ukrainian soldiers walk again",
+//       },
+//       text: {
+//         english:
+//           "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
+//         ukrainian:
+//           "Some plan to return and fight: “To protect our country and protect my family and live my life to its full poten ...",
+//       },
+//     },
+//     {
+//       link: "https://www.cbsnews.com/minnesota/news/5-ukrainian-solders-receive-prosthetic-limbs-in-minneapolis/",
+//       photo: "globalminesota-pic.png",
+//       date: "27.03.2023",
+//       address: "globalminnesota.org",
+//       logo: "cbs",
+//       title: {
+//         english: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
+//         ukrainian: "Global Minnesota Welcomes Ukrainian Prosthetics Experts",
+//       },
+//       text: {
+//         english:
+//           "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
+//         ukrainian:
+//           "In mid-March, Global Minnesota had the honor of welcoming five prosthetics experts from Ukraine for ...",
+//       },
+//     },
+//     {
+//       link: "https://www.eplocalnews.org/2023/03/27/standing-with-ukraine-in-mn/",
+//       photo: "eplocalnews-pic.png",
+//       date: "27.03.2023",
+//       address: "eplocalnews.org",
+//       logo: "onePlusOne",
+//       title: {
+//         english: "Standing with Ukraine in MN",
+//         ukrainian: "Standing with Ukraine in MN",
+//       },
+//       text: {
+//         english:
+//           '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
+//         ukrainian:
+//           '"Hundreds gather in Northeast Minneapolis to thank local and refugee volunteers ...",',
+//       },
+//     },
+//   ],
+// };
 
 const mailingListSection = {
   subscribe: {
@@ -784,6 +803,7 @@ const texts = {
   inNeed: inNeedSection,
   prosthetics: prostheticsSection,
   veterans: veteransSection,
+  upcomingEvents: upcomingEventsSection,
   ourTeam: ourTeamSection,
   ourPartners: ourPartnersSection,
   // news: newsSection,

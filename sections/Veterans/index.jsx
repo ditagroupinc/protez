@@ -2,7 +2,7 @@ import { useContext, useRef, useState, forwardRef } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
 import SquareButton from "@/components/SquareButton";
 
-import style from "./Veterans.module.css";
+import style from "./Veterans.module.scss";
 import Image from "next/image";
 import Slider from "react-slick";
 

@@ -69,7 +69,7 @@ export function parseStatistics(statisticsContent) {
   return statistics;
 }
 
-export function parseUpcomingEvents(upcomingEventsContent) {
+export function parseEvents(upcomingEventsContent) {
   const $ = cheerio.load(upcomingEventsContent);
 
   const upcomingEvents = [];
