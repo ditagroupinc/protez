@@ -1,4 +1,4 @@
-import { useContext, useRef, forwardRef } from "react";
+import { useContext, useRef, forwardRef, useState } from "react";
 // import { LanguageContext } from "@/contexts/LanguageContext";
 import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
 import style from "./Events.module.scss";
@@ -9,35 +9,62 @@ import Slider from "react-slick";
 
 import Image from "next/image";
 
+const parseDate = (date) => {
+  const [day, month, year] = date.split(".");
+  return `${year}-${month}-${day}`;
+};
+
 const Events = forwardRef(function ({ visible, id, events }, ref) {
   // const { lang } = useContext(LanguageContext);
+  const [eventsData, setEventsData] = useState(splitAndSortDates(events));
   const { height, width, mobile, tablet, screenModeClass } = useContext(
     ScreenModeAndSizeContext
   );
 
   const sliderRef = useRef(null);
 
-  const getEventCardStatus = (date) => {
-    const [day, month, year] = date.split(".");
-    const parsedDate = new Date(`${year}-${month}-${day}`);
+  function splitAndSortDates(dateArray) {
     const currentDate = new Date();
-    const result = parsedDate < currentDate ? "past" : "upcoming";
+
+    const upcomingDates = dateArray
+      .filter((event) => new Date(parseDate(event.date)) >= currentDate)
+      .sort(
+        (a, b) => new Date(parseDate(a.date)) - new Date(parseDate(b.date))
+      );
+
+    const previousDates = dateArray
+      .filter((event) => new Date(parseDate(event.date)) < currentDate)
+      .sort(
+        (a, b) => new Date(parseDate(a.date)) - new Date(parseDate(b.date))
+      );
+
+    return {
+      events: [...previousDates, ...upcomingDates],
+      upcomingEventsIndex: previousDates.length,
+    };
+  }
+
+  const getEventCardStatus = (date) => {
+    const currentDate = new Date();
+    const result =
+      new Date(parseDate(date)) < currentDate ? "past" : "upcoming";
     return result;
   };
 
   const getDateText = (date) => {
     const [day, month, year] = date.split(".");
-    return `${day}/${month}`;
+    return `${month}/${day}`;
   };
 
   const settings = {
     dots: true,
     infinite: true,
     speed: 500,
-    // initialSlide: 3,
+    initialSlide: eventsData.upcomingEventsIndex + 1,
     slidesToShow: 6,
     slidesToScroll: 1,
     centerMode: true,
+
     swipeToSlide: true,
     arrows: false,
     autoplay: true,
@@ -93,7 +120,7 @@ const Events = forwardRef(function ({ visible, id, events }, ref) {
         : icons.eventsLogo.desktop.english(`svgTextBlock ${style.logo}`)}
 
       <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
-        {events.map((event, index) => (
+        {eventsData.events.map((event, index) => (
           <EventsCard
             key={index}
             link={event.link}
