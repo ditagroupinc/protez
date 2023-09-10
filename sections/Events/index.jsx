@@ -14,6 +14,23 @@ const parseDate = (date) => {
   return `${year}-${month}-${day}`;
 };
 
+function splitAndSortDates(dateArray) {
+  const currentDate = new Date();
+
+  const upcomingDates = dateArray
+    .filter((event) => new Date(parseDate(event.date)) >= currentDate)
+    .sort((a, b) => new Date(parseDate(a.date)) - new Date(parseDate(b.date)));
+
+  const previousDates = dateArray
+    .filter((event) => new Date(parseDate(event.date)) < currentDate)
+    .sort((a, b) => new Date(parseDate(a.date)) - new Date(parseDate(b.date)));
+
+  return {
+    events: [...previousDates, ...upcomingDates],
+    upcomingEventsIndex: previousDates.length,
+  };
+}
+
 const Events = forwardRef(function ({ visible, id, events }, ref) {
   // const { lang } = useContext(LanguageContext);
   const [eventsData, setEventsData] = useState(splitAndSortDates(events));
@@ -22,27 +39,6 @@ const Events = forwardRef(function ({ visible, id, events }, ref) {
   );
 
   const sliderRef = useRef(null);
-
-  function splitAndSortDates(dateArray) {
-    const currentDate = new Date();
-
-    const upcomingDates = dateArray
-      .filter((event) => new Date(parseDate(event.date)) >= currentDate)
-      .sort(
-        (a, b) => new Date(parseDate(a.date)) - new Date(parseDate(b.date))
-      );
-
-    const previousDates = dateArray
-      .filter((event) => new Date(parseDate(event.date)) < currentDate)
-      .sort(
-        (a, b) => new Date(parseDate(a.date)) - new Date(parseDate(b.date))
-      );
-
-    return {
-      events: [...previousDates, ...upcomingDates],
-      upcomingEventsIndex: previousDates.length,
-    };
-  }
 
   const getEventCardStatus = (date) => {
     const currentDate = new Date();
