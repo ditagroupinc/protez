@@ -6,6 +6,7 @@ import "./globals.css";
 import Script from "next/script";
 import LanguageContextProvider from "@/contexts/LanguageContext";
 import ScreenModeAndSizeContextProvider from "@/contexts/ScreenModeAndSizeContext";
+import FacebookPixelEvents from "@/components/FacebookPixelEvents";
 // https://www.rodyvansambeek.com/blog/easiest-ga4-integration-nextjs-13-gtm-guide
 
 const GTM_ID = "GTM-MP2L4TL";
@@ -62,6 +63,7 @@ export default function RootLayout({ children }) {
                   style={{ display: "none", visibility: "hidden" }}
                 ></iframe>
               </noscript>
+              <FacebookPixelEvents />
             </body>
           </html>
         </ScreenModeAndSizeContextProvider>
