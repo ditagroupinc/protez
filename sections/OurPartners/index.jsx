@@ -26,7 +26,6 @@ const PartnerCard = ({ image, dita }) => {
       <Image
         src={`/partnersLogos/${image}`}
         object-fit="contain"
-        priority
         alt={image}
         width={300}
         height={230}

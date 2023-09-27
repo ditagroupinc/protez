@@ -1,11 +1,24 @@
-import { getNews, getAllSections } from "@/lib/api";
+import { getAllSections } from "@/lib/api";
 import ClientSections from "@/sections/ClientSections";
-import { parseNews, parseStatistics, parseEvents } from "@/utils/parsers";
+import {
+  parseNews,
+  parseStatistics,
+  parseEvents,
+  parsePressRelease,
+} from "@/utils/parsers";
+// todo check textContainer className through components (should be above text HTML tags)
 
 export default async function Home() {
-  const { news, statistics, events } = await getPosts();
+  const { news, statistics, events, pressReleases } = await getPosts();
 
-  return <ClientSections news={news} statistics={statistics} events={events} />;
+  return (
+    <ClientSections
+      news={news}
+      statistics={statistics}
+      events={events}
+      pressReleases={pressReleases}
+    />
+  );
 }
 
 async function getPosts() {
@@ -14,6 +27,7 @@ async function getPosts() {
   let newsData = {};
   let eventsData = {};
   let statisticsData = {};
+  let pressReleaseData = {};
 
   posts.forEach((post, index) => {
     const node = post.node;
@@ -23,6 +37,8 @@ async function getPosts() {
       eventsData = node.content;
     } else if (node.title === "News") {
       newsData = node.content;
+    } else if (node.title === "PressRelease") {
+      pressReleaseData = node.content;
     }
   });
 
@@ -30,5 +46,6 @@ async function getPosts() {
     news: parseNews(newsData),
     statistics: parseStatistics(statisticsData),
     events: parseEvents(eventsData),
+    pressReleases: parsePressRelease(pressReleaseData),
   };
 }

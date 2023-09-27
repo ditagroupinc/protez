@@ -85,7 +85,6 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
               <Image
                 src={path}
                 alt="troops"
-                priority
                 width={2560}
                 height={1440}
                 // ${addClass(i)}

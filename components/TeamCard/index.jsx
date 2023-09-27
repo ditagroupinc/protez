@@ -9,7 +9,6 @@ export default function TeamCard({ photo, links = {}, name, position, black }) {
       <Image
         src={`/team/${photo}`}
         object-fit="contain"
-        priority
         alt="Picture of the author"
         width={264}
         height={220}

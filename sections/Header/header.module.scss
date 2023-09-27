@@ -79,6 +79,7 @@
 }
 
 .burgerButton {
+  background-color: transparent;
   position: relative;
   z-index: 20;
   margin-left: 1rem;
@@ -116,11 +117,15 @@
   text-transform: uppercase;
   background-color: transparent;
   transform-origin: center;
-  transition: color var(--transitionProps), transform var(--transitionProps);
+  transition:
+    color var(--transitionProps),
+    transform var(--transitionProps);
   &:hover {
     color: var(--pink) !important;
     /* transform: scale(var(--textScale)); */
-    transition: color var(--transitionProps), transform var(--transitionProps);
+    transition:
+      color var(--transitionProps),
+      transform var(--transitionProps);
   }
 }
 
@@ -229,11 +234,15 @@
   color: var(--black);
   font-weight: 400;
   transform-origin: center;
-  transition: color var(--transitionProps), transform var(--transitionProps);
+  transition:
+    color var(--transitionProps),
+    transform var(--transitionProps);
   &:hover {
     color: var(--pink);
     /* transform: scale(var(--textScale)); */
-    transition: color var(--transitionProps), transform var(--transitionProps);
+    transition:
+      color var(--transitionProps),
+      transform var(--transitionProps);
   }
   &.underlined {
     text-decoration: underline;

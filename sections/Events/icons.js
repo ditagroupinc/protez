@@ -66,12 +66,12 @@ const icons = {
   eventsLogo: {
     desktop: {
       english: eventsLogo,
-      // ukrainian: inNeedLogoUA,
+      ukrainian: eventsLogo,
     },
 
     mobile: {
       english: eventsLogoMobile,
-      // ukrainian: inNeedLogoUA,
+      ukrainian: eventsLogoMobile,
     },
   },
 };

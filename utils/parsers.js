@@ -95,3 +95,29 @@ export function parseEvents(upcomingEventsContent) {
   });
   return upcomingEvents;
 }
+
+export function parsePressRelease(postContent) {
+  const $ = cheerio.load(postContent);
+
+  const pressReleases = [];
+
+  $(".wp-block-group.pressReleaseCard").each((index, element) => {
+    const $element = $(element);
+
+    const image = $element.find(".pressReleaseCardImage img").attr("src");
+
+    const date = $element.find(".pressReleaseCardDate").text().trim();
+
+    const title = $element.find(".pressReleaseCardTitle").text().trim();
+    const text = $element.find(".pressReleaseCardText").text().trim();
+
+    pressReleases.push({
+      image,
+      date,
+      title,
+      text,
+    });
+  });
+
+  return pressReleases;
+}

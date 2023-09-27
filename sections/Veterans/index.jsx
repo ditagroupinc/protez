@@ -9,7 +9,6 @@ import Slider from "react-slick";
 import { icons } from "./icons";
 
 import texts from "@/texts&svg";
-import Link from "next/link";
 
 const Veterans = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
@@ -99,7 +98,6 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                   <div className={style.rightSide}>
                     <Image
                       src={`/veterans/${element.img}`}
-                      priority
                       alt={element.name[lang] + " " + element.surname[lang]}
                       className={style.photo}
                       width={1306}
