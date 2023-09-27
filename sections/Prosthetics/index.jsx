@@ -24,7 +24,6 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
       <Image
         src="/img-ukraine-map.png"
         object-fit="contain"
-        priority
         alt="map of Ukraine"
         width={2560}
         height={1440}

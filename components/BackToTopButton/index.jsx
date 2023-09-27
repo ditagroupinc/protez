@@ -1,4 +1,4 @@
-import style from "./backToTopButton.module.css";
+import style from "./backToTopButton.module.scss";
 
 export default function BackToTopButton({ text, href, className = "", black }) {
   return (

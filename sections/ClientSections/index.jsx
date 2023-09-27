@@ -7,6 +7,8 @@ import { useContext, useState, useEffect, useRef } from "react";
 import Header from "@/sections/Header";
 import LetsGiveHope from "@/sections/LetsGiveHope";
 import Veterans from "@/sections/Veterans";
+import PressRelease from "@/sections/PressRelease";
+import Events from "@/sections/Events";
 import OurMission from "@/sections/OurMission";
 import OurTeam from "@/sections/OurTeam";
 import OurPartners from "@/sections/OurPartners";
@@ -16,6 +18,7 @@ import InNeed from "@/sections/InNeed";
 import OurResults from "@/sections/OurResults";
 
 import MailingList from "@/sections/MailingList";
+import Merch from "@/sections/Merch";
 import Prosthetics from "@/sections/Prosthetics";
 import ThankYou from "@/sections/ThankYou";
 
@@ -26,7 +29,6 @@ import style from "./clientSections.module.scss";
 import SmokeBackground from "@/components/SmokeBackground";
 
 import CompanyDataNonProfit from "@/components/CompanyDataNonProfit";
-import Events from "@/sections/Events";
 
 const homeText = {
   backToTop: {
@@ -37,7 +39,12 @@ const homeText = {
   },
 };
 
-export default function ClientSections({ news, statistics, events }) {
+export default function ClientSections({
+  news,
+  statistics,
+  events,
+  pressReleases,
+}) {
   const { lang } = useContext(LanguageContext);
 
   const [visitedSections, setVisitedSections] = useState({});
@@ -52,11 +59,13 @@ export default function ClientSections({ news, statistics, events }) {
     ourMission: useRef(null),
     prosthetics: useRef(null),
     veterans: useRef(null),
+    pressRelease: useRef(null),
     ourTeam: useRef(null),
     ourPartners: useRef(null),
     news: useRef(null),
     mailingList: useRef(null),
     thankYou: useRef(null),
+    merch: useRef(null),
     events: useRef(null),
   };
 
@@ -112,7 +121,9 @@ export default function ClientSections({ news, statistics, events }) {
   }, [visitedSections, sectionInViewPort, showCompanyData]);
 
   const bgIsWhite = () =>
-    sectionInViewPort === "ourTeam" || sectionInViewPort === "ourPartners";
+    sectionInViewPort === "ourTeam" ||
+    sectionInViewPort === "ourPartners" ||
+    sectionInViewPort === "merch";
   return (
     <>
       <Header black={bgIsWhite()} />
@@ -141,7 +152,6 @@ export default function ClientSections({ news, statistics, events }) {
             <Image
               src="/flag-usa.png"
               object-fit="contain"
-              priority
               alt="Picture of the author"
               width={1306}
               height={1890}
@@ -155,6 +165,7 @@ export default function ClientSections({ news, statistics, events }) {
             id="ourResults"
           />
         </div>
+
         <InNeed
           ref={sectionRefs.inNeed}
           visible={isVisible("inNeed")}
@@ -172,6 +183,12 @@ export default function ClientSections({ news, statistics, events }) {
             ref={sectionRefs.veterans}
             id="veterans"
             visible={isVisible("veterans")}
+          />
+          <PressRelease
+            ref={sectionRefs.pressRelease}
+            id="pressRelease"
+            visible={isVisible("pressRelease")}
+            pressReleases={pressReleases}
           />
           <Events
             events={events}
@@ -212,6 +229,11 @@ export default function ClientSections({ news, statistics, events }) {
             black={bgIsWhite()}
           />
         )}
+        <Merch
+          ref={sectionRefs.merch}
+          visible={isVisible("merch")}
+          id="merch"
+        />
       </main>
       <ThankYou
         ref={sectionRefs.thankYou}

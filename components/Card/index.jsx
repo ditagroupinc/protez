@@ -1,11 +1,11 @@
-import styles from "./Card.module.css";
+import style from "./Card.module.css";
 const Card = ({ text, icon, reverse }) => {
   const ifReverse = () => {
-    if (reverse) return styles.reverseBlock;
+    if (reverse) return style.reverseBlock;
     return "";
   };
   return (
-    <div className={` h5 ${styles.block} ${ifReverse()}`}>
+    <div className={` h5 ${style.block} ${ifReverse()}`}>
       <div className="textContainer">
         <h5>{text}</h5>
       </div>

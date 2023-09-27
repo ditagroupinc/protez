@@ -212,6 +212,13 @@ const veteransSection = {
   },
 };
 
+const pressReleaseSection = {
+  next: {
+    english: "Next  → ",
+    ukrainian: "Next  → ",
+  },
+};
+
 const upcomingEventsSection = {
   past: {
     english: "Past",
@@ -584,6 +591,57 @@ const mailingListSection = {
   },
 };
 
+const merchSection = {
+  currency: {
+    value: "USD",
+    symbol: "$",
+  },
+  cards: [
+    {
+      link: "https://www.protezmerch.com/product/new-era-original-fit-snapback-trucker-cap/4?cs=true&cst=custom",
+      title: "New Era® Original Fit Snapback Trucker Cap",
+      image: "truckerCap.png",
+      previousPrice: "",
+      price: "40",
+    },
+    {
+      link: "https://www.protezmerch.com/product/boat-tote-bag/3?cs=true&cst=custom",
+      title: "Boat Tote Bag",
+      image: "boatToteBag.png",
+      previousPrice: "70",
+      price: "45",
+    },
+    {
+      link: "https://www.protezmerch.com/product/rambler-18-oz-water-bottle/2?cs=true&cst=custom",
+      title: "RAMBLER® 18 OZ WATER BOTTLE",
+      image: "18ozWaterBottle.png",
+      previousPrice: "",
+      price: "55",
+    },
+    {
+      link: "https://www.protezmerch.com/product/rambler-20-oz-tumbler/1?cs=true&cst=custom",
+      title: "RAMBLER® 20 OZ TUMBLER",
+      image: "20ozTumbler.png",
+      previousPrice: "",
+      price: "60",
+    },
+    {
+      link: "https://www.protezmerch.com/product/bracelet-w-b/10?cs=true&cst=custom",
+      title: "Bracelet W+B",
+      image: "braceletWB.png",
+      previousPrice: "",
+      price: "2",
+    },
+    {
+      link: "https://www.protezmerch.com/product/notepad-pen/7?cs=true&cst=custom",
+      title: "Notepad + Pen",
+      image: "notepadAndPen.png",
+      previousPrice: "",
+      price: "10",
+    },
+  ],
+};
+
 const thankYouSection = {
   becomeAVolunteer: {
     english: "Protez Academy",
@@ -683,7 +741,8 @@ const companyDataComponent = {
       ukrainian: "Зробити Внесок!",
     },
     needAProtez: {
-      english: "Need a prosthesis",
+      // english: "Need a prosthesis",
+      english: "Потрібен протез",
       ukrainian: "Потрібен протез",
     },
     protezAcademy: {
@@ -803,11 +862,13 @@ const texts = {
   inNeed: inNeedSection,
   prosthetics: prostheticsSection,
   veterans: veteransSection,
+  pressRelease: pressReleaseSection,
   upcomingEvents: upcomingEventsSection,
   ourTeam: ourTeamSection,
   ourPartners: ourPartnersSection,
   // news: newsSection,
   mailingList: mailingListSection,
+  merch: merchSection,
   thankYou: thankYouSection,
   // ---
   header: headerComponent,
