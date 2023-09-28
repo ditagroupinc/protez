@@ -5,7 +5,8 @@
   max-width: 372px;
   color: var(--black);
   text-align: center;
-  min-height: 516px;
+  // min-height: 516px;
+  min-height: 430px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -57,6 +58,6 @@
 @media screen and (max-width: 480px) {
   .container {
     max-width: 340px;
-    min-height: 476px;
+    min-height: 370px;
   }
 }
