@@ -26,7 +26,7 @@
     & .protezAcademy {
       color: var(--black);
     }
-    & .languageButton {
+    & .languageButton.upper {
       color: var(--black);
       & svg path {
         fill: var(--black);
@@ -117,15 +117,11 @@
   text-transform: uppercase;
   background-color: transparent;
   transform-origin: center;
-  transition:
-    color var(--transitionProps),
-    transform var(--transitionProps);
+  transition: color var(--transitionProps), transform var(--transitionProps);
   &:hover {
     color: var(--pink) !important;
     /* transform: scale(var(--textScale)); */
-    transition:
-      color var(--transitionProps),
-      transform var(--transitionProps);
+    transition: color var(--transitionProps), transform var(--transitionProps);
   }
 }
 
@@ -234,15 +230,11 @@
   color: var(--black);
   font-weight: 400;
   transform-origin: center;
-  transition:
-    color var(--transitionProps),
-    transform var(--transitionProps);
+  transition: color var(--transitionProps), transform var(--transitionProps);
   &:hover {
     color: var(--pink);
     /* transform: scale(var(--textScale)); */
-    transition:
-      color var(--transitionProps),
-      transform var(--transitionProps);
+    transition: color var(--transitionProps), transform var(--transitionProps);
   }
   &.underlined {
     text-decoration: underline;
@@ -314,6 +306,12 @@
   color: var(--black);
 }
 
+@media screen and (max-height: 950px) {
+  .headerNav {
+    padding-top: 82px;
+  }
+}
+
 /* desktop */
 @media screen and (max-width: 1920px) {
   .foundationLogo {
@@ -361,5 +359,37 @@
   }
   .burgerButton {
     max-width: 24px;
+  }
+}
+
+@media (min-width: 750px) {
+  .headerNav {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  .ancorList {
+    margin-top: 12px;
+  }
+  .navLowerPart {
+    margin-top: auto;
+    & .headerDivider,
+    & .socialMediaLinks,
+    & .menuText {
+      display: none;
+    }
+  }
+  .navLowerPartButtonsContainer {
+    display: flex;
+    gap: 12px;
+    & .protezAcademyMenuButton {
+      margin-top: 0;
+    }
+  }
+
+  .languageButtonContainer {
+    &::before {
+      width: calc(100% + 48px);
+      left: -24px;
+    }
   }
 }
