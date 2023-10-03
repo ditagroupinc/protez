@@ -1,4 +1,4 @@
-import { getAllSections } from "@/lib/api";
+import { getAllSections, getCountry } from "@/lib/api";
 import ClientSections from "@/sections/ClientSections";
 import {
   parseNews,
@@ -11,12 +11,15 @@ import {
 export default async function Home() {
   const { news, statistics, events, pressReleases } = await getPosts();
 
+  const country = await getCurrentContry();
+
   return (
     <ClientSections
       news={news}
       statistics={statistics}
       events={events}
       pressReleases={pressReleases}
+      country={country}
     />
   );
 }
@@ -48,4 +51,10 @@ async function getPosts() {
     events: parseEvents(eventsData),
     pressReleases: parsePressRelease(pressReleaseData),
   };
+}
+
+async function getCurrentContry() {
+  const country = await getCountry();
+
+  return country.countryName;
 }

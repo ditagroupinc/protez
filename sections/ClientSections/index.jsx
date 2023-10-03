@@ -44,13 +44,17 @@ export default function ClientSections({
   statistics,
   events,
   pressReleases,
+  country,
 }) {
-  const { lang } = useContext(LanguageContext);
+  const { lang, setLang } = useContext(LanguageContext);
 
   const [visitedSections, setVisitedSections] = useState({});
 
   const [sectionInViewPort, setSectionInViewPort] = useState("letsGiveHope");
-  const [showCompanyData, setShowCompanyData] = useState(true);
+
+  const showCompanyData = !(
+    sectionInViewPort === "merch" || sectionInViewPort === "thankYou"
+  );
 
   const sectionRefs = {
     letsGiveHope: useRef(null),
@@ -87,13 +91,13 @@ export default function ClientSections({
       if (key === "thankYou") {
         if (top <= window.innerHeight - margin && notInViewPort) {
           setSectionInViewPort("thankYou");
-          showCompanyData && setShowCompanyData(false);
+          // showCompanyData && setShowCompanyData(false);
           notVisited &&
             setVisitedSections((prevState) => {
               return { ...prevState, thankYou: true };
             });
         } else if (top >= window.innerHeight - margin) {
-          !showCompanyData && setShowCompanyData(true);
+          // !showCompanyData && setShowCompanyData(true);
         }
       } else if (sectionChecker && notInViewPort) {
         setSectionInViewPort(key);
@@ -109,6 +113,7 @@ export default function ClientSections({
   }, 100);
 
   useEffect(() => {
+    if (country === "Ukraine") setLang("ukrainian");
     sectionIsVisible();
   }, []);
 
@@ -118,12 +123,13 @@ export default function ClientSections({
     return () => {
       window.removeEventListener("scroll", throttledSectionIsVisible);
     };
-  }, [visitedSections, sectionInViewPort, showCompanyData]);
+  }, []);
 
   const bgIsWhite = () =>
     sectionInViewPort === "ourTeam" ||
     sectionInViewPort === "ourPartners" ||
-    sectionInViewPort === "merch";
+    sectionInViewPort === "merch" ||
+    sectionInViewPort === "thankYou";
   return (
     <>
       <Header black={bgIsWhite()} />

@@ -111,7 +111,7 @@ export default function Header({ notMainPage, black }) {
             <span className={style.menuText}>{texts.header.menu[lang]}</span>
             <ul className={style.ancorList}>
               {navLinks.map((link, index) => (
-                <li key={index} className={"h4"}>
+                <li key={index} className={"h5"}>
                   {notMainPage ? (
                     <Link
                       className={style.navAncor}
@@ -140,21 +140,22 @@ export default function Header({ notMainPage, black }) {
             )} */}
             </ul>
           </div>
-          <div>
-            <SquareButton link href="donate" pink>
-              {texts.header.actionButtons.makeDonation[lang]}
-            </SquareButton>
+          <div className={style.navLowerPart}>
+            <div className={style.navLowerPartButtonsContainer}>
+              <SquareButton link href="donate" pink>
+                {texts.header.actionButtons.makeDonation[lang]}
+              </SquareButton>
 
-            <SquareButton
-              link
-              blank
-              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-              black
-              className={style.protezAcademyMenuButton}
-            >
-              {texts.header.actionButtons.protezAcademy[lang]}
-            </SquareButton>
-
+              <SquareButton
+                link
+                blank
+                href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+                black
+                className={style.protezAcademyMenuButton}
+              >
+                {texts.header.actionButtons.protezAcademy[lang]}
+              </SquareButton>
+            </div>
             <Divider className={style.headerDivider} />
             <span className={style.menuText}>
               {texts.header.getInTouch[lang]}

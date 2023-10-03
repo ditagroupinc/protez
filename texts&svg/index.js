@@ -663,10 +663,11 @@ const headerComponent = {
     ukrainian: "Get in touch",
   },
   navigation: {
-    // giveHope: {
-    //   english: "Home",
-    //   id: "lets"Home",eHope",
-    // },
+    giveHope: {
+      english: "Home",
+      ukrainian: "Головна",
+      id: "letsGiveHope",
+    },
     mission: {
       english: "Mission",
       ukrainian: "Місія",
@@ -692,6 +693,16 @@ const headerComponent = {
       ukrainian: "Історії",
       id: "veterans",
     },
+    pressRelease: {
+      english: "Press release",
+      ukrainian: "Прес-реліз",
+      id: "pressRelease",
+    },
+    events: {
+      english: "Events",
+      ukrainian: "Події",
+      id: "events",
+    },
     team: {
       english: "Team",
       ukrainian: "Команда",
@@ -706,6 +717,11 @@ const headerComponent = {
       english: "News",
       ukrainian: "Новини",
       id: "news",
+    },
+    merch: {
+      english: "Protez Merch",
+      ukrainian: "Protez-мерч",
+      id: "merch",
     },
     // getInvolved: {
     //   english: "Get Involved",

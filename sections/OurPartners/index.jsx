@@ -59,7 +59,8 @@ const OurPartners = forwardRef(function ({ visible, id }, ref) {
             {icons.arrow()}
           </Link>
         </div>
-        <PartnerCard image="paradise.svg" />
+        {/* <PartnerCard image="paradise.svg" /> */}
+        <PartnerCard image="directRelief.svg" />
         <PartnerCard image="klmb.svg" />
         <PartnerCard image="antonovGroup.svg" />
         <PartnerCard dita />
