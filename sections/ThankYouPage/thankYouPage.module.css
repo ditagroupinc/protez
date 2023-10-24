@@ -42,7 +42,7 @@
   margin-top: 56px;
 }
 
-.protezLogo {
+/* .protezLogo {
   display: block;
   margin: 0 auto;
   width: 198px;
@@ -50,6 +50,12 @@
   & svg {
     max-width: 100%;
   }
+} */
+
+.backToWebsiteButton {
+  margin: 0 auto;
+  margin-top: 80px;
+  width: fit-content;
 }
 
 /* desktop */
@@ -71,9 +77,9 @@
     line-height: 40px;
     margin-top: 56px;
   }
-  .protezLogo {
+  /* .protezLogo {
     margin-top: 80px;
-  }
+  } */
 }
 /* beforeTablet */
 @media screen and (max-width: 1366px) {
@@ -94,10 +100,10 @@
     line-height: 28px;
     margin-top: 16px;
   }
-  .protezLogo {
+  /* .protezLogo {
     width: 100px;
     margin-top: 64px;
-  }
+  } */
 }
 
 /* phone */
