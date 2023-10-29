@@ -9,12 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.80",
     "autoprefixer": "^10.4.14",
     "cheerio": "^1.0.0-rc.12",
     "countup.js": "^2.6.0",
     "eslint": "8.39.0",
-    "eslint-config-next": "13.4.2",
-    "next": "13.4.2",
+    "eslint-config-next": "13.5.6",
+    "next": "13.5.6",
     "nodemailer": "^6.9.2",
     "react": "^18.2.0",
     "react-countup": "^6.4.2",
