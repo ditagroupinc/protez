@@ -4,6 +4,7 @@ import Link from "next/link";
 import texts from "@/texts&svg";
 import { useContext } from "react";
 import { LanguageContext } from "@/contexts/LanguageContext";
+import SquareButton from "@/components/SquareButton";
 
 export default function ThankYouPage() {
   const { lang } = useContext(LanguageContext);
@@ -16,9 +17,19 @@ export default function ThankYouPage() {
           {texts.thankYouPage.message[lang]}
           <span>{texts.thankYouPage.pink[lang]}</span>
         </p>
-        <Link href="/" className={style.protezLogo}>
+
+        <SquareButton
+          className={style.backToWebsiteButton}
+          emptyBlack
+          link
+          href="/"
+        >
+          {texts.thankYouPage.backToWebsite[lang]}
+        </SquareButton>
+
+        {/* <Link href="/" className={style.protezLogo}>
           {icons.protezLogo()}
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

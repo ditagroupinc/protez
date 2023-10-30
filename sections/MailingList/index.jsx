@@ -5,7 +5,10 @@ import Image from "next/image";
 import { icons } from "./icons";
 import SquareButton from "@/components/SquareButton";
 import texts from "@/texts&svg";
-import { sendContactForm } from "@/lib/api";
+import { isValidEmail } from "@/utils/emailValidation";
+// import { sendContactForm } from "@/lib/api";
+
+import { subscribeToMailchimp } from "@/lib/api";
 
 const veteransImages = [
   "/veterans/mailingList/soldiers1.png",
@@ -34,6 +37,12 @@ const SuccessButton = () => (
   </button>
 );
 
+const ErrorButton = () => (
+  <button type="button" className={`${style.button} ${style.errorButton}`}>
+    Error
+  </button>
+);
+
 const MailingList = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
   const [formStatus, setFormStatus] = useState("");
@@ -44,7 +53,7 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
     if (formStatus === "isLoading") {
       return <SpinnerButton />;
     } else if (formStatus === "error") {
-      return <SpinnerButton />;
+      return <ErrorButton />;
     } else if (formStatus === "sent") {
       return <SuccessButton />;
     } else {
@@ -64,8 +73,9 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
     };
 
     try {
-      await sendContactForm(data);
+      const result = await subscribeToMailchimp(data);
       setFormStatus("sent");
+      // await sendContactForm(data);
     } catch (error) {
       setFormStatus("error");
     }

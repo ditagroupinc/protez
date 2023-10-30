@@ -870,6 +870,10 @@ const thankYouPage = {
     english: `your gift has been successful.`,
     ukrainian: "Ваше внесок був успішним",
   },
+  backToWebsite: {
+    english: "Back to website →",
+    ukrainian: "Повернутись до сайту →",
+  },
 };
 
 const texts = {
