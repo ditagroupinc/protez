@@ -182,9 +182,14 @@
     }
   }
   &.successButton {
-    padding: 1.25rem 2.5rem;
+    /* padding: 1.25rem 2.5rem; */
     background-color: #4caf50;
     border: 1px solid #4caf50;
+  }
+  &.errorButton {
+    /* padding: 1.25rem 2.5rem; */
+    background-color: #bf0a30;
+    border: 1px solid #bf0a30;
   }
 }
 
