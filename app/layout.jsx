@@ -8,7 +8,7 @@ import LanguageContextProvider from "@/contexts/LanguageContext";
 import ScreenModeAndSizeContextProvider from "@/contexts/ScreenModeAndSizeContext";
 import FacebookPixelEvents from "@/components/FacebookPixelEvents";
 
-const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID;
+const GTM_ID = process.env.GTM_ID;
 // https://www.rodyvansambeek.com/blog/easiest-ga4-integration-nextjs-13-gtm-guide
 
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
