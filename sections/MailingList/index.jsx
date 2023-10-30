@@ -5,7 +5,9 @@ import Image from "next/image";
 import { icons } from "./icons";
 import SquareButton from "@/components/SquareButton";
 import texts from "@/texts&svg";
-import { sendContactForm } from "@/lib/api";
+// import { sendContactForm } from "@/lib/api";
+
+import { subscribeToMailchimp } from "@/lib/api";
 
 const veteransImages = [
   "/veterans/mailingList/soldiers1.png",
@@ -64,7 +66,8 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
     };
 
     try {
-      await sendContactForm(data);
+      await subscribeToMailchimp(data);
+      // await sendContactForm(data);
       setFormStatus("sent");
     } catch (error) {
       setFormStatus("error");
