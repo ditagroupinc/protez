@@ -3,9 +3,9 @@ import { NextResponse } from "next/server";
 
 const client = require("@mailchimp/mailchimp_marketing");
 
-const mailchimpAPIkey = process.env.MAILCHIMP_API_KEY;
+const mailchimpAPIkey = MAILCHIMP_API_KEY;
 const dc = "us8";
-const audienceId = "87c86ae64d";
+const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
 
 client.setConfig({
   apiKey: mailchimpAPIkey,
