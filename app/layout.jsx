@@ -68,9 +68,6 @@ export default function RootLayout({ children }) {
           </html>
         </ScreenModeAndSizeContextProvider>
       </LanguageContextProvider>
-      <html lang="en">
-        <body>{children}</body>
-      </html>
     </>
   );
 }
