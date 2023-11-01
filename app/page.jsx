@@ -29,6 +29,7 @@ async function getPosts() {
 
   let newsData = {};
   let eventsData = {};
+
   let statisticsData = {};
   let pressReleaseData = {};
 

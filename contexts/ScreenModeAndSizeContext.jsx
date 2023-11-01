@@ -46,7 +46,7 @@ const ScreenModeAndSizeContextProvider = ({ children }) => {
   useEffect(() => {
     getSize();
     window.addEventListener("resize", throttledgetSize);
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
     return () => {
       window.removeEventListener("resize", throttledgetSize);
     };
