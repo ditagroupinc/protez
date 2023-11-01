@@ -1,4 +1,5 @@
 import cheerio from "cheerio";
+
 export function parseNews(postContent) {
   const $ = cheerio.load(postContent);
 
@@ -35,7 +36,21 @@ export function parseNews(postContent) {
 export function parseStatistics(statisticsContent) {
   const $ = cheerio.load(statisticsContent);
 
-  const statistics = {};
+  const statistics = {
+    statisticsDate: {
+      english: "",
+      ukrainian: "",
+    },
+    statisticsData: [
+      {
+        statisticsDataLabel: {
+          english: "",
+          ukrainian: "",
+        },
+        statisticsDataValue: "",
+      },
+    ],
+  };
 
   // Parse statisticsDate
   const statisticsDate = {
@@ -78,14 +93,17 @@ export function parseEvents(upcomingEventsContent) {
     const $card = $(element);
 
     const imageSrc = $card.find(".upcomingEventsCardImage img").attr("src");
-    const date = $card.find(".upcomingEventsCardDate p").text();
+
+    const startDate = $card.find(".upcomingEventsCardStartDate p").text();
+    const endDate = $card.find(".upcomingEventsCardEndDate p").text();
     const title = $card.find(".upcomingEventsCardTitle h3").text();
     const location = $card.find(".upcomingEventsCardLocation p").text();
     const link = $card.find(".upcomingEventsCardLink a").attr("href");
 
     const event = {
       image: imageSrc,
-      date,
+      startDate,
+      endDate,
       title,
       location,
       link,

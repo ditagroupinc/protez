@@ -9,7 +9,8 @@ import {
 // todo check textContainer className through components (should be above text HTML tags)
 
 export default async function Home() {
-  const { news, statistics, events, pressReleases } = await getPosts();
+  const { news, statistics, events, eventsNew, pressReleases } =
+    await getPosts();
 
   const country = await getCurrentContry();
 
@@ -20,6 +21,7 @@ export default async function Home() {
       events={events}
       pressReleases={pressReleases}
       country={country}
+      eventsNew={eventsNew}
     />
   );
 }
@@ -29,6 +31,7 @@ async function getPosts() {
 
   let newsData = {};
   let eventsData = {};
+
   let statisticsData = {};
   let pressReleaseData = {};
 

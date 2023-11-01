@@ -38,7 +38,7 @@ export default function EventsCard({
         <div className={style.eventsCardFlexContainer}>
           <div className={`textContainer ${style.eventsCardHeader}`}>
             <span className={`h6 ${style.eventsCardStatus}`}>{statusText}</span>
-            <h3 className={`h3`}>{date}</h3>
+            <h4 className={`h4`}>{date}</h4>
           </div>
           <div className="textContainer">
             <h4 className={`h4 textContainer ${style.title}`}>{title}</h4>

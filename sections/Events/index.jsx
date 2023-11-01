@@ -9,47 +9,41 @@ import Slider from "react-slick";
 
 import Image from "next/image";
 
-const parseDate = (date) => {
-  const [day, month, year] = date.split(".");
-  return `${year}-${month}-${day}`;
-};
-
-function splitAndSortDates(dateArray) {
+function splitAndSortDates(events) {
   const currentDate = new Date();
+  const upcomingEvents = events
+    .filter((event) => new Date(event.endDate) >= currentDate)
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
 
-  const upcomingDates = dateArray
-    .filter((event) => new Date(parseDate(event.date)) >= currentDate)
-    .sort((a, b) => new Date(parseDate(a.date)) - new Date(parseDate(b.date)));
-
-  const previousDates = dateArray
-    .filter((event) => new Date(parseDate(event.date)) < currentDate)
-    .sort((a, b) => new Date(parseDate(a.date)) - new Date(parseDate(b.date)));
+  const previousEvents = events
+    .filter((event) => new Date(event.endDate) < currentDate)
+    .sort((a, b) => new Date(a.date) - new Date(b.date));
 
   return {
-    events: [...previousDates, ...upcomingDates],
-    upcomingEventsIndex: previousDates.length,
+    upcomingEvents,
+    previousEvents,
+    upcomingEventsIndex: previousEvents.length,
   };
 }
 
 const Events = forwardRef(function ({ visible, id, events }, ref) {
   // const { lang } = useContext(LanguageContext);
   const [eventsData, setEventsData] = useState(splitAndSortDates(events));
-  const { height, width, mobile, tablet, screenModeClass } = useContext(
-    ScreenModeAndSizeContext
-  );
+  const { mobile } = useContext(ScreenModeAndSizeContext);
 
   const sliderRef = useRef(null);
 
-  const getEventCardStatus = (date) => {
-    const currentDate = new Date();
-    const result =
-      new Date(parseDate(date)) < currentDate ? "past" : "upcoming";
-    return result;
-  };
+  const getDateText = ({ startDate, endDate, ...rest }) => {
+    if (startDate === endDate) {
+      const [year, month, day] = startDate.split("-");
 
-  const getDateText = (date) => {
-    const [day, month, year] = date.split(".");
-    return `${month}/${day}`;
+      return `${month}/${day}`;
+    } else {
+      const [startYear, startMonth, startDay] = startDate.split("-");
+      const [endYear, endMonth, endDay] = endDate.split("-");
+
+      return `${startMonth}/${startDay}-${endMonth}/${endDay}`;
+    }
   };
 
   const settings = {
@@ -116,15 +110,26 @@ const Events = forwardRef(function ({ visible, id, events }, ref) {
         : icons.eventsLogo.desktop.english(`svgTextBlock ${style.logo}`)}
 
       <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
-        {eventsData.events.map((event, index) => (
+        {eventsData.previousEvents.map((event, index) => (
           <EventsCard
             key={index}
             link={event.link}
             photo={event.image}
             address={event.location}
             title={event.title}
-            date={getDateText(event.date)}
-            status={getEventCardStatus(event.date)}
+            date={getDateText(event)}
+            status={"past"}
+          />
+        ))}
+        {eventsData.upcomingEvents.map((event, index) => (
+          <EventsCard
+            key={index}
+            link={event.link}
+            photo={event.image}
+            address={event.location}
+            title={event.title}
+            date={getDateText(event)}
+            status={"upcoming"}
           />
         ))}
       </Slider>
