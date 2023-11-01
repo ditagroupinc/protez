@@ -52,7 +52,8 @@ const OurPartners = forwardRef(function ({ visible, id }, ref) {
                 `${style.logo} svgTextBlock`
               )}
         </div>
-        <PartnerCard image="ottobock.svg" />
+        <PartnerCard image="directRelief.svg" />
+        {/* <PartnerCard image="ottobock.svg" /> */}
         <div>
           <Link href="/partners" className={`${style.discoverCard} h3`}>
             <p>{texts.ourPartners.discover[lang]}</p>
