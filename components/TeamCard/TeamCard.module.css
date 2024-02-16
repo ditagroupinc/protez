@@ -4,6 +4,8 @@
   display: flex;
   flex-direction: column;
   min-width: 150px;
+  border-left: var(--greyBorder);
+  border-right: var(--greyBorder);
 }
 
 .container {
@@ -16,18 +18,21 @@
 
 .black {
   color: var(--black);
-  border-left: var(--greyBorder);
-  border-right: var(--greyBorder);
 }
 
 .linksList {
   display: flex;
-  gap: 8px;
   min-height: 33px;
+  justify-content: space-between;
   & a svg {
     width: 32px;
     height: 32px;
   }
+}
+
+.placeholder {
+  max-width: 32px;
+  height: 32px;
 }
 
 h5.name {

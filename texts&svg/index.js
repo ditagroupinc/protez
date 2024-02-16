@@ -241,7 +241,7 @@ const upcomingEventsSection = {
 const ourTeamSection = {
   executives: [
     {
-      photo: "yuriy.png",
+      photo: "yuryAroshidze.png",
       links: {
         facebook: {
           icon: "iconFaceBookSquare",
@@ -263,7 +263,7 @@ const ourTeamSection = {
       },
     },
     {
-      photo: "yakov.png",
+      photo: "yakovGradinar.png",
       links: {
         facebook: {
           icon: "iconFaceBookSquare",
@@ -289,7 +289,7 @@ const ourTeamSection = {
   members: {
     firstRow: [
       {
-        photo: "valentynaP.png",
+        photo: "valentynaPavsyukova.png",
         links: {
           facebook: {
             icon: "iconFaceBookSquare",
@@ -299,6 +299,11 @@ const ourTeamSection = {
           instagram: {
             icon: "iconInstagramSquare",
             href: "https://www.instagram.com/valentyna_pavsyukova/",
+          },
+
+          email: {
+            icon: "iconEmail",
+            href: "mailto:valentyna@protezfoundation.com",
           },
         },
         name: {
@@ -311,7 +316,7 @@ const ourTeamSection = {
         },
       },
       {
-        photo: "andreyM.png",
+        photo: "andreyMadan.png",
         links: {
           facebook: {
             icon: "iconFaceBookSquare",
@@ -326,6 +331,10 @@ const ourTeamSection = {
             icon: "iconLinkedinSquare",
             href: "https://www.linkedin.com/in/andreymadan/",
           },
+          email: {
+            icon: "iconEmail",
+            href: "mailto:andrey@protezfoundation.com",
+          },
         },
         name: {
           english: "Andrey Madan",
@@ -337,8 +346,13 @@ const ourTeamSection = {
         },
       },
       {
-        photo: "ivannaG.png",
-        links: {},
+        photo: "ivannaGradniar.png",
+        links: {
+          email: {
+            icon: "iconEmail",
+            href: "mailto:aivanna@protezfoundation.com",
+          },
+        },
         name: {
           english: "Ivanna Gradinar",
           ukrainian: "Іванна Градинар",
@@ -349,7 +363,35 @@ const ourTeamSection = {
         },
       },
       {
-        photo: "ruslan.png",
+        photo: "pavloKurynytskyi.png",
+        links: {
+          facebook: {
+            icon: "iconFaceBookSquare",
+            href: "https://www.facebook.com/profile.php?id=100001740999825",
+          },
+
+          instagram: {
+            icon: "iconInstagramSquare",
+            href: "https://www.instagram.com/kurinitskii",
+          },
+
+          email: {
+            icon: "iconEmail",
+            href: "mailto:pavlo.kurynytskyi@protezfoundation.com",
+          },
+        },
+
+        name: {
+          english: "Pavlo Kurynytskyi",
+          ukrainian: "Павло Куриницький",
+        },
+        position: {
+          english: "Church Relations Manager",
+          ukrainian: "Church Relations Manager",
+        },
+      },
+      {
+        photo: "ruslanSychov.png",
         links: {
           facebook: {
             icon: "iconFaceBookSquare",
@@ -365,6 +407,10 @@ const ourTeamSection = {
             icon: "iconLinkedinSquare",
             href: "https://www.linkedin.com/in/ruslan-sychov/",
           },
+          email: {
+            icon: "iconEmail",
+            href: "mailto:ruslan@protezfoundation.com",
+          },
         },
 
         name: {
@@ -379,7 +425,7 @@ const ourTeamSection = {
     ],
     secondRow: [
       {
-        photo: "mykolaS.png",
+        photo: "mykolaSarazhynskyy.png",
         links: {
           facebook: {
             icon: "iconFaceBookSquare",
@@ -390,6 +436,10 @@ const ourTeamSection = {
             icon: "iconLinkedinSquare",
             href: "https://www.linkedin.com/in/mykolasarazhynskyy/",
           },
+          email: {
+            icon: "iconEmail",
+            href: "mailto:mykola@protezfoundation.com",
+          },
         },
         name: {
           english: "Mykola Sarazhynskyy",
@@ -398,6 +448,35 @@ const ourTeamSection = {
         position: {
           english: "Director of Community Events",
           ukrainian: "Директор з організації заходів для спільноти",
+        },
+      },
+      {
+        photo: "neliaSerianikova.png",
+        links: {
+          email: {
+            icon: "iconEmail",
+            href: "mailto:nelia@protezfoundation.com",
+          },
+        },
+        name: {
+          english: "Nelia Serianikova ",
+          ukrainian: "Неля Серянікова",
+        },
+        position: {
+          english: "Food Services Manager",
+          ukrainian: "Food Services Manager",
+        },
+      },
+      {
+        photo: "zhannaDzyuba.png",
+        links: {},
+        name: {
+          english: "Zhanna Dzyuba.png",
+          ukrainian: "Жанна Дзюба",
+        },
+        position: {
+          english: "Director of Events and Property Management",
+          ukrainian: "Керівник з організації заходів та управління",
         },
       },
       {
@@ -411,6 +490,10 @@ const ourTeamSection = {
           instagram: {
             icon: "iconInstagramSquare",
             href: "https://www.instagram.com/tolydzyuba/?hl=en",
+          },
+          email: {
+            icon: "iconEmail",
+            href: "mailto:toly@protezfoundation.com",
           },
         },
         name: {
