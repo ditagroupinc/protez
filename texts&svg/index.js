@@ -471,7 +471,7 @@ const ourTeamSection = {
         photo: "zhannaDzyuba.png",
         links: {},
         name: {
-          english: "Zhanna Dzyuba.png",
+          english: "Zhanna Dzyuba",
           ukrainian: "Жанна Дзюба",
         },
         position: {
