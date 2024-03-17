@@ -57,10 +57,10 @@ export default function ClientSections({
   );
 
   const sectionRefs = {
-    letsGiveHope: useRef(null),
-    ourResults: useRef(null),
+    // letsGiveHope: useRef(null),
+    // ourResults: useRef(null),
     inNeed: useRef(null),
-    ourMission: useRef(null),
+    // ourMission: useRef(null),
     prosthetics: useRef(null),
     veterans: useRef(null),
     pressRelease: useRef(null),
@@ -142,7 +142,7 @@ export default function ClientSections({
           }`}
         />
 
-        <div className={style.smokeBlock}>
+        {/* <div className={style.smokeBlock}>
           <SmokeBackground className={style.smokeTop} />
           <div className={style.flagsBlock}>
             <LetsGiveHope
@@ -170,7 +170,7 @@ export default function ClientSections({
             visible={isVisible("ourResults")}
             id="ourResults"
           />
-        </div>
+        </div> */}
 
         <InNeed
           ref={sectionRefs.inNeed}
