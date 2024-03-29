@@ -43,6 +43,12 @@ const ErrorButton = () => (
   </button>
 );
 
+const UserExistsButton = () => (
+  <button type="button" className={`${style.button} ${style.errorButton}`}>
+    User Exists
+  </button>
+);
+
 const MailingList = forwardRef(function ({ visible, id }, ref) {
   const { lang } = useContext(LanguageContext);
   const [formStatus, setFormStatus] = useState("");
@@ -56,6 +62,8 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
       return <ErrorButton />;
     } else if (formStatus === "sent") {
       return <SuccessButton />;
+    } else if (formStatus === "userExists") {
+      return <UserExistsButton />;
     } else {
       return (
         <SquareButton pink onClick={handleClick}>
@@ -75,9 +83,10 @@ const MailingList = forwardRef(function ({ visible, id }, ref) {
     try {
       const result = await subscribeToMailchimp(data);
       setFormStatus("sent");
-      // await sendContactForm(data);
     } catch (error) {
-      setFormStatus("error");
+      if (error.message === "Member Exists") {
+        setFormStatus("userExists");
+      } else setFormStatus("error");
     }
   };
 
