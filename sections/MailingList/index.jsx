@@ -45,7 +45,7 @@ const ErrorButton = () => (
 
 const UserExistsButton = () => (
   <button type="button" className={`${style.button} ${style.errorButton}`}>
-    User Exists
+    Email already exists
   </button>
 );
 
