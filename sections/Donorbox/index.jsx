@@ -1,31 +1,25 @@
-import { useContext } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-import style from "./donorbox.module.scss";
-import icons from "./icons";
-import Script from "next/script";
-import texts from "@/texts&svg";
-import Divider from "@/components/Divider";
+import { useContext } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
+import { ScreenModeAndSizeContext } from '@/contexts/ScreenModeAndSizeContext'
+import style from './donorbox.module.scss'
+import icons from './icons'
+import Script from 'next/script'
+import texts from '@/texts&svg'
+import Divider from '@/components/Divider'
 
-const CompanyData = ({ className = "" }) => {
-  const { lang, changeLang } = useContext(LanguageContext);
+const CompanyData = ({ className = '' }) => {
+  const { lang, changeLang } = useContext(LanguageContext)
 
   return (
     <div className={`${style.companyData} ${className}`}>
       <div className={`${style.addressContainer}`}>
         <p>
-          <span className={"h6 "}>
-            {texts.donate.organizationData.nonProfitOrganization[lang]}
-          </span>
-          <span className={"h6 "}>
-            {texts.donate.organizationData.ein[lang]}
-          </span>
+          <span className={'h6 '}>{texts.donate.organizationData.nonProfitOrganization[lang]}</span>
+          <span className={'h6 '}>{texts.donate.organizationData.ein[lang]}</span>
         </p>
         <Divider className={style.divider} />
-        <p className={style.sendChecks}>
-          {texts.donate.organizationData.sendChecks[lang]}
-        </p>
-        <p className={"h5 "}>
+        <p className={style.sendChecks}>{texts.donate.organizationData.sendChecks[lang]}</p>
+        <p className={'h5 '}>
           <span className={style.block}>Protez Foundation</span>
           <span className={style.block}>3510 Hopkins Pl, W130D</span>
           <span className={style.block}>Oakdale, MN 55128</span>
@@ -38,20 +32,17 @@ const CompanyData = ({ className = "" }) => {
           +1 612-772-4777
         </a>
 
-        <a
-          href={`mailto:${texts.donate.organizationData.email}`}
-          className={`${style.link} h6`}
-        >
+        <a href={`mailto:${texts.donate.organizationData.email}`} className={`${style.link} h6`}>
           {texts.donate.organizationData.email}
         </a>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default function DonorBox({ monthly = false, className }) {
-  const { lang } = useContext(LanguageContext);
-  const { mobile } = useContext(ScreenModeAndSizeContext);
+  const { lang } = useContext(LanguageContext)
+  const { mobile } = useContext(ScreenModeAndSizeContext)
   return (
     <section className={`${style.section} ${className}`} id="donorBox">
       {mobile
@@ -63,10 +54,10 @@ export default function DonorBox({ monthly = false, className }) {
           {texts.donate.monthlyPayment[lang]}
         </h2>
       ) : (
-        ""
+        ''
       )}
       <h5 className={`h5 ${style.support}`}>
-        {texts.donate.strongSupport[lang]}{" "}
+        {texts.donate.strongSupport[lang]}{' '}
         <span className={style.pink}>{texts.donate.under8[lang]}</span>.
       </h5>
 
@@ -77,8 +68,8 @@ export default function DonorBox({ monthly = false, className }) {
         <iframe
           src={
             monthly
-              ? "https://donorbox.org/embed/website-donation-64-2"
-              : "https://donorbox.org/embed/website-donation-64"
+              ? 'https://donorbox.org/embed/website-donation-64-2'
+              : 'https://donorbox.org/embed/website-donation-64'
           }
           name="donorbox"
           allowpaymentrequest="allowpaymentrequest"
@@ -92,5 +83,5 @@ export default function DonorBox({ monthly = false, className }) {
         />
       </div>
     </section>
-  );
+  )
 }

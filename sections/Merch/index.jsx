@@ -1,19 +1,19 @@
-import { useContext, useRef, forwardRef } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
+import { useContext, useRef, forwardRef } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
 
-import MarchCard from "@/components/MerchCard";
+import MarchCard from '@/components/MerchCard'
 
-import style from "./merch.module.scss";
-import Slider from "react-slick";
+import style from './merch.module.scss'
+import Slider from 'react-slick'
 
-import { icons } from "./icons";
+import { icons } from './icons'
 
-import texts from "@/texts&svg";
+import texts from '@/texts&svg'
 
 const Merch = forwardRef(function ({ visible, id }, ref) {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = useContext(LanguageContext)
 
-  const sliderRef = useRef(null);
+  const sliderRef = useRef(null)
 
   const settings = {
     dots: true,
@@ -59,14 +59,10 @@ const Merch = forwardRef(function ({ visible, id }, ref) {
         },
       },
     ],
-  };
+  }
 
   return (
-    <section
-      className={`${style.section} section ${visible ? "showText" : ""}`}
-      id={id}
-      ref={ref}
-    >
+    <section className={`${style.section} section ${visible ? 'showText' : ''}`} id={id} ref={ref}>
       <div className={`textContainer ${style.logo}`}>
         {icons.protezMERCHlogo[lang](`svgTextBlock`)}
       </div>
@@ -86,8 +82,8 @@ const Merch = forwardRef(function ({ visible, id }, ref) {
         ))}
       </Slider>
     </section>
-  );
-});
+  )
+})
 
-Merch.displayName = "Merch";
-export default Merch;
+Merch.displayName = 'Merch'
+export default Merch

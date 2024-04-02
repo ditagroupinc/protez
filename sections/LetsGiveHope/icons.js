@@ -1,4 +1,4 @@
-const letsGiveHopeLogo = (className) => (
+const letsGiveHopeLogo = className => (
   <svg
     width="1192"
     height="528"
@@ -20,8 +20,8 @@ const letsGiveHopeLogo = (className) => (
       fill="#FFC327"
     />
   </svg>
-);
-const letsGiveHopeLogoUA = (className) => (
+)
+const letsGiveHopeLogoUA = className => (
   <svg
     width="876"
     height="448"
@@ -43,11 +43,11 @@ const letsGiveHopeLogoUA = (className) => (
       fill="#FFC327"
     />
   </svg>
-);
+)
 
 export const icons = {
   letsGiveHopeLogo: {
     english: letsGiveHopeLogo,
     ukrainian: letsGiveHopeLogoUA,
   },
-};
+}

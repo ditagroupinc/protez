@@ -1,6 +1,6 @@
-"use client";
-import { createContext, useState, useEffect } from "react";
-import { throttle } from "@/utils";
+'use client'
+import { createContext, useState, useEffect } from 'react'
+import { throttle } from '@/utils'
 
 const contextDefaultValues = {
   width: null,
@@ -10,24 +10,22 @@ const contextDefaultValues = {
   desktop: false,
   tabletLarge: false,
   desktopSmall: false,
-  screenModeClass: "",
-};
+  screenModeClass: '',
+}
 
-export const ScreenModeAndSizeContext = createContext(contextDefaultValues);
+export const ScreenModeAndSizeContext = createContext(contextDefaultValues)
 
 const ScreenModeAndSizeContextProvider = ({ children }) => {
-  const [windowSizes, setWindowSizes] = useState({ width: null, height: null });
+  const [windowSizes, setWindowSizes] = useState({ width: null, height: null })
   const getSize = () => {
-    const win = window;
-    const doc = document;
-    const docElem = doc.documentElement;
-    const body = doc.getElementsByTagName("body")[0];
-    const windowWidth =
-      win.innerWidth || docElem.clientWidth || body.clientWidth;
-    const windowHeight =
-      win.innerHeight || docElem.clientHeight || body.clientHeight;
-    const mobile = false;
-    const screenModeClass = mobile ? "mobile" : "desktop";
+    const win = window
+    const doc = document
+    const docElem = doc.documentElement
+    const body = doc.getElementsByTagName('body')[0]
+    const windowWidth = win.innerWidth || docElem.clientWidth || body.clientWidth
+    const windowHeight = win.innerHeight || docElem.clientHeight || body.clientHeight
+    const mobile = false
+    const screenModeClass = mobile ? 'mobile' : 'desktop'
 
     setWindowSizes({
       width: windowWidth,
@@ -38,24 +36,24 @@ const ScreenModeAndSizeContextProvider = ({ children }) => {
       tabletLarge: windowWidth <= 1366,
       desktopSmall: windowWidth <= 1920,
       screenModeClass,
-    });
-  };
+    })
+  }
 
-  const throttledgetSize = throttle(getSize, 150);
+  const throttledgetSize = throttle(getSize, 150)
 
   useEffect(() => {
-    getSize();
-    window.addEventListener("resize", throttledgetSize);
+    getSize()
+    window.addEventListener('resize', throttledgetSize)
     // window.scrollTo(0, 0);
     return () => {
-      window.removeEventListener("resize", throttledgetSize);
-    };
-  }, []);
+      window.removeEventListener('resize', throttledgetSize)
+    }
+  }, [])
   return (
     <ScreenModeAndSizeContext.Provider value={windowSizes}>
       {children}
     </ScreenModeAndSizeContext.Provider>
-  );
-};
+  )
+}
 
-export default ScreenModeAndSizeContextProvider;
+export default ScreenModeAndSizeContextProvider

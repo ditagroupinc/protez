@@ -1,4 +1,4 @@
-import style from "./smokeBackground.module.css";
+import style from './smokeBackground.module.css'
 
 export default function SmokeBackground({ className }) {
   return (
@@ -6,5 +6,5 @@ export default function SmokeBackground({ className }) {
       <div className={`${style.bg} ${style.smokeBg}`} />
       <div className={`${style.bg} ${style.smoke}`} />
     </div>
-  );
+  )
 }

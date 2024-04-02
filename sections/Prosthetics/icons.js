@@ -1,4 +1,4 @@
-const iconHeart = (className) => (
+const iconHeart = className => (
   <svg
     width="64"
     height="64"
@@ -15,8 +15,8 @@ const iconHeart = (className) => (
       fillOpacity="0.48"
     />
   </svg>
-);
-const iconIntegration = (className) => (
+)
+const iconIntegration = className => (
   <svg
     width="65"
     height="66"
@@ -33,8 +33,8 @@ const iconIntegration = (className) => (
       fillOpacity="0.48"
     />
   </svg>
-);
-const iconPeople = (className) => (
+)
+const iconPeople = className => (
   <svg
     width="65"
     height="64"
@@ -51,8 +51,8 @@ const iconPeople = (className) => (
       fillOpacity="0.48"
     />
   </svg>
-);
-const prostheticsLogo = (className) => (
+)
+const prostheticsLogo = className => (
   <svg
     width="1088"
     height="260"
@@ -80,8 +80,8 @@ const prostheticsLogo = (className) => (
       </linearGradient>
     </defs>
   </svg>
-);
-const prostheticsLogoTablet = (className) => (
+)
+const prostheticsLogoTablet = className => (
   <svg
     width="312"
     height="115"
@@ -95,9 +95,9 @@ const prostheticsLogoTablet = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const flag = (className) => (
+const flag = className => (
   <svg
     width="63"
     height="32"
@@ -121,9 +121,9 @@ const flag = (className) => (
       </linearGradient>
     </defs>
   </svg>
-);
+)
 
-const prostheticsLogoUA = (className) => (
+const prostheticsLogoUA = className => (
   <svg
     width="1088"
     height="247"
@@ -151,9 +151,9 @@ const prostheticsLogoUA = (className) => (
       </linearGradient>
     </defs>
   </svg>
-);
+)
 
-const prostheticsLogoTabletUA = (className) => (
+const prostheticsLogoTabletUA = className => (
   <svg
     width="307"
     height="116"
@@ -167,7 +167,7 @@ const prostheticsLogoTabletUA = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 export const icons = {
   iconHeart: iconHeart,
@@ -185,4 +185,4 @@ export const icons = {
     },
   },
   flag: flag,
-};
+}

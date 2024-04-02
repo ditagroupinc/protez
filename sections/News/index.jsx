@@ -1,23 +1,21 @@
-"use client";
-import { useContext, useRef, forwardRef } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-import style from "./news.module.css";
-import NewsCard from "@/components/NewsCard";
-import { icons } from "./icons";
-import Slider from "react-slick";
-import texts from "@/texts&svg";
+'use client'
+import { useContext, useRef, forwardRef } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
+import { ScreenModeAndSizeContext } from '@/contexts/ScreenModeAndSizeContext'
+import style from './news.module.css'
+import NewsCard from '@/components/NewsCard'
+import { icons } from './icons'
+import Slider from 'react-slick'
+import texts from '@/texts&svg'
 
 const News = forwardRef(function ({ visible, id, news }, ref) {
-  const { lang } = useContext(LanguageContext);
-  const { height, width, mobile, tablet, screenModeClass } = useContext(
-    ScreenModeAndSizeContext
-  );
+  const { lang } = useContext(LanguageContext)
+  const { height, width, mobile, tablet, screenModeClass } = useContext(ScreenModeAndSizeContext)
 
-  const sliderRef = useRef(null);
+  const sliderRef = useRef(null)
   const gotoNext = () => {
-    sliderRef.current.slickNext();
-  };
+    sliderRef.current.slickNext()
+  }
 
   const settings = {
     dots: true,
@@ -49,16 +47,12 @@ const News = forwardRef(function ({ visible, id, news }, ref) {
         },
       },
     ],
-  };
+  }
   return (
-    <section
-      className={`${style.section} section ${visible ? "showText" : ""}`}
-      id={id}
-      ref={ref}
-    >
+    <section className={`${style.section} section ${visible ? 'showText' : ''}`} id={id} ref={ref}>
       <div className={style.container}>
-        <div className={style.logoContainer + " textContainer"}>
-          {icons.wereInNewsLogo[lang]("svgTextBlock")}
+        <div className={style.logoContainer + ' textContainer'}>
+          {icons.wereInNewsLogo[lang]('svgTextBlock')}
         </div>
         <div className={style.newsContainer}>
           <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
@@ -85,8 +79,8 @@ const News = forwardRef(function ({ visible, id, news }, ref) {
         </div>
       </div>
     </section>
-  );
-});
+  )
+})
 
-News.displayName = "News";
-export default News;
+News.displayName = 'News'
+export default News

@@ -1,23 +1,23 @@
-import { useContext, useRef, useState, forwardRef } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
-import SquareButton from "@/components/SquareButton";
+import { useContext, useRef, useState, forwardRef } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
+import SquareButton from '@/components/SquareButton'
 
-import style from "./Veterans.module.scss";
-import Image from "next/image";
-import Slider from "react-slick";
+import style from './Veterans.module.scss'
+import Image from 'next/image'
+import Slider from 'react-slick'
 
-import { icons } from "./icons";
+import { icons } from './icons'
 
-import texts from "@/texts&svg";
+import texts from '@/texts&svg'
 
 const Veterans = forwardRef(function ({ visible, id }, ref) {
-  const { lang } = useContext(LanguageContext);
-  const [iframeData, setIframeData] = useState({ opened: false, url: "" });
+  const { lang } = useContext(LanguageContext)
+  const [iframeData, setIframeData] = useState({ opened: false, url: '' })
 
-  const sliderRef = useRef(null);
+  const sliderRef = useRef(null)
   const gotoNext = () => {
-    sliderRef.current.slickNext();
-  };
+    sliderRef.current.slickNext()
+  }
 
   const settings = {
     dots: true,
@@ -28,11 +28,11 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 5000,
-  };
+  }
   return (
     <>
       <section
-        className={`${style.section} section ${visible ? "showText" : ""}`}
+        className={`${style.section} section ${visible ? 'showText' : ''}`}
         id={id}
         ref={ref}
       >
@@ -48,21 +48,11 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                     {element.ageRank[lang]}
                   </h5> */}
                     <div className={style.logoAndRankContainer}>
-                      {icons[element.icon][lang](
-                        `${style.veteranLogo} svgTextBlock`
-                      )}
-                      <h5 className={`h5 ${style.ageRank}`}>
-                        {element.ageRank[lang]}
-                      </h5>
+                      {icons[element.icon][lang](`${style.veteranLogo} svgTextBlock`)}
+                      <h5 className={`h5 ${style.ageRank}`}>{element.ageRank[lang]}</h5>
                     </div>
-                    <h4 className={`h2 ${style.cardTitle}`}>
-                      {element.title[lang]}
-                    </h4>
-                    <p
-                      className={`p ${style.cardText} ${
-                        lang === "ua" ? style.ua : ""
-                      }`}
-                    >
+                    <h4 className={`h2 ${style.cardTitle}`}>{element.title[lang]}</h4>
+                    <p className={`p ${style.cardText} ${lang === 'ua' ? style.ua : ''}`}>
                       {element.text[lang]}
                     </p>
 
@@ -72,12 +62,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                         {/* <a target="blank" href={element.twitter}>
                         {icons.iconTwitter()}
                       </a> */}
-                        <SquareButton
-                          className={style.squareButton}
-                          link
-                          blank
-                          href={element.url}
-                        >
+                        <SquareButton className={style.squareButton} link blank href={element.url}>
                           {texts.veterans.giveHope[lang]}
                         </SquareButton>
                         <div className={style.iconsList}>
@@ -98,7 +83,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                   <div className={style.rightSide}>
                     <Image
                       src={`/veterans/${element.img}`}
-                      alt={element.name[lang] + " " + element.surname[lang]}
+                      alt={element.name[lang] + ' ' + element.surname[lang]}
                       className={style.photo}
                       width={1306}
                       height={1890}
@@ -110,7 +95,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
                     <button
                       className={style.roundButton}
                       onClick={() => {
-                        setIframeData({ opened: true, url: element.videoLink });
+                        setIframeData({ opened: true, url: element.videoLink })
                       }}
                     >
                       {icons[`${element.icon}Icon`](style.spinningName)}
@@ -128,10 +113,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
       </section>
       {iframeData.opened && (
         <>
-          <div
-            className={style.mask}
-            onClick={() => setIframeData(!iframeData)}
-          />
+          <div className={style.mask} onClick={() => setIframeData(!iframeData)} />
           <iframe
             className={style.iFrame}
             src={iframeData.url}
@@ -143,10 +125,7 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             allowFullScreen="true"
           />
-          <button
-            className={style.closeVideo}
-            onClick={() => setIframeData(!iframeData)}
-          >
+          <button className={style.closeVideo} onClick={() => setIframeData(!iframeData)}>
             {icons.closeVideo()}
           </button>
 
@@ -162,8 +141,8 @@ const Veterans = forwardRef(function ({ visible, id }, ref) {
         </>
       )}
     </>
-  );
-});
+  )
+})
 
-Veterans.displayName = "Veterans";
-export default Veterans;
+Veterans.displayName = 'Veterans'
+export default Veterans

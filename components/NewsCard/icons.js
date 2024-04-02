@@ -1,4 +1,4 @@
-const onePlusOnelogo = (className) => (
+const onePlusOnelogo = className => (
   <svg
     width="97"
     height="32"
@@ -19,9 +19,9 @@ const onePlusOnelogo = (className) => (
       </clipPath>
     </defs>
   </svg>
-);
+)
 
-const cbsLogo = (className) => (
+const cbsLogo = className => (
   <svg
     width="155"
     height="32"
@@ -40,18 +40,13 @@ const cbsLogo = (className) => (
     </g>
     <defs>
       <clipPath id="clip0_904_4451">
-        <rect
-          width="153.846"
-          height="32"
-          fill="white"
-          transform="translate(0.5)"
-        />
+        <rect width="153.846" height="32" fill="white" transform="translate(0.5)" />
       </clipPath>
     </defs>
   </svg>
-);
+)
 
-const nytLogo = (className) => (
+const nytLogo = className => (
   <svg
     width="362"
     height="32"
@@ -72,9 +67,9 @@ const nytLogo = (className) => (
       </clipPath>
     </defs>
   </svg>
-);
+)
 
-const arrow = (className) => (
+const arrow = className => (
   <svg
     width="56"
     height="56"
@@ -88,11 +83,11 @@ const arrow = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 export const icons = {
   arrow: arrow,
   onePlusOne: onePlusOnelogo,
   cbs: cbsLogo,
   nyt: nytLogo,
-};
+}

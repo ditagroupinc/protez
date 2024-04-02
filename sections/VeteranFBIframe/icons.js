@@ -1,4 +1,4 @@
-const letsGiveHopeLogo = (className) => (
+const letsGiveHopeLogo = className => (
   <svg
     width="1314"
     height="231"
@@ -16,9 +16,9 @@ const letsGiveHopeLogo = (className) => (
       fill="#CD0062"
     />
   </svg>
-);
+)
 
-const letsGiveHopeLogoMobile = (className) => (
+const letsGiveHopeLogoMobile = className => (
   <svg
     width="242"
     height="215"
@@ -36,9 +36,9 @@ const letsGiveHopeLogoMobile = (className) => (
       fill="#CD0062"
     />
   </svg>
-);
+)
 
-const letsGiveHopeLogoUA = (className) => (
+const letsGiveHopeLogoUA = className => (
   <svg
     width="1153"
     height="226"
@@ -56,9 +56,9 @@ const letsGiveHopeLogoUA = (className) => (
       fill="#CD0062"
     />
   </svg>
-);
+)
 
-const letsGiveHopeLogoMobileUA = (className) => (
+const letsGiveHopeLogoMobileUA = className => (
   <svg
     width="293"
     height="172"
@@ -76,7 +76,7 @@ const letsGiveHopeLogoMobileUA = (className) => (
       fill="#CD0062"
     />
   </svg>
-);
+)
 
 const icons = {
   letsGiveHopeLogo: {
@@ -89,6 +89,6 @@ const icons = {
       ukrainian: letsGiveHopeLogoMobileUA,
     },
   },
-};
+}
 
-export default icons;
+export default icons

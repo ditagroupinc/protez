@@ -1,4 +1,4 @@
-const protezLogo = (className) => (
+const protezLogo = className => (
   <svg
     width="198"
     height="48"
@@ -16,9 +16,9 @@ const protezLogo = (className) => (
       />
     </g>
   </svg>
-);
+)
 
-const heart = (className) => (
+const heart = className => (
   <svg
     width="120"
     height="120"
@@ -34,11 +34,11 @@ const heart = (className) => (
       fill="#CD0062"
     />
   </svg>
-);
+)
 
 const icons = {
   protezLogo: protezLogo,
   heart: heart,
-};
+}
 
-export default icons;
+export default icons

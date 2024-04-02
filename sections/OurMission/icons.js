@@ -1,4 +1,4 @@
-const iconDisabledPerson = (className) => (
+const iconDisabledPerson = className => (
   <svg
     width="45"
     height="57"
@@ -15,8 +15,8 @@ const iconDisabledPerson = (className) => (
       fillOpacity="0.48"
     />
   </svg>
-);
-const iconHand = (className) => (
+)
+const iconHand = className => (
   <svg
     width="47"
     height="56"
@@ -33,8 +33,8 @@ const iconHand = (className) => (
       fillOpacity="0.48"
     />
   </svg>
-);
-const iconHelpHeart = (className) => (
+)
+const iconHelpHeart = className => (
   <svg
     width="65"
     height="64"
@@ -51,8 +51,8 @@ const iconHelpHeart = (className) => (
       fillOpacity="0.56"
     />
   </svg>
-);
-const iconPeople = (className) => (
+)
+const iconPeople = className => (
   <svg
     width="57"
     height="36"
@@ -69,8 +69,8 @@ const iconPeople = (className) => (
       fillOpacity="0.48"
     />
   </svg>
-);
-const ourMissionLogo = (className) => (
+)
+const ourMissionLogo = className => (
   <svg
     width="540"
     height="192"
@@ -84,9 +84,9 @@ const ourMissionLogo = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const ourMissionLogoUA = (className) => (
+const ourMissionLogoUA = className => (
   <svg
     width="272"
     height="144"
@@ -100,7 +100,7 @@ const ourMissionLogoUA = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 export const icons = {
   iconDisabledPerson: iconDisabledPerson,
@@ -111,4 +111,4 @@ export const icons = {
     english: ourMissionLogo,
     ukrainian: ourMissionLogoUA,
   },
-};
+}

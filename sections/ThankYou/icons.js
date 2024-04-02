@@ -1,4 +1,4 @@
-const thankYouLogo = (className) => (
+const thankYouLogo = className => (
   <svg
     width="477"
     height="83"
@@ -12,9 +12,9 @@ const thankYouLogo = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const thankYouLogoMobile = (className) => (
+const thankYouLogoMobile = className => (
   <svg
     width="257"
     height="123"
@@ -28,9 +28,9 @@ const thankYouLogoMobile = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const thankYouLogoUA = (className) => (
+const thankYouLogoUA = className => (
   <svg
     width="1427"
     height="225"
@@ -44,9 +44,9 @@ const thankYouLogoUA = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const thankYouLogoMobileUA = (className) => (
+const thankYouLogoMobileUA = className => (
   <svg
     width="320"
     height="120"
@@ -60,7 +60,7 @@ const thankYouLogoMobileUA = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 export const icons = {
   thankYouLogo: {
@@ -73,4 +73,4 @@ export const icons = {
       ukrainian: thankYouLogoMobileUA,
     },
   },
-};
+}

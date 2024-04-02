@@ -1,33 +1,22 @@
-"use client";
-import Image from "next/image";
-import style from "./eventsCard.module.scss";
-import icons from "./icons";
-import texts from "@/texts&svg";
+'use client'
+import Image from 'next/image'
+import style from './eventsCard.module.scss'
+import icons from './icons'
+import texts from '@/texts&svg'
 
-import { useContext } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
+import { useContext } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
 
-export default function EventsCard({
-  link,
-  photo,
-  date,
-  address,
-  title,
-  status,
-}) {
-  const { lang } = useContext(LanguageContext);
+export default function EventsCard({ link, photo, date, address, title, status }) {
+  const { lang } = useContext(LanguageContext)
 
-  const pastClass = status === "past" ? style.past : "";
+  const pastClass = status === 'past' ? style.past : ''
 
-  const statusText = `${texts.upcomingEvents[status][lang]} ${texts.upcomingEvents.event[lang]}`;
+  const statusText = `${texts.upcomingEvents[status][lang]} ${texts.upcomingEvents.event[lang]}`
 
   return (
     <div className={style.eventsCardWrapper}>
-      <a
-        href={link}
-        target="blank"
-        className={`${style.eventsCard} ${pastClass}`}
-      >
+      <a href={link} target="blank" className={`${style.eventsCard} ${pastClass}`}>
         <Image
           src={photo}
           alt="article picture"
@@ -53,10 +42,8 @@ export default function EventsCard({
           </div>
         </h5>
 
-        <span className={`h6 ${style.more}`}>
-          {texts.upcomingEvents.more[lang]}
-        </span>
+        <span className={`h6 ${style.more}`}>{texts.upcomingEvents.more[lang]}</span>
       </a>
     </div>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-const ourTeamLogo = (className) => (
+const ourTeamLogo = className => (
   <svg
     width="744"
     height="190"
@@ -12,9 +12,9 @@ const ourTeamLogo = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const ourTeamLogoUA = (className) => (
+const ourTeamLogoUA = className => (
   <svg
     width="841"
     height="215"
@@ -28,8 +28,8 @@ const ourTeamLogoUA = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 export const icons = {
   ourTeamLogo: { english: ourTeamLogo, ukrainian: ourTeamLogoUA },
-};
+}

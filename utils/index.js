@@ -1,25 +1,25 @@
 export const throttle = (cb, delay) => {
-  let wait = false;
-  let storedArgs = null;
+  let wait = false
+  let storedArgs = null
 
   function checkStoredArgs() {
     if (storedArgs == null) {
-      wait = false;
+      wait = false
     } else {
-      cb(...storedArgs);
-      storedArgs = null;
-      setTimeout(checkStoredArgs, delay);
+      cb(...storedArgs)
+      storedArgs = null
+      setTimeout(checkStoredArgs, delay)
     }
   }
 
   return (...args) => {
     if (wait) {
-      storedArgs = args;
-      return;
+      storedArgs = args
+      return
     }
 
-    cb(...args);
-    wait = true;
-    setTimeout(checkStoredArgs, delay);
-  };
-};
+    cb(...args)
+    wait = true
+    setTimeout(checkStoredArgs, delay)
+  }
+}

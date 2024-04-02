@@ -1,4 +1,4 @@
-const specialThanksLogo = (className) => (
+const specialThanksLogo = className => (
   <svg
     width="1034"
     height="286"
@@ -12,9 +12,9 @@ const specialThanksLogo = (className) => (
       fill="#0D1125"
     />
   </svg>
-);
+)
 
-const specialThanksLogoUA = (className) => (
+const specialThanksLogoUA = className => (
   <svg
     width="800"
     height="299"
@@ -28,9 +28,9 @@ const specialThanksLogoUA = (className) => (
       fill="#0D1125"
     />
   </svg>
-);
+)
 
-const specialThanksLogoTablet = (className) => (
+const specialThanksLogoTablet = className => (
   <svg
     width="264"
     height="159"
@@ -44,7 +44,7 @@ const specialThanksLogoTablet = (className) => (
       fill="#0D1125"
     />
   </svg>
-);
+)
 
 const icons = {
   specialThanksLogo: {
@@ -57,5 +57,5 @@ const icons = {
       ukrainian: specialThanksLogoUA,
     },
   },
-};
-export default icons;
+}
+export default icons

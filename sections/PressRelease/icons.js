@@ -1,4 +1,4 @@
-const pressReleaseLogo = (className) => (
+const pressReleaseLogo = className => (
   <svg
     width="713"
     height="190"
@@ -12,7 +12,7 @@ const pressReleaseLogo = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 const icons = {
   pressReleaseLogo: {
@@ -21,6 +21,6 @@ const icons = {
       ukrainian: pressReleaseLogo,
     },
   },
-};
+}
 
-export default icons;
+export default icons

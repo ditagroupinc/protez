@@ -1,31 +1,23 @@
-import { useContext } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
-import SquareButton from "@/components/SquareButton";
-import Divider from "@/components/Divider";
-import texts from "@/texts&svg";
-import icons from "./icons";
+import { useContext } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
+import SquareButton from '@/components/SquareButton'
+import Divider from '@/components/Divider'
+import texts from '@/texts&svg'
+import icons from './icons'
 
-import style from "./companyDataNonProfit.module.scss";
+import style from './companyDataNonProfit.module.scss'
 
-export default function CompanyDataNonProfit({
-  className = "",
-  black,
-  bgIsPink,
-}) {
-  const { lang } = useContext(LanguageContext);
+export default function CompanyDataNonProfit({ className = '', black, bgIsPink }) {
+  const { lang } = useContext(LanguageContext)
 
   return (
-    <div
-      className={`${style.container} ${black ? style.black : ""} ${className}`}
-    >
+    <div className={`${style.container} ${black ? style.black : ''} ${className}`}>
       <div className={style.addressContainer}>
         <p>
-          <span className={"h6 "}>
+          <span className={'h6 '}>
             {texts.companyData.organizationData.nonProfitOrganization[lang]}
           </span>
-          <span className={"h6 "}>
-            {texts.companyData.organizationData.ein[lang]}
-          </span>
+          <span className={'h6 '}>{texts.companyData.organizationData.ein[lang]}</span>
         </p>
         <Divider />
       </div>
@@ -57,5 +49,5 @@ export default function CompanyDataNonProfit({
         </SquareButton>
       </div>
     </div>
-  );
+  )
 }

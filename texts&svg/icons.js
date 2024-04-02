@@ -1,4 +1,4 @@
-const iconFaceBook = (className) => (
+const iconFaceBook = className => (
   <svg
     width="64"
     height="64"
@@ -13,9 +13,9 @@ const iconFaceBook = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconInstagram = (className) => (
+const iconInstagram = className => (
   <svg
     width="64"
     height="64"
@@ -30,9 +30,9 @@ const iconInstagram = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconLinkedin = (className) => (
+const iconLinkedin = className => (
   <svg
     width="64"
     height="64"
@@ -47,9 +47,9 @@ const iconLinkedin = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconYoutube = (className) => (
+const iconYoutube = className => (
   <svg
     width="64"
     height="64"
@@ -64,10 +64,10 @@ const iconYoutube = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 // ---
-const iconFaceBookSquare = (className, color = "white") => (
+const iconFaceBookSquare = (className, color = 'white') => (
   <svg
     width="33"
     height="33"
@@ -81,9 +81,9 @@ const iconFaceBookSquare = (className, color = "white") => (
       fill={color}
     />
   </svg>
-);
+)
 
-const iconInstagramSquare = (className, color = "white") => (
+const iconInstagramSquare = (className, color = 'white') => (
   <svg
     width="33"
     height="33"
@@ -97,9 +97,9 @@ const iconInstagramSquare = (className, color = "white") => (
       fill={color}
     />
   </svg>
-);
+)
 
-const iconLinkedinSquare = (className, color = "white") => (
+const iconLinkedinSquare = (className, color = 'white') => (
   <svg
     width="33"
     height="33"
@@ -113,9 +113,9 @@ const iconLinkedinSquare = (className, color = "white") => (
       fill={color}
     />
   </svg>
-);
+)
 // TODO: add color change handling
-const iconEmail = (className, color = "white") => (
+const iconEmail = (className, color = 'white') => (
   <svg
     width="33"
     height="32"
@@ -124,24 +124,17 @@ const iconEmail = (className, color = "white") => (
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    <rect
-      x="3.46497"
-      y="2.66499"
-      width="26.67"
-      height="26.67"
-      rx="13.335"
-      fill="#0D1125"
-    />
+    <rect x="3.46497" y="2.66499" width="26.67" height="26.67" rx="13.335" fill="#0D1125" />
     <path
       d="M22.4 10H11.2C10.5635 10 9.95302 10.2371 9.50293 10.659C9.05284 11.081 8.79999 11.6533 8.79999 12.25V19.75C8.79999 20.3467 9.05284 20.919 9.50293 21.341C9.95302 21.7629 10.5635 22 11.2 22H22.4C23.0365 22 23.647 21.7629 24.097 21.341C24.5471 20.919 24.8 20.3467 24.8 19.75V12.25C24.8 11.6533 24.5471 11.081 24.097 10.659C23.647 10.2371 23.0365 10 22.4 10ZM11.2 11.5H22.4C22.6122 11.5 22.8156 11.579 22.9657 11.7197C23.1157 11.8603 23.2 12.0511 23.2 12.25L16.8 15.91L10.4 12.25C10.4 12.0511 10.4843 11.8603 10.6343 11.7197C10.7843 11.579 10.9878 11.5 11.2 11.5ZM23.2 19.75C23.2 19.9489 23.1157 20.1397 22.9657 20.2803C22.8156 20.421 22.6122 20.5 22.4 20.5H11.2C10.9878 20.5 10.7843 20.421 10.6343 20.2803C10.4843 20.1397 10.4 19.9489 10.4 19.75V13.96L16.384 17.3875C16.5056 17.4533 16.6436 17.488 16.784 17.488C16.9244 17.488 17.0624 17.4533 17.184 17.3875L23.2 13.96V19.75Z"
       fill="white"
     />
   </svg>
-);
+)
 
 // ---
 
-const ditaLogo = (className) => (
+const ditaLogo = className => (
   <svg
     width="656"
     height="242"
@@ -195,7 +188,7 @@ const ditaLogo = (className) => (
       fill="black"
     />
   </svg>
-);
+)
 
 const globalIcons = {
   iconFaceBook: iconFaceBook,
@@ -207,6 +200,6 @@ const globalIcons = {
   iconInstagramSquare: iconInstagramSquare,
   iconLinkedinSquare: iconLinkedinSquare,
   iconEmail: iconEmail,
-};
+}
 
-export default globalIcons;
+export default globalIcons

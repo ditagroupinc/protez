@@ -1,9 +1,9 @@
-import Image from "next/image";
-import style from "./TeamCard.module.css";
+import Image from 'next/image'
+import style from './TeamCard.module.css'
 
-import globalIcons from "@/texts&svg/icons";
+import globalIcons from '@/texts&svg/icons'
 export default function TeamCard({ photo, links = {}, name, position, black }) {
-  const cardColor = () => (black ? "#0D1125" : "#fff");
+  const cardColor = () => (black ? '#0D1125' : '#fff')
 
   return (
     <div className={`${style.teamCard}`}>
@@ -14,32 +14,30 @@ export default function TeamCard({ photo, links = {}, name, position, black }) {
         width={264}
         height={220}
       />
-      <div
-        className={`${style.container} ${black && style.black} textContainer`}
-      >
+      <div className={`${style.container} ${black && style.black} textContainer`}>
         <div className={`${style.linksList}`}>
-          {"facebook" in links ? (
+          {'facebook' in links ? (
             <a href={links.facebook.href} target="blank">
               {globalIcons[links.facebook.icon](style.icon, cardColor())}
             </a>
           ) : (
             <div className={style.placeholder} />
           )}
-          {"instagram" in links ? (
+          {'instagram' in links ? (
             <a href={links.instagram.href} target="blank">
               {globalIcons[links.instagram.icon](style.icon, cardColor())}
             </a>
           ) : (
             <div className={style.placeholder} />
           )}
-          {"linkedin" in links ? (
+          {'linkedin' in links ? (
             <a href={links.linkedin.href} target="blank">
               {globalIcons[links.linkedin.icon](style.icon, cardColor())}
             </a>
           ) : (
             <div className={style.placeholder} />
           )}
-          {"email" in links ? (
+          {'email' in links ? (
             <a href={links.email.href} target="blank">
               {globalIcons[links.email.icon](style.icon, cardColor())}
             </a>
@@ -58,5 +56,5 @@ export default function TeamCard({ photo, links = {}, name, position, black }) {
         <h6 className={`h6 ${style.position}`}>{position}</h6>
       </div>
     </div>
-  );
+  )
 }

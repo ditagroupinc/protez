@@ -1,4 +1,4 @@
-const mailingListLogo = (className) => (
+const mailingListLogo = className => (
   <svg
     width="731"
     height="225"
@@ -12,9 +12,9 @@ const mailingListLogo = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const mailingListLogoUA = (className) => (
+const mailingListLogoUA = className => (
   <svg
     width="776"
     height="159"
@@ -28,11 +28,11 @@ const mailingListLogoUA = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 export const icons = {
   mailingListLogo: {
     english: mailingListLogo,
     ukrainian: mailingListLogoUA,
   },
-};
+}

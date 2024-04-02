@@ -1,4 +1,4 @@
-const amazonBlack = (className) => (
+const amazonBlack = className => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="95"
@@ -56,9 +56,9 @@ const amazonBlack = (className) => (
       fill="#0d1125"
     />
   </svg>
-);
+)
 
-const amazon = (className) => (
+const amazon = className => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="95"
@@ -116,11 +116,11 @@ const amazon = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 const icons = {
   amazon: amazon,
   amazonBlack: amazonBlack,
-};
+}
 
-export default icons;
+export default icons

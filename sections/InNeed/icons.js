@@ -1,4 +1,4 @@
-const inNeedLogo = (className) => (
+const inNeedLogo = className => (
   <svg
     width="704"
     height="496"
@@ -16,8 +16,8 @@ const inNeedLogo = (className) => (
       fill="#0D1125"
     />
   </svg>
-);
-const inNeedLogoTablet = (className) => (
+)
+const inNeedLogoTablet = className => (
   <svg
     width="363"
     height="253"
@@ -35,8 +35,8 @@ const inNeedLogoTablet = (className) => (
       fill="#0D1125"
     />
   </svg>
-);
-const inNeedLogoMobile = (className) => (
+)
+const inNeedLogoMobile = className => (
   <svg
     width="318"
     height="253"
@@ -54,8 +54,8 @@ const inNeedLogoMobile = (className) => (
       fill="#0D1125"
     />
   </svg>
-);
-const inNeedLogoUA = (className) => (
+)
+const inNeedLogoUA = className => (
   <svg
     width="310"
     height="252"
@@ -73,7 +73,7 @@ const inNeedLogoUA = (className) => (
       fill="#0D1125"
     />
   </svg>
-);
+)
 export const icons = {
   inNeedLogo: {
     desktop: {
@@ -89,4 +89,4 @@ export const icons = {
       ukrainian: inNeedLogoUA,
     },
   },
-};
+}

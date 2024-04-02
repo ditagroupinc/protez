@@ -1,19 +1,19 @@
-"use client";
-import { useContext } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
-import DonorBox from "../Donorbox";
+'use client'
+import { useContext } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
+import DonorBox from '../Donorbox'
 
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-import style from "./VeteranDonationFinished.module.css";
-import icons from "./icons";
-import globalIcons from "@/texts&svg/icons";
-import texts from "@/texts&svg";
+import { ScreenModeAndSizeContext } from '@/contexts/ScreenModeAndSizeContext'
+import style from './VeteranDonationFinished.module.css'
+import icons from './icons'
+import globalIcons from '@/texts&svg/icons'
+import texts from '@/texts&svg'
 
 export default function VeteranDonationFinished({ iframeLink }) {
-  const { lang } = useContext(LanguageContext);
-  const { mobile } = useContext(ScreenModeAndSizeContext);
+  const { lang } = useContext(LanguageContext)
+  const { mobile } = useContext(ScreenModeAndSizeContext)
 
-  const vadymFedorovTexts = texts.veterans.veterans[0];
+  const vadymFedorovTexts = texts.veterans.veterans[0]
   return (
     <>
       <section className={`${style.section} section`}>
@@ -23,28 +23,22 @@ export default function VeteranDonationFinished({ iframeLink }) {
         <div className={style.container}>
           <div className={`${style.leftSide}`}>
             {icons.vadymFedorov[lang](`${style.veteranLogo} svgTextBlock`)}
-            <h5 className={`h5 ${style.ageRank}`}>
-              {vadymFedorovTexts.ageRank[lang]}
-            </h5>
-            <h4 className={`h2 ${style.cardTitle}`}>
-              {vadymFedorovTexts.title[lang]}
-            </h4>
-            <p className={`p ${style.cardText}`}>
-              {vadymFedorovTexts.text[lang]}
-            </p>
+            <h5 className={`h5 ${style.ageRank}`}>{vadymFedorovTexts.ageRank[lang]}</h5>
+            <h4 className={`h2 ${style.cardTitle}`}>{vadymFedorovTexts.title[lang]}</h4>
+            <p className={`p ${style.cardText}`}>{vadymFedorovTexts.text[lang]}</p>
 
             <div className={`${style.socialMediaLinksBox}`}>
               <a
                 href="https://www.facebook.com/donate/238890858497931/199310116131457/"
                 target="blank"
               >
-                {globalIcons.iconFaceBookSquare(style.icon, "black")}
+                {globalIcons.iconFaceBookSquare(style.icon, 'black')}
               </a>
               <a
                 href="https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA=="
                 target="blank"
               >
-                {globalIcons.iconInstagramSquare(style.icon, "black")}
+                {globalIcons.iconInstagramSquare(style.icon, 'black')}
               </a>
             </div>
           </div>
@@ -64,5 +58,5 @@ export default function VeteranDonationFinished({ iframeLink }) {
       </section>
       <DonorBox className={style.donorBox} />
     </>
-  );
+  )
 }

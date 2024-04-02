@@ -1,9 +1,9 @@
-import style from "./Card.module.css";
+import style from './Card.module.css'
 const Card = ({ text, icon, reverse }) => {
   const ifReverse = () => {
-    if (reverse) return style.reverseBlock;
-    return "";
-  };
+    if (reverse) return style.reverseBlock
+    return ''
+  }
   return (
     <div className={` h5 ${style.block} ${ifReverse()}`}>
       <div className="textContainer">
@@ -11,7 +11,7 @@ const Card = ({ text, icon, reverse }) => {
       </div>
       {icon()}
     </div>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

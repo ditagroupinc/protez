@@ -30,7 +30,7 @@
 //   </svg>
 // );
 
-const eventsLogo = (className) => (
+const eventsLogo = className => (
   <svg
     width="1059"
     height="204"
@@ -44,9 +44,9 @@ const eventsLogo = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const eventsLogoMobile = (className) => (
+const eventsLogoMobile = className => (
   <svg
     width="234"
     height="139"
@@ -60,7 +60,7 @@ const eventsLogoMobile = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 const icons = {
   eventsLogo: {
@@ -74,6 +74,6 @@ const icons = {
       ukrainian: eventsLogoMobile,
     },
   },
-};
+}
 
-export default icons;
+export default icons

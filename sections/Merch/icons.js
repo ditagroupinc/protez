@@ -1,4 +1,4 @@
-const protezMERCHlogo = (className) => (
+const protezMERCHlogo = className => (
   <svg
     width="711"
     height="83"
@@ -12,10 +12,10 @@ const protezMERCHlogo = (className) => (
       fill="#0D1125"
     />
   </svg>
-);
-const protezMERCHlogoTablet = (className) => "";
-const protezMERCHlogoMobile = (className) => "";
-const protezMERCHlogoUA = (className) => "";
+)
+const protezMERCHlogoTablet = className => ''
+const protezMERCHlogoMobile = className => ''
+const protezMERCHlogoUA = className => ''
 
 export const icons = {
   protezMERCHlogo: {
@@ -33,4 +33,4 @@ export const icons = {
     //   ukrainian: ,
     // },
   },
-};
+}

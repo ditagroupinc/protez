@@ -1,4 +1,4 @@
-const wereInNewsLogo = (className) => (
+const wereInNewsLogo = className => (
   <svg
     width="818"
     height="201"
@@ -12,9 +12,9 @@ const wereInNewsLogo = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const wereInNewsLogoUA = (className) => (
+const wereInNewsLogoUA = className => (
   <svg
     width="815"
     height="190"
@@ -28,9 +28,9 @@ const wereInNewsLogoUA = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const arrow = (className) => (
+const arrow = className => (
   <svg
     width="48"
     height="48"
@@ -44,7 +44,7 @@ const arrow = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 export const icons = {
   wereInNewsLogo: {
@@ -52,4 +52,4 @@ export const icons = {
     ukrainian: wereInNewsLogoUA,
   },
   arrow: arrow,
-};
+}

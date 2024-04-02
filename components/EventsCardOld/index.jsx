@@ -1,24 +1,12 @@
-import Image from "next/image";
-import style from "./eventsCard.module.scss";
-import icons from "./icons";
+import Image from 'next/image'
+import style from './eventsCard.module.scss'
+import icons from './icons'
 
-export default function EventsCardOld({
-  link,
-  photo,
-  date,
-  time,
-  address,
-  title,
-  opened,
-}) {
-  const openedClass = opened ? style.opened : "";
+export default function EventsCardOld({ link, photo, date, time, address, title, opened }) {
+  const openedClass = opened ? style.opened : ''
 
   return (
-    <a
-      href={link}
-      target="blank"
-      className={`${style.eventsCard} ${openedClass}`}
-    >
+    <a href={link} target="blank" className={`${style.eventsCard} ${openedClass}`}>
       {opened ? (
         <Image
           src={photo}
@@ -28,7 +16,7 @@ export default function EventsCardOld({
           className={`${style.newsPicture} ${openedClass}`}
         />
       ) : (
-        ""
+        ''
       )}
 
       <h6 className={`${style.dateTimeLocation} h6 textContainer`}>
@@ -39,7 +27,7 @@ export default function EventsCardOld({
             <span>{time}</span>
           </>
         ) : (
-          ""
+          ''
         )}
         <div className={`${style.locationText}`}>
           {icons.location(`${style.iconLocation}`)}
@@ -50,11 +38,7 @@ export default function EventsCardOld({
         <h4 className={` ${style.title}`}>{title}</h4>
       </div>
 
-      {opened ? (
-        <>{icons.arrow(`${style.arrowIcon} arrow ${openedClass}`)}</>
-      ) : (
-        ""
-      )}
+      {opened ? <>{icons.arrow(`${style.arrowIcon} arrow ${openedClass}`)}</> : ''}
     </a>
-  );
+  )
 }

@@ -1,25 +1,21 @@
-import Card from "@/components/Card";
-import style from "./Prosthetics.module.scss";
-import { useContext, forwardRef } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-import Image from "next/image";
-import { icons } from "./icons";
-import VideoAndFilter from "@/components/VideoAndFilter";
-import texts from "@/texts&svg";
+import Card from '@/components/Card'
+import style from './Prosthetics.module.scss'
+import { useContext, forwardRef } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
+import { ScreenModeAndSizeContext } from '@/contexts/ScreenModeAndSizeContext'
+import Image from 'next/image'
+import { icons } from './icons'
+import VideoAndFilter from '@/components/VideoAndFilter'
+import texts from '@/texts&svg'
 
-const iconsArr = [icons.iconIntegration, icons.iconHeart, icons.iconPeople];
+const iconsArr = [icons.iconIntegration, icons.iconHeart, icons.iconPeople]
 const Prosthetics = forwardRef(function ({ visible, id }, ref) {
-  const { lang } = useContext(LanguageContext);
-  const { tabletLarge } = useContext(ScreenModeAndSizeContext);
+  const { lang } = useContext(LanguageContext)
+  const { tabletLarge } = useContext(ScreenModeAndSizeContext)
 
   return (
-    <section
-      className={`${style.section} section ${visible ? "showText" : ""}`}
-      id={id}
-      ref={ref}
-    >
-      <VideoAndFilter src={"protez-foundation.mp4"} />
+    <section className={`${style.section} section ${visible ? 'showText' : ''}`} id={id} ref={ref}>
+      <VideoAndFilter src={'protez-foundation.mp4'} />
 
       <Image
         src="/img-ukraine-map.png"
@@ -40,12 +36,12 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
               </div>
               <div className={`${style.text}`}>
                 <div className="textContainer">
-                  <h2 className={`h2 ${lang === "ua" ? style.ua : ""}`}>
+                  <h2 className={`h2 ${lang === 'ua' ? style.ua : ''}`}>
                     {texts.prosthetics.paragraph.top[lang]}
                   </h2>
                 </div>
                 <div className="textContainer">
-                  <h2 className={`h2 ${lang === "ua" ? style.ua : ""}`}>
+                  <h2 className={`h2 ${lang === 'ua' ? style.ua : ''}`}>
                     {texts.prosthetics.paragraph.bottom[lang]}
                   </h2>
                 </div>
@@ -74,7 +70,7 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
               // </div>
             }
           </div>
-          <div className={`${style.text} ${!tabletLarge ? "h2" : "h5"} `}>
+          <div className={`${style.text} ${!tabletLarge ? 'h2' : 'h5'} `}>
             <div className="textContainer">
               <h2>{texts.prosthetics.paragraph.top[lang]}</h2>
             </div>
@@ -84,18 +80,13 @@ const Prosthetics = forwardRef(function ({ visible, id }, ref) {
             </div>
           </div>
           {Object.keys(texts.prosthetics.cards).map((key, i) => (
-            <Card
-              key={i}
-              icon={iconsArr[i]}
-              text={texts.prosthetics.cards[key][lang]}
-              reverse
-            />
+            <Card key={i} icon={iconsArr[i]} text={texts.prosthetics.cards[key][lang]} reverse />
           ))}
         </div>
       )}
     </section>
-  );
-});
+  )
+})
 
-Prosthetics.displayName = "Prosthetics";
-export default Prosthetics;
+Prosthetics.displayName = 'Prosthetics'
+export default Prosthetics

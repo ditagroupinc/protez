@@ -1,4 +1,4 @@
-const location = (className) => (
+const location = className => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="24"
@@ -12,9 +12,9 @@ const location = (className) => (
       fill="#CD0062"
     />
   </svg>
-);
+)
 
-const arrow = (className) => (
+const arrow = className => (
   <svg
     width="48"
     height="48"
@@ -28,11 +28,11 @@ const arrow = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 const icons = {
   location: location,
   arrow: arrow,
-};
+}
 
-export default icons;
+export default icons

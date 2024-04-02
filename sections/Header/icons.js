@@ -1,4 +1,4 @@
-const protezFoundationLogo = (className) => (
+const protezFoundationLogo = className => (
   <svg
     width="231"
     height="56"
@@ -14,9 +14,9 @@ const protezFoundationLogo = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconFaceBook = (className) => (
+const iconFaceBook = className => (
   <svg
     width="64"
     height="64"
@@ -31,9 +31,9 @@ const iconFaceBook = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconInstagram = (className) => (
+const iconInstagram = className => (
   <svg
     width="64"
     height="64"
@@ -48,9 +48,9 @@ const iconInstagram = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconLinkedin = (className) => (
+const iconLinkedin = className => (
   <svg
     width="64"
     height="64"
@@ -65,9 +65,9 @@ const iconLinkedin = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconYoutube = (className) => (
+const iconYoutube = className => (
   <svg
     width="64"
     height="64"
@@ -82,9 +82,9 @@ const iconYoutube = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconWorld = (className) => (
+const iconWorld = className => (
   <svg
     width="32"
     height="32"
@@ -98,9 +98,9 @@ const iconWorld = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const menuClose = (className) => (
+const menuClose = className => (
   <svg
     width="40"
     height="40"
@@ -114,7 +114,7 @@ const menuClose = (className) => (
       fill="#CD0062"
     />
   </svg>
-);
+)
 
 export const icons = {
   protezFoundationLogo: protezFoundationLogo,
@@ -124,4 +124,4 @@ export const icons = {
   iconYoutube: iconYoutube,
   iconWorld: iconWorld,
   menuClose: menuClose,
-};
+}

@@ -1,25 +1,12 @@
-import Image from "next/image";
-import style from "./newsCard.module.css";
-import { icons } from "./icons";
+import Image from 'next/image'
+import style from './newsCard.module.css'
+import { icons } from './icons'
 
-export default function NewsCard({
-  link,
-  photo,
-  date,
-  address,
-  logo,
-  title,
-  text,
-  short,
-}) {
-  const shortClass = () => (short ? style.short : "");
+export default function NewsCard({ link, photo, date, address, logo, title, text, short }) {
+  const shortClass = () => (short ? style.short : '')
 
   return (
-    <a
-      href={link}
-      target="blank"
-      className={`${style.newsCard} ${shortClass()}`}
-    >
+    <a href={link} target="blank" className={`${style.newsCard} ${shortClass()}`}>
       <Image
         // src={`/news/photos/${photo}`}
         src={photo}
@@ -51,5 +38,5 @@ export default function NewsCard({
       </div>
       {icons.arrow(`${style.icon} arrow`)}
     </a>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-const letsGiveHopeLogo = (className) => (
+const letsGiveHopeLogo = className => (
   <svg
     width="1314"
     height="231"
@@ -16,9 +16,9 @@ const letsGiveHopeLogo = (className) => (
       fill="#CD0062"
     />
   </svg>
-);
+)
 
-const letsGiveHopeLogoMobile = (className) => (
+const letsGiveHopeLogoMobile = className => (
   <svg
     width="242"
     height="215"
@@ -36,9 +36,9 @@ const letsGiveHopeLogoMobile = (className) => (
       fill="#CD0062"
     />
   </svg>
-);
+)
 
-const letsGiveHopeLogoUA = (className) => (
+const letsGiveHopeLogoUA = className => (
   <svg
     width="1153"
     height="226"
@@ -56,9 +56,9 @@ const letsGiveHopeLogoUA = (className) => (
       fill="#CD0062"
     />
   </svg>
-);
+)
 
-const letsGiveHopeLogoMobileUA = (className) => (
+const letsGiveHopeLogoMobileUA = className => (
   <svg
     width="293"
     height="172"
@@ -76,9 +76,9 @@ const letsGiveHopeLogoMobileUA = (className) => (
       fill="#CD0062"
     />
   </svg>
-);
+)
 
-const vadymFedorov = (className) => (
+const vadymFedorov = className => (
   <svg
     width="616"
     height="201"
@@ -92,8 +92,8 @@ const vadymFedorov = (className) => (
       fill="#0D1125"
     />
   </svg>
-);
-const vadymFedorovUA = (className) => (
+)
+const vadymFedorovUA = className => (
   <svg
     width="735"
     height="230"
@@ -107,7 +107,7 @@ const vadymFedorovUA = (className) => (
       fill="#0D1125"
     />
   </svg>
-);
+)
 
 const icons = {
   letsGiveHopeLogo: {
@@ -121,6 +121,6 @@ const icons = {
     },
   },
   vadymFedorov: { english: vadymFedorov, ukrainian: vadymFedorovUA },
-};
+}
 
-export default icons;
+export default icons

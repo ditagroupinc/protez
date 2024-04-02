@@ -1,33 +1,25 @@
-import { useContext, forwardRef } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-import { useRef, useEffect } from "react";
-import style from "./ourTeam.module.css";
-import TeamCard from "@/components/TeamCard";
-import { icons } from "./icons.js";
-import texts from "@/texts&svg";
+import { useContext, forwardRef } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
+import { ScreenModeAndSizeContext } from '@/contexts/ScreenModeAndSizeContext'
+import { useRef, useEffect } from 'react'
+import style from './ourTeam.module.css'
+import TeamCard from '@/components/TeamCard'
+import { icons } from './icons.js'
+import texts from '@/texts&svg'
 
 const OurTeam = forwardRef(function ({ visible, id }, ref) {
-  const { lang } = useContext(LanguageContext);
-  const { width } = useContext(ScreenModeAndSizeContext);
-  const scrollableContainer = useRef(null);
+  const { lang } = useContext(LanguageContext)
+  const { width } = useContext(ScreenModeAndSizeContext)
+  const scrollableContainer = useRef(null)
   useEffect(() => {
-    if (width < 600) scrollableContainer.current.scrollLeft += 50;
-  }, [width]);
+    if (width < 600) scrollableContainer.current.scrollLeft += 50
+  }, [width])
 
-  const membersList = Object.keys(texts.ourTeam.members).map(
-    (e) => texts.ourTeam.members[e]
-  );
+  const membersList = Object.keys(texts.ourTeam.members).map(e => texts.ourTeam.members[e])
   return (
-    <section
-      className={`${style.section} section ${visible ? "showText" : ""}`}
-      id={id}
-      ref={ref}
-    >
+    <section className={`${style.section} section ${visible ? 'showText' : ''}`} id={id} ref={ref}>
       <div className={style.container}>
-        <div className="textContainer">
-          {icons.ourTeamLogo[lang](`${style.logo} svgTextBlock`)}
-        </div>
+        <div className="textContainer">{icons.ourTeamLogo[lang](`${style.logo} svgTextBlock`)}</div>
         <div className={style.membersContainer}>
           {texts.ourTeam.executives.map((card, index) => (
             <TeamCard
@@ -45,7 +37,7 @@ const OurTeam = forwardRef(function ({ visible, id }, ref) {
         <div
           key={index}
           className={`${style.membersContainer} ${
-            width < 600 && row.length > 3 ? style.scrollable : ""
+            width < 600 && row.length > 3 ? style.scrollable : ''
           }`}
           ref={scrollableContainer}
         >
@@ -62,8 +54,8 @@ const OurTeam = forwardRef(function ({ visible, id }, ref) {
         </div>
       ))}
     </section>
-  );
-});
+  )
+})
 
-OurTeam.displayName = "OurTeam";
-export default OurTeam;
+OurTeam.displayName = 'OurTeam'
+export default OurTeam

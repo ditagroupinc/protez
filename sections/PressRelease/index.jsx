@@ -1,24 +1,24 @@
-import { useContext, useRef, forwardRef } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
+import { useContext, useRef, forwardRef } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
 
-import style from "./PressRelease.module.scss";
+import style from './PressRelease.module.scss'
 
-import icons from "./icons";
-import Slider from "react-slick";
+import icons from './icons'
+import Slider from 'react-slick'
 
-import PressReleaseCard from "@/components/PressReleaseCard";
-import texts from "@/texts&svg";
+import PressReleaseCard from '@/components/PressReleaseCard'
+import texts from '@/texts&svg'
 
 const PressRelease = forwardRef(function ({ visible, id, pressReleases }, ref) {
-  const { lang } = useContext(LanguageContext);
-  const sliderRef = useRef(null);
+  const { lang } = useContext(LanguageContext)
+  const sliderRef = useRef(null)
   const gotoNext = () => {
-    sliderRef.current.slickNext();
-  };
+    sliderRef.current.slickNext()
+  }
 
   const settings = {
     dots: true,
-    appendDots: (dots) => (
+    appendDots: dots => (
       <>
         <div className={style.sliderNavigation}>
           <button onClick={gotoNext} className={style.nextSlideButton}>
@@ -38,13 +38,9 @@ const PressRelease = forwardRef(function ({ visible, id, pressReleases }, ref) {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 5000,
-  };
+  }
   return (
-    <section
-      className={`${style.section} section ${visible ? "showText" : ""}`}
-      id={id}
-      ref={ref}
-    >
+    <section className={`${style.section} section ${visible ? 'showText' : ''}`} id={id} ref={ref}>
       <div className={`textContainer ${style.logo}`}>
         {icons.pressReleaseLogo.desktop[lang](`svgTextBlock`)}
       </div>
@@ -62,8 +58,8 @@ const PressRelease = forwardRef(function ({ visible, id, pressReleases }, ref) {
         ))}
       </Slider>
     </section>
-  );
-});
+  )
+})
 
-PressRelease.displayName = "PressRelease";
-export default PressRelease;
+PressRelease.displayName = 'PressRelease'
+export default PressRelease

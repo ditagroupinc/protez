@@ -1,4 +1,4 @@
-const vadymFedorov = (className) => (
+const vadymFedorov = className => (
   <svg
     width="616"
     height="201"
@@ -12,8 +12,8 @@ const vadymFedorov = (className) => (
       fill="white"
     />
   </svg>
-);
-const vadymFedorovUA = (className) => (
+)
+const vadymFedorovUA = className => (
   <svg
     width="735"
     height="230"
@@ -27,9 +27,9 @@ const vadymFedorovUA = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const vadymFedorovIcon = (className) => (
+const vadymFedorovIcon = className => (
   <svg
     width="219"
     height="215"
@@ -127,8 +127,8 @@ const vadymFedorovIcon = (className) => (
       fill="white"
     />
   </svg>
-);
-const artemSvergun = (className) => (
+)
+const artemSvergun = className => (
   <svg
     width="629"
     height="218"
@@ -142,8 +142,8 @@ const artemSvergun = (className) => (
       fill="white"
     />
   </svg>
-);
-const artemSvergunUA = (className) => (
+)
+const artemSvergunUA = className => (
   <svg
     width="580"
     height="201"
@@ -157,9 +157,9 @@ const artemSvergunUA = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const artemSvergunIcon = (className) => (
+const artemSvergunIcon = className => (
   <svg
     width="221"
     height="217"
@@ -260,17 +260,12 @@ const artemSvergunIcon = (className) => (
     </g>
     <defs>
       <clipPath id="clip0_2679_5429">
-        <rect
-          width="213.606"
-          height="215"
-          fill="white"
-          transform="translate(0.576172 1.42383)"
-        />
+        <rect width="213.606" height="215" fill="white" transform="translate(0.576172 1.42383)" />
       </clipPath>
     </defs>
   </svg>
-);
-const triangle = (className) => (
+)
+const triangle = className => (
   <svg
     width="62"
     height="72"
@@ -279,14 +274,11 @@ const triangle = (className) => (
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    <path
-      d="M61.7402 35.8885L0.898221 71.0156L0.898224 0.761335L61.7402 35.8885Z"
-      fill="#CD0062"
-    />
+    <path d="M61.7402 35.8885L0.898221 71.0156L0.898224 0.761335L61.7402 35.8885Z" fill="#CD0062" />
   </svg>
-);
+)
 
-const iconLinkedin = (className) => (
+const iconLinkedin = className => (
   <svg
     width="56"
     height="56"
@@ -300,9 +292,9 @@ const iconLinkedin = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconFacebook = (className) => (
+const iconFacebook = className => (
   <svg
     width="56"
     height="56"
@@ -316,9 +308,9 @@ const iconFacebook = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconInstagram = (className) => (
+const iconInstagram = className => (
   <svg
     width="56"
     height="56"
@@ -332,9 +324,9 @@ const iconInstagram = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconLink = (className) => (
+const iconLink = className => (
   <svg
     width="56"
     height="56"
@@ -348,9 +340,9 @@ const iconLink = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const iconTwitter = (className) => (
+const iconTwitter = className => (
   <svg
     width="56"
     height="56"
@@ -364,9 +356,9 @@ const iconTwitter = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
-const closeVideo = (className) => (
+const closeVideo = className => (
   <svg
     width="40"
     height="40"
@@ -380,7 +372,7 @@ const closeVideo = (className) => (
       fill="white"
     />
   </svg>
-);
+)
 
 export const icons = {
   vadymFedorov: { english: vadymFedorov, ukrainian: vadymFedorovUA },
@@ -394,4 +386,4 @@ export const icons = {
   iconInstagram: iconInstagram,
   triangle: triangle,
   closeVideo: closeVideo,
-};
+}

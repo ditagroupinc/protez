@@ -1,14 +1,14 @@
-"use client";
-import { useContext } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
+'use client'
+import { useContext } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
 
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
-import style from "./veteranFBIframe.module.css";
-import icons from "./icons";
+import { ScreenModeAndSizeContext } from '@/contexts/ScreenModeAndSizeContext'
+import style from './veteranFBIframe.module.css'
+import icons from './icons'
 
 export default function VeteranFBIframe({ iframeLink }) {
-  const { mobile } = useContext(ScreenModeAndSizeContext);
-  const { lang } = useContext(LanguageContext);
+  const { mobile } = useContext(ScreenModeAndSizeContext)
+  const { lang } = useContext(LanguageContext)
   return (
     <section className={`${style.section} section`} id="donorBox">
       {mobile
@@ -24,5 +24,5 @@ export default function VeteranFBIframe({ iframeLink }) {
         className={style.iframe}
       />
     </section>
-  );
+  )
 }

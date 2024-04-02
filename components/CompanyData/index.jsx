@@ -1,19 +1,17 @@
-import { useContext } from "react";
-import { LanguageContext } from "@/contexts/LanguageContext";
-import SquareButton from "@/components/SquareButton";
-import Divider from "@/components/Divider";
-import texts from "@/texts&svg";
-import icons from "./icons";
+import { useContext } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
+import SquareButton from '@/components/SquareButton'
+import Divider from '@/components/Divider'
+import texts from '@/texts&svg'
+import icons from './icons'
 
-import style from "./companyData.module.scss";
+import style from './companyData.module.scss'
 
-export default function CompanyData({ className = "", black, colorInverted }) {
-  const { lang } = useContext(LanguageContext);
+export default function CompanyData({ className = '', black, colorInverted }) {
+  const { lang } = useContext(LanguageContext)
 
   return (
-    <div
-      className={`${style.container} ${black ? style.black : ""} ${className}`}
-    >
+    <div className={`${style.container} ${black ? style.black : ''} ${className}`}>
       <Divider className={style.divider} />
       <div className={`${style.buttonsContainer}`}>
         <SquareButton link href="donate" pink black={colorInverted}>
@@ -54,5 +52,5 @@ export default function CompanyData({ className = "", black, colorInverted }) {
         </SquareButton>
       </div>
     </div>
-  );
+  )
 }

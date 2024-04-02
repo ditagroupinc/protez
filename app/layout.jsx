@@ -1,41 +1,41 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import "@/styles/resetCSS.css";
-import "@/styles/fonts.css";
-import "./globals.css";
-import Script from "next/script";
-import LanguageContextProvider from "@/contexts/LanguageContext";
-import ScreenModeAndSizeContextProvider from "@/contexts/ScreenModeAndSizeContext";
-import FacebookPixelEvents from "@/components/FacebookPixelEvents";
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import '@/styles/resetCSS.css'
+import '@/styles/fonts.css'
+import './globals.css'
+import Script from 'next/script'
+import LanguageContextProvider from '@/contexts/LanguageContext'
+import ScreenModeAndSizeContextProvider from '@/contexts/ScreenModeAndSizeContext'
+import FacebookPixelEvents from '@/components/FacebookPixelEvents'
 
-const GTM_ID = process.env.GTM_ID;
+const GTM_ID = process.env.GTM_ID
 // https://www.rodyvansambeek.com/blog/easiest-ga4-integration-nextjs-13-gtm-guide
 
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
 export const metadata = {
-  title: "Prosthetics for Ukraine",
+  title: 'Prosthetics for Ukraine',
   description: `Main page of the "Prosthetics for Ukraine" foundation`,
-  creator: "Ditagoup",
-  publisher: "Ditagroup",
+  creator: 'Ditagoup',
+  publisher: 'Ditagroup',
   openGraph: {
-    title: "Prosthetics for Ukraine",
+    title: 'Prosthetics for Ukraine',
     description: `Main page of the "Prosthetics for Ukraine" foundation`,
-    url: "http://www.protezfoundation.com/",
-    siteName: "protezfoundation.org",
-    images: "https://dita-group.com/ogdita5.png",
-    locale: "en-US",
-    type: "website",
+    url: 'http://www.protezfoundation.com/',
+    siteName: 'protezfoundation.org',
+    images: 'https://dita-group.com/ogdita5.png',
+    locale: 'en-US',
+    type: 'website',
   },
   twitter: {
-    card: "summary_large_image",
-    domain: "protezfoundation.org",
-    url: "http://www.protezfoundation.com/",
-    image: "https://dita-group.com/ogdita5.png",
-    title: "Prosthetics for Ukraine",
+    card: 'summary_large_image',
+    domain: 'protezfoundation.org',
+    url: 'http://www.protezfoundation.com/',
+    image: 'https://dita-group.com/ogdita5.png',
+    title: 'Prosthetics for Ukraine',
     description: `Main page of the "Prosthetics for Ukraine" foundation`,
-    images: "https://dita-group.com/ogdita5.png",
+    images: 'https://dita-group.com/ogdita5.png',
   },
-};
+}
 
 export default function RootLayout({ children }) {
   return (
@@ -60,7 +60,7 @@ export default function RootLayout({ children }) {
                   src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
                   height="0"
                   width="0"
-                  style={{ display: "none", visibility: "hidden" }}
+                  style={{ display: 'none', visibility: 'hidden' }}
                 ></iframe>
               </noscript>
               <FacebookPixelEvents />
@@ -69,5 +69,5 @@ export default function RootLayout({ children }) {
         </ScreenModeAndSizeContextProvider>
       </LanguageContextProvider>
     </>
-  );
+  )
 }
