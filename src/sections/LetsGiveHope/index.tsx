@@ -1,0 +1,21 @@
+import { useContext } from 'react'
+import { LanguageContext } from '@/contexts/LanguageContext'
+import style from './style.module.css'
+import { icons } from './icons'
+import CompanyData from '@/components/CompanyData'
+import VideoAndFilter from '@/components/VideoAndFilter'
+
+const LetsGiveHope = () => {
+  const { lang } = useContext(LanguageContext)
+  return (
+    <section className={`${style.section} section`} id="letsGiveHope">
+      <VideoAndFilter src={'flag-ukraine.mp4'} />
+      <div className={style.logoContainer}>
+        {icons.letsGiveHopeLogo[lang](`${style.mainTitle} svgTextBlock`)}
+      </div>
+      <CompanyData className={style.companyData} />
+    </section>
+  )
+}
+
+export default LetsGiveHope

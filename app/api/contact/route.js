@@ -1,6 +1,5 @@
 import { mailOptions, transporter } from '@/config/nodemailer'
 
-// import NextResponse from "next/server";
 import { NextResponse } from 'next/server'
 const response = NextResponse.next()
 

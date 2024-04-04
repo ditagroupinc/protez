@@ -7,6 +7,8 @@ import Script from 'next/script'
 import LanguageContextProvider from '@/contexts/LanguageContext'
 import ScreenModeAndSizeContextProvider from '@/contexts/ScreenModeAndSizeContext'
 import FacebookPixelEvents from '@/components/FacebookPixelEvents'
+import { PageSettingsContextProvider } from '@/contexts/PageSettingsContext'
+import Header from '@/sections/Header'
 
 const GTM_ID = process.env.GTM_ID
 // https://www.rodyvansambeek.com/blog/easiest-ga4-integration-nextjs-13-gtm-guide
@@ -52,20 +54,23 @@ export default function RootLayout({ children }) {
 
       <LanguageContextProvider>
         <ScreenModeAndSizeContextProvider>
-          <html lang="en">
-            <body>
-              {children}
-              <noscript>
-                <iframe
-                  src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-                  height="0"
-                  width="0"
-                  style={{ display: 'none', visibility: 'hidden' }}
-                ></iframe>
-              </noscript>
-              <FacebookPixelEvents />
-            </body>
-          </html>
+          <PageSettingsContextProvider>
+            <html lang="en">
+              <body>
+                <Header />
+                {children}
+                <noscript>
+                  <iframe
+                    src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+                    height="0"
+                    width="0"
+                    style={{ display: 'none', visibility: 'hidden' }}
+                  ></iframe>
+                </noscript>
+                <FacebookPixelEvents />
+              </body>
+            </html>
+          </PageSettingsContextProvider>
         </ScreenModeAndSizeContextProvider>
       </LanguageContextProvider>
     </>
