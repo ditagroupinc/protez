@@ -42,6 +42,7 @@ export async function POST(request: NextRequest) {
   } catch (error) {
     console.error(error)
 
+    // @ts-ignore
     return new NextResponse(JSON.stringify({ message: error.message }), {
       status: 400,
       headers: {
