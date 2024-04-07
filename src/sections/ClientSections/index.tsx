@@ -7,10 +7,9 @@ import { useInView } from 'react-intersection-observer'
 
 import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils/parsers'
 
-import Prosthetics from '@/sections/Prosthetics'
+import Header from '@/sections/Header'
+import LetsGiveHope from '@/sections/LetsGiveHope'
 
-const Header = lazy(() => import('@/sections/Header'))
-const LetsGiveHope = lazy(() => import('@/sections/LetsGiveHope'))
 const Veterans = lazy(() => import('@/sections/Veterans'))
 const PressRelease = lazy(() => import('@/sections/PressRelease'))
 const Events = lazy(() => import('@/sections/Events'))
@@ -22,7 +21,7 @@ const InNeed = lazy(() => import('@/sections/InNeed'))
 const OurResults = lazy(() => import('@/sections/OurResults'))
 const MailingList = lazy(() => import('@/sections/MailingList'))
 const Merch = lazy(() => import('@/sections/Merch'))
-// const Prosthetics = lazy(() => import('@/sections/Prosthetics'))
+const Prosthetics = lazy(() => import('@/sections/Prosthetics'))
 
 import ThankYou from '@/sections/ThankYou'
 
