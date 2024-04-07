@@ -1,24 +1,27 @@
-import { useContext, useRef, forwardRef } from 'react'
-import { LanguageContext } from '@/contexts/LanguageContext'
+import { useRef, ReactElement } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
-import style from './PressRelease.module.scss'
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+
+import style from './style.module.scss'
 
 import icons from './icons'
 import Slider from 'react-slick'
 
-import PressReleaseCard from '@/components/PressReleaseCard'
+import PressReleaseCard from './components/PressReleaseCard'
 import texts from '@/texts&svg'
+import { SinglePressRelease } from '@/utils/parsers'
 
-const PressRelease = forwardRef(function ({ visible, id, pressReleases }, ref) {
-  const { lang } = useContext(LanguageContext)
-  const sliderRef = useRef(null)
+const PressRelease = ({ pressReleases }: { pressReleases: SinglePressRelease[] }) => {
+  const { lang } = useLanguage()
+  const sliderRef = useRef<Slider & React.Component>(null)
   const gotoNext = () => {
-    sliderRef.current.slickNext()
+    sliderRef.current?.slickNext()
   }
 
   const settings = {
     dots: true,
-    appendDots: dots => (
+    appendDots: (dots: ReactElement) => (
       <>
         <div className={style.sliderNavigation}>
           <button onClick={gotoNext} className={style.nextSlideButton}>
@@ -39,11 +42,12 @@ const PressRelease = forwardRef(function ({ visible, id, pressReleases }, ref) {
     autoplay: true,
     autoplaySpeed: 5000,
   }
+
   return (
-    <section className={`${style.section} section ${visible ? 'showText' : ''}`} id="pressRelease">
-      <div className={`textContainer ${style.logo}`}>
+    <section className={`${style.section} section`} id="pressRelease">
+      <TextAppearanceWrapper className={style.logo}>
         {icons.pressReleaseLogo.desktop[lang](`svgTextBlock`)}
-      </div>
+      </TextAppearanceWrapper>
 
       <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
         {pressReleases.map((pressRelease, index) => (
@@ -59,7 +63,6 @@ const PressRelease = forwardRef(function ({ visible, id, pressReleases }, ref) {
       </Slider>
     </section>
   )
-})
+}
 
-PressRelease.displayName = 'PressRelease'
 export default PressRelease

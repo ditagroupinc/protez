@@ -1,14 +1,13 @@
-import { useContext } from 'react'
-import { LanguageContext } from '@/contexts/LanguageContext'
-import { ScreenModeAndSizeContext } from '@/contexts/ScreenModeAndSizeContext'
 import style from './donorbox.module.scss'
 import icons from './icons'
 import Script from 'next/script'
 import texts from '@/texts&svg'
 import Divider from '@/components/Divider'
+import { useLanguage } from '@/contexts/LanguageContext'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const CompanyData = ({ className = '' }) => {
-  const { lang, changeLang } = useContext(LanguageContext)
+  const { lang } = useLanguage()
 
   return (
     <div className={`${style.companyData} ${className}`}>
@@ -41,8 +40,9 @@ const CompanyData = ({ className = '' }) => {
 }
 
 export default function DonorBox({ monthly = false, className }) {
-  const { lang } = useContext(LanguageContext)
-  const { mobile } = useContext(ScreenModeAndSizeContext)
+  const { lang } = useLanguage()
+  const { mobile } = useScreenModeAndSize()
+
   return (
     <section className={`${style.section} ${className}`} id="donorBox">
       {mobile
@@ -72,6 +72,7 @@ export default function DonorBox({ monthly = false, className }) {
               : 'https://donorbox.org/embed/website-donation-64'
           }
           name="donorbox"
+          /* eslint-disable-next-line react/no-unknown-property */
           allowpaymentrequest="allowpaymentrequest"
           seamless="seamless"
           scrolling="no"

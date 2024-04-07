@@ -13,24 +13,10 @@ const protezMERCHlogo = className => (
     />
   </svg>
 )
-const protezMERCHlogoTablet = className => ''
-const protezMERCHlogoMobile = className => ''
-const protezMERCHlogoUA = className => ''
 
 export const icons = {
   protezMERCHlogo: {
-    // desktop: {
     english: protezMERCHlogo,
     ukrainian: protezMERCHlogo,
-    // ukrainian: ,
-    // },
-    // tablet: {
-    //   english: ,
-    //   ukrainian: ,
-    // },
-    // mobile: {
-    //   english: ,
-    //   ukrainian: ,
-    // },
   },
 }

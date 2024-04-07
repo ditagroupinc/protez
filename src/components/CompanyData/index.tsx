@@ -1,9 +1,8 @@
-import { useContext } from 'react'
-import { LanguageContext } from '@/contexts/LanguageContext'
 import SquareButton from '@/components/SquareButton'
 import Divider from '@/components/Divider'
 import texts from '@/texts&svg'
 import icons from './icons'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 import style from './style.module.scss'
 
@@ -16,7 +15,7 @@ const CompanyData = ({
   black?: boolean
   colorInverted?: boolean
 }) => {
-  const { lang } = useContext(LanguageContext)
+  const { lang } = useLanguage()
 
   return (
     <div className={`${style.container} ${className} ${black && style.black}`}>

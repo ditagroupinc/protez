@@ -1,7 +1,8 @@
-import { useContext, useRef, useState, forwardRef } from 'react'
-import { LanguageContext } from '@/contexts/LanguageContext'
+import { useRef, useState } from 'react'
+
 import { Languages, BilingualText } from '@/types'
 import SquareButton from '@/components/SquareButton'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 import style from './Veterans.module.scss'
 import Image from 'next/image'
@@ -30,7 +31,7 @@ interface Veteran {
 }
 
 const Veterans = () => {
-  const { lang } = useContext(LanguageContext)
+  const { lang } = useLanguage()
   const [iframeData, setIframeData] = useState({ opened: false, url: '' })
 
   const sliderRef = useRef<Slider & React.Component>(null)
@@ -68,7 +69,7 @@ const Veterans = () => {
                       {element.title[lang]}
                     </TextAppearanceWrapper>
                     <TextAppearanceWrapper
-                      className={`p ${style.cardText} ${lang === Languages.ukrainian && style.ua}`}
+                      className={`p ${style.cardText} ${lang === Languages.Ukrainian && style.ua}`}
                     >
                       {element.text[lang]}
                     </TextAppearanceWrapper>

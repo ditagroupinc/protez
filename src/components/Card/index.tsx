@@ -1,14 +1,16 @@
-import React, { ReactNode, FunctionComponent } from 'react'
+import React, { ReactNode } from 'react'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import style from './style.module.css'
 
-interface CardProps {
+const Card = ({
+  text,
+  icon,
+  reverse,
+}: {
   text: string
   icon: () => ReactNode
   reverse?: boolean
-}
-
-const Card: FunctionComponent<CardProps> = ({ text, icon, reverse }) => {
+}) => {
   return (
     <div className={`h5 ${style.block} ${reverse && style.reverseBlock}`}>
       <TextAppearanceWrapper>

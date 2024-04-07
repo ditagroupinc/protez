@@ -115,7 +115,7 @@ const iconLinkedinSquare = (className, color = 'white') => (
   </svg>
 )
 // TODO: add color change handling
-const iconEmail = (className, color = 'white') => (
+const iconEmail = className => (
   <svg
     width="33"
     height="32"

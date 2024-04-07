@@ -1,14 +1,12 @@
 'use client'
-import { useContext } from 'react'
 
 import Header from '@/sections/Header'
 import Copyright from '@/components/Copyright'
-
-import { ScreenModeAndSizeContext } from '@/contexts/ScreenModeAndSizeContext'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import SocialMediaLinks from '@/components/SocialMediaLinks'
 export default function NotMainPage({ children }) {
-  const { desktop } = useContext(ScreenModeAndSizeContext)
+  const { desktop } = useScreenModeAndSize()
 
   return (
     <>

@@ -1,10 +1,11 @@
+'use client'
+
 import Card from '@/components/Card'
 import style from './style.module.scss'
-import { useContext } from 'react'
-import { LanguageContext } from '@/contexts/LanguageContext'
+import { useLanguage } from '@/contexts/LanguageContext'
 import { Languages } from '@/types'
 
-import { useScreenModeAndSize } from '@/contexts/ScreenModeAndSizeContext'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import Image from 'next/image'
 import { icons } from './icons'
 import VideoAndFilter from '@/components/VideoAndFilter'
@@ -15,9 +16,8 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 const iconsArr = [icons.iconIntegration, icons.iconHeart, icons.iconPeople]
 
 const Prosthetics = () => {
-  const { lang } = useContext(LanguageContext)
-  const { tabletLarge } = useScreenModeAndSize()
-
+  const { lang } = useLanguage()
+  const { tabletLarge, tablet, mobile } = useScreenModeAndSize()
   const renderCards = () => {
     return Object.keys(texts.prosthetics.cards).map((key, i) => (
       <Card
@@ -42,7 +42,7 @@ const Prosthetics = () => {
         className={`${style.ukrainianMap}`}
       />
 
-      {tabletLarge ? (
+      {tabletLarge || tablet || mobile ? (
         <>
           {icons.flag(style.flag)}
           <div className={style.flexContainer}>
@@ -51,11 +51,11 @@ const Prosthetics = () => {
                 {icons.prostheticsLogo.tablet[lang](style.logoTablet)}
               </TextAppearanceWrapper>
               <div className={`${style.text}`}>
-                <TextAppearanceWrapper className={`h2 ${lang === Languages.ukrainian && style.ua}`}>
+                <TextAppearanceWrapper className={`h2 ${lang === Languages.Ukrainian && style.ua}`}>
                   {texts.prosthetics.paragraph.top[lang]}
                 </TextAppearanceWrapper>
 
-                <TextAppearanceWrapper className={`h2 ${lang === Languages.ukrainian && style.ua}`}>
+                <TextAppearanceWrapper className={`h2 ${lang === Languages.Ukrainian && style.ua}`}>
                   {texts.prosthetics.paragraph.bottom[lang]}
                 </TextAppearanceWrapper>
               </div>

@@ -1,16 +1,15 @@
 'use client'
-import { useContext } from 'react'
+
 import AllOurPartners from '@/sections/AllOurPartners'
 import Header from '@/sections/Header'
 import Copyright from '@/components/Copyright'
-
-import { ScreenModeAndSizeContext } from '@/contexts/ScreenModeAndSizeContext'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import CompanyData from '@/components/CompanyData'
 import SocialMediaLinks from '@/components/SocialMediaLinks'
 
 export default function Partners() {
-  const { desktop } = useContext(ScreenModeAndSizeContext)
+  const { desktop } = useScreenModeAndSize()
 
   return (
     <>

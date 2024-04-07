@@ -1,7 +1,6 @@
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import { useContext, forwardRef, Ref } from 'react'
-import { LanguageContext } from '@/contexts/LanguageContext'
+import { useLanguage } from '@/contexts/LanguageContext'
 import Card from '@/components/Card'
 import style from './style.module.css'
 import { icons } from './icons'
@@ -16,11 +15,12 @@ interface BlockInfo {
   }
 }
 
-const OurMission = forwardRef<HTMLDivElement>(function ({}, ref) {
-  const { lang } = useContext(LanguageContext)
+const OurMission = () => {
+  const { lang } = useLanguage()
   const blockInfo: BlockInfo = texts.ourMission.blockInfo
+
   return (
-    <section className={`${style.section} section`} id="ourMission" ref={ref}>
+    <section className={`${style.section} section`} id="ourMission">
       <div className={`${style.block}`}>
         <TextAppearanceWrapper className={style.logo}>
           {icons.ourMissionLogo[lang](`"svgTextBlock" `)}
@@ -32,7 +32,6 @@ const OurMission = forwardRef<HTMLDivElement>(function ({}, ref) {
       </div>
     </section>
   )
-})
+}
 
-OurMission.displayName = 'OurMission'
 export default OurMission

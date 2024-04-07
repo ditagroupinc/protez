@@ -74,6 +74,7 @@ const inNeedLogoUA = className => (
     />
   </svg>
 )
+
 export const icons = {
   inNeedLogo: {
     desktop: {

@@ -1,5 +1,4 @@
-import { useContext, FunctionComponent } from 'react'
-import { LanguageContext, ILanguageContext } from '@/contexts/LanguageContext'
+import { useLanguage } from '@/contexts/LanguageContext'
 import SquareButton from '@/components/SquareButton'
 import Divider from '@/components/Divider'
 import texts from '@/texts&svg'
@@ -15,7 +14,7 @@ const CompanyDataNonProfit = ({
   black?: boolean
   bgIsPink?: boolean
 }) => {
-  const { lang } = useContext<ILanguageContext>(LanguageContext)
+  const { lang } = useLanguage()
 
   return (
     <div className={`${style.container} ${black ? style.black : ''} ${className}`}>

@@ -1,0 +1,114 @@
+.section:global(.section) {
+  padding-bottom: var(--paddingVW);
+  background: linear-gradient(180.65deg, #0d1125 0.73%, rgba(13, 17, 37, 0) 59.61%);
+}
+.container {
+  position: relative;
+}
+
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 104px;
+  & svg {
+    max-width: 840px;
+  }
+}
+.newsContainer {
+  position: relative;
+  z-index: 0;
+}
+
+.section:global(.section) :global(.slick-slider) {
+  height: 100%;
+}
+
+.section:global(.section) :global(.slick-dots) {
+  width: fit-content;
+  position: static;
+  margin-top: 7rem;
+  padding-left: calc(120px + 1rem);
+  padding-bottom: 6px;
+}
+
+.section:global(.section) :global(.slick-dots li.slick-active button:before) {
+  color: var(--pink);
+}
+
+.section:global(.section) :global(.slick-dots li button:before) {
+  color: var(--white);
+  opacity: 1;
+}
+
+.section:global(.section) :global(.slick-center) {
+  transform: scale(1.2);
+  transition: transform var(--transitionProps);
+  & h3 {
+    color: var(--pink);
+  }
+  & :global(.arrow) path {
+    fill: var(--pink);
+  }
+}
+
+.nextSlideButton {
+  background-color: var(--pink);
+  border-radius: 1rem;
+  font-size: 20px;
+  line-height: 32px;
+  padding: 0 1.5rem;
+  color: var(--white);
+  width: 100%;
+  max-width: 120px;
+  position: absolute;
+  bottom: 0;
+}
+
+/* desktop */
+@media screen and (max-width: 1920px) {
+  .section:global(.section) :global(.slick-dots) {
+    margin-top: 3rem;
+  }
+  .newsContainer {
+    transform: translateY(-80px);
+  }
+  .logoContainer {
+    margin-bottom: 0;
+  }
+}
+
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .logoContainer {
+    & svg {
+      max-width: 312px;
+    }
+  }
+  .newsContainer {
+    transform: translateY(-80px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section:global(.section) {
+    padding-bottom: 70px;
+  }
+  .section:global(.section) :global(.slick-slide) {
+    padding-bottom: 50px;
+  }
+  .logoContainer {
+    & svg {
+      max-width: 100%;
+    }
+  }
+  .newsContainer {
+    transform: none;
+    margin-top: 2.5rem;
+  }
+
+  .nextSlideButton {
+    bottom: -60px;
+  }
+}

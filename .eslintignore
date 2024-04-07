@@ -1,0 +1,8 @@
+node_modules
+.next/
+out/
+build
+coverage
+
+jest.setup.js
+tailwind.config.js

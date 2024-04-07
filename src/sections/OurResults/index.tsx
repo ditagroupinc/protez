@@ -1,48 +1,13 @@
-import { useContext, FunctionComponent } from 'react'
-import { LanguageContext } from '@/contexts/LanguageContext'
+import { useLanguage } from '@/contexts/LanguageContext'
 import style from './style.module.scss'
 import { icons } from './icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+import { Languages } from '@/types'
+import NumberColumn from './components/NumberColumn'
+import { Statistics } from '@/utils/parsers'
 
-const NumberColumn = ({
-  text,
-  number,
-  className,
-}: {
-  text: string
-  number: number
-  className: string
-}) => (
-  <div className={`${style.counter} ${className}`}>
-    <div>
-      <TextAppearanceWrapper reverse className={`${style.title} h2`}>
-        {text}
-      </TextAppearanceWrapper>
-    </div>
-    <TextAppearanceWrapper reverse className={`${style.bigNumb}`}>
-      {number}
-    </TextAppearanceWrapper>
-  </div>
-)
-
-interface StatisticsData {
-  statisticsDataLabel: {
-    english: string
-    ukrainian: string
-  }
-  statisticsDataValue: number
-}
-
-interface Results {
-  statisticsDate: {
-    english: string
-    ukrainian: string
-  }
-  statisticsData: StatisticsData[]
-}
-
-const OurResults = ({ results }: { results: Results }) => {
-  const { lang } = useContext(LanguageContext)
+const OurResults = ({ results }: { results: Statistics }) => {
+  const { lang } = useLanguage()
   const ukrainianClassName = lang === 'ukrainian' ? style.ukrainian : ''
 
   return (
@@ -59,7 +24,7 @@ const OurResults = ({ results }: { results: Results }) => {
               text={card.statisticsDataLabel[lang]}
               number={card.statisticsDataValue}
               key={i}
-              className={ukrainianClassName}
+              isUkrainianLanguage={lang === Languages.Ukrainian}
             />
           ))}
         </div>

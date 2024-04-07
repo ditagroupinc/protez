@@ -15,6 +15,7 @@ export const throttle = (cb, delay) => {
   return (...args) => {
     if (wait) {
       storedArgs = args
+
       return
     }
 

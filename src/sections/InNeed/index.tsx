@@ -1,14 +1,14 @@
-import { useContext, forwardRef } from 'react'
-import { LanguageContext } from '@/contexts/LanguageContext'
+import { forwardRef } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 import { Languages } from '@/types'
-import { useScreenModeAndSize } from '@/contexts/ScreenModeAndSizeContext'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { icons } from './icons'
 import texts from '@/texts&svg'
 import style from './style.module.css'
 
-const InNeed = forwardRef<HTMLDivElement>(function ({}, ref) {
-  const { lang } = useContext(LanguageContext)
+const InNeed = forwardRef<HTMLDivElement>(function (_, ref) {
+  const { lang } = useLanguage()
   const { mobile, tabletLarge } = useScreenModeAndSize()
 
   const getTitle = () => {
@@ -26,7 +26,7 @@ const InNeed = forwardRef<HTMLDivElement>(function ({}, ref) {
       <div className={style.block}>
         <TextAppearanceWrapper className={style.title}>{getTitle()}</TextAppearanceWrapper>
         <div className={`${style.text} h2`}>
-          <TextAppearanceWrapper className={`h2 ${lang === Languages.ukrainian && style.ua}`}>
+          <TextAppearanceWrapper className={`h2 ${lang === Languages.Ukrainian && style.ua}`}>
             {texts.inNeed.paragraph[lang]}
           </TextAppearanceWrapper>
         </div>

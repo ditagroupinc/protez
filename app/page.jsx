@@ -28,8 +28,9 @@ async function getPosts() {
   let statisticsData = {}
   let pressReleaseData = {}
 
-  posts.forEach((post, index) => {
+  posts.forEach(post => {
     const node = post.node
+
     if (node.title === 'Statistics') {
       statisticsData = node.content
     } else if (node.title === 'Events') {

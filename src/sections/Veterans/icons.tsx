@@ -378,9 +378,9 @@ const closeVideo = (className?: string) => (
 
 export const icons = {
   titles: {
-    vadymFedorov: { [Languages.english]: vadymFedorov, [Languages.ukrainian]: vadymFedorovUA },
+    vadymFedorov: { [Languages.English]: vadymFedorov, [Languages.Ukrainian]: vadymFedorovUA },
 
-    artemSvergun: { [Languages.english]: artemSvergun, [Languages.ukrainian]: artemSvergunUA },
+    artemSvergun: { [Languages.English]: artemSvergun, [Languages.Ukrainian]: artemSvergunUA },
   },
   vadymFedorovIcon: vadymFedorovIcon,
   artemSvergunIcon: artemSvergunIcon,

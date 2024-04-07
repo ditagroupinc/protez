@@ -1,4 +1,4 @@
-import { ReactNode, FunctionComponent } from 'react'
+import { ReactNode } from 'react'
 import Link from 'next/link'
 import style from './style.module.scss'
 
@@ -27,17 +27,18 @@ const SquareButton = ({
 }: SquareButtonProps) => {
   if (link)
     return (
-      <Link href={href} legacyBehavior>
-        <a
-          target={blank ? 'blank' : '_self'}
-          className={`h6 ${style.button} ${pink ? style.pink : ''} ${
-            emptyBlack ? style.emptyBlack : ''
-          } ${black ? style.black : ''} ${className}`}
-        >
-          {children}
-        </a>
+      <Link
+        href={href}
+        target={blank ? 'blank' : '_self'}
+        type="button"
+        className={`h6 ${style.button} ${pink ? style.pink : ''} ${
+          emptyBlack ? style.emptyBlack : ''
+        } ${black ? style.black : ''} ${className}`}
+      >
+        {children}
       </Link>
     )
+
   return (
     <button
       className={`h6 ${style.button} ${pink ? style.pink : ''} ${

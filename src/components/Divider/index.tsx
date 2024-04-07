@@ -1,4 +1,3 @@
-import { FunctionComponent } from 'react'
 import style from './style.module.css'
 
 const Divider = ({ vertical, className = '' }: { vertical?: boolean; className?: string }) => {

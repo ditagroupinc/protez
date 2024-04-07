@@ -1,0 +1,13 @@
+export const FB_PIXEL_ID = process.env.FACEBOOK_PIXEL_ID
+
+export const pageview = () => {
+  // @ts-ignore
+  window.fbq('track', 'PageView')
+}
+
+// https://developers.facebook.com/docs/facebook-pixel/advanced/
+// @ts-ignore
+export const event = (name, options = {}) => {
+  // @ts-ignore
+  window.fbq('track', name, options)
+}

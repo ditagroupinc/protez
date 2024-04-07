@@ -4,7 +4,7 @@
   position: relative;
   display: flex;
   &::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     bottom: 0;
@@ -95,6 +95,7 @@ h2.ua {
     z-index: 0;
   }
   .flexContainer {
+    position: relative;
     display: flex;
     align-items: stretch;
   }

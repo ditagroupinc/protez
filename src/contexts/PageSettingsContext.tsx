@@ -20,8 +20,10 @@ export const PageSettingsContextProvider = ({ children }: { children: ReactEleme
 
 export const usePageSettings = (): PageSettingsContextType => {
   const context = useContext(PageSettingsContext)
+
   if (!context) {
     throw new Error('usePageSettings must be used within a PageSettingsProvider')
   }
+
   return context
 }

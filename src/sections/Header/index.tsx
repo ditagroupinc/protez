@@ -1,6 +1,6 @@
 'use client'
-import { useContext, useState, useCallback } from 'react'
-import { LanguageContext } from '@/contexts/LanguageContext'
+import { useState, useCallback } from 'react'
+import { useLanguage } from '@/contexts/LanguageContext'
 import { Languages } from '@/types'
 import useOutsideClick from '@/hooks/useOutsideClick'
 import { icons } from './icons'
@@ -10,7 +10,7 @@ import SocialMediaLinks from '@/components/SocialMediaLinks'
 
 import { usePageSettings } from '@/contexts/PageSettingsContext'
 
-import { useScreenModeAndSize } from '@/contexts/ScreenModeAndSizeContext'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import Divider from '@/components/Divider'
 import Link from 'next/link'
@@ -19,15 +19,16 @@ import style from './style.module.scss'
 
 import { BurgerButton } from './components/BurgerButton'
 
-const Header = ({ notMainPage }: { notMainPage: boolean }) => {
-  const { lang, setLang } = useContext(LanguageContext)
+const Header = ({ notMainPage }: { notMainPage?: boolean }) => {
+  const { lang, setLang } = useLanguage()
   const { isBackgroundWhite } = usePageSettings()
 
   const { width, mobile } = useScreenModeAndSize()
   const [headerIsOpened, setHeaderIsOpened] = useState(false)
 
   const handleLanguageChange = useCallback(() => {
-    const langToSet = lang === Languages.english ? Languages.ukrainian : Languages.english
+    const langToSet = lang === Languages.English ? Languages.Ukrainian : Languages.English
+
     setLang(langToSet)
     localStorage.setItem('lang', langToSet)
   }, [lang, setLang])

@@ -37,91 +37,6 @@
   align-items: flex-end;
 }
 
-.counter {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -ms-flex-direction: row-reverse;
-  flex-direction: row-reverse;
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-  -webkit-transform-origin: center;
-  -ms-transform-origin: center;
-  transform-origin: center;
-  white-space: nowrap;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
-  border-left: 4px solid var(--pink);
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 24%;
-  flex: 1 1 24%;
-  -webkit-box-pack: flex-end;
-  -ms-flex-pack: flex-end;
-  justify-content: flex-end;
-
-  &:first-of-type {
-    padding-bottom: 40px;
-  }
-  &:nth-of-type(2) {
-    padding-bottom: 138px;
-  }
-  &:nth-of-type(3) {
-    padding-bottom: 146px;
-  }
-  &:nth-of-type(4) {
-    border-left: none;
-  }
-  &:last-of-type {
-    padding-bottom: 40px;
-    background-color: var(--pink);
-  }
-
-  &.ukrainian {
-    &:first-of-type {
-      padding-bottom: 40px;
-    }
-    &:nth-of-type(2) {
-      padding-bottom: 0;
-    }
-    &:nth-of-type(3) {
-      padding-bottom: 275px;
-    }
-
-    &:last-of-type {
-      padding-bottom: 40px;
-    }
-  }
-}
-
-.bigNumb {
-  -webkit-writing-mode: vertical-lr;
-  -ms-writing-mode: tb-lr;
-  writing-mode: vertical-lr;
-  /* font-size: calc(52px + 82 * ((100vw - 1366px) / 1194)); */
-  font-size: 134px;
-  // line-height: 100%;
-  font-weight: 600;
-  height: fit-content;
-  width: fit-content;
-  line-height: 77%;
-}
-
-/* .counter:hover {
-  background-color: var(--pink);
-  transition: all var(--transitionProps);
-} */
-
-.title {
-  -webkit-writing-mode: vertical-lr;
-  -ms-writing-mode: tb-lr;
-  writing-mode: vertical-lr;
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-}
 .numb {
   -webkit-writing-mode: vertical-lr;
   -ms-writing-mode: tb-lr;
@@ -142,34 +57,6 @@
   .leftBlock {
     min-width: 438px;
     flex-basis: 438px;
-  }
-  .counter {
-    &:first-of-type {
-      padding-bottom: 28px;
-    }
-    &:nth-of-type(2) {
-      padding-bottom: 190px;
-    }
-    &:nth-of-type(3) {
-      padding-bottom: 248px;
-    }
-    &.ukrainian {
-      &:first-of-type {
-        padding-bottom: 34px;
-      }
-      &:nth-of-type(2) {
-        padding-bottom: 28px;
-      }
-      &:nth-of-type(3) {
-        padding-bottom: 212px;
-      }
-      &:last-of-type {
-        padding-bottom: 38px;
-      }
-    }
-  }
-  .bigNumb {
-    font-size: 104px;
   }
 }
 
@@ -202,41 +89,6 @@
   }
 }
 
-/* beforeTablet */
-@media screen and (max-width: 1366px) {
-  .counter {
-    &:first-of-type {
-      padding-bottom: 77px;
-    }
-    &:nth-of-type(2) {
-      padding-bottom: 154px;
-    }
-    &:nth-of-type(3) {
-      padding-bottom: 118px;
-    }
-    &:last-of-type {
-      padding-bottom: 57px;
-    }
-    &.ukrainian {
-      &:first-of-type {
-        padding-bottom: 0;
-      }
-      &:nth-of-type(2) {
-        padding-bottom: 0;
-      }
-      &:nth-of-type(3) {
-        padding-bottom: 145px;
-      }
-      &:last-of-type {
-        padding-bottom: 55px;
-      }
-    }
-  }
-  .bigNumb {
-    font-size: 52px;
-  }
-}
-
 /* tablet */
 @media screen and (max-width: 1180px) {
   .block {
@@ -254,38 +106,6 @@
 
 /* phobe */
 @media screen and (max-width: 480px) {
-  .bigNumb {
-    font-size: 45px;
-    line-height: 100%;
-  }
-  .counter {
-    &:first-of-type {
-      padding-bottom: 77px;
-    }
-    &:nth-of-type(2) {
-      padding-bottom: 154px;
-    }
-    &:nth-of-type(3) {
-      padding-bottom: 160px;
-    }
-    &:last-of-type {
-      padding-bottom: 120px;
-    }
-    &.ukrainian {
-      &:first-of-type {
-        padding-bottom: 0;
-      }
-      &:nth-of-type(2) {
-        padding-bottom: 55px;
-      }
-      &:nth-of-type(3) {
-        padding-bottom: 143px;
-      }
-      &:last-of-type {
-        padding-bottom: 104px;
-      }
-    }
-  }
   .section:global(.section) {
     padding-bottom: 0;
     padding-left: 5px;

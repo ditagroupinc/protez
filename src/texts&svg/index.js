@@ -944,6 +944,13 @@ const thankYouPage = {
   },
 }
 
+const home = {
+  backToTop: {
+    english: 'back to top  →',
+    ukrainian: 'back to top  →',
+  },
+}
+
 const texts = {
   ourMission: ourMissionSection,
   // ourResults: ourResultsSection,
@@ -965,6 +972,7 @@ const texts = {
   // ----
   donate: donatePage,
   thankYouPage: thankYouPage,
+  home: home,
 }
 
 export default texts
