@@ -41,8 +41,8 @@ export async function POST(request) {
       }
     );
   } catch (error) {
-    console.log(error);
-    return new NextResponse(JSON.stringify({ message: error.message }), {
+    const parsedError = JSON.parse(error.response.text);
+    return new NextResponse(JSON.stringify({ message: parsedError.title }), {
       status: 400,
       headers: {
         "Content-Type": "application/json",
