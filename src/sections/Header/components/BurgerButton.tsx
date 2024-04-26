@@ -5,24 +5,28 @@ export const BurgerButton = ({
   close,
   onClick,
   isBlack,
+  color = 'pink',
 }: {
   close: boolean
   onClick: () => void
   isBlack: boolean
+  color?: 'pink' | 'blue'
 }) => {
+  const btnClassName = `${style.burgerButton} ${isBlack && style.black} ${style[color]}`
+
   if (!close) {
     return (
-      <button className={`${style.burgerButton} ${isBlack && style.black}`} onClick={onClick}>
+      <button className={btnClassName} onClick={onClick}>
         <span />
         <span />
         <span />
-      </button>
-    )
-  } else {
-    return (
-      <button className={`${style.burgerButton} ${isBlack && style.black}`} onClick={onClick}>
-        {icons.menuClose()}
       </button>
     )
   }
+
+  return (
+    <button className={btnClassName} onClick={onClick}>
+      {icons.menuClose(`${color === 'pink' ? style.iconPink : style.iconBlue}`)}
+    </button>
+  )
 }

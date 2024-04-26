@@ -6,15 +6,20 @@ export default function BackToTopButton({
   href,
   className = '',
   black,
+  color = 'pink',
 }: {
   href: string
   className?: string
   black?: boolean
+  color?: 'pink' | 'blue'
 }) {
   const { lang } = useLanguage()
 
   return (
-    <a className={`${style.button} h6 ${black ? style.black : ''} ${className}`} href={`#${href}`}>
+    <a
+      className={`${style.button} h6 ${black ? style.black : ''} ${style[color]} ${className}`}
+      href={`#${href}`}
+    >
       {texts.home.backToTop[lang]}
     </a>
   )
