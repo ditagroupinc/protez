@@ -21,7 +21,7 @@ import { BurgerButton } from './components/BurgerButton'
 
 const Header = ({ notMainPage }: { notMainPage?: boolean }) => {
   const { lang, setLang } = useLanguage()
-  const { isBackgroundWhite } = usePageSettings()
+  const { isBackgroundWhite, disabledSections } = usePageSettings()
 
   const { width, mobile } = useScreenModeAndSize()
   const [headerIsOpened, setHeaderIsOpened] = useState(false)
@@ -35,9 +35,9 @@ const Header = ({ notMainPage }: { notMainPage?: boolean }) => {
 
   const ref = useOutsideClick(() => setHeaderIsOpened(false))
 
-  const navLinks = Object.keys(texts.header.navigation).map(
-    el => texts.header.navigation[el as keyof typeof texts.header.navigation]
-  )
+  const navLinks = Object.keys(texts.header.navigation)
+    .filter(key => !disabledSections.includes(key))
+    .map(el => texts.header.navigation[el as keyof typeof texts.header.navigation])
   const toggleHeader = () => {
     setHeaderIsOpened(!headerIsOpened)
   }

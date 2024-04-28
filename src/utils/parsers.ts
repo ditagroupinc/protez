@@ -63,7 +63,7 @@ export function parseNews(postContent: string) {
     } as SingleNews)
   })
 
-  return news
+  return news as SingleNews[]
 }
 
 export function parseStatistics(statisticsContent: string) {

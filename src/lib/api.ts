@@ -1,4 +1,5 @@
-const WP_API_URL = process.env.WORDPRESS_API_URL
+const wordpressUrl = process.env.WORDPRESS_API_URL
+const refreshToken = process.env.WORDPRESS_AUTH_REFRESH_TOKEN
 
 import { isValidEmail } from '@/utils/emailValidation'
 
@@ -26,35 +27,52 @@ interface FetchAPIOptions {
 }
 
 async function fetchAPI(query = '', { variables }: FetchAPIOptions = {}) {
-  const headers = { 'Content-Type': 'application/json' }
+  if (!wordpressUrl) {
+    console.error('WP URL not set')
 
-  if (process.env.WORDPRESS_AUTH_REFRESH_TOKEN) {
-    headers['Authorization' as keyof typeof headers] =
-      `Bearer ${process.env.WORDPRESS_AUTH_REFRESH_TOKEN}`
+    return null
+  }
+
+  const headers = {
+    'Content-Type': 'application/json',
+    ...(refreshToken && { Authorization: `Bearer ${refreshToken}` }),
   }
 
   // WPGraphQL Plugin must be enabled
-  const res = await fetch(WP_API_URL as string, {
-    headers,
-    method: 'POST',
-    body: JSON.stringify({
-      query,
-      variables,
-    }),
-    next: { revalidate: 120 },
-  })
+  try {
+    const response = await fetch(wordpressUrl as string, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({
+        query,
+        variables,
+      }),
+      next: { revalidate: 120 },
+    })
 
-  const json = await res.json()
+    if (!response.ok) {
+      console.error(`HTTP error: ${response.status}`)
 
-  if (json.errors) {
-    console.error(json.errors)
-    throw new Error('Failed to fetch API')
+      return null
+    }
+
+    const json = await response.json()
+
+    if (json.errors) {
+      console.error('API Error:', json.errors)
+
+      return null
+    }
+
+    return json.data
+  } catch (error) {
+    console.error('Fetch error:', error)
+
+    return null
   }
-
-  return json.data
 }
 
-export async function getAllSections(preview: boolean) {
+export async function getAllSections() {
   const data = await fetchAPI(
     `
     query AllPosts {
@@ -71,8 +89,7 @@ export async function getAllSections(preview: boolean) {
   `,
     {
       variables: {
-        onlyEnabled: !preview,
-        preview,
+        onlyEnabled: true,
       },
     }
   )
@@ -81,18 +98,25 @@ export async function getAllSections(preview: boolean) {
 }
 
 export async function getCountry() {
-  return fetch('https://api.bigdatacloud.net/data/reverse-geocode-client', {
-    method: 'GET',
-    // body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-  }).then(res => {
-    if (!res.ok) throw new Error('Failed to send message')
+  try {
+    const response = await fetch('https://api.bigdatacloud.net/data/reverse-geocode-client', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
 
-    return res.json()
-  })
+    if (!response.ok) {
+      throw new Error(`Failed to fetch country data: ${response.status}`)
+    }
+
+    return await response.json()
+  } catch (error) {
+    console.error('Country fetch error:', error)
+
+    return null
+  }
 }
 
 export const subscribeToMailchimp = async (data: { email: string }) => {
@@ -100,16 +124,24 @@ export const subscribeToMailchimp = async (data: { email: string }) => {
     throw new Error('Wrong email format at email subscription')
   }
 
-  return fetch('/api/mailchimp', {
-    method: 'POST',
-    body: JSON.stringify(data),
-    headers: {
-      'Content-Type': 'application/json',
-      Accept: 'application/json',
-    },
-  }).then(res => {
-    if (!res.ok) throw new Error('Failed to subscribe')
+  try {
+    const response = await fetch('/api/mailchimp', {
+      method: 'POST',
+      body: JSON.stringify(data),
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
 
-    return res.json()
-  })
+    if (!response.ok) {
+      throw new Error('Failed to subscribe')
+    }
+
+    return await response.json()
+  } catch (error) {
+    console.error('Mailchimp subscription error:', error)
+
+    return null
+  }
 }
