@@ -982,6 +982,26 @@ const academyIntro = {
   },
 }
 
+const academyGoals = {
+  goals1: {
+    english:
+      'New skills will allow them to make the prosthetics much faster (days instead of weeks), improve patient satisfaction and significantly reduce the rehabilitation time and number of follow ups',
+    ukrainian:
+      'Нові навички дозволять їм робити протезування набагато швидше (днів замість тижнів), підвищать задоволеність пацієнтів і значно скоротять час реабілітації та кількість контрольних оглядів.',
+  },
+  goals2: {
+    english:
+      'Specialists will learn modern approaches in evaluation, casting, fabrication and rehabilitation',
+    ukrainian: 'Фахівці вивчать сучасні підходи в оцінці, відливці, виготовленні та реабілітації',
+  },
+  goals3: {
+    english:
+      'The instructors are certified trained professionals from Century College, Concordia and University of Minnesota.',
+    ukrainian:
+      'Інструктори є сертифікованими професіоналами Century College, Concordia та Університету Міннесоти.',
+  },
+}
+
 // ----------------------------------------------------------------
 
 const texts = {
@@ -1011,6 +1031,7 @@ const texts = {
   // PROTEZ ACADEMY PAGE
   academyIntro,
   academyHeader,
+  academyGoals,
 }
 
 export default texts
