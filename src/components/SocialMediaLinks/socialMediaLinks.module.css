@@ -11,10 +11,17 @@
   z-index: 9;
 }
 
-.link {
+.link.pink {
   &:hover .icon rect {
     transition: fill var(--transitionProps);
     fill: var(--pink);
+  }
+}
+
+.link.blue {
+  &:hover .icon rect {
+    transition: fill var(--transitionProps);
+    fill: var(--blue);
   }
 }
 

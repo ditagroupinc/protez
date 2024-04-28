@@ -8,12 +8,21 @@
   text-transform: uppercase;
   transition: color var(--transitionProps);
   z-index: 9;
+
   &.black {
     color: var(--black);
   }
-  &:hover {
-    color: var(--pink);
-    transition: color var(--transitionProps);
+
+  &.pink {
+    &:hover {
+      color: var(--pink);
+    }
+  }
+
+  &.blue {
+    &:hover {
+      color: var(--blue);
+    }
   }
 }
 

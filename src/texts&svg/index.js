@@ -951,6 +951,39 @@ const home = {
   },
 }
 
+// ----------------------------------------------------------------
+// PROTEZ ACADEMY PAGE
+
+const academyHeader = {
+  buttons: {
+    applyToAcademy: {
+      english: 'Apply to Academy',
+      ukrainian: 'Звернись до Академії',
+    },
+
+    supportAcademy: {
+      english: 'Support Academy',
+      ukrainian: 'Академія підтримки',
+    },
+
+    foundation: {
+      english: 'Protez Foundation',
+      ukrainian: 'Фонд Протез',
+    },
+  },
+}
+
+const academyIntro = {
+  desc: {
+    english:
+      'Protez Academy is an educational project by the Protez Foundation in collaboration with Century College and contributions from specialists from University of Minnesota and Concordia University',
+    ukrainian:
+      'Академія Protez — це освітній проект Фонду Protez у співпраці з Century College та внеском спеціалістів з Університету Міннесоти та Університету Конкордія',
+  },
+}
+
+// ----------------------------------------------------------------
+
 const texts = {
   ourMission: ourMissionSection,
   // ourResults: ourResultsSection,
@@ -973,6 +1006,11 @@ const texts = {
   donate: donatePage,
   thankYouPage: thankYouPage,
   home: home,
+
+  // ------------
+  // PROTEZ ACADEMY PAGE
+  academyIntro,
+  academyHeader,
 }
 
 export default texts

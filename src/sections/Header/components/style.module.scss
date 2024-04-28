@@ -39,9 +39,28 @@
     transform-origin: center;
     transition: transform var(--transitionProps);
     & span {
-      background-color: var(--pink);
       transition: background-color var(--transitionProps);
     }
+  }
+
+  &.pink:hover {
+    & > span {
+      background-color: var(--pink);
+    }
+  }
+
+  &.blue:hover {
+    & > span {
+      background-color: var(--blue);
+    }
+  }
+
+  .iconPink {
+    color: var(--pink);
+  }
+
+  .iconBlue {
+    color: var(--blue);
   }
 }
 
