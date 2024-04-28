@@ -43,15 +43,15 @@ export default function ClientSections({
   pressReleases,
   country,
 }: {
-  news: SingleNews[]
-  statistics: Statistics
-  events: SingleEvent[]
-  pressReleases: SinglePressRelease[]
+  news: SingleNews[] | null
+  statistics: Statistics | null
+  events: SingleEvent[] | null
+  pressReleases: SinglePressRelease[] | null
   country: string
 }) {
   const { setLang } = useLanguage()
 
-  const { isBackgroundWhite, setIsBackgroundWhite } = usePageSettings()
+  const { isBackgroundWhite, setIsBackgroundWhite, setDisabledSections } = usePageSettings()
 
   const [refLetsGiveHope, inViewLetsGiveHope] = useInView({ triggerOnce: false })
   const [refOurTeam, inViewOurTeam] = useInView({ triggerOnce: false })
@@ -72,6 +72,18 @@ export default function ClientSections({
     if (country === 'Ukraine') setLang(Languages.Ukrainian)
   }, [])
 
+  useEffect(() => {
+    const sectionsToDisable = []
+
+    if (!news || news.length === 0) sectionsToDisable.push('news')
+    if (!statistics) sectionsToDisable.push('results')
+    if (!events || events.length === 0) sectionsToDisable.push('events')
+    if (!pressReleases || pressReleases.length === 0) sectionsToDisable.push('pressReleases')
+    if (sectionsToDisable.length > 0) {
+      setDisabledSections(sectionsToDisable)
+    }
+  }, [news])
+
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <Header />
@@ -91,12 +103,13 @@ export default function ClientSections({
               src="/flag-usa.png"
               object-fit="contain"
               alt="Picture of the author"
+              priority
               width={1306}
               height={1890}
               className={style.americanFlag}
             />
           </div>
-          <OurResults results={statistics} />
+          {statistics && <OurResults results={statistics} />}
         </div>
 
         <InNeed ref={refInNeed} />
@@ -105,14 +118,17 @@ export default function ClientSections({
         <div className={`${style.smokeBlock} ${style.veteransAndEventsBlock}`}>
           <SmokeBackground className={style.smoke} />
           <Veterans />
-          <PressRelease pressReleases={pressReleases} />
-          <Events events={events} />
+          {pressReleases && pressReleases.length > 0 && (
+            <PressRelease pressReleases={pressReleases} />
+          )}
+          {events && events.length > 0 && <Events events={events} />}
         </div>
         <OurTeam ref={refOurTeam} />
         <OurPartners ref={refOurPartners} />
         <div className={style.smokeBlock}>
           <SmokeBackground className={style.smoke} />
-          <News news={news} />
+          {news && news.length > 0 && <News news={news} />}
+
           <MailingList ref={refMailingList} inView={inViewMailingList} />
         </div>
         <Merch ref={refMerch} />
