@@ -75,10 +75,38 @@
     background-color: var(--black);
   }
 
+  &.normalBlue {
+    align-items: flex-end;
+    justify-content: space-between;
+    background-color: var(--blue);
+    border-radius: 0;
+    color: var(--white);
+    font-weight: 700;
+  }
+
   &.big {
     padding: 17px 31px;
     font-size: 16px;
     line-height: 1.5;
+  }
+
+  &.normal {
+    width: 100%;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 14px;
+
+    @media (min-width: 576px) {
+      font-size: 16px;
+      line-height: 20px;
+      padding: 16px 24px;
+    }
+
+    @media (min-width: 768px) {
+      padding: 24px;
+      font-size: 20px;
+      line-height: 28px;
+    }
   }
 
   &.small {

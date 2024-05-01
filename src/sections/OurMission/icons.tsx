@@ -1,4 +1,4 @@
-const iconDisabledPerson = className => (
+const iconDisabledPerson = (className?: string) => (
   <svg
     width="45"
     height="57"
@@ -16,7 +16,8 @@ const iconDisabledPerson = className => (
     />
   </svg>
 )
-const iconHand = className => (
+
+const iconHand = (className?: string) => (
   <svg
     width="47"
     height="56"
@@ -34,7 +35,8 @@ const iconHand = className => (
     />
   </svg>
 )
-const iconHelpHeart = className => (
+
+const iconHelpHeart = (className?: string) => (
   <svg
     width="65"
     height="64"
@@ -52,7 +54,8 @@ const iconHelpHeart = className => (
     />
   </svg>
 )
-const iconPeople = className => (
+
+const iconPeople = (className?: string) => (
   <svg
     width="57"
     height="36"
@@ -70,7 +73,8 @@ const iconPeople = className => (
     />
   </svg>
 )
-const ourMissionLogo = className => (
+
+const ourMissionLogo = (className?: string) => (
   <svg
     width="540"
     height="192"
@@ -86,7 +90,7 @@ const ourMissionLogo = className => (
   </svg>
 )
 
-const ourMissionLogoUA = className => (
+const ourMissionLogoUA = (className?: string) => (
   <svg
     width="272"
     height="144"

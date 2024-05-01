@@ -1,3 +1,5 @@
+import { forwardRef } from 'react'
+
 import { useLanguage } from '@/contexts/LanguageContext'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
@@ -12,14 +14,14 @@ import texts from '@/texts&svg'
 import { icons } from './icons'
 import style from './style.module.scss'
 
-const AcademyIntro = () => {
+const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
   const { mobile, width } = useScreenModeAndSize()
 
   const isMobile = width < 768 || mobile
 
   return (
-    <AcademySection id="academyIntro" className={style.academyIntro}>
+    <AcademySection ref={ref} id="academyIntro" className={style.academyIntro}>
       <div className={style.overlay}></div>
       <div className={style.academyContent}>
         <div className={style.leftPart}>
@@ -70,6 +72,10 @@ const AcademyIntro = () => {
       </div>
     </AcademySection>
   )
+})
+
+if (process.env.NODE_ENV !== 'production') {
+  AcademyIntro.displayName = 'AcademyIntro'
 }
 
 export default AcademyIntro
