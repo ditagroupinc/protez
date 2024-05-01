@@ -1,4 +1,4 @@
-import { forwardRef } from 'react'
+import { forwardRef, useMemo } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -15,25 +15,35 @@ import style from './style.module.scss'
 const AcademyGoals = forwardRef<HTMLDivElement>((_, ref) => {
   const { lang } = useLanguage()
 
+  const goalCards = useMemo<Array<{ icon: JSX.Element; text: string }>>(() => {
+    return [
+      {
+        icon: icons.iconDisabledPerson(`${style.cardIcon}`),
+        text: texts.academyGoals.goals1[lang],
+      },
+      {
+        icon: icons.iconHand(`${style.cardIcon}`),
+        text: texts.academyGoals.goals2[lang],
+      },
+      {
+        icon: icons.iconHelpHeart(`${style.cardIcon}`),
+        text: texts.academyGoals.goals3[lang],
+      },
+    ]
+  }, [lang])
+
   return (
     <AcademySection ref={ref} id="academySection" className={style.academyGoalsSection}>
       <div className={style.academyGoalsContent}>
         <div className={style.sectionTitle}>{icons.goalLogo[lang]()}</div>
-        <AcademyGoalCard
-          image={icons.iconDisabledPerson(`${style.cardIcon}`)}
-          desc={texts.academyGoals.goals1[lang]}
-          className={style.cardItem}
-        />
-        <AcademyGoalCard
-          image={icons.iconHand(`${style.cardIcon}`)}
-          desc={texts.academyGoals.goals2[lang]}
-          className={style.cardItem}
-        />
-        <AcademyGoalCard
-          image={icons.iconHelpHeart(`${style.cardIcon}`)}
-          desc={texts.academyGoals.goals3[lang]}
-          className={style.cardItem}
-        />
+        {goalCards.map((item, index) => (
+          <AcademyGoalCard
+            key={index}
+            image={item.icon}
+            desc={item.text}
+            className={style.cardItem}
+          />
+        ))}
         <Button
           as="link"
           href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
