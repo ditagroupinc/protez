@@ -1002,6 +1002,37 @@ const academyGoals = {
   },
 }
 
+const academyResults = {
+  date: {
+    english: '(May 2022 – September 2023)',
+    ukrainian: '(Травень 2022 – Вересень 2023)',
+  },
+  description: {
+    english:
+      'Ukrainian Specialists already went through the Program and back in their home country helping restore the lives of those who lost limbs during the war',
+    ukrainian:
+      'Українські фахівці вже пройшли Програму та повернулися на батьківщину, допомагаючи відновити життя тим, хто втратив кінцівки під час війни',
+  },
+  statistics: {
+    receivedProsthetics: {
+      english: 'People received prosthetics',
+      ukrainian: 'Людей протезували',
+    },
+    trainedSpecialists: {
+      english: 'Specialists trained',
+      ukrainian: 'Спеціалісти підготовлені',
+    },
+    providedProstheses: {
+      english: 'Prostheses were provided',
+      ukrainian: 'Надали протези',
+    },
+    organizedSummits: {
+      english: 'Summits were organized',
+      ukrainian: 'Були організовані саміти',
+    },
+  },
+}
+
 // ----------------------------------------------------------------
 
 const texts = {
@@ -1032,6 +1063,7 @@ const texts = {
   academyIntro,
   academyHeader,
   academyGoals,
+  academyResults,
 }
 
 export default texts

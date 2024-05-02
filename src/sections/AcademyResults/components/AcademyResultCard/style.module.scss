@@ -1,0 +1,37 @@
+.academyResultCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  border: var(--greyBorder);
+
+  .count {
+    color: var(--blue);
+    font-size: 52px;
+    line-height: 50px;
+    font-weight: 800;
+  }
+
+  .desc {
+    color: var(--black);
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 768px) {
+  .academyResultCard {
+    padding: 48px 36px 40px;
+
+    .count {
+      font-size: 90px;
+      line-height: 76px;
+    }
+
+    .desc {
+      font-size: 18px;
+      line-height: 26px;
+    }
+  }
+}

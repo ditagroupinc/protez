@@ -14,6 +14,7 @@ import AcademyIntro from '@/sections/AcademyIntro'
 // LAZY LOADING IMPORT
 
 const AcademyGoals = lazy(() => import('@/sections/AcademyGoals'))
+const AcademyResults = lazy(() => import('@/sections/AcademyResults'))
 
 // =================================================================
 
@@ -36,6 +37,7 @@ export default function AcademyPage() {
         {/* THE WHOLE SECTION IS NOT WRAPPERED WITH SUSPENSE TO PREVENT FLICKERING EFFECT OF THE PAGE */}
         <Suspense fallback={<h1>Loading...</h1>}>
           <AcademyGoals />
+          <AcademyResults />
         </Suspense>
       </main>
       {/* footer section */}

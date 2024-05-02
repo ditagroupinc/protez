@@ -84,6 +84,16 @@
     font-weight: 700;
   }
 
+  &.normalBlack {
+    border-radius: 4px;
+    border: 1px solid var(--black);
+
+    &:hover {
+      color: var(--white);
+      background-color: var(--black);
+    }
+  }
+
   &.big {
     padding: 17px 31px;
     font-size: 16px;
