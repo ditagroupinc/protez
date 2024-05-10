@@ -1,7 +1,9 @@
 'use client'
 
-import { Fragment, Suspense, lazy } from 'react'
+import { Suspense, lazy } from 'react'
 import { useInView } from 'react-intersection-observer'
+
+import { notFound } from 'next/navigation'
 
 import BackToTopButton from '@/components/BackToTopButton'
 
@@ -20,14 +22,18 @@ const AcademyResults = lazy(() => import('@/sections/AcademyResults'))
 
 import style from './style.module.scss'
 
+const hidePage = true
+
 export default function AcademyPage() {
   const [refIntro, inViewIntro] = useInView({ triggerOnce: false })
 
   const { mobile, width } = useScreenModeAndSize()
   const isMobile = mobile || width < 768
 
-  return (
-    <Fragment>
+  return hidePage ? (
+    notFound()
+  ) : (
+    <>
       <AcademyHeader />
       <main className={style.main}>
         <AcademyIntro ref={refIntro} />
@@ -41,6 +47,6 @@ export default function AcademyPage() {
         </Suspense>
       </main>
       {/* footer section */}
-    </Fragment>
+    </>
   )
 }
