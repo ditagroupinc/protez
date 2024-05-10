@@ -87,7 +87,7 @@
 }
 
 .iFrame {
-  position: absolute;
+  position: fixed;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -98,7 +98,6 @@
 }
 
 .closeVideo {
-  display: none;
   position: fixed;
   z-index: 13;
   right: 20px;
@@ -280,9 +279,6 @@ a.squareButton {
     width: 100%;
   }
 
-  .iFrame {
-    position: fixed;
-  }
   .closeVideo {
     display: block;
   }
