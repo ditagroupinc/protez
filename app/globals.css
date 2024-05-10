@@ -11,6 +11,8 @@
 
 :root {
   --pink: #cd0062;
+  --blue: #00a3ff;
+  --dark-blue: #0170ce;
   --white: #ffffff;
   --black: #0d1125;
   --navLeftWidth: 300px;
@@ -53,7 +55,7 @@
 html,
 body,
 a {
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
   font-style: normal;
   color: var(--white);
 }
@@ -80,14 +82,14 @@ body::-webkit-scrollbar {
 .h3,
 .h4 {
   font-weight: 700;
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 .h2,
 .h5,
 .h6,
 .p {
   font-weight: 400;
-  font-family: "Outfit", sans-serif;
+  font-family: 'Outfit', sans-serif;
 }
 
 .h6 {
@@ -118,7 +120,9 @@ body::-webkit-scrollbar {
     transition: -webkit-transform 0.5s;
     -o-transition: transform 0.5s;
     transition: transform 0.5s;
-    transition: transform 0.5s, -webkit-transform 0.5s;
+    transition:
+      transform 0.5s,
+      -webkit-transform 0.5s;
     /* transition-delay: 0.5s; */
   }
 }

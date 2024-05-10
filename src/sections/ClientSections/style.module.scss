@@ -1,0 +1,43 @@
+.main {
+  background-color: var(--black);
+}
+
+.flagsBlock {
+  position: relative;
+}
+
+.americanFlag {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  max-width: 50%;
+}
+
+.smokeBlock {
+  position: relative;
+}
+
+.smokeTop {
+  height: calc(100% - 100vh);
+  top: auto;
+  bottom: 0;
+}
+
+/* tablet */
+@media screen and (max-width: 1180px) {
+  .companyDataNonProfit {
+    display: none;
+  }
+}
+
+/* phone */
+@media screen and (max-width: 480px) {
+  .americanFlag {
+    max-width: 90%;
+    top: 42%;
+  }
+}

@@ -1,0 +1,118 @@
+.section:global(.section) {
+  min-height: auto;
+  background: linear-gradient(360deg, #0d1125 0%, rgba(13, 17, 37, 0) 40.45%);
+}
+
+.block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+}
+
+.leftBlock {
+  align-self: flex-end;
+  min-width: 556px;
+  flex: 1 1 556px;
+  overflow: hidden;
+  &.ukrainian {
+    min-width: 670px;
+    flex-basis: 670px;
+  }
+}
+
+.date {
+  text-align: right;
+}
+
+.countBlock {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 60%;
+  flex: 1 1 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -ms-flex-align: end;
+  align-items: flex-end;
+}
+
+.numb {
+  -webkit-writing-mode: vertical-lr;
+  -ms-writing-mode: tb-lr;
+  writing-mode: vertical-lr;
+}
+
+@media screen and (max-width: 2200px) {
+  .leftBlock {
+    &.ukrainian {
+      min-width: 565px;
+      flex-basis: 565px;
+    }
+  }
+}
+
+/* desktop */
+@media screen and (max-width: 2000px) {
+  .leftBlock {
+    min-width: 438px;
+    flex-basis: 438px;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .leftBlock {
+    &.ukrainian {
+      min-width: 455px;
+      flex-basis: 455px;
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .leftBlock {
+    min-width: 220px;
+    flex-basis: 220px;
+    &.ukrainian {
+      min-width: 350px;
+      flex-basis: 350px;
+    }
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .leftBlock {
+    &.ukrainian {
+      min-width: 300px;
+      flex-basis: 300px;
+    }
+  }
+}
+
+/* tablet */
+@media screen and (max-width: 1180px) {
+  .block {
+    gap: 117px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+  .leftBlock {
+    max-width: 65%;
+    flex-basis: auto;
+  }
+}
+
+/* phobe */
+@media screen and (max-width: 480px) {
+  .section:global(.section) {
+    padding-bottom: 0;
+    padding-left: 5px;
+    padding-right: 0;
+  }
+  .leftBlock.ukrainian {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+}

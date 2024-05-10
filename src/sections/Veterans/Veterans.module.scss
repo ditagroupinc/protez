@@ -1,0 +1,296 @@
+.section:global(.section) {
+  padding-right: 0;
+  color: var(--white);
+  padding-bottom: 6rem;
+  padding-top: 140px;
+  position: relative;
+  background: linear-gradient(
+    4deg,
+    rgba(13, 17, 37, 0) 0%,
+    rgba(13, 17, 37, 0.51) 46.88%,
+    rgba(13, 17, 37, 0.99) 100%
+  );
+}
+
+.sliderWrapper {
+  position: relative;
+}
+
+.sliderCard {
+  display: flex;
+  padding: 0 5px;
+}
+
+.leftSide {
+  flex: 1 1 55%;
+  & img {
+    width: 100%;
+    object-fit: cover;
+  }
+  position: relative;
+  z-index: 1;
+}
+
+.rightSide {
+  flex: 1 45%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 0;
+}
+
+.roundButton {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 25%;
+  background-color: transparent;
+}
+.spinningName {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  animation: spin 7s linear infinite;
+  position: relative;
+}
+
+.triangle {
+  position: absolute;
+  width: 37%;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-40%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 11;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.iFrame {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 12;
+
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.closeVideo {
+  position: fixed;
+  z-index: 13;
+  right: 20px;
+  top: 20px;
+}
+.logoAndRankContainer {
+  max-width: 75%;
+}
+.ageRank {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.56);
+  width: fit-content;
+
+  margin-left: auto;
+  margin-top: 40px;
+}
+
+svg.veteranLogo {
+  max-width: 100%;
+}
+
+.cardTitle {
+  margin-top: 40px;
+}
+
+.cardText {
+  margin-top: 1.5rem;
+}
+
+.buttonsList {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+
+  gap: 24px;
+  & svg {
+    transition: fill var(--transitionProps);
+  }
+  & a:hover svg path {
+    fill: var(--pink);
+    transition: fill var(--transitionProps);
+  }
+}
+.iconsList {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+a.squareButton {
+  padding: 16px 24px;
+  width: fit-content;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+  &:hover {
+    color: var(--pink);
+    border: 1px solid var(--pink);
+  }
+}
+
+.photo {
+}
+
+.nextSlideButton {
+  background-color: var(--pink);
+  border-radius: 1rem;
+  font-size: 20px;
+  line-height: 32px;
+  padding: 0 1.5rem;
+  color: var(--white);
+  width: 100%;
+  max-width: 120px;
+  position: absolute;
+  bottom: -3rem;
+}
+
+.section:global(.section) :global(.slick-dots li.slick-active button:before) {
+  color: var(--pink);
+}
+
+.section:global(.section) :global(.slick-dots li button:before) {
+  color: var(--white);
+  opacity: 1;
+}
+
+.section:global(.section) :global(.slick-dots) {
+  width: fit-content;
+  position: absolute;
+  margin-top: 7rem;
+
+  bottom: calc(-3rem + 0.5rem);
+  left: calc(120px + 1rem);
+}
+
+/* desktop */
+@media screen and (max-width: 1920px) {
+  .spinningName {
+    width: 151px;
+    height: 151px;
+  }
+}
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .logoAndRankContainer {
+    max-width: 50%;
+  }
+  .spinningName {
+    width: 96px;
+    height: 96px;
+  }
+  .buttonsList a svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .squareButton {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .section:global(.section) {
+    padding-top: 140px;
+  }
+  .rightSide {
+    flex: 1 1 50%;
+  }
+  .leftSide {
+    flex: 1 1 50%;
+  }
+  .roundButton {
+    max-width: 150px;
+  }
+}
+@media screen and (max-width: 850px) {
+  .section:global(.section) {
+    padding-bottom: 0;
+  }
+  .sliderCard {
+    flex-direction: column-reverse;
+    padding-right: 24px;
+  }
+  .leftSide {
+    transform: translateY(-25%);
+  }
+
+  .nextSlideButton {
+    bottom: 5rem;
+  }
+
+  .roundButton {
+    bottom: 30%;
+  }
+  .logoAndRankContainer {
+    max-width: 100%;
+  }
+  svg.veteranLogo {
+    width: auto;
+    height: auto;
+    margin-top: 1rem;
+    margin-top: 2.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .section:global(.section) :global(.slick-dots) {
+    bottom: calc(5rem + 0.5rem);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .buttonsList {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
+
+  .squareButton {
+    width: 100%;
+  }
+
+  .closeVideo {
+    display: block;
+  }
+  .roundButton {
+    max-width: 100px;
+    top: 0;
+    left: 0;
+    transform: none;
+    bottom: auto;
+  }
+  .cardText.ua {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
