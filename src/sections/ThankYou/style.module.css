@@ -1,0 +1,70 @@
+.colorContainer {
+  min-height: auto;
+  background-color: var(--pink);
+  padding: 160px 0;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1213px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 64px;
+  & div:global(.textContainer) {
+    width: 100%;
+  }
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 34px;
+  justify-content: center;
+  white-space: nowrap;
+  & .button {
+    width: 312px;
+  }
+}
+
+/* desktop */
+@media screen and (max-width: 1920px) {
+  .container {
+    max-width: 1030px;
+  }
+}
+
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .container {
+    gap: 48px;
+    max-width: 478px;
+    padding: 64px 0;
+  }
+  .buttonsContainer {
+    gap: 24px;
+    & .button {
+      width: 272px;
+    }
+  }
+}
+
+/* phone */
+@media screen and (max-width: 480px) {
+  .container {
+    justify-content: center;
+    align-items: stretch;
+    padding: 0 24px;
+    & svg {
+      width: 95%;
+      margin: 0 auto;
+    }
+  }
+
+  .buttonsContainer {
+    flex-direction: column;
+    & .button {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.burgerButton {
+  background-color: transparent;
+  position: relative;
+  z-index: 20;
+  margin-left: 1rem;
+  width: 33.5px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  align-self: center;
+  gap: 6px;
+  transition: transform var(--transitionProps);
+  & span {
+    display: block;
+    height: 3.5px;
+    background-color: var(--white);
+    width: 100%;
+    transition: background-color var(--transitionProps);
+
+    &:last-of-type {
+      max-width: 20px;
+    }
+  }
+  &.black {
+    & span {
+      background-color: var(--black);
+      display: block;
+      height: 3.5px;
+      background-color: var(--black);
+      width: 100%;
+      transition: background-color var(--transitionProps);
+      &:last-of-type {
+        max-width: 20px;
+      }
+    }
+  }
+
+  &:hover {
+    transform-origin: center;
+    transition: transform var(--transitionProps);
+    & span {
+      transition: background-color var(--transitionProps);
+    }
+  }
+
+  &.pink:hover {
+    & > span {
+      background-color: var(--pink);
+    }
+  }
+
+  &.blue:hover {
+    & > span {
+      background-color: var(--blue);
+    }
+  }
+
+  .iconPink {
+    color: var(--pink);
+  }
+
+  .iconBlue {
+    color: var(--blue);
+  }
+}
+
+/* phone */
+@media screen and (max-width: 480px) {
+  .burgerButton {
+    max-width: 24px;
+  }
+}

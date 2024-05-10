@@ -1,22 +1,21 @@
-"use client";
-import { useContext } from "react";
-import AllOurPartners from "@/sections/AllOurPartners";
-import Header from "@/sections/Header";
-import Copyright from "@/components/Copyright";
+'use client'
 
-import { ScreenModeAndSizeContext } from "@/contexts/ScreenModeAndSizeContext";
+import AllOurPartners from '@/sections/AllOurPartners'
+import Header from '@/sections/Header'
+import Copyright from '@/components/Copyright'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import CompanyData from "@/components/CompanyData";
-import SocialMediaLinks from "@/components/SocialMediaLinks";
+import CompanyData from '@/components/CompanyData'
+import SocialMediaLinks from '@/components/SocialMediaLinks'
 
 export default function Partners() {
-  const { desktop } = useContext(ScreenModeAndSizeContext);
+  const { desktop } = useScreenModeAndSize()
 
   return (
     <>
       <Header notMainPage />
       {desktop && <CompanyData black />}
-      <SocialMediaLinks className={!desktop && "hidden"} />
+      <SocialMediaLinks className={!desktop && 'hidden'} />
       <main>
         <AllOurPartners visible />
       </main>
@@ -24,5 +23,5 @@ export default function Partners() {
         <Copyright />
       </footer>
     </>
-  );
+  )
 }

@@ -1,0 +1,39 @@
+.partnerCard {
+  border: var(--greyBorder);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  &:global(.textContainer) {
+    height: 100%;
+  }
+}
+
+.dita svg rect:global(.purpleFrame) {
+  transform: translate(344.078px, 21.5918px) !important;
+}
+.dita:hover > svg rect:global(.purpleFrame) {
+  fill: #3f29b0;
+}
+
+.partnerLogo {
+  max-width: 100%;
+  & svg,
+  & path,
+  & rect {
+    transition: fill var(--transitionProps);
+  }
+}
+
+/* desktop */
+@media screen and (max-width: 1920px) {
+  .partnerCard {
+    padding: 24px;
+  }
+}
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  .partnerCard {
+    padding: 8px;
+  }
+}

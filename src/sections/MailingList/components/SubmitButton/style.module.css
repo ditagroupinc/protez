@@ -1,0 +1,22 @@
+.button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.spinnerButton {
+    padding: 0 2.5rem;
+    background-color: #ffffff33;
+    border: 1px solid var(--white);
+    & img {
+      opacity: 0.5;
+    }
+  }
+  &.successButton {
+    background-color: #4caf50;
+    border: 1px solid #4caf50;
+  }
+  &.errorButton {
+    background-color: #bf0a30;
+    border: 1px solid #bf0a30;
+  }
+}

@@ -1,0 +1,53 @@
+import { isValidEmail } from '@/utils/emailValidation'
+import { NextResponse, NextRequest } from 'next/server'
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const client = require('@mailchimp/mailchimp_marketing')
+
+const mailchimpAPIkey = process.env.MAILCHIMP_API_KEY
+const dc = 'us8'
+const audienceId = process.env.MAILCHIMP_AUDIENCE_ID
+
+client.setConfig({
+  apiKey: mailchimpAPIkey,
+  server: dc,
+})
+
+export async function POST(request: NextRequest) {
+  const data: { email: string } = await request.json()
+
+  if (!data || !data.email || !isValidEmail(data.email)) {
+    return new NextResponse(JSON.stringify({ message: 'Bad request' }), {
+      status: 400,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+  }
+
+  const requestData = {
+    email_address: data.email,
+    status: 'subscribed',
+  }
+
+  try {
+    const response = await client.lists.addListMember(audienceId, requestData)
+
+    return new NextResponse(JSON.stringify({ success: true, response: response }), {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+  } catch (error) {
+    console.error(error)
+
+    // @ts-ignore
+    return new NextResponse(JSON.stringify({ message: error.message }), {
+      status: 400,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+  }
+}
