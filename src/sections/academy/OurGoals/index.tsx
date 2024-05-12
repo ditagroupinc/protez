@@ -4,15 +4,15 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 import Button from '@/components/Button'
 
-import AcademySection from '@/sections/AcademySection'
-import AcademyGoalCard from '@/sections/AcademyGoals/components/AcademyGoalCard'
+import AcademySection from '@/sections/academy/AcademySection'
+import AcademyGoalCard from '@/sections/academy/OurGoals/components/AcademyGoalCard'
 
 import texts from '@/texts&svg'
 
 import { icons } from './icons'
 import style from './style.module.scss'
 
-const AcademyGoals = forwardRef<HTMLDivElement>((_, ref) => {
+const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
   const { lang } = useLanguage()
 
   const goalCards = useMemo<Array<{ icon: JSX.Element; text: string }>>(() => {
@@ -61,8 +61,4 @@ const AcademyGoals = forwardRef<HTMLDivElement>((_, ref) => {
   )
 })
 
-if (process.env.NODE_ENV !== 'production') {
-  AcademyGoals.displayName = 'AcademyGoals'
-}
-
-export default AcademyGoals
+export default OurGoals

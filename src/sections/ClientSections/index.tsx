@@ -85,56 +85,60 @@ export default function ClientSections({
   }, [news])
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <>
       <Header />
-      <main className={style.main}>
-        <CompanyDataNonProfit
-          black={isBackgroundWhite}
-          bgIsPink={inViewInNeed}
-          className={`${style.companyDataNonProfit} ${showCompanyData ? '' : 'hidden'}`}
-        />
+      <Suspense fallback={<div className={style.fallback}></div>}>
+        <main className={style.main}>
+          <CompanyDataNonProfit
+            black={isBackgroundWhite}
+            bgIsPink={inViewInNeed}
+            className={`${style.companyDataNonProfit} ${showCompanyData ? '' : 'hidden'}`}
+          />
 
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smokeTop} />
-          <div className={style.flagsBlock}>
-            <LetsGiveHope ref={refLetsGiveHope} />
-            <OurMission />
-            <Image
-              src="/flag-usa.png"
-              object-fit="contain"
-              alt="Picture of the author"
-              priority
-              width={1306}
-              height={1890}
-              className={style.americanFlag}
-            />
+          <div className={style.smokeBlock}>
+            <SmokeBackground className={style.smokeTop} />
+            <div className={style.flagsBlock}>
+              <LetsGiveHope ref={refLetsGiveHope} />
+              <OurMission />
+              <Image
+                src="/flag-usa.png"
+                object-fit="contain"
+                alt="Picture of the author"
+                priority
+                width={1306}
+                height={1890}
+                className={style.americanFlag}
+              />
+            </div>
+            {statistics && <OurResults results={statistics} />}
           </div>
-          {statistics && <OurResults results={statistics} />}
-        </div>
 
-        <InNeed ref={refInNeed} />
+          <InNeed ref={refInNeed} />
 
-        <Prosthetics />
-        <div className={`${style.smokeBlock} ${style.veteransAndEventsBlock}`}>
-          <SmokeBackground className={style.smoke} />
-          <Veterans />
-          {pressReleases && pressReleases.length > 0 && (
-            <PressRelease pressReleases={pressReleases} />
+          <Prosthetics />
+          <div className={`${style.smokeBlock} ${style.veteransAndEventsBlock}`}>
+            <SmokeBackground className={style.smoke} />
+            <Veterans />
+            {pressReleases && pressReleases.length > 0 && (
+              <PressRelease pressReleases={pressReleases} />
+            )}
+            {events && events.length > 0 && <Events events={events} />}
+          </div>
+          <OurTeam ref={refOurTeam} />
+          <OurPartners ref={refOurPartners} />
+          <div className={style.smokeBlock}>
+            <SmokeBackground className={style.smoke} />
+            {news && news.length > 0 && <News news={news} />}
+
+            <MailingList ref={refMailingList} inView={inViewMailingList} />
+          </div>
+          <Merch ref={refMerch} />
+          {!inViewLetsGiveHope && (
+            <BackToTopButton href={'letsGiveHope'} black={isBackgroundWhite} />
           )}
-          {events && events.length > 0 && <Events events={events} />}
-        </div>
-        <OurTeam ref={refOurTeam} />
-        <OurPartners ref={refOurPartners} />
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          {news && news.length > 0 && <News news={news} />}
-
-          <MailingList ref={refMailingList} inView={inViewMailingList} />
-        </div>
-        <Merch ref={refMerch} />
-        {!inViewLetsGiveHope && <BackToTopButton href={'letsGiveHope'} black={isBackgroundWhite} />}
-      </main>
-      <ThankYou ref={refThankYou} />
-    </Suspense>
+        </main>
+        <ThankYou ref={refThankYou} />
+      </Suspense>
+    </>
   )
 }

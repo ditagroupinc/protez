@@ -9,20 +9,39 @@ import BackToTopButton from '@/components/BackToTopButton'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademyHeader from '@/sections/AcademyHeader'
-import AcademyIntro from '@/sections/AcademyIntro'
+import AcademyHeader from '@/sections/academy/Header'
+import AcademyIntro from '@/sections/academy/Intro'
 
 // =================================================================
 // LAZY LOADING IMPORT
 
-const AcademyGoals = lazy(() => import('@/sections/AcademyGoals'))
-const AcademyResults = lazy(() => import('@/sections/AcademyResults'))
+const OurGoals = lazy(() => import('@/sections/academy/OurGoals'))
+const OurResults = lazy(() => import('@/sections/academy/OurResults'))
+const TheoryLectures = lazy(() => import('@/sections/academy/TheoryLectures'))
 
 // =================================================================
 
 import style from './style.module.scss'
 
-const hidePage = true
+const hidePage = false
+
+// sections:
+//todo AcademyHeader
+//* Welcome to the Academy
+//* Our Goals
+// Protez Academy
+//* Our Results
+// Academy Teachers
+// Yakov Gradinar
+//todo Theory Lectures
+// Practice Sessions
+// Past and Upcoming Events
+// Academy Students
+// Amputee rehab
+// Summit Results
+// We're in the News
+// All our Partners
+// Thank you
 
 export default function AcademyPage() {
   const [refIntro, inViewIntro] = useInView({ triggerOnce: false })
@@ -42,8 +61,9 @@ export default function AcademyPage() {
         {/* OTHER SECTIONS ARE RENDERED AFTER THIS PAGE IS RENDRERED*/}
         {/* THE WHOLE SECTION IS NOT WRAPPERED WITH SUSPENSE TO PREVENT FLICKERING EFFECT OF THE PAGE */}
         <Suspense fallback={<h1>Loading...</h1>}>
-          <AcademyGoals />
-          <AcademyResults />
+          <OurGoals />
+          <OurResults />
+          <TheoryLectures />
         </Suspense>
       </main>
       {/* footer section */}

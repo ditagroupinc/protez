@@ -2,6 +2,11 @@
   background-color: var(--black);
 }
 
+.fallback {
+  background-color: var(--black);
+  height: 100vh;
+}
+
 .flagsBlock {
   position: relative;
 }

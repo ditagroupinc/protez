@@ -2,8 +2,8 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 import Button from '@/components/Button'
 
-import AcademySection from '@/sections/AcademySection'
-import AcademyResultCard from '@/sections/AcademyResults/components/AcademyResultCard'
+import AcademySection from '@/sections/academy/AcademySection'
+import AcademyResultCard from '@/sections/academy/OurResults/components/AcademyResultCard'
 
 import texts from '@/texts&svg'
 
@@ -20,7 +20,7 @@ const resultStatistics: ResultStatistics = texts.academyResults.statistics
 
 // =================================================================
 
-const AcademyResults = () => {
+const OurResults = () => {
   const { lang } = useLanguage()
 
   return (
@@ -82,4 +82,4 @@ const AcademyResults = () => {
   )
 }
 
-export default AcademyResults
+export default OurResults
