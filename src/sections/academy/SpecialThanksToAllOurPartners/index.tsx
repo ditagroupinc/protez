@@ -8,7 +8,7 @@ import styles from './styles.module.scss'
 import { icons } from './icons'
 
 import { useLanguage } from '@/contexts/LanguageContext'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+// import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const PartnerLogo = ({ image }: { image: string }) => (
   <Image
@@ -34,7 +34,7 @@ const partnersIcon: Record<string, JSX.Element> = {
 
 const SpecialThanksToAllOurPartners = () => {
   const { lang } = useLanguage()
-  const { width } = useScreenModeAndSize()
+  // const { width } = useScreenModeAndSize()
 
   return (
     <AcademySection
