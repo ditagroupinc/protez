@@ -1,5 +1,5 @@
-import NotMainPage from "@/layouts/NotMainPage";
+import NotMainPage from '@/layouts/NotMainPage'
 
 export default function DonateMonthlyLayout({ children }) {
-  return <NotMainPage>{children}</NotMainPage>;
+  return <NotMainPage>{children}</NotMainPage>
 }

@@ -4,10 +4,10 @@ const nextConfig = {
     scrollRestoration: true,
   },
   images: {
-    domains: ["protez.wpengine.com"],
+    domains: ['protez.wpengine.com'],
   },
 
   reactStrictMode: false,
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

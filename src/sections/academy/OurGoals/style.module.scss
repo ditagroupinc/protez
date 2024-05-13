@@ -1,0 +1,231 @@
+.academyGoalsSection {
+  padding-top: 40px;
+  padding-bottom: 20px;
+
+  .academyGoalsContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 126px 244px 250px 72px;
+
+    .cardIcon {
+      width: 40px;
+      height: 40px;
+    }
+
+    .sectionTitle {
+      display: flex;
+      align-items: flex-end;
+      padding: 4px;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+
+      svg {
+        max-width: 65%;
+        height: fit-content;
+      }
+    }
+
+    .applyBtn {
+      height: 100%;
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 4;
+      grid-row-end: 5;
+
+      p {
+        width: 69px;
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    .cardItem {
+      &:nth-child(2) {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+
+      &:nth-child(3) {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 3;
+        grid-row-end: 4;
+      }
+
+      &:nth-child(4) {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        grid-row-start: 3;
+        grid-row-end: 5;
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+  .academyGoalsSection {
+    .academyGoalsContent {
+      .applyBtn {
+        height: fit-content;
+        svg {
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .academyGoalsSection {
+    padding-top: 120px;
+    padding-bottom: 60px;
+
+    .academyGoalsContent {
+      grid-template-columns: 26% 38% 36%;
+      grid-template-rows: 400px 300px 300px;
+
+      .cardIcon {
+        width: 48px;
+        height: 48px;
+      }
+
+      .sectionTitle {
+        display: flex;
+        justify-content: flex-end;
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+        grid-row-end: 2;
+
+        svg {
+          max-width: 100%;
+        }
+      }
+
+      .cardItem {
+        &:nth-child(2) {
+          grid-column-start: 3;
+          grid-column-end: 4;
+          grid-row-start: 1;
+          grid-row-end: 2;
+        }
+
+        &:nth-child(3) {
+          grid-row-start: 3;
+          grid-column-start: 3;
+        }
+
+        &:nth-child(4) {
+          grid-column-start: 2;
+          grid-column-end: 3;
+          grid-row-start: 2;
+          grid-row-end: 3;
+        }
+      }
+
+      .applyBtn {
+        grid-row-start: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+
+        p {
+          width: 55%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1366px) {
+  .academyGoalsSection {
+    padding-bottom: 80px;
+
+    .academyGoalsContent {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 296px 104px 320px;
+
+      .sectionTitle {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        grid-row-start: 1;
+      }
+
+      .cardItem {
+        &:nth-child(2) {
+          grid-column-start: 3;
+          grid-column-end: 4;
+          grid-row-start: 1;
+          grid-row-end: 3;
+        }
+
+        &:nth-child(3) {
+          grid-column-start: 2;
+          grid-column-end: 3;
+          grid-row-start: 3;
+        }
+
+        &:nth-child(4) {
+          grid-column-start: 1;
+          grid-column-end: 2;
+          grid-row-start: 3;
+          grid-row-end: 4;
+        }
+      }
+
+      .applyBtn {
+        width: fit-content;
+        grid-column-start: 1;
+        grid-row-start: 2;
+        grid-row-end: 3;
+      }
+    }
+  }
+}
+
+@media (min-width: 1920px) {
+  .academyGoalsSection {
+    padding-bottom: 120px;
+
+    .academyGoalsContent {
+      grid-template-columns: 240px calc((100% - 240px) / 3) calc((100% - 240px) / 3) calc((100% - 240px) / 3);
+      grid-template-rows: 296px 104px 400px;
+
+      .sectionTitle {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        grid-row-start: 1;
+        grid-row-end: 2;
+      }
+
+      .cardItem {
+        &:nth-child(2) {
+          grid-column-start: 4;
+          grid-column-end: 5;
+          grid-row-start: 1;
+          grid-row-end: 3;
+        }
+
+        &:nth-child(3) {
+          grid-column-start: 3;
+          grid-column-end: 4;
+          grid-row-start: 3;
+        }
+
+        &:nth-child(4) {
+          grid-column-start: 2;
+          grid-column-end: 3;
+          grid-row-start: 3;
+          grid-row-end: 4;
+        }
+      }
+    }
+  }
+}
