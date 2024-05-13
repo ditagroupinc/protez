@@ -18,12 +18,15 @@ import AcademyIntro from '@/sections/academy/Intro'
 const OurGoals = lazy(() => import('@/sections/academy/OurGoals'))
 const OurResults = lazy(() => import('@/sections/academy/OurResults'))
 const TheoryLectures = lazy(() => import('@/sections/academy/TheoryLectures'))
+const SpecialThanksToAllOurPartners = lazy(
+  () => import('@/sections/academy/SpecialThanksToAllOurPartners')
+)
 
 // =================================================================
 
 import style from './style.module.scss'
 
-const hidePage = false
+const hidePage = true
 
 // sections:
 //todo AcademyHeader
@@ -33,14 +36,14 @@ const hidePage = false
 //* Our Results
 // Academy Teachers
 // Yakov Gradinar
-//todo Theory Lectures
+//* Theory Lectures
 // Practice Sessions
 // Past and Upcoming Events
 // Academy Students
 // Amputee rehab
 // Summit Results
 // We're in the News
-// All our Partners
+//todo All our Partners
 // Thank you
 
 export default function AcademyPage() {
@@ -64,6 +67,7 @@ export default function AcademyPage() {
           <OurGoals />
           <OurResults />
           <TheoryLectures />
+          <SpecialThanksToAllOurPartners />
         </Suspense>
       </main>
       {/* footer section */}
