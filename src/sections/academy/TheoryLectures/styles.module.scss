@@ -192,6 +192,12 @@
       padding: 16px;
     }
   }
+  .applyBtn {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+
   .gridTitle {
     grid-row-start: 1;
     grid-row-end: 2;

@@ -1,0 +1,84 @@
+import styled from 'styled-components';
+
+import { Container } from '@/components/Container';
+
+export const StyledSummitView = styled.section`
+  padding-top: 20px;
+  margin-bottom: 80px;
+`;
+
+export const StyledSummitOverlay = styled.div`
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: ${({ theme }) => theme.palette.dark};
+    opacity: 60%;
+    z-index: -1;
+  }
+`;
+
+export const StyledSummitContent = styled(Container)`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+
+  .left {
+    width: 659px;
+    max-width: 40%;
+
+    .desc {
+      font-size: 18px;
+      line-height: 26px;
+      color: ${({ theme }) => theme.palette.white};
+      margin: 48px 0;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+  }
+
+  .right {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    grid-template-rows: repeat(3, 200px);
+
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      border: ${({ theme }) => `1px solid ${theme.palette.gray}`};
+      color: ${({ theme }) => theme.palette.white};
+    }
+
+    .grid-1-2 {
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+
+    .grid-2-2 {
+      grid-row-start: 2;
+      grid-row-end: 3;
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+
+    .grid-3-2 {
+      grid-row-start: 3;
+      grid-row-end: 4;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  }
+`;

@@ -18,20 +18,24 @@ export default function TeamCard({
   name,
   position,
   black,
+  className,
+  teacher,
 }: {
   photo: string
   links: Links
   name: string
   position: string
   black?: boolean
+  className?: string
+  teacher?: boolean
 }) {
   const cardColor = () => (black ? '#0D1125' : '#fff')
   const { mobile } = useScreenModeAndSize()
 
   return (
-    <div className={`${style.teamCard}`}>
+    <div className={`${style.teamCard} ${className && className}`}>
       <Image
-        src={`/team/${photo}`}
+        src={`/${teacher ? 'teachers' : 'team'}/${photo}`}
         object-fit="contain"
         alt="Picture of the author"
         width={264}

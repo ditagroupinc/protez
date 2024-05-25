@@ -25,26 +25,29 @@ const SpecialThanksToAllOurPartners = lazy(
 // =================================================================
 
 import style from './style.module.scss'
+import OurTeachers from '@/sections/academy/OurTeachers'
+import Footer from '@/sections/academy/Footer'
+import Chief from '@/sections/academy/Chief'
 
-const hidePage = true
+const hidePage = false
 
 // sections:
 //todo AcademyHeader
 //* Welcome to the Academy
 //* Our Goals
-// Protez Academy
+// slide Protez Academy
 //* Our Results
-// Academy Teachers
-// Yakov Gradinar
+//* Academy Teachers
+//* Yakov Gradinar
 //* Theory Lectures
-// Practice Sessions
-// Past and Upcoming Events
-// Academy Students
+// slide Practice Sessions
+// slide Past and Upcoming Events
+// slide Academy Students
 // Amputee rehab
 // Summit Results
-// We're in the News
-//todo All our Partners
-// Thank you
+// slide We're in the News
+//* All our Partners
+//* Thank you
 
 export default function AcademyPage() {
   const [refIntro, inViewIntro] = useInView({ triggerOnce: false })
@@ -58,19 +61,21 @@ export default function AcademyPage() {
     <>
       <AcademyHeader />
       <main className={style.main}>
-        <AcademyIntro ref={refIntro} />
-        {!isMobile && <BackToTopButton href={'#academyIntro'} color="blue" black={!inViewIntro} />}
+        {/* <AcademyIntro ref={refIntro} />
+        {!isMobile && <BackToTopButton href={'#academyIntro'} color="blue" black={!inViewIntro} />} */}
 
         {/* OTHER SECTIONS ARE RENDERED AFTER THIS PAGE IS RENDRERED*/}
         {/* THE WHOLE SECTION IS NOT WRAPPERED WITH SUSPENSE TO PREVENT FLICKERING EFFECT OF THE PAGE */}
         <Suspense fallback={<h1>Loading...</h1>}>
-          <OurGoals />
+          {/* <OurGoals />
           <OurResults />
-          <TheoryLectures />
+          <TheoryLectures /> */}
           <SpecialThanksToAllOurPartners />
+          <OurTeachers />
+          <Chief />
         </Suspense>
       </main>
-      {/* footer section */}
+      <Footer />
     </>
   )
 }

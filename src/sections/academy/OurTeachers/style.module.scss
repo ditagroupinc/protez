@@ -1,0 +1,163 @@
+.ourTeachers {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: 524px 524px 524px;
+
+  grid-template-areas:
+    '. . title title title kierstinNelson kierstinNelson michaelLeBuhnJr michaelLeBuhnJr'
+    'jeanneLojovich jeanneLojovich adamWarden adamWarden troyDecker troyDecker lisaKing lisaKing .'
+    '. yakovGradinar yakovGradinar gallegosSebastianGuadalupe gallegosSebastianGuadalupe . . . .';
+}
+
+.teacherCard {
+  width: 100%;
+  max-width: 100%;
+}
+.teachersLogo {
+}
+
+.titleCell {
+  grid-area: title;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.teacherCard:nth-child(2) {
+  grid-area: kierstinNelson;
+}
+
+.teacherCard:nth-child(3) {
+  grid-area: michaelLeBuhnJr;
+  border-right: var(--greyBorder);
+}
+
+.teacherCard:nth-child(4) {
+  grid-area: jeanneLojovich;
+}
+
+.teacherCard:nth-child(5) {
+  grid-area: adamWarden;
+}
+
+.teacherCard:nth-child(6) {
+  grid-area: troyDecker;
+}
+
+.teacherCard:nth-child(7) {
+  grid-area: lisaKing;
+  border-right: var(--greyBorder);
+}
+
+.teacherCard:nth-child(8) {
+  grid-area: yakovGradinar;
+}
+
+.teacherCard:nth-child(9) {
+  grid-area: gallegosSebastianGuadalupe;
+  border-right: var(--greyBorder);
+}
+
+.slickSlider {
+  & :global(.slick-dots) {
+    border-radius: 4px;
+    display: flex;
+    padding-top: 32px;
+    position: static;
+  }
+  & :global(.slick-dots li) {
+    margin: 0;
+    width: calc(100% / 8);
+    height: 3px;
+    background-color: var(--black);
+    opacity: 0.06;
+  }
+
+  & :global(.slick-dots li.slick-active) {
+    border-radius: 4px;
+    background-color: var(--blue);
+    opacity: 1;
+  }
+
+  & :global(.slick-dots li button:before) {
+    display: none;
+  }
+
+  & :global(.slick-dots li button) {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+}
+
+.cardWrapper {
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 1366px) {
+  .ourTeachers {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: 460px 460px 460px;
+
+    grid-template-areas:
+      '. . title title title title title kierstinNelson kierstinNelson kierstinNelson michaelLeBuhnJr michaelLeBuhnJr michaelLeBuhnJr'
+      'jeanneLojovich jeanneLojovich jeanneLojovich adamWarden adamWarden adamWarden troyDecker troyDecker troyDecker lisaKing lisaKing lisaKing .'
+      '. yakovGradinar yakovGradinar yakovGradinar gallegosSebastianGuadalupe gallegosSebastianGuadalupe gallegosSebastianGuadalupe . . . . . .';
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ourTeachers {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 160px 460px 460px 460px;
+
+    grid-template-areas:
+      'title title title title title title title title'
+      '. kierstinNelson kierstinNelson michaelLeBuhnJr michaelLeBuhnJr jeanneLojovich jeanneLojovich .'
+      'adamWarden adamWarden troyDecker troyDecker lisaKing lisaKing yakovGradinar yakovGradinar'
+      '. gallegosSebastianGuadalupe gallegosSebastianGuadalupe . . . . .';
+  }
+
+  .titleCell {
+    grid-area: title;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 40px;
+  }
+
+  .teacherCard:nth-child(3) {
+    grid-area: michaelLeBuhnJr;
+    border-right: none;
+  }
+
+  .teacherCard:nth-child(4) {
+    grid-area: jeanneLojovich;
+    border-right: var(--greyBorder);
+  }
+
+  .teacherCard:nth-child(7) {
+    grid-area: lisaKing;
+    border-right: none;
+  }
+
+  .teacherCard:nth-child(8) {
+    grid-area: yakovGradinar;
+    border-right: var(--greyBorder);
+  }
+}
+
+/* phone */
+@media screen and (max-width: 600px) {
+  .ourTeachers {
+    display: block;
+  }
+  .titleCell {
+    padding-bottom: 32px;
+  }
+
+  .teacherCard {
+    border-right: var(--greyBorder);
+  }
+}

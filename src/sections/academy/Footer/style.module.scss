@@ -1,0 +1,101 @@
+.footerTop {
+  background-color: var(--blue);
+  color: var(--white);
+  padding: 140px 168px;
+}
+
+.footerTopContent {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.footerLogo {
+  max-height: 157px;
+  max-width: 100%;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.left {
+  max-width: 264px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.descAddress {
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.divider {
+  background-color: var(--white);
+}
+
+.descTitle {
+  line-height: 1.5;
+  font-weight: 700;
+}
+
+.footerBottom {
+  background-color: var(--black);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 22px;
+  padding: 12px;
+}
+
+@media (max-width: 1366px) {
+  .footerTop {
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .footerTop {
+    padding: 60px 24px 40px 24px;
+  }
+
+  .footerTopContent {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 40px;
+  }
+
+  .right {
+    gap: 32px;
+  }
+  .footerLogo {
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+  }
+  .buttonGroup {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button {
+    justify-content: center;
+  }
+
+  .left {
+    max-width: 100%;
+    gap: 16px;
+  }
+}

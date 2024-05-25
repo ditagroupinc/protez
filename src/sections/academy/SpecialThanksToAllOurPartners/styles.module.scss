@@ -5,56 +5,230 @@
   padding-top: 40px;
   margin-bottom: 120px;
 
-  & > * {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 24px;
-  }
+  grid-template-areas:
+    'button title title title directRelief'
+    '. chaliceOfMercy ottobock paradise klmb '
+    'monarch dita antonovGroup cozen blatchfold';
 }
 
-.borderBottom {
+.partnerCard {
+  border-left: var(--greyBorder);
   border-bottom: var(--greyBorder);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+.partnerLogo {
+  max-width: 100%;
+  max-height: 100%;
 }
 
-.borderTop {
+.titleCell {
+  grid-area: title;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 0;
+}
+
+.buttonCell {
+  grid-area: button;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0;
+}
+.partnerCard:nth-child(3) {
+  grid-area: directRelief;
+  border-right: var(--greyBorder);
   border-top: var(--greyBorder);
 }
 
-.borderRight {
+.partnerCard:nth-child(4) {
+  grid-area: chaliceOfMercy;
+  border-top: var(--greyBorder);
+}
+
+.partnerCard:nth-child(5) {
+  grid-area: ottobock;
+  border-top: var(--greyBorder);
+}
+
+.partnerCard:nth-child(6) {
+  grid-area: paradise;
+  border-top: var(--greyBorder);
+}
+
+.partnerCard:nth-child(7) {
+  grid-area: klmb;
   border-right: var(--greyBorder);
 }
 
-.borderLeft {
-  border-left: var(--greyBorder);
+.partnerCard:nth-child(8) {
+  grid-area: monarch;
+  border-top: var(--greyBorder);
 }
 
-.title {
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding-right: 3px;
-  padding-bottom: 0;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 2;
-  grid-column-end: 5;
+.partnerCard:nth-child(9) {
+  grid-area: dita;
 }
 
-.grid1x1 {
-  justify-content: flex-end;
-  align-items: flex-end;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  padding: 0;
+.partnerCard:nth-child(10) {
+  grid-area: antonovGroup;
 }
 
-.grid1x5 {
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 5;
-  grid-column-end: 6;
-  border: var(--greyBorder);
+.partnerCard:nth-child(11) {
+  grid-area: cozen;
+}
+
+.partnerCard:nth-child(12) {
+  grid-area: blatchfold;
+  border-right: var(--greyBorder);
+}
+
+@media screen and (max-width: 1366px) {
+  .specialThanksToAllOurPartners {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 230px 280px 270px 300px;
+
+    grid-template-areas:
+      'button button . . . title title title title title title title'
+      '. . directRelief directRelief directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy'
+      'ottobock ottobock ottobock paradise paradise paradise klmb klmb klmb monarch monarch monarch'
+      'dita dita dita antonovGroup antonovGroup antonovGroup cozen cozen cozen blatchfold blatchfold blatchfold';
+  }
+
+  .partnerCard:nth-child(3) {
+    grid-area: directRelief;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .partnerCard:nth-child(4) {
+    grid-area: chaliceOfMercy;
+    border-right: var(--greyBorder);
+    border-bottom: none;
+  }
+
+  .partnerCard:nth-child(7) {
+    grid-area: klmb;
+    border-right: none;
+    border-top: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(8) {
+    grid-area: monarch;
+    border-right: var(--greyBorder);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .specialThanksToAllOurPartners {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 230px 280px 280px 280px;
+
+    grid-template-areas:
+      '. title title title title title'
+      'directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy'
+      'ottobock ottobock paradise paradise klmb klmb'
+      'monarch monarch dita dita button button';
+  }
+
+  .buttonCell {
+    grid-area: button;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .partnerCard:nth-child(3) {
+    grid-area: directRelief;
+    border-right: none;
+  }
+
+  .partnerCard:nth-child(7) {
+    grid-area: klmb;
+    border-right: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(8) {
+    grid-area: monarch;
+    border-top: none;
+    border-right: none;
+  }
+
+  .partnerCard:nth-child(9) {
+    grid-area: dita;
+    border-right: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(10) {
+    grid-area: antonovGroup;
+    display: none;
+  }
+
+  .partnerCard:nth-child(11) {
+    grid-area: cozen;
+    display: none;
+  }
+
+  .partnerCard:nth-child(12) {
+    grid-area: blatchfold;
+    display: none;
+    border-right: var(--greyBorder);
+  }
+}
+
+/* phone */
+@media screen and (max-width: 600px) {
+  .specialThanksToAllOurPartners {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 200px 180px 110px 110px 110px 140px;
+
+    grid-template-areas:
+      '. title title title title title title title title title '
+      'directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief'
+      'chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy ottobock ottobock ottobock ottobock ottobock'
+      'paradise paradise paradise paradise paradise paradise paradise paradise paradise paradise'
+      'klmb klmb klmb klmb monarch monarch monarch monarch monarch monarch'
+      'dita dita dita dita dita button button button button button';
+  }
+
+  .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .partnerCard:nth-child(3) {
+    grid-area: directRelief;
+    border-right: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(4) {
+    grid-area: chaliceOfMercy;
+    border-right: none;
+  }
+
+  .partnerCard:nth-child(5) {
+    grid-area: ottobock;
+    border-bottom: none;
+    border-right: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(6) {
+    grid-area: paradise;
+    border-right: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(7) {
+    grid-area: klmb;
+    border-right: none;
+    border-top: none;
+  }
+
+  .partnerCard:nth-child(8) {
+    grid-area: monarch;
+    border-right: var(--greyBorder);
+  }
 }

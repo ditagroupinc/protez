@@ -6,7 +6,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import style from './style.module.css'
-import TeamCard from '@/sections/OurTeam/components/TeamCard'
+import TeamCard from '@/components/TeamCard'
 import { icons } from './icons.js'
 import texts from '@/texts&svg'
 
