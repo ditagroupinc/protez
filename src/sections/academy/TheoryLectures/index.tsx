@@ -4,7 +4,7 @@ import Button from '@/components/Button'
 
 import styles from './styles.module.scss'
 import { icons } from './icons'
-import AcademySection from '../AcademySection'
+import AcademySection from '@/components/AcademySection'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 

@@ -1,62 +1,67 @@
-// import {
-//   StyledSummitContent,
-//   StyledSummitOverlay,
-//   StyledSummitView,
-// } from '@/views/SummitView/SummitView.styles'
-
 import { icons } from './icons'
+import styles from './styles.module.scss'
 
 import Button from '@/components/Button'
-import { AcademySection } from '@/components/AcademySection'
 
-// import { AspectRatio } from '@/components/AspectRatio'
-// import { Button } from '@/components/Button'
+import Image from 'next/image'
 
-import AmputeeRehabLogoSVG from '@/assets/icons/amputee-rehab-logo.svg?react'
-import ArrowUpSVG from '@/assets/icons/arrow-up.svg?react'
-import summitJPG from '@/assets/images/summit.jpg'
-import DirectReliefSVG from '@/assets/partners/direct-relief.svg?react'
-import DitaGroupSVG from '@/assets/partners/dita-group.svg?react'
-import EsperSVG from '@/assets/partners/esper.svg?react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const AmputeeRehab = () => {
+  const { lang } = useLanguage()
+
   return (
-    <StyledSummitView>
-      <AspectRatio src={summitJPG} aspectRatio={1920 / 880}>
-        <StyledSummitOverlay>
-          <StyledSummitContent>
-            <div className="left">
-              <AmputeeRehabLogoSVG />
-              <p className="desc">
-                Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam.
-                Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc
-                suspendisse donec varius integer nisi urna eu. Egestas et id nunc ultrices sit ut
-              </p>
-              <div className="buttons">
-                <Button variant="primary-blue" size="big">
-                  Apply to Academy
-                </Button>
-                <Button variant="secondary-white" size="big">
-                  Support Academy
-                  <ArrowUpSVG />
-                </Button>
-              </div>
+    <section id="amputeeRehab" className={styles.amputeeRehab}>
+      <Image
+        src="/summit.jpg"
+        alt="summit"
+        width={1920}
+        height={880}
+        layout="responsive"
+        className={styles.amputeeRehabImage}
+      />
+
+      <div className={styles.amputeeRehabOverlay}>
+        <div className={styles.amputeeRehabContent}>
+          <div className={styles.left}>
+            {icons.amputeeRehabLogo.desktop[lang]()}
+            <p className={styles.desc}>
+              Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam.
+              Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc
+              suspendisse donec varius integer nisi urna eu. Egestas et id nunc ultrices sit ut
+            </p>
+            <div className={styles.buttons}>
+              <Button
+                as={'link'}
+                variant="primary-blue"
+                size="big"
+                href={'/'}
+                className={styles.button}
+              >
+                Apply to Academy
+              </Button>
+              <Button
+                as={'link'}
+                variant="secondary-white"
+                size="big"
+                href={'/'}
+                className={styles.button}
+              >
+                Support Academy
+                {icons.arrowUp(styles.arrowUp)}
+              </Button>
             </div>
-            <div className="right">
-              <div className="card grid-1-2">
-                <EsperSVG />
+          </div>
+          <div className={styles.right}>
+            {icons.partnersLogos.map((logo, index) => (
+              <div key={index} className={styles.card}>
+                {logo(styles.partnerLogo)}
               </div>
-              <div className="card grid-2-2">
-                <DirectReliefSVG />
-              </div>
-              <div className="card grid-3-2">
-                <DitaGroupSVG />
-              </div>
-            </div>
-          </StyledSummitContent>
-        </StyledSummitOverlay>
-      </AspectRatio>
-    </StyledSummitView>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 

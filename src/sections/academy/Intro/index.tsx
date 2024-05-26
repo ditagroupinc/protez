@@ -6,7 +6,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import Button from '@/components/Button'
 
-import AcademySection from '@/sections/academy/AcademySection'
+import AcademySection from '@/components/AcademySection'
 import AcademyCard from '@/sections/academy/Intro/components/AcademyCard'
 
 import texts from '@/texts&svg'
@@ -45,7 +45,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
               size={isMobile ? 'big' : 'small'}
             >
               {texts.academyHeader.buttons.supportAcademy[lang]}
-              {icons.iconArrowUp(`${style.arrowUp}`)}
+              {icons.arrowUp(`${style.arrowUp}`)}
             </Button>
           </div>
         </div>

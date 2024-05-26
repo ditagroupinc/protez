@@ -1,19 +1,19 @@
-// import { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import Image from 'next/image'
 
-import styles from './style.module.scss'
+import styles from './styles.module.scss'
 
 interface AspectRatioProps {
   src: string
   aspectRatio: number
-  // children?: ReactNode
+  children?: ReactNode
   className?: string
   alt?: string
   opacity?: number
 }
 
 export const AspectRatio = ({
-  // children,
+  children,
   src,
   aspectRatio,
   className,
@@ -25,8 +25,8 @@ export const AspectRatio = ({
       style={{ paddingBottom: `calc(100% / ${aspectRatio})` }}
       className={`${styles.aspectRatio} ${className}`}
     >
-      <Image className={styles.image} src={src} alt={alt} style={{ opacity }} />
-      {/* {children} */}
+      <Image src={src} width="1920" height="880" alt={alt} style={{ opacity }} />
+      {children}
     </div>
   )
 }

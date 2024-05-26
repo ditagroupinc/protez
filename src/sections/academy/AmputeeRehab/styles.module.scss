@@ -1,13 +1,17 @@
-import styled from 'styled-components';
+.amputeeRehab {
+  background-color: var(--black);
+  position: relative;
+}
 
-import { Container } from '@/components/Container';
+.amputeeRehabImage {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  z-index: 1;
+}
 
-export const StyledSummitView = styled.section`
-  padding-top: 20px;
-  margin-bottom: 80px;
-`;
-
-export const StyledSummitOverlay = styled.div`
+.amputeeRehabOverlay {
   &::before {
     content: '';
     position: absolute;
@@ -15,70 +19,154 @@ export const StyledSummitOverlay = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: ${({ theme }) => theme.palette.dark};
+    background-color: var(--black);
     opacity: 60%;
-    z-index: -1;
+    z-index: 2;
   }
-`;
+}
 
-export const StyledSummitContent = styled(Container)`
+.amputeeRehabContent {
+  position: relative;
+  z-index: 3;
+  padding: 140px 168px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100%;
+  gap: 24px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 660px;
+}
+.desc {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--white);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.arrowUp {
+  width: 24px;
+  height: 24px;
+}
+
+.right {
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    '. esper'
+    'directRelief .'
+    '. dita';
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  width: 100%;
+  height: 100%;
+  border: var(--whiteBorder);
+  color: var(--white);
+}
+
+.card:nth-child(1) {
+  grid-area: esper;
+}
+
+.card:nth-child(2) {
+  grid-area: directRelief;
+}
+
+.card:nth-child(3) {
+  grid-area: dita;
+}
+
+.partnerLogo {
+  max-width: 100%;
+  & path {
+    fill: var(--white);
+  }
+}
+
+@media (max-width: 1366px) {
+  .amputeeRehabContent {
+    padding: 100px 80px;
+  }
 
   .left {
-    width: 659px;
-    max-width: 40%;
-
-    .desc {
-      font-size: 18px;
-      line-height: 26px;
-      color: ${({ theme }) => theme.palette.white};
-      margin: 48px 0;
-    }
-
-    .buttons {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
+    max-width: 500px;
   }
 
   .right {
-    display: grid;
-    grid-template-columns: repeat(2, 300px);
-    grid-template-rows: repeat(3, 200px);
-
-    .card {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      border: ${({ theme }) => `1px solid ${theme.palette.gray}`};
-      color: ${({ theme }) => theme.palette.white};
-    }
-
-    .grid-1-2 {
-      grid-row-start: 1;
-      grid-row-end: 2;
-      grid-column-start: 2;
-      grid-column-end: 3;
-    }
-
-    .grid-2-2 {
-      grid-row-start: 2;
-      grid-row-end: 3;
-      grid-column-start: 1;
-      grid-column-end: 2;
-    }
-
-    .grid-3-2 {
-      grid-row-start: 3;
-      grid-row-end: 4;
-      grid-column-start: 2;
-      grid-column-end: 3;
-    }
+    max-width: 560px;
   }
-`;
+}
+
+@media (max-width: 1024px) {
+  .amputeeRehabContent {
+    padding: 140px 60px 120px 60px;
+  }
+
+  .amputeeRehabContent {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  .right {
+    height: fit-content;
+    max-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    grid-template-areas:
+      '. . esper'
+      'directRelief dita .';
+  }
+}
+
+@media (max-width: 600px) {
+  .amputeeRehabContent {
+    padding: 80px 24px;
+  }
+
+  .left {
+    gap: 40px;
+    max-width: 100%;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .button {
+    justify-content: center;
+  }
+
+  .right {
+    grid-template-columns: 1fr;
+
+    grid-template-rows: repeat(3, 100px);
+    grid-template-areas:
+      'esper'
+      'directRelief'
+      'dita';
+  }
+}

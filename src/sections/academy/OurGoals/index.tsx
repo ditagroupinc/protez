@@ -4,7 +4,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 import Button from '@/components/Button'
 
-import AcademySection from '@/sections/academy/AcademySection'
+import AcademySection from '@/components/AcademySection'
 import AcademyGoalCard from '@/sections/academy/OurGoals/components/AcademyGoalCard'
 
 import texts from '@/texts&svg'

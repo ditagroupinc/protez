@@ -18,7 +18,7 @@ const academyIntroTitle = (className?: string) => (
   </svg>
 )
 
-const iconArrowUp = (className?: string) => (
+const arrowUp = (className?: string) => (
   <svg
     width="48"
     height="48"
@@ -38,5 +38,5 @@ const iconArrowUp = (className?: string) => (
 
 export const icons = {
   academyIntroTitle,
-  iconArrowUp,
+  arrowUp,
 }

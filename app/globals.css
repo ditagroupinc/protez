@@ -22,6 +22,7 @@
   --textScale: 1.01;
   --headerPaddingSide: 108px;
   --headerPaddingTop: 90px;
+  --whiteBorder: 1px solid rgba(255, 255, 255, 0.24);
   --greyBorder: 1px solid rgba(13, 17, 37, 0.24);
 }
 

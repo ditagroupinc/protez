@@ -2,7 +2,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 import Button from '@/components/Button'
 
-import AcademySection from '@/sections/academy/AcademySection'
+import AcademySection from '@/components/AcademySection'
 import AcademyResultCard from '@/sections/academy/OurResults/components/AcademyResultCard'
 
 import texts from '@/texts&svg'

@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademySection from '../AcademySection'
+import AcademySection from '@/components/AcademySection'
 
 import styles from './style.module.scss'
 import TeacherCard from './TeacherCard'

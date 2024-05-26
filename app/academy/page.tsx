@@ -28,6 +28,7 @@ import style from './style.module.scss'
 import OurTeachers from '@/sections/academy/OurTeachers'
 import Footer from '@/sections/academy/Footer'
 import Chief from '@/sections/academy/Chief'
+import AmputeeRehab from '@/sections/academy/AmputeeRehab'
 
 const hidePage = false
 
@@ -43,8 +44,8 @@ const hidePage = false
 // slide Practice Sessions
 // slide Past and Upcoming Events
 // slide Academy Students
-// Amputee rehab
-// Summit Results
+// todo Amputee rehab
+// todo Summit Results
 // slide We're in the News
 //* All our Partners
 //* Thank you
@@ -67,12 +68,13 @@ export default function AcademyPage() {
         {/* OTHER SECTIONS ARE RENDERED AFTER THIS PAGE IS RENDRERED*/}
         {/* THE WHOLE SECTION IS NOT WRAPPERED WITH SUSPENSE TO PREVENT FLICKERING EFFECT OF THE PAGE */}
         <Suspense fallback={<h1>Loading...</h1>}>
-          {/* <OurGoals />
-          <OurResults />
-          <TheoryLectures /> */}
-          <SpecialThanksToAllOurPartners />
-          <OurTeachers />
+          {/* <OurGoals /> */}
+          {/* <OurResults /> */}
+          {/* <TheoryLectures /> */}
+          {/* <SpecialThanksToAllOurPartners /> */}
+          {/* <OurTeachers /> */}
           <Chief />
+          <AmputeeRehab />
         </Suspense>
       </main>
       <Footer />

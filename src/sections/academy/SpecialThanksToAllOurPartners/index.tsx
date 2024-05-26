@@ -1,4 +1,4 @@
-import AcademySection from '../AcademySection'
+import AcademySection from '@/components/AcademySection'
 
 import Button from '@/components/Button'
 
