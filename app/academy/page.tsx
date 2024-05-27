@@ -29,6 +29,7 @@ import OurTeachers from '@/sections/academy/OurTeachers'
 import Footer from '@/sections/academy/Footer'
 import Chief from '@/sections/academy/Chief'
 import AmputeeRehab from '@/sections/academy/AmputeeRehab'
+import SummitResults from '@/sections/academy/SummitResults/SummitResults'
 
 const hidePage = false
 
@@ -75,6 +76,7 @@ export default function AcademyPage() {
           {/* <OurTeachers /> */}
           <Chief />
           <AmputeeRehab />
+          <SummitResults />
         </Suspense>
       </main>
       <Footer />
