@@ -32,6 +32,7 @@ import AmputeeRehab from '@/sections/academy/AmputeeRehab'
 import SummitResults from '@/sections/academy/SummitResults/SummitResults'
 import Academy from '@/sections/academy/Academy'
 import PracticeSessions from '@/sections/academy/PracticeSessions'
+import AcademyStudents from '@/sections/academy/AcademyStudents'
 
 const hidePage = false
 
@@ -81,6 +82,7 @@ export default function AcademyPage() {
           <SummitResults />
           <Academy />
           <PracticeSessions />
+          <AcademyStudents />
         </Suspense>
       </main>
       <Footer />

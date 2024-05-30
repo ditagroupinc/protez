@@ -12,16 +12,18 @@ import { icons } from './icons'
 
 import Slider from 'react-slick'
 
-const practiceSessionsCards = [
-  { image: '/practiceSessions/practice0.png', text: 'Preparatory stage' },
-  { image: '/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
-  { image: '/practiceSessions/practice2.png', text: 'Casting and measuring the prosthesis' },
-  { image: '/practiceSessions/practice0.png', text: 'Preparatory stage' },
-  { image: '/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
-  { image: '/practiceSessions/practice2.png', text: 'Casting and measuring the prosthesis' },
+const academyStudentsCards = [
+  '/students/student0.png',
+  '/students/student1.png',
+  '/students/student2.png',
+  '/students/student3.png',
+  '/students/student0.png',
+  '/students/student1.png',
+  '/students/student2.png',
+  '/students/student3.png',
 ]
 
-const PracticeSessions = () => {
+const AcademyStudents = () => {
   const { lang } = useLanguage()
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
@@ -31,7 +33,7 @@ const PracticeSessions = () => {
     infinite: true,
     speed: 500,
 
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     focusOnSelect: true,
     centerMode: false,
@@ -57,6 +59,8 @@ const PracticeSessions = () => {
         settings: {
           slidesToShow: 1,
           dots: true,
+          centerMode: true,
+          centerPadding: '100px',
         },
       },
     ],
@@ -73,23 +77,20 @@ const PracticeSessions = () => {
   }
 
   return (
-    <AcademySection id="practiceSessions" className={styles.practiceSessions}>
-      {icons.practiceSessionsLogo.desktop[lang](styles.title)}
+    <AcademySection id="academyStudents" className={styles.academyStudents}>
+      {icons.academyStudentsLogo.desktop[lang](styles.title)}
 
       <div className={styles.sliderWrapper}>
         <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
-          {practiceSessionsCards.map((card, index) => {
+          {academyStudentsCards.map((card, index) => {
             let slideClass = ''
 
             switch (index) {
               case activeSlide:
                 slideClass = styles.leftSlide
                 break
-              case (activeSlide + 1) % practiceSessionsCards.length:
+              case (activeSlide + 2) % academyStudentsCards.length:
                 slideClass = styles.centerSlide
-                break
-              case (activeSlide + 2) % practiceSessionsCards.length:
-                slideClass = styles.rightSlide
                 break
               default:
                 slideClass = ''
@@ -100,13 +101,12 @@ const PracticeSessions = () => {
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <div className={`${styles.card} `}>
                     <Image
-                      src={card.image}
-                      alt="picture of practice sessions in Protez Academy"
+                      src={card}
+                      alt="photo of students of Protez Academy"
                       width={490}
                       height={500}
                       className={styles.image}
                     />
-                    <p className={styles.text}>{card.text}</p>
                   </div>
                 </div>
               </div>
@@ -128,4 +128,4 @@ const PracticeSessions = () => {
   )
 }
 
-export default PracticeSessions
+export default AcademyStudents
