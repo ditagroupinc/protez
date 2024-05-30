@@ -1,0 +1,132 @@
+import Image from 'next/image'
+
+import { useRef, useState } from 'react'
+
+import { useLanguage } from '@/contexts/LanguageContext'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+
+import AcademySection from '@/components/AcademySection'
+
+import styles from './styles.module.scss'
+import { icons } from './icons'
+
+import Slider from 'react-slick'
+
+const practiceSessionsCards = [
+  { image: '/practiceSessions/practice0.png', text: 'Preparatory stage' },
+  { image: '/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
+  { image: '/practiceSessions/practice2.png', text: 'Casting and measuring the prosthesis' },
+  { image: '/practiceSessions/practice0.png', text: 'Preparatory stage' },
+  { image: '/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
+  { image: '/practiceSessions/practice2.png', text: 'Casting and measuring the prosthesis' },
+]
+
+const PracticeSessions = () => {
+  const { lang } = useLanguage()
+  const [activeSlide, setActiveSlide] = useState(0)
+  const { width } = useScreenModeAndSize()
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    focusOnSelect: true,
+    centerMode: false,
+
+    swipeToSlide: true,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1366,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+          dots: true,
+          arrows: false,
+        },
+      },
+    ],
+
+    beforeChange: (_current: number, next: number) => setActiveSlide(next),
+  }
+  const sliderRef = useRef<Slider & React.Component>(null)
+
+  const gotoNext = () => {
+    sliderRef.current?.slickNext()
+  }
+  const gotoPrev = () => {
+    sliderRef.current?.slickPrev()
+  }
+
+  return (
+    <AcademySection id="practiceSessions" className={styles.practiceSessions}>
+      {icons.practiceSessionsLogo.desktop[lang](styles.title)}
+
+      <div className={styles.sliderWrapper}>
+        <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
+          {practiceSessionsCards.map((card, index) => {
+            let slideClass = ''
+
+            switch (index) {
+              case activeSlide:
+                slideClass = styles.leftSlide
+                break
+              case (activeSlide + 1) % practiceSessionsCards.length:
+                slideClass = styles.centerSlide
+                break
+              case (activeSlide + 2) % practiceSessionsCards.length:
+                slideClass = styles.rightSlide
+                break
+              default:
+                slideClass = ''
+            }
+
+            return (
+              <div key={index}>
+                <div className={`${styles.cardWrapper} ${slideClass}`}>
+                  <div className={`${styles.card} `}>
+                    <Image
+                      src={card.image}
+                      alt="picture of practice sessions in Protez Academy"
+                      width={490}
+                      height={500}
+                      className={styles.image}
+                    />
+                    <p className={styles.text}>{card.text}</p>
+                  </div>
+                </div>
+              </div>
+            )
+          })}
+        </Slider>
+        {width > 600 && (
+          <div className={styles.sliderNavigation}>
+            <button className={styles.sliderButton} onClick={gotoPrev}>
+              {icons.arrowLeft(styles.arrowLeft)}
+            </button>
+            <button className={styles.sliderButton} onClick={gotoNext}>
+              {icons.arrowRight(styles.arrowRight)}
+            </button>
+          </div>
+        )}
+      </div>
+    </AcademySection>
+  )
+}
+
+export default PracticeSessions

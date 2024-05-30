@@ -31,6 +31,7 @@ import Chief from '@/sections/academy/Chief'
 import AmputeeRehab from '@/sections/academy/AmputeeRehab'
 import SummitResults from '@/sections/academy/SummitResults/SummitResults'
 import Academy from '@/sections/academy/Academy'
+import PracticeSessions from '@/sections/academy/PracticeSessions'
 
 const hidePage = false
 
@@ -38,12 +39,12 @@ const hidePage = false
 //todo AcademyHeader
 //* Welcome to the Academy
 //* Our Goals
-// todo slide Protez Academy
+//* slide Protez Academy
 //* Our Results
 //* Academy Teachers
 //* Yakov Gradinar
 //* Theory Lectures
-// todo slide Practice Sessions
+//* slide Practice Sessions
 // slide Past and Upcoming Events
 // todo slide Academy Students
 //* Amputee rehab
@@ -79,6 +80,7 @@ export default function AcademyPage() {
           {/* <AmputeeRehab /> */}
           <SummitResults />
           <Academy />
+          <PracticeSessions />
         </Suspense>
       </main>
       <Footer />
