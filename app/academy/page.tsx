@@ -33,6 +33,7 @@ import SummitResults from '@/sections/academy/SummitResults/SummitResults'
 import Academy from '@/sections/academy/Academy'
 import PracticeSessions from '@/sections/academy/PracticeSessions'
 import AcademyStudents from '@/sections/academy/AcademyStudents'
+import WeAreInNews from '@/sections/academy/WeAreInNews'
 
 const hidePage = false
 
@@ -47,10 +48,10 @@ const hidePage = false
 //* Theory Lectures
 //* slide Practice Sessions
 // slide Past and Upcoming Events
-// todo slide Academy Students
+// * slide Academy Students
 //* Amputee rehab
 //* Summit Results
-// slide We're in the News
+//* slide We're in the News
 //* All our Partners
 //* Thank you
 
@@ -75,14 +76,16 @@ export default function AcademyPage() {
           {/* <OurGoals /> */}
           {/* <OurResults /> */}
           {/* <TheoryLectures /> */}
-          {/* <SpecialThanksToAllOurPartners /> */}
+
           {/* <OurTeachers /> */}
           {/* <Chief /> */}
           {/* <AmputeeRehab /> */}
           <SummitResults />
-          <Academy />
+          {/* <Academy />
           <PracticeSessions />
-          <AcademyStudents />
+          <AcademyStudents /> */}
+          <WeAreInNews />
+          <SpecialThanksToAllOurPartners />
         </Suspense>
       </main>
       <Footer />
