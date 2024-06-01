@@ -7,6 +7,8 @@ import Button from '@/components/Button'
 import AcademySection from '@/components/AcademySection'
 import AcademyGoalCard from '@/sections/academy/OurGoals/components/AcademyGoalCard'
 
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+
 import texts from '@/texts&svg'
 
 import { icons } from './icons'
@@ -37,12 +39,9 @@ const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
       <div className={style.academyGoalsContent}>
         <div className={style.sectionTitle}>{icons.goalLogo[lang]()}</div>
         {goalCards.map((item, index) => (
-          <AcademyGoalCard
-            key={index}
-            image={item.icon}
-            desc={item.text}
-            className={style.cardItem}
-          />
+          <TextAppearanceWrapper key={index} className={style.cardItem}>
+            <AcademyGoalCard image={item.icon} desc={item.text} />
+          </TextAppearanceWrapper>
         ))}
         <Button
           as="link"

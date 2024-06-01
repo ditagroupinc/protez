@@ -1,0 +1,350 @@
+.pastAndUpcomingEvents {
+  padding: 120px 0 100px 0;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--black);
+}
+
+.backgroundImage {
+  pointer-events: none;
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 42%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+
+.sliderWrapper {
+  position: relative;
+}
+
+.sliderButton {
+  width: 48px;
+  height: 48px;
+  transition: all var(--transitionProps);
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &:nth-of-type(1) {
+    left: 168px;
+    border-color: var(--white);
+    &:hover {
+      background-color: var(--blue);
+      border-color: var(--blue);
+      & .arrowLeft path {
+        transition: all var(--transitionProps);
+        fill: var(--white);
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    right: 168px;
+    background-color: var(--blue);
+    border-color: var(--blue);
+
+    &:hover {
+      background-color: transparent;
+      border-color: var(--white);
+      & .arrowRight path {
+        transition: all var(--transitionProps);
+        fill: var(--white);
+      }
+    }
+  }
+}
+
+.slickSlider :global(.slick-track) {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 24px;
+  height: 480px;
+}
+
+.cardWrapper {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 480px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition: all var(--transitionProps);
+}
+
+.cardPicture {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
+
+  transition: all 0.5s;
+  z-index: 1;
+
+  opacity: 0.3;
+}
+
+.cardDataBlock {
+  position: relative;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+
+  opacity: 0.5;
+}
+
+.cardDateAndStatus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardStatus {
+  display: flex;
+  padding: 6px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+
+  &.upcoming {
+    background: var(--blue);
+    color: var(--white);
+  }
+  &.past {
+    background: var(--white);
+    color: var(--black);
+  }
+}
+
+.cardDate {
+  color: var(--white);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.cardTitle {
+  color: var(--white);
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+
+  transition: all var(--transitionProps);
+
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.locationWrapper {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.locationIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.locationText {
+  color: var(--white);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.centerSlide .card {
+  max-height: 100%;
+  & .cardPicture {
+    max-height: 480px;
+  }
+  & .cardDataBlock {
+    opacity: 1;
+  }
+}
+
+.locationButton {
+  width: 48px;
+  height: 48px;
+  transition: all var(--transitionProps);
+  background-color: var(--blue);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: auto;
+}
+
+@media (min-width: 600px) {
+}
+
+@media (max-width: 1500px) {
+  .sliderButton {
+    &:nth-of-type(1) {
+      left: 80px;
+    }
+
+    &:nth-of-type(2) {
+      right: 80px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .sliderButton {
+    &:nth-of-type(1) {
+      left: 60px;
+    }
+
+    &:nth-of-type(2) {
+      right: 60px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .slickSlider {
+    & :global(.slick-dots) {
+      border-radius: 4px;
+      display: flex;
+      padding-top: 32px;
+      padding-right: 24px;
+      padding-left: 24px;
+      position: static;
+    }
+    & :global(.slick-dots li) {
+      margin: 0;
+      width: calc(100% / 8);
+      height: 3px;
+      background-color: var(--white);
+      opacity: 0.06;
+    }
+
+    & :global(.slick-dots li.slick-active) {
+      border-radius: 4px;
+      background-color: var(--blue);
+      opacity: 1;
+    }
+
+    & :global(.slick-dots li button:before) {
+      display: none;
+    }
+
+    & :global(.slick-dots li button) {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+    }
+  }
+
+  .pastAndUpcomingEvents {
+    padding: 60px 0 60px 0;
+  }
+
+  .titleWrapper {
+    padding: 0 24px;
+  }
+
+  .title {
+    margin-bottom: 32px;
+  }
+
+  .slickSlider :global(.slick-track) {
+    height: 380px;
+  }
+
+  .cardWrapper {
+    height: 380px;
+  }
+
+  .card {
+    max-height: 100%;
+  }
+
+  .cardPicture {
+    max-height: 100%;
+  }
+  .cardDataBlock {
+    padding-bottom: 20px;
+  }
+
+  .locationWrapper {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cardDataBlock {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}

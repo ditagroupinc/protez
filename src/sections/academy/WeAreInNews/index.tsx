@@ -13,6 +13,8 @@ import { icons } from './icons'
 import Slider from 'react-slick'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
+import { forwardRef } from 'react'
+
 const newsCards = [
   {
     link: '/',
@@ -70,7 +72,7 @@ const newsCards = [
   },
 ]
 
-const WeAreInNews = () => {
+const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
@@ -124,7 +126,7 @@ const WeAreInNews = () => {
   }
 
   return (
-    <AcademySection id="weAreInNews" className={styles.weAreInNews}>
+    <AcademySection ref={ref} id="weAreInNews" className={styles.weAreInNews}>
       {width < 600
         ? icons.weAreInNewsLogo.mobile[lang](styles.title)
         : icons.weAreInNewsLogo.desktop[lang](styles.title)}
@@ -132,36 +134,9 @@ const WeAreInNews = () => {
       <div className={styles.sliderWrapper}>
         <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
           {newsCards.map((card, index) => {
-            // let slideClass = ''
-
-            // switch (index) {
-            //   case activeSlide:
-            //     slideClass = styles.leftSlide
-            //     break
-            //   case (activeSlide + 2) % newsCards.length:
-            //     slideClass = styles.centerSlide
-            //     break
-            //   default:
-            //     slideClass = ''
-            // }
             let slideClass = ''
 
             switch (index) {
-              // case activeSlide:
-              //   slideClass = styles.centerSlide
-              //   break
-              // case (activeSlide - 1 + newsCards.length) % newsCards.length:
-              //   slideClass = styles.leftSlide
-              //   break
-              // case (activeSlide - 2 + newsCards.length) % newsCards.length:
-              //   slideClass = styles.leftEdgeSlide
-              //   break
-              // case (activeSlide + 1) % newsCards.length:
-              //   slideClass = styles.rightSlide
-              //   break
-              // case (activeSlide + 2) % newsCards.length:
-              //   slideClass = styles.rightEdgeSlide
-              //   break
               case (activeSlide + 1) % newsCards.length:
                 slideClass = styles.centerSlide
                 break
@@ -183,10 +158,7 @@ const WeAreInNews = () => {
                       height={520}
                       className={`${styles.cardPicture}`}
                     />
-                    <TextAppearanceWrapper
-                      disableAnimation={width < 600}
-                      className={styles.cardDataBlock}
-                    >
+                    <TextAppearanceWrapper className={styles.cardDataBlock}>
                       <div className={styles.cardDate}>
                         <span>{card.date}</span>|<span>{card.address}</span>
                       </div>
@@ -223,6 +195,6 @@ const WeAreInNews = () => {
       </div>
     </AcademySection>
   )
-}
+})
 
 export default WeAreInNews

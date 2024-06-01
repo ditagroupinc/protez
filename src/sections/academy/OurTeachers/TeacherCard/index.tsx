@@ -3,7 +3,6 @@ import style from './style.module.scss'
 
 import globalIcons from '@/texts&svg/icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 interface Links {
   facebook?: { href: string; icon: string }
@@ -28,10 +27,9 @@ export default function TeacherCard({
   className?: string
 }) {
   const cardColor = () => (black ? '#0D1125' : '#fff')
-  const { width } = useScreenModeAndSize()
 
   return (
-    <div className={`${style.teamCard} ${className && className}`}>
+    <TextAppearanceWrapper className={`${style.teamCard} ${className && className}`}>
       <Image
         src={`/teachers/${photo}`}
         object-fit="contain"
@@ -40,10 +38,7 @@ export default function TeacherCard({
         height={300}
         className={style.teacherImage}
       />
-      <TextAppearanceWrapper
-        disableAnimation={width < 615}
-        className={`${style.container} ${black && style.black}`}
-      >
+      <div className={`${style.container} ${black && style.black}`}>
         <div className={`${style.linksList}`}>
           {Object.keys(links).map(platform => {
             const link = links[platform as keyof typeof links]
@@ -60,7 +55,7 @@ export default function TeacherCard({
         <h5 className={`h5 ${style.name}`}>{name}</h5>
 
         <h6 className={`h6 ${style.position}`}>{position}</h6>
-      </TextAppearanceWrapper>
-    </div>
+      </div>
+    </TextAppearanceWrapper>
   )
 }

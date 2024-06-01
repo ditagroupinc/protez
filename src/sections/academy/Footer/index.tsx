@@ -8,12 +8,14 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { icons } from './icons'
 import Divider from '@/components/Divider'
 
-const Footer = () => {
+import { forwardRef } from 'react'
+
+const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
 
   return (
-    <footer className={styles.footer}>
+    <footer ref={ref} className={styles.footer}>
       <div className={styles.footerTop}>
         <div className={styles.footerTopContent}>
           <div className={styles.right}>
@@ -44,6 +46,6 @@ const Footer = () => {
       <div className={styles.footerBottom}>2024 © Made by DITA GROUP Inc.</div>
     </footer>
   )
-}
+})
 
 export default Footer

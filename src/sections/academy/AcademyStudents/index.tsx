@@ -10,6 +10,8 @@ import AcademySection from '@/components/AcademySection'
 import styles from './styles.module.scss'
 import { icons } from './icons'
 
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+
 import Slider from 'react-slick'
 
 const academyStudentsCards = [
@@ -80,7 +82,7 @@ const AcademyStudents = () => {
     <AcademySection id="academyStudents" className={styles.academyStudents}>
       {icons.academyStudentsLogo.desktop[lang](styles.title)}
 
-      <div className={styles.sliderWrapper}>
+      <TextAppearanceWrapper className={styles.sliderWrapper}>
         <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
           {academyStudentsCards.map((card, index) => {
             let slideClass = ''
@@ -123,7 +125,7 @@ const AcademyStudents = () => {
             </button>
           </div>
         )}
-      </div>
+      </TextAppearanceWrapper>
     </AcademySection>
   )
 }

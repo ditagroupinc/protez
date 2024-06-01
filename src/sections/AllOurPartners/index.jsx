@@ -5,6 +5,7 @@ import Link from 'next/link'
 import globalIcons from '@/texts&svg/icons'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import TextAppearanceWrapper from '@/components/TextAppearanceWrapper'
 
 const partnersLogos = [
   'antonovGroup.svg',
@@ -38,13 +39,13 @@ const partnersLogos = [
 const PartnerCard = ({ image, mobile }) => {
   if (image.includes('dita'))
     return (
-      <div
+      <TextAppearanceWrapper
         className={`${mobile ? style.mobile : style.desktop} ${style.partnerCard} ${style.dita}`}
       >
         <Link href="https://dita-group.com/" target="blank">
           {globalIcons.ditaLogo(`${style.partnerLogo}`)}
         </Link>
-      </div>
+      </TextAppearanceWrapper>
     )
 
   return (

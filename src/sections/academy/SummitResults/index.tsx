@@ -5,15 +5,19 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import AcademySection from '@/components/AcademySection'
 
+import { forwardRef } from 'react'
+
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+
 import styles from './styles.module.scss'
 import { icons } from './icons'
 
-const SummitResults = () => {
+const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
 
   return (
-    <AcademySection id="summitResults" className={styles.summitResults}>
+    <AcademySection ref={ref} id="summitResults" className={styles.summitResults}>
       <div className={styles.resultInfo}>
         <div className={styles.left}>
           {width >= 600 && width <= 1024
@@ -27,18 +31,18 @@ const SummitResults = () => {
           </p>
         </div>
         <div className={styles.right}>
-          <div className={styles.result}>
+          <TextAppearanceWrapper className={styles.result}>
             <span className={styles.count}>200</span>
             <p className={styles.desc}>Visitors</p>
-          </div>
-          <div className={styles.result}>
+          </TextAppearanceWrapper>
+          <TextAppearanceWrapper className={styles.result}>
             <span className={styles.count}>22</span>
             <p className={styles.desc}>Invited guests</p>
-          </div>
-          <div className={styles.result}>
+          </TextAppearanceWrapper>
+          <TextAppearanceWrapper className={styles.result}>
             <span className={styles.count}>12</span>
             <p className={styles.desc}>Prosthetists</p>
-          </div>
+          </TextAppearanceWrapper>
         </div>
       </div>
 
@@ -55,6 +59,6 @@ const SummitResults = () => {
       </div>
     </AcademySection>
   )
-}
+})
 
 export default SummitResults

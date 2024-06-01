@@ -15,12 +15,10 @@ const AcademyResultCard = memo((props: AcademyResultCardProps) => {
   const { count, title, className } = props
 
   return (
-    <div className={`${style.academyResultCard} ${className}`}>
+    <TextAppearanceWrapper className={`${style.academyResultCard} ${className}`}>
       <CountUp end={count} duration={2} className={style.count} />
-      <TextAppearanceWrapper>
-        <p className={style.desc}>{title}</p>
-      </TextAppearanceWrapper>
-    </div>
+      <p className={style.desc}>{title}</p>
+    </TextAppearanceWrapper>
   )
 })
 

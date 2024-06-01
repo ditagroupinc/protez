@@ -14,6 +14,8 @@ import { icons } from './icons'
 
 import Slider from 'react-slick'
 
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+
 const academyCards = [
   '/academy/academyCard0.png',
   '/academy/academyCard1.png',
@@ -123,56 +125,58 @@ const Academy = () => {
     <AcademySection id="academy" className={styles.academy}>
       {icons.academyLogo.desktop[lang](styles.title)}
 
-      <div className={styles.sliderWrapper}>
-        <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
-          {academyCards.map((card, index) => {
-            let slideClass = ''
+      <TextAppearanceWrapper>
+        <div className={styles.sliderWrapper}>
+          <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
+            {academyCards.map((card, index) => {
+              let slideClass = ''
 
-            switch (index) {
-              case (activeSlide - 1 + academyCards.length) % academyCards.length:
-                slideClass = styles.leftSlide
-                break
-              case (activeSlide - 2 + academyCards.length) % academyCards.length:
-                slideClass = styles.leftEdgeSlide
-                break
-              case (activeSlide + 1) % academyCards.length:
-                slideClass = styles.rightSlide
-                break
-              case (activeSlide + 2) % academyCards.length:
-                slideClass = styles.rightEdgeSlide
-                break
-              default:
-                slideClass = ''
-            }
+              switch (index) {
+                case (activeSlide - 1 + academyCards.length) % academyCards.length:
+                  slideClass = styles.leftSlide
+                  break
+                case (activeSlide - 2 + academyCards.length) % academyCards.length:
+                  slideClass = styles.leftEdgeSlide
+                  break
+                case (activeSlide + 1) % academyCards.length:
+                  slideClass = styles.rightSlide
+                  break
+                case (activeSlide + 2) % academyCards.length:
+                  slideClass = styles.rightEdgeSlide
+                  break
+                default:
+                  slideClass = ''
+              }
 
-            return (
-              <div key={index}>
-                <div className={`${styles.cardWrapper} ${slideClass}`}>
-                  <div className={`${styles.card} `}>
-                    <Image
-                      src={card}
-                      alt="picture of Protez Academy students and teachers"
-                      width={720}
-                      height={520}
-                      className={styles.image}
-                    />
+              return (
+                <div key={index}>
+                  <div className={`${styles.cardWrapper} ${slideClass}`}>
+                    <div className={`${styles.card} `}>
+                      <Image
+                        src={card}
+                        alt="picture of Protez Academy students and teachers"
+                        width={720}
+                        height={520}
+                        className={styles.image}
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
-            )
-          })}
-        </Slider>
-        {width > 600 && (
-          <div className={styles.sliderNavigation} ref={navRef}>
-            <button className={styles.sliderButton} onClick={gotoPrev}>
-              {icons.arrowLeft(styles.arrowLeft)}
-            </button>
-            <button className={styles.sliderButton} onClick={gotoNext}>
-              {icons.arrowRight(styles.arrowRight)}
-            </button>
-          </div>
-        )}
-      </div>
+              )
+            })}
+          </Slider>
+          {width > 600 && (
+            <div className={styles.sliderNavigation} ref={navRef}>
+              <button className={styles.sliderButton} onClick={gotoPrev}>
+                {icons.arrowLeft(styles.arrowLeft)}
+              </button>
+              <button className={styles.sliderButton} onClick={gotoNext}>
+                {icons.arrowRight(styles.arrowRight)}
+              </button>
+            </div>
+          )}
+        </div>
+      </TextAppearanceWrapper>
     </AcademySection>
   )
 }

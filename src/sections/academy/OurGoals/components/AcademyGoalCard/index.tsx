@@ -1,7 +1,5 @@
 import { memo } from 'react'
 
-import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-
 import style from './style.module.scss'
 
 const AcademyGoalCard = memo(
@@ -9,9 +7,8 @@ const AcademyGoalCard = memo(
     return (
       <div className={`${style.academyGoalCard} ${className}`}>
         {image}
-        <TextAppearanceWrapper>
-          <h5 className={style.cardDesc}>{desc}</h5>
-        </TextAppearanceWrapper>
+
+        <h5 className={style.cardDesc}>{desc}</h5>
       </div>
     )
   }

@@ -3,7 +3,6 @@ import style from './style.module.css'
 
 import globalIcons from '@/texts&svg/icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 interface Links {
   facebook?: { href: string; icon: string }
@@ -30,7 +29,6 @@ export default function TeamCard({
   teacher?: boolean
 }) {
   const cardColor = () => (black ? '#0D1125' : '#fff')
-  const { mobile } = useScreenModeAndSize()
 
   return (
     <div className={`${style.teamCard} ${className && className}`}>
@@ -41,10 +39,7 @@ export default function TeamCard({
         width={264}
         height={220}
       />
-      <TextAppearanceWrapper
-        disableAnimation={mobile}
-        className={`${style.container} ${black && style.black}`}
-      >
+      <TextAppearanceWrapper className={`${style.container} ${black && style.black}`}>
         <div className={`${style.linksList}`}>
           {Object.keys(links).map(platform => {
             const link = links[platform as keyof typeof links]

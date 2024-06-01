@@ -1,6 +1,6 @@
 import Button from '@/components/Button'
 
-// import ArrowUpSVG from '@/assets/icons/arrow-up.svg?react'
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import styles from './styles.module.scss'
 import { icons } from './icons'
@@ -23,36 +23,36 @@ const TheoryLectures = () => {
           ? icons.theoryLecturesLogo.mobile[lang](styles.sectionTitle)
           : icons.theoryLecturesLogo.desktop[lang](styles.sectionTitle)}
       </div>
-      <div className={styles.grid1x4}>
+      <TextAppearanceWrapper className={styles.grid1x4}>
         <span className={styles.number}>/01</span>
         <p className={styles.desc}>
           Etiology of polytrauma and subsequent management of polytrauma patients
         </p>
-      </div>
-      <div className={styles.grid2x2}>
+      </TextAppearanceWrapper>
+      <TextAppearanceWrapper className={styles.grid2x2}>
         <span className={styles.number}>/03</span>
         <p className={styles.desc}>Objectives of pre-amputation consultation</p>
-      </div>
-      <div className={styles.grid2x3}>
+      </TextAppearanceWrapper>
+      <TextAppearanceWrapper className={styles.grid2x3}>
         <span className={styles.number}>/04</span>
         <p className={styles.desc}>Different levels of upper and lower limb amputations</p>
-      </div>
-      <div className={styles.gridButton}>
+      </TextAppearanceWrapper>
+      <TextAppearanceWrapper className={styles.gridButton}>
         <Button as={'link'} variant="normal-blue" href={'/'} className={styles.applyBtn}>
           Apply to
           <br />
           Academy
           {icons.arrowUp()}
         </Button>
-      </div>
-      <div className={styles.grid3x3}>
+      </TextAppearanceWrapper>
+      <TextAppearanceWrapper className={styles.grid3x3}>
         <span className={styles.number}>/05</span>
         <p className={styles.desc}>Overview of cadaver anatomy</p>
-      </div>
-      <div className={styles.grid3x4}>
+      </TextAppearanceWrapper>
+      <TextAppearanceWrapper className={styles.grid3x4}>
         <span className={styles.number}>/06</span>
         <p className={styles.desc}>Physiology</p>
-      </div>
+      </TextAppearanceWrapper>
     </AcademySection>
   )
 }

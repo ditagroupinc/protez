@@ -5,6 +5,8 @@ import Button from '@/components/Button'
 
 import Image from 'next/image'
 
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+
 import { useLanguage } from '@/contexts/LanguageContext'
 
 const AmputeeRehab = () => {
@@ -54,9 +56,9 @@ const AmputeeRehab = () => {
           </div>
           <div className={styles.right}>
             {icons.partnersLogos.map((logo, index) => (
-              <div key={index} className={styles.card}>
+              <TextAppearanceWrapper key={index} className={styles.card}>
                 {logo(styles.partnerLogo)}
-              </div>
+              </TextAppearanceWrapper>
             ))}
           </div>
         </div>

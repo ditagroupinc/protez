@@ -4,7 +4,6 @@ import style from './style.module.scss'
 import Image from 'next/image'
 import Divider from '@/components/Divider'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 export default function PressReleaseCard({
   image,
@@ -17,13 +16,11 @@ export default function PressReleaseCard({
   title: string
   text: string
 }) {
-  const { mobile } = useScreenModeAndSize()
-
   return (
     <div className={style.container}>
       <Image src={image} alt={title} width={482} height={677} className={`${style.picture}`} />
 
-      <TextAppearanceWrapper className={style.textContainer} disableAnimation={mobile}>
+      <TextAppearanceWrapper className={style.textContainer}>
         <h6 className={`h6 ${style.date}`}>{date}</h6>
         <Divider className={style.divider} />
         <h1 className={`h1 ${style.title}`}>{title}</h1>

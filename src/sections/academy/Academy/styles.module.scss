@@ -57,14 +57,6 @@
       }
     }
   }
-
-  &:hover {
-    background-color: var(--blue);
-    & .arrowRight path {
-      transition: all var(--transitionProps);
-      fill: var(--white);
-    }
-  }
 }
 
 .slickSlider {
@@ -77,6 +69,7 @@
   flex-wrap: nowrap;
   justify-content: center;
   gap: 24px;
+  height: 520px;
 }
 
 .cardWrapper {
@@ -169,6 +162,10 @@
     width: fit-content;
   }
 
+  .slickSlider :global(.slick-track) {
+    height: 500px;
+  }
+
   .cardWrapper {
     width: 680px;
     height: 500px;
@@ -176,6 +173,9 @@
 }
 
 @media (max-width: 850px) {
+  .slickSlider :global(.slick-track) {
+    height: 300px;
+  }
   .cardWrapper {
     width: fit-content;
     height: 300px;

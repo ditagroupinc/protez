@@ -29,11 +29,13 @@ import OurTeachers from '@/sections/academy/OurTeachers'
 import Footer from '@/sections/academy/Footer'
 import Chief from '@/sections/academy/Chief'
 import AmputeeRehab from '@/sections/academy/AmputeeRehab'
-import SummitResults from '@/sections/academy/SummitResults/SummitResults'
+import SummitResults from '@/sections/academy/SummitResults'
 import Academy from '@/sections/academy/Academy'
 import PracticeSessions from '@/sections/academy/PracticeSessions'
 import AcademyStudents from '@/sections/academy/AcademyStudents'
 import WeAreInNews from '@/sections/academy/WeAreInNews'
+
+import PastAndUpcomingEvents from '@/sections/academy/PastAndUpcomingEvents'
 
 const hidePage = false
 
@@ -57,6 +59,19 @@ const hidePage = false
 
 export default function AcademyPage() {
   const [refIntro, inViewIntro] = useInView({ triggerOnce: false })
+  const [refChief, inViewChief] = useInView({ triggerOnce: false })
+  const [refPastAndUpcomingEvents, inViewPastAndUpcomingEvents] = useInView({ triggerOnce: false })
+  const [refSummit, inViewSummit] = useInView({ triggerOnce: false })
+  const [refWeAreInNews, inViewWeAreInNews] = useInView({ triggerOnce: false })
+  const [refThankYou, inViewThankYou] = useInView({ triggerOnce: false })
+
+  const showBlackBackToTopButton =
+    !inViewIntro &&
+    !inViewChief &&
+    !inViewPastAndUpcomingEvents &&
+    !inViewSummit &&
+    !inViewWeAreInNews &&
+    !inViewThankYou
 
   const { mobile, width } = useScreenModeAndSize()
   const isMobile = mobile || width < 768
@@ -67,28 +82,28 @@ export default function AcademyPage() {
     <>
       <AcademyHeader />
       <main className={style.main}>
-        {/* <AcademyIntro ref={refIntro} />
-        {!isMobile && <BackToTopButton href={'#academyIntro'} color="blue" black={!inViewIntro} />} */}
+        <AcademyIntro ref={refIntro} />
 
-        {/* OTHER SECTIONS ARE RENDERED AFTER THIS PAGE IS RENDRERED*/}
-        {/* THE WHOLE SECTION IS NOT WRAPPERED WITH SUSPENSE TO PREVENT FLICKERING EFFECT OF THE PAGE */}
         <Suspense fallback={<h1>Loading...</h1>}>
-          {/* <OurGoals /> */}
-          {/* <OurResults /> */}
-          {/* <TheoryLectures /> */}
-
-          {/* <OurTeachers /> */}
-          {/* <Chief /> */}
-          {/* <AmputeeRehab /> */}
-          <SummitResults />
-          {/* <Academy />
+          <OurGoals />
+          <Academy />
+          <OurResults />
+          <OurTeachers />
+          <Chief ref={refChief} />
+          <TheoryLectures />
           <PracticeSessions />
-          <AcademyStudents /> */}
-          <WeAreInNews />
+          <PastAndUpcomingEvents ref={refPastAndUpcomingEvents} />
+          <AcademyStudents />
+          <AmputeeRehab />
+          <SummitResults ref={refSummit} />
+          <WeAreInNews ref={refWeAreInNews} />
           <SpecialThanksToAllOurPartners />
         </Suspense>
+        {!isMobile && (
+          <BackToTopButton href={'academyIntro'} color="blue" black={showBlackBackToTopButton} />
+        )}
       </main>
-      <Footer />
+      <Footer ref={refThankYou} />
     </>
   )
 }

@@ -58,14 +58,6 @@
       }
     }
   }
-
-  &:hover {
-    background-color: var(--blue);
-    & .arrowRight path {
-      transition: all var(--transitionProps);
-      fill: var(--white);
-    }
-  }
 }
 
 .slickSlider :global(.slick-track) {
@@ -74,6 +66,7 @@
   flex-wrap: nowrap;
   justify-content: center;
   gap: 24px;
+  height: 576px;
 }
 
 .cardWrapper {
@@ -168,6 +161,9 @@
     padding-top: 120px;
     padding-bottom: 120px;
   }
+  .slickSlider :global(.slick-track) {
+    height: 540px;
+  }
   .cardWrapper {
     height: 540px;
   }
@@ -208,6 +204,10 @@
   .practiceSessions {
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+
+  .slickSlider :global(.slick-track) {
+    height: 340px;
   }
   .cardWrapper {
     height: 340px;

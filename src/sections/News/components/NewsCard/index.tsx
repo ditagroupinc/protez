@@ -5,7 +5,6 @@ import style from './style.module.css'
 import { icons } from './icons'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 interface NewsCardProps {
   link: string
@@ -29,7 +28,6 @@ export default function NewsCard({
   short,
 }: NewsCardProps) {
   const shortClass = () => (short ? style.short : '')
-  const { mobile } = useScreenModeAndSize()
 
   return (
     <a href={link} target="blank" className={`${style.newsCard} ${shortClass()}`}>
@@ -48,7 +46,7 @@ export default function NewsCard({
         <img src={logo} alt="article picture" className={style.logo} />
       </TextAppearanceWrapper>
 
-      <TextAppearanceWrapper disableAnimation={mobile}>
+      <TextAppearanceWrapper>
         <h3 className={`h3 ${style.title}`}>{title}</h3>
 
         <p className={`p ${style.text}`}>{text}</p>
