@@ -11,6 +11,8 @@ import { icons } from './icons.js'
 
 import Slider from 'react-slick'
 
+import { AcademyIDs } from '../../consts'
+
 const teachersCards = [
   {
     name: 'Kierstin Nelson',
@@ -83,7 +85,7 @@ const OurTeachers = () => {
   }
 
   return (
-    <AcademySection id="ourTeachers" className={styles.ourTeachers}>
+    <AcademySection id={AcademyIDs.OurTeachers} className={styles.ourTeachers}>
       <div className={styles.titleCell}>
         {icons.ourTeachersLogo.desktop[lang](styles.teachersLogo)}
       </div>

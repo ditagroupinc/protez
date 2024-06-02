@@ -23,10 +23,10 @@
   }
   &.black {
     & span {
-      background-color: var(--black);
+      background-color: var(--dark);
       display: block;
       height: 3.5px;
-      background-color: var(--black);
+      background-color: var(--dark);
       width: 100%;
       transition: background-color var(--transitionProps);
       &:last-of-type {

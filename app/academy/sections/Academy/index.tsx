@@ -16,6 +16,8 @@ import Slider from 'react-slick'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
+import { AcademyIDs } from '../../consts'
+
 const academyCards = [
   '/academy/academyCard0.png',
   '/academy/academyCard1.png',
@@ -122,7 +124,7 @@ const Academy = () => {
   }, [])
 
   return (
-    <AcademySection id="academy" className={styles.academy}>
+    <AcademySection id={AcademyIDs.Academy} className={styles.academy}>
       {icons.academyLogo.desktop[lang](styles.title)}
 
       <TextAppearanceWrapper>

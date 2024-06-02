@@ -27,7 +27,13 @@
   &.primaryBlue {
     color: var(--white);
     background-color: var(--blue);
-    background-image: linear-gradient(0deg, var(--dark-blue) 0%, var(--dark-blue) 25%, #006bcd 75%, var(--blue) 100%);
+    background-image: linear-gradient(
+      0deg,
+      var(--dark-blue) 0%,
+      var(--dark-blue) 25%,
+      #006bcd 75%,
+      var(--blue) 100%
+    );
     background-size: 100% 400%;
     background-position: 100% 0%;
 
@@ -37,7 +43,7 @@
   }
 
   &.primaryWhite {
-    color: var(--black);
+    color: var(--dark);
     background-color: var(--white);
     border: 1px solid var(--white);
 
@@ -53,26 +59,26 @@
     background-color: transparent;
 
     &:hover {
-      color: var(--black);
+      color: var(--dark);
       background-color: var(--white);
     }
   }
 
   &.secondaryBlack {
-    color: var(--black);
+    color: var(--dark);
     background-color: var(--var);
-    border: 1px solid var(--black);
+    border: 1px solid var(--dark);
 
     &:hover {
       color: var(--white);
-      background-color: var(--black);
+      background-color: var(--dark);
     }
   }
 
   &.secondaryFillBlack {
     color: var(--white);
-    border: 1px solid var(--black);
-    background-color: var(--black);
+    border: 1px solid var(--dark);
+    background-color: var(--dark);
   }
 
   &.normalBlue {
@@ -86,11 +92,11 @@
 
   &.normalBlack {
     border-radius: 4px;
-    border: 1px solid var(--black);
+    border: 1px solid var(--dark);
 
     &:hover {
       color: var(--white);
-      background-color: var(--black);
+      background-color: var(--dark);
     }
   }
 

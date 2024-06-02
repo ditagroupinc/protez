@@ -8,12 +8,13 @@ import Image from 'next/image'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { useLanguage } from '@/contexts/LanguageContext'
+import { AcademyIDs } from '../../consts'
 
 const AmputeeRehab = () => {
   const { lang } = useLanguage()
 
   return (
-    <section id="amputeeRehab" className={styles.amputeeRehab}>
+    <section id={AcademyIDs.AmputeeRehab} className={styles.amputeeRehab}>
       <Image
         src="/summit.jpg"
         alt="summit"

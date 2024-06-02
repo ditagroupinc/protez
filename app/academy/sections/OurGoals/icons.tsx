@@ -84,8 +84,6 @@ const arrowUp = (className?: string) => (
   </svg>
 )
 
-// =================================================================
-
 export const icons = {
   iconDisabledPerson,
   iconHelpHeart,

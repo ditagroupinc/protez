@@ -1,9 +1,5 @@
 .section {
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.9)
-  );
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
   background-blend-mode: normal, screen;
   padding-bottom: 80px;
   padding-left: 0;
@@ -22,7 +18,7 @@
 
 .title {
   font-weight: 400;
-  color: var(--black);
+  color: var(--dark);
   margin: 0 auto;
   margin-top: 64px;
   width: fit-content;
@@ -39,7 +35,7 @@
 
 .support {
   margin: 0 auto;
-  color: var(--black);
+  color: var(--dark);
   margin-top: 64px;
   max-width: 990px;
   text-align: center;
@@ -81,7 +77,7 @@
 
 .companyData {
   flex: 1 1 50%;
-  color: var(--black);
+  color: var(--dark);
   max-width: 400px;
   padding-top: 40px;
 }

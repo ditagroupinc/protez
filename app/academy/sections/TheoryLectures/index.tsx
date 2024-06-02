@@ -8,12 +8,14 @@ import AcademySection from '@/components/AcademySection'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
+import { AcademyIDs } from '../../consts'
+
 const TheoryLectures = () => {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
 
   return (
-    <AcademySection id="theoryLectures" className={styles.theoryLectures}>
+    <AcademySection id={AcademyIDs.TheoryLectures} className={styles.theoryLectures}>
       <div className={styles.grid1x1}>
         <span className={styles.number}>/02</span>
         <p className={styles.desc}>Examples of post-operative care</p>

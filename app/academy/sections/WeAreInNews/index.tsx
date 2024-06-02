@@ -15,6 +15,8 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { forwardRef } from 'react'
 
+import { AcademyIDs } from '../../consts'
+
 const newsCards = [
   {
     link: '/',
@@ -126,7 +128,7 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
   }
 
   return (
-    <AcademySection ref={ref} id="weAreInNews" className={styles.weAreInNews}>
+    <AcademySection ref={ref} id={AcademyIDs.WeAreInNews} className={styles.weAreInNews}>
       {width < 600
         ? icons.weAreInNewsLogo.mobile[lang](styles.title)
         : icons.weAreInNewsLogo.desktop[lang](styles.title)}

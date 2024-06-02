@@ -1,12 +1,8 @@
 .section {
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.9)
-  );
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
   background-blend-mode: normal, screen;
 
-  color: var(--black);
+  color: var(--dark);
   min-height: auto;
   padding: 160px var(--headerPaddingSide);
   padding-bottom: 0;

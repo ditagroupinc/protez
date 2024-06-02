@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useState, useCallback } from 'react'
+import { Fragment, useState } from 'react'
 
 import { Languages } from '@/types'
 import texts from '@/texts&svg'
@@ -14,9 +14,33 @@ import useOutsideClick from '@/hooks/useOutsideClick'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { BurgerButton } from '@/sections/Header/components/BurgerButton'
-import { icons } from '@/sections/Header/icons'
 
-import style from './style.module.scss'
+import styles from './styles.module.scss'
+
+import { AcademyIDs } from '../../consts'
+
+import Divider from '@/components/Divider'
+
+import Link from 'next/link'
+
+import { icons } from './icons'
+
+const AncorLinks = [
+  { id: AcademyIDs.Intro, text: 'Home' },
+  { id: AcademyIDs.OurGoals, text: 'Our Goals' },
+  { id: AcademyIDs.Academy, text: 'Academy' },
+  { id: AcademyIDs.OurResults, text: 'Our Results' },
+  { id: AcademyIDs.OurTeachers, text: 'Academy Teachers' },
+  { id: AcademyIDs.Chief, text: 'Chief' },
+  { id: AcademyIDs.TheoryLectures, text: 'Theory Lectures' },
+  { id: AcademyIDs.PracticeSessions, text: 'Practice Sessions' },
+  { id: AcademyIDs.PastAndUpcomingEvents, text: 'Events' },
+  { id: AcademyIDs.AcademyStudents, text: 'Students' },
+  { id: AcademyIDs.AmputeeRehab, text: 'Amputee Rehab' },
+  { id: AcademyIDs.SummitResults, text: 'Summit' },
+  { id: AcademyIDs.WeAreInNews, text: 'We Are In News' },
+  { id: AcademyIDs.SpecialThanksToAllOurPartners, text: 'Partners' },
+]
 
 const AcademyHeader = () => {
   const [headerIsOpened, setHeaderIsOpened] = useState(false)
@@ -25,14 +49,14 @@ const AcademyHeader = () => {
 
   const ref = useOutsideClick(() => setHeaderIsOpened(false))
 
-  const { lang, setLang } = useLanguage()
+  const { lang } = useLanguage()
 
-  const handleLanguageChange = useCallback(() => {
-    const langToSet = lang === Languages.English ? Languages.Ukrainian : Languages.English
+  // const handleLanguageChange = useCallback(() => {
+  //   const langToSet = lang === Languages.English ? Languages.Ukrainian : Languages.English
 
-    setLang(langToSet)
-    localStorage.setItem('lang', langToSet)
-  }, [lang, setLang])
+  //   setLang(langToSet)
+  //   localStorage.setItem('lang', langToSet)
+  // }, [lang, setLang])
 
   const toggleHeader = () => {
     setHeaderIsOpened(!headerIsOpened)
@@ -42,7 +66,7 @@ const AcademyHeader = () => {
 
   return (
     <Fragment>
-      <header className={style.academyHeader}>
+      <header className={styles.academyHeader}>
         <a href="#academyIntro">{icons.protezAcademyLogo()}</a>
         {width < 992 ? (
           <BurgerButton
@@ -52,7 +76,7 @@ const AcademyHeader = () => {
             close={headerIsOpened}
           />
         ) : (
-          <div className={style.btnGroup}>
+          <div className={styles.btnGroup}>
             <Button
               as="link"
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
@@ -60,26 +84,26 @@ const AcademyHeader = () => {
               variant="primary-blue"
               size="small"
               rel="noopener noreferrer"
-              className={style.applyBtn}
+              className={styles.applyBtn}
             >
               {texts.academyHeader.buttons.applyToAcademy[lang]}
             </Button>
             <Button as="link" href="/" variant="secondary-white" size="small">
               {texts.academyHeader.buttons.foundation[lang]}
             </Button>
-            <div className={style.languageWrapper}>
-              {icons.iconWorld(`${style.worldIcon}`)}
+            <div className={styles.languageWrapper}>
+              {icons.iconWorld(`${styles.worldIcon}`)}
               <button
-                onClick={handleLanguageChange}
+                // onClick={handleLanguageChange}
                 disabled={lang === Languages.English}
-                className={style.localeBtn}
+                className={styles.localeBtn}
               >
                 EN
               </button>
               <button
-                onClick={handleLanguageChange}
+                // onClick={handleLanguageChange}
                 disabled={lang === Languages.Ukrainian}
-                className={style.localeBtn}
+                className={styles.localeBtn}
               >
                 UA
               </button>
@@ -92,9 +116,61 @@ const AcademyHeader = () => {
             />
           </div>
         )}
-        <nav ref={ref} className={`${style.headerNav} ${headerIsOpened ? style.opened : ''}`}>
-          test
-        </nav>
+        <div className={`${styles.sideMenu} ${headerIsOpened ? styles.opened : ''}`}>
+          <div className={styles.protezFoundationLinkWrapper}>
+            <Link href={'/'} className={styles.protezFoundationLink}>
+              <span>Protez Foundation</span>
+              {icons.arrowUp(styles.arrowUp)}
+            </Link>
+          </div>
+          <div className={styles.navigationWrapper}>
+            <nav ref={ref} className={styles.navigation}>
+              <ul className={styles.ancorList}>
+                {AncorLinks.map(({ id, text }) => (
+                  <li key={id} className={styles.ancorItem}>
+                    <a href={`#${id}`} className={styles.ancorLink}>
+                      {text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              {/* test */}
+            </nav>
+          </div>
+          {/*  */}
+          <div className={styles.navLowerPart}>
+            <div className={styles.navLowerPartButtonsContainer}>
+              <Button
+                as="link"
+                href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+                target={'_blank'}
+                variant="primary-blue"
+                size="small"
+                rel="noopener noreferrer"
+                className={styles.applyBtn}
+              >
+                {texts.academyHeader.buttons.applyToAcademy[lang]}
+              </Button>
+              <Button as="link" href="/" variant="secondary-white" size="small">
+                {texts.academyHeader.buttons.foundation[lang]}
+              </Button>
+            </div>
+            <Divider className={styles.headerDivider} />
+            <span className={styles.menuText}>{texts.header.getInTouch[lang]}</span>
+
+            <a className={styles.phoneNumber} href="tel:+16127724777">
+              +1 612-772-4777
+            </a>
+          </div>
+          <div className={styles.languageButtonContainer}>
+            <button className={styles.languageButton}>
+              {icons.iconWorld(styles.languageButtonIcon)}
+              <span className={styles.languageButtonText}>English</span>
+            </button>
+          </div>
+          {/*  */}
+        </div>
       </header>
       {!isMobile && <SocialMediaLinks color="blue" className={headerIsOpened ? ' hidden' : ''} />}
     </Fragment>

@@ -10,6 +10,8 @@ import { icons } from './icons'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
+import { AcademyIDs } from '../../consts'
+
 const partnersIcons: string[] = [
   'directRelief.svg',
   'chaliceOfMercy.svg',
@@ -41,7 +43,7 @@ const SpecialThanksToAllOurPartners = () => {
 
   return (
     <AcademySection
-      id="specialThanksToAllOurPartners"
+      id={AcademyIDs.SpecialThanksToAllOurPartners}
       className={styles.specialThanksToAllOurPartners}
     >
       <div className={styles.buttonCell}>

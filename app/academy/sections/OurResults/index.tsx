@@ -10,6 +10,8 @@ import texts from '@/texts&svg'
 import { icons } from './icons'
 import style from './style.module.scss'
 
+import { AcademyIDs } from '../../consts'
+
 // =================================================================
 
 const academyResultsCount = [92, 26, 9, 2] as const
@@ -24,7 +26,7 @@ const OurResults = () => {
   const { lang } = useLanguage()
 
   return (
-    <AcademySection id="academyResults" className={style.academyResults}>
+    <AcademySection id={AcademyIDs.OurResults} className={style.academyResults}>
       <div className={style.resultsContent}>
         <div className={style.leftPart}>
           <div className={style.sectionTitle}>{icons.academyResultsTitle()}</div>

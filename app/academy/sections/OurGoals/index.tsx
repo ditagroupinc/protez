@@ -14,6 +14,8 @@ import texts from '@/texts&svg'
 import { icons } from './icons'
 import style from './style.module.scss'
 
+import { AcademyIDs } from '../../consts'
+
 const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
   const { lang } = useLanguage()
 
@@ -35,7 +37,7 @@ const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
   }, [lang])
 
   return (
-    <AcademySection ref={ref} id="academySection" className={style.academyGoalsSection}>
+    <AcademySection ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoalsSection}>
       <div className={style.academyGoalsContent}>
         <div className={style.sectionTitle}>{icons.goalLogo[lang]()}</div>
         {goalCards.map((item, index) => (

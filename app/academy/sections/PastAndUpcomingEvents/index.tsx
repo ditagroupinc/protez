@@ -14,6 +14,8 @@ import Slider from 'react-slick'
 import { forwardRef } from 'react'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
+import { AcademyIDs } from '../../consts'
+
 type Event = {
   date: string
   title: string
@@ -165,7 +167,11 @@ const PastAndUpcomingEvents = forwardRef<HTMLDivElement>(function (_, ref) {
   }
 
   return (
-    <AcademySection ref={ref} id="pastAndUpcomingEvents" className={styles.pastAndUpcomingEvents}>
+    <AcademySection
+      ref={ref}
+      id={AcademyIDs.PastAndUpcomingEvents}
+      className={styles.pastAndUpcomingEvents}
+    >
       <Image
         src="/events-background-Ukraine.png"
         alt="Ukrainian flag"

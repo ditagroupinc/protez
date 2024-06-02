@@ -14,6 +14,8 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import Slider from 'react-slick'
 
+import { AcademyIDs } from '../../consts'
+
 const practiceSessionsCards = [
   { image: '/practiceSessions/practice0.png', text: 'Preparatory stage' },
   { image: '/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
@@ -75,7 +77,7 @@ const PracticeSessions = () => {
   }
 
   return (
-    <AcademySection id="practiceSessions" className={styles.practiceSessions}>
+    <AcademySection id={AcademyIDs.PracticeSessions} className={styles.practiceSessions}>
       {icons.practiceSessionsLogo.desktop[lang](styles.title)}
 
       <TextAppearanceWrapper className={styles.sliderWrapper}>

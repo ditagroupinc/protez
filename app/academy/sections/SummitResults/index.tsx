@@ -11,13 +11,14 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import styles from './styles.module.scss'
 import { icons } from './icons'
+import { AcademyIDs } from '../../consts'
 
 const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
 
   return (
-    <AcademySection ref={ref} id="summitResults" className={styles.summitResults}>
+    <AcademySection ref={ref} id={AcademyIDs.SummitResults} className={styles.summitResults}>
       <div className={styles.resultInfo}>
         <div className={styles.left}>
           {width >= 600 && width <= 1024

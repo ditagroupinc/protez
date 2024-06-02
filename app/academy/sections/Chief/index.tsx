@@ -9,12 +9,14 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
+import { AcademyIDs } from '../../consts'
+
 const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
 
   return (
-    <AcademySection ref={ref} id="chief" className={styles.chief}>
+    <AcademySection ref={ref} id={AcademyIDs.Chief} className={styles.chief}>
       <div className={styles.chiefContent}>
         <div className={styles.left}>
           {width < 600

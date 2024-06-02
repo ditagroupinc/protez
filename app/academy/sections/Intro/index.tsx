@@ -14,6 +14,8 @@ import texts from '@/texts&svg'
 import { icons } from './icons'
 import style from './style.module.scss'
 
+import { AcademyIDs } from '../../consts'
+
 const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
   const { mobile, width } = useScreenModeAndSize()
@@ -21,7 +23,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
   const isMobile = width < 768 || mobile
 
   return (
-    <AcademySection ref={ref} id="academyIntro" className={style.academyIntro}>
+    <AcademySection ref={ref} id={AcademyIDs.Intro} className={style.academyIntro}>
       <div className={style.overlay}></div>
       <div className={style.academyContent}>
         <div className={style.leftPart}>
