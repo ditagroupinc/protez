@@ -5,7 +5,7 @@ import Link from 'next/link'
 import globalIcons from '@/texts&svg/icons'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-import TextAppearanceWrapper from '@/components/TextAppearanceWrapper'
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 const partnersLogos = [
   'antonovGroup.svg',

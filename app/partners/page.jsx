@@ -17,7 +17,7 @@ export default function Partners() {
       {desktop && <CompanyData black />}
       <SocialMediaLinks className={!desktop && 'hidden'} />
       <main>
-        <AllOurPartners visible />
+        <AllOurPartners />
       </main>
       <footer>
         <Copyright />
