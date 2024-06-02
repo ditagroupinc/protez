@@ -64,6 +64,15 @@
   .footerTop {
     padding-right: 60px;
     padding-left: 60px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footerTop {
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 }
 

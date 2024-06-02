@@ -1,5 +1,5 @@
 .events {
-  padding: 120px 0 100px 0;
+  padding: 120px 0 120px 0;
   position: relative;
   overflow: hidden;
   background-color: var(--dark);
@@ -235,6 +235,10 @@
 }
 
 @media (max-width: 1500px) {
+  .events {
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
   .sliderButton {
     &:nth-of-type(1) {
       left: 80px;
@@ -247,6 +251,10 @@
 }
 
 @media (max-width: 1024px) {
+  .events {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
   .title {
     margin-bottom: 40px;
   }
@@ -263,6 +271,10 @@
 }
 
 @media (max-width: 600px) {
+  .events {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
   .slickSlider {
     & :global(.slick-dots) {
       border-radius: 4px;

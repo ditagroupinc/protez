@@ -1,4 +1,6 @@
 .ourTeachers {
+  padding-top: 100px;
+  padding-bottom: 100px;
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   grid-template-rows: 524px 524px 524px;
@@ -109,6 +111,9 @@
 
 @media screen and (max-width: 1024px) {
   .ourTeachers {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: 160px 460px 460px 460px;
@@ -151,6 +156,9 @@
 /* phone */
 @media screen and (max-width: 600px) {
   .ourTeachers {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
     display: block;
   }
   .titleCell {

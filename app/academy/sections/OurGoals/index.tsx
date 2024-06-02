@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 
-import Button from '@/components/Button'
+import Link from 'next/link'
 
 import AcademySection from '@/components/AcademySection'
 
@@ -13,10 +13,13 @@ import texts from '@/texts&svg'
 import { icons } from './icons'
 import style from './style.module.scss'
 
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+
 import { AcademyIDs } from '../../consts'
 
 const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
   const { lang } = useLanguage()
+  const { width } = useScreenModeAndSize()
 
   const goalCards = [
     {
@@ -34,29 +37,25 @@ const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
   ]
 
   return (
-    <AcademySection ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoalsSection}>
+    <AcademySection ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoals}>
       <div className={style.academyGoalsContent}>
-        <div className={style.sectionTitle}>{icons.goalLogo[lang]()}</div>
+        <div className={style.linkCell}>
+          <Link href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6" target="blank" className={style.link}>
+            <p>{texts.academyHeader.buttons.applyToAcademy[lang]}</p>
+            {icons.arrowUp(style.icon)}
+          </Link>
+        </div>
+        <div className={style.titleCell}>
+          {width < 900
+            ? icons.goalLogo.mobile[lang](style.title)
+            : icons.goalLogo.desktop[lang](style.title)}
+        </div>
         {goalCards.map((item, index) => (
-          <TextAppearanceWrapper key={index} className={style.cardItem}>
-            <div className={style.academyGoalCard}>
-              {item.icon(style.cardIcon)}
-              <h5 className={style.cardDesc}>{item.text}</h5>
-            </div>
+          <TextAppearanceWrapper key={index} className={style.card}>
+            {item.icon(style.icon)}
+            <h5 className={style.cardDesc}>{item.text}</h5>
           </TextAppearanceWrapper>
         ))}
-        <Button
-          as="link"
-          href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-          target={'_blank'}
-          rel="noopener noreferrer"
-          variant="normal-blue"
-          size="normal"
-          className={style.applyBtn}
-        >
-          <p>{texts.academyHeader.buttons.applyToAcademy[lang]}</p>
-          {icons.arrowUp()}
-        </Button>
       </div>
     </AcademySection>
   )

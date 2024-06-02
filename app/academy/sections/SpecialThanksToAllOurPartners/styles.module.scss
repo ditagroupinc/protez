@@ -2,13 +2,14 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 368px 300px 300px;
-  padding-top: 40px;
-  margin-bottom: 120px;
 
   grid-template-areas:
     'button title title title directRelief'
     '. chaliceOfMercy ottobock paradise klmb '
     'monarch dita antonovGroup cozen blatchfold';
+
+  padding-top: 120px;
+  padding-bottom: 80px;
 }
 
 .partnerCard {
@@ -108,6 +109,9 @@
       '. . directRelief directRelief directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy'
       'ottobock ottobock ottobock paradise paradise paradise klmb klmb klmb monarch monarch monarch'
       'dita dita dita antonovGroup antonovGroup antonovGroup cozen cozen cozen blatchfold blatchfold blatchfold';
+
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
 
   .partnerCard:nth-child(3) {
@@ -144,6 +148,9 @@
       'directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy'
       'ottobock ottobock paradise paradise klmb klmb'
       'monarch monarch dita dita button button';
+
+    padding-top: 120px;
+    padding-bottom: 60px;
   }
 
   .buttonCell {
@@ -203,6 +210,9 @@
       'paradise paradise paradise paradise paradise paradise paradise paradise paradise paradise'
       'klmb klmb klmb klmb monarch monarch monarch monarch monarch monarch'
       'dita dita dita dita dita button button button button button';
+
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   .button {

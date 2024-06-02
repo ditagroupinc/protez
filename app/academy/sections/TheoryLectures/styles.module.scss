@@ -3,8 +3,8 @@
   grid-template-columns: 340fr 400fr 400fr 440fr;
   grid-template-rows: 340px 320px 320px;
   align-items: flex-end;
-  padding-top: 40px;
-  margin-bottom: 80px;
+  padding-top: 120px;
+  padding-bottom: 60px;
 
   & > * {
     display: flex;
@@ -104,6 +104,9 @@
 
 @media screen and (max-width: 1366px) {
   .theoryLectures {
+    padding-top: 100px;
+    padding-bottom: 60px;
+
     grid-template-columns: 260fr 300fr 300fr 350fr;
     grid-template-rows: 340px 300px 300px;
   }
@@ -114,6 +117,9 @@
 
 @media screen and (max-width: 1024px) {
   .theoryLectures {
+    padding-top: 120px;
+    padding-bottom: 60px;
+
     grid-template-columns: repeat(24, 1fr);
     grid-template-rows: 340px 300px 300px;
   }
@@ -185,6 +191,9 @@
   }
 
   .theoryLectures {
+    padding-top: 60px;
+    padding-bottom: 20px;
+
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, auto);
     & > * {

@@ -126,6 +126,10 @@
 }
 
 @media (max-width: 1024px) {
+  .academyStudents {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
   .slickSlider :global(.slick-track) {
     height: 620px;
   }

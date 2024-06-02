@@ -228,6 +228,10 @@
 }
 
 @media (max-width: 1024px) {
+  .weAreInNews {
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
   .slickSlider :global(.slick-track) {
     height: 850px;
   }
