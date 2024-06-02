@@ -12,6 +12,10 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { AcademyIDs } from '../../consts'
 
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+
+import Link from 'next/link'
+
 const partnersIcons: string[] = [
   'directRelief.svg',
   'chaliceOfMercy.svg',
@@ -19,14 +23,14 @@ const partnersIcons: string[] = [
   'paradise.svg',
   'klmb.svg',
   'monarch.svg',
-  'dita.svg',
+  // 'dita.svg',
   'antonovGroup.svg',
   'cozen.svg',
   'blatchfold.svg',
 ]
 
 const PartnerCard = ({ icon }: { icon: string }): React.ReactElement => (
-  <div className={styles.partnerCard}>
+  <TextAppearanceWrapper className={styles.partnerCard}>
     <Image
       src={`/partnersLogos/${icon}`}
       alt={icon}
@@ -34,7 +38,7 @@ const PartnerCard = ({ icon }: { icon: string }): React.ReactElement => (
       height={230}
       className={styles.partnerLogo}
     />
-  </div>
+  </TextAppearanceWrapper>
 )
 
 const SpecialThanksToAllOurPartners = () => {
@@ -61,6 +65,18 @@ const SpecialThanksToAllOurPartners = () => {
       {partnersIcons.map((icon, index) => (
         <PartnerCard icon={icon} key={index} />
       ))}
+      {/* <TextAppearanceWrapper>
+        <Link
+          href="https://dita-group.com/"
+          target="blank"
+          className={`${style.partnerCard} ${dita && style.dita}`}
+        >
+          {globalIcons.ditaLogo(`${style.partnerLogo}`)}
+        </Link>
+      </TextAppearanceWrapper> */}
+      <Link href="https://dita-group.com/" target="blank" className={styles.partnerCard}>
+        {icons.ditaLogo(styles.ditaLogo)}
+      </Link>
     </AcademySection>
   )
 }

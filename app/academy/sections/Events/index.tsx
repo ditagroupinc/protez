@@ -25,7 +25,7 @@ type Event = {
   upcoming?: boolean
 }
 
-const pastAndUpcomingEventsCards: Event[] = [
+const eventsCards: Event[] = [
   {
     link: '/',
     photo: '/academyEvents/academyEvent0.png',
@@ -79,12 +79,24 @@ const modifyAndSortEvents = (events: Event[]): Event[] => {
     event.upcoming = eventDate > now
   })
 
-  events.sort((a, b) => {
-    const dateA = new Date(a.date).getTime()
-    const dateB = new Date(b.date).getTime()
+  // events.sort((a, b) => {
+  //   const dateA = new Date(a.date).getTime()
+  //   const dateB = new Date(b.date).getTime()
 
-    return dateA - dateB
-  })
+  //   return dateA - dateB
+  // })
+
+  const upcomingEvents = events.filter(event => new Date(event.date) > now)
+  const pastEvents = events.filter(event => new Date(event.date) <= now)
+
+  // Sort each category by date
+  const sortByDate = (a: Event, b: Event) => new Date(a.date).getTime() - new Date(b.date).getTime()
+
+  upcomingEvents.sort(sortByDate)
+  pastEvents.sort(sortByDate)
+
+  // Concatenate the sorted arrays
+  const sortedEvents = [...upcomingEvents, ...pastEvents]
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
@@ -94,16 +106,16 @@ const modifyAndSortEvents = (events: Event[]): Event[] => {
     return `${day}/${month}`
   }
 
-  const eventsWithAdjustedData = events.map(event => {
+  const eventsWithAdjustedData = sortedEvents.map(event => {
     return { ...event, date: formatDate(event.date) }
   })
 
   return eventsWithAdjustedData
 }
 
-const sortedEvents = modifyAndSortEvents(pastAndUpcomingEventsCards)
+const sortedEvents = modifyAndSortEvents(eventsCards)
 
-const PastAndUpcomingEvents = forwardRef<HTMLDivElement>(function (_, ref) {
+const Events = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
@@ -167,11 +179,7 @@ const PastAndUpcomingEvents = forwardRef<HTMLDivElement>(function (_, ref) {
   }
 
   return (
-    <AcademySection
-      ref={ref}
-      id={AcademyIDs.PastAndUpcomingEvents}
-      className={styles.pastAndUpcomingEvents}
-    >
+    <AcademySection ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={styles.events}>
       <Image
         src="/events-background-Ukraine.png"
         alt="Ukrainian flag"
@@ -181,8 +189,8 @@ const PastAndUpcomingEvents = forwardRef<HTMLDivElement>(function (_, ref) {
       />
       <div className={styles.titleWrapper}>
         {width < 1024
-          ? icons.pastAndUpcomingEventsLogo.mobile[lang](styles.title)
-          : icons.pastAndUpcomingEventsLogo.desktop[lang](styles.title)}
+          ? icons.eventsLogo.mobile[lang](styles.title)
+          : icons.eventsLogo.desktop[lang](styles.title)}
       </div>
 
       <TextAppearanceWrapper className={styles.sliderWrapper}>
@@ -260,4 +268,4 @@ const PastAndUpcomingEvents = forwardRef<HTMLDivElement>(function (_, ref) {
   )
 })
 
-export default PastAndUpcomingEvents
+export default Events

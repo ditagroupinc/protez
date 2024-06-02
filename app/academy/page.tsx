@@ -33,7 +33,7 @@ import PracticeSessions from './sections/PracticeSessions'
 import AcademyStudents from './sections/AcademyStudents'
 import WeAreInNews from './sections/WeAreInNews'
 
-import PastAndUpcomingEvents from './sections/PastAndUpcomingEvents'
+import Events from './sections/Events'
 
 const hidePage = false
 
@@ -58,7 +58,7 @@ const hidePage = false
 export default function AcademyPage() {
   const [refIntro, inViewIntro] = useInView({ triggerOnce: false })
   const [refChief, inViewChief] = useInView({ triggerOnce: false })
-  const [refPastAndUpcomingEvents, inViewPastAndUpcomingEvents] = useInView({ triggerOnce: false })
+  const [refEvents, inViewEvents] = useInView({ triggerOnce: false })
   const [refSummit, inViewSummit] = useInView({ triggerOnce: false })
   const [refWeAreInNews, inViewWeAreInNews] = useInView({ triggerOnce: false })
   const [refThankYou, inViewThankYou] = useInView({ triggerOnce: false })
@@ -66,7 +66,7 @@ export default function AcademyPage() {
   const showBlackBackToTopButton =
     !inViewIntro &&
     !inViewChief &&
-    !inViewPastAndUpcomingEvents &&
+    !inViewEvents &&
     !inViewSummit &&
     !inViewWeAreInNews &&
     !inViewThankYou
@@ -90,7 +90,7 @@ export default function AcademyPage() {
           <Chief ref={refChief} />
           <TheoryLectures />
           <PracticeSessions />
-          <PastAndUpcomingEvents ref={refPastAndUpcomingEvents} />
+          <Events ref={refEvents} />
           <AcademyStudents />
           <AmputeeRehab />
           <SummitResults ref={refSummit} />

@@ -1,3 +1,9 @@
+.footer {
+  & .divider {
+    background-color: var(--white);
+  }
+}
+
 .footerTop {
   background-color: var(--blue);
   color: var(--white);
@@ -37,10 +43,6 @@
 .descAddress {
   font-weight: 400;
   line-height: 22px;
-}
-
-.divider {
-  background-color: var(--white);
 }
 
 .descTitle {

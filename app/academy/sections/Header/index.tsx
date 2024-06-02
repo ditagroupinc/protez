@@ -1,6 +1,6 @@
 'use client'
 
-import { Fragment, useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import { Languages } from '@/types'
 import texts from '@/texts&svg'
@@ -18,8 +18,6 @@ import { BurgerButton } from '@/sections/Header/components/BurgerButton'
 import styles from './styles.module.scss'
 
 import { AcademyIDs } from '../../consts'
-
-import Divider from '@/components/Divider'
 
 import Link from 'next/link'
 
@@ -45,7 +43,7 @@ const AncorLinks = [
 const AcademyHeader = () => {
   const [headerIsOpened, setHeaderIsOpened] = useState(false)
 
-  const { width, mobile } = useScreenModeAndSize()
+  const { width } = useScreenModeAndSize()
 
   const ref = useOutsideClick(() => setHeaderIsOpened(false))
 
@@ -58,14 +56,33 @@ const AcademyHeader = () => {
   //   localStorage.setItem('lang', langToSet)
   // }, [lang, setLang])
 
+  const isMobile = width < 768
+
+  useEffect(() => {
+    if (headerIsOpened && isMobile) {
+      document.body.classList.add('no-scroll')
+      document.documentElement.classList.add('no-scroll')
+    } else {
+      document.body.classList.remove('no-scroll')
+      document.documentElement.classList.remove('no-scroll')
+    }
+
+    return () => {
+      document.body.classList.remove('no-scroll')
+      document.documentElement.classList.remove('no-scroll')
+    }
+  }, [headerIsOpened])
+
   const toggleHeader = () => {
     setHeaderIsOpened(!headerIsOpened)
   }
 
-  const isMobile = mobile || width < 768
+  const closeHeaderOnAncorClick = () => {
+    if (isMobile) setHeaderIsOpened(false)
+  }
 
   return (
-    <Fragment>
+    <>
       <header className={styles.academyHeader}>
         <a href="#academyIntro">{icons.protezAcademyLogo()}</a>
         {width < 992 ? (
@@ -120,27 +137,25 @@ const AcademyHeader = () => {
           <div className={styles.protezFoundationLinkWrapper}>
             <Link href={'/'} className={styles.protezFoundationLink}>
               <span>Protez Foundation</span>
-              {icons.arrowUp(styles.arrowUp)}
+              {icons.arrowUp(styles.icon)}
             </Link>
           </div>
           <div className={styles.navigationWrapper}>
             <nav ref={ref} className={styles.navigation}>
               <ul className={styles.ancorList}>
                 {AncorLinks.map(({ id, text }) => (
-                  <li key={id} className={styles.ancorItem}>
+                  <li key={id} className={styles.ancorItem} onClick={closeHeaderOnAncorClick}>
                     <a href={`#${id}`} className={styles.ancorLink}>
                       {text}
                     </a>
                   </li>
                 ))}
               </ul>
-
-              {/* test */}
             </nav>
           </div>
-          {/*  */}
-          <div className={styles.navLowerPart}>
-            <div className={styles.navLowerPartButtonsContainer}>
+
+          <div className={styles.lowerPart}>
+            <div className={styles.lowerPartButtonsContainer}>
               <Button
                 as="link"
                 href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
@@ -148,32 +163,38 @@ const AcademyHeader = () => {
                 variant="primary-blue"
                 size="small"
                 rel="noopener noreferrer"
-                className={styles.applyBtn}
+                className={styles.lowerPartButton}
               >
                 {texts.academyHeader.buttons.applyToAcademy[lang]}
               </Button>
-              <Button as="link" href="/" variant="secondary-white" size="small">
-                {texts.academyHeader.buttons.foundation[lang]}
+              <Button
+                as="link"
+                href="/"
+                variant="secondary-black"
+                size="small"
+                className={styles.lowerPartButton}
+              >
+                {texts.academyHeader.buttons.supportAcademy[lang]}
+                {icons.arrowUp(`${styles.icon} ${styles.black}`)}
               </Button>
             </div>
-            <Divider className={styles.headerDivider} />
-            <span className={styles.menuText}>{texts.header.getInTouch[lang]}</span>
 
             <a className={styles.phoneNumber} href="tel:+16127724777">
-              +1 612-772-4777
+              {icons.call(styles.icon)}
+              <span> +1 612-772-4777</span>
             </a>
+
+            <div className={styles.languageButtonContainer}>
+              <button className={styles.languageButton}>
+                {icons.iconWorld(styles.icon)}
+                <span>English</span>
+              </button>
+            </div>
           </div>
-          <div className={styles.languageButtonContainer}>
-            <button className={styles.languageButton}>
-              {icons.iconWorld(styles.languageButtonIcon)}
-              <span className={styles.languageButtonText}>English</span>
-            </button>
-          </div>
-          {/*  */}
         </div>
       </header>
       {!isMobile && <SocialMediaLinks color="blue" className={headerIsOpened ? ' hidden' : ''} />}
-    </Fragment>
+    </>
   )
 }
 

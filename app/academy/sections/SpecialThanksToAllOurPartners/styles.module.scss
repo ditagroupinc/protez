@@ -71,20 +71,31 @@
 }
 
 .partnerCard:nth-child(9) {
-  grid-area: dita;
-}
-
-.partnerCard:nth-child(10) {
   grid-area: antonovGroup;
 }
 
-.partnerCard:nth-child(11) {
+.partnerCard:nth-child(10) {
   grid-area: cozen;
 }
 
-.partnerCard:nth-child(12) {
+.partnerCard:nth-child(11) {
   grid-area: blatchfold;
   border-right: var(--greyBorder);
+}
+
+.partnerCard:nth-child(12) {
+  grid-area: dita;
+}
+
+.ditaLogo {
+  max-width: 100%;
+
+  & rect:global(.purpleFrame) {
+    transform: translate(344.078px, 21.5918px) !important;
+  }
+  &:hover > rect:global(.purpleFrame) {
+    fill: #3f29b0;
+  }
 }
 
 @media screen and (max-width: 1366px) {
@@ -100,25 +111,25 @@
   }
 
   .partnerCard:nth-child(3) {
-    grid-area: directRelief;
+    // grid-area: directRelief;
     border-right: none;
     border-bottom: none;
   }
 
   .partnerCard:nth-child(4) {
-    grid-area: chaliceOfMercy;
+    // grid-area: chaliceOfMercy;
     border-right: var(--greyBorder);
     border-bottom: none;
   }
 
   .partnerCard:nth-child(7) {
-    grid-area: klmb;
+    // grid-area: klmb;
     border-right: none;
     border-top: var(--greyBorder);
   }
 
   .partnerCard:nth-child(8) {
-    grid-area: monarch;
+    // grid-area: monarch;
     border-right: var(--greyBorder);
   }
 }
@@ -142,39 +153,38 @@
   }
 
   .partnerCard:nth-child(3) {
-    grid-area: directRelief;
+    // grid-area: directRelief;
     border-right: none;
   }
 
   .partnerCard:nth-child(7) {
-    grid-area: klmb;
+    // grid-area: klmb;
     border-right: var(--greyBorder);
   }
 
   .partnerCard:nth-child(8) {
-    grid-area: monarch;
+    // grid-area: monarch;
     border-top: none;
     border-right: none;
   }
 
   .partnerCard:nth-child(9) {
-    grid-area: dita;
-    border-right: var(--greyBorder);
+    // grid-area: antonovGroup;
+    display: none;
   }
 
   .partnerCard:nth-child(10) {
-    grid-area: antonovGroup;
+    // grid-area: cozen;
     display: none;
   }
 
   .partnerCard:nth-child(11) {
-    grid-area: cozen;
+    // grid-area: blatchfold;
     display: none;
   }
 
   .partnerCard:nth-child(12) {
-    grid-area: blatchfold;
-    display: none;
+    // grid-area: dita;
     border-right: var(--greyBorder);
   }
 }
@@ -201,34 +211,40 @@
   }
 
   .partnerCard:nth-child(3) {
-    grid-area: directRelief;
+    // grid-area: directRelief;
     border-right: var(--greyBorder);
   }
 
   .partnerCard:nth-child(4) {
-    grid-area: chaliceOfMercy;
+    // grid-area: chaliceOfMercy;
     border-right: none;
   }
 
   .partnerCard:nth-child(5) {
-    grid-area: ottobock;
+    // grid-area: ottobock;
     border-bottom: none;
     border-right: var(--greyBorder);
   }
 
   .partnerCard:nth-child(6) {
-    grid-area: paradise;
+    // grid-area: paradise;
     border-right: var(--greyBorder);
   }
 
   .partnerCard:nth-child(7) {
-    grid-area: klmb;
+    // grid-area: klmb;
     border-right: none;
     border-top: none;
   }
 
   .partnerCard:nth-child(8) {
-    grid-area: monarch;
+    // grid-area: monarch;
     border-right: var(--greyBorder);
+  }
+
+  .ditaLogo {
+    & rect:global(.purpleFrame) {
+      fill: #3f29b0;
+    }
   }
 }

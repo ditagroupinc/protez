@@ -127,7 +127,10 @@ body::-webkit-scrollbar {
     /* transition-delay: 0.5s; */
   }
 }
-/* } */
+
+.no-scroll {
+  overflow: hidden;
+}
 
 @media screen and (min-width: 1366px) {
   .h1 {

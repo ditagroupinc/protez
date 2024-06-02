@@ -16,10 +16,10 @@ const TheoryLectures = () => {
 
   return (
     <AcademySection id={AcademyIDs.TheoryLectures} className={styles.theoryLectures}>
-      <div className={styles.grid1x1}>
+      <TextAppearanceWrapper className={styles.grid1x1}>
         <span className={styles.number}>/02</span>
         <p className={styles.desc}>Examples of post-operative care</p>
-      </div>
+      </TextAppearanceWrapper>
       <div className={styles.gridTitle}>
         {width < 600
           ? icons.theoryLecturesLogo.mobile[lang](styles.sectionTitle)
@@ -39,14 +39,14 @@ const TheoryLectures = () => {
         <span className={styles.number}>/04</span>
         <p className={styles.desc}>Different levels of upper and lower limb amputations</p>
       </TextAppearanceWrapper>
-      <TextAppearanceWrapper className={styles.gridButton}>
+      <div className={styles.gridButton}>
         <Button as={'link'} variant="normal-blue" href={'/'} className={styles.applyBtn}>
           Apply to
           <br />
           Academy
           {icons.arrowUp()}
         </Button>
-      </TextAppearanceWrapper>
+      </div>
       <TextAppearanceWrapper className={styles.grid3x3}>
         <span className={styles.number}>/05</span>
         <p className={styles.desc}>Overview of cadaver anatomy</p>

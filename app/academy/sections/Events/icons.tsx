@@ -1,4 +1,4 @@
-const pastAndUpcomingEventsTitleDesktop = (className?: string) => (
+const eventsTitleDesktop = (className?: string) => (
   <svg
     width="920"
     height="150"
@@ -13,7 +13,7 @@ const pastAndUpcomingEventsTitleDesktop = (className?: string) => (
     />
   </svg>
 )
-const pastAndUpcomingEventsTitleMobile = (className?: string) => (
+const eventsTitleMobile = (className?: string) => (
   <svg
     width="281"
     height="143"
@@ -94,14 +94,14 @@ const arrowTop = (className?: string) => (
 )
 
 export const icons = {
-  pastAndUpcomingEventsLogo: {
+  eventsLogo: {
     desktop: {
-      english: pastAndUpcomingEventsTitleDesktop,
-      ukrainian: pastAndUpcomingEventsTitleDesktop,
+      english: eventsTitleDesktop,
+      ukrainian: eventsTitleDesktop,
     },
     mobile: {
-      english: pastAndUpcomingEventsTitleMobile,
-      ukrainian: pastAndUpcomingEventsTitleMobile,
+      english: eventsTitleMobile,
+      ukrainian: eventsTitleMobile,
     },
   },
   arrowRight,

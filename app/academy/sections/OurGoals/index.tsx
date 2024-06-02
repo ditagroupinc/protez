@@ -1,11 +1,10 @@
-import { forwardRef, useMemo } from 'react'
+import { forwardRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 
 import Button from '@/components/Button'
 
 import AcademySection from '@/components/AcademySection'
-import AcademyGoalCard from './components/AcademyGoalCard'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
@@ -19,22 +18,20 @@ import { AcademyIDs } from '../../consts'
 const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
   const { lang } = useLanguage()
 
-  const goalCards = useMemo<Array<{ icon: JSX.Element; text: string }>>(() => {
-    return [
-      {
-        icon: icons.iconDisabledPerson(`${style.cardIcon}`),
-        text: texts.academyGoals.goals1[lang],
-      },
-      {
-        icon: icons.iconHand(`${style.cardIcon}`),
-        text: texts.academyGoals.goals2[lang],
-      },
-      {
-        icon: icons.iconHelpHeart(`${style.cardIcon}`),
-        text: texts.academyGoals.goals3[lang],
-      },
-    ]
-  }, [lang])
+  const goalCards = [
+    {
+      icon: icons.iconDisabledPerson,
+      text: texts.academyGoals.goals1[lang],
+    },
+    {
+      icon: icons.iconHand,
+      text: texts.academyGoals.goals2[lang],
+    },
+    {
+      icon: icons.iconHelpHeart,
+      text: texts.academyGoals.goals3[lang],
+    },
+  ]
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoalsSection}>
@@ -42,7 +39,10 @@ const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
         <div className={style.sectionTitle}>{icons.goalLogo[lang]()}</div>
         {goalCards.map((item, index) => (
           <TextAppearanceWrapper key={index} className={style.cardItem}>
-            <AcademyGoalCard image={item.icon} desc={item.text} />
+            <div className={style.academyGoalCard}>
+              {item.icon(style.cardIcon)}
+              <h5 className={style.cardDesc}>{item.text}</h5>
+            </div>
           </TextAppearanceWrapper>
         ))}
         <Button

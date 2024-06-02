@@ -1,4 +1,4 @@
-.pastAndUpcomingEvents {
+.events {
   padding: 120px 0 100px 0;
   position: relative;
   overflow: hidden;
@@ -232,9 +232,6 @@
   align-items: center;
 
   margin-left: auto;
-}
-
-@media (min-width: 600px) {
 }
 
 @media (max-width: 1500px) {

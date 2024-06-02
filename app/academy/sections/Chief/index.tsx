@@ -36,17 +36,29 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
           </TextAppearanceWrapper>
           <ul className={styles.socialLinkWrapper}>
             <li>
-              <a href="/" className={styles.socialLink}>
-                {icons.iconTwitter()}
+              <a
+                href="https://www.instagram.com/yakovgradinar"
+                target="blank"
+                className={styles.socialLink}
+              >
+                {icons.iconInstagram()}
               </a>
             </li>
             <li>
-              <a href="/" className={styles.socialLink}>
+              <a
+                href="https://www.linkedin.com/in/yakov-gradinar-6aba10147"
+                target="blank"
+                className={styles.socialLink}
+              >
                 {icons.iconLinkedin()}
               </a>
             </li>
             <li>
-              <a href="/" className={styles.socialLink}>
+              <a
+                href="https://www.facebook.com/yakovjacob.gradinar"
+                target="blank"
+                className={styles.socialLink}
+              >
                 {icons.iconFacebook()}
               </a>
             </li>
