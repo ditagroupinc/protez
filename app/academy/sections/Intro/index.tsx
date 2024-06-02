@@ -7,7 +7,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import Button from '@/components/Button'
 
 import AcademySection from '@/components/AcademySection'
-import AcademyCard from '@/sections/academy/Intro/components/AcademyCard'
+import AcademyCard from './components/AcademyCard'
 
 import texts from '@/texts&svg'
 

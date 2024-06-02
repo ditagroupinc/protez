@@ -32,6 +32,13 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src",
+    ".next/types/**/*.ts",
+    "app/academy/sections"
+  ],
   "exclude": ["node_modules"]
 }

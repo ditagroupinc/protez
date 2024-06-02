@@ -5,7 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import Button from '@/components/Button'
 
 import AcademySection from '@/components/AcademySection'
-import AcademyGoalCard from '@/sections/academy/OurGoals/components/AcademyGoalCard'
+import AcademyGoalCard from './components/AcademyGoalCard'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 

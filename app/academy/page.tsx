@@ -9,33 +9,31 @@ import BackToTopButton from '@/components/BackToTopButton'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademyHeader from '@/sections/academy/Header'
-import AcademyIntro from '@/sections/academy/Intro'
+import AcademyHeader from './sections/Header'
+import AcademyIntro from './sections/Intro'
 
 // =================================================================
 // LAZY LOADING IMPORT
 
-const OurGoals = lazy(() => import('@/sections/academy/OurGoals'))
-const OurResults = lazy(() => import('@/sections/academy/OurResults'))
-const TheoryLectures = lazy(() => import('@/sections/academy/TheoryLectures'))
-const SpecialThanksToAllOurPartners = lazy(
-  () => import('@/sections/academy/SpecialThanksToAllOurPartners')
-)
+const OurGoals = lazy(() => import('./sections/OurGoals'))
+const OurResults = lazy(() => import('./sections/OurResults'))
+const TheoryLectures = lazy(() => import('./sections/TheoryLectures'))
+const SpecialThanksToAllOurPartners = lazy(() => import('./sections/SpecialThanksToAllOurPartners'))
 
 // =================================================================
 
 import style from './style.module.scss'
-import OurTeachers from '@/sections/academy/OurTeachers'
-import Footer from '@/sections/academy/Footer'
-import Chief from '@/sections/academy/Chief'
-import AmputeeRehab from '@/sections/academy/AmputeeRehab'
-import SummitResults from '@/sections/academy/SummitResults'
-import Academy from '@/sections/academy/Academy'
-import PracticeSessions from '@/sections/academy/PracticeSessions'
-import AcademyStudents from '@/sections/academy/AcademyStudents'
-import WeAreInNews from '@/sections/academy/WeAreInNews'
+import OurTeachers from './sections/OurTeachers'
+import Footer from './sections/Footer'
+import Chief from './sections/Chief'
+import AmputeeRehab from './sections/AmputeeRehab'
+import SummitResults from './sections/SummitResults'
+import Academy from './sections/Academy'
+import PracticeSessions from './sections/PracticeSessions'
+import AcademyStudents from './sections/AcademyStudents'
+import WeAreInNews from './sections/WeAreInNews'
 
-import PastAndUpcomingEvents from '@/sections/academy/PastAndUpcomingEvents'
+import PastAndUpcomingEvents from './sections/PastAndUpcomingEvents'
 
 const hidePage = false
 
