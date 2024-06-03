@@ -64,7 +64,8 @@ const Header = ({ notMainPage }: { notMainPage?: boolean }) => {
         ) : (
           <div className={`${style.headerActionLang} ${headerIsOpened && style.transparent}`}>
             <a
-              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              // href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              href="/academy"
               target="blank"
               className={`${style.protezAcademy}`}
             >
