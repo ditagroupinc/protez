@@ -3,7 +3,7 @@
 import { Suspense, lazy } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-import { notFound } from 'next/navigation'
+// import { notFound } from 'next/navigation'
 
 import BackToTopButton from '@/components/BackToTopButton'
 
@@ -12,48 +12,22 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import AcademyHeader from './sections/Header'
 import AcademyIntro from './sections/Intro'
 
-// =================================================================
-// LAZY LOADING IMPORT
-
 const OurGoals = lazy(() => import('./sections/OurGoals'))
 const OurResults = lazy(() => import('./sections/OurResults'))
 const TheoryLectures = lazy(() => import('./sections/TheoryLectures'))
 const SpecialThanksToAllOurPartners = lazy(() => import('./sections/SpecialThanksToAllOurPartners'))
-
-// =================================================================
+const OurTeachers = lazy(() => import('./sections/OurTeachers'))
+const Footer = lazy(() => import('./sections/Footer'))
+const Chief = lazy(() => import('./sections/Chief'))
+const AmputeeRehab = lazy(() => import('./sections/AmputeeRehab'))
+const SummitResults = lazy(() => import('./sections/SummitResults'))
+const Academy = lazy(() => import('./sections/Academy'))
+const PracticeSessions = lazy(() => import('./sections/PracticeSessions'))
+const AcademyStudents = lazy(() => import('./sections/AcademyStudents'))
+const WeAreInNews = lazy(() => import('./sections/WeAreInNews'))
+const Events = lazy(() => import('./sections/Events'))
 
 import style from './style.module.scss'
-import OurTeachers from './sections/OurTeachers'
-import Footer from './sections/Footer'
-import Chief from './sections/Chief'
-import AmputeeRehab from './sections/AmputeeRehab'
-import SummitResults from './sections/SummitResults'
-import Academy from './sections/Academy'
-import PracticeSessions from './sections/PracticeSessions'
-import AcademyStudents from './sections/AcademyStudents'
-import WeAreInNews from './sections/WeAreInNews'
-
-import Events from './sections/Events'
-
-const hidePage = false
-
-// sections:
-//todo AcademyHeader
-//* Welcome to the Academy
-//* Our Goals
-//* slide Protez Academy
-//* Our Results
-//* Academy Teachers
-//* Yakov Gradinar
-//* Theory Lectures
-//* slide Practice Sessions
-// slide Past and Upcoming Events
-// * slide Academy Students
-//* Amputee rehab
-//* Summit Results
-//* slide We're in the News
-//* All our Partners
-//* Thank you
 
 export default function AcademyPage() {
   const [refIntro, inViewIntro] = useInView({ triggerOnce: false })
@@ -74,9 +48,7 @@ export default function AcademyPage() {
   const { mobile, width } = useScreenModeAndSize()
   const isMobile = mobile || width < 768
 
-  return hidePage ? (
-    notFound()
-  ) : (
+  return (
     <>
       <AcademyHeader />
       <main className={style.main}>
