@@ -30,8 +30,10 @@ export default function TeacherCard({
 
   return (
     <TextAppearanceWrapper className={`${style.teamCard} ${className && className}`}>
+      {/* TODO: remove after review
+       */}
       <Image
-        src={`/teachers/${photo}`}
+        src={`/protez/teachers/${photo}`}
         object-fit="contain"
         alt={photo}
         width={345}

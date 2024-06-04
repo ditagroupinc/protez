@@ -16,13 +16,15 @@ import Slider from 'react-slick'
 
 import { AcademyIDs } from '../../consts'
 
+// TODO: remove after review
+
 const practiceSessionsCards = [
-  { image: '/practiceSessions/practice0.png', text: 'Preparatory stage' },
-  { image: '/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
-  { image: '/practiceSessions/practice2.png', text: 'Casting and measuring the prosthesis' },
-  { image: '/practiceSessions/practice0.png', text: 'Preparatory stage' },
-  { image: '/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
-  { image: '/practiceSessions/practice2.png', text: 'Casting and measuring the prosthesis' },
+  { image: '/protez/practiceSessions/practice0.png', text: 'Preparatory stage' },
+  { image: '/protez/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
+  { image: '/protez/practiceSessions/practice2.png', text: 'Casting and measuring the prosthesis' },
+  { image: '/protez/practiceSessions/practice0.png', text: 'Preparatory stage' },
+  { image: '/protez/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
+  { image: '/protez/practiceSessions/practice2.png', text: 'Casting and measuring the prosthesis' },
 ]
 
 const PracticeSessions = () => {

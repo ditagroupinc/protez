@@ -24,46 +24,47 @@ type Event = {
   location: string
   upcoming?: boolean
 }
+// TODO: remove after review
 
 const eventsCards: Event[] = [
   {
     link: '/',
-    photo: '/academyEvents/academyEvent0.png',
+    photo: '/protez/academyEvents/academyEvent0.png',
     date: '2025-02-01',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
   },
   {
     link: '/',
-    photo: '/academyEvents/academyEvent0.png',
+    photo: '/protez/academyEvents/academyEvent0.png',
     date: '2025-06-21',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
   },
   {
     link: '/',
-    photo: '/academyEvents/academyEvent0.png',
+    photo: '/protez/academyEvents/academyEvent0.png',
     date: '2025-06-21',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
   },
   {
     link: '/',
-    photo: '/academyEvents/academyEvent0.png',
+    photo: '/protez/academyEvents/academyEvent0.png',
     date: '2021-02-01',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
   },
   {
     link: '/',
-    photo: '/academyEvents/academyEvent0.png',
+    photo: '/protez/academyEvents/academyEvent0.png',
     date: '2021-12-03',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
   },
   {
     link: '/',
-    photo: '/academyEvents/academyEvent0.png',
+    photo: '/protez/academyEvents/academyEvent0.png',
     date: '2021-12-03',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
@@ -180,8 +181,10 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={styles.events}>
+      {/* TODO: remove after review
+       */}
       <Image
-        src="/events-background-Ukraine.png"
+        src="/protez/events-background-Ukraine.png"
         alt="Ukrainian flag"
         width={1920}
         height={1080}

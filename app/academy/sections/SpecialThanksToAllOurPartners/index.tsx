@@ -32,7 +32,9 @@ const partnersIcons: string[] = [
 const PartnerCard = ({ icon }: { icon: string }): React.ReactElement => (
   <TextAppearanceWrapper className={styles.partnerCard}>
     <Image
-      src={`/partnersLogos/${icon}`}
+      // TODO: remove after review
+
+      src={`/protez/partnersLogos/${icon}`}
       alt={icon}
       width={300}
       height={230}

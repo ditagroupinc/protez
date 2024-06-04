@@ -49,7 +49,9 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
 
       <div className={styles.playerContent}>
         <Image
-          src="/summit.jpg"
+          // TODO: remove after review
+
+          src="/protez/summit.jpg"
           alt="summit"
           width={1584}
           height={800}

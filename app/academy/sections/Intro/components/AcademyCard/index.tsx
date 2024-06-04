@@ -20,7 +20,9 @@ const AcademyCard = memo(
     return (
       <TextAppearanceWrapper className={`${style.academyCard} ${className}`}>
         <Image
-          src={image}
+          // TODO: remove after review
+
+          src={`/protez${image}`}
           object-fit="contain"
           alt={image as string}
           width={width}

@@ -6,8 +6,6 @@ const nextConfig = {
   images: {
     domains: ['protez.wpengine.com'],
     unoptimized: true,
-    loader: 'custom',
-    loaderFile: './ImageLoader.js',
   },
 
   reactStrictMode: false,

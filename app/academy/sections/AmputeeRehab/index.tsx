@@ -15,8 +15,9 @@ const AmputeeRehab = () => {
 
   return (
     <section id={AcademyIDs.AmputeeRehab} className={styles.amputeeRehab}>
+      {/* TODO: remove after review  */}
       <Image
-        src="/summit.jpg"
+        src="/protez/summit.jpg"
         alt="summit"
         width={1920}
         height={880}

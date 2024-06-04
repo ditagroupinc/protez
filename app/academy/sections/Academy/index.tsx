@@ -18,12 +18,13 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { AcademyIDs } from '../../consts'
 
+// TODO: remove after review
 const academyCards = [
-  '/academy/academyCard0.png',
-  '/academy/academyCard1.png',
-  '/academy/academyCard2.png',
-  '/academy/academyCard3.png',
-  '/academy/academyCard4.png',
+  '/protez/academy/academyCard0.png',
+  '/protez/academy/academyCard1.png',
+  '/protez/academy/academyCard2.png',
+  '/protez/academy/academyCard3.png',
+  '/protez/academy/academyCard4.png',
 ]
 
 const Academy = () => {

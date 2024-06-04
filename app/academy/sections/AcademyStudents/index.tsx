@@ -16,15 +16,16 @@ import Slider from 'react-slick'
 
 import { AcademyIDs } from '../../consts'
 
+// TODO: remove after review
 const academyStudentsCards = [
-  '/students/student0.png',
-  '/students/student1.png',
-  '/students/student2.png',
-  '/students/student3.png',
-  '/students/student0.png',
-  '/students/student1.png',
-  '/students/student2.png',
-  '/students/student3.png',
+  '/protez/students/student0.png',
+  '/protez/students/student1.png',
+  '/protez/students/student2.png',
+  '/protez/students/student3.png',
+  '/protez/students/student0.png',
+  '/protez/students/student1.png',
+  '/protez/students/student2.png',
+  '/protez/students/student3.png',
 ]
 
 const AcademyStudents = () => {
