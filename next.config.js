@@ -11,7 +11,6 @@ const nextConfig = {
   reactStrictMode: false,
   output: 'export',
   basePath: '/protez',
-  // assetPrefix: '/protez/',
 }
 
 module.exports = nextConfig
