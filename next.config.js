@@ -8,6 +8,8 @@ const nextConfig = {
   },
 
   reactStrictMode: false,
+  output: 'export',
+  basePath: '/protez',
 }
 
 module.exports = nextConfig
