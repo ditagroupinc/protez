@@ -5,6 +5,7 @@ const nextConfig = {
   },
   images: {
     domains: ['protez.wpengine.com'],
+    path: '/',
   },
 
   reactStrictMode: false,
