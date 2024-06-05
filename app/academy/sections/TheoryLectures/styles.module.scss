@@ -15,8 +15,24 @@
     border: var(--greyBorder);
   }
 }
+
+.card {
+  transition: all var(--transitionProps);
+  &:hover {
+    background-color: var(--blue);
+    & .number {
+      color: var(--white);
+    }
+
+    .desc {
+      color: var(--white);
+    }
+  }
+}
+
 .desc,
 .number {
+  transition: all var(--transitionProps);
   font-size: 20px;
   line-height: 1.4;
   font-weight: 700;
@@ -42,7 +58,7 @@
   grid-column-end: 4;
   align-items: end;
   justify-content: center;
-  padding-right: 0;
+  padding-right: 16px;
   border: 0;
 }
 
@@ -213,6 +229,7 @@
     grid-column-start: 2;
     grid-column-end: 13;
     justify-content: flex-end;
+    padding-right: 0;
     align-items: end;
   }
   // 1

@@ -61,8 +61,8 @@ const SpecialThanksToAllOurPartners = () => {
       </div>
       <div className={styles.titleCell}>
         {width < 600
-          ? icons.specialThanksToAllOurPartnersLogo.mobile[lang]()
-          : icons.specialThanksToAllOurPartnersLogo.desktop[lang]()}
+          ? icons.specialThanksToAllOurPartnersLogo.mobile[lang](styles.title)
+          : icons.specialThanksToAllOurPartnersLogo.desktop[lang](styles.title)}
       </div>
       {partnersIcons.map((icon, index) => (
         <PartnerCard icon={icon} key={index} />

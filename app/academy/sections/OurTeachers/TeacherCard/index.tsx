@@ -4,6 +4,8 @@ import style from './style.module.scss'
 import globalIcons from '@/texts&svg/icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+
 interface Links {
   facebook?: { href: string; icon: string }
   instagram?: { href: string; icon: string }
@@ -26,10 +28,14 @@ export default function TeacherCard({
   black?: boolean
   className?: string
 }) {
+  const { width } = useScreenModeAndSize()
   const cardColor = () => (black ? '#0D1125' : '#fff')
 
   return (
-    <TextAppearanceWrapper className={`${style.teamCard} ${className && className}`}>
+    <TextAppearanceWrapper
+      isDisabled={width < 600}
+      className={`${style.teamCard} ${className && className}`}
+    >
       {/* TODO: remove after review
        */}
       <Image

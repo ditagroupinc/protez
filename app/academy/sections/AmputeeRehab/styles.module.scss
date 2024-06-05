@@ -80,6 +80,10 @@
   height: 100%;
   border: var(--whiteBorder);
   color: var(--white);
+  transition: all var(--transitionProps);
+  &:hover {
+    background-color: var(--blue);
+  }
 }
 
 .card:nth-child(1) {

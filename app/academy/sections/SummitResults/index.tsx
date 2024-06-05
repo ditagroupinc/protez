@@ -32,15 +32,15 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
           </p>
         </div>
         <div className={styles.right}>
-          <TextAppearanceWrapper className={styles.result}>
+          <TextAppearanceWrapper className={styles.card}>
             <span className={styles.count}>200</span>
             <p className={styles.desc}>Visitors</p>
           </TextAppearanceWrapper>
-          <TextAppearanceWrapper className={styles.result}>
+          <TextAppearanceWrapper className={styles.card}>
             <span className={styles.count}>22</span>
             <p className={styles.desc}>Invited guests</p>
           </TextAppearanceWrapper>
-          <TextAppearanceWrapper className={styles.result}>
+          <TextAppearanceWrapper className={styles.card}>
             <span className={styles.count}>12</span>
             <p className={styles.desc}>Prosthetists</p>
           </TextAppearanceWrapper>

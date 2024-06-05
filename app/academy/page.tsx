@@ -12,6 +12,8 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import AcademyHeader from './sections/Header'
 import AcademyIntro from './sections/Intro'
 
+import FullScreenFallback from './components/fallback'
+
 const OurGoals = lazy(() => import('./sections/OurGoals'))
 const OurResults = lazy(() => import('./sections/OurResults'))
 const TheoryLectures = lazy(() => import('./sections/TheoryLectures'))
@@ -54,26 +56,70 @@ export default function AcademyPage() {
       <main className={style.main}>
         <AcademyIntro ref={refIntro} />
 
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<FullScreenFallback />}>
           <OurGoals />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
           <Academy />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
           <OurResults />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
           <OurTeachers />
-          <Chief ref={refChief} />
+        </Suspense>
+
+        {inViewChief && (
+          <Suspense fallback={<FullScreenFallback />}>
+            <Chief ref={refChief} />
+          </Suspense>
+        )}
+
+        <Suspense fallback={<FullScreenFallback />}>
           <TheoryLectures />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
           <PracticeSessions />
-          <Events ref={refEvents} />
+        </Suspense>
+
+        {inViewEvents && (
+          <Suspense fallback={<FullScreenFallback />}>
+            <Events ref={refEvents} />
+          </Suspense>
+        )}
+
+        <Suspense fallback={<FullScreenFallback />}>
           <AcademyStudents />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
           <AmputeeRehab />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
           <SummitResults ref={refSummit} />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
           <WeAreInNews ref={refWeAreInNews} />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
           <SpecialThanksToAllOurPartners />
         </Suspense>
+
         {!isMobile && (
           <BackToTopButton href={'academyIntro'} color="blue" black={showBlackBackToTopButton} />
         )}
       </main>
-      <Footer ref={refThankYou} />
+
+      <Suspense fallback={<FullScreenFallback />}>
+        <Footer ref={refThankYou} />
+      </Suspense>
     </>
   )
 }

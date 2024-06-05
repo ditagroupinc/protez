@@ -5,6 +5,8 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import AcademySection from '@/components/AcademySection'
 
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+
 import styles from './style.module.scss'
 import TeacherCard from './TeacherCard'
 import { icons } from './icons.js'
@@ -90,19 +92,21 @@ const OurTeachers = () => {
         {icons.ourTeachersLogo.desktop[lang](styles.teachersLogo)}
       </div>
       {width < 600 ? (
-        <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
-          {teachersCards.map((card, index) => (
-            <div className={styles.cardWrapper} key={index}>
-              <TeacherCard
-                className={styles.teacherCard}
-                photo={card.photo}
-                links={card.links}
-                name={card.name}
-                position={card.position}
-              />
-            </div>
-          ))}
-        </Slider>
+        <TextAppearanceWrapper>
+          <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
+            {teachersCards.map((card, index) => (
+              <div className={styles.cardWrapper} key={index}>
+                <TeacherCard
+                  className={styles.teacherCard}
+                  photo={card.photo}
+                  links={card.links}
+                  name={card.name}
+                  position={card.position}
+                />
+              </div>
+            ))}
+          </Slider>
+        </TextAppearanceWrapper>
       ) : (
         teachersCards.map((card, index) => (
           <TeacherCard

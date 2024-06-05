@@ -68,6 +68,15 @@ const Academy = () => {
           arrows: false,
         },
       },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 1,
+          centerPadding: '10px',
+          dots: true,
+          arrows: false,
+        },
+      },
     ],
 
     beforeChange: (_current: number, next: number) => setActiveSlide(next),

@@ -16,6 +16,15 @@
   font-size: 18px;
   line-height: 26px;
   color: var(--dark);
+  transition: all var(--transitionProps);
+}
+
+.count {
+  color: var(--blue);
+  font-size: 60px;
+  line-height: 76px;
+  font-weight: 800;
+  transition: all var(--transitionProps);
 }
 
 .left {
@@ -34,28 +43,32 @@
   max-width: 780px;
   grid-template-columns: repeat(3, 1fr);
 }
-.result {
+.card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 220px;
   padding: 24px 32px 32px 32px;
   border: var(--greyBorder);
+  transition: all var(--transitionProps);
+  &:hover {
+    background-color: var(--blue);
+    & .count {
+      color: var(--white);
+    }
+
+    .desc {
+      color: var(--white);
+    }
+  }
 }
 
-.result:nth-child(1) {
+.card:nth-child(1) {
   border-right: none;
 }
 
-.result:nth-child(2) {
+.card:nth-child(2) {
   border-right: none;
-}
-
-.count {
-  color: var(--blue);
-  font-size: 60px;
-  line-height: 76px;
-  font-weight: 800;
 }
 
 .playerContent {
@@ -144,7 +157,7 @@
     max-width: 100%;
   }
 
-  .result {
+  .card {
     height: 200px;
   }
 }
@@ -182,20 +195,20 @@
       'visitors invitedGuests'
       'prosthetists prosthetists';
   }
-  .result {
+  .card {
     height: 125px;
     padding: 16px;
   }
 
-  .result:nth-child(1) {
+  .card:nth-child(1) {
     grid-area: visitors;
   }
 
-  .result:nth-child(2) {
+  .card:nth-child(2) {
     grid-area: invitedGuests;
     border-right: var(--greyBorder);
   }
-  .result:nth-child(3) {
+  .card:nth-child(3) {
     grid-area: prosthetists;
     border-top: none;
   }

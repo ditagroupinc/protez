@@ -4,12 +4,14 @@
   justify-content: space-between;
   padding: 16px;
   border: var(--greyBorder);
+  transition: all var(--transitionProps);
 
   .count {
     color: var(--blue);
     font-size: 52px;
     line-height: 50px;
     font-weight: 800;
+    transition: all var(--transitionProps);
   }
 
   .desc {
@@ -17,6 +19,18 @@
     font-size: 16px;
     line-height: 22px;
     font-weight: 500;
+    transition: all var(--transitionProps);
+  }
+
+  &:hover {
+    background-color: var(--blue);
+    & .count {
+      color: var(--white);
+    }
+
+    .desc {
+      color: var(--white);
+    }
   }
 }
 
