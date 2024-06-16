@@ -160,9 +160,12 @@
   }
   .slickSlider :global(.slick-track) {
     height: 360px;
+    gap: 0;
   }
   .cardWrapper {
     height: 360px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
 
   .card,

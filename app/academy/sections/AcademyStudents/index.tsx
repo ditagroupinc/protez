@@ -65,7 +65,7 @@ const AcademyStudents = () => {
           slidesToShow: 1,
           dots: true,
           centerMode: true,
-          centerPadding: '100px',
+          centerPadding: '20px',
         },
       },
     ],

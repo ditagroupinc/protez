@@ -27,26 +27,30 @@
 
 .icon {
   transition: fill var(--transitionProps);
+
+  width: 48px;
+  height: 48px;
 }
 
 /* desktop */
 @media screen and (max-width: 1920px) {
-  .container {
+  /* .container {
     gap: 24px;
-  }
-  .icon {
+  } */
+
+  /* .icon {
     width: 56px;
     height: 56px;
-  }
+  } */
 }
 
 /* beforeTablet */
-@media screen and (max-width: 1366px) {
+/* @media screen and (max-width: 1366px) {
   .icon {
     width: 48px;
     height: 48px;
   }
-}
+} */
 
 @media screen and (max-width: 500px) {
   .container {

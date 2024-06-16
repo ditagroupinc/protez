@@ -28,7 +28,7 @@ const AmputeeRehab = () => {
       <div className={styles.amputeeRehabOverlay}>
         <div className={styles.amputeeRehabContent}>
           <div className={styles.left}>
-            {icons.amputeeRehabLogo.desktop[lang]()}
+            {icons.amputeeRehabLogo.desktop[lang](styles.title)}
             <p className={styles.desc}>
               Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam.
               Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc

@@ -35,6 +35,7 @@ const PracticeSessions = () => {
   const settings = {
     dots: false,
     infinite: true,
+    autoplay: true,
     speed: 500,
 
     slidesToShow: 3,
@@ -61,6 +62,8 @@ const PracticeSessions = () => {
       {
         breakpoint: 600,
         settings: {
+          centerMode: true,
+          centerPadding: '10px',
           slidesToShow: 1,
           dots: true,
         },

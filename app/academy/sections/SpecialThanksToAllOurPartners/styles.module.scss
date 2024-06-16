@@ -8,8 +8,8 @@
     '. chaliceOfMercy ottobock paradise klmb '
     'monarch dita antonovGroup cozen blatchfold';
 
-  padding-top: 120px;
-  padding-bottom: 80px;
+  padding-bottom: 120px;
+  padding-top: 80px;
 }
 
 .partnerCard {
@@ -51,6 +51,7 @@
   grid-area: directRelief;
   border-right: var(--greyBorder);
   border-top: var(--greyBorder);
+  border-bottom: none;
 }
 
 .partnerCard:nth-child(4) {
@@ -70,6 +71,7 @@
 
 .partnerCard:nth-child(7) {
   grid-area: klmb;
+  border-top: var(--greyBorder);
   border-right: var(--greyBorder);
 }
 

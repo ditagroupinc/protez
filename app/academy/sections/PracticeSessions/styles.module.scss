@@ -204,25 +204,33 @@
   .practiceSessions {
     padding-top: 60px;
     padding-bottom: 60px;
+    padding-left: 0;
+    padding-right: 0;
   }
   .title {
     margin-bottom: 32px;
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 261px;
+    height: auto;
   }
 
   .slickSlider :global(.slick-track) {
     height: 340px;
+    gap: 0;
   }
   .cardWrapper {
     height: 340px;
+    padding-right: 20px;
   }
 
   .card {
     max-width: 315px;
-    max-height: 292.5px;
+    max-height: 100%;
   }
 
   .image {
-    max-height: 240px;
+    max-height: 287px;
   }
 
   .text {
@@ -242,9 +250,10 @@
   }
 
   .centerSlide {
-    justify-content: flex-end;
+    justify-content: flex-start;
     & .card {
       max-width: 315px;
+      max-height: 290px;
       & .image {
         max-height: 240px;
       }
@@ -256,11 +265,13 @@
       border-radius: 4px;
       display: flex;
       padding-top: 32px;
+      padding-left: 24px;
+      padding-right: 24px;
       position: static;
     }
     & :global(.slick-dots li) {
       margin: 0;
-      width: calc(100% / 8);
+      width: calc(100% / 6);
       height: 3px;
       background-color: var(--dark);
       opacity: 0.06;

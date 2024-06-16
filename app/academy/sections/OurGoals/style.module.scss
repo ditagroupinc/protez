@@ -4,8 +4,8 @@
 }
 .academyGoalsContent {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 400px));
-  grid-template-rows: repeat(2, minmax(400px, 1fr));
+  grid-template-columns: minmax(0, 400px) minmax(0, 390px) minmax(0, 390px) minmax(0, 400px);
+  grid-template-rows: minmax(400px, 1fr) minmax(0, 320px);
   grid-template-areas:
     'link . title skills'
     '. instructors specialists .';
@@ -180,6 +180,8 @@
     font-style: normal;
     font-weight: 600;
     line-height: 22px;
+    gap: 24px;
+    justify-content: flex-start;
 
     & .icon {
       width: 40px;

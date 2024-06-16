@@ -66,7 +66,13 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
         </div>
         <div className={styles.right}>
           {/* TODO: remove after review */}
-          <Image src="/protez/yakov-gradinar.png" alt="yakov-gradinar" width={672} height={880} />
+          <Image
+            src="/protez/yakov-gradinar.png"
+            alt="yakov-gradinar"
+            width={672}
+            height={880}
+            className={styles.image}
+          />
 
           <div className={styles.playBtnWrapper}>
             <button className={styles.playBtn}>

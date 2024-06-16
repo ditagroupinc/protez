@@ -72,7 +72,7 @@ const Academy = () => {
         breakpoint: 450,
         settings: {
           slidesToShow: 1,
-          centerPadding: '10px',
+          centerPadding: '20px',
           dots: true,
           arrows: false,
         },

@@ -26,7 +26,8 @@
 }
 
 .profession {
-  color: var(--white);
+  color: rgba(255, 255, 255, 0.56);
+
   margin-bottom: 32px;
   opacity: 0.56;
 }
@@ -59,6 +60,12 @@
 
 .right {
   position: relative;
+}
+
+.image {
+  object-fit: cover;
+  max-height: 800px;
+  object-position: center;
 }
 
 .playBtnWrapper {
@@ -138,7 +145,7 @@
     z-index: 1;
   }
   .playBtnWrapper {
-    top: 180px;
+    top: 200px;
     left: 0;
   }
 }

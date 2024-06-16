@@ -175,7 +175,9 @@
       }
 
       .rightPart {
-        width: 45%;
+        width: 100%;
+        max-width: 692px;
+        // width: 45%;
         grid-template-columns: 1fr 1fr;
 
         .card {
@@ -190,6 +192,17 @@
 
         .leftWrapper {
           padding-top: 80px;
+
+          .card {
+            border-right: none;
+          }
+        }
+
+        .rightWrapper {
+          border-left: var(--greyBorder);
+          .card {
+            border-left: none;
+          }
         }
       }
     }

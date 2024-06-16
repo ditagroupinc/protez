@@ -72,11 +72,9 @@ export default function AcademyPage() {
           <OurTeachers />
         </Suspense>
 
-        {inViewChief && (
-          <Suspense fallback={<FullScreenFallback />}>
-            <Chief ref={refChief} />
-          </Suspense>
-        )}
+        <Suspense fallback={<FullScreenFallback />}>
+          <Chief ref={refChief} />
+        </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
           <TheoryLectures />
@@ -86,11 +84,9 @@ export default function AcademyPage() {
           <PracticeSessions />
         </Suspense>
 
-        {inViewEvents && (
-          <Suspense fallback={<FullScreenFallback />}>
-            <Events ref={refEvents} />
-          </Suspense>
-        )}
+        <Suspense fallback={<FullScreenFallback />}>
+          <Events ref={refEvents} />
+        </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
           <AcademyStudents />
@@ -104,13 +100,27 @@ export default function AcademyPage() {
           <SummitResults ref={refSummit} />
         </Suspense>
 
-        <Suspense fallback={<FullScreenFallback />}>
-          <WeAreInNews ref={refWeAreInNews} />
-        </Suspense>
+        {width > 600 ? (
+          <>
+            <Suspense fallback={<FullScreenFallback />}>
+              <WeAreInNews ref={refWeAreInNews} />
+            </Suspense>
 
-        <Suspense fallback={<FullScreenFallback />}>
-          <SpecialThanksToAllOurPartners />
-        </Suspense>
+            <Suspense fallback={<FullScreenFallback />}>
+              <SpecialThanksToAllOurPartners />
+            </Suspense>
+          </>
+        ) : (
+          <>
+            <Suspense fallback={<FullScreenFallback />}>
+              <SpecialThanksToAllOurPartners />
+            </Suspense>
+
+            <Suspense fallback={<FullScreenFallback />}>
+              <WeAreInNews ref={refWeAreInNews} />
+            </Suspense>
+          </>
+        )}
 
         {!isMobile && (
           <BackToTopButton href={'academyIntro'} color="blue" black={showBlackBackToTopButton} />

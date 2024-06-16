@@ -212,11 +212,12 @@
 
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(6, auto);
-    & > * {
-      gap: 40px;
-      padding: 16px;
-    }
   }
+  .card {
+    gap: 40px;
+    padding: 16px;
+  }
+
   .applyBtn {
     max-width: 100%;
     width: 100%;
