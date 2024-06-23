@@ -1,4 +1,4 @@
-// import Image from 'next/image'
+import Image from 'next/image'
 import { useState, useRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -62,21 +62,24 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
           ref={videoRef}
           controls
           src="/protez/academyPage/summitResults/summitResults.mp4"
-          className={styles.summitImage}
+          className={styles.summitVideo}
         />
-        {/* <Image
-          // TODO: remove after review
-          src="/protez/academyPage/summitResults/summit.png"
-          alt="summit"
-          width={1584}
-          height={800}
-          layout="responsive"
-          className={styles.summitImage}
-        /> */}
         {!isPlaying && (
-          <div className={styles.playerButton} onClick={handlePlayButtonClick}>
-            {icons.play(styles.playIcon)}
-          </div>
+          <>
+            <Image
+              // TODO: remove after review
+              src="/protez/academyPage/summitResults/summitResults.png"
+              alt="summit"
+              width={1584}
+              height={800}
+              layout="responsive"
+              className={styles.videoOverlay}
+            />
+
+            <button className={styles.playerButton} onClick={handlePlayButtonClick}>
+              {icons.play(styles.playIcon)}
+            </button>
+          </>
         )}
       </div>
     </AcademySection>
