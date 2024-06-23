@@ -36,10 +36,9 @@ export default function TeacherCard({
       isDisabled={width < 600}
       className={`${style.teamCard} ${className && className}`}
     >
-      {/* TODO: remove after review
-       */}
       <Image
-        src={`/protez/teachers/${photo}`}
+        // TODO: remove after review
+        src={`/protez/academyPage/teachers/${photo}`}
         object-fit="contain"
         alt={photo}
         width={345}

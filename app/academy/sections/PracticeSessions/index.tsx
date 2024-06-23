@@ -19,12 +19,18 @@ import { AcademyIDs } from '../../consts'
 // TODO: remove after review
 
 const practiceSessionsCards = [
-  { image: '/protez/practiceSessions/practice0.png', text: 'Preparatory stage' },
-  { image: '/protez/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
-  { image: '/protez/practiceSessions/practice2.png', text: 'Casting and measuring the prosthesis' },
-  { image: '/protez/practiceSessions/practice0.png', text: 'Preparatory stage' },
-  { image: '/protez/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
-  { image: '/protez/practiceSessions/practice2.png', text: 'Casting and measuring the prosthesis' },
+  { image: 'academyPage/practiceSessions/practice0.png', text: 'Preparatory stage' },
+  { image: 'academyPage/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
+  {
+    image: 'academyPage/practiceSessions/practice2.png',
+    text: 'Casting and measuring the prosthesis',
+  },
+  { image: 'academyPage/practiceSessions/practice0.png', text: 'Preparatory stage' },
+  { image: 'academyPage/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
+  {
+    image: 'academyPage/practiceSessions/practice2.png',
+    text: 'Casting and measuring the prosthesis',
+  },
 ]
 
 const PracticeSessions = () => {
@@ -109,7 +115,8 @@ const PracticeSessions = () => {
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <div className={`${styles.card} `}>
                     <Image
-                      src={card.image}
+                      // TODO: remove after review
+                      src={`/protez/${card.image}`}
                       alt="picture of practice sessions in Protez Academy"
                       width={490}
                       height={500}

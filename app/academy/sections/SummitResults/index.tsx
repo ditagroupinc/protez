@@ -1,4 +1,5 @@
-import Image from 'next/image'
+// import Image from 'next/image'
+import { useState, useRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
@@ -16,6 +17,15 @@ import { AcademyIDs } from '../../consts'
 const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const handlePlayButtonClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play()
+      setIsPlaying(true)
+    }
+  }
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.SummitResults} className={styles.summitResults}>
@@ -48,17 +58,26 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
       </div>
 
       <div className={styles.playerContent}>
-        <Image
+        <video
+          ref={videoRef}
+          controls
+          src="/protez/academyPage/summitResults/summitResults.mp4"
+          className={styles.summitImage}
+        />
+        {/* <Image
           // TODO: remove after review
-
-          src="/protez/summit.jpg"
+          src="/protez/academyPage/summitResults/summit.png"
           alt="summit"
           width={1584}
           height={800}
           layout="responsive"
           className={styles.summitImage}
-        />
-        <div className={styles.playerButton}>{icons.play(styles.playIcon)}</div>
+        /> */}
+        {!isPlaying && (
+          <div className={styles.playerButton} onClick={handlePlayButtonClick}>
+            {icons.play(styles.playIcon)}
+          </div>
+        )}
       </div>
     </AcademySection>
   )

@@ -65,9 +65,9 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
           </ul>
         </div>
         <div className={styles.right}>
-          {/* TODO: remove after review */}
           <Image
-            src="/protez/yakov-gradinar.png"
+            // TODO: remove after review
+            src="/protez/academyPage/chief/yakov-gradinar.png"
             alt="yakov-gradinar"
             width={672}
             height={880}

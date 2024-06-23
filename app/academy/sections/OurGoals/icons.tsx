@@ -106,13 +106,18 @@ export const icons = {
   iconHand,
   arrowUp,
   goalLogo: {
-    desktop: {
-      english: academyGoalsTitleDesktop,
-      ukrainian: academyGoalsTitleDesktop,
-    },
-    mobile: {
-      english: academyGoalsTitleMobile,
-      ukrainian: academyGoalsTitleMobile,
-    },
+    desktop: academyGoalsTitleDesktop,
+
+    // {
+
+    // english: academyGoalsTitleDesktop,
+    // ukrainian: academyGoalsTitleDesktop,
+    // },
+    mobile: academyGoalsTitleMobile,
+    //  {
+
+    // english: academyGoalsTitleMobile,
+    // ukrainian: academyGoalsTitleMobile,
+    // },
   },
 }

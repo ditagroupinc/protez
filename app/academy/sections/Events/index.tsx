@@ -29,42 +29,42 @@ type Event = {
 const eventsCards: Event[] = [
   {
     link: '/',
-    photo: '/protez/academyEvents/academyEvent0.png',
+    photo: 'academyPage/events/academyEvent0.png',
     date: '2025-02-01',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
   },
   {
     link: '/',
-    photo: '/protez/academyEvents/academyEvent0.png',
+    photo: 'academyPage/events/academyEvent0.png',
     date: '2025-06-21',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
   },
   {
     link: '/',
-    photo: '/protez/academyEvents/academyEvent0.png',
+    photo: 'academyPage/events/academyEvent0.png',
     date: '2025-06-21',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
   },
   {
     link: '/',
-    photo: '/protez/academyEvents/academyEvent0.png',
+    photo: 'academyPage/events/academyEvent0.png',
     date: '2021-02-01',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
   },
   {
     link: '/',
-    photo: '/protez/academyEvents/academyEvent0.png',
+    photo: 'academyPage/events/academyEvent0.png',
     date: '2021-12-03',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
   },
   {
     link: '/',
-    photo: '/protez/academyEvents/academyEvent0.png',
+    photo: 'academyPage/events/academyEvent0.png',
     date: '2021-12-03',
     title: 'Hommage national à Léon Gautier.',
     location: 'Washington',
@@ -218,7 +218,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <a href={card.link} target="blank" className={styles.card}>
                     <Image
-                      src={card.photo}
+                      // TODO: remove after review
+                      src={`/protez/${card.photo}`}
                       alt="events picture"
                       width={340}
                       height={480}

@@ -18,14 +18,13 @@ import { AcademyIDs } from '../../consts'
 
 // TODO: remove after review
 const academyStudentsCards = [
-  '/protez/students/student0.png',
-  '/protez/students/student1.png',
-  '/protez/students/student2.png',
-  '/protez/students/student3.png',
-  '/protez/students/student0.png',
-  '/protez/students/student1.png',
-  '/protez/students/student2.png',
-  '/protez/students/student3.png',
+  'academyPage/students/studentCard0.png',
+  'academyPage/students/studentCard1.png',
+  'academyPage/students/studentCard2.png',
+  'academyPage/students/studentCard3.png',
+  'academyPage/students/studentCard4.png',
+  'academyPage/students/studentCard5.png',
+  'academyPage/students/studentCard6.png',
 ]
 
 const AcademyStudents = () => {
@@ -106,7 +105,8 @@ const AcademyStudents = () => {
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <div className={`${styles.card} `}>
                     <Image
-                      src={card}
+                      // TODO: remove after review
+                      src={`/protez/${card}`}
                       alt="photo of students of Protez Academy"
                       width={490}
                       height={500}

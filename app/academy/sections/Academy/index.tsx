@@ -20,11 +20,13 @@ import { AcademyIDs } from '../../consts'
 
 // TODO: remove after review
 const academyCards = [
-  '/protez/academy/academyCard0.png',
-  '/protez/academy/academyCard1.png',
-  '/protez/academy/academyCard2.png',
-  '/protez/academy/academyCard3.png',
-  '/protez/academy/academyCard4.png',
+  'academyPage/academy/academyCard0.png',
+  'academyPage/academy/academyCard1.png',
+  'academyPage/academy/academyCard2video.mp4',
+  'academyPage/academy/academyCard3.png',
+  'academyPage/academy/academyCard4video.mp4',
+  'academyPage/academy/academyCard5.png',
+  'academyPage/academy/academyCard6.png',
 ]
 
 const Academy = () => {
@@ -164,13 +166,25 @@ const Academy = () => {
                 <div key={index}>
                   <div className={`${styles.cardWrapper} ${slideClass}`}>
                     <div className={`${styles.card} `}>
-                      <Image
-                        src={card}
-                        alt="picture of Protez Academy students and teachers"
-                        width={720}
-                        height={520}
-                        className={styles.image}
-                      />
+                      {card.includes('.mp4') ? (
+                        <video
+                          src={`/protez/${card}`}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className={styles.video}
+                        />
+                      ) : (
+                        <Image
+                          // TODO: remove after review
+                          src={`/protez/${card}`}
+                          alt="picture of Protez Academy students and teachers"
+                          width={720}
+                          height={520}
+                          className={styles.image}
+                        />
+                      )}
                     </div>
                   </div>
                 </div>

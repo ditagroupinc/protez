@@ -22,55 +22,55 @@ import { AcademyIDs } from '../../consts'
 const newsCards = [
   {
     link: '/',
-    photo: '/protez/academyNews/academyNews0.png',
+    photo: 'academyPage/news/academyNews0.png',
     date: '19.03.2023',
     address: '1plus1.ua',
-    logo: '/protez/academyNews/1plus1.svg',
+    logo: 'academyPage/news/1plus1.svg',
     title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
     text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
   },
   {
     link: '/',
-    photo: '/protez/academyNews/academyNews0.png',
+    photo: 'academyPage/news/academyNews0.png',
     date: '19.03.2023',
     address: '1plus1.ua',
-    logo: '/protez/academyNews/1plus1.svg',
+    logo: 'academyPage/news/1plus1.svg',
     title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
     text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
   },
   {
     link: '/',
-    photo: '/protez/academyNews/academyNews0.png',
+    photo: 'academyPage/news/academyNews0.png',
     date: '19.03.2023',
     address: '1plus1.ua',
-    logo: '/protez/academyNews/1plus1.svg',
+    logo: 'academyPage/news/1plus1.svg',
     title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
     text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
   },
   {
     link: '/',
-    photo: '/protez/academyNews/academyNews0.png',
+    photo: 'academyPage/news/academyNews0.png',
     date: '19.03.2023',
     address: '1plus1.ua',
-    logo: '/protez/academyNews/1plus1.svg',
+    logo: 'academyPage/news/1plus1.svg',
     title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
     text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
   },
   {
     link: '/',
-    photo: '/protez/academyNews/academyNews0.png',
+    photo: 'academyPage/news/academyNews0.png',
     date: '19.03.2023',
     address: '1plus1.ua',
-    logo: '/protez/academyNews/1plus1.svg',
+    logo: 'academyPage/news/1plus1.svg',
     title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
     text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
   },
   {
     link: '/',
-    photo: '/protez/academyNews/academyNews0.png',
+    photo: 'academyPage/news/academyNews0.png',
     date: '19.03.2023',
     address: '1plus1.ua',
-    logo: '/protez/academyNews/1plus1.svg',
+    logo: 'academyPage/news/1plus1.svg',
     title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
     text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
   },
@@ -156,7 +156,8 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <a href={card.link} target="blank" className={styles.card}>
                     <Image
-                      src={card.photo}
+                      // TODO: remove after review
+                      src={`/protez/${card.photo}`}
                       alt="news picture"
                       width={488}
                       height={520}
@@ -168,7 +169,8 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
                       </div>
 
                       <Image
-                        src={card.logo}
+                        // TODO: remove after review
+                        src={`/protez/${card.logo}`}
                         alt="news picture"
                         width={488}
                         height={520}

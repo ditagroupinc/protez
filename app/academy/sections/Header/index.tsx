@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 
 import { Languages } from '@/types'
-import texts from '@/texts&svg'
+// import texts from '@/texts&svg'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -103,10 +103,12 @@ const AcademyHeader = () => {
               rel="noopener noreferrer"
               className={styles.applyBtn}
             >
-              {texts.academyHeader.buttons.applyToAcademy[lang]}
+              {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
+              Apply to Academy
             </Button>
             <Button as="link" href="/" variant="secondary-white" size="small">
-              {texts.academyHeader.buttons.foundation[lang]}
+              {/* {texts.academyHeader.buttons.foundation[lang]} */}
+              Protez Foundation
             </Button>
             <div className={styles.languageWrapper}>
               {icons.iconWorld(`${styles.worldIcon}`)}
@@ -165,7 +167,8 @@ const AcademyHeader = () => {
                 rel="noopener noreferrer"
                 className={styles.lowerPartButton}
               >
-                {texts.academyHeader.buttons.applyToAcademy[lang]}
+                Apply to Academy
+                {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
               </Button>
               <Button
                 as="link"
@@ -174,7 +177,8 @@ const AcademyHeader = () => {
                 size="small"
                 className={styles.lowerPartButton}
               >
-                {texts.academyHeader.buttons.supportAcademy[lang]}
+                Support Academy
+                {/* {texts.academyHeader.buttons.supportAcademy[lang]} */}
                 {icons.arrowUp(`${styles.icon} ${styles.black}`)}
               </Button>
             </div>
