@@ -5,7 +5,7 @@ import { useRef, useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 
 import style from './style.module.scss'
 import { icons } from './icons'
@@ -130,7 +130,7 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
   }
 
   return (
-    <AcademySection ref={ref} id={AcademyIDs.WeAreInNews} className={style.weAreInNews}>
+    <Section ref={ref} id={AcademyIDs.WeAreInNews} className={style.weAreInNews}>
       {width < 600
         ? icons.weAreInNewsLogo.mobile[lang](style.title)
         : icons.weAreInNewsLogo.desktop[lang](style.title)}
@@ -199,7 +199,7 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
           </div>
         )}
       </div>
-    </AcademySection>
+    </Section>
   )
 })
 

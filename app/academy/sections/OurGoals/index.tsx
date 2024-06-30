@@ -4,7 +4,7 @@ import { forwardRef } from 'react'
 
 import Link from 'next/link'
 
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
@@ -37,7 +37,7 @@ const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
   ]
 
   return (
-    <AcademySection ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoals}>
+    <Section ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoals}>
       <div className={style.academyGoalsContent}>
         <div className={style.linkCell}>
           <Link href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6" target="blank" className={style.link}>
@@ -55,7 +55,7 @@ const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
           </TextAppearanceWrapper>
         ))}
       </div>
-    </AcademySection>
+    </Section>
   )
 })
 

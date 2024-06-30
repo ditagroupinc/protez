@@ -1,4 +1,4 @@
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 
 import Button from '@/components/Button'
 
@@ -48,7 +48,7 @@ const SpecialThanksToAllOurPartners = () => {
   const { width } = useScreenModeAndSize()
 
   return (
-    <AcademySection
+    <Section
       id={AcademyIDs.SpecialThanksToAllOurPartners}
       className={style.specialThanksToAllOurPartners}
     >
@@ -79,7 +79,7 @@ const SpecialThanksToAllOurPartners = () => {
       <Link href="https://dita-group.com/" target="blank" className={style.partnerCard}>
         {icons.ditaLogo(style.ditaLogo)}
       </Link>
-    </AcademySection>
+    </Section>
   )
 }
 

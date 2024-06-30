@@ -1,4 +1,4 @@
-import style from './VideoAndFilter.module.css'
+import style from './style.module.scss'
 export default function VideoAndFilter({ src, className = '' }) {
   return (
     <>

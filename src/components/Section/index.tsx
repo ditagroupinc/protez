@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 
 import style from './style.module.scss'
 
-const AcademySection = forwardRef<HTMLDivElement, React.ComponentProps<'section'>>((props, ref) => {
+const Section = forwardRef<HTMLDivElement, React.ComponentProps<'section'>>((props, ref) => {
   const { className, children, ...rest } = props
 
   return (
@@ -12,8 +12,4 @@ const AcademySection = forwardRef<HTMLDivElement, React.ComponentProps<'section'
   )
 })
 
-if (process.env.NODE_ENV !== 'production') {
-  AcademySection.displayName = 'AcademySection'
-}
-
-export default AcademySection
+export default Section

@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
@@ -88,7 +88,7 @@ const OurTeachers = () => {
   }
 
   return (
-    <AcademySection id={AcademyIDs.OurTeachers} className={style.ourTeachers}>
+    <Section id={AcademyIDs.OurTeachers} className={style.ourTeachers}>
       <div className={style.titleCell}>
         {icons.ourTeachersLogo.desktop[lang](style.teachersLogo)}
       </div>
@@ -120,7 +120,7 @@ const OurTeachers = () => {
           />
         ))
       )}
-    </AcademySection>
+    </Section>
   )
 }
 

@@ -2,7 +2,7 @@
 
 import Button from '@/components/Button'
 
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 import AcademyResultCard from './components/AcademyResultCard'
 
 // import texts from '@/texts&svg'
@@ -31,7 +31,7 @@ const OurResults = () => {
   // const { lang } = useLanguage()
 
   return (
-    <AcademySection id={AcademyIDs.OurResults} className={style.academyResults}>
+    <Section id={AcademyIDs.OurResults} className={style.academyResults}>
       <div className={style.resultsContent}>
         <div className={style.leftPart}>
           <div className={style.sectionTitle}>{icons.academyResultsTitle()}</div>
@@ -90,7 +90,7 @@ const OurResults = () => {
           </div>
         </div>
       </div>
-    </AcademySection>
+    </Section>
   )
 }
 

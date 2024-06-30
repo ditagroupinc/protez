@@ -5,7 +5,7 @@ import { useRef, useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 
 import style from './style.module.scss'
 import { icons } from './icons'
@@ -180,7 +180,7 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
   }
 
   return (
-    <AcademySection ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={style.events}>
+    <Section ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={style.events}>
       {/* TODO: remove after review
        */}
       <Image
@@ -268,7 +268,7 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
           </>
         )}
       </TextAppearanceWrapper>
-    </AcademySection>
+    </Section>
   )
 })
 

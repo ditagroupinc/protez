@@ -4,7 +4,7 @@ import { useState, useRef } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 
 import { forwardRef } from 'react'
 
@@ -28,7 +28,7 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
   }
 
   return (
-    <AcademySection ref={ref} id={AcademyIDs.SummitResults} className={style.summitResults}>
+    <Section ref={ref} id={AcademyIDs.SummitResults} className={style.summitResults}>
       <div className={style.resultInfo}>
         <div className={style.left}>
           {width >= 600 && width <= 1024
@@ -82,7 +82,7 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
           </>
         )}
       </div>
-    </AcademySection>
+    </Section>
   )
 })
 

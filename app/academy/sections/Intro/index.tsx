@@ -6,7 +6,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import Button from '@/components/Button'
 
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 
 import VideoAndFilter from '@/components/VideoAndFilter'
 
@@ -53,7 +53,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
   const isMobile = width < 768 || mobile
 
   return (
-    <AcademySection ref={ref} id={AcademyIDs.Intro} className={style.academyIntro}>
+    <Section ref={ref} id={AcademyIDs.Intro} className={style.academyIntro}>
       <VideoAndFilter src={'academyPage/intro/introVideo.mp4'} />
       <div className={style.overlay}></div>
       <div className={style.academyContent}>
@@ -107,7 +107,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
           />
         </div>
       </div>
-    </AcademySection>
+    </Section>
   )
 })
 

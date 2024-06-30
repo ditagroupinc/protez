@@ -1,4 +1,4 @@
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 import style from './style.module.scss'
 import { icons } from './icons'
 import Image from 'next/image'
@@ -16,7 +16,7 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
   const { width } = useScreenModeAndSize()
 
   return (
-    <AcademySection ref={ref} id={AcademyIDs.Chief} className={style.chief}>
+    <Section ref={ref} id={AcademyIDs.Chief} className={style.chief}>
       <div className={style.chiefContent}>
         <div className={style.left}>
           {width < 600
@@ -82,7 +82,7 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
           </div>
         </div>
       </div>
-    </AcademySection>
+    </Section>
   )
 })
 

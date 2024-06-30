@@ -89,18 +89,18 @@ export default function ClientSections({
       <ProtezHeader />
       <Suspense fallback={<div className={style.fallback}></div>}>
         <main className={style.main}>
-          <CompanyDataNonProfit
+          {/* <CompanyDataNonProfit
             black={isBackgroundWhite}
             bgIsPink={inViewInNeed}
             className={`${style.companyDataNonProfit} ${showCompanyData ? '' : 'hidden'}`}
-          />
+          /> */}
 
           <div className={style.smokeBlock}>
             <SmokeBackground className={style.smokeTop} />
             <div className={style.flagsBlock}>
               <LetsGiveHope ref={refLetsGiveHope} />
               <OurMission />
-              <Image
+              {/* <Image
                 src="/flag-usa.png"
                 object-fit="contain"
                 alt="Picture of the author"
@@ -108,7 +108,7 @@ export default function ClientSections({
                 width={1306}
                 height={1890}
                 className={style.americanFlag}
-              />
+              /> */}
             </div>
             {statistics && <OurResults results={statistics} />}
           </div>

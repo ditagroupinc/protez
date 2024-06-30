@@ -5,7 +5,7 @@ import { useRef, useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 
 import style from './style.module.scss'
 import { icons } from './icons'
@@ -88,7 +88,7 @@ const PracticeSessions = () => {
   }
 
   return (
-    <AcademySection id={AcademyIDs.PracticeSessions} className={style.practiceSessions}>
+    <Section id={AcademyIDs.PracticeSessions} className={style.practiceSessions}>
       {icons.practiceSessionsLogo.desktop[lang](style.title)}
 
       <TextAppearanceWrapper className={style.sliderWrapper}>
@@ -140,7 +140,7 @@ const PracticeSessions = () => {
           </div>
         )}
       </TextAppearanceWrapper>
-    </AcademySection>
+    </Section>
   )
 }
 

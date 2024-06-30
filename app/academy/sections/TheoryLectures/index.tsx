@@ -4,7 +4,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import style from './style.module.scss'
 import { icons } from './icons'
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
@@ -15,7 +15,7 @@ const TheoryLectures = () => {
   const { width } = useScreenModeAndSize()
 
   return (
-    <AcademySection id={AcademyIDs.TheoryLectures} className={style.theoryLectures}>
+    <Section id={AcademyIDs.TheoryLectures} className={style.theoryLectures}>
       <TextAppearanceWrapper className={`${style.grid1x1} ${style.card}`}>
         <span className={style.number}>/02</span>
         <p className={style.desc}>Examples of post-operative care</p>
@@ -55,7 +55,7 @@ const TheoryLectures = () => {
         <span className={style.number}>/06</span>
         <p className={style.desc}>Physiology</p>
       </TextAppearanceWrapper>
-    </AcademySection>
+    </Section>
   )
 }
 

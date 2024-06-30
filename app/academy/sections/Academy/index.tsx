@@ -7,7 +7,7 @@ import _ from 'lodash'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademySection from '@/components/AcademySection'
+import Section from '@/components/Section'
 
 import style from './style.module.scss'
 import { icons } from './icons'
@@ -136,7 +136,7 @@ const Academy = () => {
   }, [])
 
   return (
-    <AcademySection id={AcademyIDs.Academy} className={style.academy}>
+    <Section id={AcademyIDs.Academy} className={style.academy}>
       {icons.academyLogo.desktop[lang](style.title)}
 
       <TextAppearanceWrapper>
@@ -203,7 +203,7 @@ const Academy = () => {
           )}
         </div>
       </TextAppearanceWrapper>
-    </AcademySection>
+    </Section>
   )
 }
 
