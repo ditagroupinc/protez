@@ -10,7 +10,7 @@ import { forwardRef } from 'react'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import styles from './styles.module.scss'
+import style from './style.module.scss'
 import { icons } from './icons'
 import { AcademyIDs } from '../../consts'
 
@@ -28,41 +28,41 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
   }
 
   return (
-    <AcademySection ref={ref} id={AcademyIDs.SummitResults} className={styles.summitResults}>
-      <div className={styles.resultInfo}>
-        <div className={styles.left}>
+    <AcademySection ref={ref} id={AcademyIDs.SummitResults} className={style.summitResults}>
+      <div className={style.resultInfo}>
+        <div className={style.left}>
           {width >= 600 && width <= 1024
-            ? icons.summitResultsLogo.tablet[lang](styles.title)
-            : icons.summitResultsLogo.desktop[lang](styles.title)}
+            ? icons.summitResultsLogo.tablet[lang](style.title)
+            : icons.summitResultsLogo.desktop[lang](style.title)}
 
-          <p className={styles.desc}>
+          <p className={style.desc}>
             Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam.
             Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc
             suspendisse donec
           </p>
         </div>
-        <div className={styles.right}>
-          <TextAppearanceWrapper className={styles.card}>
-            <span className={styles.count}>200</span>
-            <p className={styles.desc}>Visitors</p>
+        <div className={style.right}>
+          <TextAppearanceWrapper className={style.card}>
+            <span className={style.count}>200</span>
+            <p className={style.desc}>Visitors</p>
           </TextAppearanceWrapper>
-          <TextAppearanceWrapper className={styles.card}>
-            <span className={styles.count}>22</span>
-            <p className={styles.desc}>Invited guests</p>
+          <TextAppearanceWrapper className={style.card}>
+            <span className={style.count}>22</span>
+            <p className={style.desc}>Invited guests</p>
           </TextAppearanceWrapper>
-          <TextAppearanceWrapper className={styles.card}>
-            <span className={styles.count}>12</span>
-            <p className={styles.desc}>Prosthetists</p>
+          <TextAppearanceWrapper className={style.card}>
+            <span className={style.count}>12</span>
+            <p className={style.desc}>Prosthetists</p>
           </TextAppearanceWrapper>
         </div>
       </div>
 
-      <div className={styles.playerContent}>
+      <div className={style.playerContent}>
         <video
           ref={videoRef}
           controls
           src="/protez/academyPage/summitResults/summitResults.mp4"
-          className={styles.summitVideo}
+          className={style.summitVideo}
         />
         {!isPlaying && (
           <>
@@ -73,11 +73,11 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
               width={1584}
               height={800}
               layout="responsive"
-              className={styles.videoOverlay}
+              className={style.videoOverlay}
             />
 
-            <button className={styles.playerButton} onClick={handlePlayButtonClick}>
-              {icons.play(styles.playIcon)}
+            <button className={style.playerButton} onClick={handlePlayButtonClick}>
+              {icons.play(style.playIcon)}
             </button>
           </>
         )}

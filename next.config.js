@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+const environment = process.env.ENVIRONMENT
+
 const nextConfig = {
   experimental: {
     scrollRestoration: true,
@@ -10,7 +13,7 @@ const nextConfig = {
 
   reactStrictMode: false,
   output: 'export',
-  basePath: '/protez',
+  basePath: environment === 'local' ? '' : '/protez',
 }
 
 module.exports = nextConfig

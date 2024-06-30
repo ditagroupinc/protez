@@ -37,22 +37,22 @@
 }
 
 .button.black {
-  border: 1px solid var(--dark);
-  background-color: var(--dark);
+  border: 1px solid var(--dark-blue);
+  background-color: var(--dark-blue);
 }
 
 .button.emptyBlack {
-  border: 1px solid var(--dark);
+  border: 1px solid var(--dark-blue);
   background-color: transparent;
-  color: var(--dark);
+  color: var(--dark-blue);
 }
 
 /* hovers */
 @media screen and (min-width: 480px) {
   .button {
     &:hover {
-      color: var(--dark);
-      border: 1px solid var(--dark);
+      color: var(--dark-blue);
+      border: 1px solid var(--dark-blue);
       -webkit-transition:
         background-color var(--transitionProps),
         border var(--transitionProps),
@@ -71,8 +71,8 @@
   .button.pink {
     &:hover {
       color: var(--white);
-      border: 1px solid var(--dark);
-      background-color: var(--dark);
+      border: 1px solid var(--dark-blue);
+      background-color: var(--dark-blue);
     }
   }
 

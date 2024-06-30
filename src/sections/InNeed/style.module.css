@@ -21,7 +21,7 @@
   flex: 1 1 50%;
 }
 .colorModBlack {
-  color: var(--dark);
+  color: var(--dark-blue);
 }
 
 h2.ua {

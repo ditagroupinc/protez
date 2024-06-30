@@ -5,17 +5,9 @@ import Link, { LinkProps } from 'next/link'
 
 // =================================================================
 
-type ButtonVariant =
-  | 'primary-blue'
-  | 'primary-white'
-  | 'secondary-white'
-  | 'secondary-black'
-  | 'secondary-fill-black'
-  | 'normal-blue'
-  | 'normal-black'
-  | 'primary-red'
+type ButtonVariant = 'primary-red' | 'primary-white' | 'secondary-white' | 'secondary-black'
 
-type ButtonSize = 'big' | 'small' | 'normal'
+type ButtonSize = 'small' | 'normal'
 
 type BaseButtonProps = {
   variant: ButtonVariant
@@ -36,21 +28,17 @@ type ButtonProps = BaseButtonProps &
 
 const variantStyles: Record<ButtonVariant, string> = {
   'primary-white': 'primaryWhite',
-  'primary-blue': 'primaryBlue',
-  'secondary-black': 'secondaryBlack',
-  'secondary-white': 'secondaryWhite',
-  'secondary-fill-black': 'secondaryFillBlack',
-  'normal-black': 'normalBlack',
-  'normal-blue': 'normalBlue',
   'primary-red': 'primaryRed',
+  'secondary-white': 'secondaryWhite',
+  'secondary-black': 'secondaryBlack',
 }
 
 // =================================================================
 
-const Button = (props: ButtonProps) => {
+const ProtezButton = (props: ButtonProps) => {
   if (props.as === 'button') {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { as, variant, size = 'big', className, children, ...rest } = props
+    const { as, variant, size = 'normal', className, children, ...rest } = props
 
     return (
       <button
@@ -80,4 +68,4 @@ const Button = (props: ButtonProps) => {
   return null
 }
 
-export default Button
+export default ProtezButton

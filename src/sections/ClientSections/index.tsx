@@ -7,7 +7,7 @@ import { useInView } from 'react-intersection-observer'
 
 import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils/parsers'
 
-import Header from '@/sections/Header'
+import ProtezHeader from '../ProtezHeader'
 import LetsGiveHope from '@/sections/LetsGiveHope'
 
 const Veterans = lazy(() => import('@/sections/Veterans'))
@@ -86,7 +86,7 @@ export default function ClientSections({
 
   return (
     <>
-      <Header />
+      <ProtezHeader />
       <Suspense fallback={<div className={style.fallback}></div>}>
         <main className={style.main}>
           <CompanyDataNonProfit

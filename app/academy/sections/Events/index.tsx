@@ -7,7 +7,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import AcademySection from '@/components/AcademySection'
 
-import styles from './styles.module.scss'
+import style from './style.module.scss'
 import { icons } from './icons'
 
 import Slider from 'react-slick'
@@ -180,7 +180,7 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
   }
 
   return (
-    <AcademySection ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={styles.events}>
+    <AcademySection ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={style.events}>
       {/* TODO: remove after review
        */}
       <Image
@@ -188,65 +188,65 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
         alt="Ukrainian flag"
         width={1920}
         height={1080}
-        className={styles.backgroundImage}
+        className={style.backgroundImage}
       />
-      <div className={styles.titleWrapper}>
+      <div className={style.titleWrapper}>
         {width < 1024
-          ? icons.eventsLogo.mobile[lang](styles.title)
-          : icons.eventsLogo.desktop[lang](styles.title)}
+          ? icons.eventsLogo.mobile[lang](style.title)
+          : icons.eventsLogo.desktop[lang](style.title)}
       </div>
 
-      <TextAppearanceWrapper className={styles.sliderWrapper}>
-        <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
+      <TextAppearanceWrapper className={style.sliderWrapper}>
+        <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
           {sortedEvents.map((card, index) => {
             let slideClass = ''
 
             if (index === (activeSlide + 2) % sortedEvents.length && width > 1500) {
-              slideClass = styles.centerSlide
+              slideClass = style.centerSlide
             } else if (index === activeSlide && width > 1024 && width < 1500) {
-              slideClass = styles.centerSlide
+              slideClass = style.centerSlide
             } else if (
               index === (activeSlide + 1) % sortedEvents.length &&
               width > 600 &&
               width < 1024
             ) {
-              slideClass = styles.centerSlide
-            } else if (index === activeSlide && width < 600) slideClass = styles.centerSlide
+              slideClass = style.centerSlide
+            } else if (index === activeSlide && width < 600) slideClass = style.centerSlide
 
             return (
               <div key={index}>
-                <div className={`${styles.cardWrapper} ${slideClass}`}>
-                  <a href={card.link} target="blank" className={styles.card}>
+                <div className={`${style.cardWrapper} ${slideClass}`}>
+                  <a href={card.link} target="blank" className={style.card}>
                     <Image
                       // TODO: remove after review
                       src={`/protez/${card.photo}`}
                       alt="events picture"
                       width={340}
                       height={480}
-                      className={styles.cardPicture}
+                      className={style.cardPicture}
                     />
 
-                    <div className={styles.cardDataBlock}>
-                      <div className={styles.cardDateAndStatus}>
+                    <div className={style.cardDataBlock}>
+                      <div className={style.cardDateAndStatus}>
                         {card.upcoming ? (
-                          <span className={`${styles.cardStatus} ${styles.upcoming}`}>
+                          <span className={`${style.cardStatus} ${style.upcoming}`}>
                             Upcoming event
                           </span>
                         ) : (
-                          <span className={`${styles.cardStatus} ${styles.past}`}>Past event</span>
+                          <span className={`${style.cardStatus} ${style.past}`}>Past event</span>
                         )}
 
-                        <span className={styles.cardDate}>{card.date}</span>
+                        <span className={style.cardDate}>{card.date}</span>
                       </div>
 
-                      <h3 className={styles.cardTitle}>{card.title}</h3>
+                      <h3 className={style.cardTitle}>{card.title}</h3>
 
-                      <div className={styles.locationWrapper}>
-                        {icons.location(styles.locationIcon)}
-                        <span className={styles.locationText}>{card.location}</span>
+                      <div className={style.locationWrapper}>
+                        {icons.location(style.locationIcon)}
+                        <span className={style.locationText}>{card.location}</span>
                         {width < 600 && (
-                          <span className={styles.locationButton}>
-                            {icons.arrowTop(styles.iconArrow)}
+                          <span className={style.locationButton}>
+                            {icons.arrowTop(style.iconArrow)}
                           </span>
                         )}
                       </div>
@@ -259,11 +259,11 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
         </Slider>
         {width > 600 && (
           <>
-            <button className={styles.sliderButton} onClick={gotoPrev}>
-              {icons.arrowLeft(styles.arrowLeft)}
+            <button className={style.sliderButton} onClick={gotoPrev}>
+              {icons.arrowLeft(style.arrowLeft)}
             </button>
-            <button className={styles.sliderButton} onClick={gotoNext}>
-              {icons.arrowRight(styles.arrowRight)}
+            <button className={style.sliderButton} onClick={gotoNext}>
+              {icons.arrowRight(style.arrowRight)}
             </button>
           </>
         )}

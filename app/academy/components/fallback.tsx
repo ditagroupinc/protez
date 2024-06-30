@@ -1,7 +1,7 @@
-import styles from './styles.module.scss'
+import style from './style.module.scss'
 
 const FullScreenFallback = () => {
-  return <div className={styles.fallback}>Loading...</div>
+  return <div className={style.fallback}>Loading...</div>
 }
 
 export default FullScreenFallback

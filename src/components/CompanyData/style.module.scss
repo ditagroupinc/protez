@@ -7,7 +7,7 @@
   bottom: calc(2 * var(--headerPaddingSide));
   max-width: calc(var(--navLeftWidth) + var(--headerPaddingSide));
   &.black {
-    color: var(--dark);
+    color: var(--dark-blue);
   }
 }
 

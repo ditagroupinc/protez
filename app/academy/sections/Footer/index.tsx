@@ -1,4 +1,4 @@
-import styles from './style.module.scss'
+import style from './style.module.scss'
 
 import Button from '@/components/Button'
 
@@ -17,37 +17,37 @@ const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
   // const { width } = useScreenModeAndSize()
 
   return (
-    <footer ref={ref} id={AcademyIDs.Footer} className={styles.footer}>
-      <div className={styles.footerTop}>
-        <div className={styles.footerTopContent}>
-          <div className={styles.right}>
+    <footer ref={ref} id={AcademyIDs.Footer} className={style.footer}>
+      <div className={style.footerTop}>
+        <div className={style.footerTopContent}>
+          <div className={style.right}>
             {/* {width < 800
-              ? icons.footerLogo.mobile[lang](styles.footerLogo)
-              : icons.footerLogo.desktop[lang](styles.footerLogo)} */}
-            {icons.footerLogo.mobile[lang](styles.footerLogo)}
+              ? icons.footerLogo.mobile[lang](style.footerLogo)
+              : icons.footerLogo.desktop[lang](style.footerLogo)} */}
+            {icons.footerLogo.mobile[lang](style.footerLogo)}
 
-            <div className={styles.buttonGroup}>
-              <Button as="link" variant="primary-white" href="/" className={styles.button}>
+            <div className={style.buttonGroup}>
+              <Button as="link" variant="primary-white" href="/" className={style.button}>
                 Subscribe
               </Button>
-              {/* <Button as="link" variant="secondary-fill-black" href="/" className={styles.button}>
+              {/* <Button as="link" variant="secondary-fill-black" href="/" className={style.button}>
                 Support Academy
               </Button> */}
-              <button className={styles.supportAcademyButton}>Support Academy</button>
+              <button className={style.supportAcademyButton}>Support Academy</button>
             </div>
           </div>
-          <div className={styles.left}>
+          <div className={style.left}>
             <p>Nonprofit organization 501(c)(3) EIN: 88-2437069</p>
-            <Divider className={styles.divider} />
-            <p className={styles.descTitle}>Please send checks to:</p>
-            <p className={styles.descAddress}>
+            <Divider className={style.divider} />
+            <p className={style.descTitle}>Please send checks to:</p>
+            <p className={style.descAddress}>
               Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America
             </p>
-            <p className={styles.descTitle}>info@protezfoundation.com</p>
+            <p className={style.descTitle}>info@protezfoundation.com</p>
           </div>
         </div>
       </div>
-      <div className={styles.footerBottom}>2024 © Made by DITA GROUP Inc.</div>
+      <div className={style.footerBottom}>2024 © Made by DITA GROUP Inc.</div>
     </footer>
   )
 })

@@ -7,7 +7,7 @@ import AcademySection from '@/components/AcademySection'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import styles from './style.module.scss'
+import style from './style.module.scss'
 import TeacherCard from './TeacherCard'
 import { icons } from './icons.js'
 
@@ -88,17 +88,17 @@ const OurTeachers = () => {
   }
 
   return (
-    <AcademySection id={AcademyIDs.OurTeachers} className={styles.ourTeachers}>
-      <div className={styles.titleCell}>
-        {icons.ourTeachersLogo.desktop[lang](styles.teachersLogo)}
+    <AcademySection id={AcademyIDs.OurTeachers} className={style.ourTeachers}>
+      <div className={style.titleCell}>
+        {icons.ourTeachersLogo.desktop[lang](style.teachersLogo)}
       </div>
       {width < 600 ? (
         <TextAppearanceWrapper>
-          <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
+          <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
             {teachersCards.map((card, index) => (
-              <div className={styles.cardWrapper} key={index}>
+              <div className={style.cardWrapper} key={index}>
                 <TeacherCard
-                  className={styles.teacherCard}
+                  className={style.teacherCard}
                   photo={card.photo}
                   links={card.links}
                   name={card.name}
@@ -111,7 +111,7 @@ const OurTeachers = () => {
       ) : (
         teachersCards.map((card, index) => (
           <TeacherCard
-            className={styles.teacherCard}
+            className={style.teacherCard}
             key={index}
             photo={card.photo}
             links={card.links}

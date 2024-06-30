@@ -9,7 +9,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import AcademySection from '@/components/AcademySection'
 
-import styles from './styles.module.scss'
+import style from './style.module.scss'
 import { icons } from './icons'
 
 import Slider from 'react-slick'
@@ -106,9 +106,9 @@ const Academy = () => {
     let selector = ''
 
     if (screenWidth < 1366) {
-      selector = `.slick-slide .${styles.rightSlide} img`
+      selector = `.slick-slide .${style.rightSlide} img`
     } else {
-      selector = `.slick-slide.slick-active .${styles.rightSlide} img`
+      selector = `.slick-slide.slick-active .${style.rightSlide} img`
     }
     const rightSlideElement = document.querySelector(selector)
 
@@ -136,27 +136,27 @@ const Academy = () => {
   }, [])
 
   return (
-    <AcademySection id={AcademyIDs.Academy} className={styles.academy}>
-      {icons.academyLogo.desktop[lang](styles.title)}
+    <AcademySection id={AcademyIDs.Academy} className={style.academy}>
+      {icons.academyLogo.desktop[lang](style.title)}
 
       <TextAppearanceWrapper>
-        <div className={styles.sliderWrapper}>
-          <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
+        <div className={style.sliderWrapper}>
+          <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
             {academyCards.map((card, index) => {
               let slideClass = ''
 
               switch (index) {
                 case (activeSlide - 1 + academyCards.length) % academyCards.length:
-                  slideClass = styles.leftSlide
+                  slideClass = style.leftSlide
                   break
                 case (activeSlide - 2 + academyCards.length) % academyCards.length:
-                  slideClass = styles.leftEdgeSlide
+                  slideClass = style.leftEdgeSlide
                   break
                 case (activeSlide + 1) % academyCards.length:
-                  slideClass = styles.rightSlide
+                  slideClass = style.rightSlide
                   break
                 case (activeSlide + 2) % academyCards.length:
-                  slideClass = styles.rightEdgeSlide
+                  slideClass = style.rightEdgeSlide
                   break
                 default:
                   slideClass = ''
@@ -164,8 +164,8 @@ const Academy = () => {
 
               return (
                 <div key={index}>
-                  <div className={`${styles.cardWrapper} ${slideClass}`}>
-                    <div className={`${styles.card} `}>
+                  <div className={`${style.cardWrapper} ${slideClass}`}>
+                    <div className={`${style.card} `}>
                       {card.includes('.mp4') ? (
                         <video
                           src={`/protez/${card}`}
@@ -173,7 +173,7 @@ const Academy = () => {
                           loop
                           muted
                           playsInline
-                          className={styles.video}
+                          className={style.video}
                         />
                       ) : (
                         <Image
@@ -182,7 +182,7 @@ const Academy = () => {
                           alt="picture of Protez Academy students and teachers"
                           width={720}
                           height={520}
-                          className={styles.image}
+                          className={style.image}
                         />
                       )}
                     </div>
@@ -192,12 +192,12 @@ const Academy = () => {
             })}
           </Slider>
           {width > 600 && (
-            <div className={styles.sliderNavigation} ref={navRef}>
-              <button className={styles.sliderButton} onClick={gotoPrev}>
-                {icons.arrowLeft(styles.arrowLeft)}
+            <div className={style.sliderNavigation} ref={navRef}>
+              <button className={style.sliderButton} onClick={gotoPrev}>
+                {icons.arrowLeft(style.arrowLeft)}
               </button>
-              <button className={styles.sliderButton} onClick={gotoNext}>
-                {icons.arrowRight(styles.arrowRight)}
+              <button className={style.sliderButton} onClick={gotoNext}>
+                {icons.arrowRight(style.arrowRight)}
               </button>
             </div>
           )}

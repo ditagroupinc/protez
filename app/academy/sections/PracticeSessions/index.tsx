@@ -7,7 +7,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import AcademySection from '@/components/AcademySection'
 
-import styles from './styles.module.scss'
+import style from './style.module.scss'
 import { icons } from './icons'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -88,23 +88,23 @@ const PracticeSessions = () => {
   }
 
   return (
-    <AcademySection id={AcademyIDs.PracticeSessions} className={styles.practiceSessions}>
-      {icons.practiceSessionsLogo.desktop[lang](styles.title)}
+    <AcademySection id={AcademyIDs.PracticeSessions} className={style.practiceSessions}>
+      {icons.practiceSessionsLogo.desktop[lang](style.title)}
 
-      <TextAppearanceWrapper className={styles.sliderWrapper}>
-        <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
+      <TextAppearanceWrapper className={style.sliderWrapper}>
+        <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
           {practiceSessionsCards.map((card, index) => {
             let slideClass = ''
 
             switch (index) {
               case activeSlide:
-                slideClass = styles.leftSlide
+                slideClass = style.leftSlide
                 break
               case (activeSlide + 1) % practiceSessionsCards.length:
-                slideClass = styles.centerSlide
+                slideClass = style.centerSlide
                 break
               case (activeSlide + 2) % practiceSessionsCards.length:
-                slideClass = styles.rightSlide
+                slideClass = style.rightSlide
                 break
               default:
                 slideClass = ''
@@ -112,17 +112,17 @@ const PracticeSessions = () => {
 
             return (
               <div key={index}>
-                <div className={`${styles.cardWrapper} ${slideClass}`}>
-                  <div className={`${styles.card} `}>
+                <div className={`${style.cardWrapper} ${slideClass}`}>
+                  <div className={`${style.card} `}>
                     <Image
                       // TODO: remove after review
                       src={`/protez/${card.image}`}
                       alt="picture of practice sessions in Protez Academy"
                       width={490}
                       height={500}
-                      className={styles.image}
+                      className={style.image}
                     />
-                    <p className={styles.text}>{card.text}</p>
+                    <p className={style.text}>{card.text}</p>
                   </div>
                 </div>
               </div>
@@ -130,12 +130,12 @@ const PracticeSessions = () => {
           })}
         </Slider>
         {width > 600 && (
-          <div className={styles.sliderNavigation}>
-            <button className={styles.sliderButton} onClick={gotoPrev}>
-              {icons.arrowLeft(styles.arrowLeft)}
+          <div className={style.sliderNavigation}>
+            <button className={style.sliderButton} onClick={gotoPrev}>
+              {icons.arrowLeft(style.arrowLeft)}
             </button>
-            <button className={styles.sliderButton} onClick={gotoNext}>
-              {icons.arrowRight(styles.arrowRight)}
+            <button className={style.sliderButton} onClick={gotoNext}>
+              {icons.arrowRight(style.arrowRight)}
             </button>
           </div>
         )}

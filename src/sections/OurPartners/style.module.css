@@ -50,7 +50,7 @@
 .discoverCard {
   width: 100%;
   padding: 2.5rem;
-  background-color: var(--dark);
+  background-color: var(--dark-blue);
   display: flex;
   align-items: flex-end;
   justify-content: space-between;

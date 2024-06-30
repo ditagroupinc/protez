@@ -48,7 +48,7 @@
   align-items: center;
 
   border-radius: 4px;
-  background-color: var(--dark);
+  background-color: var(--dark-blue);
 
   color: var(--white);
   text-align: center;
@@ -61,7 +61,7 @@
   transition: all var(--transitionProps);
   &:hover {
     background-color: var(--white);
-    color: var(--dark);
+    color: var(--dark-blue);
   }
 }
 
@@ -82,7 +82,7 @@
 }
 
 .footerBottom {
-  background-color: var(--dark);
+  background-color: var(--dark-blue);
   color: var(--white);
   font-size: 14px;
   font-weight: 400;

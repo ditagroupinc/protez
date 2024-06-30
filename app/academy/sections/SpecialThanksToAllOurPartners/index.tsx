@@ -4,7 +4,7 @@ import Button from '@/components/Button'
 
 import Image from 'next/image'
 
-import styles from './styles.module.scss'
+import style from './style.module.scss'
 import { icons } from './icons'
 
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -30,7 +30,7 @@ const partnersIcons: string[] = [
 ]
 
 const PartnerCard = ({ icon }: { icon: string }): React.ReactElement => (
-  <TextAppearanceWrapper className={styles.partnerCard}>
+  <TextAppearanceWrapper className={style.partnerCard}>
     <Image
       // TODO: remove after review
 
@@ -38,7 +38,7 @@ const PartnerCard = ({ icon }: { icon: string }): React.ReactElement => (
       alt={icon}
       width={300}
       height={230}
-      className={styles.partnerLogo}
+      className={style.partnerLogo}
     />
   </TextAppearanceWrapper>
 )
@@ -50,19 +50,19 @@ const SpecialThanksToAllOurPartners = () => {
   return (
     <AcademySection
       id={AcademyIDs.SpecialThanksToAllOurPartners}
-      className={styles.specialThanksToAllOurPartners}
+      className={style.specialThanksToAllOurPartners}
     >
-      <div className={styles.buttonCell}>
-        <Button as="link" href="/" variant="secondary-fill-black" className={styles.button}>
+      <div className={style.buttonCell}>
+        <Button as="link" href="/" variant="secondary-fill-black" className={style.button}>
           Discover all <br />
           Partners
           {icons.arrowUp()}
         </Button>
       </div>
-      <div className={styles.titleCell}>
+      <div className={style.titleCell}>
         {width < 600
-          ? icons.specialThanksToAllOurPartnersLogo.mobile[lang](styles.title)
-          : icons.specialThanksToAllOurPartnersLogo.desktop[lang](styles.title)}
+          ? icons.specialThanksToAllOurPartnersLogo.mobile[lang](style.title)
+          : icons.specialThanksToAllOurPartnersLogo.desktop[lang](style.title)}
       </div>
       {partnersIcons.map((icon, index) => (
         <PartnerCard icon={icon} key={index} />
@@ -76,8 +76,8 @@ const SpecialThanksToAllOurPartners = () => {
           {globalIcons.ditaLogo(`${style.partnerLogo}`)}
         </Link>
       </TextAppearanceWrapper> */}
-      <Link href="https://dita-group.com/" target="blank" className={styles.partnerCard}>
-        {icons.ditaLogo(styles.ditaLogo)}
+      <Link href="https://dita-group.com/" target="blank" className={style.partnerCard}>
+        {icons.ditaLogo(style.ditaLogo)}
       </Link>
     </AcademySection>
   )

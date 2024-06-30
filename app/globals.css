@@ -10,11 +10,12 @@
 @tailwind utilities;
 
 :root {
-  --pink: #cd0062;
+  --pink: #b40a54;
   --blue: #00a3ff;
-  --dark-blue: #0170ce;
   --white: #ffffff;
-  --dark: #0d1125;
+  --dark-blue: #0d1125;
+  --black: #131313;
+  --red: #c31822;
   --navLeftWidth: 300px;
   --navRightWidth: 64px;
   --paddingVW: 2vw;
@@ -26,37 +27,36 @@
   --greyBorder: 1px solid rgba(13, 17, 37, 0.24);
 }
 
-@media screen and (max-width: 1920px) {
+/* @media screen and (max-width: 1920px) {
   :root {
     --headerPaddingSide: 42px;
     --headerPaddingTop: 42px;
   }
-}
+} */
 
-@media screen and (max-width: 1366px) {
+/* @media screen and (max-width: 1366px) {
   :root {
-    /* --navLeftWidth: 264px; */
     --headerPaddingTop: 21px;
   }
-}
+} */
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   :root {
     --headerPaddingSide: 30px;
     --headerPaddingTop: 17px;
   }
-}
+} */
 
-@media screen and (min-width: 1981px) {
+/* @media screen and (min-width: 1981px) {
   :root {
     --paddingVW: 4vw;
   }
-}
+} */
 
 html,
 body,
 a {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   font-style: normal;
   color: var(--white);
 }
@@ -79,23 +79,23 @@ body::-webkit-scrollbar {
 /* -------------------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------------------- */
-.h1,
+/* .h1,
 .h3,
 .h4 {
   font-weight: 700;
   font-family: 'Outfit', sans-serif;
-}
-.h2,
+} */
+/* .h2,
 .h5,
 .h6,
 .p {
   font-weight: 400;
   font-family: 'Outfit', sans-serif;
-}
-
+} */
+/* 
 .h6 {
   line-height: 24px;
-}
+} */
 
 .textContainer {
   height: -webkit-fit-content;
@@ -132,7 +132,17 @@ body::-webkit-scrollbar {
   overflow: hidden;
 }
 
-@media screen and (min-width: 1366px) {
+.svgTextBlock {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* @media screen and (min-width: 1366px) {
   .h1 {
     font-size: calc(32px + 40 * ((100vw - 1366px) / 1194));
     line-height: calc(40px + 40 * ((100vw - 1366px) / 1194));
@@ -220,59 +230,33 @@ body::-webkit-scrollbar {
     font-size: 26px;
     line-height: 40px;
   }
-}
-
+} */
+/* 
 .section {
-  /* padding-left: calc(300px + var(--headerPaddingSide) + 280px); */
   padding-left: calc(366px + 309 * ((100vw - 1366px) / 1194));
   padding-right: calc(175px + 150 * ((100vw - 1366px) / 1194));
-  /* padding-right: calc(64px + var(--headerPaddingSide) + 175px); */
+
   padding-top: 9%;
   min-height: 100vh;
   position: relative;
-}
-@media screen and (max-width: 1920px) {
-  .section {
-    /* padding-left: calc(300px + var(--headerPaddingSide) + 120px); */
-    /* padding-right: calc(64px + var(--headerPaddingSide) + 80px); */
-  }
-}
+} */
 
-/* beforeTablet */
-@media screen and (max-width: 1366px) {
-  .section {
-    /* padding-left: calc(300px + var(--headerPaddingSide) + 80px); */
-    /* padding-right: calc(64px + var(--headerPaddingSide) + 80px); */
-  }
-}
-
-@media screen and (max-width: 1180px) {
+/* @media screen and (max-width: 1180px) {
   .section {
     padding-left: var(--headerPaddingSide);
     padding-right: var(--headerPaddingSide);
   }
-}
+} */
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .section {
-    /* padding-top: 30px; */
     padding-top: 160px;
     padding-left: 24px;
     padding-right: 24px;
     min-height: auto;
     padding-bottom: 5rem;
   }
-}
-
-.svgTextBlock {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-}
-
-.hidden {
-  display: none !important;
-}
+} */
 
 /* desktop */
 /* @media screen and (max-width: 1920px) {

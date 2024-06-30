@@ -1,4 +1,4 @@
-.btn {
+.button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,6 +9,15 @@
   -ms-flex-pack: center;
   gap: 8px;
   border-radius: 4px;
+
+  padding: 17px 32px 19px 32px;
+
+  font-family: 'Nunito Sans';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px; /* 150% */
+
   -webkit-transition:
     background var(--transitionProps),
     border var(--transitionProps),
@@ -42,8 +51,26 @@
     }
   }
 
+  &.primaryRed {
+    color: var(--white);
+    border: 2px solid transparent;
+
+    background: linear-gradient(180deg, #d01f1f 0%, #b50707 100%);
+    background-size: 100% 400%;
+    background-position: 100% 0%;
+
+    &:hover,
+    &:active {
+      background-position: 100% 100%;
+    }
+
+    &:focus {
+      border: 2px solid var(--white);
+    }
+  }
+
   &.primaryWhite {
-    color: var(--dark);
+    color: var(--dark-blue);
     background-color: var(--white);
     border: 1px solid var(--white);
 
@@ -53,32 +80,45 @@
     }
   }
 
+  &.protezPrimaryWhite {
+    color: var(--black);
+    border: 1px solid transparent;
+    &:hover {
+      background-color: transparent;
+      color: var(--white);
+      border: 1px solid var(--white);
+    }
+    &:focus {
+      border: 2px solid var(--black);
+    }
+  }
+
   &.secondaryWhite {
     color: var(--white);
     border: 1px solid var(--white);
     background-color: transparent;
 
     &:hover {
-      color: var(--dark);
+      color: var(--dark-blue);
       background-color: var(--white);
     }
   }
 
   &.secondaryBlack {
-    color: var(--dark);
+    color: var(--dark-blue);
     background-color: var(--var);
-    border: 1px solid var(--dark);
+    border: 1px solid var(--dark-blue);
 
     &:hover {
       color: var(--white);
-      background-color: var(--dark);
+      background-color: var(--dark-blue);
     }
   }
 
   &.secondaryFillBlack {
     color: var(--white);
-    border: 1px solid var(--dark);
-    background-color: var(--dark);
+    border: 1px solid var(--dark-blue);
+    background-color: var(--dark-blue);
   }
 
   &.normalBlue {
@@ -92,11 +132,11 @@
 
   &.normalBlack {
     border-radius: 4px;
-    border: 1px solid var(--dark);
+    border: 1px solid var(--dark-blue);
 
     &:hover {
       color: var(--white);
-      background-color: var(--dark);
+      background-color: var(--dark-blue);
     }
   }
 

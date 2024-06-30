@@ -7,7 +7,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import AcademySection from '@/components/AcademySection'
 
-import styles from './styles.module.scss'
+import style from './style.module.scss'
 import { icons } from './icons'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -81,20 +81,20 @@ const AcademyStudents = () => {
   }
 
   return (
-    <AcademySection id={AcademyIDs.AcademyStudents} className={styles.academyStudents}>
-      {icons.academyStudentsLogo.desktop[lang](styles.title)}
+    <AcademySection id={AcademyIDs.AcademyStudents} className={style.academyStudents}>
+      {icons.academyStudentsLogo.desktop[lang](style.title)}
 
-      <TextAppearanceWrapper className={styles.sliderWrapper}>
-        <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
+      <TextAppearanceWrapper className={style.sliderWrapper}>
+        <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
           {academyStudentsCards.map((card, index) => {
             let slideClass = ''
 
             switch (index) {
               case activeSlide:
-                slideClass = styles.leftSlide
+                slideClass = style.leftSlide
                 break
               case (activeSlide + 2) % academyStudentsCards.length:
-                slideClass = styles.centerSlide
+                slideClass = style.centerSlide
                 break
               default:
                 slideClass = ''
@@ -102,15 +102,15 @@ const AcademyStudents = () => {
 
             return (
               <div key={index}>
-                <div className={`${styles.cardWrapper} ${slideClass}`}>
-                  <div className={`${styles.card} `}>
+                <div className={`${style.cardWrapper} ${slideClass}`}>
+                  <div className={`${style.card} `}>
                     <Image
                       // TODO: remove after review
                       src={`/protez/${card}`}
                       alt="photo of students of Protez Academy"
                       width={490}
                       height={500}
-                      className={styles.image}
+                      className={style.image}
                     />
                   </div>
                 </div>
@@ -119,12 +119,12 @@ const AcademyStudents = () => {
           })}
         </Slider>
         {width > 600 && (
-          <div className={styles.sliderNavigation}>
-            <button className={styles.sliderButton} onClick={gotoPrev}>
-              {icons.arrowLeft(styles.arrowLeft)}
+          <div className={style.sliderNavigation}>
+            <button className={style.sliderButton} onClick={gotoPrev}>
+              {icons.arrowLeft(style.arrowLeft)}
             </button>
-            <button className={styles.sliderButton} onClick={gotoNext}>
-              {icons.arrowRight(styles.arrowRight)}
+            <button className={style.sliderButton} onClick={gotoNext}>
+              {icons.arrowRight(style.arrowRight)}
             </button>
           </div>
         )}

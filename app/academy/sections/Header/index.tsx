@@ -15,7 +15,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { BurgerButton } from '@/sections/Header/components/BurgerButton'
 
-import styles from './styles.module.scss'
+import style from './style.module.scss'
 
 import { AcademyIDs } from '../../consts'
 
@@ -83,7 +83,7 @@ const AcademyHeader = () => {
 
   return (
     <>
-      <header className={styles.academyHeader}>
+      <header className={style.academyHeader}>
         <a href="#academyIntro">{icons.protezAcademyLogo()}</a>
         {width < 992 ? (
           <BurgerButton
@@ -93,7 +93,7 @@ const AcademyHeader = () => {
             close={headerIsOpened}
           />
         ) : (
-          <div className={styles.btnGroup}>
+          <div className={style.btnGroup}>
             <Button
               as="link"
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
@@ -101,7 +101,7 @@ const AcademyHeader = () => {
               variant="primary-blue"
               size="small"
               rel="noopener noreferrer"
-              className={styles.applyBtn}
+              className={style.applyBtn}
             >
               {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
               Apply to Academy
@@ -110,19 +110,19 @@ const AcademyHeader = () => {
               {/* {texts.academyHeader.buttons.foundation[lang]} */}
               Protez Foundation
             </Button>
-            <div className={styles.languageWrapper}>
-              {icons.iconWorld(`${styles.worldIcon}`)}
+            <div className={style.languageWrapper}>
+              {icons.iconWorld(`${style.worldIcon}`)}
               <button
                 // onClick={handleLanguageChange}
                 disabled={lang === Languages.English}
-                className={styles.localeBtn}
+                className={style.localeBtn}
               >
                 EN
               </button>
               <button
                 // onClick={handleLanguageChange}
                 disabled={lang === Languages.Ukrainian}
-                className={styles.localeBtn}
+                className={style.localeBtn}
               >
                 UA
               </button>
@@ -135,19 +135,19 @@ const AcademyHeader = () => {
             />
           </div>
         )}
-        <div className={`${styles.sideMenu} ${headerIsOpened ? styles.opened : ''}`}>
-          <div className={styles.protezFoundationLinkWrapper}>
-            <Link href={'/'} className={styles.protezFoundationLink}>
+        <div className={`${style.sideMenu} ${headerIsOpened ? style.opened : ''}`}>
+          <div className={style.protezFoundationLinkWrapper}>
+            <Link href={'/'} className={style.protezFoundationLink}>
               <span>Protez Foundation</span>
-              {icons.arrowUp(styles.icon)}
+              {icons.arrowUp(style.icon)}
             </Link>
           </div>
-          <div className={styles.navigationWrapper}>
-            <nav ref={ref} className={styles.navigation}>
-              <ul className={styles.ancorList}>
+          <div className={style.navigationWrapper}>
+            <nav ref={ref} className={style.navigation}>
+              <ul className={style.ancorList}>
                 {AncorLinks.map(({ id, text }) => (
-                  <li key={id} className={styles.ancorItem} onClick={closeHeaderOnAncorClick}>
-                    <a href={`#${id}`} className={styles.ancorLink}>
+                  <li key={id} className={style.ancorItem} onClick={closeHeaderOnAncorClick}>
+                    <a href={`#${id}`} className={style.ancorLink}>
                       {text}
                     </a>
                   </li>
@@ -156,8 +156,8 @@ const AcademyHeader = () => {
             </nav>
           </div>
 
-          <div className={styles.lowerPart}>
-            <div className={styles.lowerPartButtonsContainer}>
+          <div className={style.lowerPart}>
+            <div className={style.lowerPartButtonsContainer}>
               <Button
                 as="link"
                 href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
@@ -165,7 +165,7 @@ const AcademyHeader = () => {
                 variant="primary-blue"
                 size="small"
                 rel="noopener noreferrer"
-                className={styles.lowerPartButton}
+                className={style.lowerPartButton}
               >
                 Apply to Academy
                 {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
@@ -175,22 +175,22 @@ const AcademyHeader = () => {
                 href="/"
                 variant="secondary-black"
                 size="small"
-                className={styles.lowerPartButton}
+                className={style.lowerPartButton}
               >
                 Support Academy
                 {/* {texts.academyHeader.buttons.supportAcademy[lang]} */}
-                {icons.arrowUp(`${styles.icon} ${styles.black}`)}
+                {icons.arrowUp(`${style.icon} ${style.black}`)}
               </Button>
             </div>
 
-            <a className={styles.phoneNumber} href="tel:+16127724777">
-              {icons.call(styles.icon)}
+            <a className={style.phoneNumber} href="tel:+16127724777">
+              {icons.call(style.icon)}
               <span> +1 612-772-4777</span>
             </a>
 
-            <div className={styles.languageButtonContainer}>
-              <button className={styles.languageButton}>
-                {icons.iconWorld(styles.icon)}
+            <div className={style.languageButtonContainer}>
+              <button className={style.languageButton}>
+                {icons.iconWorld(style.icon)}
                 <span>English</span>
               </button>
             </div>

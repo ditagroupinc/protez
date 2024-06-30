@@ -3,7 +3,7 @@
   padding-right: 24px;
 }
 
-.academyHeader {
+.protezHeader {
   position: fixed;
   top: 0;
   left: 0;
@@ -46,7 +46,7 @@
   }
 
   &:hover {
-    color: var(--blue);
+    color: var(--red);
   }
 
   &:disabled,
@@ -73,7 +73,7 @@
   width: 100%;
   height: 100%;
   background-color: var(--white);
-  color: var(--dark-blue);
+  color: var(--black);
 
   &.opened {
     transform: none;
@@ -94,7 +94,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--blue);
+  color: var(--red);
 
   font-size: 20px;
   font-style: normal;
@@ -105,9 +105,14 @@
 .icon {
   width: 24px;
   height: 24px;
+  &.red {
+    & path {
+      fill: var(--red);
+    }
+  }
   &.black {
     & path {
-      fill: var(--dark-blue);
+      fill: var(--black);
     }
   }
 }
@@ -138,7 +143,7 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: var(--blue);
+    background: var(--red);
   }
 
   &::-webkit-scrollbar-thumb:hover {
@@ -158,7 +163,7 @@
 }
 
 .ancorLink {
-  color: var(--dark-blue, #0d1125);
+  color: var(--black);
 
   font-size: 20px;
   font-style: normal;
@@ -190,7 +195,7 @@
   align-items: center;
   gap: 8px;
 
-  color: var(--dark-blue, #0d1125);
+  color: var(--black);
 
   font-size: 16px;
   font-style: normal;
@@ -206,37 +211,81 @@
   padding-top: 16px;
   padding-bottom: 16px;
   @include padding-side-mixin;
-  background-color: var(--dark-blue);
+  background-color: var(--black);
 }
 
 .languageButton {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--white, #fff);
+  color: var(--white);
 
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 22px;
+  font-weight: 700;
+  line-height: 24px;
+
+  text-transform: capitalize;
 }
 
 //
-//
+.socialMediaLinksContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  gap: 32px;
+  z-index: 999;
+}
+
+.socialMediaLink {
+  &:hover svg rect {
+    transition: all var(--transitionProps);
+    fill: var(--red);
+    stroke: var(--red);
+  }
+}
+
 @media (max-width: 1366px) {
-  .academyHeader {
+  .protezHeader {
     padding: 24px 40px;
   }
 }
 
 @media (max-width: 1024px) {
-  .academyHeader {
+  .protezHeader {
     padding: 32px 40px;
   }
 }
 
 @media (max-width: 600px) {
-  .academyHeader {
+  .protezHeader {
     padding: 32px 40px;
+  }
+  .sideMenu {
+    max-width: 100%;
+    width: 100%;
+  }
+  .socialMediaLinksContainer {
+    gap: 10px;
+    top: auto;
+    bottom: 40px;
+    transform: none;
+    z-index: 999;
+  }
+  .socialMediaLink {
+    & svg {
+      width: 40px;
+      height: 40px;
+    }
+    &:first-of-type {
+      & svg rect {
+        fill: var(--red);
+        stroke: var(--red);
+      }
+    }
   }
 }

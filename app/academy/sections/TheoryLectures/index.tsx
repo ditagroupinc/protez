@@ -2,7 +2,7 @@ import Button from '@/components/Button'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import styles from './styles.module.scss'
+import style from './style.module.scss'
 import { icons } from './icons'
 import AcademySection from '@/components/AcademySection'
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -15,45 +15,45 @@ const TheoryLectures = () => {
   const { width } = useScreenModeAndSize()
 
   return (
-    <AcademySection id={AcademyIDs.TheoryLectures} className={styles.theoryLectures}>
-      <TextAppearanceWrapper className={`${styles.grid1x1} ${styles.card}`}>
-        <span className={styles.number}>/02</span>
-        <p className={styles.desc}>Examples of post-operative care</p>
+    <AcademySection id={AcademyIDs.TheoryLectures} className={style.theoryLectures}>
+      <TextAppearanceWrapper className={`${style.grid1x1} ${style.card}`}>
+        <span className={style.number}>/02</span>
+        <p className={style.desc}>Examples of post-operative care</p>
       </TextAppearanceWrapper>
-      <div className={styles.gridTitle}>
+      <div className={style.gridTitle}>
         {width < 600
-          ? icons.theoryLecturesLogo.mobile[lang](styles.sectionTitle)
-          : icons.theoryLecturesLogo.desktop[lang](styles.sectionTitle)}
+          ? icons.theoryLecturesLogo.mobile[lang](style.sectionTitle)
+          : icons.theoryLecturesLogo.desktop[lang](style.sectionTitle)}
       </div>
-      <TextAppearanceWrapper className={`${styles.grid1x4} ${styles.card}`}>
-        <span className={styles.number}>/01</span>
-        <p className={styles.desc}>
+      <TextAppearanceWrapper className={`${style.grid1x4} ${style.card}`}>
+        <span className={style.number}>/01</span>
+        <p className={style.desc}>
           Etiology of polytrauma and subsequent management of polytrauma patients
         </p>
       </TextAppearanceWrapper>
-      <TextAppearanceWrapper className={`${styles.grid2x2} ${styles.card}`}>
-        <span className={styles.number}>/03</span>
-        <p className={styles.desc}>Objectives of pre-amputation consultation</p>
+      <TextAppearanceWrapper className={`${style.grid2x2} ${style.card}`}>
+        <span className={style.number}>/03</span>
+        <p className={style.desc}>Objectives of pre-amputation consultation</p>
       </TextAppearanceWrapper>
-      <TextAppearanceWrapper className={`${styles.grid2x3} ${styles.card}`}>
-        <span className={styles.number}>/04</span>
-        <p className={styles.desc}>Different levels of upper and lower limb amputations</p>
+      <TextAppearanceWrapper className={`${style.grid2x3} ${style.card}`}>
+        <span className={style.number}>/04</span>
+        <p className={style.desc}>Different levels of upper and lower limb amputations</p>
       </TextAppearanceWrapper>
-      <div className={styles.gridButton}>
-        <Button as={'link'} variant="normal-blue" href={'/'} className={styles.applyBtn}>
+      <div className={style.gridButton}>
+        <Button as={'link'} variant="normal-blue" href={'/'} className={style.applyBtn}>
           Apply to
           <br />
           Academy
           {icons.arrowUp()}
         </Button>
       </div>
-      <TextAppearanceWrapper className={`${styles.grid3x3} ${styles.card}`}>
-        <span className={styles.number}>/05</span>
-        <p className={styles.desc}>Overview of cadaver anatomy</p>
+      <TextAppearanceWrapper className={`${style.grid3x3} ${style.card}`}>
+        <span className={style.number}>/05</span>
+        <p className={style.desc}>Overview of cadaver anatomy</p>
       </TextAppearanceWrapper>
-      <TextAppearanceWrapper className={`${styles.grid3x4} ${styles.card}`}>
-        <span className={styles.number}>/06</span>
-        <p className={styles.desc}>Physiology</p>
+      <TextAppearanceWrapper className={`${style.grid3x4} ${style.card}`}>
+        <span className={style.number}>/06</span>
+        <p className={style.desc}>Physiology</p>
       </TextAppearanceWrapper>
     </AcademySection>
   )

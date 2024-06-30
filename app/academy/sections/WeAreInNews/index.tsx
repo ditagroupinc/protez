@@ -7,7 +7,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import AcademySection from '@/components/AcademySection'
 
-import styles from './styles.module.scss'
+import style from './style.module.scss'
 import { icons } from './icons'
 
 import Slider from 'react-slick'
@@ -130,22 +130,22 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
   }
 
   return (
-    <AcademySection ref={ref} id={AcademyIDs.WeAreInNews} className={styles.weAreInNews}>
+    <AcademySection ref={ref} id={AcademyIDs.WeAreInNews} className={style.weAreInNews}>
       {width < 600
-        ? icons.weAreInNewsLogo.mobile[lang](styles.title)
-        : icons.weAreInNewsLogo.desktop[lang](styles.title)}
+        ? icons.weAreInNewsLogo.mobile[lang](style.title)
+        : icons.weAreInNewsLogo.desktop[lang](style.title)}
 
-      <div className={styles.sliderWrapper}>
-        <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
+      <div className={style.sliderWrapper}>
+        <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
           {newsCards.map((card, index) => {
             let slideClass = ''
 
             switch (index) {
               case (activeSlide + 1) % newsCards.length:
-                slideClass = styles.centerSlide
+                slideClass = style.centerSlide
                 break
               case activeSlide:
-                slideClass = styles.leftSlide
+                slideClass = style.leftSlide
                 break
               default:
                 slideClass = ''
@@ -153,18 +153,18 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
 
             return (
               <div key={index}>
-                <div className={`${styles.cardWrapper} ${slideClass}`}>
-                  <a href={card.link} target="blank" className={styles.card}>
+                <div className={`${style.cardWrapper} ${slideClass}`}>
+                  <a href={card.link} target="blank" className={style.card}>
                     <Image
                       // TODO: remove after review
                       src={`/protez/${card.photo}`}
                       alt="news picture"
                       width={488}
                       height={520}
-                      className={`${styles.cardPicture}`}
+                      className={`${style.cardPicture}`}
                     />
-                    <TextAppearanceWrapper className={styles.cardDataBlock}>
-                      <div className={styles.cardDate}>
+                    <TextAppearanceWrapper className={style.cardDataBlock}>
+                      <div className={style.cardDate}>
                         <span>{card.date}</span>|<span>{card.address}</span>
                       </div>
 
@@ -174,14 +174,14 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
                         alt="news picture"
                         width={488}
                         height={520}
-                        className={`${styles.cardLogo}`}
+                        className={`${style.cardLogo}`}
                       />
 
-                      <h3 className={styles.cardTitle}>{card.title}</h3>
+                      <h3 className={style.cardTitle}>{card.title}</h3>
 
-                      <p className={styles.cardText}>{card.text}</p>
+                      <p className={style.cardText}>{card.text}</p>
                     </TextAppearanceWrapper>
-                    {icons.arrow(styles.iconArrow)}
+                    {icons.arrow(style.iconArrow)}
                   </a>
                 </div>
               </div>
@@ -189,12 +189,12 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
           })}
         </Slider>
         {width > 600 && (
-          <div className={styles.sliderNavigation}>
-            <button className={styles.sliderButton} onClick={gotoPrev}>
-              {icons.arrowLeft(styles.arrowLeft)}
+          <div className={style.sliderNavigation}>
+            <button className={style.sliderButton} onClick={gotoPrev}>
+              {icons.arrowLeft(style.arrowLeft)}
             </button>
-            <button className={styles.sliderButton} onClick={gotoNext}>
-              {icons.arrowRight(styles.arrowRight)}
+            <button className={style.sliderButton} onClick={gotoNext}>
+              {icons.arrowRight(style.arrowRight)}
             </button>
           </div>
         )}

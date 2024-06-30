@@ -2,7 +2,7 @@
   padding: 120px 0 120px 0;
   position: relative;
   overflow: hidden;
-  background-color: var(--dark);
+  background-color: var(--dark-blue);
 }
 
 .backgroundImage {
@@ -162,7 +162,7 @@
   }
   &.past {
     background: var(--white);
-    color: var(--dark);
+    color: var(--dark-blue);
   }
 }
 

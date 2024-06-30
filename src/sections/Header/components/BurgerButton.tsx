@@ -1,6 +1,8 @@
 import style from './style.module.scss'
 import { icons } from './icons'
 
+type ButtonColor = 'pink' | 'blue' | 'red'
+
 export const BurgerButton = ({
   close,
   onClick,
@@ -10,7 +12,7 @@ export const BurgerButton = ({
   close: boolean
   onClick: () => void
   isBlack: boolean
-  color?: 'pink' | 'blue'
+  color?: ButtonColor
 }) => {
   const btnClassName = `${style.burgerButton} ${isBlack && style.black} ${style[color]}`
 
@@ -26,7 +28,7 @@ export const BurgerButton = ({
 
   return (
     <button className={btnClassName} onClick={onClick}>
-      {icons.menuClose(`${color === 'pink' ? style.iconPink : style.iconBlue}`)}
+      {icons.menuClose(style[color])}
     </button>
   )
 }

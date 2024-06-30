@@ -10,7 +10,7 @@
   background: linear-gradient(360deg, #0d1125 0%, rgba(13, 17, 37, 0) 40.45%);
 
   & :global(#smoke) {
-    background-color: var(--dark);
+    background-color: var(--dark-blue);
   }
 }
 
