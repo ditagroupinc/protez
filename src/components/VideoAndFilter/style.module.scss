@@ -6,6 +6,7 @@
   object-fit: cover;
   left: 0;
   top: 0;
+  z-index: 0;
 }
 
 .filter {
@@ -15,8 +16,6 @@
   height: 100%;
   left: 0;
   top: 0;
-  /* background: linear-gradient(360deg, #0d1125 0%, rgba(13, 17, 37, 0) 40.45%),
-    #0d112580; */
+  // background: linear-gradient(360deg, #0d1125 0%, rgba(13, 17, 37, 0) 40.45%), #0d112580;
   background: linear-gradient(180deg, rgba(19, 19, 19, 0) 84.03%, #131313 98.09%);
-  /* opacity: 0.5; */
 }

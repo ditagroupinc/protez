@@ -14,6 +14,41 @@
 .teacherCard {
   width: 100%;
   max-width: 100%;
+
+  &:nth-child(2) {
+    grid-area: kierstinNelson;
+  }
+
+  &:nth-child(3) {
+    grid-area: michaelLeBuhnJr;
+    border-right: var(--greyBorder);
+  }
+
+  &:nth-child(4) {
+    grid-area: jeanneLojovich;
+  }
+
+  &:nth-child(5) {
+    grid-area: adamWarden;
+  }
+
+  &:nth-child(6) {
+    grid-area: troyDecker;
+  }
+
+  &:nth-child(7) {
+    grid-area: lisaKing;
+    border-right: var(--greyBorder);
+  }
+
+  &:nth-child(8) {
+    grid-area: yakovGradinar;
+  }
+
+  &:nth-child(9) {
+    grid-area: gallegosSebastianGuadalupe;
+    border-right: var(--greyBorder);
+  }
 }
 .teachersLogo {
   max-width: 100%;
@@ -26,41 +61,6 @@
   justify-content: flex-end;
   align-items: center;
   padding: 16px;
-}
-
-.teacherCard:nth-child(2) {
-  grid-area: kierstinNelson;
-}
-
-.teacherCard:nth-child(3) {
-  grid-area: michaelLeBuhnJr;
-  border-right: var(--greyBorder);
-}
-
-.teacherCard:nth-child(4) {
-  grid-area: jeanneLojovich;
-}
-
-.teacherCard:nth-child(5) {
-  grid-area: adamWarden;
-}
-
-.teacherCard:nth-child(6) {
-  grid-area: troyDecker;
-}
-
-.teacherCard:nth-child(7) {
-  grid-area: lisaKing;
-  border-right: var(--greyBorder);
-}
-
-.teacherCard:nth-child(8) {
-  grid-area: yakovGradinar;
-}
-
-.teacherCard:nth-child(9) {
-  grid-area: gallegosSebastianGuadalupe;
-  border-right: var(--greyBorder);
 }
 
 .slickSlider {
@@ -138,24 +138,26 @@
     padding-bottom: 40px;
   }
 
-  .teacherCard:nth-child(3) {
-    grid-area: michaelLeBuhnJr;
-    border-right: none;
-  }
+  .teacherCard {
+    &:nth-child(3) {
+      grid-area: michaelLeBuhnJr;
+      border-right: none;
+    }
 
-  .teacherCard:nth-child(4) {
-    grid-area: jeanneLojovich;
-    border-right: var(--greyBorder);
-  }
+    &:nth-child(4) {
+      grid-area: jeanneLojovich;
+      border-right: var(--greyBorder);
+    }
 
-  .teacherCard:nth-child(7) {
-    grid-area: lisaKing;
-    border-right: none;
-  }
+    &:nth-child(7) {
+      grid-area: lisaKing;
+      border-right: none;
+    }
 
-  .teacherCard:nth-child(8) {
-    grid-area: yakovGradinar;
-    border-right: var(--greyBorder);
+    &:nth-child(8) {
+      grid-area: yakovGradinar;
+      border-right: var(--greyBorder);
+    }
   }
 }
 

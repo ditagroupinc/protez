@@ -25,6 +25,7 @@
   --headerPaddingTop: 90px;
   --whiteBorder: 1px solid rgba(255, 255, 255, 0.24);
   --greyBorder: 1px solid rgba(13, 17, 37, 0.24);
+  --protezBorder: 1px solid #4e4e4e;
 }
 
 /* @media screen and (max-width: 1920px) {

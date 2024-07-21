@@ -3,7 +3,8 @@
 import Button from '@/components/Button'
 
 import Section from '@/components/Section'
-import AcademyResultCard from './components/AcademyResultCard'
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+import CountUp from 'react-countup'
 
 // import texts from '@/texts&svg'
 
@@ -14,9 +15,22 @@ import { AcademyIDs } from '../../consts'
 
 // =================================================================
 
-const academyResultsCount = [92, 26, 9, 2] as const
+interface AcademyResultCardProps {
+  count: number
+  title: string
+  className?: string
+}
 
-// type ResultStatistics = Record<string, { english: string; ukrainian: string }>
+const AcademyResultCard = ({ count, title, className }: AcademyResultCardProps) => {
+  return (
+    <TextAppearanceWrapper className={`${style.academyResultCard} ${className}`}>
+      <CountUp end={count} duration={2} className={style.count} />
+      <p className={style.desc}>{title}</p>
+    </TextAppearanceWrapper>
+  )
+}
+
+const academyResultsCount = [92, 26, 9, 2] as const
 
 const resultStatistics = [
   'People received prosthetics',

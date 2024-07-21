@@ -13,7 +13,8 @@ const nextConfig = {
 
   reactStrictMode: false,
   output: 'export',
-  basePath: environment === 'local' ? '' : '/protez',
+  basePath: '/protez',
+  // basePath: environment === 'local' ? '' : '/protez',
 }
 
 module.exports = nextConfig

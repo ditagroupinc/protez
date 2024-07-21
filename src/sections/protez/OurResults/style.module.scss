@@ -1,0 +1,116 @@
+.section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  background: linear-gradient(180deg, #131313 0%, rgba(19, 19, 19, 0) 20.4%),
+    linear-gradient(180deg, rgba(19, 19, 19, 0) 80.58%, #131313 100%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  opacity: 60%;
+}
+
+.left {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 2 560px;
+  max-width: 560px;
+}
+
+.title {
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 394px;
+}
+
+.date {
+  color: var(--white);
+}
+
+.description {
+  margin-top: 40px;
+}
+
+.buttonsContainer {
+  margin-top: 60px;
+  display: flex;
+  gap: 16px;
+}
+.right {
+  position: relative;
+  z-index: 1;
+  flex: 1 1 780px;
+  max-width: 780px;
+
+  display: grid;
+
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(3, 210px);
+
+  grid-template-areas:
+    '. . prostheses prostheses prostheses clinicsOpened clinicsOpened clinicsOpened'
+    'patients patients patients patients specialistsTrained specialistsTrained specialistsTrained specialistsTrained'
+    '. . spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission';
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 32px 40px;
+  width: 100%;
+  height: 100%;
+
+  transition: all var(--transitionProps);
+
+  border: var(--protezBorder);
+
+  color: var(--white);
+
+  & .count {
+    font-size: 76px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 80px; /* 105.263% */
+    text-transform: uppercase;
+  }
+
+  &:hover {
+    background-color: var(--red);
+    color: var(--white);
+  }
+
+  &:nth-child(1) {
+    grid-area: prostheses;
+  }
+
+  &:nth-child(2) {
+    grid-area: clinicsOpened;
+  }
+
+  &:nth-child(3) {
+    grid-area: patients;
+  }
+
+  &:nth-child(4) {
+    grid-area: specialistsTrained;
+  }
+
+  &:nth-child(5) {
+    grid-area: spentOnMission;
+  }
+}

@@ -23,15 +23,15 @@ const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
 
   const goalCards = [
     {
-      icon: icons.iconDisabledPerson,
+      icon: icons.disabledPerson,
       text: 'New skills will allow them to make the prosthetics much faster (days instead of weeks), improve patient satisfaction and significantly reduce the rehabilitation time and number of follow ups.',
     },
     {
-      icon: icons.iconHand,
+      icon: icons.hand,
       text: 'Specialists will learn modern approaches in evaluation, casting, fabrication and rehabilitation',
     },
     {
-      icon: icons.iconHelpHeart,
+      icon: icons.helpHeart,
       text: 'The instructors are certified trained professionals from Century College, Concordia and University of Minnesota.',
     },
   ]

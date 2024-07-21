@@ -7,8 +7,8 @@ import { useInView } from 'react-intersection-observer'
 
 import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils/parsers'
 
-import ProtezHeader from '../ProtezHeader'
-import LetsGiveHope from '@/sections/LetsGiveHope'
+import ProtezHeader from '../protez/ProtezHeader'
+import LetsGiveHope from '@/sections/protez/LetsGiveHope'
 
 const Veterans = lazy(() => import('@/sections/Veterans'))
 const PressRelease = lazy(() => import('@/sections/PressRelease'))
@@ -17,8 +17,8 @@ const OurMission = lazy(() => import('@/sections/OurMission'))
 const OurTeam = lazy(() => import('@/sections/OurTeam'))
 const OurPartners = lazy(() => import('@/sections/OurPartners'))
 const News = lazy(() => import('@/sections/News'))
-const InNeed = lazy(() => import('@/sections/InNeed'))
-const OurResults = lazy(() => import('@/sections/OurResults'))
+// const InNeed = lazy(() => import('@/sections/InNeed'))
+// const OurResults = lazy(() => import('@/sections/OurResults'))
 const MailingList = lazy(() => import('@/sections/MailingList'))
 const Merch = lazy(() => import('@/sections/Merch'))
 const Prosthetics = lazy(() => import('@/sections/Prosthetics'))
@@ -35,6 +35,12 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 import { usePageSettings } from '@/contexts/PageSettingsContext'
 import { Languages } from '@/types'
+import ProstheticsForUkrainians from '../protez/ProstheticsForUkrainians'
+import InNeed from '../protez/InNeed'
+import OurResults from '../protez/OurResults'
+import SampleProsthesesCosts from '../protez/SampleProsthesesCosts'
+import ProtezAcademy from '../protez/ProtezAcademy'
+import PeopleTrustUs from '../protez/PeopleTrustUs'
 
 export default function ClientSections({
   news,
@@ -99,7 +105,13 @@ export default function ClientSections({
             <SmokeBackground className={style.smokeTop} />
             <div className={style.flagsBlock}>
               <LetsGiveHope ref={refLetsGiveHope} />
-              <OurMission />
+              <ProstheticsForUkrainians />
+              <InNeed ref={refInNeed} />
+              <OurResults />
+              <SampleProsthesesCosts />
+              <ProtezAcademy />
+              <PeopleTrustUs />
+              {/* <OurMission /> */}
               {/* <Image
                 src="/flag-usa.png"
                 object-fit="contain"
@@ -110,32 +122,32 @@ export default function ClientSections({
                 className={style.americanFlag}
               /> */}
             </div>
-            {statistics && <OurResults results={statistics} />}
+            {/* {statistics && <OurResults results={statistics} />} */}
           </div>
 
-          <InNeed ref={refInNeed} />
+          {/* <InNeed ref={refInNeed} /> */}
 
-          <Prosthetics />
+          {/* <Prosthetics /> */}
           <div className={`${style.smokeBlock} ${style.veteransAndEventsBlock}`}>
-            <SmokeBackground className={style.smoke} />
-            <Veterans />
-            {pressReleases && pressReleases.length > 0 && (
+            {/* <SmokeBackground className={style.smoke} /> */}
+            {/* <Veterans /> */}
+            {/* {pressReleases && pressReleases.length > 0 && (
               <PressRelease pressReleases={pressReleases} />
-            )}
-            {events && events.length > 0 && <Events events={events} />}
+            )} */}
+            {/* {events && events.length > 0 && <Events events={events} />} */}
           </div>
-          <OurTeam ref={refOurTeam} />
-          <OurPartners ref={refOurPartners} />
+          {/* <OurTeam ref={refOurTeam} /> */}
+          {/* <OurPartners ref={refOurPartners} /> */}
           <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smoke} />
-            {news && news.length > 0 && <News news={news} />}
+            {/* <SmokeBackground className={style.smoke} /> */}
+            {/* {news && news.length > 0 && <News news={news} />} */}
 
-            <MailingList ref={refMailingList} inView={inViewMailingList} />
+            {/* <MailingList ref={refMailingList} inView={inViewMailingList} /> */}
           </div>
-          <Merch ref={refMerch} />
-          {!inViewLetsGiveHope && (
+          {/* <Merch ref={refMerch} /> */}
+          {/* {!inViewLetsGiveHope && (
             <BackToTopButton href={'letsGiveHope'} black={isBackgroundWhite} />
-          )}
+          )} */}
         </main>
         <ThankYou ref={refThankYou} />
       </Suspense>

@@ -55,7 +55,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
   return (
     <Section ref={ref} id={AcademyIDs.Intro} className={style.academyIntro}>
       <VideoAndFilter src={'academyPage/intro/introVideo.mp4'} />
-      <div className={style.overlay}></div>
+      <div className={style.overlay} />
       <div className={style.academyContent}>
         <div className={style.leftPart}>
           <div className={style.sectionTitle}>{icons.academyIntroTitle()}</div>

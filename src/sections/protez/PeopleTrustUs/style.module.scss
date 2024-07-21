@@ -1,0 +1,81 @@
+.section {
+  padding-top: 140px;
+  padding-bottom: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 16px;
+}
+
+.left {
+  flex: 1 1 984px;
+  max-width: 984px;
+}
+
+.slickSlider :global(.slick-track) {
+  height: 540px;
+}
+
+.cardWrapper {
+  height: 540px;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.right {
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  flex: 1 1 500px;
+  max-width: 500px;
+}
+.title {
+  margin-bottom: 40px;
+  max-width: 100%;
+}
+
+.buttonsContainer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.sliderNavigation {
+  z-index: 2;
+  display: flex;
+  gap: 16px;
+  top: 0;
+}
+
+.sliderButton {
+  width: 48px;
+  height: 48px;
+  transition: all var(--transitionProps);
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  background-color: transparent;
+  border-color: var(--white);
+  &:hover {
+    background-color: var(--red);
+    border-color: var(--red);
+  }
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+}

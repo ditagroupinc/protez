@@ -168,6 +168,7 @@ const Academy = () => {
                     <div className={`${style.card} `}>
                       {card.includes('.mp4') ? (
                         <video
+                          // TODO: remove after review
                           src={`/protez/${card}`}
                           autoPlay
                           loop

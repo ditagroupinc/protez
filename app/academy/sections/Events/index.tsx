@@ -181,9 +181,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
 
   return (
     <Section ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={style.events}>
-      {/* TODO: remove after review
-       */}
       <Image
+        // TODO: remove after review
         src="/protez/events-background-Ukraine.png"
         alt="Ukrainian flag"
         width={1920}

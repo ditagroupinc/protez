@@ -1,0 +1,45 @@
+.section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+
+  // background-color: var(--red);
+}
+
+.left {
+  width: 100%;
+  max-width: 845px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+.right {
+  width: 100%;
+  max-width: 483px;
+}
+
+.title {
+  width: 100%;
+}
+
+.link {
+  margin-top: 48px;
+  width: fit-content;
+  display: flex;
+  gap: 6px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: var(--white);
+  padding: 10px 0;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}

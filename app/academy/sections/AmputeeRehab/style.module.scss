@@ -89,18 +89,18 @@
   &:hover {
     background-color: var(--blue);
   }
-}
 
-.card:nth-child(1) {
-  grid-area: esper;
-}
+  &:nth-child(1) {
+    grid-area: esper;
+  }
 
-.card:nth-child(2) {
-  grid-area: directRelief;
-}
+  &:nth-child(2) {
+    grid-area: directRelief;
+  }
 
-.card:nth-child(3) {
-  grid-area: dita;
+  &:nth-child(3) {
+    grid-area: dita;
+  }
 }
 
 .partnerLogo {

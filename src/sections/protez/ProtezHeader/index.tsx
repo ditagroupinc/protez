@@ -6,7 +6,10 @@ import { Languages } from '@/types'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 
-import ProtezButton from '@/components/ProtezButton'
+import ProtezButton, {
+  MakeDonationButton,
+  SupportWithAmazonButton,
+} from '@/components/ProtezButton'
 
 import useOutsideClick from '@/hooks/useOutsideClick'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
@@ -19,17 +22,9 @@ import Link from 'next/link'
 
 import { icons } from './icons'
 import { H3 } from '@/components/Typography'
+import { ProtezIDs } from '../consts'
 
 const headerText = {
-  menu: {
-    english: 'Menu',
-    ukrainian: 'Menu',
-  },
-  getInTouch: {
-    english: 'Get in touch',
-    ukrainian: 'Get in touch',
-  },
-
   protezFoundation: {
     english: 'Protez Foundation',
     ukrainian: 'Protez Foundation',
@@ -41,113 +36,97 @@ const headerText = {
         english: 'Home',
         ukrainian: 'Головна',
       },
-      id: 'letsGiveHope',
+      id: ProtezIDs.LetsGiveHope,
     },
     {
       text: {
         english: 'Mission',
         ukrainian: 'Місія',
       },
-      id: 'ourMission',
+      id: ProtezIDs.OurMission,
     },
     {
       text: {
         english: 'Results',
         ukrainian: 'Досягнення',
       },
-      id: 'ourResults',
+      id: ProtezIDs.OurResults,
     },
     {
       text: {
         english: 'Ukraine',
         ukrainian: 'Україна',
       },
-      id: 'inNeed',
+      id: ProtezIDs.InNeed,
     },
     {
       text: {
         english: 'What we do',
         ukrainian: 'Наша робота',
       },
-      id: 'prosthetics',
+      id: ProtezIDs.Prosthetics,
     },
     {
       text: {
         english: 'Stories',
         ukrainian: 'Історії',
       },
-      id: 'veterans',
+      id: ProtezIDs.Veterans,
     },
     {
       text: {
         english: 'Press release',
         ukrainian: 'Прес-реліз',
       },
-      id: 'pressRelease',
+      id: ProtezIDs.PressRelease,
     },
     {
       text: {
         english: 'Events',
         ukrainian: 'Події',
       },
-      id: 'events',
+      id: ProtezIDs.Events,
     },
     {
       text: {
         english: 'Team',
         ukrainian: 'Команда',
       },
-      id: 'ourTeam',
+      id: ProtezIDs.OurTeam,
     },
     {
       text: {
         english: 'Partners',
         ukrainian: 'Партнери',
       },
-      id: 'ourPartners',
+      id: ProtezIDs.OurPartners,
     },
     {
       text: {
         english: 'News',
         ukrainian: 'Новини',
       },
-      id: 'news',
+      id: ProtezIDs.News,
     },
     {
       text: {
         english: 'Protez Merch',
         ukrainian: 'Protez-мерч',
       },
-      id: 'merch',
+      id: ProtezIDs.Merch,
     },
   ],
 
   actionButtons: {
-    // protezAcademy: {
-    //   english: 'Protez Academy',
-    //   ukrainian: 'Protez Academy',
-    // },
-    makeDonation: {
-      english: 'Make Donation',
-      ukrainian: 'Зробити внесок!',
-    },
     needAProthesis: {
-      english: 'Потрібeн протез?',
-      ukrainian: 'Потрібeн протез?',
-    },
-    supportWith: {
-      english: 'Support with',
-      ukrainian: 'Підтримати з',
+      english: 'Потрібeн протез',
+      ukrainian: 'Потрібeн протез',
     },
 
     back2top: {
       english: 'Back to top   →',
       ukrainian: 'Back to top   →',
     },
-    // lang: {
-    //   english: 'Language',
-    //   ukrainian: 'Language',
-    // },
   },
 }
 
@@ -224,17 +203,8 @@ const ProtezHeader = () => {
           />
         ) : (
           <div className={style.btnGroup}>
-            <ProtezButton
-              as="link"
-              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-              target={'_blank'}
-              variant="primary-red"
-              size="small"
-              rel="noopener noreferrer"
-              className={style.applyBtn}
-            >
-              {headerText.actionButtons.makeDonation[lang]}
-            </ProtezButton>
+            <MakeDonationButton lang={lang} className={style.applyBtn} />
+
             <ProtezButton as="link" href="/" variant="secondary-white" size="small">
               {headerText.actionButtons.needAProthesis[lang]}
             </ProtezButton>
@@ -286,35 +256,17 @@ const ProtezHeader = () => {
 
           <div className={style.lowerPart}>
             <div className={style.lowerPartButtonsContainer}>
-              <ProtezButton
-                as="link"
-                href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-                target={'_blank'}
-                variant="primary-red"
-                rel="noopener noreferrer"
-                className={style.lowerPartButton}
-              >
-                {headerText.actionButtons.makeDonation[lang]}
-              </ProtezButton>
-              <ProtezButton
-                as="link"
-                href="/"
-                variant="secondary-black"
-                className={style.lowerPartButton}
-              >
-                {headerText.actionButtons.supportWith[lang]}
+              <MakeDonationButton lang={lang} className={style.lowerPartButton} />
+              <SupportWithAmazonButton lang={lang} className={style.lowerPartButton} />
 
-                {icons.amazon(`${style.icon}`)}
-              </ProtezButton>
               <ProtezButton
                 as="link"
                 href="/"
                 variant="secondary-black"
+                arrow
                 className={style.lowerPartButton}
               >
                 {headerText.actionButtons.needAProthesis[lang]}
-
-                {icons.arrowUp(`${style.icon} ${style.black}`)}
               </ProtezButton>
             </div>
 

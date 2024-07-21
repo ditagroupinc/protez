@@ -30,7 +30,7 @@ const academyGoalsTitleMobile = (className?: string) => (
   </svg>
 )
 
-const iconDisabledPerson = (className?: string) => (
+const disabledPerson = (className?: string) => (
   <svg
     width="45"
     height="57"
@@ -48,7 +48,7 @@ const iconDisabledPerson = (className?: string) => (
   </svg>
 )
 
-const iconHand = (className?: string) => (
+const hand = (className?: string) => (
   <svg
     width="47"
     height="56"
@@ -66,7 +66,7 @@ const iconHand = (className?: string) => (
   </svg>
 )
 
-const iconHelpHeart = (className?: string) => (
+const helpHeart = (className?: string) => (
   <svg
     width="65"
     height="64"
@@ -101,23 +101,12 @@ const arrowUp = (className?: string) => (
 )
 
 export const icons = {
-  iconDisabledPerson,
-  iconHelpHeart,
-  iconHand,
+  disabledPerson,
+  hand,
+  helpHeart,
   arrowUp,
   goalLogo: {
     desktop: academyGoalsTitleDesktop,
-
-    // {
-
-    // english: academyGoalsTitleDesktop,
-    // ukrainian: academyGoalsTitleDesktop,
-    // },
     mobile: academyGoalsTitleMobile,
-    //  {
-
-    // english: academyGoalsTitleMobile,
-    // ukrainian: academyGoalsTitleMobile,
-    // },
   },
 }
