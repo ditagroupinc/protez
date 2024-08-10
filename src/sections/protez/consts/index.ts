@@ -13,6 +13,9 @@ export enum ProtezIDs {
 
   PressRelease = 'pressRelease',
   OurPatients = 'ourPatients',
+
+  OfficeLocations = 'officeLocations',
+
   Events = 'events',
   OurTeam = 'ourTeam',
   OurPartners = 'ourPartners',

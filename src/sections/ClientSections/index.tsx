@@ -45,6 +45,7 @@ import Veterans from '../protez/Veterans'
 import Events from '../protez/Events'
 // import PressRelease from '../protez/PressRelease'
 import OurPatients from '../protez/OurPatients'
+import OfficeLocations from '../protez/OfficeLocations'
 
 export default function ClientSections({
   news,
@@ -118,6 +119,7 @@ export default function ClientSections({
               {/* <Veterans /> */}
               {/* <Events /> */}
               {/* <OurPatients /> */}
+              <OfficeLocations />
               {/* <OurMission /> */}
               {/* <Image
                 src="/flag-usa.png"
