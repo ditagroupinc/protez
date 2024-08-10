@@ -10,9 +10,9 @@ import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils
 import ProtezHeader from '../protez/ProtezHeader'
 import LetsGiveHope from '@/sections/protez/LetsGiveHope'
 
-const Veterans = lazy(() => import('@/sections/Veterans'))
-const PressRelease = lazy(() => import('@/sections/PressRelease'))
-const Events = lazy(() => import('@/sections/Events'))
+// const Veterans = lazy(() => import('@/sections/Veterans'))
+// const PressRelease = lazy(() => import('@/sections/PressRelease'))
+// const Events = lazy(() => import('@/sections/Events'))
 const OurMission = lazy(() => import('@/sections/OurMission'))
 const OurTeam = lazy(() => import('@/sections/OurTeam'))
 const OurPartners = lazy(() => import('@/sections/OurPartners'))
@@ -41,6 +41,9 @@ import OurResults from '../protez/OurResults'
 import SampleProsthesesCosts from '../protez/SampleProsthesesCosts'
 import ProtezAcademy from '../protez/ProtezAcademy'
 import PeopleTrustUs from '../protez/PeopleTrustUs'
+import Veterans from '../protez/Veterans'
+import Events from '../protez/Events'
+import PressRelease from '../protez/PressRelease'
 
 export default function ClientSections({
   news,
@@ -105,12 +108,15 @@ export default function ClientSections({
             <SmokeBackground className={style.smokeTop} />
             <div className={style.flagsBlock}>
               <LetsGiveHope ref={refLetsGiveHope} />
-              <ProstheticsForUkrainians />
-              <InNeed ref={refInNeed} />
-              <OurResults />
-              <SampleProsthesesCosts />
-              <ProtezAcademy />
-              <PeopleTrustUs />
+              {/* <PeopleTrustUs /> */}
+              {/* <ProstheticsForUkrainians /> */}
+              {/* <InNeed ref={refInNeed} /> */}
+              {/* <OurResults /> */}
+              {/* <SampleProsthesesCosts /> */}
+              {/* <ProtezAcademy /> */}
+              {/* <Veterans /> */}
+              {/* <Events /> */}
+              <PressRelease />
               {/* <OurMission /> */}
               {/* <Image
                 src="/flag-usa.png"

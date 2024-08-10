@@ -5,11 +5,12 @@ export enum ProtezIDs {
   InNeed = 'inNeed',
   SampleProsthesesCosts = 'sampleProsthesesCosts',
   ProtezAcademy = 'protezAcademy',
+  Veterans = 'veterans',
 
   OurMission = 'ourMission',
 
   Prosthetics = 'prosthetics',
-  Veterans = 'veterans',
+
   PressRelease = 'pressRelease',
   Events = 'events',
   OurTeam = 'ourTeam',

@@ -7,7 +7,7 @@ import { icons } from './icons'
 import style from './style.module.scss'
 
 import { ProtezIDs } from '../consts'
-import { H3 } from '@/components/Typography'
+import { Body } from '@/components/Typography'
 import ProtezButton from '@/components/ProtezButton'
 import Slider from 'react-slick'
 import Image from 'next/image'
@@ -72,7 +72,7 @@ const PeopleTrustUs = () => {
       </div>
       <div className={style.right}>
         {icons.peopleTrustUsLogo.desktop[lang](style.title)}
-        <H3>{peopleTrustUsText.description[lang]}</H3>
+        <Body large>{peopleTrustUsText.description[lang]}</Body>
         <TextAppearanceWrapper className={style.buttonsContainer}>
           <div className={style.sliderNavigation}>
             <button className={style.sliderButton} onClick={gotoPrev}>
