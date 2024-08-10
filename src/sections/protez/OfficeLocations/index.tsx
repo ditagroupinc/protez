@@ -13,7 +13,7 @@ import Section from '@/components/Section'
 import { ProtezIDs } from '../consts'
 import { Body, H3 } from '@/components/Typography'
 
-const ourPatientsSection = {
+const officeLocationsSection = {
   patients: [
     {
       date: {
@@ -24,7 +24,7 @@ const ourPatientsSection = {
         english: '14th group of soldiers',
         ukrainian: '14th group of soldiers',
       },
-      img: 'ourPatientsSlide1.png',
+      img: 'officeLocationsSlide1.png',
     },
     {
       date: {
@@ -35,7 +35,7 @@ const ourPatientsSection = {
         english: '14th group of soldiers',
         ukrainian: '14th group of soldiers',
       },
-      img: 'ourPatientsSlide2.png',
+      img: 'officeLocationsSlide2.png',
     },
     {
       date: {
@@ -46,12 +46,12 @@ const ourPatientsSection = {
         english: '14th group of soldiers',
         ukrainian: '14th group of soldiers',
       },
-      img: 'ourPatientsSlide3.png',
+      img: 'officeLocationsSlide3.png',
     },
   ],
 }
 
-const OurPatients = () => {
+const OfficeLocations = () => {
   const { lang } = useLanguage()
 
   const sliderRef = useRef<Slider & React.Component>(null)
@@ -76,12 +76,12 @@ const OurPatients = () => {
     rtl: true,
   }
 
-  const patientsArray = [...ourPatientsSection.patients, ...ourPatientsSection.patients]
+  const patientsArray = [...officeLocationsSection.patients, ...officeLocationsSection.patients]
 
   return (
-    <Section id={ProtezIDs.OurPatients} className={style.section}>
+    <Section id={ProtezIDs.officeLocations} className={style.section}>
       <TextAppearanceWrapper className={style.heading}>
-        {icons.ourPatientsLogo.desktop[lang](style.pageTitle)}
+        {icons.officeLocationsLogo.desktop[lang](style.pageTitle)}
         <div className={style.sliderNavigation}>
           <button className={style.sliderButton} onClick={gotoPrev}>
             {icons.arrowLeft(style.arrow)}
@@ -98,7 +98,7 @@ const OurPatients = () => {
               <div className={style.card}>
                 <Image
                   // TODO: remove after review
-                  src={`/protez/protezPage/ourPatients/${slide.img}`}
+                  src={`/protez/protezPage/officeLocations/${slide.img}`}
                   alt={slide.date[lang] + ' ' + slide.title[lang]}
                   className={style.image}
                   width={772}
@@ -117,4 +117,4 @@ const OurPatients = () => {
   )
 }
 
-export default OurPatients
+export default OfficeLocations
