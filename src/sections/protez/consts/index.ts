@@ -12,6 +12,7 @@ export enum ProtezIDs {
   Prosthetics = 'prosthetics',
 
   PressRelease = 'pressRelease',
+  OutPatients = 'outPatients',
   Events = 'events',
   OurTeam = 'ourTeam',
   OurPartners = 'ourPartners',

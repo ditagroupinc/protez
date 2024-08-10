@@ -56,12 +56,12 @@ const PressRelease = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 5000,
   }
 
   return (
-    <Section id={ProtezIDs.Veterans} className={style.section}>
+    <Section id={ProtezIDs.PressRelease} className={style.section}>
       <div className={style.card}>
         <TextAppearanceWrapper className={style.left}>
           <Slider ref={imageSliderRef} {...settings} className={style.imageSlider}>
@@ -108,7 +108,6 @@ const PressRelease = () => {
             </button>
           </div>
         </TextAppearanceWrapper>
-        {/* </div> */}
       </div>
     </Section>
   )
