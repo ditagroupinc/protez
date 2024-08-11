@@ -15,6 +15,7 @@ export enum ProtezIDs {
   OurPatients = 'ourPatients',
 
   OfficeLocations = 'officeLocations',
+  OurStarSupporters = 'ourStarSupporters',
 
   Events = 'events',
   OurTeam = 'ourTeam',

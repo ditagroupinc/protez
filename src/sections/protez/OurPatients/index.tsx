@@ -13,7 +13,23 @@ import Section from '@/components/Section'
 import { ProtezIDs } from '../consts'
 import { Body, H3 } from '@/components/Typography'
 
-const ourPatientsSection = {
+interface Patient {
+  date: {
+    english: string
+    ukrainian: string
+  }
+  title: {
+    english: string
+    ukrainian: string
+  }
+  img: string
+}
+
+interface OurPatientsSection {
+  patients: Patient[]
+}
+
+const ourPatientsSection: OurPatientsSection = {
   patients: [
     {
       date: {
@@ -76,7 +92,7 @@ const OurPatients = () => {
     rtl: true,
   }
 
-  const patientsArray = [...ourPatientsSection.patients, ...ourPatientsSection.patients]
+  const patientsArray: Patient[] = [...ourPatientsSection.patients, ...ourPatientsSection.patients]
 
   return (
     <Section id={ProtezIDs.OurPatients} className={style.section}>

@@ -46,6 +46,7 @@ import Events from '../protez/Events'
 // import PressRelease from '../protez/PressRelease'
 import OurPatients from '../protez/OurPatients'
 import OfficeLocations from '../protez/OfficeLocations'
+import OurStarSupporters from '../protez/OurStarSupporters'
 
 export default function ClientSections({
   news,
@@ -110,16 +111,19 @@ export default function ClientSections({
             <SmokeBackground className={style.smokeTop} />
             <div className={style.flagsBlock}>
               <LetsGiveHope ref={refLetsGiveHope} />
-              {/* <PeopleTrustUs /> */}
-              {/* <ProstheticsForUkrainians /> */}
-              {/* <InNeed ref={refInNeed} /> */}
-              {/* <OurResults /> */}
-              {/* <SampleProsthesesCosts /> */}
-              {/* <ProtezAcademy /> */}
-              {/* <Veterans /> */}
-              {/* <Events /> */}
-              {/* <OurPatients /> */}
+              <PeopleTrustUs />
+              <ProstheticsForUkrainians />
+              <InNeed ref={refInNeed} />
+              <OurResults />
+              <SampleProsthesesCosts />
+              <ProtezAcademy />
+              <Veterans />
+              <Events />
+              <OurPatients />
               <OfficeLocations />
+
+              <OurStarSupporters />
+
               {/* <OurMission /> */}
               {/* <Image
                 src="/flag-usa.png"

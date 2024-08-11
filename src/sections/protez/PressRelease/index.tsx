@@ -13,7 +13,24 @@ import Section from '@/components/Section'
 import { ProtezIDs } from '../consts'
 import { Body, H3 } from '@/components/Typography'
 
-const pressReleaseSection = {
+interface Release {
+  date: string
+  title: {
+    english: string
+    ukrainian: string
+  }
+  text: {
+    english: string
+    ukrainian: string
+  }
+  img: string
+}
+
+interface PressReleaseSection {
+  releases: Release[]
+}
+
+const pressReleaseSection: PressReleaseSection = {
   releases: [
     {
       date: '27.03.2023',
@@ -48,7 +65,7 @@ const PressRelease = () => {
     textSliderRef.current?.slickPrev()
   }
 
-  const releasesArray = [pressReleaseSection.releases[0], pressReleaseSection.releases[0]]
+  const releasesArray: Release[] = Array(3).fill(pressReleaseSection.releases[0])
 
   const settings = {
     infinite: true,

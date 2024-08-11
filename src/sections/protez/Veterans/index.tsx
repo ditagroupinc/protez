@@ -14,7 +14,54 @@ import { ProtezIDs } from '../consts'
 import { Body, H3 } from '@/components/Typography'
 import ProtezButton from '@/components/ProtezButton'
 
-const veteransText = {
+interface Veteran {
+  ageRank: {
+    english: string
+    ukrainian: string
+  }
+  name: {
+    english: string
+    ukrainian: string
+  }
+  surname: {
+    english: string
+    ukrainian: string
+  }
+  title: {
+    english: string
+    ukrainian: string
+  }
+  text: {
+    english: string
+    ukrainian: string
+  }
+  img: string
+  icon: keyof typeof icons.titles
+  video: string
+  facebook: string
+  instagram: string
+  url: string
+  videoLink: string
+  linkedin: string
+}
+
+interface VeteransSection {
+  veterans: Veteran[]
+  share: {
+    english: string
+    ukrainian: string
+  }
+  giveHope: {
+    english: string
+    ukrainian: string
+  }
+  videoButton: {
+    english: string
+    ukrainian: string
+  }
+}
+
+const veteransSection: VeteransSection = {
   veterans: [
     {
       ageRank: {
@@ -71,16 +118,22 @@ const Veterans = () => {
   const { lang } = useLanguage()
   const [iframeData, setIframeData] = useState({ opened: false, url: '' })
 
-  const sliderRef = useRef<Slider & React.Component>(null)
+  const imageSliderRef = useRef<Slider & React.Component>(null)
+  const textSliderRef = useRef<Slider & React.Component>(null)
+  const linksSliderRef = useRef<Slider & React.Component>(null)
 
   const gotoNext = () => {
-    sliderRef.current?.slickNext()
+    imageSliderRef.current?.slickNext()
+    textSliderRef.current?.slickNext()
+    linksSliderRef.current?.slickNext()
   }
   const gotoPrev = () => {
-    sliderRef.current?.slickPrev()
+    imageSliderRef.current?.slickPrev()
+    textSliderRef.current?.slickPrev()
+    linksSliderRef.current?.slickPrev()
   }
 
-  const veteransArray = [veteransText.veterans[0], veteransText.veterans[0]]
+  const veteransArray: Veteran[] = Array(3).fill(veteransSection.veterans[0])
 
   const settings = {
     dots: true,
@@ -89,18 +142,24 @@ const Veterans = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 5000,
+
+    // beforeChange: (current: number, next: number) => {
+    //   imageSliderRef.current?.slickGoTo(next)
+    //   textSliderRef.current?.slickGoTo(next)
+    //   linksSliderRef.current?.slickGoTo(next)
+    // },
   }
 
   return (
     <>
       <Section id={ProtezIDs.Veterans} className={style.section}>
-        <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
-          {veteransArray.map((slide, index) => (
-            <div key={index} className={style.cardWrapper}>
-              <div className={style.card}>
-                <div className={style.left}>
+        <div className={style.card}>
+          <div className={style.left}>
+            <Slider ref={textSliderRef} {...settings}>
+              {veteransArray.map((slide, index) => (
+                <div className={style.textSlideWrapper} key={index}>
                   <div className={style.logoContainer}>
                     {icons.titles[slide.icon as keyof typeof icons.titles][lang](style.veteranLogo)}
                     <Body large className={style.ageRank}>
@@ -111,42 +170,53 @@ const Veterans = () => {
                   <Body className={style.cardText} large>
                     {slide.text[lang]}
                   </Body>
-                  <div className={style.buttonsContainer}>
-                    {/* <TextAppearanceWrapper className={style.buttonsContainer}> */}
-                    <div className={style.iconsContainer}>
-                      <a target="blank" href={slide.linkedin as string}>
-                        {icons.iconLinkedin(style.icon)}
-                      </a>
-                      <a target="blank" href={slide.facebook as string}>
-                        {icons.iconFacebook(style.icon)}
-                      </a>
-                      <a target="blank" href={slide.instagram as string}>
-                        {icons.iconInstagram(style.icon)}
-                      </a>
-                    </div>
-                    <ProtezButton
-                      as="link"
-                      target="_blank"
-                      href={slide.url}
-                      variant="secondary-white"
-                      arrow
-                    >
-                      {veteransText.giveHope[lang]}
-                    </ProtezButton>
-
-                    <div className={style.sliderNavigation}>
-                      <button className={style.sliderButton} onClick={gotoPrev}>
-                        {icons.arrowLeft(style.arrow)}
-                      </button>
-                      <button className={style.sliderButton} onClick={gotoNext}>
-                        {icons.arrowRight(style.arrow)}
-                      </button>
-                    </div>
-                    {/* </TextAppearanceWrapper> */}
-                  </div>
                 </div>
-
-                <div className={style.right}>
+              ))}
+            </Slider>
+            <div className={style.buttonsContainer}>
+              <div className={style.linksSliderWrapper}>
+                <Slider ref={linksSliderRef} {...settings}>
+                  {veteransArray.map((slide, index) => (
+                    <div key={index}>
+                      <div className={style.linksSlide}>
+                        <div className={style.iconsContainer}>
+                          <a target="blank" href={slide.linkedin as string}>
+                            {icons.iconLinkedin(style.icon)}
+                          </a>
+                          <a target="blank" href={slide.facebook as string}>
+                            {icons.iconFacebook(style.icon)}
+                          </a>
+                          <a target="blank" href={slide.instagram as string}>
+                            {icons.iconInstagram(style.icon)}
+                          </a>
+                        </div>
+                        <ProtezButton
+                          as="link"
+                          target="_blank"
+                          href={slide.url}
+                          variant="secondary-white"
+                        >
+                          {veteransSection.giveHope[lang]}
+                        </ProtezButton>
+                      </div>
+                    </div>
+                  ))}
+                </Slider>
+              </div>
+              <div className={style.sliderNavigation}>
+                <button className={style.sliderButton} onClick={gotoPrev}>
+                  {icons.arrowLeft(style.arrow)}
+                </button>
+                <button className={style.sliderButton} onClick={gotoNext}>
+                  {icons.arrowRight(style.arrow)}
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className={style.right}>
+            <Slider ref={imageSliderRef} {...settings} className={style.imagesSlider}>
+              {veteransArray.map((slide, index) => (
+                <div className={style.imageSlideWrapper} key={index}>
                   <Image
                     // TODO: remove after review
                     src={`/protez/protezPage/veterans/${slide.img}`}
@@ -166,10 +236,10 @@ const Veterans = () => {
                     {icons.triangle(style.triangle)}
                   </button>
                 </div>
-              </div>
-            </div>
-          ))}
-        </Slider>
+              ))}
+            </Slider>
+          </div>
+        </div>
       </Section>
       {iframeData.opened && (
         <>
