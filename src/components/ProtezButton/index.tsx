@@ -14,6 +14,7 @@ type ButtonVariant =
   | 'secondary-white'
   | 'secondary-black'
   | 'primary-blue'
+  | 'primary-black'
 
 type ButtonSize = 'small' | 'normal'
 
@@ -39,6 +40,7 @@ const variantStyles: Record<ButtonVariant, string> = {
   'primary-white': 'primaryWhite',
   'primary-red': 'primaryRed',
   'secondary-white': 'secondaryWhite',
+  'primary-black': 'primaryBlack',
   'secondary-black': 'secondaryBlack',
   'primary-blue': 'primaryBlue',
 }
