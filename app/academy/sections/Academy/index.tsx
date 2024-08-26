@@ -174,7 +174,7 @@ const Academy = () => {
                           loop
                           muted
                           playsInline
-                          className={style.video}
+                          className={style.image}
                         />
                       ) : (
                         <Image

@@ -1,13 +1,16 @@
 import { forwardRef, ForwardedRef } from 'react'
+
 import { useLanguage } from '@/contexts/LanguageContext'
-import style from './style.module.scss'
-import { icons } from './icons'
-// import CompanyData from '@/components/CompanyData'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+
 import VideoAndFilter from '@/components/VideoAndFilter'
 import Section from '@/components/Section'
 import { Body } from '@/components/Typography'
 import ProtezButton, { MakeDonationButton } from '@/components/ProtezButton'
+
 import { ProtezIDs } from '../consts'
+import style from './style.module.scss'
+import { icons } from './icons'
 
 const letsGiveHopeText = {
   description: {
@@ -20,29 +23,44 @@ const letsGiveHopeText = {
     english: 'Потрібeн протез',
     ukrainian: 'Потрібeн протез',
   },
+  protezAcademy: {
+    english: 'Protez Academy',
+    ukrainian: 'Protez Academy',
+  },
 }
 
 const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const { lang } = useLanguage()
+  const { width } = useScreenModeAndSize()
+
+  const isDesktop = width > 1180
+
+  const title = width > 800 ? icons.letsGiveHopeLogo.desktop : icons.letsGiveHopeLogo.mobile
 
   return (
     <Section id={ProtezIDs.LetsGiveHope} className={style.section} ref={ref}>
       <VideoAndFilter src={'flag-ukraine.mp4'} />
       <div className={style.overlay} />
-
-      <div className={style.left}>
-        {icons.protezLogo(style.logo)}
-        <Body large className={style.description}>
-          {letsGiveHopeText.description[lang]}
-        </Body>
-        <div className={style.buttonsContainer}>
-          <MakeDonationButton lang={lang} />
-          <ProtezButton variant="secondary-white" as="link" href="/" arrow>
-            {letsGiveHopeText.needAProthesis[lang]}
-          </ProtezButton>
+      <div className={style.container}>
+        <div className={style.left}>
+          {icons.protezLogo(style.logo)}
+          <Body large={isDesktop} className={style.description}>
+            {letsGiveHopeText.description[lang]}
+          </Body>
+          <div className={style.buttonsContainer}>
+            <MakeDonationButton lang={lang} />
+            <ProtezButton variant="secondary-white" as="link" href="/" arrow>
+              {letsGiveHopeText.needAProthesis[lang]}
+            </ProtezButton>
+            {!isDesktop && (
+              <ProtezButton variant="secondary-white" as="link" href="/">
+                {letsGiveHopeText.protezAcademy[lang]}
+              </ProtezButton>
+            )}
+          </div>
         </div>
+        <div className={style.right}>{title[lang](style.title)}</div>
       </div>
-      <div className={style.right}>{icons.letsGiveHopeLogo.desktop[lang](style.title)}</div>
     </Section>
   )
 })

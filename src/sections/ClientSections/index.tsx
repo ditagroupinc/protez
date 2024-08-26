@@ -8,46 +8,34 @@ import { useInView } from 'react-intersection-observer'
 import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils/parsers'
 
 import ProtezHeader from '../protez/ProtezHeader'
-import LetsGiveHope from '@/sections/protez/LetsGiveHope'
+import LetsGiveHope from '@/sections/protez/1-LetsGiveHope/LetsGiveHope'
 
-// const Veterans = lazy(() => import('@/sections/Veterans'))
-// const PressRelease = lazy(() => import('@/sections/PressRelease'))
-// const Events = lazy(() => import('@/sections/Events'))
-const OurMission = lazy(() => import('@/sections/OurMission'))
-const OurTeam = lazy(() => import('@/sections/OurTeam'))
-const OurPartners = lazy(() => import('@/sections/OurPartners'))
-const News = lazy(() => import('@/sections/News'))
-// const InNeed = lazy(() => import('@/sections/InNeed'))
-// const OurResults = lazy(() => import('@/sections/OurResults'))
-const MailingList = lazy(() => import('@/sections/MailingList'))
-const Merch = lazy(() => import('@/sections/Merch'))
-const Prosthetics = lazy(() => import('@/sections/Prosthetics'))
-
-import ThankYou from '@/sections/ThankYou'
+// const OurMission = lazy(() => import('@/sections/OurMission'))
 
 import BackToTopButton from '@/components/BackToTopButton'
 import style from './style.module.scss'
 import SmokeBackground from '@/components/SmokeBackground'
 
-import CompanyDataNonProfit from '@/components/CompanyDataNonProfit'
-
 import { useLanguage } from '@/contexts/LanguageContext'
 
 import { usePageSettings } from '@/contexts/PageSettingsContext'
 import { Languages } from '@/types'
+
 import ProstheticsForUkrainians from '../protez/ProstheticsForUkrainians'
 import InNeed from '../protez/InNeed'
 import OurResults from '../protez/OurResults'
 import SampleProsthesesCosts from '../protez/SampleProsthesesCosts'
 import ProtezAcademy from '../protez/ProtezAcademy'
-import PeopleTrustUs from '../protez/PeopleTrustUs'
+import PeopleTrustUs from '../protez/2-PeopleTrustUs/PeopleTrustUs'
 import Veterans from '../protez/Veterans'
 import Events from '../protez/Events'
-// import PressRelease from '../protez/PressRelease'
+import PressRelease from '../protez/PressRelease'
 import OurPatients from '../protez/OurPatients'
 import OfficeLocations from '../protez/OfficeLocations'
 import OurStarSupporters from '../protez/OurStarSupporters'
 import MeetOurTeam from '../protez/MeetOurTeam'
+import Merch from '../protez/Merch'
+import Footer from '../protez/Footer'
 
 export default function ClientSections({
   news,
@@ -112,19 +100,23 @@ export default function ClientSections({
             <SmokeBackground className={style.smokeTop} />
             <div className={style.flagsBlock}>
               <LetsGiveHope ref={refLetsGiveHope} />
-              {/* <PeopleTrustUs /> */}
-              {/* <ProstheticsForUkrainians /> */}
-              {/* <InNeed ref={refInNeed} /> */}
-              {/* <OurResults /> */}
-              {/* <SampleProsthesesCosts /> */}
-              {/* <ProtezAcademy /> */}
-              {/* <Veterans /> */}
-              {/* <Events /> */}
-              {/* <OurPatients /> */}
-              <MeetOurTeam />
-              {/* <OfficeLocations /> */}
+              <PeopleTrustUs />
+              <ProstheticsForUkrainians />
+              <InNeed ref={refInNeed} />
+              <OurResults />
+              <SampleProsthesesCosts />
+              <ProtezAcademy />
+              <Veterans />
+              <Events />
 
-              {/* <OurStarSupporters /> */}
+              <PressRelease />
+              <OurPatients />
+              <MeetOurTeam />
+              <OfficeLocations />
+
+              <OurStarSupporters />
+              <Merch />
+              <Footer />
 
               {/* <OurMission /> */}
               {/* <Image
@@ -164,7 +156,6 @@ export default function ClientSections({
             <BackToTopButton href={'letsGiveHope'} black={isBackgroundWhite} />
           )} */}
         </main>
-        <ThankYou ref={refThankYou} />
       </Suspense>
     </>
   )

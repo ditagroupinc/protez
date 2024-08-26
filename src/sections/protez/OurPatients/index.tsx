@@ -12,16 +12,11 @@ import { icons } from './icons'
 import Section from '@/components/Section'
 import { ProtezIDs } from '../consts'
 import { Body, H3 } from '@/components/Typography'
+import { BilingualText } from '@/types'
 
 interface Patient {
-  date: {
-    english: string
-    ukrainian: string
-  }
-  title: {
-    english: string
-    ukrainian: string
-  }
+  date: BilingualText
+  title: BilingualText
   img: string
 }
 

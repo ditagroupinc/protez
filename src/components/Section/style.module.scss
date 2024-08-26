@@ -1,25 +1,4 @@
 .section {
-  padding-right: 168px;
-  padding-left: 168px;
-}
-
-@media (max-width: 1366px) {
-  .section {
-    padding-right: 80px;
-    padding-left: 80px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .section {
-    padding-right: 60px;
-    padding-left: 60px;
-  }
-}
-
-@media (max-width: 600px) {
-  .section {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
+  padding-right: var(--section-padding-horizontal);
+  padding-left: var(--section-padding-horizontal);
 }

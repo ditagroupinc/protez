@@ -8,7 +8,7 @@ import Section from '@/components/Section'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import style from './style.module.scss'
-import MemberCard from './MemberCard'
+
 import { icons } from './icons'
 
 import Slider from 'react-slick'
@@ -16,7 +16,33 @@ import Slider from 'react-slick'
 import { ProtezIDs } from '../consts'
 import ProtezButton from '@/components/ProtezButton'
 
-const meetOurTeamSection = {
+import Image from 'next/image'
+
+import { Body, H3 } from '@/components/Typography'
+import { BilingualText } from '@/types'
+
+interface Links {
+  facebook?: { href: string; icon: 'facebook' }
+  instagram?: { href: string; icon: 'instagram' }
+  linkedin?: { href: string; icon: 'linkedin' }
+  email?: { href: string; icon: 'email' }
+}
+
+interface Member {
+  name: BilingualText
+  position: BilingualText
+  photo: string
+  links: Links
+}
+
+const meetOurTeamSection: {
+  discover: BilingualText
+  members: Member[]
+} = {
+  discover: {
+    english: 'Discover all team',
+    ukrainian: 'Дізнатися про всю команду',
+  },
   members: [
     {
       photo: 'yuryAroshidze.png',
@@ -49,7 +75,7 @@ const meetOurTeamSection = {
         },
         instagram: {
           icon: 'instagram',
-          href: 'https://www.instagram.com/yakovgradinar/',
+          href: 'https://www.i,nstagram.com/yakovgradinar/',
         },
       },
       name: {
@@ -95,7 +121,6 @@ const meetOurTeamSection = {
           icon: 'facebook',
           href: 'https://www.facebook.com/profile.php?id=13740119',
         },
-
         instagram: {
           icon: 'instagram',
           href: 'https://www.instagram.com/andrey.madan.mn/',
@@ -278,10 +303,56 @@ const meetOurTeamSection = {
       },
     },
   ],
-  discover: {
-    english: 'Discover all team',
-    ukrainian: 'Дізнатися про всю команду',
-  },
+}
+
+const MemberCard = ({
+  photo,
+  links,
+  name,
+  position,
+  className,
+}: {
+  photo: string
+  links: Links
+  name: string
+  position: string
+  className?: string
+}) => {
+  const { width } = useScreenModeAndSize()
+
+  return (
+    <TextAppearanceWrapper
+      isDisabled={width < 600}
+      className={`${style.memberCard} ${className && className}`}
+    >
+      <Image
+        // TODO: remove after review
+        src={`/protez/protezPage/meetOurTeam/${photo}`}
+        object-fit="contain"
+        alt={photo}
+        width={360}
+        height={360}
+        className={style.memberImage}
+      />
+
+      <H3 className={style.memberName}>{name}</H3>
+
+      <Body className={style.memberPosition}>{position}</Body>
+      <div className={`${style.memberLinksList}`}>
+        {Object.keys(links).map(platform => {
+          const link = links[platform as keyof typeof links]
+
+          return link ? (
+            <a href={link.href} target="blank" key={platform}>
+              {icons[link.icon](style.memberIcon)}
+            </a>
+          ) : (
+            <div className={style.memberPlaceholder} key={platform} />
+          )
+        })}
+      </div>
+    </TextAppearanceWrapper>
+  )
 }
 
 const MeetOurTeam = () => {
@@ -375,7 +446,7 @@ const MeetOurTeam = () => {
               className={style.discoverAllButton}
               target="_blank"
             >
-              {meetOurTeamSection.discover[lang]}
+              <span className={style.buttonText}> {meetOurTeamSection.discover[lang]}</span>
             </ProtezButton>
           </div>
         </>

@@ -1,0 +1,114 @@
+.merch {
+  padding-top: 100px;
+  padding-bottom: 120px;
+  background-color: var(--white);
+  color: var(--white);
+  min-height: auto;
+  position: relative;
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title {
+  max-width: 453px;
+}
+
+.viewAllButton {
+  height: fit-content;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 24px 16px 24px 24px;
+  width: 240px;
+  & .buttonText {
+    max-width: 77px;
+  }
+}
+
+.slickSlider {
+  margin-top: 60px;
+}
+
+.slickSlider :global(.slick-dots) {
+  position: static;
+  margin-top: 56px;
+}
+
+.slickSlider :global(.slick-dots li.slick-active button:before) {
+  color: var(--pink);
+}
+
+.slickSlider :global(.slick-dots li button:before) {
+  color: var(--dark-blue);
+  opacity: 1;
+}
+
+@media screen and (max-width: 1920px) {
+  // .section:global(.section) {
+  //   padding: 106px 0 40px 0;
+  // }
+}
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+  // .section:global(.section) {
+  //   padding: 64px 0 24px 0;
+  // }
+  .title {
+    max-width: 332px;
+  }
+  .slickSlider {
+    margin-top: 64px;
+  }
+}
+/* tablet */
+@media screen and (max-width: 1180px) {
+}
+/* phone */
+@media screen and (max-width: 480px) {
+  .container {
+    max-width: 340px;
+    min-height: 476px;
+  }
+}
+
+//
+.merchCardContainer {
+  background-color: white;
+  display: block;
+  width: 100%;
+  max-width: 372px;
+  color: var(--dark-blue);
+  text-align: center;
+  // min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 0 10px;
+}
+.merchCardPicture {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  &:hover {
+    width: 110%;
+  }
+}
+
+@media screen and (max-width: 1920px) {
+}
+/* beforeTablet */
+@media screen and (max-width: 1366px) {
+}
+/* tablet */
+@media screen and (max-width: 1180px) {
+}
+/* phone */
+@media screen and (max-width: 480px) {
+  .merchCardContainer {
+    max-width: 340px;
+    min-height: 370px;
+  }
+}

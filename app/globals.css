@@ -28,6 +28,26 @@
   --whiteBorder: 1px solid rgba(255, 255, 255, 0.24);
   --greyBorder: 1px solid rgba(13, 17, 37, 0.24);
   --protezBorder: 1px solid #4e4e4e;
+  /*  */
+  --section-padding-horizontal: 168px;
+}
+
+@media (max-width: 1366px) {
+  :root {
+    --section-padding-horizontal: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --section-padding-horizontal: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --section-padding-horizontal: 24px;
+  }
 }
 
 /* @media screen and (max-width: 1920px) {

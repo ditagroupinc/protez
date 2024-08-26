@@ -240,7 +240,7 @@
   .slickSlider {
     & :global(.slick-dots) {
       border-radius: 4px;
-      display: flex;
+      display: flex !important;
       padding-top: 32px;
       position: static;
       padding-left: 24px;
@@ -248,7 +248,7 @@
     }
     & :global(.slick-dots li) {
       margin: 0;
-      width: calc(100% / 5);
+      flex: 1 1 2%;
       height: 3px;
       background-color: var(--dark-blue);
       opacity: 0.06;

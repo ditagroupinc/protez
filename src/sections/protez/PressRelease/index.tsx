@@ -12,17 +12,12 @@ import { icons } from './icons'
 import Section from '@/components/Section'
 import { ProtezIDs } from '../consts'
 import { Body, H3 } from '@/components/Typography'
+import { BilingualText } from '@/types'
 
 interface Release {
   date: string
-  title: {
-    english: string
-    ukrainian: string
-  }
-  text: {
-    english: string
-    ukrainian: string
-  }
+  title: BilingualText
+  text: BilingualText
   img: string
 }
 

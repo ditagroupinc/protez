@@ -5,14 +5,12 @@ import Card from '@/components/Card'
 import style from './style.module.css'
 import { icons } from './icons'
 import texts from '@/texts&svg'
+import { BilingualText } from '@/types'
 
 const iconsObj = [icons.iconDisabledPerson, icons.iconHand, icons.iconHelpHeart, icons.iconPeople]
 
 interface BlockInfo {
-  [key: string]: {
-    english: string
-    ukrainian: string
-  }
+  [key: string]: BilingualText
 }
 
 const OurMission = () => {

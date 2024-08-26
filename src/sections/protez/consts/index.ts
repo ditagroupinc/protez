@@ -22,4 +22,5 @@ export enum ProtezIDs {
   OurPartners = 'ourPartners',
   News = 'news',
   Merch = 'merch',
+  Footer = 'footer',
 }

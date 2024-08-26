@@ -13,20 +13,12 @@ import Section from '@/components/Section'
 import { ProtezIDs } from '../consts'
 import { Body, H3 } from '@/components/Typography'
 import Link from 'next/link'
+import { BilingualText } from '@/types'
 
 interface Supporter {
-  text: {
-    english: string
-    ukrainian: string
-  }
-  name: {
-    english: string
-    ukrainian: string
-  }
-  description: {
-    english: string
-    ukrainian: string
-  }
+  text: BilingualText
+  name: BilingualText
+  description: BilingualText
   instagramLink: string
   img: string
 }

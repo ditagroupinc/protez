@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { useRef, useState } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import Section from '@/components/Section'
 
@@ -36,7 +35,6 @@ const practiceSessionsCards = [
 const PracticeSessions = () => {
   const { lang } = useLanguage()
   const [activeSlide, setActiveSlide] = useState(0)
-  const { width } = useScreenModeAndSize()
 
   const settings = {
     dots: false,
@@ -129,16 +127,15 @@ const PracticeSessions = () => {
             )
           })}
         </Slider>
-        {width > 600 && (
-          <div className={style.sliderNavigation}>
-            <button className={style.sliderButton} onClick={gotoPrev}>
-              {icons.arrowLeft(style.arrowLeft)}
-            </button>
-            <button className={style.sliderButton} onClick={gotoNext}>
-              {icons.arrowRight(style.arrowRight)}
-            </button>
-          </div>
-        )}
+
+        <div className={style.sliderNavigation}>
+          <button className={style.sliderButton} onClick={gotoPrev}>
+            {icons.arrowLeft(style.arrowLeft)}
+          </button>
+          <button className={style.sliderButton} onClick={gotoNext}>
+            {icons.arrowRight(style.arrowRight)}
+          </button>
+        </div>
       </TextAppearanceWrapper>
     </Section>
   )

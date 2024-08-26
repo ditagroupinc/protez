@@ -1,0 +1,134 @@
+.footer {
+  & .divider {
+    background-color: var(--white);
+  }
+}
+
+.footerTop {
+  background-color: var(--red);
+  color: var(--white);
+  padding: 140px 168px;
+}
+
+.footerTopContent {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+.footerLogo {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.button {
+  justify-content: center;
+}
+
+.supportAcademyButton {
+  display: flex;
+  padding: 17px 31px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 4px;
+  background-color: var(--dark-blue);
+
+  color: var(--white);
+  text-align: center;
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+
+  transition: all var(--transitionProps);
+  &:hover {
+    background-color: var(--white);
+    color: var(--dark-blue);
+  }
+}
+
+.left {
+  max-width: 264px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.descAddress {
+}
+
+.descTitle {
+  font-weight: 700;
+}
+
+.footerBottom {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 22px;
+  padding: 12px;
+}
+
+@media (max-width: 1366px) {
+  .footerTop {
+    padding-right: 60px;
+    padding-left: 60px;
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .footerTop {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .footerTop {
+    padding: 160px 24px;
+  }
+
+  .footerTopContent {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 40px;
+  }
+
+  .right {
+    gap: 48px;
+  }
+  .footerLogo {
+    max-height: 100%;
+    height: 100%;
+    width: 100%;
+  }
+  .buttonGroup {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+  }
+
+  .left {
+    display: none;
+  }
+}

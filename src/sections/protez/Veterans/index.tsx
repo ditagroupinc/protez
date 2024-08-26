@@ -13,28 +13,14 @@ import Section from '@/components/Section'
 import { ProtezIDs } from '../consts'
 import { Body, H3 } from '@/components/Typography'
 import ProtezButton from '@/components/ProtezButton'
+import { BilingualText } from '@/types'
 
 interface Veteran {
-  ageRank: {
-    english: string
-    ukrainian: string
-  }
-  name: {
-    english: string
-    ukrainian: string
-  }
-  surname: {
-    english: string
-    ukrainian: string
-  }
-  title: {
-    english: string
-    ukrainian: string
-  }
-  text: {
-    english: string
-    ukrainian: string
-  }
+  ageRank: BilingualText
+  name: BilingualText
+  surname: BilingualText
+  title: BilingualText
+  text: BilingualText
   img: string
   icon: keyof typeof icons.titles
   video: string
@@ -47,18 +33,9 @@ interface Veteran {
 
 interface VeteransSection {
   veterans: Veteran[]
-  share: {
-    english: string
-    ukrainian: string
-  }
-  giveHope: {
-    english: string
-    ukrainian: string
-  }
-  videoButton: {
-    english: string
-    ukrainian: string
-  }
+  share: BilingualText
+  giveHope: BilingualText
+  videoButton: BilingualText
 }
 
 const veteransSection: VeteransSection = {
