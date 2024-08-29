@@ -95,98 +95,98 @@ export default function ClientSections({
   return (
     <>
       <ProtezHeader />
-      {/* <Suspense fallback={<div className={style.fallback}></div>}> */}
-      <main className={style.main}>
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smokeTop} />
-          <div className={style.flagsBlock}>
-            <LetsGiveHope />
-            <Image
-              // TODO: remove after review
-              src={`/protez/flag-usa.png`}
-              object-fit="contain"
-              alt="Picture of the author"
-              priority
-              width={620}
-              height={927}
-              className={style.americanFlag}
-            />
-            {/* ref={refLetsGiveHope} */}
+      <Suspense fallback={<div className={style.fallback}></div>}>
+        <main className={style.main}>
+          <div className={style.smokeBlock}>
+            <SmokeBackground className={style.smokeTop} />
+            <div className={style.flagsBlock}>
+              <LetsGiveHope />
+              <Image
+                // TODO: remove after review
+                src={`/protez/flag-usa.png`}
+                object-fit="contain"
+                alt="Picture of the author"
+                priority
+                width={620}
+                height={927}
+                className={style.americanFlag}
+              />
+              {/* ref={refLetsGiveHope} */}
 
-            <PeopleTrustUs />
+              <PeopleTrustUs />
+            </div>
           </div>
-        </div>
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          <ProstheticsForUkrainians />
-        </div>
-        <div className={style.mapBlock}>
-          {icons.ukrainanMap(style.map)}
           <div className={style.smokeBlock}>
             <SmokeBackground className={style.smoke} />
-            <InNeed />
-            {/* ref={refInNeed} */}
+            <ProstheticsForUkrainians />
+          </div>
+          <div className={style.mapBlock}>
+            {icons.ukrainanMap(style.map)}
+            <div className={style.smokeBlock}>
+              <SmokeBackground className={style.smoke} />
+              <InNeed />
+              {/* ref={refInNeed} */}
+            </div>
+
+            <OurResults />
           </div>
 
-          <OurResults />
-        </div>
+          <div className={style.smokeBlock}>
+            <SmokeBackground className={style.smoke} />
+            <SampleProsthesesCosts />
+          </div>
+          <div className={style.smokeBlock}>
+            <SmokeBackground className={style.smoke} />
+            <ProtezAcademy />
+          </div>
+          <div className={style.smokeBlock}>
+            <SmokeBackground className={style.smoke} />
+            <Veterans />
+          </div>
 
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          <SampleProsthesesCosts />
-        </div>
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          <ProtezAcademy />
-        </div>
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          <Veterans />
-        </div>
+          <div className={style.smokeBlock}>
+            <SmokeBackground className={style.smoke} />
+            <Events />
+          </div>
+          <PressRelease />
+          <OurPatients />
+          <MeetOurTeam />
+          <OfficeLocations />
 
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          <Events />
-        </div>
-        <PressRelease />
-        <OurPatients />
-        <MeetOurTeam />
-        <OfficeLocations />
+          <OurStarSupporters />
+          <Merch />
+          <Footer />
 
-        <OurStarSupporters />
-        <Merch />
-        <Footer />
+          {/* <OurMission /> */}
+          {/* </div> */}
+          {/* {statistics && <OurResults results={statistics} />} */}
+          {/* </div> */}
 
-        {/* <OurMission /> */}
-        {/* </div> */}
-        {/* {statistics && <OurResults results={statistics} />} */}
-        {/* </div> */}
+          {/* <InNeed ref={refInNeed} /> */}
 
-        {/* <InNeed ref={refInNeed} /> */}
-
-        {/* <Prosthetics /> */}
-        <div className={`${style.smokeBlock} ${style.veteransAndEventsBlock}`}>
-          {/* <SmokeBackground className={style.smoke} /> */}
-          {/* <Veterans /> */}
-          {/* {pressReleases && pressReleases.length > 0 && (
+          {/* <Prosthetics /> */}
+          <div className={`${style.smokeBlock} ${style.veteransAndEventsBlock}`}>
+            {/* <SmokeBackground className={style.smoke} /> */}
+            {/* <Veterans /> */}
+            {/* {pressReleases && pressReleases.length > 0 && (
               <PressRelease pressReleases={pressReleases} />
             )} */}
-          {/* {events && events.length > 0 && <Events events={events} />} */}
-        </div>
-        {/* <OurTeam ref={refOurTeam} /> */}
-        {/* <OurPartners ref={refOurPartners} /> */}
-        <div className={style.smokeBlock}>
-          {/* <SmokeBackground className={style.smoke} /> */}
-          {/* {news && news.length > 0 && <News news={news} />} */}
+            {/* {events && events.length > 0 && <Events events={events} />} */}
+          </div>
+          {/* <OurTeam ref={refOurTeam} /> */}
+          {/* <OurPartners ref={refOurPartners} /> */}
+          <div className={style.smokeBlock}>
+            {/* <SmokeBackground className={style.smoke} /> */}
+            {/* {news && news.length > 0 && <News news={news} />} */}
 
-          {/* <MailingList ref={refMailingList} inView={inViewMailingList} /> */}
-        </div>
-        {/* <Merch ref={refMerch} /> */}
-        {/* {!inViewLetsGiveHope && (
+            {/* <MailingList ref={refMailingList} inView={inViewMailingList} /> */}
+          </div>
+          {/* <Merch ref={refMerch} /> */}
+          {/* {!inViewLetsGiveHope && (
             <BackToTopButton href={'letsGiveHope'} black={isBackgroundWhite} />
           )} */}
-      </main>
-      {/* </Suspense> */}
+        </main>
+      </Suspense>
     </>
   )
 }
