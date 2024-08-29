@@ -17,6 +17,7 @@
 .title {
   margin-bottom: 48px;
   width: 100%;
+  height: auto;
 }
 
 .description1 {
@@ -84,3 +85,37 @@
     }
   }
 }
+
+//
+@media screen and (max-width: 1180px) {
+  .section {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .left {
+    max-width: 100%;
+  }
+  .title {
+    max-width: 50%;
+  }
+
+  .buttonsContainer {
+    margin-top: 0;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .right {
+    max-width: 100%;
+  }
+
+  .card {
+    min-height: 200px;
+  }
+}
+
+@media (max-width: 800px) {
+}
+
+//

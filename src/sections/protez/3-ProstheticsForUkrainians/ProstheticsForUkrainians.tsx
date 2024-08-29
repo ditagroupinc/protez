@@ -9,6 +9,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { Body, H3 } from '@/components/Typography'
 import { ProtezIDs } from '../consts'
 import { MakeDonationButton, SupportWithAmazonButton } from '@/components/ProtezButton'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const prostheticsForUkrainiansText = {
   description1: {
@@ -50,40 +51,56 @@ const prostheticsForUkrainiansText = {
 
 const ProstheticsForUkrainians = () => {
   const { lang } = useLanguage()
+  const { width } = useScreenModeAndSize()
+
+  const isDesktop = width > 1180
+
+  const title =
+    width > 800
+      ? icons.prostheticsForUkrainiansLogo.desktop
+      : icons.prostheticsForUkrainiansLogo.mobile
 
   return (
     <Section id={ProtezIDs.ProstheticsForUkrainians} className={style.section}>
       <div className={style.left}>
-        {icons.prostheticsForUkrainiansLogo.desktop[lang](style.title)}
+        {title[lang](style.title)}
         <H3 className={style.description1}>{prostheticsForUkrainiansText.description1[lang]}</H3>
         <H3>{prostheticsForUkrainiansText.description2[lang]}</H3>
-        <TextAppearanceWrapper className={style.buttonsContainer}>
-          <MakeDonationButton lang={lang} />
-          <SupportWithAmazonButton lang={lang} color="white" />
-        </TextAppearanceWrapper>
+        {isDesktop && (
+          <TextAppearanceWrapper className={style.buttonsContainer}>
+            <MakeDonationButton lang={lang} />
+            <SupportWithAmazonButton lang={lang} color="white" />
+          </TextAppearanceWrapper>
+        )}
       </div>
       <div className={style.right}>
         <div className={style.leftCol}>
           <TextAppearanceWrapper className={style.card}>
             {icons.disabledPerson(style.icon)}
-            <Body large>{prostheticsForUkrainiansText.cards.disabledPerson[lang]}</Body>
+            <Body large={isDesktop}>{prostheticsForUkrainiansText.cards.disabledPerson[lang]}</Body>
           </TextAppearanceWrapper>
           <TextAppearanceWrapper className={style.card}>
             {icons.helpHeart(style.icon)}
-            <Body large>{prostheticsForUkrainiansText.cards.helpHeart[lang]}</Body>
+            <Body large={isDesktop}>{prostheticsForUkrainiansText.cards.helpHeart[lang]}</Body>
           </TextAppearanceWrapper>
         </div>
         <div className={style.rightCol}>
           <TextAppearanceWrapper className={style.card}>
             {icons.people(style.icon)}
-            <Body large>{prostheticsForUkrainiansText.cards.people[lang]}</Body>
+            <Body large={isDesktop}>{prostheticsForUkrainiansText.cards.people[lang]}</Body>
           </TextAppearanceWrapper>
           <TextAppearanceWrapper className={style.card}>
             {icons.hand(style.icon)}
-            <Body large>{prostheticsForUkrainiansText.cards.hand[lang]}</Body>
+            <Body large={isDesktop}>{prostheticsForUkrainiansText.cards.hand[lang]}</Body>
           </TextAppearanceWrapper>
         </div>
       </div>
+      {!isDesktop && (
+        <TextAppearanceWrapper className={style.buttonsContainer}>
+          <MakeDonationButton lang={lang} className={style.button} />
+          <SupportWithAmazonButton lang={lang} color="white" className={style.button} />
+        </TextAppearanceWrapper>
+      )}
     </Section>
   )
 }

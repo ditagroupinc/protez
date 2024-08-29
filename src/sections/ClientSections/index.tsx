@@ -21,7 +21,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { usePageSettings } from '@/contexts/PageSettingsContext'
 import { Languages } from '@/types'
 
-import ProstheticsForUkrainians from '../protez/ProstheticsForUkrainians'
+import ProstheticsForUkrainians from '../protez/3-ProstheticsForUkrainians/ProstheticsForUkrainians'
 import InNeed from '../protez/InNeed'
 import OurResults from '../protez/OurResults'
 import SampleProsthesesCosts from '../protez/SampleProsthesesCosts'
