@@ -10,6 +10,7 @@ import style from './style.module.scss'
 import { ProtezIDs } from '../consts'
 import { Body, H2 } from '@/components/Typography'
 import ProtezButton, { MakeDonationButton } from '@/components/ProtezButton'
+import VideoAndFilter from '@/components/VideoAndFilter'
 
 const ourResultsText = {
   date: {
@@ -59,8 +60,12 @@ const OurResults = () => {
 
   return (
     <Section id={ProtezIDs.OurResults} className={style.section}>
-      {/* <Image/> */}
-      <div className={style.overlay} />
+      <div className={style.videoBlock}>
+        {/* protez/ */}
+        <VideoAndFilter src={'our-results.mov'} />
+        <div className={style.overlay} />
+      </div>
+
       <div className={style.left}>
         {icons.ourResultsLogo.desktop[lang](style.title)}
         <Body large className={style.date}>

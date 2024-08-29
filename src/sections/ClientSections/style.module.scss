@@ -16,11 +16,9 @@
   position: absolute;
   pointer-events: none;
   left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  max-width: 50%;
+  top: 33%;
+  max-width: 32%;
+  height: auto;
 }
 
 .smokeBlock {
@@ -31,6 +29,18 @@
   height: calc(100% - 100vh);
   top: auto;
   bottom: 0;
+}
+
+.mapBlock {
+  position: relative;
+}
+
+.map {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  max-width: 55%;
+  z-index: 2;
 }
 
 /* tablet */

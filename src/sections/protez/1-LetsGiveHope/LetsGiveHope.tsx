@@ -39,6 +39,7 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
 
   return (
     <Section id={ProtezIDs.LetsGiveHope} className={style.section} ref={ref}>
+      {/* protez/ */}
       <VideoAndFilter src={'flag-ukraine.mp4'} />
       <div className={style.overlay} />
       <div className={style.container}>
