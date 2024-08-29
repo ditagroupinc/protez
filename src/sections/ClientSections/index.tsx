@@ -1,9 +1,13 @@
 'use client'
 
-import Image from 'next/image'
+// import Image from 'next/image'
 
-import { useEffect, Suspense, lazy } from 'react'
-import { useInView } from 'react-intersection-observer'
+import {
+  useEffect,
+  Suspense,
+  // lazy
+} from 'react'
+// import { useInView } from 'react-intersection-observer'
 
 import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils/parsers'
 
@@ -12,13 +16,13 @@ import LetsGiveHope from '@/sections/protez/1-LetsGiveHope/LetsGiveHope'
 
 // const OurMission = lazy(() => import('@/sections/OurMission'))
 
-import BackToTopButton from '@/components/BackToTopButton'
+// import BackToTopButton from '@/components/BackToTopButton'
 import style from './style.module.scss'
 import SmokeBackground from '@/components/SmokeBackground'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 
-import { usePageSettings } from '@/contexts/PageSettingsContext'
+// import { usePageSettings } from '@/contexts/PageSettingsContext'
 import { Languages } from '@/types'
 
 import ProstheticsForUkrainians from '../protez/3-ProstheticsForUkrainians/ProstheticsForUkrainians'
@@ -52,22 +56,22 @@ export default function ClientSections({
 }) {
   const { setLang } = useLanguage()
 
-  const { isBackgroundWhite, setIsBackgroundWhite, setDisabledSections } = usePageSettings()
+  // const { isBackgroundWhite, setIsBackgroundWhite, setDisabledSections } = usePageSettings()
 
-  const [refLetsGiveHope, inViewLetsGiveHope] = useInView({ triggerOnce: false })
-  const [refOurTeam, inViewOurTeam] = useInView({ triggerOnce: false })
+  // const [refLetsGiveHope, inViewLetsGiveHope] = useInView({ triggerOnce: false })
+  // const [refOurTeam, inViewOurTeam] = useInView({ triggerOnce: false })
 
-  const [refInNeed, inViewInNeed] = useInView({ triggerOnce: false })
-  const [refOurPartners, inViewOurPartners] = useInView({ triggerOnce: false })
-  const [refMerch, inViewMerch] = useInView({ triggerOnce: false })
-  const [refMailingList, inViewMailingList] = useInView({ triggerOnce: true })
-  const [refThankYou, inViewThankYou] = useInView({ triggerOnce: false })
+  // const [refInNeed, inViewInNeed] = useInView({ triggerOnce: false })
+  // const [refOurPartners, inViewOurPartners] = useInView({ triggerOnce: false })
+  // const [refMerch, inViewMerch] = useInView({ triggerOnce: false })
+  // const [refMailingList, inViewMailingList] = useInView({ triggerOnce: true })
+  // const [refThankYou, inViewThankYou] = useInView({ triggerOnce: false })
 
-  const showCompanyData = !(inViewMerch || inViewThankYou)
+  // const showCompanyData = !(inViewMerch || inViewThankYou)
 
-  useEffect(() => {
-    setIsBackgroundWhite(inViewOurTeam || inViewOurPartners || inViewMerch || inViewThankYou)
-  }, [inViewOurTeam, inViewOurPartners, inViewMerch, inViewThankYou, setIsBackgroundWhite])
+  // useEffect(() => {
+  //   setIsBackgroundWhite(inViewOurTeam || inViewOurPartners || inViewMerch || inViewThankYou)
+  // }, [inViewOurTeam, inViewOurPartners, inViewMerch, inViewThankYou, setIsBackgroundWhite])
 
   useEffect(() => {
     if (country === 'Ukraine') setLang(Languages.Ukrainian)
@@ -81,7 +85,7 @@ export default function ClientSections({
     if (!events || events.length === 0) sectionsToDisable.push('events')
     if (!pressReleases || pressReleases.length === 0) sectionsToDisable.push('pressReleases')
     if (sectionsToDisable.length > 0) {
-      setDisabledSections(sectionsToDisable)
+      // setDisabledSections(sectionsToDisable)
     }
   }, [news])
 
@@ -99,10 +103,12 @@ export default function ClientSections({
           <div className={style.smokeBlock}>
             <SmokeBackground className={style.smokeTop} />
             <div className={style.flagsBlock}>
-              <LetsGiveHope ref={refLetsGiveHope} />
+              <LetsGiveHope />
+              {/* ref={refLetsGiveHope} */}
               <PeopleTrustUs />
               <ProstheticsForUkrainians />
-              <InNeed ref={refInNeed} />
+              <InNeed />
+              {/* ref={refInNeed} */}
               <OurResults />
               <SampleProsthesesCosts />
               <ProtezAcademy />
