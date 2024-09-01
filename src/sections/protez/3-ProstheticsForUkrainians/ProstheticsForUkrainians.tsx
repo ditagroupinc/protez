@@ -24,41 +24,54 @@ const prostheticsForUkrainiansText = {
     ukrainian:
       'The goal of our work is to help ukrainian children, civilians and soldiers who have lost limbs as a result of the war receive high quality prosthetics in the US free of charge.',
   },
-  cards: {
-    disabledPerson: {
-      english: 'Our goal is to help people who have lost limbs to restore their quality of life',
-      ukrainian: 'Our goal is to help people who have lost limbs to restore their quality of life',
+  cards: [
+    {
+      text: {
+        english: 'Our goal is to help people who have lost limbs to restore their quality of life',
+        ukrainian:
+          'Our goal is to help people who have lost limbs to restore their quality of life',
+      },
+      icon: icons.disabledPerson,
     },
 
-    helpHeart: {
-      english: 'We provide mental health and emotional support during recovery.',
-      ukrainian: 'We provide mental health and emotional support during recovery.',
+    {
+      text: {
+        english: 'We provide mental health and emotional support during recovery.',
+        ukrainian: 'We provide mental health and emotional support during recovery.',
+      },
+      icon: icons.helpHeart,
     },
 
-    people: {
-      english: 'We bring people together to help support victims of war.',
-      ukrainian: 'We bring people together to help support victims of war.',
+    {
+      text: {
+        english: 'We bring people together to help support victims of war.',
+        ukrainian: 'We bring people together to help support victims of war.',
+      },
+      icon: icons.people,
     },
 
-    hand: {
-      english:
-        'We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.',
-      ukrainian:
-        'We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.',
+    {
+      text: {
+        english:
+          'We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.',
+        ukrainian:
+          'We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.',
+      },
+      icon: icons.hand,
     },
-  },
+  ],
 }
 
 const ProstheticsForUkrainians = () => {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
 
-  const isDesktop = width > 1180
+  const isDesktopLayout = width > 1180
+  const isMobileLayout = width < 800
 
-  const title =
-    width > 800
-      ? icons.prostheticsForUkrainiansLogo.desktop
-      : icons.prostheticsForUkrainiansLogo.mobile
+  const title = isMobileLayout
+    ? icons.prostheticsForUkrainiansLogo.mobile
+    : icons.prostheticsForUkrainiansLogo.desktop
 
   return (
     <Section id={ProtezIDs.ProstheticsForUkrainians} className={style.section}>
@@ -66,7 +79,7 @@ const ProstheticsForUkrainians = () => {
         {title[lang](style.title)}
         <H3 className={style.description1}>{prostheticsForUkrainiansText.description1[lang]}</H3>
         <H3>{prostheticsForUkrainiansText.description2[lang]}</H3>
-        {isDesktop && (
+        {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
             <MakeDonationButton lang={lang} />
             <SupportWithAmazonButton lang={lang} color="white" />
@@ -74,28 +87,35 @@ const ProstheticsForUkrainians = () => {
         )}
       </div>
       <div className={style.right}>
-        <div className={style.leftCol}>
-          <TextAppearanceWrapper className={style.card}>
-            {icons.disabledPerson(style.icon)}
-            <Body large={isDesktop}>{prostheticsForUkrainiansText.cards.disabledPerson[lang]}</Body>
-          </TextAppearanceWrapper>
-          <TextAppearanceWrapper className={style.card}>
-            {icons.helpHeart(style.icon)}
-            <Body large={isDesktop}>{prostheticsForUkrainiansText.cards.helpHeart[lang]}</Body>
-          </TextAppearanceWrapper>
-        </div>
-        <div className={style.rightCol}>
-          <TextAppearanceWrapper className={style.card}>
-            {icons.people(style.icon)}
-            <Body large={isDesktop}>{prostheticsForUkrainiansText.cards.people[lang]}</Body>
-          </TextAppearanceWrapper>
-          <TextAppearanceWrapper className={style.card}>
-            {icons.hand(style.icon)}
-            <Body large={isDesktop}>{prostheticsForUkrainiansText.cards.hand[lang]}</Body>
-          </TextAppearanceWrapper>
-        </div>
+        {isMobileLayout ? (
+          prostheticsForUkrainiansText.cards.map((card, index) => (
+            <TextAppearanceWrapper className={style.card} key={index}>
+              {card.icon(style.icon)}
+              <Body large={isDesktopLayout}>{card.text[lang]}</Body>
+            </TextAppearanceWrapper>
+          ))
+        ) : (
+          <>
+            <div className={style.leftCol}>
+              {prostheticsForUkrainiansText.cards.slice(0, 2).map((card, index) => (
+                <TextAppearanceWrapper className={style.card} key={index}>
+                  {card.icon(style.icon)}
+                  <Body large={isDesktopLayout}>{card.text[lang]}</Body>
+                </TextAppearanceWrapper>
+              ))}
+            </div>
+            <div className={style.rightCol}>
+              {prostheticsForUkrainiansText.cards.slice(2, 4).map((card, index) => (
+                <TextAppearanceWrapper className={style.card} key={index}>
+                  {card.icon(style.icon)}
+                  <Body large={isDesktopLayout}>{card.text[lang]}</Body>
+                </TextAppearanceWrapper>
+              ))}
+            </div>
+          </>
+        )}
       </div>
-      {!isDesktop && (
+      {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
           <MakeDonationButton lang={lang} className={style.button} />
           <SupportWithAmazonButton lang={lang} color="white" className={style.button} />

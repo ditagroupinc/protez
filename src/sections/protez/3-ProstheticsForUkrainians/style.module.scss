@@ -86,7 +86,6 @@
   }
 }
 
-//
 @media screen and (max-width: 1180px) {
   .section {
     flex-direction: column;
@@ -116,6 +115,43 @@
 }
 
 @media (max-width: 800px) {
-}
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
 
-//
+  .title {
+    max-width: 400px;
+  }
+
+  .description1 {
+    margin-bottom: 16px;
+  }
+
+  .buttonsContainer {
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+  }
+  .right {
+    flex-wrap: wrap;
+  }
+
+  .card {
+    &:nth-of-type(1) {
+      max-width: 100%;
+      margin-right: 27px;
+      border-bottom: none;
+    }
+    &:nth-of-type(2) {
+      max-width: 50%;
+      border-right: none;
+    }
+    &:nth-of-type(3) {
+      max-width: 50%;
+    }
+    &:nth-of-type(4) {
+      border-top: none;
+    }
+  }
+}
