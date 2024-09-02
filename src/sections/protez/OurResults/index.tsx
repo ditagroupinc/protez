@@ -10,7 +10,7 @@ import style from './style.module.scss'
 import { ProtezIDs } from '../consts'
 import { Body, H2 } from '@/components/Typography'
 import ProtezButton, { MakeDonationButton } from '@/components/ProtezButton'
-import VideoAndFilter from '@/components/VideoAndFilter'
+import { ForwardedRef, forwardRef } from 'react'
 
 const ourResultsText = {
   date: {
@@ -55,48 +55,45 @@ const ourResultsText = {
   ],
 }
 
-const OurResults = () => {
+const OurResults = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const { lang } = useLanguage()
 
   return (
-    <Section id={ProtezIDs.OurResults} className={style.section}>
-      <div className={style.videoBlock}>
-        {/* protez/ */}
-        <VideoAndFilter src={'our-results.mov'} />
-        <div className={style.overlay} />
-      </div>
+    <>
+      <Section id={ProtezIDs.OurResults} className={style.section} ref={ref}>
+        <div className={style.left}>
+          {icons.ourResultsLogo.desktop[lang](style.title)}
+          <Body large className={style.date}>
+            {ourResultsText.date[lang]}
+          </Body>
 
-      <div className={style.left}>
-        {icons.ourResultsLogo.desktop[lang](style.title)}
-        <Body large className={style.date}>
-          {ourResultsText.date[lang]}
-        </Body>
+          <Body large className={style.description}>
+            {ourResultsText.description[lang]}
+          </Body>
 
-        <Body large className={style.description}>
-          {ourResultsText.description[lang]}
-        </Body>
-
-        <TextAppearanceWrapper className={style.buttonsContainer}>
-          <MakeDonationButton lang={lang} />
-          <ProtezButton as="link" href="/" variant="secondary-white" arrow>
-            {ourResultsText.moreResults[lang]}
-          </ProtezButton>
-        </TextAppearanceWrapper>
-      </div>
-      <div className={style.right}>
-        {ourResultsText.cards.map((card, index) => (
-          <TextAppearanceWrapper key={index} className={style.card}>
-            <div className={style.count}>
-              {card.prefix && <span>{card.prefix}</span>}
-              <CountUp end={card.number} duration={2} className={style.count} />
-              {card.suffix && <span>{card.suffix}</span>}
-            </div>
-            <H2>{card.description}</H2>
+          <TextAppearanceWrapper className={style.buttonsContainer}>
+            <MakeDonationButton lang={lang} />
+            <ProtezButton as="link" href="/" variant="secondary-white" arrow>
+              {ourResultsText.moreResults[lang]}
+            </ProtezButton>
           </TextAppearanceWrapper>
-        ))}
-      </div>
-    </Section>
+        </div>
+        <div className={style.right}>
+          {ourResultsText.cards.map((card, index) => (
+            <TextAppearanceWrapper key={index} className={style.card}>
+              <div className={style.count}>
+                {card.prefix && <span>{card.prefix}</span>}
+                <CountUp end={card.number} duration={2} className={style.count} />
+                {card.suffix && <span>{card.suffix}</span>}
+              </div>
+              <H2>{card.description}</H2>
+            </TextAppearanceWrapper>
+          ))}
+        </div>
+      </Section>
+    </>
   )
-}
+})
 
+OurResults.displayName = 'OurResults'
 export default OurResults

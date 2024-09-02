@@ -1,10 +1,10 @@
 'use client'
 
-// import Image from 'next/image'
-
 import {
   useEffect,
   Suspense,
+  useRef,
+  useState,
   // lazy
 } from 'react'
 // import { useInView } from 'react-intersection-observer'
@@ -26,7 +26,8 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { Languages } from '@/types'
 
 import ProstheticsForUkrainians from '../protez/3-ProstheticsForUkrainians/ProstheticsForUkrainians'
-import InNeed from '../protez/InNeed'
+
+import InNeed from '../protez/4-InNeed/InNeed'
 import OurResults from '../protez/OurResults'
 import SampleProsthesesCosts from '../protez/SampleProsthesesCosts'
 import ProtezAcademy from '../protez/ProtezAcademy'
@@ -42,8 +43,6 @@ import Merch from '../protez/Merch'
 import Footer from '../protez/Footer'
 import Image from 'next/image'
 
-import { icons } from './icons'
-
 export default function ClientSections({
   news,
   statistics,
@@ -58,6 +57,7 @@ export default function ClientSections({
   country: string
 }) {
   const { setLang } = useLanguage()
+  const refOurResults = useRef<HTMLDivElement | null>(null)
 
   // const { isBackgroundWhite, setIsBackgroundWhite, setDisabledSections } = usePageSettings()
 
@@ -120,16 +120,28 @@ export default function ClientSections({
             <SmokeBackground className={style.smoke} />
             <ProstheticsForUkrainians />
           </div>
-          <div className={style.mapBlock}>
-            {icons.ukrainanMap(style.map)}
-            <div className={style.smokeBlock}>
-              <SmokeBackground className={style.smoke} />
-              <InNeed />
-              {/* ref={refInNeed} */}
+          {/* <div className={style.videoBlock}>
+            <div
+              className={style.videoContainer}
+              // style={{ height: height }}
+              style={{ height: refOurResults.current?.offsetHeight }}
+            >
+              <video autoPlay loop muted playsInline className={style.video}>
+                <source src={'/protez/our-results.mov'} type="video/mp4" />
+              </video>
+              <div className={style.filter} />
             </div>
 
-            <OurResults />
-          </div>
+           
+          </div> */}
+
+          <InNeed />
+          <OurResults ref={refOurResults} />
+
+          {/* ref={refInNeed} */}
+          {/* </div> */}
+
+          {/* </div> */}
 
           <div className={style.smokeBlock}>
             <SmokeBackground className={style.smoke} />

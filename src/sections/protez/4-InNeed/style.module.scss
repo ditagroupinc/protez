@@ -1,16 +1,24 @@
 .section {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  // align-items: center;
   gap: 16px;
   position: relative;
-  z-index: 3;
+  z-index: 1;
+  // padding-right: 0;
+  // z-index: 3;
   // background-color: var(--red);
 }
 
-.left {
+.map {
+  position: absolute;
+  top: 30px;
+  right: 0;
   width: 100%;
-  max-width: 845px;
+  height: auto;
+  pointer-events: none;
+  z-index: 2;
+  max-width: 1030px;
 }
 
 .image {
@@ -18,9 +26,21 @@
   height: auto;
 }
 
-.right {
+.left {
   width: 100%;
-  max-width: 483px;
+  flex: 1 1 845px;
+  position: relative;
+  z-index: 3;
+}
+
+.right {
+  flex: 1 1 483px;
+
+  position: relative;
+
+  margin-right: 70px;
+  padding-top: 260px;
+  z-index: 3;
 }
 
 .title {
@@ -43,4 +63,7 @@
 .icon {
   width: 24px;
   height: 24px;
+}
+
+@media screen and (max-width: 800px) {
 }

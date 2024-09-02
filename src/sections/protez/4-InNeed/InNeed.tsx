@@ -22,6 +22,7 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
 
   return (
     <Section id={ProtezIDs.InNeed} className={style.section} ref={ref}>
+      {icons.ukrainanMap(style.map)}
       <div className={style.left}>
         <Image
           // TODO: remove after review
@@ -32,6 +33,7 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
           className={style.image}
         />
       </div>
+
       <TextAppearanceWrapper className={style.right}>
         {icons.inNeedLogo.desktop[lang](style.title)}
         <Link as="link" href="/" className={style.link}>

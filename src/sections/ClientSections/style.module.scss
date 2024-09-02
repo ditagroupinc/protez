@@ -31,23 +31,58 @@
   bottom: 0;
 }
 
-.mapBlock {
+.videoBlock {
   position: relative;
 }
 
-.map {
+.videoContainer {
   position: absolute;
-  top: 30px;
-  right: 0;
-  max-width: 55%;
-  z-index: 2;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  & .video {
+    pointer-events: none;
+    // position: relative;
+    // position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    // left: 0;
+    // top: 0;
+    z-index: 0;
+  }
+
+  & .filter {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    // background: linear-gradient(360deg, #0d1125 0%, rgba(13, 17, 37, 0) 40.45%), #0d112580;
+    // background: linear-gradient(180deg, rgba(19, 19, 19, 0) 84.03%, #131313 98.09%);
+  }
 }
+
+// .mapBlock {
+//   position: relative;
+// }
+
+// .map {
+//   position: absolute;
+//   top: 30px;
+//   right: 0;
+//   max-width: 55%;
+//   max-height: 100%;
+//   // max-width: 1018px;
+//   z-index: 2;
+// }
 
 /* tablet */
 @media screen and (max-width: 1180px) {
-  .companyDataNonProfit {
-    display: none;
-  }
+  // .companyDataNonProfit {
+  //   display: none;
+  // }
 }
 
 /* phone */
