@@ -47,6 +47,7 @@
 }
 
 .titleContainer {
+  position: relative;
   margin-bottom: 40px;
 }
 
@@ -276,5 +277,12 @@
       height: 100%;
       padding: 0;
     }
+  }
+}
+
+@media (max-width: 800px) {
+  .title {
+    max-width: 260px;
+    height: auto;
   }
 }

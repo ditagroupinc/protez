@@ -44,7 +44,7 @@
   color: var(--white);
 }
 
-.description {
+.text {
   margin-top: 40px;
 }
 
@@ -115,5 +115,103 @@
 
   &:nth-child(5) {
     grid-area: spentOnMission;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .card {
+    & .count {
+      font-size: 56px;
+    }
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+  }
+
+  .left {
+    flex-basis: 100%;
+  }
+
+  .right {
+    flex-basis: 100%;
+    max-width: 100%;
+
+    grid-template-areas:
+      'prostheses prostheses prostheses clinicsOpened clinicsOpened clinicsOpened clinicsOpened .'
+      'patients patients patients patients specialistsTrained specialistsTrained specialistsTrained specialistsTrained'
+      'spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission . .';
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .buttonsContainer {
+    margin-top: 0;
+    flex-direction: column;
+    width: 100%;
+  }
+  .left {
+    max-width: 100%;
+  }
+
+  .right {
+    grid-template-rows: repeat(3, 124px);
+  }
+
+  .card {
+    padding: 20px 16px 24px 16px;
+
+    & .count {
+      font-size: 48px;
+
+      line-height: 56px;
+    }
+
+    & .description {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section {
+    padding-top: 60px;
+    padding-bottom: 20px;
+  }
+
+  .text {
+    margin-top: 24px;
+  }
+
+  .title {
+    max-width: 228px;
+    height: auto;
+  }
+
+  .right {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 124px);
+
+    grid-template-areas:
+      'prostheses prostheses prostheses prostheses prostheses prostheses . .'
+      'clinicsOpened clinicsOpened clinicsOpened clinicsOpened patients patients patients patients'
+      'specialistsTrained specialistsTrained specialistsTrained specialistsTrained specialistsTrained specialistsTrained specialistsTrained specialistsTrained'
+      'spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission';
+  }
+
+  .card {
+    &:nth-child(5) {
+      background-color: var(--red);
+      color: var(--white);
+    }
   }
 }

@@ -9,6 +9,7 @@ import { ProtezIDs } from '../consts'
 import Image from 'next/image'
 import Link from 'next/link'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const inNeedText = {
   viewStatisticsSource: {
@@ -19,6 +20,9 @@ const inNeedText = {
 
 const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const { lang } = useLanguage()
+  const { width } = useScreenModeAndSize()
+
+  const inNeedLogo = width < 800 ? icons.inNeedLogo.mobile : icons.inNeedLogo.desktop
 
   return (
     <Section id={ProtezIDs.InNeed} className={style.section} ref={ref}>
@@ -35,11 +39,14 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
       </div>
 
       <TextAppearanceWrapper className={style.right}>
-        {icons.inNeedLogo.desktop[lang](style.title)}
-        <Link as="link" href="/" className={style.link}>
-          {inNeedText.viewStatisticsSource[lang]}
-          {icons.arrowRight(style.icon)}
-        </Link>
+        {icons.ukrainianMapSmall(style.mapSmall)}
+        <div className={style.textBlock}>
+          {inNeedLogo[lang](style.title)}
+          <Link as="link" href="/" className={style.link}>
+            {inNeedText.viewStatisticsSource[lang]}
+            {icons.arrowRight(style.icon)}
+          </Link>
+        </div>
       </TextAppearanceWrapper>
     </Section>
   )

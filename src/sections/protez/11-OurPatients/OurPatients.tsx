@@ -11,68 +11,29 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { icons } from './icons'
 import Section from '@/components/Section'
 import { ProtezIDs } from '../consts'
-import { Body, H3 } from '@/components/Typography'
-import { BilingualText } from '@/types'
-
-interface Patient {
-  date: BilingualText
-  title: BilingualText
-  img: string
-}
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 interface OurPatientsSection {
-  patients: Patient[]
+  patients: string[]
 }
 
 const ourPatientsSection: OurPatientsSection = {
-  patients: [
-    {
-      date: {
-        english: 'March 2024',
-        ukrainian: 'March 2024',
-      },
-      title: {
-        english: '14th group of soldiers',
-        ukrainian: '14th group of soldiers',
-      },
-      img: 'ourPatientsSlide1.png',
-    },
-    {
-      date: {
-        english: 'March 2024',
-        ukrainian: 'March 2024',
-      },
-      title: {
-        english: '14th group of soldiers',
-        ukrainian: '14th group of soldiers',
-      },
-      img: 'ourPatientsSlide2.png',
-    },
-    {
-      date: {
-        english: 'March 2024',
-        ukrainian: 'March 2024',
-      },
-      title: {
-        english: '14th group of soldiers',
-        ukrainian: '14th group of soldiers',
-      },
-      img: 'ourPatientsSlide3.png',
-    },
-  ],
+  patients: ['ourPatientsSlide1.png', 'ourPatientsSlide2.png', 'ourPatientsSlide3.png'],
 }
 
 const OurPatients = () => {
   const { lang } = useLanguage()
 
   const sliderRef = useRef<Slider & React.Component>(null)
-
   const gotoNext = () => {
     sliderRef.current?.slickNext()
   }
   const gotoPrev = () => {
     sliderRef.current?.slickPrev()
   }
+
+  const { width } = useScreenModeAndSize()
+  const isDesktopLayout = width > 800
 
   const settings = {
     infinite: true,
@@ -85,9 +46,27 @@ const OurPatients = () => {
     autoplaySpeed: 5000,
 
     rtl: true,
+
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 800,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          centerPadding: '50px',
+          rtl: false,
+        },
+      },
+    ],
   }
 
-  const patientsArray: Patient[] = [...ourPatientsSection.patients, ...ourPatientsSection.patients]
+  const patientsArray: string[] = [...ourPatientsSection.patients, ...ourPatientsSection.patients]
 
   return (
     <Section id={ProtezIDs.OurPatients} className={style.section}>
@@ -102,22 +81,21 @@ const OurPatients = () => {
           </button>
         </div>
       </TextAppearanceWrapper>
-      <div dir="rtl">
+      {/*  */}
+      <div dir={isDesktopLayout ? 'rtl' : 'ltr'}>
         <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
           {patientsArray.map((slide, index) => (
-            <div className={style.cardWrapper} key={index}>
-              <div className={style.card}>
-                <Image
-                  // TODO: remove after review
-                  src={`/protez/protezPage/ourPatients/${slide.img}`}
-                  alt={slide.date[lang] + ' ' + slide.title[lang]}
-                  className={style.image}
-                  width={772}
-                  height={500}
-                />
-                <div className={style.text}>
-                  <H3 className={style.cardDate}>{slide.title[lang]}</H3>
-                  <Body className={style.cardText}>{slide.date[lang]}</Body>
+            <div key={index}>
+              <div className={style.cardWrapper}>
+                <div className={style.card}>
+                  <Image
+                    // TODO: remove after review
+                    src={`/protez/protezPage/ourPatients/${slide}`}
+                    alt={'image of patients'}
+                    className={style.image}
+                    width={772}
+                    height={500}
+                  />
                 </div>
               </div>
             </div>

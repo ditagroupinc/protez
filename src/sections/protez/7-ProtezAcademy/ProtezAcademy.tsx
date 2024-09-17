@@ -10,6 +10,7 @@ import { Body } from '@/components/Typography'
 import { ProtezIDs } from '../consts'
 import ProtezButton from '@/components/ProtezButton'
 import Image from 'next/image'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const protezAcademyText = {
   description: {
@@ -48,6 +49,8 @@ const Card = ({ image }: { image: string }) => {
 
 const ProtezAcademy = () => {
   const { lang } = useLanguage()
+  const { width } = useScreenModeAndSize()
+  const isDesktopLayout = width > 800
 
   return (
     <Section id={ProtezIDs.ProtezAcademy} className={style.section}>
@@ -64,9 +67,27 @@ const ProtezAcademy = () => {
       </div>
       <div className={style.right}>
         {icons.protezAcademyLogo(style.title)}
-        <Body large className={style.description}>
+        <Body large={isDesktopLayout} className={style.description}>
           {protezAcademyText.description[lang]}
         </Body>
+        {isDesktopLayout && (
+          <TextAppearanceWrapper className={style.buttonsContainer}>
+            <ProtezButton as="link" href="/" variant="primary-blue">
+              {protezAcademyText.learnMore[lang]}
+            </ProtezButton>
+            <ProtezButton as="link" href="/" variant="secondary-white" arrow>
+              {protezAcademyText.applyToAcademy[lang]}
+            </ProtezButton>
+          </TextAppearanceWrapper>
+        )}
+
+        <TextAppearanceWrapper className={style.cardsWrapper}>
+          {cards.map((card, index) => (
+            <Card key={index} image={card} />
+          ))}
+        </TextAppearanceWrapper>
+      </div>
+      {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
           <ProtezButton as="link" href="/" variant="primary-blue">
             {protezAcademyText.learnMore[lang]}
@@ -75,13 +96,7 @@ const ProtezAcademy = () => {
             {protezAcademyText.applyToAcademy[lang]}
           </ProtezButton>
         </TextAppearanceWrapper>
-
-        <TextAppearanceWrapper className={style.cardsWrapper}>
-          {cards.map((card, index) => (
-            <Card key={index} image={card} />
-          ))}
-        </TextAppearanceWrapper>
-      </div>
+      )}
     </Section>
   )
 }

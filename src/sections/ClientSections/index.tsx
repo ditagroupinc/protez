@@ -2,9 +2,9 @@
 
 import {
   useEffect,
-  Suspense,
-  useRef,
-  useState,
+  // Suspense,
+  // useRef,
+  // useState,
   // lazy
 } from 'react'
 // import { useInView } from 'react-intersection-observer'
@@ -27,21 +27,24 @@ import { Languages } from '@/types'
 
 import ProstheticsForUkrainians from '../protez/3-ProstheticsForUkrainians/ProstheticsForUkrainians'
 
-import InNeed from '../protez/4-InNeed/InNeed'
-import OurResults from '../protez/OurResults'
-import SampleProsthesesCosts from '../protez/SampleProsthesesCosts'
-import ProtezAcademy from '../protez/ProtezAcademy'
+// import InNeed from '../protez/4-InNeed/InNeed'
+// import OurResults from '../protez/5-OurResults'
+import SampleProsthesesCosts from '../protez/6-SampleProsthesesCosts/SampleProsthesesCosts'
+import ProtezAcademy from '../protez/7-ProtezAcademy/ProtezAcademy'
 import PeopleTrustUs from '../protez/2-PeopleTrustUs/PeopleTrustUs'
-import Veterans from '../protez/Veterans'
-import Events from '../protez/Events'
-import PressRelease from '../protez/PressRelease'
-import OurPatients from '../protez/OurPatients'
-import OfficeLocations from '../protez/OfficeLocations'
-import OurStarSupporters from '../protez/OurStarSupporters'
-import MeetOurTeam from '../protez/MeetOurTeam'
-import Merch from '../protez/Merch'
+// import Veterans from '../protez/Veterans'
+// import Events from '../protez/Events'
+// import PressRelease from '../protez/PressRelease'
+import OurPatients from '../protez/11-OurPatients/OurPatients'
+import OfficeLocations from '../protez/13-OfficeLocations/OfficeLocations'
+// import OurStarSupporters from '../protez/OurStarSupporters'
+// import MeetOurTeam from '../protez/MeetOurTeam'
+// import Merch from '../protez/Merch'
 import Footer from '../protez/Footer'
 import Image from 'next/image'
+import VideoBlock from './VideoBlock'
+
+// import { useInView } from 'framer-motion'
 
 export default function ClientSections({
   news,
@@ -57,7 +60,16 @@ export default function ClientSections({
   country: string
 }) {
   const { setLang } = useLanguage()
-  const refOurResults = useRef<HTMLDivElement | null>(null)
+  // const refOurResults = useRef<HTMLDivElement | null>(null)
+
+  // const {
+  //   ref: refOurResults,
+  //   // inView,
+  //   // entry,
+  // } = useInView({
+  //   /* Optional options */
+  //   threshold: 0,
+  // })
 
   // const { isBackgroundWhite, setIsBackgroundWhite, setDisabledSections } = usePageSettings()
 
@@ -75,6 +87,8 @@ export default function ClientSections({
   // useEffect(() => {
   //   setIsBackgroundWhite(inViewOurTeam || inViewOurPartners || inViewMerch || inViewThankYou)
   // }, [inViewOurTeam, inViewOurPartners, inViewMerch, inViewThankYou, setIsBackgroundWhite])
+
+  // console.log(refOurResults?.current?.offsetHeight)
 
   useEffect(() => {
     if (country === 'Ukraine') setLang(Languages.Ukrainian)
@@ -95,110 +109,90 @@ export default function ClientSections({
   return (
     <>
       <ProtezHeader />
-      <Suspense fallback={<div className={style.fallback}></div>}>
-        <main className={style.main}>
-          <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smokeTop} />
-            <div className={style.flagsBlock}>
-              <LetsGiveHope />
-              <Image
-                // TODO: remove after review
-                src={`/protez/flag-usa.png`}
-                object-fit="contain"
-                alt="Picture of the author"
-                priority
-                width={620}
-                height={927}
-                className={style.americanFlag}
-              />
-              {/* ref={refLetsGiveHope} */}
+      {/* <Suspense fallback={<div className={style.fallback}></div>}> */}
+      <main className={style.main}>
+        <div className={style.smokeBlock}>
+          <SmokeBackground className={style.smokeTop} />
+          <div className={style.flagsBlock}>
+            <LetsGiveHope />
 
-              <PeopleTrustUs />
-            </div>
+            <Image
+              // TODO: remove after review
+              src={`/protez/flag-usa.png`}
+              object-fit="contain"
+              alt="Picture of the author"
+              priority
+              width={620}
+              height={927}
+              className={style.americanFlag}
+            />
+            {/* ref={refLetsGiveHope} */}
+
+            <PeopleTrustUs />
           </div>
-          <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smoke} />
-            <ProstheticsForUkrainians />
-          </div>
-          {/* <div className={style.videoBlock}>
-            <div
-              className={style.videoContainer}
-              // style={{ height: height }}
-              style={{ height: refOurResults.current?.offsetHeight }}
-            >
-              <video autoPlay loop muted playsInline className={style.video}>
-                <source src={'/protez/our-results.mov'} type="video/mp4" />
-              </video>
-              <div className={style.filter} />
-            </div>
+        </div>
+        <div className={style.smokeBlock}>
+          <SmokeBackground className={style.smoke} />
+          <ProstheticsForUkrainians />
+        </div>
+        <VideoBlock />
 
-           
-          </div> */}
+        <div className={style.smokeBlock}>
+          <SmokeBackground className={style.smoke} />
+          <SampleProsthesesCosts />
+        </div>
+        <div className={style.smokeBlock}>
+          <SmokeBackground className={style.smoke} />
+          <ProtezAcademy />
+        </div>
+        {/* <div className={style.smokeBlock}>
+          <SmokeBackground className={style.smoke} />
+          <Veterans />
+        </div> */}
 
-          <InNeed />
-          <OurResults ref={refOurResults} />
+        {/* <div className={style.smokeBlock}>
+          <SmokeBackground className={style.smoke} />
+          <Events />
+        </div> */}
+        {/* <PressRelease /> */}
+        <OurPatients />
+        {/* <MeetOurTeam /> */}
+        <OfficeLocations />
 
-          {/* ref={refInNeed} */}
-          {/* </div> */}
+        {/* <OurStarSupporters /> */}
+        {/* <Merch /> */}
+        <Footer />
 
-          {/* </div> */}
+        {/* <OurMission /> */}
+        {/* </div> */}
+        {/* {statistics && <OurResults results={statistics} />} */}
+        {/* </div> */}
 
-          <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smoke} />
-            <SampleProsthesesCosts />
-          </div>
-          <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smoke} />
-            <ProtezAcademy />
-          </div>
-          <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smoke} />
-            <Veterans />
-          </div>
+        {/* <InNeed ref={refInNeed} /> */}
 
-          <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smoke} />
-            <Events />
-          </div>
-          <PressRelease />
-          <OurPatients />
-          <MeetOurTeam />
-          <OfficeLocations />
-
-          <OurStarSupporters />
-          <Merch />
-          <Footer />
-
-          {/* <OurMission /> */}
-          {/* </div> */}
-          {/* {statistics && <OurResults results={statistics} />} */}
-          {/* </div> */}
-
-          {/* <InNeed ref={refInNeed} /> */}
-
-          {/* <Prosthetics /> */}
-          <div className={`${style.smokeBlock} ${style.veteransAndEventsBlock}`}>
-            {/* <SmokeBackground className={style.smoke} /> */}
-            {/* <Veterans /> */}
-            {/* {pressReleases && pressReleases.length > 0 && (
+        {/* <Prosthetics /> */}
+        <div className={`${style.smokeBlock} ${style.veteransAndEventsBlock}`}>
+          {/* <SmokeBackground className={style.smoke} /> */}
+          {/* <Veterans /> */}
+          {/* {pressReleases && pressReleases.length > 0 && (
               <PressRelease pressReleases={pressReleases} />
             )} */}
-            {/* {events && events.length > 0 && <Events events={events} />} */}
-          </div>
-          {/* <OurTeam ref={refOurTeam} /> */}
-          {/* <OurPartners ref={refOurPartners} /> */}
-          <div className={style.smokeBlock}>
-            {/* <SmokeBackground className={style.smoke} /> */}
-            {/* {news && news.length > 0 && <News news={news} />} */}
+          {/* {events && events.length > 0 && <Events events={events} />} */}
+        </div>
+        {/* <OurTeam ref={refOurTeam} /> */}
+        {/* <OurPartners ref={refOurPartners} /> */}
+        <div className={style.smokeBlock}>
+          {/* <SmokeBackground className={style.smoke} /> */}
+          {/* {news && news.length > 0 && <News news={news} />} */}
 
-            {/* <MailingList ref={refMailingList} inView={inViewMailingList} /> */}
-          </div>
-          {/* <Merch ref={refMerch} /> */}
-          {/* {!inViewLetsGiveHope && (
+          {/* <MailingList ref={refMailingList} inView={inViewMailingList} /> */}
+        </div>
+        {/* <Merch ref={refMerch} /> */}
+        {/* {!inViewLetsGiveHope && (
             <BackToTopButton href={'letsGiveHope'} black={isBackgroundWhite} />
           )} */}
-        </main>
-      </Suspense>
+      </main>
+      {/* </Suspense> */}
     </>
   )
 }

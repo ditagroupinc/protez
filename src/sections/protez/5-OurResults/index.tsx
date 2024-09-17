@@ -11,13 +11,14 @@ import { ProtezIDs } from '../consts'
 import { Body, H2 } from '@/components/Typography'
 import ProtezButton, { MakeDonationButton } from '@/components/ProtezButton'
 import { ForwardedRef, forwardRef } from 'react'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const ourResultsText = {
   date: {
     english: 'May 2022 – September 2023',
     ukrainian: 'May 2022 – September 2023',
   },
-  description: {
+  text: {
     english:
       'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
     ukrainian:
@@ -57,26 +58,31 @@ const ourResultsText = {
 
 const OurResults = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const { lang } = useLanguage()
+  const { width } = useScreenModeAndSize()
+
+  const isDesktopLayout = width > 800
 
   return (
     <>
       <Section id={ProtezIDs.OurResults} className={style.section} ref={ref}>
         <div className={style.left}>
           {icons.ourResultsLogo.desktop[lang](style.title)}
-          <Body large className={style.date}>
+          <Body large={isDesktopLayout} className={style.date}>
             {ourResultsText.date[lang]}
           </Body>
 
-          <Body large className={style.description}>
-            {ourResultsText.description[lang]}
+          <Body large={isDesktopLayout} className={style.text}>
+            {ourResultsText.text[lang]}
           </Body>
 
-          <TextAppearanceWrapper className={style.buttonsContainer}>
-            <MakeDonationButton lang={lang} />
-            <ProtezButton as="link" href="/" variant="secondary-white" arrow>
-              {ourResultsText.moreResults[lang]}
-            </ProtezButton>
-          </TextAppearanceWrapper>
+          {isDesktopLayout && (
+            <TextAppearanceWrapper className={style.buttonsContainer}>
+              <MakeDonationButton lang={lang} />
+              <ProtezButton as="link" href="/" variant="secondary-white" arrow>
+                {ourResultsText.moreResults[lang]}
+              </ProtezButton>
+            </TextAppearanceWrapper>
+          )}
         </div>
         <div className={style.right}>
           {ourResultsText.cards.map((card, index) => (
@@ -86,10 +92,18 @@ const OurResults = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
                 <CountUp end={card.number} duration={2} className={style.count} />
                 {card.suffix && <span>{card.suffix}</span>}
               </div>
-              <H2>{card.description}</H2>
+              <H2 className={style.description}>{card.description}</H2>
             </TextAppearanceWrapper>
           ))}
         </div>
+        {!isDesktopLayout && (
+          <TextAppearanceWrapper className={style.buttonsContainer}>
+            <MakeDonationButton lang={lang} />
+            <ProtezButton as="link" href="/" variant="secondary-white" arrow>
+              {ourResultsText.moreResults[lang]}
+            </ProtezButton>
+          </TextAppearanceWrapper>
+        )}
       </Section>
     </>
   )

@@ -9,6 +9,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { Body, H3 } from '@/components/Typography'
 import { ProtezIDs } from '../consts'
 import { MakeDonationButton, SupportWithAmazonButton } from '@/components/ProtezButton'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const sampleProsthesesCostsText = {
   description: {
@@ -97,18 +98,22 @@ const PriceCard = ({
 
 const SampleProsthesesCosts = () => {
   const { lang } = useLanguage()
+  const { width } = useScreenModeAndSize()
+  const isDesktopLayout = width > 800
 
   return (
     <Section id={ProtezIDs.SampleProsthesesCosts} className={style.section}>
       <div className={style.left}>
         {icons.sampleProsthesesCostsLogo.desktop[lang](style.title)}
-        <Body large className={style.description}>
+        <Body large={isDesktopLayout} className={style.description}>
           {sampleProsthesesCostsText.description[lang]}
         </Body>
-        <TextAppearanceWrapper className={style.buttonsContainer}>
-          <MakeDonationButton lang={lang} />
-          <SupportWithAmazonButton lang={lang} color="white" />
-        </TextAppearanceWrapper>
+        {isDesktopLayout && (
+          <TextAppearanceWrapper className={style.buttonsContainer}>
+            <MakeDonationButton lang={lang} />
+            <SupportWithAmazonButton lang={lang} color="white" />
+          </TextAppearanceWrapper>
+        )}
       </div>
       <div className={style.right}>
         <div className={style.prices}>
@@ -137,6 +142,12 @@ const SampleProsthesesCosts = () => {
         {icons.line(style.line)}
         {icons.body(style.body)}
       </div>
+      {!isDesktopLayout && (
+        <TextAppearanceWrapper className={style.buttonsContainer}>
+          <MakeDonationButton lang={lang} />
+          <SupportWithAmazonButton lang={lang} color="white" />
+        </TextAppearanceWrapper>
+      )}
     </Section>
   )
 }
