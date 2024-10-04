@@ -46,6 +46,7 @@ import VideoBlock from './VideoBlock'
 import Veterans from '../protez/8-Veterans/Veterans'
 import Events from '../protez/9-Events/Events'
 import PressRelease from '../protez/10-PressRelease/PressRelease'
+import MeetOurTeam from '../protez/12-MeetOurTeam/MeetOurTeam'
 
 // import { useInView } from 'framer-motion'
 
@@ -158,6 +159,7 @@ export default function ClientSections({
         </div>
         <PressRelease />
         <OurPatients />
+        <MeetOurTeam />
         <OfficeLocations />
 
         {/* <OurStarSupporters /> */}

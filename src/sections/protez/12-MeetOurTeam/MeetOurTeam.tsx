@@ -368,7 +368,7 @@ const MeetOurTeam = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '10px',
+    centerPadding: '30px',
 
     swipeToSlide: true,
     arrows: false,
@@ -377,7 +377,7 @@ const MeetOurTeam = () => {
   }
 
   return (
-    <Section id={ProtezIDs.OurTeam} className={style.meetOurTeam}>
+    <Section id={ProtezIDs.OurTeam} className={style.section}>
       {width < 600 ? (
         <>
           {icons.meetOurTeamLogo.desktop[lang](style.teachersLogo)}
@@ -385,18 +385,30 @@ const MeetOurTeam = () => {
           <TextAppearanceWrapper>
             <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
               {meetOurTeamSection.members.map((card, index) => (
-                <div className={style.cardWrapper} key={index}>
-                  <MemberCard
-                    className={style.teamCard}
-                    photo={card.photo}
-                    links={card.links}
-                    name={card.name[lang]}
-                    position={card.position[lang]}
-                  />
+                <div key={index}>
+                  <div className={style.cardWrapper}>
+                    <MemberCard
+                      className={style.teamCard}
+                      photo={card.photo}
+                      links={card.links}
+                      name={card.name[lang]}
+                      position={card.position[lang]}
+                    />
+                  </div>
                 </div>
               ))}
             </Slider>
           </TextAppearanceWrapper>
+          <ProtezButton
+            as="link"
+            href="/"
+            variant="primary-black"
+            arrow
+            className={style.discoverAllButton}
+            target="_blank"
+          >
+            <span className={style.buttonText}> {meetOurTeamSection.discover[lang]}</span>
+          </ProtezButton>
         </>
       ) : (
         <>
@@ -416,19 +428,7 @@ const MeetOurTeam = () => {
             ))}
           </div>
           <div className={style.row}>
-            {meetOurTeamSection.members.slice(2, 7).map((card, index) => (
-              <MemberCard
-                key={index}
-                className={style.teamCard}
-                photo={card.photo}
-                links={card.links}
-                name={card.name[lang]}
-                position={card.position[lang]}
-              />
-            ))}
-          </div>
-          <div className={style.row}>
-            {meetOurTeamSection.members.slice(7, 11).map((card, index) => (
+            {meetOurTeamSection.members.slice(2, 11).map((card, index) => (
               <MemberCard
                 key={index}
                 className={style.teamCard}
