@@ -43,6 +43,9 @@ import OfficeLocations from '../protez/13-OfficeLocations/OfficeLocations'
 import Footer from '../protez/Footer'
 import Image from 'next/image'
 import VideoBlock from './VideoBlock'
+import Veterans from '../protez/8-Veterans/Veterans'
+import Events from '../protez/9-Events/Events'
+import PressRelease from '../protez/10-PressRelease/PressRelease'
 
 // import { useInView } from 'framer-motion'
 
@@ -145,18 +148,16 @@ export default function ClientSections({
           <SmokeBackground className={style.smoke} />
           <ProtezAcademy />
         </div>
-        {/* <div className={style.smokeBlock}>
+        <div className={style.smokeBlock}>
           <SmokeBackground className={style.smoke} />
           <Veterans />
-        </div> */}
-
-        {/* <div className={style.smokeBlock}>
+        </div>
+        <div className={style.smokeBlock}>
           <SmokeBackground className={style.smoke} />
           <Events />
-        </div> */}
-        {/* <PressRelease /> */}
+        </div>
+        <PressRelease />
         <OurPatients />
-        {/* <MeetOurTeam /> */}
         <OfficeLocations />
 
         {/* <OurStarSupporters /> */}

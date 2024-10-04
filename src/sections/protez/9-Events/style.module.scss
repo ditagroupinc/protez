@@ -338,14 +338,20 @@
   }
 
   .slickSlider :global(.slick-track) {
-    height: 380px;
+    height: 400px;
+    gap: 16px;
   }
 
   .cardWrapper {
-    height: 380px;
+    height: 400px;
   }
 
   .card {
+    max-height: 340px;
+    max-width: 100%;
+  }
+
+  .centerSlide .card {
     max-height: 100%;
   }
 
@@ -353,7 +359,7 @@
     max-height: 100%;
   }
   .cardDataBlock {
-    padding-bottom: 20px;
+    padding: 32px;
   }
 
   .locationWrapper {

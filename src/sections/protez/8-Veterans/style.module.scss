@@ -1,9 +1,11 @@
 .section {
+  padding-right: 0;
+  position: relative;
 }
 
 .card {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   height: 100%;
   gap: 80px;
@@ -11,7 +13,7 @@
 
 .left {
   flex: 1 1 764px;
-  max-width: 764px;
+  max-width: 48%;
   position: relative;
   z-index: 1;
 }
@@ -51,8 +53,8 @@
 }
 
 .linksSliderWrapper {
-  flex: 1 1 50%;
-  max-width: 50%;
+  flex: 1 1 auto;
+  max-width: 350px;
 }
 
 .linksSlide {
@@ -107,7 +109,7 @@
 }
 
 .right {
-  flex: 1 1 740px;
+  flex: 1 0 740px;
   max-width: 740px;
 }
 
@@ -123,6 +125,8 @@
 .image {
   object-fit: cover;
   height: 100%;
+
+  width: auto;
 }
 
 .roundButton {
@@ -190,4 +194,151 @@
   z-index: 13;
   right: 20px;
   top: 20px;
+}
+
+@media screen and (max-width: 1360px) {
+  .card {
+    gap: 40px;
+  }
+
+  .left {
+    max-width: 40%;
+  }
+
+  .buttonsContainer {
+    flex-direction: column;
+  }
+
+  .linksSliderWrapper {
+    align-self: flex-start;
+  }
+
+  .linksSlide {
+    gap: 16px;
+  }
+
+  .iconsContainer {
+    gap: 16px;
+  }
+
+  .sliderNavigation {
+    align-self: flex-end;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .logoContainer {
+    max-width: 301px;
+  }
+
+  .veteranLogo {
+    height: auto;
+  }
+
+  .linksSliderWrapper {
+    max-width: 100%;
+  }
+
+  .linksSlide {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .roundButton {
+    top: 10%;
+    left: 0;
+    transform: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section {
+    padding-right: var(--section-padding-horizontal);
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .card {
+    display: block;
+    max-height: 100%;
+  }
+
+  .left {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-top: -350px;
+  }
+
+  .logoContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ageRank {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .cardTitle {
+    margin-top: 32px;
+  }
+
+  .cardText {
+    margin-top: 24px;
+  }
+
+  .linksSlide {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+    gap: 40px;
+  }
+
+  .iconsContainer {
+    gap: 24px;
+  }
+
+  .protezButton {
+    width: 100%;
+  }
+
+  .roundButton {
+    top: 0;
+  }
+  .imageSlideWrapper {
+    height: auto;
+  }
+
+  .image {
+    height: auto;
+
+    width: 100;
+  }
+
+  .sliderNavigation {
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .left {
+    margin-top: -180px;
+  }
+  .sliderButton:first-child {
+    display: none;
+  }
+  .sliderNavigation {
+    margin-top: 0;
+    position: absolute;
+
+    right: 0;
+    top: 283px;
+
+    padding-right: var(--section-padding-horizontal);
+  }
+
+  .roundButton {
+    width: 100px;
+    height: 100px;
+  }
 }
