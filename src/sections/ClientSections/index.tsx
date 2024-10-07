@@ -133,7 +133,6 @@ export default function ClientSections({
               height={927}
               className={style.americanFlag}
             />
-            {/* ref={refLetsGiveHope} */}
 
             <PeopleTrustUs />
           </div>

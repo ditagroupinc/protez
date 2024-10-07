@@ -7,14 +7,14 @@
 .footerTop {
   background-color: var(--red);
   color: var(--white);
-  padding: 140px 168px;
+  padding: 140px var(--section-padding-horizontal);
 }
 
 .footerTopContent {
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  gap: 20px;
+  gap: 100px;
   width: 100%;
 }
 
@@ -24,10 +24,11 @@
   height: auto;
 }
 
-.right {
+.left {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-shrink: 1;
 }
 .buttonGroup {
   display: flex;
@@ -35,11 +36,11 @@
   gap: 16px;
 }
 
-.left {
-  max-width: 264px;
+.right {
   display: flex;
   flex-direction: column;
   gap: 24px;
+  flex: 0 0 264px;
 }
 .descAddress {
 }
@@ -58,49 +59,39 @@
   padding: 12px;
 }
 
-@media (max-width: 1366px) {
-  .footerTop {
-    padding-right: 60px;
-    padding-left: 60px;
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
-}
-
 @media (max-width: 1024px) {
-  .footerTop {
-    padding-top: 100px;
-    padding-bottom: 100px;
+  .footerTopContent {
+    gap: 40px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .footerTop {
-    padding: 160px 24px;
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
 
   .footerTopContent {
     flex-direction: column;
     align-items: stretch;
     justify-content: stretch;
-    gap: 40px;
-  }
-
-  .right {
-    gap: 48px;
-  }
-  .footerLogo {
-    max-height: 100%;
-    height: 100%;
-    width: 100%;
-  }
-  .buttonGroup {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 24px;
   }
 
   .left {
-    display: none;
+    gap: 32px;
+  }
+  .footerLogo {
+    margin: 0 auto;
+    max-width: 375px;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .right {
+    text-align: center;
   }
 }

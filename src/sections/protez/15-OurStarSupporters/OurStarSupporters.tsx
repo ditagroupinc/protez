@@ -76,7 +76,7 @@ const OurStarSupporters = () => {
     slidesToShow: 2,
     slidesToScroll: 1,
     arrows: false,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 5000,
     responsive: [
       {

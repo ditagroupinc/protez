@@ -9,6 +9,7 @@ import { forwardRef } from 'react'
 import { ProtezIDs } from '../consts'
 import ProtezButton from '@/components/ProtezButton'
 import { Body } from '@/components/Typography'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const footerSection = {
   giveHope: {
@@ -39,13 +40,17 @@ const footerSection = {
 
 const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
+  const { width } = useScreenModeAndSize()
+  const isDesktopLayout = width > 800
 
   return (
     <footer ref={ref} id={ProtezIDs.Footer} className={style.footer}>
       <div className={style.footerTop}>
         <div className={style.footerTopContent}>
-          <div className={style.right}>
-            {icons.footerLogo.desktop[lang](style.footerLogo)}
+          <div className={style.left}>
+            {isDesktopLayout
+              ? icons.footerLogo.desktop[lang](style.footerLogo)
+              : icons.footerLogo.mobile[lang](style.footerLogo)}
 
             <div className={style.buttonGroup}>
               <ProtezButton as="link" href="/" variant="primary-black">
@@ -56,7 +61,7 @@ const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
               </ProtezButton>
             </div>
           </div>
-          <div className={style.left}>
+          <div className={style.right}>
             <Body>{footerSection.nonprofitOrganization[lang]}</Body>
             <Divider className={style.divider} />
             <Body className={style.descTitle}>{footerSection.sendChecks[lang]}</Body>
