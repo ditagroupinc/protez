@@ -19,7 +19,7 @@ export enum ProtezIDs {
 
   Events = 'events',
   OurTeam = 'ourTeam',
-  OurPartners = 'ourPartners',
+  SpecialThanksToAllOurPartners = 'specialThanksToAllOurPartners',
   News = 'news',
   Merch = 'merch',
   Footer = 'footer',

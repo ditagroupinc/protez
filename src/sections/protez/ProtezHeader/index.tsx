@@ -99,7 +99,7 @@ const headerText = {
         english: 'Partners',
         ukrainian: 'Партнери',
       },
-      id: ProtezIDs.OurPartners,
+      id: ProtezIDs.SpecialThanksToAllOurPartners,
     },
     {
       text: {
