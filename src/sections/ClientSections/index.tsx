@@ -137,7 +137,7 @@ export default function ClientSections({
             <PeopleTrustUs />
           </div>
         </div>
-        {/* <div className={style.smokeBlock}>
+        <div className={style.smokeBlock}>
           <SmokeBackground className={style.smoke} />
           <ProstheticsForUkrainians />
         </div>
@@ -163,7 +163,7 @@ export default function ClientSections({
         <OurPatients />
         <MeetOurTeam />
         <OfficeLocations />
-        <OurStarSupporters /> */}
+        <OurStarSupporters />
         <Merch />
         <Footer />
 
