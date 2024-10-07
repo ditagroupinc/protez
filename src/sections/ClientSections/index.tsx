@@ -47,6 +47,7 @@ import Veterans from '../protez/8-Veterans/Veterans'
 import Events from '../protez/9-Events/Events'
 import PressRelease from '../protez/10-PressRelease/PressRelease'
 import MeetOurTeam from '../protez/12-MeetOurTeam/MeetOurTeam'
+import OurStarSupporters from '../protez/14-OurStarSupporters/OurStarSupporters'
 
 // import { useInView } from 'framer-motion'
 
@@ -161,8 +162,7 @@ export default function ClientSections({
         <OurPatients />
         <MeetOurTeam />
         <OfficeLocations />
-
-        {/* <OurStarSupporters /> */}
+        <OurStarSupporters />
         {/* <Merch /> */}
         <Footer />
 

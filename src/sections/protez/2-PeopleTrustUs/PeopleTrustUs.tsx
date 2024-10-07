@@ -81,6 +81,8 @@ const PeopleTrustUs = () => {
   const { lang } = useLanguage()
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
+  const showTopNavigation = width < 1180 && width > 800
+  const isDesktopLayout = width > 800
 
   const settings = {
     dots: false,
@@ -136,13 +138,10 @@ const PeopleTrustUs = () => {
     sliderRef.current?.slickPrev()
   }
 
-  const showTopNavigation = width < 1180 && width > 800
-  const isDesktop = width > 1180
-
   return (
     <Section id={ProtezIDs.OurResults} className={style.section}>
       <div className={style.container}>
-        {isDesktop && (
+        {width > 1180 && (
           <div className={style.left}>
             <Slider {...settings} ref={imageSliderRef} className={style.imageSlider}>
               {peopleTrustUsText.cards.map((card, index) => (
@@ -207,7 +206,7 @@ const PeopleTrustUs = () => {
                           alt={card.description[lang]}
                           className={style.image}
                         />
-                        <Body large={isDesktop} className={style.text}>
+                        <Body large={isDesktopLayout} className={style.text}>
                           {card.description[lang]}
                         </Body>
                       </div>
