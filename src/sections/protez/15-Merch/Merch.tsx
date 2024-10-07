@@ -12,6 +12,7 @@ import Image from 'next/image'
 import ProtezButton from '@/components/ProtezButton'
 import Section from '@/components/Section'
 import { ProtezIDs } from '../consts'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const merchSection = {
   viewAllMerch: {
@@ -56,106 +57,105 @@ const merchSection = {
   ],
 }
 
-const MarchCard = ({
-  href,
-  photoSrc,
-  title,
-}: {
-  href: string
-  photoSrc: string
-  title: string
-}) => {
-  return (
-    <a href={href} className={style.merchCardContainer} target="blank">
-      <Image
-        src={photoSrc}
-        alt={title}
-        width={372}
-        height={374}
-        className={`${style.merchCardPicture}`}
-      />
-    </a>
-  )
-}
-
 const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const { lang } = useLanguage()
+  const { width } = useScreenModeAndSize()
+  const isDesktopLayout = width > 800
 
   const sliderRef = useRef(null)
 
   const settings = {
-    dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 6,
+    slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
+    dots: false,
     autoplay: true,
     autoplaySpeed: 5000,
     responsive: [
       {
-        breakpoint: 1920,
-        settings: {
-          slidesToShow: 5,
-        },
-      },
-      {
-        breakpoint: 1650,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 1200,
+        breakpoint: 1366,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 850,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 650,
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 500,
         settings: {
           centerMode: true,
-
+          centerPadding: '20px',
           slidesToShow: 1,
-          dots: false,
         },
       },
     ],
   }
 
   return (
-    <Section className={style.merch} id={ProtezIDs.Merch} ref={ref}>
+    <Section className={style.section} id={ProtezIDs.Merch} ref={ref}>
       <TextAppearanceWrapper className={style.titleWrapper}>
         {icons.protezMERCHlogo.desktop[lang](style.title)}
-        <ProtezButton
-          as="link"
-          href="/"
-          variant="primary-black"
-          arrow
-          className={style.viewAllButton}
-          target="_blank"
-        >
-          <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>
-        </ProtezButton>
+        {isDesktopLayout && (
+          <ProtezButton
+            squared
+            as="link"
+            href="/"
+            variant="primary-black"
+            arrow
+            className={style.viewAllButton}
+            target="_blank"
+          >
+            <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>
+          </ProtezButton>
+        )}
       </TextAppearanceWrapper>
 
       <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
         {merchSection.cards.map((element, index) => (
           <div key={index}>
-            <MarchCard
-              href={element.link}
-              photoSrc={`/protez/protezPage/merch/${element.image}`}
-              title={element.title}
-            />
+            <div className={style.cardWrapper}>
+              <a href={element.link} className={style.card} target="blank">
+                <Image
+                  // TODO: remove after review
+                  src={`/protez/protezPage/merch/${element.image}`}
+                  alt={element.title}
+                  width={372}
+                  height={372}
+                  className={`${style.cardPicture}`}
+                />
+              </a>
+            </div>
           </div>
         ))}
       </Slider>
+
+      {!isDesktopLayout && (
+        <div className={style.buttonWrapper}>
+          <ProtezButton
+            squared
+            as="link"
+            href="/"
+            variant="primary-black"
+            arrow
+            className={style.viewAllButton}
+            target="_blank"
+          >
+            <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>
+          </ProtezButton>
+        </div>
+      )}
     </Section>
   )
 })

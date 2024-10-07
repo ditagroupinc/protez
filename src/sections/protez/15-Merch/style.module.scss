@@ -1,0 +1,105 @@
+.section {
+  padding-top: 100px;
+  padding-bottom: 120px;
+  background-color: var(--white);
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.title {
+  max-width: 453px;
+}
+
+.viewAllButton {
+  height: fit-content;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 24px 16px 24px 24px;
+  width: 240px;
+  & .buttonText {
+    max-width: 77px;
+  }
+}
+
+.slickSlider {
+  margin-top: 60px;
+}
+
+.slickSlider :global(.slick-track) {
+  height: 372px;
+}
+
+.cardWrapper {
+  height: 372px;
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 10px;
+}
+
+.card {
+  background-color: white;
+  display: block;
+  width: 100%;
+  max-width: 372px;
+}
+.cardPicture {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 800px) {
+  .viewAllButton {
+    margin-top: 60px;
+    width: 100%;
+    & .buttonText {
+      max-width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .titleWrapper {
+    padding: 0 var(--section-padding-horizontal);
+    justify-content: center;
+  }
+
+  .slickSlider {
+    margin-top: 32px;
+  }
+
+  .slickSlider :global(.slick-track) {
+    height: 316px;
+  }
+
+  .cardWrapper {
+    height: 316px;
+    padding: 0 5px;
+  }
+
+  .card {
+    max-width: 316px;
+  }
+
+  .buttonWrapper {
+    padding: 0 var(--section-padding-horizontal);
+  }
+
+  .viewAllButton {
+    margin-top: 32px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    max-width: 100%;
+  }
+}

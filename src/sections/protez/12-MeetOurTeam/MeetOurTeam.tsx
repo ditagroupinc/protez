@@ -400,6 +400,7 @@ const MeetOurTeam = () => {
             </Slider>
           </TextAppearanceWrapper>
           <ProtezButton
+            squared
             as="link"
             href="/"
             variant="primary-black"

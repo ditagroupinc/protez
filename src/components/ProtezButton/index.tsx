@@ -22,6 +22,7 @@ type BaseButtonProps = {
   variant: ButtonVariant
   size?: ButtonSize
   arrow?: boolean
+  squared?: boolean
 }
 
 type ButtonProps = BaseButtonProps &
@@ -49,12 +50,21 @@ const variantStyles: Record<ButtonVariant, string> = {
 
 const ProtezButton = (props: ButtonProps) => {
   if (props.as === 'button') {
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { as, variant, size = 'normal', className, children, arrow, ...rest } = props
+    const {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      as,
+      variant,
+      size = 'normal',
+      squared = true,
+      className,
+      children,
+      arrow,
+      ...rest
+    } = props
 
     return (
       <button
-        className={`${style.button} ${style[variantStyles[variant]]} ${style[size]} ${className}`}
+        className={`${style.button} ${style[variantStyles[variant]]} ${style[size]} ${squared ? style.squared : ''} ${className}`}
         {...rest}
       >
         {children}
@@ -65,12 +75,12 @@ const ProtezButton = (props: ButtonProps) => {
 
   if (props.as === 'link') {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { as, variant, size = 'big', className, children, arrow, ...rest } = props
+    const { as, variant, size = 'big', squared = true, className, children, arrow, ...rest } = props
 
     return (
       <Link
         prefetch={false}
-        className={`${style.button} ${style[variantStyles[variant]]} ${style[size]} ${className}`}
+        className={`${style.button} ${style[variantStyles[variant]]} ${style[size]} ${squared ? style.squared : ''} ${className}`}
         {...rest}
       >
         {children}
