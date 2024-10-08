@@ -7,7 +7,6 @@ import {
   // useState,
   // lazy
 } from 'react'
-// import { useInView } from 'react-intersection-observer'
 
 import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils/parsers'
 
@@ -16,7 +15,6 @@ import LetsGiveHope from '@/sections/protez/1-LetsGiveHope/LetsGiveHope'
 
 // const OurMission = lazy(() => import('@/sections/OurMission'))
 
-// import BackToTopButton from '@/components/BackToTopButton'
 import style from './style.module.scss'
 import SmokeBackground from '@/components/SmokeBackground'
 
@@ -26,20 +24,13 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { Languages } from '@/types'
 
 import ProstheticsForUkrainians from '../protez/3-ProstheticsForUkrainians/ProstheticsForUkrainians'
-
-// import InNeed from '../protez/4-InNeed/InNeed'
-// import OurResults from '../protez/5-OurResults'
 import SampleProsthesesCosts from '../protez/6-SampleProsthesesCosts/SampleProsthesesCosts'
 import ProtezAcademy from '../protez/7-ProtezAcademy/ProtezAcademy'
 import PeopleTrustUs from '../protez/2-PeopleTrustUs/PeopleTrustUs'
-// import Veterans from '../protez/Veterans'
-// import Events from '../protez/Events'
-// import PressRelease from '../protez/PressRelease'
+
 import OurPatients from '../protez/11-OurPatients/OurPatients'
 import OfficeLocations from '../protez/13-OfficeLocations/OfficeLocations'
-// import OurStarSupporters from '../protez/OurStarSupporters'
-// import MeetOurTeam from '../protez/MeetOurTeam'
-// import Merch from '../protez/Merch'
+
 import Footer from '../protez/Footer'
 import Image from 'next/image'
 import VideoBlock from './VideoBlock'
@@ -48,10 +39,9 @@ import Events from '../protez/9-Events/Events'
 import PressRelease from '../protez/10-PressRelease/PressRelease'
 import MeetOurTeam from '../protez/12-MeetOurTeam/MeetOurTeam'
 import OurStarSupporters from '../protez/15-OurStarSupporters/OurStarSupporters'
-import Merch from '../protez/16-Merch/Merch'
+import Merch from '../protez/17-Merch/Merch'
 import SpecialThanksToAllOurPartners from '../protez/14-SpecialThanksToAllOurPartners/SpecialThanksToAllOurPartners'
-
-// import { useInView } from 'framer-motion'
+import MailingList from '../protez/16-MailingList/MailingList'
 
 export default function ClientSections({
   news,
@@ -67,35 +57,6 @@ export default function ClientSections({
   country: string
 }) {
   const { setLang } = useLanguage()
-  // const refOurResults = useRef<HTMLDivElement | null>(null)
-
-  // const {
-  //   ref: refOurResults,
-  //   // inView,
-  //   // entry,
-  // } = useInView({
-  //   /* Optional options */
-  //   threshold: 0,
-  // })
-
-  // const { isBackgroundWhite, setIsBackgroundWhite, setDisabledSections } = usePageSettings()
-
-  // const [refLetsGiveHope, inViewLetsGiveHope] = useInView({ triggerOnce: false })
-  // const [refOurTeam, inViewOurTeam] = useInView({ triggerOnce: false })
-
-  // const [refInNeed, inViewInNeed] = useInView({ triggerOnce: false })
-  // const [refOurPartners, inViewOurPartners] = useInView({ triggerOnce: false })
-  // const [refMerch, inViewMerch] = useInView({ triggerOnce: false })
-  // const [refMailingList, inViewMailingList] = useInView({ triggerOnce: true })
-  // const [refThankYou, inViewThankYou] = useInView({ triggerOnce: false })
-
-  // const showCompanyData = !(inViewMerch || inViewThankYou)
-
-  // useEffect(() => {
-  //   setIsBackgroundWhite(inViewOurTeam || inViewOurPartners || inViewMerch || inViewThankYou)
-  // }, [inViewOurTeam, inViewOurPartners, inViewMerch, inViewThankYou, setIsBackgroundWhite])
-
-  // console.log(refOurResults?.current?.offsetHeight)
 
   useEffect(() => {
     if (country === 'Ukraine') setLang(Languages.Ukrainian)
@@ -165,39 +126,26 @@ export default function ClientSections({
         <OfficeLocations />
         <SpecialThanksToAllOurPartners />
         <OurStarSupporters />
+        <div className={style.smokeBlock}>
+          <SmokeBackground className={style.smoke} />
+          <MailingList />
+        </div>
         <Merch />
         <Footer />
-
-        {/* <OurMission /> */}
-        {/* </div> */}
-        {/* {statistics && <OurResults results={statistics} />} */}
-        {/* </div> */}
-
-        {/* <InNeed ref={refInNeed} /> */}
-
-        {/* <Prosthetics /> */}
-        <div className={`${style.smokeBlock} ${style.veteransAndEventsBlock}`}>
-          {/* <SmokeBackground className={style.smoke} /> */}
-          {/* <Veterans /> */}
-          {/* {pressReleases && pressReleases.length > 0 && (
-              <PressRelease pressReleases={pressReleases} />
-            )} */}
-          {/* {events && events.length > 0 && <Events events={events} />} */}
-        </div>
-        {/* <OurTeam ref={refOurTeam} /> */}
-        {/* <OurPartners ref={refOurPartners} /> */}
-        <div className={style.smokeBlock}>
-          {/* <SmokeBackground className={style.smoke} /> */}
-          {/* {news && news.length > 0 && <News news={news} />} */}
-
-          {/* <MailingList ref={refMailingList} inView={inViewMailingList} /> */}
-        </div>
-        {/* <Merch ref={refMerch} /> */}
-        {/* {!inViewLetsGiveHope && (
-            <BackToTopButton href={'letsGiveHope'} black={isBackgroundWhite} />
-          )} */}
       </main>
       {/* </Suspense> */}
     </>
   )
 }
+
+// {
+//    {statistics && <OurResults results={statistics} />}
+
+//    {pressReleases && pressReleases.length > 0 && (
+//               <PressRelease pressReleases={pressReleases} />
+//             )}
+
+//    {events && events.length > 0 && <Events events={events} />}
+
+//    {news && news.length > 0 && <News news={news} />}
+// }

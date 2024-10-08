@@ -1,7 +1,7 @@
 import { useRef, forwardRef, ForwardedRef } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
-import MarchCard from '@/sections/Merch/MerchCard'
+import MarchCard from '@/sections/previous/Merch/MerchCard'
 
 import style from './style.module.scss'
 import Slider from 'react-slick'

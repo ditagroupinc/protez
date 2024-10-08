@@ -14,7 +14,7 @@ import ProtezButton, {
 import useOutsideClick from '@/hooks/useOutsideClick'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import { BurgerButton } from '@/sections/Header/components/BurgerButton'
+import { BurgerButton } from '@/sections/previous/Header/components/BurgerButton'
 
 import style from './style.module.scss'
 

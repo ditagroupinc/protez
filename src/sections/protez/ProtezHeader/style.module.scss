@@ -228,13 +228,12 @@
   text-transform: capitalize;
 }
 
-//
 .socialMediaLinksContainer {
   position: fixed;
   display: flex;
   flex-direction: column;
   width: fit-content;
-  right: 40px;
+  right: 8px;
   top: 50%;
   transform: translateY(-50%);
   gap: 32px;
@@ -242,10 +241,26 @@
 }
 
 .socialMediaLink {
-  &:hover svg rect {
-    transition: all var(--transitionProps);
-    fill: var(--red);
-    stroke: var(--red);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: var(--black);
+  transition: all var(--transitionProps);
+
+  & .socialMediaLinkIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    background: var(--red);
+    border-color: var(--red);
   }
 }
 

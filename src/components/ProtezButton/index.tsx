@@ -55,7 +55,7 @@ const ProtezButton = (props: ButtonProps) => {
       as,
       variant,
       size = 'normal',
-      squared = true,
+      squared,
       className,
       children,
       arrow,
@@ -75,7 +75,7 @@ const ProtezButton = (props: ButtonProps) => {
 
   if (props.as === 'link') {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { as, variant, size = 'big', squared = true, className, children, arrow, ...rest } = props
+    const { as, variant, size = 'big', squared, className, children, arrow, ...rest } = props
 
     return (
       <Link

@@ -13,7 +13,7 @@ import SocialMediaLinks from '@/components/SocialMediaLinks'
 import useOutsideClick from '@/hooks/useOutsideClick'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import { BurgerButton } from '@/sections/Header/components/BurgerButton'
+import { BurgerButton } from './components/BurgerButton'
 
 import style from './style.module.scss'
 

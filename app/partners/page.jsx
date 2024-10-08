@@ -1,7 +1,7 @@
 'use client'
 
 import AllOurPartners from '@/sections/AllOurPartners'
-import Header from '@/sections/Header'
+import Header from '@/sections/previous/Header'
 import Copyright from '@/components/Copyright'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 

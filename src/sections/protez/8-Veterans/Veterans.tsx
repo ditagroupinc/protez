@@ -6,8 +6,6 @@ import style from './style.module.scss'
 import Image from 'next/image'
 import Slider from 'react-slick'
 
-// import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-
 import { icons } from './icons'
 import Section from '@/components/Section'
 import { ProtezIDs } from '../consts'
@@ -64,7 +62,7 @@ const veteransSection: VeteransSection = {
         ukrainian:
           'Захищаючи Україну, Вадим став обтяженним високими ампутаціями обох ніг. Але він продемонстрував мотивацію і відмову від здачі, ставши натхненням для всіх навколо своїм прикладом. Зараз Вадим перебуває в США, де проходить протезування та реабілітацію. Лише завдяки вашій підтримці ми зможемо оснастити Вадима сучасними біонічними протезами та повернути його до активного життя. Разом ми становимо сильну і єдину силу. Дякуємо вам за поширення цього повідомлення та ваші пожертви.',
       },
-      img: 'vadymFedorovALT.png',
+      img: 'vadymFedorov.png',
       icon: 'vadymFedorov',
       video: 'https://www.youtube.com/embed/D1zR9DkYgu4',
       facebook: 'https://www.facebook.com/donate/238890858497931/199310116131457/',
