@@ -40,45 +40,52 @@ const headerText = {
     },
     {
       text: {
-        english: 'Mission',
-        ukrainian: 'Місія',
+        english: 'People Trust Us',
+        ukrainian: 'PeopleTrustUs',
       },
-      id: ProtezIDs.OurMission,
+      id: ProtezIDs.PeopleTrustUs,
     },
     {
       text: {
-        english: 'Results',
-        ukrainian: 'Досягнення',
+        english: 'Prosthetics For Ukrainians',
+        ukrainian: 'ProstheticsForUkrainians',
       },
-      id: ProtezIDs.OurResults,
+      id: ProtezIDs.ProstheticsForUkrainians,
     },
     {
       text: {
-        english: 'Ukraine',
-        ukrainian: 'Україна',
+        english: 'In Need',
+        ukrainian: 'In Need',
       },
       id: ProtezIDs.InNeed,
     },
     {
       text: {
-        english: 'What we do',
-        ukrainian: 'Наша робота',
+        english: 'Our Results',
+        ukrainian: 'Our Results',
       },
-      id: ProtezIDs.Prosthetics,
+      id: ProtezIDs.OurResults,
     },
     {
       text: {
-        english: 'Stories',
-        ukrainian: 'Історії',
+        english: 'Sample Prostheses Costs',
+        ukrainian: 'Sample Prostheses Costs',
+      },
+      id: ProtezIDs.SampleProsthesesCosts,
+    },
+    {
+      text: {
+        english: 'Protez Academy',
+        ukrainian: 'Protez Academy',
+      },
+      id: ProtezIDs.ProtezAcademy,
+    },
+    {
+      text: {
+        english: 'Veterans',
+        ukrainian: 'Veterans',
       },
       id: ProtezIDs.Veterans,
-    },
-    {
-      text: {
-        english: 'Press release',
-        ukrainian: 'Прес-реліз',
-      },
-      id: ProtezIDs.PressRelease,
     },
     {
       text: {
@@ -89,29 +96,57 @@ const headerText = {
     },
     {
       text: {
-        english: 'Team',
-        ukrainian: 'Команда',
+        english: 'Press Release',
+        ukrainian: 'Press Release',
       },
-      id: ProtezIDs.OurTeam,
+      id: ProtezIDs.PressRelease,
     },
     {
       text: {
-        english: 'Partners',
-        ukrainian: 'Партнери',
+        english: 'Our Patients',
+        ukrainian: 'Our Patients',
+      },
+      id: ProtezIDs.OurPatients,
+    },
+    {
+      text: {
+        english: 'Meet Our Team',
+        ukrainian: 'Meet Our Team',
+      },
+      id: ProtezIDs.MeetOurTeam,
+    },
+    {
+      text: {
+        english: 'Office Locations',
+        ukrainian: 'Office Locations',
+      },
+      id: ProtezIDs.OfficeLocations,
+    },
+    {
+      text: {
+        english: 'Special Thanks To All Our Partners',
+        ukrainian: 'Special Thanks To All Our Partners',
       },
       id: ProtezIDs.SpecialThanksToAllOurPartners,
     },
     {
       text: {
-        english: 'News',
-        ukrainian: 'Новини',
+        english: 'Our Star Supporters',
+        ukrainian: 'Our Star Supporters',
       },
-      id: ProtezIDs.News,
+      id: ProtezIDs.OurStarSupporters,
     },
     {
       text: {
-        english: 'Protez Merch',
-        ukrainian: 'Protez-мерч',
+        english: 'Mailing List',
+        ukrainian: 'Mailing List',
+      },
+      id: ProtezIDs.MailingList,
+    },
+    {
+      text: {
+        english: 'Merch',
+        ukrainian: 'Merch',
       },
       id: ProtezIDs.Merch,
     },

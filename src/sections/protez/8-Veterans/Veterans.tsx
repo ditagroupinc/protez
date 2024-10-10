@@ -125,6 +125,25 @@ const Veterans = () => {
     arrows: false,
     autoplay: true,
     autoplaySpeed: 5000,
+
+    swipe: false,
+    swipeToSlide: false,
+    touchMove: false,
+    draggable: false,
+    accessibility: false,
+
+    responsive: [
+      {
+        breakpoint: 600,
+        settings: {
+          swipe: true,
+          swipeToSlide: true,
+          touchMove: true,
+          draggable: true,
+          accessibility: true,
+        },
+      },
+    ],
   }
 
   return (

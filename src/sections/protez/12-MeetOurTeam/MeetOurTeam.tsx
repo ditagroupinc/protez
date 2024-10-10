@@ -377,7 +377,7 @@ const MeetOurTeam = () => {
   }
 
   return (
-    <Section id={ProtezIDs.OurTeam} className={style.section}>
+    <Section id={ProtezIDs.MeetOurTeam} className={style.section}>
       {width < 600 ? (
         <>
           {icons.meetOurTeamLogo.desktop[lang](style.teachersLogo)}

@@ -1,27 +1,20 @@
 export enum ProtezIDs {
   LetsGiveHope = 'letsGiveHope',
+  PeopleTrustUs = 'peopleTrustUs',
   ProstheticsForUkrainians = 'prostheticsForUkrainians',
-  OurResults = 'ourResults',
   InNeed = 'inNeed',
+  OurResults = 'ourResults',
   SampleProsthesesCosts = 'sampleProsthesesCosts',
   ProtezAcademy = 'protezAcademy',
   Veterans = 'veterans',
-
-  OurMission = 'ourMission',
-
-  Prosthetics = 'prosthetics',
-
+  Events = 'events',
   PressRelease = 'pressRelease',
   OurPatients = 'ourPatients',
-
+  MeetOurTeam = 'meetOurTeam',
   OfficeLocations = 'officeLocations',
+  SpecialThanksToAllOurPartners = 'specialThanksToAllOurPartners',
   OurStarSupporters = 'ourStarSupporters',
   MailingList = 'mailingList',
-
-  Events = 'events',
-  OurTeam = 'ourTeam',
-  SpecialThanksToAllOurPartners = 'specialThanksToAllOurPartners',
-  News = 'news',
   Merch = 'merch',
   Footer = 'footer',
 }

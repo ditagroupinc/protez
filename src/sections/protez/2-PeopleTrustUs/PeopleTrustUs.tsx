@@ -94,8 +94,14 @@ const PeopleTrustUs = () => {
     focusOnSelect: true,
     centerMode: false,
 
-    swipeToSlide: true,
     arrows: false,
+
+    swipe: false,
+    swipeToSlide: false,
+    touchMove: false,
+    draggable: false,
+    accessibility: false,
+
     responsive: [
       {
         breakpoint: 1180,
@@ -115,6 +121,12 @@ const PeopleTrustUs = () => {
       {
         breakpoint: 600,
         settings: {
+          swipe: true,
+          swipeToSlide: true,
+          touchMove: true,
+          draggable: true,
+          accessibility: true,
+
           centerMode: true,
           centerPadding: '20px',
           slidesToShow: 1,
@@ -139,7 +151,7 @@ const PeopleTrustUs = () => {
   }
 
   return (
-    <Section id={ProtezIDs.OurResults} className={style.section}>
+    <Section id={ProtezIDs.PeopleTrustUs} className={style.section}>
       <div className={style.container}>
         {width > 1180 && (
           <div className={style.left}>
