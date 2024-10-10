@@ -10,6 +10,7 @@ import { Body, H3 } from '@/components/Typography'
 import { ProtezIDs } from '../consts'
 import { MakeDonationButton, SupportWithAmazonButton } from '@/components/ProtezButton'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import { useState } from 'react'
 
 const sampleProsthesesCostsText = {
   description: {
@@ -75,17 +76,34 @@ const sampleProsthesesCostsText = {
   ],
 }
 
+const elementsToHover = ['Hand or Arm', 'Sport foot', 'Below Knee', 'Above the knee']
+
+type HoverClasses = (typeof elementsToHover)[number] | ''
+
 const PriceCard = ({
   text,
   price,
   icon,
+  setHovered,
 }: {
   text: string
   price: string
   icon: (className: string) => JSX.Element
+  setHovered: (isHovered: HoverClasses) => void
 }) => {
+  const handleMouseEnter = () => {
+    if (elementsToHover.find(textToHover => textToHover === text)) {
+      setHovered(text)
+    }
+  }
+  const handleMouseLeave = () => setHovered('')
+
   return (
-    <TextAppearanceWrapper className={style.priceCard}>
+    <TextAppearanceWrapper
+      className={style.priceCard}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <div className={style.priceCardTextBlock}>
         <div className={style.priceCardText}>{text}</div>
         <div className={style.priceCardPrice}>{price}</div>
@@ -100,6 +118,18 @@ const SampleProsthesesCosts = () => {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
+
+  const [hovered, setHovered] = useState<HoverClasses>('')
+
+  const hoverClasses: {
+    [key in HoverClasses]: string
+  } = {
+    'Hand or Arm': style.spcForearm,
+    'Sport foot': style.spcLeg,
+    'Below Knee': style.spcLeg,
+    'Above the knee': `${style.spcLeg} ${style.spcTigh}`,
+    '': '',
+  }
 
   return (
     <Section id={ProtezIDs.SampleProsthesesCosts} className={style.section}>
@@ -124,6 +154,7 @@ const SampleProsthesesCosts = () => {
                 text={prosthesis.text[lang]}
                 price={prosthesis.price}
                 icon={prosthesis.icon}
+                setHovered={setHovered}
               />
             ))}
           </div>
@@ -135,12 +166,13 @@ const SampleProsthesesCosts = () => {
                 text={prosthesis.text[lang]}
                 price={prosthesis.price}
                 icon={prosthesis.icon}
+                setHovered={setHovered}
               />
             ))}
           </div>
         </div>
         {icons.line(style.line)}
-        {icons.body(style.body)}
+        {icons.body(`${style.body} ${hoverClasses[hovered]}`)}
       </div>
       {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>

@@ -149,6 +149,27 @@
   }
 }
 
+.spcTigh {
+  path[class*='spcTigh'] {
+    fill: var(--red);
+    transition: fill 0.3s ease;
+  }
+}
+
+.spcLeg {
+  path[class*='spcLeg'] {
+    fill: var(--red);
+    transition: fill 0.3s ease;
+  }
+}
+
+.spcForearm {
+  path[class*='spcForearm'] {
+    fill: var(--red);
+    transition: fill 0.3s ease;
+  }
+}
+
 @media screen and (max-width: 1180px) {
   .section {
     padding-right: 0;
