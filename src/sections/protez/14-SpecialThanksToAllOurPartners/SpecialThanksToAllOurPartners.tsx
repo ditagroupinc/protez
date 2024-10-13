@@ -23,16 +23,15 @@ const specialThanksToAllOurPartnersSection = {
 }
 
 const partnersIcons: string[] = [
-  'directRelief.svg',
-  'chaliceOfMercy.svg',
-  'ottobock.svg',
-  'paradise.svg',
-  'klmb.svg',
-  'monarch.svg',
-  // 'dita.svg',
-  'antonovGroup.svg',
-  'cozen.svg',
-  'blatchfold.svg',
+  'directRelief',
+  'chaliceOfMercy',
+  'ottobock',
+  'paradise',
+  'klmb',
+  'monarch',
+  'antonov',
+  'cozen',
+  'blatchford',
 ]
 
 const SpecialThanksToAllOurPartners = () => {
@@ -66,17 +65,43 @@ const SpecialThanksToAllOurPartners = () => {
           <Image
             // TODO: remove after review
 
-            src={`/protez/partnersLogos/${icon}`}
+            src={`/protez/protezPage/partnersLogos/${icon}.svg`}
             alt={icon}
             width={300}
             height={230}
             className={style.partnerLogo}
           />
+          <Image
+            // TODO: remove after review
+
+            src={`/protez/protezPage/partnersLogos/${icon}-color.svg`}
+            alt={icon}
+            width={300}
+            height={230}
+            className={style.partnerLogoColor}
+          />
         </TextAppearanceWrapper>
       ))}
 
       <Link href="https://dita-group.com/" target="blank" className={style.partnerCard}>
-        {icons.ditaLogo(`${style.partnerLogo} ${style.ditaLogo}`)}
+        <Image
+          // TODO: remove after review
+
+          src={`/protez/protezPage/partnersLogos/dita.svg`}
+          alt={'Dita Group'}
+          width={300}
+          height={230}
+          className={style.partnerLogo}
+        />
+        <Image
+          // TODO: remove after review
+
+          src={`/protez/protezPage/partnersLogos/dita-color.svg`}
+          alt={'Dita Group'}
+          width={300}
+          height={230}
+          className={style.partnerLogoColor}
+        />
       </Link>
     </Section>
   )

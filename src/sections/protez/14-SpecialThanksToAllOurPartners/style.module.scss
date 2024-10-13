@@ -20,11 +20,21 @@
   justify-content: center;
   align-items: center;
   padding: 24px;
+  &:hover .partnerLogo {
+    display: none;
+  }
+  &:hover .partnerLogoColor {
+    display: block;
+  }
 }
-.partnerLogo {
-  max-width: 100%;
-  max-height: 100%;
+.partnerLogo,
+.partnerLogoColor {
+  width: 100%;
   height: auto;
+  transition: opacity var(--transitionProps);
+}
+.partnerLogoColor {
+  display: none;
 }
 
 .titleCell {
@@ -109,16 +119,16 @@
   grid-area: dita;
 }
 
-.ditaLogo {
-  max-width: 100%;
+// .ditaLogo {
+//   max-width: 100%;
 
-  & rect:global(.purpleFrame) {
-    transform: translate(344.078px, 21.5918px) !important;
-  }
-  &:hover > rect:global(.purpleFrame) {
-    fill: #3f29b0;
-  }
-}
+//   & rect:global(.purpleFrame) {
+//     transform: translate(344.078px, 21.5918px) !important;
+//   }
+//   &:hover > rect:global(.purpleFrame) {
+//     fill: #3f29b0;
+//   }
+// }
 
 @media screen and (max-width: 1366px) {
   .section {
@@ -271,11 +281,11 @@
     display: none;
   }
 
-  .ditaLogo {
-    & rect:global(.purpleFrame) {
-      fill: #3f29b0;
-    }
-  }
+  // .ditaLogo {
+  //   & rect:global(.purpleFrame) {
+  //     fill: #3f29b0;
+  //   }
+  // }
   .discoverAllButton {
     width: 100%;
 
