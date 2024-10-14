@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer'
 
 // import { notFound } from 'next/navigation'
 
-import BackToTopButton from '@/components/BackToTopButton'
+import BackToTopButton from './BackToTopButton'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 

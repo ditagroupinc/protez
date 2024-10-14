@@ -13,7 +13,7 @@ import SocialMediaLinks from '@/components/SocialMediaLinks'
 import useOutsideClick from '@/hooks/useOutsideClick'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import { BurgerButton } from './components/BurgerButton'
+import { BurgerButton } from '@/components/BurgerButton'
 
 import style from './style.module.scss'
 
@@ -86,12 +86,7 @@ const AcademyHeader = () => {
       <header className={style.academyHeader}>
         <a href="#academyIntro">{icons.protezAcademyLogo()}</a>
         {width < 992 ? (
-          <BurgerButton
-            isBlack={false}
-            color="blue"
-            onClick={toggleHeader}
-            close={headerIsOpened}
-          />
+          <BurgerButton color="blue" onClick={toggleHeader} close={headerIsOpened} />
         ) : (
           <div className={style.btnGroup}>
             <Button
@@ -127,12 +122,7 @@ const AcademyHeader = () => {
                 UA
               </button>
             </div>
-            <BurgerButton
-              isBlack={false}
-              color="blue"
-              onClick={toggleHeader}
-              close={headerIsOpened}
-            />
+            <BurgerButton color="blue" onClick={toggleHeader} close={headerIsOpened} />
           </div>
         )}
         <div className={`${style.sideMenu} ${headerIsOpened ? style.opened : ''}`}>

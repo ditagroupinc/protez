@@ -14,7 +14,7 @@ import ProtezButton, {
 import useOutsideClick from '@/hooks/useOutsideClick'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import { BurgerButton } from '@/sections/previous/Header/components/BurgerButton'
+import { BurgerButton } from '@/components/BurgerButton'
 
 import style from './style.module.scss'
 
@@ -184,7 +184,13 @@ const socialMediaLinks = [
   },
 ]
 
-const ProtezHeader = () => {
+const ProtezHeader = ({
+  ancorLinks = true,
+  arrowUp = true,
+}: {
+  ancorLinks?: boolean
+  arrowUp?: boolean
+}) => {
   const [headerIsOpened, setHeaderIsOpened] = useState(false)
 
   const { width } = useScreenModeAndSize()
@@ -201,6 +207,7 @@ const ProtezHeader = () => {
   }, [lang, setLang])
 
   const isMobile = width < 768
+  const linksPrefix = ancorLinks ? '#' : '/'
 
   useEffect(() => {
     if (headerIsOpened && isMobile) {
@@ -228,14 +235,11 @@ const ProtezHeader = () => {
   return (
     <>
       <header className={style.protezHeader}>
-        <a href="#academyIntro">{icons.protezLogo()}</a>
+        <Link scroll={true} href={`${linksPrefix}${ProtezIDs.LetsGiveHope}`}>
+          {icons.protezLogo()}
+        </Link>
         {width < 992 ? (
-          <BurgerButton
-            isBlack={false}
-            color="blue"
-            onClick={toggleHeader}
-            close={headerIsOpened}
-          />
+          <BurgerButton color="red" onClick={toggleHeader} close={headerIsOpened} />
         ) : (
           <div className={style.btnGroup}>
             <MakeDonationButton lang={lang} className={style.applyBtn} />
@@ -260,12 +264,7 @@ const ProtezHeader = () => {
                 UA
               </button>
             </div>
-            <BurgerButton
-              isBlack={false}
-              color="red"
-              onClick={toggleHeader}
-              close={headerIsOpened}
-            />
+            <BurgerButton color="red" onClick={toggleHeader} close={headerIsOpened} />
           </div>
         )}
         <div className={`${style.sideMenu} ${headerIsOpened ? style.opened : ''}`}>
@@ -280,9 +279,9 @@ const ProtezHeader = () => {
               <ul className={style.ancorList}>
                 {headerText.navigation.map(({ id, text }) => (
                   <li key={id} className={style.ancorItem} onClick={closeHeaderOnAncorClick}>
-                    <a href={`#${id}`} className={style.ancorLink}>
+                    <Link href={`${linksPrefix}${id}`} className={style.ancorLink}>
                       <H3>{text[lang]}</H3>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -321,7 +320,7 @@ const ProtezHeader = () => {
       </header>
       {!headerIsOpened && (
         <div className={style.socialMediaLinksContainer}>
-          {isMobile && (
+          {isMobile && arrowUp && (
             <a
               href={`#${headerText.navigation[0].id}`}
               className={style.socialMediaLink}

@@ -39,8 +39,9 @@
     "src",
     ".next/types/**/*.ts",
     "app/academy/sections",
-    "app/partners/page.jsx",
-    "app/consts"
+    "app/partners/page.tsx",
+    "app/consts",
+    "app/academy/BackToTopButton"
   ],
   "exclude": ["node_modules"]
 }

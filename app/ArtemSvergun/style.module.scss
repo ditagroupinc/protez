@@ -1,0 +1,27 @@
+.section {
+  padding-top: 160px;
+  padding-bottom: 160px;
+  background-color: var(--light-grey);
+}
+
+.iframe {
+  margin: 0 auto;
+  margin-top: 40px;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1920px) {
+}
+
+@media screen and (max-width: 1366px) {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .iframe {
+    height: 900px;
+  }
+}
