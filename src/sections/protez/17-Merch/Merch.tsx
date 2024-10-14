@@ -11,7 +11,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import Image from 'next/image'
 import ProtezButton from '@/components/ProtezButton'
 import Section from '@/components/Section'
-import { ProtezIDs } from '../consts'
+import { ProtezIDs } from '../../../../app/consts'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const merchSection = {

@@ -7,7 +7,7 @@ import style from './style.module.scss'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { Body } from '@/components/Typography'
-import { ProtezIDs } from '../consts'
+import { ProtezIDs } from '../../../../app/consts'
 import ProtezButton from '@/components/ProtezButton'
 import Image from 'next/image'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'

@@ -8,7 +8,7 @@ import Section from '@/components/Section'
 import { Body } from '@/components/Typography'
 import ProtezButton, { MakeDonationButton } from '@/components/ProtezButton'
 
-import { ProtezIDs } from '../consts'
+import { ProtezIDs } from '../../../../app/consts'
 import style from './style.module.scss'
 import { icons } from './icons'
 
@@ -39,7 +39,6 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
 
   return (
     <Section id={ProtezIDs.LetsGiveHope} className={style.section} ref={ref}>
-      {/* protez/ */}
       <VideoAndFilter src={'/protez/flag-ukraine.mp4'} />
       <div className={style.overlay} />
       <div className={style.container}>

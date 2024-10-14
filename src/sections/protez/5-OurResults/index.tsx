@@ -7,7 +7,7 @@ import CountUp from 'react-countup'
 import { icons } from './icons'
 import style from './style.module.scss'
 
-import { ProtezIDs } from '../consts'
+import { ProtezIDs } from '../../../../app/consts'
 import { Body, H2 } from '@/components/Typography'
 import ProtezButton, { MakeDonationButton } from '@/components/ProtezButton'
 import { ForwardedRef, forwardRef } from 'react'

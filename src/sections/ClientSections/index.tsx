@@ -1,47 +1,51 @@
 'use client'
 
 import {
+  Suspense,
   useEffect,
   // Suspense,
   // useRef,
   // useState,
-  // lazy
+  lazy,
 } from 'react'
+// import { usePageSettings } from '@/contexts/PageSettingsContext'
+
+import style from './style.module.scss'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { Languages } from '@/types'
+
+import Image from 'next/image'
+import VideoBlock from './VideoBlock'
+import SmokeWrapper from './SmokeWrapper'
 
 import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils/parsers'
 
 import ProtezHeader from '../protez/ProtezHeader'
-import LetsGiveHope from '@/sections/protez/1-LetsGiveHope/LetsGiveHope'
 
-// const OurMission = lazy(() => import('@/sections/OurMission'))
+import FullScreenFallback from '@/components/FullScreenFallback'
 
-import style from './style.module.scss'
-import SmokeBackground from '@/components/SmokeBackground'
-
-import { useLanguage } from '@/contexts/LanguageContext'
-
-// import { usePageSettings } from '@/contexts/PageSettingsContext'
-import { Languages } from '@/types'
-
-import ProstheticsForUkrainians from '../protez/3-ProstheticsForUkrainians/ProstheticsForUkrainians'
-import SampleProsthesesCosts from '../protez/6-SampleProsthesesCosts/SampleProsthesesCosts'
-import ProtezAcademy from '../protez/7-ProtezAcademy/ProtezAcademy'
-import PeopleTrustUs from '../protez/2-PeopleTrustUs/PeopleTrustUs'
-
-import OurPatients from '../protez/11-OurPatients/OurPatients'
-import OfficeLocations from '../protez/13-OfficeLocations/OfficeLocations'
-
-import Footer from '../protez/Footer'
-import Image from 'next/image'
-import VideoBlock from './VideoBlock'
-import Veterans from '../protez/8-Veterans/Veterans'
-import Events from '../protez/9-Events/Events'
-import PressRelease from '../protez/10-PressRelease/PressRelease'
-import MeetOurTeam from '../protez/12-MeetOurTeam/MeetOurTeam'
-import OurStarSupporters from '../protez/15-OurStarSupporters/OurStarSupporters'
-import Merch from '../protez/17-Merch/Merch'
-import SpecialThanksToAllOurPartners from '../protez/14-SpecialThanksToAllOurPartners/SpecialThanksToAllOurPartners'
-import MailingList from '../protez/16-MailingList/MailingList'
+import LetsGiveHope from '../protez/1-LetsGiveHope/LetsGiveHope'
+const ProstheticsForUkrainians = lazy(
+  () => import('@/sections/protez/3-ProstheticsForUkrainians/ProstheticsForUkrainians')
+)
+const SampleProsthesesCosts = lazy(
+  () => import('@/sections/protez/6-SampleProsthesesCosts/SampleProsthesesCosts')
+)
+const ProtezAcademy = lazy(() => import('@/sections/protez/7-ProtezAcademy/ProtezAcademy'))
+const PeopleTrustUs = lazy(() => import('@/sections/protez/2-PeopleTrustUs/PeopleTrustUs'))
+const OurPatients = lazy(() => import('@/sections/protez/11-OurPatients/OurPatients'))
+const OfficeLocations = lazy(() => import('@/sections/protez/13-OfficeLocations/OfficeLocations'))
+const Veterans = lazy(() => import('@/sections/protez/8-Veterans/Veterans'))
+const Events = lazy(() => import('@/sections/protez/9-Events/Events'))
+const PressRelease = lazy(() => import('@/sections/protez/10-PressRelease/PressRelease'))
+const MeetOurTeam = lazy(() => import('@/sections/protez/12-MeetOurTeam/MeetOurTeam'))
+const OurStarSupporters = lazy(
+  () => import('@/sections/protez/15-OurStarSupporters/OurStarSupporters')
+)
+const SpecialThanksToAllOurPartners = lazy(() => import('@/sections/SpecialThanksToAllOurPartners'))
+const MailingList = lazy(() => import('@/sections/protez/16-MailingList/MailingList'))
+const Merch = lazy(() => import('@/sections/protez/17-Merch/Merch'))
+const Footer = lazy(() => import('@/sections/Footer'))
 
 export default function ClientSections({
   news,
@@ -77,10 +81,9 @@ export default function ClientSections({
   return (
     <>
       <ProtezHeader />
-      {/* <Suspense fallback={<div className={style.fallback}></div>}> */}
+
       <main className={style.main}>
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smokeTop} />
+        <SmokeWrapper>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
 
@@ -94,46 +97,84 @@ export default function ClientSections({
               height={927}
               className={style.americanFlag}
             />
-
-            <PeopleTrustUs />
+            <Suspense fallback={<FullScreenFallback />}>
+              <PeopleTrustUs />
+            </Suspense>
           </div>
-        </div>
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          <ProstheticsForUkrainians />
-        </div>
-        <VideoBlock />
+        </SmokeWrapper>
 
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          <SampleProsthesesCosts />
-        </div>
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          <ProtezAcademy />
-        </div>
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          <Veterans />
-        </div>
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          <Events />
-        </div>
-        <PressRelease />
-        <OurPatients />
-        <MeetOurTeam />
-        <OfficeLocations />
-        <SpecialThanksToAllOurPartners />
-        <OurStarSupporters />
-        <div className={style.smokeBlock}>
-          <SmokeBackground className={style.smoke} />
-          <MailingList />
-        </div>
-        <Merch />
-        <Footer />
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
+            <ProstheticsForUkrainians />
+          </SmokeWrapper>
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <VideoBlock />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
+            <SampleProsthesesCosts />
+          </SmokeWrapper>
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
+            <ProtezAcademy />
+          </SmokeWrapper>
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
+            <Veterans />
+          </SmokeWrapper>
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
+            <Events />
+          </SmokeWrapper>
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <PressRelease />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <OurPatients />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <MeetOurTeam />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <OfficeLocations />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SpecialThanksToAllOurPartners />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <OurStarSupporters />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
+            <MailingList />
+          </SmokeWrapper>
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <Merch />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <Footer />
+        </Suspense>
       </main>
-      {/* </Suspense> */}
     </>
   )
 }

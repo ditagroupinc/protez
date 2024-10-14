@@ -22,7 +22,7 @@ import Link from 'next/link'
 
 import { icons } from './icons'
 import { H3 } from '@/components/Typography'
-import { ProtezIDs } from '../consts'
+import { ProtezIDs } from '../../../../app/consts'
 
 const headerText = {
   protezFoundation: {

@@ -14,7 +14,7 @@ import Slider from 'react-slick'
 import { forwardRef } from 'react'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import { ProtezIDs } from '../consts'
+import { ProtezIDs } from '../../../../app/consts'
 
 type Event = {
   date: string

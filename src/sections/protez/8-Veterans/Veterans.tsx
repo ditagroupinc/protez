@@ -8,7 +8,7 @@ import Slider from 'react-slick'
 
 import { icons } from './icons'
 import Section from '@/components/Section'
-import { ProtezIDs } from '../consts'
+import { ProtezIDs } from '../../../../app/consts'
 import { Body, H3 } from '@/components/Typography'
 import ProtezButton from '@/components/ProtezButton'
 import { BilingualText } from '@/types'

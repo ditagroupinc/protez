@@ -3,6 +3,7 @@ import { useRef, useState, useEffect } from 'react'
 import style from './style.module.scss'
 import InNeed from '@/sections/protez/4-InNeed/InNeed'
 import OurResults from '@/sections/protez/5-OurResults'
+import SmokeWrapper from '../SmokeWrapper'
 
 const VideoBlock = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null)
@@ -44,7 +45,9 @@ const VideoBlock = () => {
         <div className={style.filter} />
         <div className={style.overlay} />
       </div>
-      <InNeed />
+      <SmokeWrapper>
+        <InNeed />
+      </SmokeWrapper>
       <OurResults ref={sectionRef} />
     </div>
   )

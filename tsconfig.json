@@ -39,7 +39,8 @@
     "src",
     ".next/types/**/*.ts",
     "app/academy/sections",
-    "app/partners/page.jsx"
+    "app/partners/page.jsx",
+    "app/consts"
   ],
   "exclude": ["node_modules"]
 }

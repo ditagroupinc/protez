@@ -4,7 +4,7 @@ import style from './style.module.scss'
 import { icons } from './icons'
 import Section from '@/components/Section'
 
-import { ProtezIDs } from '../consts'
+import { ProtezIDs } from '../../../../app/consts'
 
 import Image from 'next/image'
 import Link from 'next/link'
