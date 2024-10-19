@@ -8,8 +8,9 @@
     '. chaliceOfMercy ottobock paradise klmb '
     'monarch dita antonovGroup cozen blatchfold';
 
-  padding-bottom: 120px;
-  padding-top: 80px;
+  padding-top: 32px;
+  padding-bottom: 80px;
+
   background-color: var(--light-grey);
 }
 
@@ -62,6 +63,7 @@
 }
 
 .discoverAllButton {
+  width: 240px;
   & .buttonText {
     max-width: 104px;
   }
@@ -134,7 +136,7 @@
     grid-template-rows: 230px 280px 270px 300px;
 
     grid-template-areas:
-      'button button . . . title title title title title title title'
+      'button button button . . title title title title title title title'
       '. . directRelief directRelief directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy'
       'ottobock ottobock ottobock paradise paradise paradise klmb klmb klmb monarch monarch monarch'
       'dita dita dita antonovGroup antonovGroup antonovGroup cozen cozen cozen blatchfold blatchfold blatchfold';
@@ -264,6 +266,23 @@
     // border-right: var(--greyBorder);
     display: none;
   }
+
+  .partnerCard:nth-child(6) {
+    & .partnerLogo {
+      height: 100%;
+      width: auto;
+    }
+    // grid-area: paradise;
+  }
+
+  .partnerCard:nth-child(7) {
+    // grid-area: klmb;
+    & .partnerLogo {
+      height: 100%;
+      width: auto;
+    }
+  }
+
   .partnerCard:nth-child(9) {
     // grid-area: antonovGroup;
     display: none;
@@ -279,11 +298,14 @@
     display: none;
   }
 
-  // .ditaLogo {
-  //   & rect:global(.purpleFrame) {
-  //     fill: #3f29b0;
-  //   }
-  // }
+  .partnerCard:nth-child(12) {
+    // grid-area: dita;
+    & .partnerLogo {
+      height: 100%;
+      width: auto;
+    }
+  }
+
   .discoverAllButton {
     width: 100%;
     & .buttonText {

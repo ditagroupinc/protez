@@ -67,8 +67,10 @@ const Footer = forwardRef<HTMLDivElement, { color?: 'red' | 'blue' }>(function (
           <div className={style.right}>
             <Body>{footerSection.nonprofitOrganization[lang]}</Body>
             <Divider className={style.divider} />
-            <Body className={style.descTitle}>{footerSection.sendChecks[lang]}</Body>
-            <Body className={style.descAddress}>{footerSection.address[lang]}</Body>
+            <div>
+              <Body className={style.descTitle}>{footerSection.sendChecks[lang]}</Body>
+              <Body className={style.descAddress}>{footerSection.address[lang]}</Body>
+            </div>
             <Body className={style.descTitle}>{footerSection.email}</Body>
           </div>
         </div>

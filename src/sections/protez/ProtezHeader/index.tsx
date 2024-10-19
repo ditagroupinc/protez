@@ -14,7 +14,7 @@ import ProtezButton, {
 import useOutsideClick from '@/hooks/useOutsideClick'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import { BurgerButton } from '@/components/BurgerButton'
+import { BurgerButton } from './BurgerButton'
 
 import style from './style.module.scss'
 
@@ -236,17 +236,19 @@ const ProtezHeader = ({
     <>
       <header className={style.protezHeader}>
         <Link scroll={true} href={`${linksPrefix}${ProtezIDs.LetsGiveHope}`}>
-          {icons.protezLogo()}
+          {icons.protezLogo(style.protezLogo)}
         </Link>
         {width < 992 ? (
           <BurgerButton color="red" onClick={toggleHeader} close={headerIsOpened} />
         ) : (
-          <div className={style.btnGroup}>
-            <MakeDonationButton lang={lang} className={style.applyBtn} size="small" />
+          <div className={style.topMenu}>
+            <div className={style.buttonsGroup}>
+              <MakeDonationButton lang={lang} size="small" />
 
-            <ProtezButton as="link" href="/" variant="secondary-white" size="small">
-              {headerText.actionButtons.needAProthesis[lang]}
-            </ProtezButton>
+              <ProtezButton as="link" href="/" variant="secondary-white" size="small">
+                {headerText.actionButtons.needAProthesis[lang]}
+              </ProtezButton>
+            </div>
             <div className={style.languageWrapper}>
               {icons.world(`${style.worldIcon}`)}
               <button
@@ -256,6 +258,7 @@ const ProtezHeader = ({
               >
                 EN
               </button>
+              <span className={style.divider} />
               <button
                 onClick={handleLanguageChange}
                 disabled={lang === Languages.Ukrainian}

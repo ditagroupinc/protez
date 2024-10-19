@@ -16,18 +16,26 @@
   z-index: 20;
 }
 
-.btnGroup {
+.protezLogo {
+  height: 40px;
+  width: auto;
+}
+
+.topMenu {
   display: flex;
   align-items: center;
+  gap: 32px;
 }
-.applyBtn {
-  margin-right: 16px;
+
+.buttonsGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .languageWrapper {
   display: flex;
   align-items: center;
-  margin: 0 32px;
 }
 .worldIcon {
   width: 24px;
@@ -35,15 +43,17 @@
   margin-right: 8px;
 }
 
+.divider {
+  display: block;
+  height: 20px;
+  width: 2px;
+  background-color: var(--white);
+  margin: 0 10px;
+}
+
 .localeBtn {
   cursor: pointer;
   transition: color var(--transitionProps);
-
-  &:last-child {
-    padding-left: 10px;
-    margin-left: 10px;
-    border-left: 1px solid var(--white);
-  }
 
   &:hover {
     color: var(--red);
@@ -64,7 +74,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  padding-top: 36px;
+  padding-top: 28px;
   padding-bottom: 0;
   z-index: 11;
   transform: translateX(100%);
@@ -279,7 +289,7 @@
 
 @media (max-width: 600px) {
   .protezHeader {
-    padding: 32px 40px;
+    padding: 28px 24px;
   }
   .sideMenu {
     max-width: 100%;

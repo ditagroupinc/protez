@@ -75,7 +75,7 @@ const PressRelease = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    // autoplay: true,
     autoplaySpeed: 5000,
 
     // TODO: reuse for other sliders

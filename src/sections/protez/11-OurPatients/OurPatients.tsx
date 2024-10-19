@@ -38,7 +38,7 @@ const OurPatients = () => {
   const settings = {
     infinite: true,
     speed: 500,
-    slidesToShow: 2.5,
+    slidesToShow: 2.15,
 
     slidesToScroll: 1,
     arrows: false,

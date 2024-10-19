@@ -33,6 +33,9 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 60px;
+  width: 100%;
+  max-width: 646px;
   flex-shrink: 1;
 }
 .buttonGroup {
@@ -48,6 +51,7 @@
   flex: 0 0 264px;
 }
 .descAddress {
+  margin-top: 12px;
 }
 
 .descTitle {
