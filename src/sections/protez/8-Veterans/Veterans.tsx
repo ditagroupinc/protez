@@ -192,6 +192,7 @@ const Veterans = () => {
                             target="_blank"
                             href={slide.url}
                             variant="secondary-white"
+                            size="normal"
                             className={style.protezButton}
                           >
                             {veteransSection.giveHope[lang]}
@@ -305,6 +306,7 @@ const Veterans = () => {
                           target="_blank"
                           href={slide.url}
                           variant="secondary-white"
+                          size="normal"
                           className={style.protezButton}
                         >
                           {veteransSection.giveHope[lang]}

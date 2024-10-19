@@ -15,10 +15,6 @@
 }
 
 .viewAllButton {
-  height: fit-content;
-  justify-content: space-between;
-  align-items: flex-end;
-  padding: 24px 16px 24px 24px;
   width: 240px;
   & .buttonText {
     max-width: 77px;
@@ -94,6 +90,9 @@
   }
 
   .viewAllButton {
+    &:global([class*='buttonText']) {
+      max-width: 100%;
+    }
     margin-top: 32px;
   }
 }

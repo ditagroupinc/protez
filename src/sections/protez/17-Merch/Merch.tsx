@@ -9,7 +9,7 @@ import { icons } from './icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import Image from 'next/image'
-import ProtezButton from '@/components/ProtezButton'
+import { SeeAllButton } from '@/components/ProtezButton'
 import Section from '@/components/Section'
 import { ProtezIDs } from '../../../../app/consts'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
@@ -108,17 +108,9 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
       <TextAppearanceWrapper className={style.titleWrapper}>
         {icons.protezMERCHlogo.desktop[lang](style.title)}
         {isDesktopLayout && (
-          <ProtezButton
-            squared
-            as="link"
-            href="/"
-            variant="primary-black"
-            arrow
-            className={style.viewAllButton}
-            target="_blank"
-          >
+          <SeeAllButton className={style.viewAllButton}>
             <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>
-          </ProtezButton>
+          </SeeAllButton>
         )}
       </TextAppearanceWrapper>
 
@@ -143,17 +135,9 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
 
       {!isDesktopLayout && (
         <div className={style.buttonWrapper}>
-          <ProtezButton
-            squared
-            as="link"
-            href="/"
-            variant="primary-black"
-            arrow
-            className={style.viewAllButton}
-            target="_blank"
-          >
+          <SeeAllButton className={style.viewAllButton}>
             <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>
-          </ProtezButton>
+          </SeeAllButton>
         </div>
       )}
     </Section>

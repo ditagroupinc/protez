@@ -139,6 +139,7 @@ export default function VadymFedorov() {
                         href={veteransSection.veteran.url}
                         variant="secondary-white"
                         className={style.protezButton}
+                        size="normal"
                       >
                         {veteransSection.giveHope[lang]}
                       </ProtezButton>
@@ -249,6 +250,7 @@ export default function VadymFedorov() {
                       href={veteransSection.veteran.url}
                       variant="secondary-white"
                       className={style.protezButton}
+                      size="normal"
                     >
                       {veteransSection.giveHope[lang]}
                     </ProtezButton>

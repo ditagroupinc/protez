@@ -22,7 +22,7 @@
 
 .title {
   width: 100%;
-  max-width: 310px;
+  max-width: 330px;
   margin-bottom: 40px;
 }
 
@@ -39,7 +39,7 @@
 .cardsWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-rows: 220px;
   grid-template-areas: 'ottobock  universityOfMinnesota xtremity';
 }
 

@@ -86,11 +86,8 @@
 }
 
 .discoverAllButton {
-  height: fit-content;
-  justify-content: space-between;
   width: 240px;
-  padding: 24px 16px 24px 24px;
-  align-items: flex-end;
+
   & .buttonText {
     max-width: 109px;
   }
@@ -282,7 +279,7 @@
 
   .discoverAllButton {
     width: 100%;
-    :global([class*='buttonText']) {
+    &:global([class*='buttonText']) {
       max-width: 100%;
     }
   }

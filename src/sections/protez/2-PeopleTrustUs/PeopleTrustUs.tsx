@@ -244,6 +244,7 @@ const PeopleTrustUs = () => {
               as="link"
               href="/"
               variant="secondary-white"
+              size="normal"
               arrow
               className={style.latestNewsButton}
             >

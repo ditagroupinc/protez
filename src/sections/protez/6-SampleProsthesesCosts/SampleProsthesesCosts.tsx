@@ -140,8 +140,8 @@ const SampleProsthesesCosts = () => {
         </Body>
         {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
-            <MakeDonationButton lang={lang} />
-            <SupportWithAmazonButton lang={lang} color="white" />
+            <MakeDonationButton lang={lang} size="normal" />
+            <SupportWithAmazonButton lang={lang} color="white" size="normal" />
           </TextAppearanceWrapper>
         )}
       </div>
@@ -176,8 +176,8 @@ const SampleProsthesesCosts = () => {
       </div>
       {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
-          <MakeDonationButton lang={lang} />
-          <SupportWithAmazonButton lang={lang} color="white" />
+          <MakeDonationButton lang={lang} size="normal" />
+          <SupportWithAmazonButton lang={lang} color="white" size="normal" />
         </TextAppearanceWrapper>
       )}
     </Section>

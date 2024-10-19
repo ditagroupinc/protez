@@ -77,8 +77,8 @@ const OurResults = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
 
           {isDesktopLayout && (
             <TextAppearanceWrapper className={style.buttonsContainer}>
-              <MakeDonationButton lang={lang} />
-              <ProtezButton as="link" href="/" variant="secondary-white" arrow>
+              <MakeDonationButton lang={lang} size="normal" />
+              <ProtezButton as="link" href="/" variant="secondary-white" size="normal" arrow>
                 {ourResultsText.moreResults[lang]}
               </ProtezButton>
             </TextAppearanceWrapper>
@@ -98,8 +98,8 @@ const OurResults = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
         </div>
         {!isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
-            <MakeDonationButton lang={lang} />
-            <ProtezButton as="link" href="/" variant="secondary-white" arrow>
+            <MakeDonationButton lang={lang} size="normal" />
+            <ProtezButton as="link" href="/" variant="secondary-white" size="normal" arrow>
               {ourResultsText.moreResults[lang]}
             </ProtezButton>
           </TextAppearanceWrapper>

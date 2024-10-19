@@ -91,15 +91,12 @@
 }
 
 .slickSlider :global(.slick-track) {
-  display: flex;
-  align-items: center;
-  flex-wrap: nowrap;
-  justify-content: center;
-  gap: 24px;
   height: 480px;
 }
 
 .cardWrapper {
+  padding-left: 12px;
+  padding-right: 12px;
   position: relative;
 
   display: flex;
@@ -337,10 +334,11 @@
 
   .slickSlider :global(.slick-track) {
     height: 400px;
-    gap: 16px;
   }
 
   .cardWrapper {
+    padding-left: 8px;
+    padding-right: 8px;
     height: 400px;
   }
 

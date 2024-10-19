@@ -14,7 +14,7 @@ import { icons } from './icons'
 import Slider from 'react-slick'
 
 import { ProtezIDs } from '../../../../app/consts'
-import ProtezButton from '@/components/ProtezButton'
+import { SeeAllButton } from '@/components/ProtezButton'
 
 import Image from 'next/image'
 
@@ -399,17 +399,9 @@ const MeetOurTeam = () => {
               ))}
             </Slider>
           </TextAppearanceWrapper>
-          <ProtezButton
-            squared
-            as="link"
-            href="/"
-            variant="primary-black"
-            arrow
-            className={style.discoverAllButton}
-            target="_blank"
-          >
-            <span className={style.buttonText}> {meetOurTeamSection.discover[lang]}</span>
-          </ProtezButton>
+          <SeeAllButton className={style.discoverAllButton}>
+            <span className={style.buttonText}>{meetOurTeamSection.discover[lang]}</span>
+          </SeeAllButton>
         </>
       ) : (
         <>
@@ -439,16 +431,10 @@ const MeetOurTeam = () => {
                 position={card.position[lang]}
               />
             ))}
-            <ProtezButton
-              as="link"
-              href="/"
-              variant="primary-black"
-              arrow
-              className={style.discoverAllButton}
-              target="_blank"
-            >
+
+            <SeeAllButton className={style.discoverAllButton}>
               <span className={style.buttonText}> {meetOurTeamSection.discover[lang]}</span>
-            </ProtezButton>
+            </SeeAllButton>
           </div>
         </>
       )}

@@ -89,8 +89,8 @@
 
 @media screen and (max-width: 800px) {
   .section {
-    padding-left: 0;
-    padding-right: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     display: block;
   }
 

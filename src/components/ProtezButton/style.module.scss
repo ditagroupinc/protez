@@ -6,7 +6,7 @@
 
   gap: 8px;
   border-radius: 4px;
-  padding: 17px 32px;
+  padding: 17px 32px 19px 32px;
 
   font-size: 16px;
   font-style: normal;
@@ -15,7 +15,6 @@
 
   transition:
     background var(--transitionProps),
-    border var(--transitionProps),
     color var(--transitionProps);
 
   &:disabled,
@@ -29,6 +28,10 @@
     height: 24px;
   }
 
+  .hasArrow {
+    padding-right: 24px;
+  }
+
   &.squared {
     border-radius: 0;
   }
@@ -37,7 +40,11 @@
     font-size: 14px;
     font-style: normal;
     font-weight: 700;
-    line-height: 20px; /* 142.857% */
+    line-height: 20px;
+    padding: 12px 24px 14px 24px;
+    &.hasArrow {
+      padding-right: 16px;
+    }
   }
 
   &.primaryRed {
@@ -45,8 +52,6 @@
     & .icon path:not(:global(.noChangeColor)) {
       fill: var(--white);
     }
-
-    border: 2px solid transparent;
 
     background: linear-gradient(180deg, #d01f1f 0%, #b50707 100%);
     background-size: 100% 400%;
@@ -59,6 +64,18 @@
 
     &:focus {
       border: 2px solid var(--white);
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+    &.small {
+      &:focus {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 14px;
+        }
+      }
     }
   }
 
@@ -67,17 +84,39 @@
     & .icon path:not(:global(.noChangeColor)) {
       fill: var(--black);
     }
-    border: 2px solid transparent;
     &:hover {
       background-color: transparent;
       color: var(--white);
       & .icon path:not(:global(.noChangeColor)) {
         fill: var(--white);
       }
-      border: 2px solid var(--white);
+      border: 1px solid var(--white);
+      padding: 16px 31px 18px 31px;
+      &.hasArrow {
+        padding-right: 23px;
+      }
     }
     &:focus {
       border: 2px solid var(--black);
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+
+    &.small {
+      &:hover {
+        padding: 11px 23px 13px 23px;
+        &.hasArrow {
+          padding-right: 15px;
+        }
+      }
+      &:focus {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 14px;
+        }
+      }
     }
   }
 
@@ -87,17 +126,54 @@
     & .icon path:not(:global(.noChangeColor)) {
       fill: var(--white);
     }
-    border: 2px solid transparent;
     &:hover {
       background-color: transparent;
       color: var(--black);
       & .icon path:not(:global(.noChangeColor)) {
         fill: var(--black);
       }
-      border: 2px solid var(--black);
+      border: 1px solid var(--black);
+      padding: 16px 31px 18px 31px;
+      &.hasArrow {
+        padding-right: 23px;
+      }
     }
     &:focus {
       border: 2px solid var(--red);
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+
+    &.small {
+      &:hover {
+        padding: 11px 23px 13px 23px;
+        &.hasArrow {
+          padding-right: 15px;
+        }
+      }
+
+      &:focus {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 14px;
+        }
+      }
+    }
+
+    &.discoverAllButton {
+      height: fit-content;
+      justify-content: space-between;
+      padding: 24px 16px 24px 24px;
+      align-items: flex-end;
+      &:hover {
+        padding: 23px 15px 23px 23px;
+      }
+      &:focus {
+        border: 2px solid var(--red);
+        padding: 22px 14px 22px 22px;
+      }
     }
   }
 
@@ -106,8 +182,14 @@
     & .icon path:not(:global(.noChangeColor)) {
       fill: var(--white);
     }
-    border: 2px solid var(--white);
+
+    border: 1px solid var(--white);
+    padding: 16px 31px 18px 31px;
     background-color: transparent;
+
+    &.hasArrow {
+      padding-right: 23px;
+    }
 
     &:hover {
       border: 2px solid rgba(255, 255, 255, 0.5);
@@ -117,6 +199,27 @@
       background-color: var(--black);
       border: 2px solid var(--white);
     }
+    &:hover,
+    &:focus {
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+
+    &.small {
+      padding: 11px 23px 13px 23px;
+      &.hasArrow {
+        padding-right: 15px;
+      }
+      &:hover,
+      &:focus {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 14px;
+        }
+      }
+    }
   }
 
   &.secondaryBlack {
@@ -124,11 +227,17 @@
     & .icon path:not(:global(.noChangeColor)) {
       fill: var(--black);
     }
-    border: 2px solid var(--black);
+    border: 1px solid var(--black);
+    padding: 16px 31px 18px 31px;
     background-color: transparent;
+
+    &.hasArrow {
+      padding-right: 23px;
+    }
 
     &:hover {
       color: var(--white);
+      border: 2px solid var(--black);
       background-color: var(--black);
       & .icon path:not(:global(.noChangeColor)) {
         fill: var(--white);
@@ -137,6 +246,28 @@
     &:focus {
       border: 2px solid var(--black);
     }
+    &:hover,
+    &:focus {
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+
+    &.small {
+      padding: 11px 23px 13px 23px;
+      &.hasArrow {
+        padding-right: 15px;
+      }
+
+      &:hover,
+      &:focus {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 14px;
+        }
+      }
+    }
   }
 
   &.primaryBlue {
@@ -144,8 +275,6 @@
     & .icon path:not(:global(.noChangeColor)) {
       fill: var(--white);
     }
-
-    border: 2px solid transparent;
 
     background: linear-gradient(
       0deg,
@@ -164,6 +293,33 @@
 
     &:focus {
       border: 2px solid var(--white);
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+    &.small &:focus {
+      padding: 10px 22px 12px 22px;
+      &.hasArrow {
+        padding-right: 14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .button {
+    &.primaryBlack {
+      &.discoverAllButton {
+        padding: 16px 16px 16px 24px;
+
+        &:hover {
+          padding: 15px 15px 15px 23px;
+        }
+        &:focus {
+          padding: 14px 14px 14px 22px;
+        }
+      }
     }
   }
 }

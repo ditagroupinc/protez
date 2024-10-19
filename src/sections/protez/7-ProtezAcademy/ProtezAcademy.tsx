@@ -72,10 +72,10 @@ const ProtezAcademy = () => {
         </Body>
         {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
-            <ProtezButton as="link" href="/" variant="primary-blue">
+            <ProtezButton as="link" href="/" variant="primary-blue" size="normal">
               {protezAcademyText.learnMore[lang]}
             </ProtezButton>
-            <ProtezButton as="link" href="/" variant="secondary-white" arrow>
+            <ProtezButton as="link" href="/" variant="secondary-white" size="normal" arrow>
               {protezAcademyText.applyToAcademy[lang]}
             </ProtezButton>
           </TextAppearanceWrapper>
@@ -89,10 +89,10 @@ const ProtezAcademy = () => {
       </div>
       {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
-          <ProtezButton as="link" href="/" variant="primary-blue">
+          <ProtezButton as="link" href="/" variant="primary-blue" size="normal">
             {protezAcademyText.learnMore[lang]}
           </ProtezButton>
-          <ProtezButton as="link" href="/" variant="secondary-white" arrow>
+          <ProtezButton as="link" href="/" variant="secondary-white" arrow size="normal">
             {protezAcademyText.applyToAcademy[lang]}
           </ProtezButton>
         </TextAppearanceWrapper>

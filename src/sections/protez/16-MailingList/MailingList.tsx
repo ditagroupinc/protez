@@ -168,6 +168,7 @@ const MailingList = () => {
             as="button"
             className={`${style.submitButton} ${style[formStatus]}`}
             type="submit"
+            size="normal"
           >
             {mailingListSection.submitButton[formStatus][lang]}
 

@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactElement, ReactNode } from 'react'
 
 import style from './style.module.scss'
 import Link, { LinkProps } from 'next/link'
@@ -20,7 +20,7 @@ type ButtonSize = 'small' | 'normal'
 
 type BaseButtonProps = {
   variant: ButtonVariant
-  size?: ButtonSize
+  size: ButtonSize
   arrow?: boolean
   squared?: boolean
 }
@@ -54,7 +54,7 @@ const ProtezButton = (props: ButtonProps) => {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       as,
       variant,
-      size = 'normal',
+      size,
       squared,
       className,
       children,
@@ -64,7 +64,7 @@ const ProtezButton = (props: ButtonProps) => {
 
     return (
       <button
-        className={`${style.button} ${style[variantStyles[variant]]} ${style[size]} ${squared ? style.squared : ''} ${className}`}
+        className={`${style.button} ${arrow ? style.hasArrow : ''} ${style[variantStyles[variant]]} ${style[size]} ${squared ? style.squared : ''} ${className}`}
         {...rest}
       >
         {children}
@@ -80,7 +80,7 @@ const ProtezButton = (props: ButtonProps) => {
     return (
       <Link
         prefetch={false}
-        className={`${style.button} ${style[variantStyles[variant]]} ${style[size]} ${squared ? style.squared : ''} ${className}`}
+        className={`${style.button} ${arrow ? style.hasArrow : ''} ${style[variantStyles[variant]]} ${style[size]} ${squared ? style.squared : ''} ${className}`}
         {...rest}
       >
         {children}
@@ -109,16 +109,18 @@ const buttonTexts = {
 export const MakeDonationButton = ({
   lang,
   className,
+  size,
 }: {
   lang: Languages
   className?: string
+  size: ButtonSize
 }) => (
   <ProtezButton
     as="link"
     href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
     target={'_blank'}
     variant="primary-red"
-    size="small"
+    size={size}
     rel="noopener noreferrer"
     className={`${className ? className : ''}`}
   >
@@ -130,19 +132,43 @@ export const SupportWithAmazonButton = ({
   lang,
   className,
   color = 'black',
+  size,
 }: {
   lang: Languages
   className?: string
   color?: 'white' | 'black'
+  size: ButtonSize
 }) => (
   <ProtezButton
     as="link"
     href="/"
+    size={size}
     variant={color === 'white' ? 'secondary-white' : 'secondary-black'}
     className={`${className ? className : ''}`}
   >
     {buttonTexts.supportWith[lang]}
 
     {icons.amazon(style.icon)}
+  </ProtezButton>
+)
+
+export const SeeAllButton = ({
+  children,
+  className,
+}: {
+  children: ReactElement
+  className?: string
+}) => (
+  <ProtezButton
+    squared
+    as="link"
+    href="/"
+    variant="primary-black"
+    arrow
+    className={`${style.discoverAllButton} ${className ? className : ''}`}
+    target="_blank"
+    size="normal"
+  >
+    {children}
   </ProtezButton>
 )

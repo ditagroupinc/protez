@@ -56,10 +56,10 @@ const Footer = forwardRef<HTMLDivElement, { color?: 'red' | 'blue' }>(function (
               : icons.footerLogo.mobile[lang](style.footerLogo)}
 
             <div className={style.buttonGroup}>
-              <ProtezButton as="link" href="/" variant="primary-black">
+              <ProtezButton as="link" href="/" variant="primary-black" size="normal">
                 {footerSection.giveHope[lang]}
               </ProtezButton>
-              <ProtezButton as="link" href="/" variant="secondary-white">
+              <ProtezButton as="link" href="/" variant="secondary-white" size="normal">
                 {footerSection.protezAcademy[lang]}
               </ProtezButton>
             </div>

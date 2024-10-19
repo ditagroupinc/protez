@@ -242,7 +242,7 @@ const ProtezHeader = ({
           <BurgerButton color="red" onClick={toggleHeader} close={headerIsOpened} />
         ) : (
           <div className={style.btnGroup}>
-            <MakeDonationButton lang={lang} className={style.applyBtn} />
+            <MakeDonationButton lang={lang} className={style.applyBtn} size="small" />
 
             <ProtezButton as="link" href="/" variant="secondary-white" size="small">
               {headerText.actionButtons.needAProthesis[lang]}
@@ -290,13 +290,18 @@ const ProtezHeader = ({
 
           <div className={style.lowerPart}>
             <div className={style.lowerPartButtonsContainer}>
-              <MakeDonationButton lang={lang} className={style.lowerPartButton} />
-              <SupportWithAmazonButton lang={lang} className={style.lowerPartButton} />
+              <MakeDonationButton lang={lang} className={style.lowerPartButton} size="normal" />
+              <SupportWithAmazonButton
+                lang={lang}
+                className={style.lowerPartButton}
+                size="normal"
+              />
 
               <ProtezButton
                 as="link"
                 href="/"
                 variant="secondary-black"
+                size="normal"
                 arrow
                 className={style.lowerPartButton}
               >
