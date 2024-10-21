@@ -1,0 +1,233 @@
+@mixin fullHeightAutoWidth {
+  width: auto;
+  height: 100%;
+}
+
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--light-grey-bg);
+}
+
+.title {
+  max-width: 705px;
+  height: auto;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(60, 1fr);
+  grid-template-rows: 300px 180px 300px 300px 300px 300px 180px;
+
+  border-top: var(--greyBorder);
+  border-right: var(--greyBorder);
+}
+
+.partnerCard {
+  border-left: var(--greyBorder);
+  border-bottom: var(--greyBorder);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  &:hover .partnerLogo {
+    display: none;
+  }
+  &:hover .partnerLogoColor {
+    display: block;
+  }
+}
+.partnerLogo,
+.partnerLogoColor {
+  width: 100%;
+  height: auto;
+  transition: opacity var(--transitionProps);
+}
+.partnerLogoColor {
+  display: none;
+}
+
+.partnerCard {
+  &:nth-child(1) {
+    // grid-area: directRelief;
+    grid-column: span 12;
+  }
+  &:nth-child(2) {
+    // grid-area: dita;
+    grid-column: span 12;
+  }
+  &:nth-child(3) {
+    // grid-area: ottobock;
+    grid-column: span 12;
+  }
+  &:nth-child(4) {
+    // grid-area: antonov;
+    grid-column: span 12;
+  }
+  &:nth-child(5) {
+    // grid-area: blatchford;
+    grid-column: span 12;
+  }
+  &:nth-child(6) {
+    // grid-area: chaliceOfMercy;
+    grid-column: span 15;
+  }
+  &:nth-child(7) {
+    // grid-area: xtremity;
+    grid-column: span 15;
+  }
+  &:nth-child(8) {
+    // grid-area: cozen;
+    grid-column: span 15;
+  }
+  &:nth-child(9) {
+    // grid-area: sTconstantine;
+    grid-column: span 15;
+  }
+  &:nth-child(10) {
+    // grid-area: paradise;
+    grid-column: span 20;
+  }
+  &:nth-child(11) {
+    // grid-area: klmb;
+    grid-column: span 20;
+
+    & .partnerLogo,
+    & .partnerLogoColor {
+      @include fullHeightAutoWidth;
+    }
+  }
+  &:nth-child(12) {
+    // grid-area: ukraine;
+    grid-column: span 20;
+
+    & .partnerLogo,
+    & .partnerLogoColor {
+      @include fullHeightAutoWidth;
+    }
+  }
+  &:nth-child(13) {
+    // grid-area: cerebral;
+    grid-column: span 15;
+  }
+  &:nth-child(14) {
+    // grid-area: slumberland;
+    grid-column: span 15;
+  }
+  &:nth-child(15) {
+    // grid-area: businessBus;
+    grid-column: span 15;
+  }
+  &:nth-child(16) {
+    // grid-area: stMaron;
+    grid-column: span 15;
+  }
+  &:nth-child(17) {
+    // grid-area: humanaTravel;
+    grid-column: span 20;
+  }
+  &:nth-child(18) {
+    // grid-area: smak;
+    grid-column: span 20;
+  }
+  &:nth-child(19) {
+    // grid-area: uhf;
+    grid-column: span 20;
+  }
+  &:nth-child(20) {
+    // grid-area: ticketToAmerica;
+    grid-column: span 12;
+  }
+  &:nth-child(21) {
+    // grid-area: fubcom;
+    grid-column: span 12;
+  }
+  &:nth-child(22) {
+    // grid-area: highlightPrinting;
+    grid-column: span 12;
+  }
+  &:nth-child(23) {
+    // grid-area: 4front;
+    grid-column: span 12;
+  }
+  &:nth-child(24) {
+    // grid-area: proteor;
+    grid-column: span 12;
+  }
+  &:nth-child(25) {
+    // grid-area: monarch;
+    grid-column: span 20;
+  }
+  &:nth-child(26) {
+    // grid-area: ukrsib;
+    grid-column: span 20;
+  }
+  &:nth-child(27) {
+    // grid-area: ossur;
+    grid-column: span 20;
+  }
+}
+
+// .partnerCard {
+//   height: fit-content;
+//   border: var(--greyBorder);
+//   display: inline-flex;
+//   justify-content: center;
+//   align-items: center;
+//   min-height: 100%;
+//   padding: 1.5rem;
+//   &.desktop {
+//     grid-column: span 4;
+//     &:nth-of-type(n + 4):not(&:nth-of-type(n + 8)),
+//     &:nth-of-type(n + 11):not(&:nth-of-type(n + 15)),
+//     &:nth-of-type(n + 18):not(&:nth-of-type(n + 22)),
+//     &:nth-of-type(n + 25):not(&:nth-of-type(n + 29)) {
+//       grid-column: span 3;
+//     }
+//     &:nth-of-type(11) {
+//       padding: 1.5rem 2.5rem;
+//     }
+//   }
+
+//   &.mobile {
+//     grid-column: span 2;
+//     &:nth-of-type(3n) {
+//       padding: 1.5rem 2.5rem;
+//       grid-column: span 4;
+//     }
+//   }
+// }
+
+// .partnerLogo {
+//   max-width: 100%;
+//   & svg,
+//   & path,
+//   & rect {
+//     transition: fill var(--transitionProps);
+//   }
+// }
+
+// .dita:hover svg rect:global(.purpleFrame) {
+//   fill: #3f29b0;
+// }
+// .dita svg {
+//   height: fit-content;
+// }
+
+/* phone */
+@media screen and (max-width: 480px) {
+  .specialThanks {
+    margin-top: 0;
+  }
+  .container {
+    margin-top: 0;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .logo:global(.svgTextBlock) {
+    max-width: 80%;
+  }
+}

@@ -119,17 +119,6 @@
   grid-area: dita;
 }
 
-// .ditaLogo {
-//   max-width: 100%;
-
-//   & rect:global(.purpleFrame) {
-//     transform: translate(344.078px, 21.5918px) !important;
-//   }
-//   &:hover > rect:global(.purpleFrame) {
-//     fill: #3f29b0;
-//   }
-// }
-
 @media screen and (max-width: 1366px) {
   .section {
     grid-template-columns: repeat(12, 1fr);

@@ -29,7 +29,7 @@ const partnersLogos = [
   'monarch.svg',
   'printing.svg',
   'smak.svg',
-  'sTconstantin.svg',
+  'sTconstantine.svg',
   'stMaron.svg',
   'ticketToAmerica.svg',
   'ukrainianHabitat.svg',
