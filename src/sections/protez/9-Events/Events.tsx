@@ -163,7 +163,7 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
           slidesToShow: 1,
           dots: true,
           centerMode: true,
-          centerPadding: '40px',
+          centerPadding: '22px',
         },
       },
     ],

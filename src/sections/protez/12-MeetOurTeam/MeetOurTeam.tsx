@@ -368,7 +368,7 @@ const MeetOurTeam = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: '30px',
+    centerPadding: '22px',
 
     swipeToSlide: true,
     arrows: false,

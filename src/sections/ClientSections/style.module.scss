@@ -31,17 +31,10 @@
   bottom: 0;
 }
 
-/* tablet */
-@media screen and (max-width: 1180px) {
-  // .companyDataNonProfit {
-  //   display: none;
-  // }
-}
-
 /* phone */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .americanFlag {
     max-width: 90%;
-    top: 42%;
+    top: 39%;
   }
 }

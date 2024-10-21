@@ -12,6 +12,7 @@
 
 .title {
   max-width: 453px;
+  height: auto;
 }
 
 .viewAllButton {
@@ -66,6 +67,10 @@
   .titleWrapper {
     padding: 0 var(--section-padding-horizontal);
     justify-content: center;
+  }
+
+  .title {
+    max-width: 183px;
   }
 
   .slickSlider {

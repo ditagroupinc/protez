@@ -138,15 +138,37 @@
   }
 }
 
-@media screen and (max-width: 500px) {
-  .textBlock {
-    margin-top: -60px;
+@media screen and (max-width: 600px) {
+  .section {
+    padding-top: 20px;
+  }
 
+  .left {
+    height: 415px;
+    display: flex;
+    align-items: self-end;
+  }
+  .right {
+    height: calc(604px - 80px);
     padding-top: 80px;
-    padding-bottom: 140px;
+    margin-top: -60px;
+  }
+
+  .textBlock {
+    margin-top: 0;
+    // margin-top: -60px;
+
+    padding-top: 0;
+    padding-bottom: 0;
   }
 
   .link {
     margin-top: 42px;
+  }
+
+  .mapSmall {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

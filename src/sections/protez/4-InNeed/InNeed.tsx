@@ -22,11 +22,13 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
 
-  const inNeedLogo = width < 800 ? icons.inNeedLogo.mobile : icons.inNeedLogo.desktop
+  const isDesktopLayout = width > 800
+
+  const inNeedLogo = isDesktopLayout ? icons.inNeedLogo.desktop : icons.inNeedLogo.mobile
 
   return (
     <Section id={ProtezIDs.InNeed} className={style.section} ref={ref}>
-      {icons.ukrainanMap(style.map)}
+      {isDesktopLayout && icons.ukrainanMap(style.map)}
       <div className={style.left}>
         <Image
           // TODO: remove after review

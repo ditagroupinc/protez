@@ -25,6 +25,16 @@ const merchSection = {
   },
   cards: [
     {
+      link: 'https://www.protezmerch.com/product/t-shirt-next-level-apparel-/6?cs=true&cst=custom',
+      title: 'T-shirt Next Level Apparel®',
+      image: 't-shirt.png',
+    },
+    {
+      link: 'https://www.protezmerch.com/product/hooded-sweatshirt-port-company-/5?cs=true&cst=custom',
+      title: 'Hooded Sweatshirt Port & Company®',
+      image: 'hoodie.png',
+    },
+    {
       link: 'https://www.protezmerch.com/product/new-era-original-fit-snapback-trucker-cap/4?cs=true&cst=custom',
       title: 'New Era® Original Fit Snapback Trucker Cap',
       image: 'truckerCap.png',
@@ -62,6 +72,8 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
+  const merchLogo = isDesktopLayout ? icons.protezMERCHlogo.desktop : icons.protezMERCHlogo.mobile
+
   const sliderRef = useRef(null)
 
   const settings = {
@@ -96,7 +108,7 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
         breakpoint: 500,
         settings: {
           centerMode: true,
-          centerPadding: '20px',
+          centerPadding: '24px',
           slidesToShow: 1,
         },
       },
@@ -106,7 +118,7 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   return (
     <Section className={style.section} id={ProtezIDs.Merch} ref={ref}>
       <TextAppearanceWrapper className={style.titleWrapper}>
-        {icons.protezMERCHlogo.desktop[lang](style.title)}
+        {merchLogo[lang](style.title)}
         {isDesktopLayout && (
           <SeeAllButton className={style.viewAllButton}>
             <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>

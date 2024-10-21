@@ -199,10 +199,17 @@
     padding-top: 40px;
     padding-bottom: 60px;
     gap: 32px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .teachersLogo {
+    padding-left: var(--section-padding-horizontal);
+    padding-right: var(--section-padding-horizontal);
   }
 
   .cardWrapper {
-    padding: 0 12px;
+    padding: 0 8px;
   }
 
   .memberCard {
@@ -252,6 +259,9 @@
       padding-top: 32px;
 
       position: static;
+
+      padding-left: var(--section-padding-horizontal);
+      padding-right: var(--section-padding-horizontal);
     }
     & :global(.slick-dots li) {
       margin: 0;

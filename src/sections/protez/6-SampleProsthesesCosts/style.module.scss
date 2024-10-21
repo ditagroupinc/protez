@@ -5,6 +5,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 16px;
+  position: relative;
 }
 
 .left {
@@ -221,6 +222,10 @@
   .section {
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+
+  .title {
+    max-width: 241px;
   }
 
   .right {

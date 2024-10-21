@@ -59,7 +59,7 @@ const OurPatients = () => {
         settings: {
           slidesToShow: 1,
           centerMode: true,
-          centerPadding: '50px',
+          centerPadding: '22px',
           rtl: false,
         },
       },
