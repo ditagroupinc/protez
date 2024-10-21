@@ -6,7 +6,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 import { useLanguage } from '@/contexts/LanguageContext'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+// import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import Section from '@/components/Section'
 
@@ -42,7 +42,7 @@ const partnersLogos = [
 
 export default function AllOurPartners() {
   const { lang } = useLanguage()
-  const { width } = useScreenModeAndSize()
+  // const { width } = useScreenModeAndSize()
 
   return (
     <Section className={style.section} id="allOurPartners">
