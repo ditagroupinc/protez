@@ -21,16 +21,6 @@
   height: auto;
 }
 
-.smokeBlock {
-  position: relative;
-}
-
-.smokeTop {
-  height: calc(100% - 100vh);
-  top: auto;
-  bottom: 0;
-}
-
 /* phone */
 @media screen and (max-width: 600px) {
   .americanFlag {

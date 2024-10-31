@@ -21,25 +21,24 @@
   text-align: center;
 
   gap: 40px;
-}
 
-.title {
-  height: auto;
-  width: 100%;
-}
+  .title {
+    height: auto;
+    width: 100%;
+  }
 
-.description {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    .block {
+      display: block;
+    }
 
-.block {
-  display: block;
-}
-
-.redText {
-  color: var(--red);
+    .redText {
+      color: var(--red);
+    }
+  }
 }
 
 .bottomContainer {
@@ -49,47 +48,51 @@
   max-width: 825px;
   margin-left: auto;
   margin-right: auto;
-}
 
-.left {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 
-  flex: 1 2 400px;
-}
+    flex: 1 2 400px;
 
-.aboveDivider,
-.belowDivider {
-  max-width: 350px;
-  margin-right: 50px;
-}
+    .aboveDivider,
+    .belowDivider {
+      max-width: 350px;
+      margin-right: 50px;
+    }
 
-.descAddress {
-  margin-top: 12px;
-}
+    .descAddress {
+      margin-top: 12px;
+    }
 
-.descTitle {
-  font-weight: 700;
-}
+    .descTitle {
+      font-weight: 700;
+    }
+  }
 
-.right {
-  flex: 1 1 425px;
-  min-width: 300px;
-}
+  .right {
+    flex: 1 1 425px;
+    min-width: 300px;
 
-.donationForm {
-  width: 100%;
+    .donationForm {
+      width: 100%;
+    }
+  }
 }
 
 @media (max-width: 1024px) {
 }
 
 @media screen and (max-width: 800px) {
-  .aboveDivider,
-  .belowDivider {
-    max-width: 100%;
-    margin-right: 20px;
+  .bottomContainer {
+    .left {
+      .aboveDivider,
+      .belowDivider {
+        max-width: 100%;
+        margin-right: 20px;
+      }
+    }
   }
 }
 
@@ -105,13 +108,12 @@
     max-width: 425px;
   }
 
-  .left {
-    flex-basis: auto;
-  }
-
   .bottomContainer {
     flex-direction: column-reverse;
     gap: 40px;
     max-width: 425px;
+    .left {
+      flex-basis: auto;
+    }
   }
 }

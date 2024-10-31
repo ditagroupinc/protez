@@ -9,13 +9,16 @@ import Image from 'next/image'
 
 import { icons } from './icons'
 import Section from '@/components/Section'
-import { Body, H3 } from '@/components/Typography'
+import { Body, H2, H3 } from '@/components/Typography'
 import ProtezButton from '@/components/ProtezButton'
 import { BilingualText } from '@/types'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import ProtezHeader from '@/sections/protez/ProtezHeader'
 import Footer from '@/sections/Footer'
+import Divider from '@/components/Divider'
+import Script from 'next/script'
+import SmokeWrapper from '@/sections/ClientSections/SmokeWrapper'
 
 interface Veteran {
   ageRank: BilingualText
@@ -92,9 +95,42 @@ const veteransSection: VeteransSection = {
   },
 }
 
+const donatePage = {
+  description1: {
+    english: 'All charitable contributions are tax-deductible.',
+    ukrainian: 'All charitable contributions are tax-deductible.',
+  },
+  description3: {
+    english:
+      'Strong support from community volunteers and partners around the globe allowed us to cap our administrative expenses',
+    ukrainian:
+      'Strong support from community volunteers and partners around the globe allowed us to cap our administrative expenses',
+  },
+  coloredText: {
+    english: 'under 8%',
+    ukrainian: 'under 8%',
+  },
+  nonprofitOrganization: {
+    english: 'Nonprofit organization 501(c)(3) EIN: 88-2437069',
+    ukrainian: 'Nonprofit organization 501(c)(3) EIN: 88-2437069',
+  },
+  sendChecks: {
+    english: 'Please send checks to:',
+    ukrainian: 'Please send checks to:',
+  },
+  address: {
+    english:
+      'Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America',
+    ukrainian:
+      'Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America',
+  },
+  email: 'info@protezfoundation.com',
+  madeBy: '2024 © Made by DITA GROUP Inc.',
+}
+
 export default function VadymFedorov() {
   const { lang } = useLanguage()
-  const [iframeData, setIframeData] = useState({ opened: false, url: '' })
+  const [iframeOpened, setIframeOpened] = useState(true)
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
@@ -102,198 +138,118 @@ export default function VadymFedorov() {
     <>
       <ProtezHeader ancorLinks={false} arrowUp={false} />
       <main>
-        <Section className={style.section}>
-          {isDesktopLayout ? (
+        <SmokeWrapper>
+          <Section className={style.section}>
             <div className={style.card}>
               <div className={style.left}>
                 <div className={style.logoContainer}>
                   {icons.titles[veteransSection.veteran.icon as keyof typeof icons.titles][lang](
                     style.veteranLogo
                   )}
-                  <Body large={isDesktopLayout} className={style.ageRank}>
-                    {veteransSection.veteran.ageRank[lang]}
-                  </Body>
+                  <Body className={style.ageRank}>{veteransSection.veteran.ageRank[lang]}</Body>
                 </div>
                 <H3 className={style.cardTitle}>{veteransSection.veteran.title[lang]}</H3>
-                <Body className={style.cardText} large={isDesktopLayout}>
-                  {veteransSection.veteran.text[lang]}
-                </Body>
+                <Body className={style.cardText}>{veteransSection.veteran.text[lang]}</Body>
 
-                <div className={style.buttonsContainer}>
-                  <div className={style.linksSliderWrapper}>
-                    <div className={style.linksSlide}>
-                      <div className={style.iconsContainer}>
-                        <a target="blank" href={veteransSection.veteran.linkedin as string}>
-                          {icons.iconLinkedin(style.icon)}
-                        </a>
-                        <a target="blank" href={veteransSection.veteran.facebook as string}>
-                          {icons.iconFacebook(style.icon)}
-                        </a>
-                        <a target="blank" href={veteransSection.veteran.instagram as string}>
-                          {icons.iconInstagram(style.icon)}
-                        </a>
+                <div className={style.bottomContainer}>
+                  <div className={style.left}>
+                    <div className={style.aboveDivider}>
+                      <Body large={isDesktopLayout} className={style.description}>
+                        <span className={style.block}>{donatePage.description1[lang]}</span>
+                      </Body>
+                      <Body large={isDesktopLayout}>
+                        {donatePage.description3[lang]}{' '}
+                        <span className={style.redText}>{donatePage.coloredText[lang]}</span>
+                      </Body>
+                      <Body>{donatePage.nonprofitOrganization[lang]}</Body>
+                    </div>
+
+                    <Divider className={style.divider} />
+                    <div className={style.belowDivider}>
+                      <div>
+                        <Body className={style.descTitle}>{donatePage.sendChecks[lang]}</Body>
+                        <Body className={style.descAddress}>{donatePage.address[lang]}</Body>
                       </div>
-                      <ProtezButton
-                        as="link"
-                        target="_blank"
-                        href={veteransSection.veteran.url}
-                        variant="secondary-white"
-                        className={style.protezButton}
-                        size="normal"
-                      >
-                        {veteransSection.giveHope[lang]}
-                      </ProtezButton>
+                      <Body className={style.descTitle}>{donatePage.email}</Body>
                     </div>
                   </div>
-
-                  {/* <div className={style.sliderNavigation}>
-                  <button className={style.sliderButton} onClick={gotoPrev}>
-                    {icons.arrowLeft(style.arrow)}
-                  </button>
-                  <button className={style.sliderButton} onClick={gotoNext}>
-                    {icons.arrowRight(style.arrow)}
-                  </button>
-                </div> */}
+                  <div className={style.right}>
+                    <Script src="https://donorbox.org/widget.js" paypalExpress="false" />
+                    <iframe
+                      src="https://donorbox.org/embed/website-donation-64"
+                      name="donorbox"
+                      seamless={true}
+                      className={style.donationForm}
+                      style={{
+                        maxWidth: 425,
+                        minWidth: 250,
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
               <div className={style.right}>
-                <div className={style.imageSlideWrapper}>
-                  <Image
-                    // TODO: remove after review
-                    src={`/protez/protezPage/veterans/${veteransSection.veteran.img}`}
-                    alt={
-                      veteransSection.veteran.name[lang] +
-                      ' ' +
-                      veteransSection.veteran.surname[lang]
-                    }
-                    className={style.image}
-                    width={1306}
-                    height={1890}
-                  />
-
-                  <button
-                    className={style.roundButton}
-                    onClick={() => {
-                      setIframeData({ opened: true, url: veteransSection.veteran.videoLink })
-                    }}
-                  >
-                    {icons[`${veteransSection.veteran.icon as keyof typeof icons.titles}Icon`](
-                      style.spinningName
-                    )}
-                    {icons.triangle(style.triangle)}
-                  </button>
+                <iframe
+                  className={style.iFrame}
+                  src={
+                    'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F3490463647948673%2F%3Fidorvanity%3D238890858497931&show_text=false&width=267&t=0'
+                  }
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  allowFullScreen={true}
+                />
+                <button className={style.closeVideo} onClick={() => setIframeOpened(false)}>
+                  {icons.closeVideo()}
+                </button>
+                <div className={style.buttonsContainer}>
+                  <a target="blank" href={veteransSection.veteran.linkedin as string}>
+                    {icons.iconLinkedin(style.icon)}
+                  </a>
+                  <a target="blank" href={veteransSection.veteran.facebook as string}>
+                    {icons.iconFacebook(style.icon)}
+                  </a>
+                  <a target="blank" href={veteransSection.veteran.instagram as string}>
+                    {icons.iconInstagram(style.icon)}
+                  </a>
                 </div>
               </div>
             </div>
-          ) : (
-            <>
-              <div className={style.card}>
-                <div className={style.right}>
-                  <div className={style.imageSlideWrapper}>
-                    <Image
-                      // TODO: remove after review
-                      src={`/protez/protezPage/veterans/${veteransSection.veteran.img}`}
-                      alt={
-                        veteransSection.veteran.name[lang] +
-                        ' ' +
-                        veteransSection.veteran.surname[lang]
-                      }
-                      className={style.image}
-                      width={1306}
-                      height={1890}
-                    />
-
-                    <button
-                      className={style.roundButton}
-                      onClick={() => {
-                        setIframeData({ opened: true, url: veteransSection.veteran.videoLink })
-                      }}
-                    >
-                      {icons[`${veteransSection.veteran.icon as keyof typeof icons.titles}Icon`](
-                        style.spinningName
-                      )}
-                      {icons.triangle(style.triangle)}
-                    </button>
-                  </div>
-                </div>
-                <div className={style.left}>
-                  <div>
-                    <div className={style.logoContainer}>
-                      {icons.titles[veteransSection.veteran.icon as keyof typeof icons.titles][
-                        lang
-                      ](style.veteranLogo)}
-                      <Body large={isDesktopLayout} className={style.ageRank}>
-                        {veteransSection.veteran.ageRank[lang]}
-                      </Body>
-                    </div>
-                    <H3 className={style.cardTitle}>{veteransSection.veteran.title[lang]}</H3>
-                    <Body className={style.cardText} large={isDesktopLayout}>
-                      {veteransSection.veteran.text[lang]}
-                    </Body>
-                  </div>
-
-                  <div className={style.linksSlide}>
-                    <div className={style.iconsContainer}>
-                      <a target="blank" href={veteransSection.veteran.linkedin as string}>
-                        {icons.iconLinkedin(style.icon)}
-                      </a>
-                      <a target="blank" href={veteransSection.veteran.facebook as string}>
-                        {icons.iconFacebook(style.icon)}
-                      </a>
-                      <a target="blank" href={veteransSection.veteran.instagram as string}>
-                        {icons.iconInstagram(style.icon)}
-                      </a>
-                    </div>
-                    <ProtezButton
-                      as="link"
-                      target="_blank"
-                      href={veteransSection.veteran.url}
-                      variant="secondary-white"
-                      className={style.protezButton}
-                      size="normal"
-                    >
-                      {veteransSection.giveHope[lang]}
-                    </ProtezButton>
-                  </div>
-                </div>
+            {/* <div className={style.bottomContainer}>
+            <div className={style.left}>
+              <div className={style.aboveDivider}>
+                <Body>{donatePage.nonprofitOrganization[lang]}</Body>
               </div>
 
-              {/* <div className={style.sliderNavigation}>
-              <button className={style.sliderButton} onClick={gotoPrev}>
-                {icons.arrowLeft(style.arrow)}
-              </button>
-              <button className={style.sliderButton} onClick={gotoNext}>
-                {icons.arrowRight(style.arrow)}
-              </button>
-            </div> */}
-            </>
-          )}
-        </Section>
+              <Divider className={style.divider} />
+              <div className={style.belowDivider}>
+                <div>
+                  <Body className={style.descTitle}>{donatePage.sendChecks[lang]}</Body>
+                  <Body className={style.descAddress}>{donatePage.address[lang]}</Body>
+                </div>
+                <Body className={style.descTitle}>{donatePage.email}</Body>
+              </div>
+            </div>
+            <div className={style.right}>
+              <Script src="https://donorbox.org/widget.js" paypalExpress="false" />
+              <iframe
+                src="https://donorbox.org/embed/website-donation-64"
+                name="donorbox"
+                seamless={true}
+                className={style.donationForm}
+                style={{
+                  maxWidth: 425,
+                  minWidth: 250,
+                }}
+              />
+            </div>
+          </div> */}
+          </Section>
+        </SmokeWrapper>
       </main>
       <Footer />
-
-      {iframeData.opened && (
-        <>
-          <div className={style.mask} onClick={() => setIframeData({ opened: false, url: '' })} />
-          <iframe
-            className={style.iFrame}
-            src={iframeData.url}
-            width="400"
-            height="713"
-            scrolling="no"
-            // frameborder="0"
-            // allowfullscreen="true"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            allowFullScreen={true}
-          />
-          <button
-            className={style.closeVideo}
-            onClick={() => setIframeData({ opened: false, url: '' })}
-          >
-            {icons.closeVideo()}
-          </button>
-        </>
-      )}
     </>
   )
+}
+
+{
+  /* @ts-ignore @eslint-disable-next-line */
 }
