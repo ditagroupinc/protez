@@ -78,6 +78,7 @@ export default function DonorBox({ monthly = false, className }) {
           scrolling="no"
           className={style.form}
           style={{
+            height: '685px',
             maxWidth: 425,
             minWidth: 250,
           }}
