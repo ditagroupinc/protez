@@ -57,7 +57,7 @@ const SpecialThanksToAllOurPartners = () => {
           <Image
             // TODO: remove after review
 
-            src={`/protez/protezPage/partnersLogos/${icon}.svg`}
+            src={`/protez/partnersLogos/${icon}.svg`}
             alt={icon}
             width={300}
             height={230}
@@ -66,7 +66,7 @@ const SpecialThanksToAllOurPartners = () => {
           <Image
             // TODO: remove after review
 
-            src={`/protez/protezPage/partnersLogos/${icon}-color.svg`}
+            src={`/protez/partnersLogos/${icon}-color.svg`}
             alt={icon}
             width={300}
             height={230}
@@ -79,7 +79,7 @@ const SpecialThanksToAllOurPartners = () => {
         <Image
           // TODO: remove after review
 
-          src={`/protez/protezPage/partnersLogos/dita.svg`}
+          src={`/protez/partnersLogos/dita.svg`}
           alt={'Dita Group'}
           width={300}
           height={230}
@@ -88,7 +88,7 @@ const SpecialThanksToAllOurPartners = () => {
         <Image
           // TODO: remove after review
 
-          src={`/protez/protezPage/partnersLogos/dita-color.svg`}
+          src={`/protez/partnersLogos/dita-color.svg`}
           alt={'Dita Group'}
           width={300}
           height={230}

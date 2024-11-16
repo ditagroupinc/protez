@@ -114,7 +114,7 @@ const MailingList = () => {
             <div key={index} className={style.imageWrapper}>
               <Image
                 // TODO: remove after review
-                src={`/protez/protezPage/veterans/mailingList/${slide}`}
+                src={`/protez/protezPage/mailingList/${slide}`}
                 alt="troops"
                 width={331}
                 height={316}
