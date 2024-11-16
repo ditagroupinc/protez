@@ -1,16 +1,13 @@
 'use client'
 
-import { useState } from 'react'
-
 import { useLanguage } from '@/contexts/LanguageContext'
 
 import style from './style.module.scss'
-import Image from 'next/image'
 
 import { icons } from './icons'
 import Section from '@/components/Section'
-import { Body, H2, H3 } from '@/components/Typography'
-import ProtezButton from '@/components/ProtezButton'
+import { Body, H3 } from '@/components/Typography'
+
 import { BilingualText } from '@/types'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
@@ -130,7 +127,6 @@ const donatePage = {
 
 export default function VadymFedorov() {
   const { lang } = useLanguage()
-  const [iframeOpened, setIframeOpened] = useState(true)
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
@@ -141,7 +137,7 @@ export default function VadymFedorov() {
         <SmokeWrapper>
           <Section className={style.section}>
             <div className={style.card}>
-              <div className={style.left}>
+              <div className={style.cardLeft}>
                 <div className={style.logoContainer}>
                   {icons.titles[veteransSection.veteran.icon as keyof typeof icons.titles][lang](
                     style.veteranLogo
@@ -151,13 +147,37 @@ export default function VadymFedorov() {
                 <H3 className={style.cardTitle}>{veteransSection.veteran.title[lang]}</H3>
                 <Body className={style.cardText}>{veteransSection.veteran.text[lang]}</Body>
 
+                {width < 1180 && (
+                  <div className={style.cardRight}>
+                    <iframe
+                      className={style.iFrame}
+                      src={
+                        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F3490463647948673%2F%3Fidorvanity%3D238890858497931&show_text=false&width=267&t=0'
+                      }
+                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                      allowFullScreen={true}
+                    />
+                    <div className={style.buttonsContainer}>
+                      <a target="blank" href={veteransSection.veteran.linkedin as string}>
+                        {icons.iconLinkedin(style.icon)}
+                      </a>
+                      <a target="blank" href={veteransSection.veteran.facebook as string}>
+                        {icons.iconFacebook(style.icon)}
+                      </a>
+                      <a target="blank" href={veteransSection.veteran.instagram as string}>
+                        {icons.iconInstagram(style.icon)}
+                      </a>
+                    </div>
+                  </div>
+                )}
+
                 <div className={style.bottomContainer}>
                   <div className={style.left}>
                     <div className={style.aboveDivider}>
-                      <Body large={isDesktopLayout} className={style.description}>
+                      <Body large={width > 1180} className={style.description}>
                         <span className={style.block}>{donatePage.description1[lang]}</span>
                       </Body>
-                      <Body large={isDesktopLayout}>
+                      <Body large={width > 1180}>
                         {donatePage.description3[lang]}{' '}
                         <span className={style.redText}>{donatePage.coloredText[lang]}</span>
                       </Body>
@@ -174,6 +194,7 @@ export default function VadymFedorov() {
                     </div>
                   </div>
                   <div className={style.right}>
+                    {/* @ts-ignore @eslint-disable-next-line */}
                     <Script src="https://donorbox.org/widget.js" paypalExpress="false" />
                     <iframe
                       src="https://donorbox.org/embed/website-donation-64"
@@ -188,68 +209,34 @@ export default function VadymFedorov() {
                   </div>
                 </div>
               </div>
-              <div className={style.right}>
-                <iframe
-                  className={style.iFrame}
-                  src={
-                    'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F3490463647948673%2F%3Fidorvanity%3D238890858497931&show_text=false&width=267&t=0'
-                  }
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  allowFullScreen={true}
-                />
-                <button className={style.closeVideo} onClick={() => setIframeOpened(false)}>
-                  {icons.closeVideo()}
-                </button>
-                <div className={style.buttonsContainer}>
-                  <a target="blank" href={veteransSection.veteran.linkedin as string}>
-                    {icons.iconLinkedin(style.icon)}
-                  </a>
-                  <a target="blank" href={veteransSection.veteran.facebook as string}>
-                    {icons.iconFacebook(style.icon)}
-                  </a>
-                  <a target="blank" href={veteransSection.veteran.instagram as string}>
-                    {icons.iconInstagram(style.icon)}
-                  </a>
+              {width > 1180 && (
+                <div className={style.cardRight}>
+                  <iframe
+                    className={style.iFrame}
+                    src={
+                      'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F3490463647948673%2F%3Fidorvanity%3D238890858497931&show_text=false&width=267&t=0'
+                    }
+                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                    allowFullScreen={true}
+                  />
+                  <div className={style.buttonsContainer}>
+                    <a target="blank" href={veteransSection.veteran.linkedin as string}>
+                      {icons.iconLinkedin(style.icon)}
+                    </a>
+                    <a target="blank" href={veteransSection.veteran.facebook as string}>
+                      {icons.iconFacebook(style.icon)}
+                    </a>
+                    <a target="blank" href={veteransSection.veteran.instagram as string}>
+                      {icons.iconInstagram(style.icon)}
+                    </a>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
-            {/* <div className={style.bottomContainer}>
-            <div className={style.left}>
-              <div className={style.aboveDivider}>
-                <Body>{donatePage.nonprofitOrganization[lang]}</Body>
-              </div>
-
-              <Divider className={style.divider} />
-              <div className={style.belowDivider}>
-                <div>
-                  <Body className={style.descTitle}>{donatePage.sendChecks[lang]}</Body>
-                  <Body className={style.descAddress}>{donatePage.address[lang]}</Body>
-                </div>
-                <Body className={style.descTitle}>{donatePage.email}</Body>
-              </div>
-            </div>
-            <div className={style.right}>
-              <Script src="https://donorbox.org/widget.js" paypalExpress="false" />
-              <iframe
-                src="https://donorbox.org/embed/website-donation-64"
-                name="donorbox"
-                seamless={true}
-                className={style.donationForm}
-                style={{
-                  maxWidth: 425,
-                  minWidth: 250,
-                }}
-              />
-            </div>
-          </div> */}
           </Section>
         </SmokeWrapper>
       </main>
       <Footer />
     </>
   )
-}
-
-{
-  /* @ts-ignore @eslint-disable-next-line */
 }
