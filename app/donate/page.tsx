@@ -1,7 +1,6 @@
 'use client'
 
 import Footer from '@/sections/Footer'
-import ProtezHeader from '@/sections/protez/ProtezHeader'
 
 import { Body, H2 } from '@/components/Typography'
 import Divider from '@/components/Divider'
@@ -11,6 +10,7 @@ import { icons } from './icons'
 import { useLanguage } from '@/contexts/LanguageContext'
 import Script from 'next/script'
 import Section from '@/components/Section'
+import Header from '@/sections/Header'
 
 const donatePage = {
   description1: {
@@ -50,7 +50,7 @@ export default function Donate() {
 
   return (
     <>
-      <ProtezHeader ancorLinks={false} arrowUp={false} />
+      <Header layout="protezPage" ancorLinks={false} arrowUp={false} />
       <main>
         <Section className={style.section} id="donorBox">
           <div className={style.topContainer}>

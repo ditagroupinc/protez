@@ -9,7 +9,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { icons } from './icons'
 import Section from '@/components/Section'
-import { ProtezIDs } from '../../../../app/consts'
+import { ProtezIDs } from '@/consts'
 import { Body, H3 } from '@/components/Typography'
 import Link from 'next/link'
 import { BilingualText } from '@/types'

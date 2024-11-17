@@ -1,28 +1,31 @@
 .button {
   color: var(--white);
   position: fixed;
-  right: var(--paddingVW);
-  bottom: var(--paddingVW);
+  right: 8px;
+  bottom: 80px;
   transform: rotate(-90deg) translate(100%, -50%);
   transform-origin: bottom right;
   text-transform: uppercase;
   transition: color var(--transitionProps);
   z-index: 9;
 
-  &.black {
-    color: var(--dark-blue);
-  }
+  // &.black {
+  //   color: var(--dark-blue);
+  // }
 
-  &.pink {
-    &:hover {
-      color: var(--pink);
-    }
+  &.red {
+    color: var(--red);
+    // color: var(--white);
+    // &:hover {
+    //   color: var(--pink);
+    // }
   }
 
   &.blue {
-    &:hover {
-      color: var(--blue);
-    }
+    color: var(--blue);
+    // &:hover {
+    //   color: var(--blue);
+    // }
   }
 }
 

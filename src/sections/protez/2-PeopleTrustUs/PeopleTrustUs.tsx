@@ -6,7 +6,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { icons } from './icons'
 import style from './style.module.scss'
 
-import { ProtezIDs } from '../../../../app/consts'
+import { ProtezIDs } from '@/consts'
 import { Body } from '@/components/Typography'
 import ProtezButton from '@/components/ProtezButton'
 import Slider from 'react-slick'

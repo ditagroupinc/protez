@@ -8,7 +8,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import { AcademyIDs } from '../../../../app/academy/consts'
+import { AcademyIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
 
 const Chief = forwardRef<HTMLDivElement>(function (_, ref) {

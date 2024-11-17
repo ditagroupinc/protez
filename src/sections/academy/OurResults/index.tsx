@@ -11,7 +11,7 @@ import CountUp from 'react-countup'
 import { icons } from './icons'
 import style from './style.module.scss'
 
-import { AcademyIDs } from '../../../../app/academy/consts'
+import { AcademyIDs } from '@/consts'
 
 // =================================================================
 

@@ -1,15 +1,9 @@
 'use client'
 
 import { Suspense, lazy } from 'react'
-import { useInView } from 'react-intersection-observer'
-
-// import { notFound } from 'next/navigation'
-
-import BackToTopButton from './BackToTopButton'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademyHeader from '@/sections/academy/Header'
 import AcademyIntro from '@/sections/academy/Intro'
 
 import FullScreenFallback from '@/components/FullScreenFallback'
@@ -30,31 +24,16 @@ const WeAreInNews = lazy(() => import('@/sections/academy/WeAreInNews'))
 const Events = lazy(() => import('@/sections/academy/Events'))
 
 import style from './style.module.scss'
+import Header from '@/sections/Header'
 
 export default function AcademyPage() {
-  const [refIntro, inViewIntro] = useInView({ triggerOnce: false })
-  const [refChief, inViewChief] = useInView({ triggerOnce: false })
-  const [refEvents, inViewEvents] = useInView({ triggerOnce: false })
-  const [refSummit, inViewSummit] = useInView({ triggerOnce: false })
-  const [refWeAreInNews, inViewWeAreInNews] = useInView({ triggerOnce: false })
-  const [refThankYou, inViewThankYou] = useInView({ triggerOnce: false })
-
-  const showBlackBackToTopButton =
-    !inViewIntro &&
-    !inViewChief &&
-    !inViewEvents &&
-    !inViewSummit &&
-    !inViewWeAreInNews &&
-    !inViewThankYou
-
-  const { mobile, width } = useScreenModeAndSize()
-  const isMobile = mobile || width < 768
+  const { width } = useScreenModeAndSize()
 
   return (
     <>
-      <AcademyHeader />
+      <Header layout="academyPage" />
       <main className={style.main}>
-        <AcademyIntro ref={refIntro} />
+        <AcademyIntro />
 
         <Suspense fallback={<FullScreenFallback />}>
           <OurGoals />
@@ -73,7 +52,7 @@ export default function AcademyPage() {
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
-          <Chief ref={refChief} />
+          <Chief />
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
@@ -85,7 +64,7 @@ export default function AcademyPage() {
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
-          <Events ref={refEvents} />
+          <Events />
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
@@ -97,13 +76,13 @@ export default function AcademyPage() {
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
-          <SummitResults ref={refSummit} />
+          <SummitResults />
         </Suspense>
 
         {width > 600 ? (
           <>
             <Suspense fallback={<FullScreenFallback />}>
-              <WeAreInNews ref={refWeAreInNews} />
+              <WeAreInNews />
             </Suspense>
 
             <Suspense fallback={<FullScreenFallback />}>
@@ -117,18 +96,14 @@ export default function AcademyPage() {
             </Suspense>
 
             <Suspense fallback={<FullScreenFallback />}>
-              <WeAreInNews ref={refWeAreInNews} />
+              <WeAreInNews />
             </Suspense>
           </>
-        )}
-
-        {!isMobile && (
-          <BackToTopButton href={'academyIntro'} color="blue" black={showBlackBackToTopButton} />
         )}
       </main>
 
       <Suspense fallback={<FullScreenFallback />}>
-        <Footer color="blue" ref={refThankYou} />
+        <Footer color="blue" />
       </Suspense>
     </>
   )

@@ -15,7 +15,7 @@ import style from './style.module.scss'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import { AcademyIDs } from '../../../../app/academy/consts'
+import { AcademyIDs } from '@/consts'
 
 const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
   // const { lang } = useLanguage()

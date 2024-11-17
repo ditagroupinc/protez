@@ -94,7 +94,7 @@ const ProtezButton = (props: ButtonProps) => {
 
 export default ProtezButton
 
-const buttonTexts = {
+const text = {
   makeDonation: {
     english: 'Make Donation',
     ukrainian: 'Зробити внесок!',
@@ -103,6 +103,10 @@ const buttonTexts = {
   supportWith: {
     english: 'Support with',
     ukrainian: 'Підтримати з',
+  },
+  applyToAcademy: {
+    english: 'Apply to Academy',
+    ukrainian: 'Apply to Academy',
   },
 }
 
@@ -124,7 +128,7 @@ export const MakeDonationButton = ({
     rel="noopener noreferrer"
     className={`${className ? className : ''}`}
   >
-    {buttonTexts.makeDonation[lang]}
+    {text.makeDonation[lang]}
   </ProtezButton>
 )
 
@@ -146,7 +150,7 @@ export const SupportWithAmazonButton = ({
     variant={color === 'white' ? 'secondary-white' : 'secondary-black'}
     className={`${className ? className : ''}`}
   >
-    {buttonTexts.supportWith[lang]}
+    {text.supportWith[lang]}
 
     {icons.amazon(style.icon)}
   </ProtezButton>
@@ -170,5 +174,27 @@ export const SeeAllButton = ({
     size="normal"
   >
     {children}
+  </ProtezButton>
+)
+
+export const ApplyToAcademyButton = ({
+  lang,
+  className,
+  size,
+}: {
+  lang: Languages
+  className?: string
+  size: ButtonSize
+}) => (
+  <ProtezButton
+    as="link"
+    href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+    target={'_blank'}
+    variant="primary-blue"
+    size={size}
+    rel="noopener noreferrer"
+    className={`${className ? className : ''}`}
+  >
+    {text.applyToAcademy[lang]}
   </ProtezButton>
 )

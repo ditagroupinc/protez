@@ -13,7 +13,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { forwardRef } from 'react'
 
-import { AcademyIDs } from '../../../../app/academy/consts'
+import { AcademyIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
 
 // TODO: remove after review

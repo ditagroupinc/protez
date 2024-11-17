@@ -12,7 +12,7 @@ import Slider from 'react-slick'
 import { forwardRef } from 'react'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import { ProtezIDs } from '../../../../app/consts'
+import { ProtezIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
 
 type Event = {

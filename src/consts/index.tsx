@@ -1,3 +1,21 @@
+export enum AcademyIDs {
+  Intro = 'academyIntro',
+  OurGoals = 'ourGoals',
+  Academy = 'academy',
+  OurResults = 'ourResults',
+  OurTeachers = 'ourTeachers',
+  Chief = 'chief',
+  TheoryLectures = 'theoryLectures',
+  PracticeSessions = 'practiceSessions',
+  PastAndUpcomingEvents = 'pastAndUpcomingEvents',
+  AcademyStudents = 'academyStudents',
+  AmputeeRehab = 'amputeeRehab',
+  SummitResults = 'summitResults',
+  WeAreInNews = 'weAreInNews',
+  SpecialThanksToAllOurPartners = 'specialThanksToAllOurPartners',
+  Footer = 'footer',
+}
+
 export enum ProtezIDs {
   LetsGiveHope = 'letsGiveHope',
   PeopleTrustUs = 'peopleTrustUs',

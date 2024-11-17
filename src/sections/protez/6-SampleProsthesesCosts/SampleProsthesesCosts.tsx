@@ -7,7 +7,7 @@ import style from './style.module.scss'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { Body, H3 } from '@/components/Typography'
-import { ProtezIDs } from '../../../../app/consts'
+import { ProtezIDs } from '@/consts'
 import { MakeDonationButton, SupportWithAmazonButton } from '@/components/ProtezButton'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useState } from 'react'

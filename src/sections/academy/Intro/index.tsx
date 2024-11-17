@@ -15,7 +15,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { icons } from './icons'
 import style from './style.module.scss'
 
-import { AcademyIDs } from '../../../../app/academy/consts'
+import { AcademyIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
 
 const text = {

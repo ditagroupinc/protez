@@ -3,7 +3,7 @@
   padding-right: 24px;
 }
 
-.academyHeader {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -16,18 +16,26 @@
   z-index: 20;
 }
 
-.btnGroup {
+.protezLogo {
+  height: 40px;
+  width: auto;
+}
+
+.topMenu {
   display: flex;
   align-items: center;
+  gap: 32px;
 }
-.applyBtn {
-  margin-right: 16px;
+
+.buttonsGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .languageWrapper {
   display: flex;
   align-items: center;
-  margin: 0 32px;
 }
 .worldIcon {
   width: 24px;
@@ -35,18 +43,20 @@
   margin-right: 8px;
 }
 
+.divider {
+  display: block;
+  height: 20px;
+  width: 2px;
+  background-color: var(--white);
+  margin: 0 10px;
+}
+
 .localeBtn {
   cursor: pointer;
   transition: color var(--transitionProps);
 
-  &:last-child {
-    padding-left: 10px;
-    margin-left: 10px;
-    border-left: 1px solid var(--white);
-  }
-
   &:hover {
-    color: var(--blue);
+    color: var(--red);
   }
 
   &:disabled,
@@ -64,7 +74,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  padding-top: 36px;
+  padding-top: 28px;
   padding-bottom: 0;
   z-index: 11;
   transform: translateX(100%);
@@ -73,7 +83,7 @@
   width: 100%;
   height: 100%;
   background-color: var(--white);
-  color: var(--dark-blue);
+  color: var(--black);
 
   &.opened {
     transform: none;
@@ -82,7 +92,6 @@
 }
 
 .protezFoundationLinkWrapper {
-  // height: 46px;
   height: 40px;
   flex-shrink: 0;
   display: flex;
@@ -95,20 +104,37 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--blue);
 
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: 28px;
+
+  &.red {
+    color: var(--red);
+  }
+
+  &.blue {
+    color: var(--blue);
+  }
 }
 
 .icon {
   width: 24px;
   height: 24px;
+  &.red {
+    & path {
+      fill: var(--red);
+    }
+  }
   &.black {
     & path {
-      fill: var(--dark-blue);
+      fill: var(--black);
+    }
+  }
+  &.blue {
+    & path {
+      fill: var(--blue);
     }
   }
 }
@@ -121,13 +147,21 @@
   padding-top: 24px;
   @include padding-side-mixin;
   max-height: calc(100% - 46px - 266px);
-
-  // 94 266
 }
 
 .navigation {
   height: 100%;
   overflow-y: scroll;
+  &.red {
+    &::-webkit-scrollbar-thumb {
+      background: var(--red);
+    }
+  }
+  &.blue {
+    &::-webkit-scrollbar-thumb {
+      background: var(--blue);
+    }
+  }
 
   &::-webkit-scrollbar {
     width: 4px;
@@ -136,10 +170,6 @@
 
   &::-webkit-scrollbar-track {
     background: rgba(13, 17, 37, 0.06);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: var(--blue);
   }
 
   &::-webkit-scrollbar-thumb:hover {
@@ -159,7 +189,7 @@
 }
 
 .ancorLink {
-  color: var(--dark-blue, #0d1125);
+  color: var(--black);
 
   font-size: 20px;
   font-style: normal;
@@ -191,7 +221,7 @@
   align-items: center;
   gap: 8px;
 
-  color: var(--dark-blue, #0d1125);
+  color: var(--black);
 
   font-size: 16px;
   font-style: normal;
@@ -207,37 +237,96 @@
   padding-top: 16px;
   padding-bottom: 16px;
   @include padding-side-mixin;
-  background-color: var(--dark-blue);
+  background-color: var(--black);
 }
 
 .languageButton {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--white, #fff);
+  color: var(--white);
 
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 22px;
+  font-weight: 700;
+  line-height: 24px;
+
+  text-transform: capitalize;
 }
 
-//
-//
+.socialMediaLinksContainer {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  gap: 32px;
+  z-index: 999;
+}
+
+.socialMediaLink {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: var(--black);
+  transition: all var(--transitionProps);
+
+  & .socialMediaLinkIcon {
+    width: 24px;
+    height: 24px;
+  }
+
+  &:hover {
+    background: var(--red);
+    border-color: var(--red);
+  }
+}
+
 @media (max-width: 1366px) {
-  .academyHeader {
+  .header {
     padding: 24px 40px;
   }
 }
 
 @media (max-width: 1024px) {
-  .academyHeader {
+  .header {
     padding: 32px 40px;
   }
 }
 
 @media (max-width: 600px) {
-  .academyHeader {
-    padding: 32px 40px;
+  .header {
+    padding: 28px 24px;
+  }
+  .sideMenu {
+    max-width: 100%;
+    width: 100%;
+  }
+  .socialMediaLinksContainer {
+    gap: 10px;
+    top: auto;
+    bottom: 40px;
+    transform: none;
+    z-index: 999;
+  }
+  .socialMediaLink {
+    & svg {
+      width: 40px;
+      height: 40px;
+    }
+    &:first-of-type {
+      & svg rect {
+        fill: var(--red);
+        stroke: var(--red);
+      }
+    }
   }
 }

@@ -8,7 +8,7 @@ import Section from '@/components/Section'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import { AcademyIDs } from '../../../../app/academy/consts'
+import { AcademyIDs } from '@/consts'
 
 const TheoryLectures = () => {
   const { lang } = useLanguage()

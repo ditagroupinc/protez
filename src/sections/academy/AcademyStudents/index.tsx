@@ -12,7 +12,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import Slider from 'react-slick'
 
-import { AcademyIDs } from '../../../../app/academy/consts'
+import { AcademyIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
 
 // TODO: remove after review

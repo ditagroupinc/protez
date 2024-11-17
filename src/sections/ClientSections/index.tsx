@@ -3,7 +3,6 @@
 import {
   Suspense,
   useEffect,
-  // Suspense,
   // useRef,
   // useState,
   lazy,
@@ -19,12 +18,11 @@ import SmokeWrapper from './SmokeWrapper'
 
 import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils/parsers'
 
-import ProtezHeader from '../protez/ProtezHeader'
-
 import FullScreenFallback from '@/components/FullScreenFallback'
 
 import LetsGiveHope from '../protez/1-LetsGiveHope/LetsGiveHope'
 import ProtezImage from '@/components/ProtezImage'
+import Header from '../Header'
 const ProstheticsForUkrainians = lazy(
   () => import('@/sections/protez/3-ProstheticsForUkrainians/ProstheticsForUkrainians')
 )
@@ -80,7 +78,7 @@ export default function ClientSections({
 
   return (
     <>
-      <ProtezHeader />
+      <Header layout="protezPage" />
 
       <main className={style.main}>
         <SmokeWrapper>

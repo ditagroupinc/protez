@@ -7,7 +7,7 @@ import Link from 'next/link'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import Section from '@/components/Section'
-import ProtezHeader from '@/sections/protez/ProtezHeader'
+import Header from '@/sections/Header'
 import Footer from '@/sections/Footer'
 import ProtezImage from '@/components/ProtezImage'
 
@@ -46,7 +46,7 @@ export default function AllOurPartners() {
 
   return (
     <>
-      <ProtezHeader ancorLinks={false} arrowUp={false} />
+      <Header layout="protezPage" ancorLinks={false} arrowUp={false} />
       <main>
         <Section className={style.section} id="allOurPartners">
           {icons.partnersLogo.desktop[lang](style.title)}

@@ -13,7 +13,7 @@ import { icons } from './icons'
 
 import Slider from 'react-slick'
 
-import { ProtezIDs } from '../../../../app/consts'
+import { ProtezIDs } from '@/consts'
 import { SeeAllButton } from '@/components/ProtezButton'
 
 import { Body, H3 } from '@/components/Typography'

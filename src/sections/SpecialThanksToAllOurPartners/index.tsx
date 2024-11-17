@@ -6,7 +6,7 @@ import { icons } from './icons'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import { ProtezIDs } from '../../../app/consts'
+import { ProtezIDs } from '@/consts'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 

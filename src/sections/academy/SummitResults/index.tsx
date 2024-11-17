@@ -11,7 +11,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import style from './style.module.scss'
 import { icons } from './icons'
-import { AcademyIDs } from '../../../../app/academy/consts'
+import { AcademyIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
 import ProtezVideo from '@/components/ProtezVideo'
 

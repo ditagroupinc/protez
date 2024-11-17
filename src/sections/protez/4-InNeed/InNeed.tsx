@@ -4,7 +4,7 @@ import style from './style.module.scss'
 import { icons } from './icons'
 import Section from '@/components/Section'
 
-import { ProtezIDs } from '../../../../app/consts'
+import { ProtezIDs } from '@/consts'
 
 import Link from 'next/link'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'

@@ -10,7 +10,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { SeeAllButton } from '@/components/ProtezButton'
 import Section from '@/components/Section'
-import { ProtezIDs } from '../../../../app/consts'
+import { ProtezIDs } from '@/consts'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 

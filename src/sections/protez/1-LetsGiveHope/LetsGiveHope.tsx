@@ -8,7 +8,7 @@ import Section from '@/components/Section'
 import { Body } from '@/components/Typography'
 import ProtezButton, { MakeDonationButton } from '@/components/ProtezButton'
 
-import { ProtezIDs } from '../../../../app/consts'
+import { ProtezIDs } from '@/consts'
 import style from './style.module.scss'
 import { icons } from './icons'
 

@@ -3,12 +3,12 @@
 import style from './style.module.scss'
 import Section from '@/components/Section'
 import Footer from '@/sections/Footer'
-import ProtezHeader from '@/sections/protez/ProtezHeader'
+import Header from '@/sections/Header'
 
 export default function ArtemSvergun() {
   return (
     <>
-      <ProtezHeader ancorLinks={false} arrowUp={false} />
+      <Header layout="protezPage" ancorLinks={false} arrowUp={false} />
       <main>
         <Section className={style.section} id="donorBox">
           <iframe

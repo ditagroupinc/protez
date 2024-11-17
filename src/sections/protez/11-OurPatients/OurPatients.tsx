@@ -9,7 +9,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { icons } from './icons'
 import Section from '@/components/Section'
-import { ProtezIDs } from '../../../../app/consts'
+import { ProtezIDs } from '@/consts'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 

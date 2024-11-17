@@ -1,7 +1,7 @@
 'use client'
 
 import Footer from '@/sections/Footer'
-import ProtezHeader from '@/sections/protez/ProtezHeader'
+import Header from '@/sections/Header'
 
 import { Body, H2 } from '@/components/Typography'
 import Divider from '@/components/Divider'
@@ -54,7 +54,7 @@ export default function Donate() {
 
   return (
     <>
-      <ProtezHeader ancorLinks={false} arrowUp={false} />
+      <Header layout="protezPage" ancorLinks={false} arrowUp={false} />
       <main>
         <Section className={style.section} id="donorBox">
           <div className={style.topContainer}>

@@ -6,7 +6,7 @@ import Button from '@/components/Button'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { useLanguage } from '@/contexts/LanguageContext'
-import { AcademyIDs } from '../../../../app/academy/consts'
+import { AcademyIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
 
 const AmputeeRehab = () => {

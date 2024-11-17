@@ -6,7 +6,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import { icons } from './icons'
 import Divider from '@/components/Divider'
 
-import { ProtezIDs } from '../../../app/consts'
+import { ProtezIDs } from '@/consts'
 import ProtezButton from '@/components/ProtezButton'
 import { Body } from '@/components/Typography'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'

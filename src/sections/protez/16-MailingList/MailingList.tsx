@@ -6,7 +6,7 @@ import { icons } from './icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { subscribeToMailchimp } from '@/lib/api'
-import { ProtezIDs } from '../../../../app/consts'
+import { ProtezIDs } from '@/consts'
 // import { mailOptions } from '../../../config/nodemailer'
 import ProtezButton from '@/components/ProtezButton'
 // import { Body } from '@/components/Typography'

@@ -11,7 +11,7 @@ import { Body, H3 } from '@/components/Typography'
 import { BilingualText } from '@/types'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import ProtezHeader from '@/sections/protez/ProtezHeader'
+import Header from '@/sections/Header'
 import Footer from '@/sections/Footer'
 import Divider from '@/components/Divider'
 import Script from 'next/script'
@@ -132,7 +132,7 @@ export default function VadymFedorov() {
 
   return (
     <>
-      <ProtezHeader ancorLinks={false} arrowUp={false} />
+      <Header layout="protezPage" ancorLinks={false} arrowUp={false} />
       <main>
         <SmokeWrapper>
           <Section className={style.section}>

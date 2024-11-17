@@ -14,7 +14,7 @@ import Slider from 'react-slick'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import { AcademyIDs } from '../../../../app/academy/consts'
+import { AcademyIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
 import ProtezVideo from '@/components/ProtezVideo'
 

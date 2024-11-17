@@ -13,7 +13,7 @@ import { icons } from './icons.js'
 
 import Slider from 'react-slick'
 
-import { AcademyIDs } from '../../../../app/academy/consts'
+import { AcademyIDs } from '@/consts'
 
 const teachersCards = [
   {
