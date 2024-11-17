@@ -6,8 +6,6 @@ import Section from '@/components/Section'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import CountUp from 'react-countup'
 
-// import texts from '@/texts&svg'
-
 import { icons } from './icons'
 import style from './style.module.scss'
 
@@ -68,12 +66,12 @@ const OurResults = () => {
                 target={'_blank'}
                 variant="primary-blue"
                 rel="noopener noreferrer"
-                size="big"
+                size="normal"
               >
                 Apply to Academy
                 {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
               </Button>
-              <Button as="link" href="/donate" variant="normal-black" size="big">
+              <Button as="link" href="/donate" variant="secondary-black" size="normal">
                 Support Academy
                 {/* {texts.academyHeader.buttons.supportAcademy[lang]} */}
                 {icons.arrowUp(`${style.arrowUpIcon}`)}

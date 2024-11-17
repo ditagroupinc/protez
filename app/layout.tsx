@@ -6,7 +6,6 @@ import './globals.css'
 import Script from 'next/script'
 import LanguageContextProvider from '@/contexts/LanguageContext'
 import FacebookPixelEvents from '@/components/FacebookPixelEvents'
-import { PageSettingsContextProvider } from '@/contexts/PageSettingsContext'
 
 import { ReactElement } from 'react'
 
@@ -54,22 +53,20 @@ export default function RootLayout({ children }: { children: ReactElement }) {
       </Script>
 
       <LanguageContextProvider>
-        <PageSettingsContextProvider>
-          <html lang="en">
-            <body>
-              {children}
-              <noscript>
-                <iframe
-                  src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
-                  height="0"
-                  width="0"
-                  style={{ display: 'none', visibility: 'hidden' }}
-                ></iframe>
-              </noscript>
-              <FacebookPixelEvents />
-            </body>
-          </html>
-        </PageSettingsContextProvider>
+        <html lang="en">
+          <body>
+            {children}
+            <noscript>
+              <iframe
+                src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+                height="0"
+                width="0"
+                style={{ display: 'none', visibility: 'hidden' }}
+              ></iframe>
+            </noscript>
+            <FacebookPixelEvents />
+          </body>
+        </html>
       </LanguageContextProvider>
     </>
   )

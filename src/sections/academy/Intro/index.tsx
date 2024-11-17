@@ -81,7 +81,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
               target={'_blank'}
               variant="primary-blue"
-              size={isMobile ? 'big' : 'small'}
+              size={isMobile ? 'normal' : 'small'}
               rel="noopener noreferrer"
             >
               {text.applyToAcademy[lang]}
@@ -90,7 +90,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
               as="link"
               href="/donate"
               variant="secondary-white"
-              size={isMobile ? 'big' : 'small'}
+              size={isMobile ? 'normal' : 'small'}
             >
               {text.supportAcademy[lang]}
               {icons.arrowUp(`${style.arrowUp}`)}

@@ -103,7 +103,7 @@ export default function AcademyPage() {
       </main>
 
       <Suspense fallback={<FullScreenFallback />}>
-        <Footer color="blue" />
+        <Footer layout="academyPage" />
       </Suspense>
     </>
   )

@@ -6,7 +6,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import VideoAndFilter from '@/components/VideoAndFilter'
 import Section from '@/components/Section'
 import { Body } from '@/components/Typography'
-import ProtezButton, { MakeDonationButton } from '@/components/ProtezButton'
+import Button, { MakeDonationButton } from '@/components/Button'
 
 import { ProtezIDs } from '@/consts'
 import style from './style.module.scss'
@@ -49,13 +49,13 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
           </Body>
           <div className={style.buttonsContainer}>
             <MakeDonationButton lang={lang} size="normal" />
-            <ProtezButton variant="secondary-white" as="link" href="/" size="normal" arrow>
+            <Button variant="secondary-white" as="link" href="/" size="normal" arrow>
               {letsGiveHopeText.needAProthesis[lang]}
-            </ProtezButton>
+            </Button>
             {!isDesktop && (
-              <ProtezButton variant="secondary-white" as="link" href="/" size="normal">
+              <Button variant="secondary-white" as="link" href="/" size="normal">
                 {letsGiveHopeText.protezAcademy[lang]}
-              </ProtezButton>
+              </Button>
             )}
           </div>
         </div>

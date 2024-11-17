@@ -11,7 +11,7 @@ import { ProtezIDs } from '@/consts'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import Link from 'next/link'
-import { SeeAllButton } from '@/components/ProtezButton'
+import { SeeAllButton } from '@/components/Button'
 import ProtezImage from '@/components/ProtezImage'
 
 const specialThanksToAllOurPartnersSection = {
@@ -40,7 +40,7 @@ const SpecialThanksToAllOurPartners = () => {
   return (
     <Section id={ProtezIDs.SpecialThanksToAllOurPartners} className={style.section}>
       <div className={style.buttonCell}>
-        <SeeAllButton className={style.discoverAllButton}>
+        <SeeAllButton href="/" className={style.discoverAllButton}>
           <span className={style.buttonText}>
             {specialThanksToAllOurPartnersSection.discoverAllPartners[lang]}
           </span>

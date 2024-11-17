@@ -8,7 +8,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { subscribeToMailchimp } from '@/lib/api'
 import { ProtezIDs } from '@/consts'
 // import { mailOptions } from '../../../config/nodemailer'
-import ProtezButton from '@/components/ProtezButton'
+import Button from '@/components/Button'
 // import { Body } from '@/components/Typography'
 import Section from '@/components/Section'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
@@ -154,15 +154,15 @@ const MailingList = () => {
             />
           )} */}
           {/* <Body large>{mailingListSection.addYourAddressTo[lang]}</Body> */}
-          {/* <ProtezButton
+          {/* <Button
             variant="secondary-white"
             as="button"
             className={style.addAdressButton}
             type="button"
           >
             {icons.plus()} {mailingListSection.addYourAddress[lang]}
-          </ProtezButton> */}
-          <ProtezButton
+          </Button> */}
+          <Button
             variant="primary-red"
             as="button"
             className={`${style.submitButton} ${style[formStatus]}`}
@@ -174,7 +174,7 @@ const MailingList = () => {
             {formStatus === 'loading' && (
               <ProtezImage src={'spinner.gif'} alt="spinner" width={24} height={24} />
             )}
-          </ProtezButton>
+          </Button>
         </form>
       </TextAppearanceWrapper>
     </Section>

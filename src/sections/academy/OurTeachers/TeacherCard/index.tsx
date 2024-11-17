@@ -1,6 +1,6 @@
 import style from './style.module.scss'
 
-import globalIcons from '@/texts&svg/icons'
+import { icons } from './icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
@@ -29,7 +29,6 @@ export default function TeacherCard({
   className?: string
 }) {
   const { width } = useScreenModeAndSize()
-  const cardColor = () => (black ? '#0D1125' : '#fff')
 
   return (
     <TextAppearanceWrapper
@@ -51,7 +50,7 @@ export default function TeacherCard({
 
             return link ? (
               <a href={link.href} target="blank" key={platform}>
-                {globalIcons[link.icon as keyof typeof globalIcons](style.icon, cardColor())}
+                {icons[link.icon as keyof typeof icons](style.icon)}
               </a>
             ) : (
               <div className={style.placeholder} key={platform} />

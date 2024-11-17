@@ -8,7 +8,7 @@ import { icons } from './icons'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import { SeeAllButton } from '@/components/ProtezButton'
+import { SeeAllButton } from '@/components/Button'
 import Section from '@/components/Section'
 import { ProtezIDs } from '@/consts'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
@@ -120,7 +120,7 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
       <TextAppearanceWrapper className={style.titleWrapper}>
         {merchLogo[lang](style.title)}
         {isDesktopLayout && (
-          <SeeAllButton className={style.viewAllButton}>
+          <SeeAllButton href="/" className={style.viewAllButton}>
             <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>
           </SeeAllButton>
         )}
@@ -146,7 +146,7 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
 
       {!isDesktopLayout && (
         <div className={style.buttonWrapper}>
-          <SeeAllButton className={style.viewAllButton}>
+          <SeeAllButton href="/" className={style.viewAllButton}>
             <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>
           </SeeAllButton>
         </div>

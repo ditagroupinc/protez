@@ -8,7 +8,7 @@ import style from './style.module.scss'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { Body } from '@/components/Typography'
 import { ProtezIDs } from '@/consts'
-import ProtezButton from '@/components/ProtezButton'
+import Button from '@/components/Button'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
@@ -70,12 +70,12 @@ const ProtezAcademy = () => {
         </Body>
         {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
-            <ProtezButton as="link" href="/" variant="primary-blue" size="normal">
+            <Button as="link" href="/" variant="primary-blue" size="normal">
               {protezAcademyText.learnMore[lang]}
-            </ProtezButton>
-            <ProtezButton as="link" href="/" variant="secondary-white" size="normal" arrow>
+            </Button>
+            <Button as="link" href="/" variant="secondary-white" size="normal" arrow>
               {protezAcademyText.applyToAcademy[lang]}
-            </ProtezButton>
+            </Button>
           </TextAppearanceWrapper>
         )}
 
@@ -87,12 +87,12 @@ const ProtezAcademy = () => {
       </div>
       {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
-          <ProtezButton as="link" href="/" variant="primary-blue" size="normal">
+          <Button as="link" href="/" variant="primary-blue" size="normal">
             {protezAcademyText.learnMore[lang]}
-          </ProtezButton>
-          <ProtezButton as="link" href="/" variant="secondary-white" arrow size="normal">
+          </Button>
+          <Button as="link" href="/" variant="secondary-white" arrow size="normal">
             {protezAcademyText.applyToAcademy[lang]}
-          </ProtezButton>
+          </Button>
         </TextAppearanceWrapper>
       )}
     </Section>

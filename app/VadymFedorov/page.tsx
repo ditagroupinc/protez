@@ -200,7 +200,7 @@ export default function VadymFedorov() {
           </Section>
         </SmokeWrapper>
       </main>
-      <Footer />
+      <Footer layout="protezPage" />
     </>
   )
 }

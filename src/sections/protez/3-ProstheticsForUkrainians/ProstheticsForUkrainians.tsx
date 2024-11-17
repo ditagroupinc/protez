@@ -8,7 +8,7 @@ import style from './style.module.scss'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { Body, H3 } from '@/components/Typography'
 import { ProtezIDs } from '@/consts'
-import { MakeDonationButton, SupportWithAmazonButton } from '@/components/ProtezButton'
+import { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const prostheticsForUkrainiansText = {

@@ -9,7 +9,7 @@ import { icons } from './icons'
 import Section from '@/components/Section'
 import { ProtezIDs } from '@/consts'
 import { Body, H3 } from '@/components/Typography'
-import ProtezButton from '@/components/ProtezButton'
+import Button from '@/components/Button'
 import { BilingualText } from '@/types'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
@@ -187,16 +187,16 @@ const Veterans = () => {
                               {icons.iconInstagram(style.icon)}
                             </a>
                           </div>
-                          <ProtezButton
+                          <Button
                             as="link"
                             target="_blank"
                             href={slide.url}
                             variant="secondary-white"
                             size="normal"
-                            className={style.protezButton}
+                            className={style.Button}
                           >
                             {veteransSection.giveHope[lang]}
-                          </ProtezButton>
+                          </Button>
                         </div>
                       </div>
                     ))}
@@ -299,16 +299,16 @@ const Veterans = () => {
                             {icons.iconInstagram(style.icon)}
                           </a>
                         </div>
-                        <ProtezButton
+                        <Button
                           as="link"
                           target="_blank"
                           href={slide.url}
                           variant="secondary-white"
                           size="normal"
-                          className={style.protezButton}
+                          className={style.Button}
                         >
                           {veteransSection.giveHope[lang]}
-                        </ProtezButton>
+                        </Button>
                       </div>
                     </div>
                   </div>

@@ -1,5 +1,5 @@
 'use client'
-import ProtezButton from '@/components/ProtezButton'
+import Button from '@/components/Button'
 import Section from '@/components/Section'
 import { useLanguage } from '@/contexts/LanguageContext'
 import style from './style.module.scss'
@@ -35,7 +35,7 @@ export default function Partners() {
             {texts.description[lang]} <span className={style.redText}>{texts.colorText[lang]}</span>
           </H2>
 
-          <ProtezButton
+          <Button
             className={style.backToWebsiteButton}
             as="link"
             href="/"
@@ -43,7 +43,7 @@ export default function Partners() {
             size="normal"
           >
             {texts.backToWebsite[lang]}
-          </ProtezButton>
+          </Button>
         </div>
       </Section>
     </>

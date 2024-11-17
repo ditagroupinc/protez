@@ -7,7 +7,7 @@ import { icons } from './icons'
 import Divider from '@/components/Divider'
 
 import { ProtezIDs } from '@/consts'
-import ProtezButton from '@/components/ProtezButton'
+import Button from '@/components/Button'
 import { Body } from '@/components/Typography'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { forwardRef } from 'react'
@@ -21,6 +21,15 @@ const footerSection = {
     english: 'Protez Academy',
     ukrainian: 'Protez Academy',
   },
+  subscribe: {
+    english: 'Subscribe',
+    ukrainian: 'Subscribe',
+  },
+  supportAcademy: {
+    english: 'Support Academy',
+    ukrainian: 'Support Academy',
+  },
+
   nonprofitOrganization: {
     english: 'Nonprofit organization 501(c)(3) EIN: 88-2437069',
     ukrainian: 'Nonprofit organization 501(c)(3) EIN: 88-2437069',
@@ -35,20 +44,22 @@ const footerSection = {
     ukrainian:
       'Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America',
   },
+
   email: 'info@protezfoundation.com',
   madeBy: '2024 © Made by DITA GROUP Inc.',
 }
-const Footer = forwardRef<HTMLDivElement, { color?: 'red' | 'blue' }>(function (
-  { color = 'red' },
+const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage' }>(function (
+  { layout },
   ref
 ) {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
+  const accentColor = layout === 'protezPage' ? 'red' : 'blue'
 
   return (
     <footer ref={ref} id={ProtezIDs.Footer} className={style.footer}>
-      <div className={`${style.footerTop} ${style[color]}`}>
+      <div className={`${style.footerTop} ${style[accentColor]}`}>
         <div className={style.footerTopContent}>
           <div className={style.left}>
             {isDesktopLayout
@@ -56,12 +67,25 @@ const Footer = forwardRef<HTMLDivElement, { color?: 'red' | 'blue' }>(function (
               : icons.footerLogo.mobile[lang](style.footerLogo)}
 
             <div className={style.buttonGroup}>
-              <ProtezButton as="link" href="/" variant="primary-black" size="normal">
-                {footerSection.giveHope[lang]}
-              </ProtezButton>
-              <ProtezButton as="link" href="/" variant="secondary-white" size="normal">
-                {footerSection.protezAcademy[lang]}
-              </ProtezButton>
+              {layout === 'protezPage' ? (
+                <>
+                  <Button as="link" href="/" variant="primary-black" size="normal">
+                    {footerSection.giveHope[lang]}
+                  </Button>
+                  <Button as="link" href="/" variant="secondary-white" size="normal">
+                    {footerSection.protezAcademy[lang]}
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button as="link" href="/" variant="primary-white" size="normal">
+                    {footerSection.subscribe[lang]}
+                  </Button>
+                  <Button as="link" href="/" variant="primary-black" size="normal">
+                    {footerSection.supportAcademy[lang]}
+                  </Button>
+                </>
+              )}
             </div>
           </div>
           <div className={style.right}>

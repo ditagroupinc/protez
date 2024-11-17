@@ -2,13 +2,9 @@ import { forwardRef } from 'react'
 
 // import { useLanguage } from '@/contexts/LanguageContext'
 
-import Link from 'next/link'
-
 import Section from '@/components/Section'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-
-// import texts from '@/texts&svg'
 
 import { icons } from './icons'
 import style from './style.module.scss'
@@ -16,6 +12,7 @@ import style from './style.module.scss'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { AcademyIDs } from '@/consts'
+import { SeeAllButton } from '@/components/Button'
 
 const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
   // const { lang } = useLanguage()
@@ -40,10 +37,9 @@ const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
     <Section ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoals}>
       <div className={style.academyGoalsContent}>
         <div className={style.linkCell}>
-          <Link href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6" target="blank" className={style.link}>
-            <p>Apply to Academy</p>
-            {icons.arrowUp(style.icon)}
-          </Link>
+          <SeeAllButton href="/" className={style.applyBtn} color="blue">
+            <span>Apply to Academy</span>
+          </SeeAllButton>
         </div>
         <div className={style.titleCell}>
           {width < 900 ? icons.goalLogo.mobile(style.title) : icons.goalLogo.desktop(style.title)}

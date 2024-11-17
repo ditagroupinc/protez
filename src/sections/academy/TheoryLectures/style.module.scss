@@ -41,6 +41,9 @@
 .applyBtn {
   width: 100%;
   max-width: 240px;
+  & span {
+    max-width: 85px;
+  }
 }
 
 .sectionTitle {

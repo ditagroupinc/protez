@@ -1,5 +1,3 @@
-import Button from '@/components/Button'
-
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import style from './style.module.scss'
@@ -9,6 +7,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { AcademyIDs } from '@/consts'
+import { SeeAllButton } from '@/components/Button'
 
 const TheoryLectures = () => {
   const { lang } = useLanguage()
@@ -40,12 +39,9 @@ const TheoryLectures = () => {
         <p className={style.desc}>Different levels of upper and lower limb amputations</p>
       </TextAppearanceWrapper>
       <div className={style.gridButton}>
-        <Button as={'link'} variant="normal-blue" href={'/'} className={style.applyBtn}>
-          Apply to
-          <br />
-          Academy
-          {icons.arrowUp()}
-        </Button>
+        <SeeAllButton href="/" className={style.applyBtn} color="blue">
+          <span>Apply to Academy</span>
+        </SeeAllButton>
       </div>
       <TextAppearanceWrapper className={`${style.grid3x3} ${style.card}`}>
         <span className={style.number}>/05</span>

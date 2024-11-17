@@ -105,7 +105,7 @@ export default function AllOurPartners() {
           </div>
         </Section>
       </main>
-      <Footer />
+      <Footer layout="protezPage" />
     </>
   )
 }

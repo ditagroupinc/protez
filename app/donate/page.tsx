@@ -96,7 +96,7 @@ export default function Donate() {
           </div>
         </Section>
       </main>
-      <Footer />
+      <Footer layout="protezPage" />
     </>
   )
 }

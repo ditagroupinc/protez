@@ -14,7 +14,7 @@ import { icons } from './icons'
 import Slider from 'react-slick'
 
 import { ProtezIDs } from '@/consts'
-import { SeeAllButton } from '@/components/ProtezButton'
+import { SeeAllButton } from '@/components/Button'
 
 import { Body, H3 } from '@/components/Typography'
 import { BilingualText } from '@/types'
@@ -397,7 +397,7 @@ const MeetOurTeam = () => {
               ))}
             </Slider>
           </TextAppearanceWrapper>
-          <SeeAllButton className={style.discoverAllButton}>
+          <SeeAllButton href="/" className={style.discoverAllButton}>
             <span className={style.buttonText}>{meetOurTeamSection.discover[lang]}</span>
           </SeeAllButton>
         </>
@@ -430,7 +430,7 @@ const MeetOurTeam = () => {
               />
             ))}
 
-            <SeeAllButton className={style.discoverAllButton}>
+            <SeeAllButton href="/" className={style.discoverAllButton}>
               <span className={style.buttonText}> {meetOurTeamSection.discover[lang]}</span>
             </SeeAllButton>
           </div>

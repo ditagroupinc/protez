@@ -1,59 +1,57 @@
 .button {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
+
   align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
+  justify-content: center;
+
   gap: 8px;
   border-radius: 4px;
-
   padding: 17px 32px 19px 32px;
 
-  font-family: 'Nunito Sans';
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 24px; /* 150% */
 
-  -webkit-transition:
-    background var(--transitionProps),
-    border var(--transitionProps),
-    color var(--transitionProps);
-  -o-transition:
-    background var(--transitionProps),
-    border var(--transitionProps),
-    color var(--transitionProps);
   transition:
     background var(--transitionProps),
-    border var(--transitionProps),
     color var(--transitionProps);
-  font-family: inherit;
-  font-weight: 700;
 
-  &.primaryBlue {
-    color: var(--white);
-    background-color: var(--blue);
-    background-image: linear-gradient(
-      0deg,
-      var(--dark-blue) 0%,
-      var(--dark-blue) 25%,
-      #006bcd 75%,
-      var(--blue) 100%
-    );
-    background-size: 100% 400%;
-    background-position: 100% 0%;
+  &:disabled,
+  &[disabled] {
+    opacity: 50%;
+    pointer-events: none;
+  }
 
-    &:hover {
-      background-position: 100% 100%;
+  .icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hasArrow {
+    padding-right: 24px;
+  }
+
+  &.squared {
+    border-radius: 0;
+  }
+
+  &.small {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    padding: 12px 24px 14px 24px;
+    &.hasArrow {
+      padding-right: 16px;
     }
   }
 
   &.primaryRed {
     color: var(--white);
-    border: 2px solid transparent;
+    & .icon path:not(:global(.noChangeColor)) {
+      fill: var(--white);
+    }
 
     background: linear-gradient(180deg, #d01f1f 0%, #b50707 100%);
     background-size: 100% 400%;
@@ -66,122 +64,321 @@
 
     &:focus {
       border: 2px solid var(--white);
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+    &.small {
+      &:focus {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 14px;
+        }
+      }
     }
   }
 
   &.primaryWhite {
-    color: var(--dark-blue);
-    background-color: var(--white);
-    border: 1px solid var(--white);
-
-    &:hover {
-      background-color: transparent;
-      color: var(--white);
-    }
-  }
-
-  &.protezPrimaryWhite {
     color: var(--black);
-    border: 1px solid transparent;
+    background-color: var(--white);
+    & .icon path:not(:global(.noChangeColor)) {
+      fill: var(--black);
+    }
     &:hover {
       background-color: transparent;
       color: var(--white);
+      & .icon path:not(:global(.noChangeColor)) {
+        fill: var(--white);
+      }
       border: 1px solid var(--white);
+      padding: 16px 31px 18px 31px;
+      &.hasArrow {
+        padding-right: 23px;
+      }
     }
     &:focus {
       border: 2px solid var(--black);
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+
+    &.small {
+      &:hover {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 15px;
+        }
+      }
+      &:focus {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 14px;
+        }
+      }
+    }
+  }
+
+  &.primaryBlack {
+    color: var(--white);
+    background-color: var(--black);
+    & .icon path:not(:global(.noChangeColor)) {
+      fill: var(--white);
+    }
+    &:hover {
+      background-color: transparent;
+      color: var(--black);
+      & .icon path:not(:global(.noChangeColor)) {
+        fill: var(--black);
+      }
+      border: 1px solid var(--black);
+      padding: 16px 31px 18px 31px;
+      &.hasArrow {
+        padding-right: 23px;
+      }
+    }
+    &:focus {
+      border: 2px solid var(--red);
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+
+    &.small {
+      &:hover {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 15px;
+        }
+      }
+
+      &:focus {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 14px;
+        }
+      }
+    }
+
+    &.discoverAllButton {
+      height: fit-content;
+      justify-content: space-between;
+      padding: 24px 16px 24px 24px;
+      align-items: flex-end;
+      &:hover {
+        padding: 23px 15px 23px 23px;
+      }
+      &:focus {
+        border: 2px solid var(--red);
+        padding: 22px 14px 22px 22px;
+      }
     }
   }
 
   &.secondaryWhite {
     color: var(--white);
+    & .icon path:not(:global(.noChangeColor)) {
+      fill: var(--white);
+    }
+
     border: 1px solid var(--white);
+    padding: 16px 31px 18px 31px;
     background-color: transparent;
 
+    &.hasArrow {
+      padding-right: 23px;
+    }
+
     &:hover {
-      color: var(--dark-blue);
-      background-color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.5);
+      background-color: var(--black);
+    }
+    &:focus {
+      background-color: var(--black);
+      border: 2px solid var(--white);
+    }
+    &:hover,
+    &:focus {
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+
+    &.small {
+      padding: 10px 22px 12px 22px;
+      &.hasArrow {
+        padding-right: 15px;
+      }
+      &:hover,
+      &:focus {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 14px;
+        }
+      }
     }
   }
 
   &.secondaryBlack {
-    color: var(--dark-blue);
-    background-color: var(--var);
-    border: 1px solid var(--dark-blue);
+    color: var(--black);
+    & .icon path:not(:global(.noChangeColor)) {
+      fill: var(--black);
+    }
+    border: 1px solid var(--black);
+    padding: 16px 31px 18px 31px;
+    background-color: transparent;
+
+    &.hasArrow {
+      padding-right: 23px;
+    }
 
     &:hover {
       color: var(--white);
-      background-color: var(--dark-blue);
+      border: 2px solid var(--black);
+      background-color: var(--black);
+      & .icon path:not(:global(.noChangeColor)) {
+        fill: var(--white);
+      }
+    }
+    &:focus {
+      border: 2px solid var(--black);
+    }
+    &:hover,
+    &:focus {
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+
+    &.small {
+      padding: 10px 22px 12px 22px;
+      &.hasArrow {
+        padding-right: 15px;
+      }
+
+      &:hover,
+      &:focus {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 14px;
+        }
+      }
     }
   }
 
-  &.secondaryFillBlack {
+  &.primaryBlue {
     color: var(--white);
-    border: 1px solid var(--dark-blue);
-    background-color: var(--dark-blue);
+    & .icon path:not(:global(.noChangeColor)) {
+      fill: var(--white);
+    }
+
+    background: linear-gradient(
+      0deg,
+      var(--dark-blue) 0%,
+      var(--dark-blue) 25%,
+      #006bcd 75%,
+      var(--blue) 100%
+    );
+    background-size: 100% 400%;
+    background-position: 100% 0%;
+
+    &:hover,
+    &:active {
+      background-position: 100% 100%;
+    }
+
+    &:focus {
+      border: 2px solid var(--white);
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+    &.small &:focus {
+      padding: 10px 22px 12px 22px;
+      &.hasArrow {
+        padding-right: 14px;
+      }
+    }
   }
 
-  &.normalBlue {
-    align-items: flex-end;
-    justify-content: space-between;
+  &.secondaryBlue {
+    color: var(--white);
     background-color: var(--blue);
-    border-radius: 0;
-    color: var(--white);
-    font-weight: 700;
-  }
-
-  &.normalBlack {
-    border-radius: 4px;
-    border: 1px solid var(--dark-blue);
-
+    & .icon path:not(:global(.noChangeColor)) {
+      fill: var(--white);
+    }
     &:hover {
-      color: var(--white);
-      background-color: var(--dark-blue);
+      background-color: transparent;
+      color: var(--blue);
+      & .icon path:not(:global(.noChangeColor)) {
+        fill: var(--blue);
+      }
+      border: 1px solid var(--blue);
+      padding: 16px 31px 18px 31px;
+      &.hasArrow {
+        padding-right: 23px;
+      }
     }
-  }
-
-  &.big {
-    padding: 17px 31px;
-    font-size: 16px;
-    line-height: 1.5;
-  }
-
-  &.normal {
-    width: 100%;
-    font-size: 14px;
-    line-height: 18px;
-    padding: 14px;
-
-    @media (min-width: 576px) {
-      font-size: 16px;
-      line-height: 20px;
-      padding: 16px 24px;
+    &:focus {
+      border: 2px solid var(--red);
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
     }
 
-    @media (min-width: 768px) {
-      padding: 24px;
-      font-size: 20px;
-      line-height: 28px;
+    &.small {
+      &:hover {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 15px;
+        }
+      }
+
+      &:focus {
+        padding: 10px 22px 12px 22px;
+        &.hasArrow {
+          padding-right: 14px;
+        }
+      }
+    }
+
+    &.discoverAllButton {
+      height: fit-content;
+      justify-content: space-between;
+      padding: 24px 16px 24px 24px;
+      align-items: flex-end;
+      &:hover {
+        padding: 23px 15px 23px 23px;
+      }
+      &:focus {
+        border: 2px solid var(--red);
+        padding: 22px 14px 22px 22px;
+      }
     }
   }
+}
 
-  &.small {
-    padding: 12px 24px;
-    font-size: 14px;
-    line-height: 20px;
-  }
+@media screen and (max-width: 600px) {
+  .button {
+    &.primaryBlack,
+    &.secondaryBlue {
+      &.discoverAllButton {
+        padding: 16px 16px 16px 24px;
 
-  &.primaryBlue.big {
-    height: 60px;
-  }
-
-  &.primaryBlue.small {
-    height: 46px;
-  }
-
-  &:disabled,
-  &[disabled] {
-    opacity: 50%;
-    pointer-events: none;
+        &:hover {
+          padding: 15px 15px 15px 23px;
+        }
+        &:focus {
+          padding: 14px 14px 14px 22px;
+        }
+      }
+    }
   }
 }

@@ -1,4 +1,4 @@
-const ourTeachersTitleDesktop = className => (
+const ourTeachersTitleDesktop = (className: string) => (
   <svg
     width="482"
     height="149"

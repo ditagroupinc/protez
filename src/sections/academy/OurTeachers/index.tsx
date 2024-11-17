@@ -9,7 +9,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import style from './style.module.scss'
 import TeacherCard from './TeacherCard'
-import { icons } from './icons.js'
+import { icons } from './icons'
 
 import Slider from 'react-slick'
 

@@ -17,19 +17,12 @@
   align-items: flex-end;
   grid-area: link;
 }
-.link {
+.applyBtn {
+  width: 100%;
   max-width: 240px;
-  padding: 24px 16px 24px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  background-color: var(--blue);
-
-  color: var(--white);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 28px;
+  & span {
+    max-width: 85px;
+  }
 }
 
 .titleCell {
@@ -124,7 +117,7 @@
     justify-content: center;
     align-items: flex-start;
   }
-  .link {
+  .applyBtn {
     max-width: 100%;
     width: 100%;
   }
@@ -155,13 +148,8 @@
   .linkCell {
     grid-area: link;
   }
-  .link {
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20px;
-
-    & p {
+  .applyBtn {
+    & span {
       max-width: 120px;
     }
   }

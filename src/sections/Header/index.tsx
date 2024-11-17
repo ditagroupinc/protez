@@ -6,10 +6,7 @@ import { Languages } from '@/types'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 
-import ProtezButton, {
-  MakeDonationButton,
-  SupportWithAmazonButton,
-} from '@/components/ProtezButton'
+import Button, { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
 
 import useOutsideClick from '@/hooks/useOutsideClick'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
@@ -23,7 +20,7 @@ import Link from 'next/link'
 import { icons } from './icons'
 import { H3 } from '@/components/Typography'
 import { ProtezIDs, AcademyIDs } from '@/consts'
-import { ApplyToAcademyButton } from '../../components/ProtezButton/index'
+import { ApplyToAcademyButton } from '../../components/Button/index'
 import BackToTopButton from './BackToTopButton'
 
 const text = {
@@ -298,7 +295,7 @@ const socialMediaLinks = [
 const Header = ({
   ancorLinks = true,
   arrowUp = true,
-  layout = 'academyPage',
+  layout,
 }: {
   ancorLinks?: boolean
   arrowUp?: boolean
@@ -366,17 +363,17 @@ const Header = ({
                 <>
                   <MakeDonationButton lang={lang} size="small" />
 
-                  <ProtezButton as="link" href="/academy" variant="secondary-white" size="small">
+                  <Button as="link" href="/academy" variant="secondary-white" size="small">
                     {text[layout].actionButtons.needAProthesis[lang]}
-                  </ProtezButton>
+                  </Button>
                 </>
               ) : (
                 <>
                   <ApplyToAcademyButton lang={lang} size="small" />
 
-                  <ProtezButton as="link" href="/" variant="secondary-white" size="small">
+                  <Button as="link" href="/" variant="secondary-white" size="small">
                     {text[layout].actionButtons.protezFoundation[lang]}
-                  </ProtezButton>
+                  </Button>
                 </>
               )}
             </div>
@@ -433,7 +430,7 @@ const Header = ({
                     size="normal"
                   />
 
-                  <ProtezButton
+                  <Button
                     as="link"
                     href="/"
                     variant="secondary-black"
@@ -442,15 +439,15 @@ const Header = ({
                     className={style.lowerPartButton}
                   >
                     {text[layout].actionButtons.needAProthesis[lang]}
-                  </ProtezButton>
+                  </Button>
                 </>
               ) : (
                 <>
                   <ApplyToAcademyButton lang={lang} size="small" />
 
-                  <ProtezButton as="link" href="/" variant="secondary-black" size="small" arrow>
+                  <Button as="link" href="/" variant="secondary-black" size="small" arrow>
                     {text[layout].actionButtons.supportAcademy[lang]}
-                  </ProtezButton>
+                  </Button>
                 </>
               )}
             </div>

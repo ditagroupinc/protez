@@ -21,7 +21,7 @@ export default function ArtemSvergun() {
           />
         </Section>
       </main>
-      <Footer />
+      <Footer layout="protezPage" />
     </>
   )
 }

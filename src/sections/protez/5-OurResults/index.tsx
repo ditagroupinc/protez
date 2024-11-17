@@ -9,7 +9,7 @@ import style from './style.module.scss'
 
 import { ProtezIDs } from '@/consts'
 import { Body, H2 } from '@/components/Typography'
-import ProtezButton, { MakeDonationButton } from '@/components/ProtezButton'
+import Button, { MakeDonationButton } from '@/components/Button'
 import { ForwardedRef, forwardRef } from 'react'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
@@ -78,9 +78,9 @@ const OurResults = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
           {isDesktopLayout && (
             <TextAppearanceWrapper className={style.buttonsContainer}>
               <MakeDonationButton lang={lang} size="normal" />
-              <ProtezButton as="link" href="/" variant="secondary-white" size="normal" arrow>
+              <Button as="link" href="/" variant="secondary-white" size="normal" arrow>
                 {ourResultsText.moreResults[lang]}
-              </ProtezButton>
+              </Button>
             </TextAppearanceWrapper>
           )}
         </div>
@@ -99,9 +99,9 @@ const OurResults = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
         {!isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
             <MakeDonationButton lang={lang} size="normal" />
-            <ProtezButton as="link" href="/" variant="secondary-white" size="normal" arrow>
+            <Button as="link" href="/" variant="secondary-white" size="normal" arrow>
               {ourResultsText.moreResults[lang]}
-            </ProtezButton>
+            </Button>
           </TextAppearanceWrapper>
         )}
       </Section>

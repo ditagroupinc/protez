@@ -169,7 +169,7 @@ export default function ClientSections({
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
-          <Footer />
+          <Footer layout="protezPage" />
         </Suspense>
       </main>
     </>

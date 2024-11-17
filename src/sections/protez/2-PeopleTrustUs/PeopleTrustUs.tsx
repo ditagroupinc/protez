@@ -8,7 +8,7 @@ import style from './style.module.scss'
 
 import { ProtezIDs } from '@/consts'
 import { Body } from '@/components/Typography'
-import ProtezButton from '@/components/ProtezButton'
+import Button from '@/components/Button'
 import Slider from 'react-slick'
 import { useRef, useState } from 'react'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
@@ -240,7 +240,7 @@ const PeopleTrustUs = () => {
               </div>
             )}
 
-            <ProtezButton
+            <Button
               as="link"
               href="/"
               variant="secondary-white"
@@ -249,7 +249,7 @@ const PeopleTrustUs = () => {
               className={style.latestNewsButton}
             >
               {peopleTrustUsText.latestNews[lang]}
-            </ProtezButton>
+            </Button>
           </TextAppearanceWrapper>
         </div>
       </div>

@@ -1,13 +1,12 @@
 import { icons } from './icons'
 import style from './style.module.scss'
 
-import Button from '@/components/Button'
-
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import { AcademyIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
+import Button from '@/components/Button'
 
 const AmputeeRehab = () => {
   const { lang } = useLanguage()
@@ -36,7 +35,7 @@ const AmputeeRehab = () => {
               <Button
                 as={'link'}
                 variant="primary-blue"
-                size="big"
+                size="normal"
                 href={'/'}
                 className={style.button}
               >
@@ -45,7 +44,7 @@ const AmputeeRehab = () => {
               <Button
                 as={'link'}
                 variant="secondary-white"
-                size="big"
+                size="normal"
                 href={'/'}
                 className={style.button}
               >
