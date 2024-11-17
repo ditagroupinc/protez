@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { useRef, useState } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -14,6 +12,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import Slider from 'react-slick'
 
 import { AcademyIDs } from '../../../../app/academy/consts'
+import ProtezImage from '@/components/ProtezImage'
 
 // TODO: remove after review
 
@@ -112,9 +111,8 @@ const PracticeSessions = () => {
               <div key={index}>
                 <div className={`${style.cardWrapper} ${slideClass}`}>
                   <div className={`${style.card} `}>
-                    <Image
-                      // TODO: remove after review
-                      src={`/protez/${card.image}`}
+                    <ProtezImage
+                      src={card.image}
                       alt="picture of practice sessions in Protez Academy"
                       width={490}
                       height={500}

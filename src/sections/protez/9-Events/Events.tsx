@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { useRef, useState } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -15,6 +13,7 @@ import { forwardRef } from 'react'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { ProtezIDs } from '../../../../app/consts'
+import ProtezImage from '@/components/ProtezImage'
 
 type Event = {
   date: string
@@ -181,9 +180,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
 
   return (
     <Section ref={ref} id={ProtezIDs.Events} className={style.events}>
-      <Image
-        // TODO: remove after review
-        src="/protez/events-background-Ukraine.png"
+      <ProtezImage
+        src="events-background-Ukraine.png"
         alt="Ukrainian flag"
         width={1920}
         height={1080}
@@ -216,9 +214,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
               <div key={index}>
                 <div className={`${style.cardWrapper} ${slideClass}`}>
                   <a href={card.link} target="blank" className={style.card}>
-                    <Image
-                      // TODO: remove after review
-                      src={`/protez/${card.photo}`}
+                    <ProtezImage
+                      src={card.photo}
                       alt="events picture"
                       width={340}
                       height={480}

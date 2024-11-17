@@ -14,7 +14,6 @@ import style from './style.module.scss'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { Languages } from '@/types'
 
-import Image from 'next/image'
 import VideoBlock from './VideoBlock'
 import SmokeWrapper from './SmokeWrapper'
 
@@ -25,6 +24,7 @@ import ProtezHeader from '../protez/ProtezHeader'
 import FullScreenFallback from '@/components/FullScreenFallback'
 
 import LetsGiveHope from '../protez/1-LetsGiveHope/LetsGiveHope'
+import ProtezImage from '@/components/ProtezImage'
 const ProstheticsForUkrainians = lazy(
   () => import('@/sections/protez/3-ProstheticsForUkrainians/ProstheticsForUkrainians')
 )
@@ -87,9 +87,8 @@ export default function ClientSections({
           <div className={style.flagsBlock}>
             <LetsGiveHope />
 
-            <Image
-              // TODO: remove after review
-              src={`/protez/flag-usa.png`}
+            <ProtezImage
+              src={`flag-usa.png`}
               object-fit="contain"
               alt="Picture of the author"
               priority

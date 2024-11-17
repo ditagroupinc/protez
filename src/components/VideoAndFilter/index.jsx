@@ -1,10 +1,17 @@
+import ProtezVideo from '@/components/ProtezVideo'
 import style from './style.module.scss'
 export default function VideoAndFilter({ src, className = '' }) {
   return (
     <>
-      <video autoPlay loop muted playsInline className={`${style.video} ${className}`}>
-        <source src={src} type="video/mp4" />
-      </video>
+      <ProtezVideo
+        autoPlay
+        loop
+        muted
+        playsInline
+        className={`${style.video} ${className}`}
+        src={src}
+      />
+
       <div className={style.filter} />
     </>
   )

@@ -10,9 +10,9 @@ import { ProtezIDs } from '../../../../app/consts'
 import { Body } from '@/components/Typography'
 import ProtezButton from '@/components/ProtezButton'
 import Slider from 'react-slick'
-import Image from 'next/image'
 import { useRef, useState } from 'react'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import ProtezImage from '@/components/ProtezImage'
 
 const peopleTrustUsText = {
   latestNews: {
@@ -158,10 +158,10 @@ const PeopleTrustUs = () => {
             <Slider {...settings} ref={imageSliderRef} className={style.imageSlider}>
               {peopleTrustUsText.cards.map((card, index) => (
                 <div className={style.imageWrapper} key={index}>
-                  <Image
+                  <ProtezImage
                     width={984}
                     height={540}
-                    src={`/protez/protezPage/peopleTrustUs/${card.image}`}
+                    src={`protezPage/peopleTrustUs/${card.image}`}
                     alt={card.description[lang]}
                     className={style.image}
                   />
@@ -211,10 +211,10 @@ const PeopleTrustUs = () => {
                     </Body>
                     <div className={`${style.cardWrapper} ${slideClass}`}>
                       <div className={`${style.card} `}>
-                        <Image
+                        <ProtezImage
                           width={984}
                           height={540}
-                          src={`/protez/protezPage/peopleTrustUs/${card.image}`}
+                          src={`protezPage/peopleTrustUs/${card.image}`}
                           alt={card.description[lang]}
                           className={style.image}
                         />

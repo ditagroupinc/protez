@@ -8,11 +8,11 @@ import { icons } from './icons'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import Image from 'next/image'
 import { SeeAllButton } from '@/components/ProtezButton'
 import Section from '@/components/Section'
 import { ProtezIDs } from '../../../../app/consts'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import ProtezImage from '@/components/ProtezImage'
 
 const merchSection = {
   viewAllMerch: {
@@ -131,9 +131,8 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
           <div key={index}>
             <div className={style.cardWrapper}>
               <a href={element.link} className={style.card} target="blank">
-                <Image
-                  // TODO: remove after review
-                  src={`/protez/protezPage/merch/${element.image}`}
+                <ProtezImage
+                  src={`protezPage/merch/${element.image}`}
                   alt={element.title}
                   width={372}
                   height={372}

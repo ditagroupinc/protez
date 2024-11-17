@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { useRef, useState } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -15,6 +13,7 @@ import { forwardRef } from 'react'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { AcademyIDs } from '../../../../app/academy/consts'
+import ProtezImage from '@/components/ProtezImage'
 
 type Event = {
   date: string
@@ -80,6 +79,7 @@ const modifyAndSortEvents = (events: Event[]): Event[] => {
     event.upcoming = eventDate > now
   })
 
+  // TODO:
   // events.sort((a, b) => {
   //   const dateA = new Date(a.date).getTime()
   //   const dateB = new Date(b.date).getTime()
@@ -181,9 +181,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
 
   return (
     <Section ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={style.events}>
-      <Image
-        // TODO: remove after review
-        src="/protez/events-background-Ukraine.png"
+      <ProtezImage
+        src="events-background-Ukraine.png"
         alt="Ukrainian flag"
         width={1920}
         height={1080}
@@ -216,9 +215,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
               <div key={index}>
                 <div className={`${style.cardWrapper} ${slideClass}`}>
                   <a href={card.link} target="blank" className={style.card}>
-                    <Image
-                      // TODO: remove after review
-                      src={`/protez/${card.photo}`}
+                    <ProtezImage
+                      src={card.photo}
                       alt="events picture"
                       width={340}
                       height={480}

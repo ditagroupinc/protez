@@ -4,6 +4,7 @@ import style from './style.module.scss'
 import InNeed from '@/sections/protez/4-InNeed/InNeed'
 import OurResults from '@/sections/protez/5-OurResults'
 import SmokeWrapper from '../SmokeWrapper'
+import ProtezVideo from '@/components/ProtezVideo'
 
 const VideoBlock = () => {
   const sectionRef = useRef<HTMLDivElement | null>(null)
@@ -39,9 +40,14 @@ const VideoBlock = () => {
   return (
     <div className={style.videoBlock}>
       <div className={style.videoContainer} style={{ height: height }}>
-        <video autoPlay loop muted playsInline className={style.video}>
-          <source src={'/protez/our-results.mov'} type="video/mp4" />
-        </video>
+        <ProtezVideo
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={style.video}
+          src={'our-results.mov'}
+        />
         <div className={style.filter} />
         <div className={style.overlay} />
       </div>

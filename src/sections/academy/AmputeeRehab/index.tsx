@@ -3,21 +3,19 @@ import style from './style.module.scss'
 
 import Button from '@/components/Button'
 
-import Image from 'next/image'
-
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import { AcademyIDs } from '../../../../app/academy/consts'
+import ProtezImage from '@/components/ProtezImage'
 
 const AmputeeRehab = () => {
   const { lang } = useLanguage()
 
   return (
     <section id={AcademyIDs.AmputeeRehab} className={style.amputeeRehab}>
-      <Image
-        // TODO: remove after review
-        src="/protez/academyPage/amputeeRehab/summit.png"
+      <ProtezImage
+        src="academyPage/amputeeRehab/summit.png"
         alt="summit"
         width={1920}
         height={880}

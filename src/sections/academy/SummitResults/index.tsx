@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { useState, useRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -13,6 +12,8 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import style from './style.module.scss'
 import { icons } from './icons'
 import { AcademyIDs } from '../../../../app/academy/consts'
+import ProtezImage from '@/components/ProtezImage'
+import ProtezVideo from '@/components/ProtezVideo'
 
 const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
@@ -58,17 +59,16 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
       </div>
 
       <div className={style.playerContent}>
-        <video
+        <ProtezVideo
           ref={videoRef}
           controls
-          src="/protez/academyPage/summitResults/summitResults.mp4"
+          src="academyPage/summitResults/summitResults.mp4"
           className={style.summitVideo}
         />
         {!isPlaying && (
           <>
-            <Image
-              // TODO: remove after review
-              src="/protez/academyPage/summitResults/summitResults.png"
+            <ProtezImage
+              src="academyPage/summitResults/summitResults.png"
               alt="summit"
               width={1584}
               height={800}

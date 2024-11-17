@@ -3,7 +3,6 @@ import { useRef, useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 import style from './style.module.scss'
-import Image from 'next/image'
 import Slider from 'react-slick'
 
 import { icons } from './icons'
@@ -13,6 +12,7 @@ import { Body, H3 } from '@/components/Typography'
 import ProtezButton from '@/components/ProtezButton'
 import { BilingualText } from '@/types'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import ProtezImage from '@/components/ProtezImage'
 
 interface Veteran {
   ageRank: BilingualText
@@ -217,9 +217,8 @@ const Veterans = () => {
                 {veteransArray.map((slide, index) => (
                   <div key={index}>
                     <div className={style.imageSlideWrapper}>
-                      <Image
-                        // TODO: remove after review
-                        src={`/protez/protezPage/veterans/${slide.img}`}
+                      <ProtezImage
+                        src={`protezPage/veterans/${slide.img}`}
                         alt={slide.name[lang] + ' ' + slide.surname[lang]}
                         className={style.image}
                         width={1306}
@@ -251,9 +250,8 @@ const Veterans = () => {
                   <div className={style.card}>
                     <div className={style.right}>
                       <div className={style.imageSlideWrapper}>
-                        <Image
-                          // TODO: remove after review
-                          src={`/protez/protezPage/veterans/${slide.img}`}
+                        <ProtezImage
+                          src={`protezPage/veterans/${slide.img}`}
                           alt={slide.name[lang] + ' ' + slide.surname[lang]}
                           className={style.image}
                           width={1306}

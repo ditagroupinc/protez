@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 
-// import { useLanguage } from '@/contexts/LanguageContext'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
@@ -11,14 +11,29 @@ import Section from '@/components/Section'
 import VideoAndFilter from '@/components/VideoAndFilter'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import Image from 'next/image'
 
 import { icons } from './icons'
 import style from './style.module.scss'
 
 import { AcademyIDs } from '../../../../app/academy/consts'
+import ProtezImage from '@/components/ProtezImage'
 
-// introVideo.mp4
+const text = {
+  academyDesc: {
+    english:
+      'Protez Academy is an educational project by the Protez Foundation in collaboration with Century College and contributions from specialists from University of Minnesota and Concordia University',
+    ukrainian:
+      'Академія Протез - це освітній проект Фонду Протез у співпраці з Коледжем Сентурі та за участю фахівців з Університету Міннесоти та Університету Конкордія',
+  },
+  applyToAcademy: {
+    english: 'Apply to Academy',
+    ukrainian: 'Подати заявку до Академії',
+  },
+  supportAcademy: {
+    english: 'Support Academy',
+    ukrainian: 'Підтримати Академію',
+  },
+}
 
 const AcademyCard = ({
   image,
@@ -33,9 +48,9 @@ const AcademyCard = ({
 }) => {
   return (
     <TextAppearanceWrapper className={`${style.academyCard} ${className}`}>
-      <Image
+      <ProtezImage
         // TODO: remove after review
-        src={`/protez/${image}`}
+        src={image}
         object-fit="contain"
         alt={image as string}
         width={width}
@@ -47,7 +62,7 @@ const AcademyCard = ({
 }
 
 const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
-  // const { lang } = useLanguage()
+  const { lang } = useLanguage()
   const { mobile, width } = useScreenModeAndSize()
 
   const isMobile = width < 768 || mobile
@@ -59,11 +74,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
       <div className={style.academyContent}>
         <div className={style.leftPart}>
           <div className={style.sectionTitle}>{icons.academyIntroTitle()}</div>
-          <p className={style.academyDesc}>
-            Protez Academy is an educational project by the Protez Foundation in collaboration with
-            Century College and contributions from specialists from University of Minnesota and
-            Concordia University
-          </p>
+          <p className={style.academyDesc}>{text.academyDesc[lang]}</p>
           <div className={style.buttonGroup}>
             <Button
               as="link"
@@ -73,7 +84,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
               size={isMobile ? 'big' : 'small'}
               rel="noopener noreferrer"
             >
-              Apply to Academy
+              {text.applyToAcademy[lang]}
             </Button>
             <Button
               as="link"
@@ -81,7 +92,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
               variant="secondary-white"
               size={isMobile ? 'big' : 'small'}
             >
-              Support Academy
+              {text.supportAcademy[lang]}
               {icons.arrowUp(`${style.arrowUp}`)}
             </Button>
           </div>

@@ -53,14 +53,14 @@ export default function AllOurPartners() {
           <div className={style.container}>
             <TextAppearanceWrapper className={style.partnerCard}>
               <ProtezImage
-                src={`/partnersLogos/${partnersLogos[0]}.svg`}
+                src={`partnersLogos/${partnersLogos[0]}.svg`}
                 alt={partnersLogos[0]}
                 width={300}
                 height={230}
                 className={style.partnerLogo}
               />
               <ProtezImage
-                src={`/partnersLogos/${partnersLogos[0]}-color.svg`}
+                src={`partnersLogos/${partnersLogos[0]}-color.svg`}
                 alt={partnersLogos[0]}
                 width={300}
                 height={230}
@@ -70,14 +70,14 @@ export default function AllOurPartners() {
 
             <Link href="https://dita-group.com/" target="blank" className={style.partnerCard}>
               <ProtezImage
-                src={`/partnersLogos/dita.svg`}
+                src={`partnersLogos/${partnersLogos[1]}.svg`}
                 alt={'Dita Group'}
                 width={300}
                 height={230}
                 className={style.partnerLogo}
               />
               <ProtezImage
-                src={`/partnersLogos/dita-color.svg`}
+                src={`partnersLogos/${partnersLogos[1]}-color.svg`}
                 alt={'Dita Group'}
                 width={300}
                 height={230}
@@ -87,14 +87,14 @@ export default function AllOurPartners() {
             {partnersLogos.slice(2, 27).map((icon, index) => (
               <TextAppearanceWrapper key={index} className={style.partnerCard}>
                 <ProtezImage
-                  src={`/partnersLogos/${icon}.svg`}
+                  src={`partnersLogos/${icon}.svg`}
                   alt={icon}
                   width={300}
                   height={230}
                   className={style.partnerLogo}
                 />
                 <ProtezImage
-                  src={`/partnersLogos/${icon}-color.svg`}
+                  src={`partnersLogos/${icon}-color.svg`}
                   alt={icon}
                   width={300}
                   height={230}

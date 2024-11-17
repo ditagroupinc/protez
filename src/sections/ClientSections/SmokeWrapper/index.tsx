@@ -1,16 +1,15 @@
 import { ReactNode } from 'react'
 
 import style from './style.module.scss'
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 const SmokeWrapper = ({ children }: { children: ReactNode }) => {
   return (
     <div className={style.container}>
       <div className={style.smokeContainer} id="smoke">
         <div className={`${style.bg} ${style.smokeBg}`}>
-          <Image
-            // TODO: remove after review
-            src="/protez/smokeBackground/smoke-bg-2.png"
+          <ProtezImage
+            src="smokeBackground/smoke-bg-2.png"
             alt="smoke"
             width={1920}
             height={1080}
@@ -18,9 +17,8 @@ const SmokeWrapper = ({ children }: { children: ReactNode }) => {
           />
         </div>
         <div className={`${style.bg} ${style.smoke}`}>
-          <Image
-            // TODO: remove after review
-            src="/protez/smokeBackground/smoke-bg-2.png"
+          <ProtezImage
+            src="smokeBackground/smoke-bg-2.png"
             alt="smoke"
             width={1920}
             height={1080}

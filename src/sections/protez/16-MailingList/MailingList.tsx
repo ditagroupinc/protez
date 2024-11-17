@@ -1,7 +1,6 @@
 import style from './style.module.scss'
 import { useRef, useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
-import Image from 'next/image'
 import { icons } from './icons'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -14,6 +13,7 @@ import ProtezButton from '@/components/ProtezButton'
 import Section from '@/components/Section'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useInView } from 'framer-motion'
+import ProtezImage from '@/components/ProtezImage'
 
 const mailingListSection = {
   submitButton: {
@@ -112,9 +112,8 @@ const MailingList = () => {
         {veteransImages.map((slide, index) => {
           return (
             <div key={index} className={style.imageWrapper}>
-              <Image
-                // TODO: remove after review
-                src={`/protez/protezPage/mailingList/${slide}`}
+              <ProtezImage
+                src={`protezPage/mailingList/${slide}`}
                 alt="troops"
                 width={331}
                 height={316}
@@ -173,7 +172,7 @@ const MailingList = () => {
             {mailingListSection.submitButton[formStatus][lang]}
 
             {formStatus === 'loading' && (
-              <Image src={'/protez/spinner.gif'} alt="spinner" width={24} height={24} />
+              <ProtezImage src={'spinner.gif'} alt="spinner" width={24} height={24} />
             )}
           </ProtezButton>
         </form>

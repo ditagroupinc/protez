@@ -1,7 +1,6 @@
 import Section from '@/components/Section'
 import style from './style.module.scss'
 import { icons } from './icons'
-import Image from 'next/image'
 import { forwardRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -10,6 +9,7 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { AcademyIDs } from '../../../../app/academy/consts'
+import ProtezImage from '@/components/ProtezImage'
 
 const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
@@ -65,9 +65,8 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
           </ul>
         </div>
         <div className={style.right}>
-          <Image
-            // TODO: remove after review
-            src="/protez/academyPage/chief/yakov-gradinar.png"
+          <ProtezImage
+            src="academyPage/chief/yakov-gradinar.png"
             alt="yakov-gradinar"
             width={672}
             height={880}

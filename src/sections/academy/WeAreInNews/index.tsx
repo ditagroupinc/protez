@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { useRef, useState } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -16,6 +14,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { forwardRef } from 'react'
 
 import { AcademyIDs } from '../../../../app/academy/consts'
+import ProtezImage from '@/components/ProtezImage'
 
 // TODO: remove after review
 
@@ -155,9 +154,8 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
               <div key={index}>
                 <div className={`${style.cardWrapper} ${slideClass}`}>
                   <a href={card.link} target="blank" className={style.card}>
-                    <Image
-                      // TODO: remove after review
-                      src={`/protez/${card.photo}`}
+                    <ProtezImage
+                      src={card.photo}
                       alt="news picture"
                       width={488}
                       height={520}
@@ -168,9 +166,8 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
                         <span>{card.date}</span>|<span>{card.address}</span>
                       </div>
 
-                      <Image
-                        // TODO: remove after review
-                        src={`/protez/${card.logo}`}
+                      <ProtezImage
+                        src={card.logo}
                         alt="news picture"
                         width={488}
                         height={520}

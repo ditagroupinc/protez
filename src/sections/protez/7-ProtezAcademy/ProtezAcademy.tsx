@@ -9,8 +9,8 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { Body } from '@/components/Typography'
 import { ProtezIDs } from '../../../../app/consts'
 import ProtezButton from '@/components/ProtezButton'
-import Image from 'next/image'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import ProtezImage from '@/components/ProtezImage'
 
 const protezAcademyText = {
   description: {
@@ -34,9 +34,8 @@ const cards = ['ottobock.svg', 'minnesotaUniversity.svg', 'extremity.svg']
 const Card = ({ image }: { image: string }) => {
   return (
     <TextAppearanceWrapper className={style.card}>
-      <Image
-        // TODO: remove after review
-        src={`/protez/protezPage/protezAcademy/${image}`}
+      <ProtezImage
+        src={`protezPage/protezAcademy/${image}`}
         object-fit="contain"
         alt={image as string}
         width={150}
@@ -55,9 +54,8 @@ const ProtezAcademy = () => {
   return (
     <Section id={ProtezIDs.ProtezAcademy} className={style.section}>
       <div className={style.left}>
-        <Image
-          // TODO: remove after review
-          src={`/protez/protezPage/protezAcademy/protezAcademy.png`}
+        <ProtezImage
+          src={`protezPage/protezAcademy/protezAcademy.png`}
           object-fit="contain"
           alt="protezAcademy"
           width={760}

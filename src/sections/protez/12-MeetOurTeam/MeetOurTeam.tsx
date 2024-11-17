@@ -16,10 +16,9 @@ import Slider from 'react-slick'
 import { ProtezIDs } from '../../../../app/consts'
 import { SeeAllButton } from '@/components/ProtezButton'
 
-import Image from 'next/image'
-
 import { Body, H3 } from '@/components/Typography'
 import { BilingualText } from '@/types'
+import ProtezImage from '@/components/ProtezImage'
 
 interface Links {
   facebook?: { href: string; icon: 'facebook' }
@@ -325,9 +324,8 @@ const MemberCard = ({
       isDisabled={width < 600}
       className={`${style.memberCard} ${className && className}`}
     >
-      <Image
-        // TODO: remove after review
-        src={`/protez/protezPage/meetOurTeam/${photo}`}
+      <ProtezImage
+        src={`protezPage/meetOurTeam/${photo}`}
         object-fit="contain"
         alt={photo}
         width={360}

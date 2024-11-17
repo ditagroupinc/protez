@@ -6,10 +6,10 @@ import Section from '@/components/Section'
 
 import { ProtezIDs } from '../../../../app/consts'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import ProtezImage from '@/components/ProtezImage'
 
 const inNeedText = {
   viewStatisticsSource: {
@@ -30,9 +30,8 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
     <Section id={ProtezIDs.InNeed} className={style.section} ref={ref}>
       {isDesktopLayout && icons.ukrainanMap(style.map)}
       <div className={style.left}>
-        <Image
-          // TODO: remove after review
-          src={`/protez/protezPage/inNeed/prostheticsForUkrainians.png`}
+        <ProtezImage
+          src={`protezPage/inNeed/prostheticsForUkrainians.png`}
           alt="veterans with their fa"
           width={1794}
           height={1956}

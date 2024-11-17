@@ -1,10 +1,10 @@
-import Image from 'next/image'
 import style from './style.module.scss'
 
 import globalIcons from '@/texts&svg/icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import ProtezImage from '@/components/ProtezImage'
 
 interface Links {
   facebook?: { href: string; icon: string }
@@ -36,9 +36,8 @@ export default function TeacherCard({
       isDisabled={width < 600}
       className={`${style.teamCard} ${className && className}`}
     >
-      <Image
-        // TODO: remove after review
-        src={`/protez/academyPage/teachers/${photo}`}
+      <ProtezImage
+        src={`academyPage/teachers/${photo}`}
         object-fit="contain"
         alt={photo}
         width={345}

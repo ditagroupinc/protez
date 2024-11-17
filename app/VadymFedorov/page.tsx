@@ -139,7 +139,7 @@ export default function VadymFedorov() {
             <div className={style.card}>
               <div className={style.imageContainer}>
                 <ProtezImage
-                  src={`/vadymFedorovPage/vadymFedorov.png`}
+                  src={`vadymFedorovPage/vadymFedorov.png`}
                   alt={'vadymFedorov'}
                   className={style.image}
                   width={1306}

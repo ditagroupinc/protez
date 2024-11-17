@@ -1,5 +1,3 @@
-import Image from 'next/image'
-
 import { useRef, useState, useEffect } from 'react'
 
 import _ from 'lodash'
@@ -17,6 +15,8 @@ import Slider from 'react-slick'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { AcademyIDs } from '../../../../app/academy/consts'
+import ProtezImage from '@/components/ProtezImage'
+import ProtezVideo from '@/components/ProtezVideo'
 
 // TODO: remove after review
 const academyCards = [
@@ -167,9 +167,8 @@ const Academy = () => {
                   <div className={`${style.cardWrapper} ${slideClass}`}>
                     <div className={`${style.card} `}>
                       {card.includes('.mp4') ? (
-                        <video
-                          // TODO: remove after review
-                          src={`/protez/${card}`}
+                        <ProtezVideo
+                          src={card}
                           autoPlay
                           loop
                           muted
@@ -177,9 +176,8 @@ const Academy = () => {
                           className={style.image}
                         />
                       ) : (
-                        <Image
-                          // TODO: remove after review
-                          src={`/protez/${card}`}
+                        <ProtezImage
+                          src={card}
                           alt="picture of Protez Academy students and teachers"
                           width={720}
                           height={520}

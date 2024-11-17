@@ -3,7 +3,6 @@ import { useRef } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 import style from './style.module.scss'
-import Image from 'next/image'
 import Slider from 'react-slick'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -12,6 +11,7 @@ import { icons } from './icons'
 import Section from '@/components/Section'
 import { ProtezIDs } from '../../../../app/consts'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import ProtezImage from '@/components/ProtezImage'
 
 interface OurPatientsSection {
   patients: string[]
@@ -88,9 +88,8 @@ const OurPatients = () => {
             <div key={index}>
               <div className={style.cardWrapper}>
                 <div className={style.card}>
-                  <Image
-                    // TODO: remove after review
-                    src={`/protez/protezPage/ourPatients/${slide}`}
+                  <ProtezImage
+                    src={`protezPage/ourPatients/${slide}`}
                     alt={'image of patients'}
                     className={style.image}
                     width={772}

@@ -3,7 +3,6 @@ import { useRef } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 import style from './style.module.scss'
-import Image from 'next/image'
 import Slider from 'react-slick'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -14,6 +13,7 @@ import { ProtezIDs } from '../../../../app/consts'
 import { Body, H3 } from '@/components/Typography'
 import { BilingualText } from '@/types'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import ProtezImage from '@/components/ProtezImage'
 
 interface Release {
   date: string
@@ -75,7 +75,7 @@ const PressRelease = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    // autoplay: true,
+    autoplay: true,
     autoplaySpeed: 5000,
 
     // TODO: reuse for other sliders
@@ -121,9 +121,8 @@ const PressRelease = () => {
               {releasesArray.map((slide, index) => (
                 <div className={style.imageSlideWrapper} key={index}>
                   <div className={style.imageSlide}>
-                    <Image
-                      // TODO: remove after review
-                      src={`/protez/protezPage/pressRelease/${slide.img}`}
+                    <ProtezImage
+                      src={`protezPage/pressRelease/${slide.img}`}
                       alt={slide.date + ' ' + slide.title[lang]}
                       className={style.image}
                       width={984}
@@ -173,9 +172,8 @@ const PressRelease = () => {
                   <div className={style.card}>
                     <TextAppearanceWrapper className={style.left}>
                       <div className={style.imageSlide}>
-                        <Image
-                          // TODO: remove after review
-                          src={`/protez/protezPage/pressRelease/${slide.img}`}
+                        <ProtezImage
+                          src={`protezPage/pressRelease/${slide.img}`}
                           alt={slide.date + ' ' + slide.title[lang]}
                           className={style.image}
                           width={984}

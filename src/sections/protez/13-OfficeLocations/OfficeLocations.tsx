@@ -1,7 +1,6 @@
 import { useLanguage } from '@/contexts/LanguageContext'
 
 import style from './style.module.scss'
-import Image from 'next/image'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
@@ -12,6 +11,7 @@ import { Body, H3 } from '@/components/Typography'
 import Slider from 'react-slick'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useRef } from 'react'
+import ProtezImage from '@/components/ProtezImage'
 
 const officeLocationsSection = {
   locations: [
@@ -103,9 +103,8 @@ const OfficeLocations = () => {
         <div className={style.cardsContainer}>
           {officeLocationsSection.locations.map((location, index) => (
             <div className={style.card} key={index}>
-              <Image
-                // TODO: remove after review
-                src={`/protez/protezPage/officeLocations/${location.img}`}
+              <ProtezImage
+                src={`protezPage/officeLocations/${location.img}`}
                 alt={
                   location.country[lang] +
                   ', ' +
@@ -135,9 +134,8 @@ const OfficeLocations = () => {
             <div key={index}>
               <div className={style.cardWrapper}>
                 <div className={style.card}>
-                  <Image
-                    // TODO: remove after review
-                    src={`/protez/protezPage/officeLocations/${location.img}`}
+                  <ProtezImage
+                    src={`protezPage/officeLocations/${location.img}`}
                     alt={
                       location.country[lang] +
                       ', ' +

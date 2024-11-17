@@ -3,7 +3,6 @@ import { useRef } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 
 import style from './style.module.scss'
-import Image from 'next/image'
 import Slider from 'react-slick'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -15,6 +14,7 @@ import { Body, H3 } from '@/components/Typography'
 import Link from 'next/link'
 import { BilingualText } from '@/types'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import ProtezImage from '@/components/ProtezImage'
 
 interface Supporter {
   text: BilingualText
@@ -126,9 +126,8 @@ const OurStarSupporters = () => {
               <div key={index}>
                 <div className={style.cardWrapper}>
                   <div className={style.card}>
-                    <Image
-                      // TODO: remove after review
-                      src={`/protez/protezPage/ourStarSupporters/${slide.img}`}
+                    <ProtezImage
+                      src={`protezPage/ourStarSupporters/${slide.img}`}
                       alt={slide.name[lang] + ' ' + slide.description[lang]}
                       className={style.image}
                       width={260}

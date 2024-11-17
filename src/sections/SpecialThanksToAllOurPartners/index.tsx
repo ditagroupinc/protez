@@ -1,7 +1,5 @@
 import Section from '@/components/Section'
 
-import Image from 'next/image'
-
 import style from './style.module.scss'
 import { icons } from './icons'
 
@@ -14,6 +12,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import Link from 'next/link'
 import { SeeAllButton } from '@/components/ProtezButton'
+import ProtezImage from '@/components/ProtezImage'
 
 const specialThanksToAllOurPartnersSection = {
   discoverAllPartners: {
@@ -54,19 +53,15 @@ const SpecialThanksToAllOurPartners = () => {
       </div>
       {partnersIcons.map((icon, index) => (
         <TextAppearanceWrapper key={index} className={style.partnerCard}>
-          <Image
-            // TODO: remove after review
-
-            src={`/protez/partnersLogos/${icon}.svg`}
+          <ProtezImage
+            src={`partnersLogos/${icon}.svg`}
             alt={icon}
             width={300}
             height={230}
             className={style.partnerLogo}
           />
-          <Image
-            // TODO: remove after review
-
-            src={`/protez/partnersLogos/${icon}-color.svg`}
+          <ProtezImage
+            src={`partnersLogos/${icon}-color.svg`}
             alt={icon}
             width={300}
             height={230}
@@ -76,19 +71,15 @@ const SpecialThanksToAllOurPartners = () => {
       ))}
 
       <Link href="https://dita-group.com/" target="blank" className={style.partnerCard}>
-        <Image
-          // TODO: remove after review
-
-          src={`/protez/partnersLogos/dita.svg`}
+        <ProtezImage
+          src={`partnersLogos/dita.svg`}
           alt={'Dita Group'}
           width={300}
           height={230}
           className={style.partnerLogo}
         />
-        <Image
-          // TODO: remove after review
-
-          src={`/protez/partnersLogos/dita-color.svg`}
+        <ProtezImage
+          src={`partnersLogos/dita-color.svg`}
           alt={'Dita Group'}
           width={300}
           height={230}
