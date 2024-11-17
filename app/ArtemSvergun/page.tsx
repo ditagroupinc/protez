@@ -19,7 +19,6 @@ export default function ArtemSvergun() {
             width="500"
             height="752"
             allowFullScreen
-            // style="border:none;overflow:hidden"
             allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
             className={style.iframe}
           />

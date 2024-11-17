@@ -16,6 +16,7 @@ import Footer from '@/sections/Footer'
 import Divider from '@/components/Divider'
 import Script from 'next/script'
 import SmokeWrapper from '@/sections/ClientSections/SmokeWrapper'
+import Image from 'next/image'
 
 interface Veteran {
   ageRank: BilingualText
@@ -128,7 +129,6 @@ const donatePage = {
 export default function VadymFedorov() {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
-  const isDesktopLayout = width > 800
 
   return (
     <>
@@ -137,41 +137,29 @@ export default function VadymFedorov() {
         <SmokeWrapper>
           <Section className={style.section}>
             <div className={style.card}>
-              <div className={style.cardLeft}>
-                <div className={style.logoContainer}>
-                  {icons.titles[veteransSection.veteran.icon as keyof typeof icons.titles][lang](
-                    style.veteranLogo
-                  )}
-                  <Body className={style.ageRank}>{veteransSection.veteran.ageRank[lang]}</Body>
-                </div>
-                <H3 className={style.cardTitle}>{veteransSection.veteran.title[lang]}</H3>
-                <Body className={style.cardText}>{veteransSection.veteran.text[lang]}</Body>
-
-                {width < 1180 && (
-                  <div className={style.cardRight}>
-                    <iframe
-                      className={style.iFrame}
-                      src={
-                        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F3490463647948673%2F%3Fidorvanity%3D238890858497931&show_text=false&width=267&t=0'
-                      }
-                      allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                      allowFullScreen={true}
-                    />
-                    <div className={style.buttonsContainer}>
-                      <a target="blank" href={veteransSection.veteran.linkedin as string}>
-                        {icons.iconLinkedin(style.icon)}
-                      </a>
-                      <a target="blank" href={veteransSection.veteran.facebook as string}>
-                        {icons.iconFacebook(style.icon)}
-                      </a>
-                      <a target="blank" href={veteransSection.veteran.instagram as string}>
-                        {icons.iconInstagram(style.icon)}
-                      </a>
-                    </div>
+              <div className={style.imageContainer}>
+                <Image
+                  // TODO: remove after review
+                  src={`/protez/vadymFedorovPage/vadymFedorov.png`}
+                  alt={'vadymFedorov'}
+                  className={style.image}
+                  width={1306}
+                  height={1890}
+                />
+              </div>
+              <div className={style.contentContainer}>
+                <div className={style.descriptionContainer}>
+                  <div className={style.logoContainer}>
+                    {icons.titles[veteransSection.veteran.icon as keyof typeof icons.titles][lang](
+                      style.veteranLogo
+                    )}
+                    <Body className={style.ageRank}>{veteransSection.veteran.ageRank[lang]}</Body>
                   </div>
-                )}
+                  <H3 className={style.cardTitle}>{veteransSection.veteran.title[lang]}</H3>
+                  <Body>{veteransSection.veteran.text[lang]}</Body>
+                </div>
 
-                <div className={style.bottomContainer}>
+                <div className={style.donationContainer}>
                   <div className={style.left}>
                     <div className={style.aboveDivider}>
                       <Body large={width > 1180} className={style.description}>
@@ -209,29 +197,6 @@ export default function VadymFedorov() {
                   </div>
                 </div>
               </div>
-              {width > 1180 && (
-                <div className={style.cardRight}>
-                  <iframe
-                    className={style.iFrame}
-                    src={
-                      'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F3490463647948673%2F%3Fidorvanity%3D238890858497931&show_text=false&width=267&t=0'
-                    }
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    allowFullScreen={true}
-                  />
-                  <div className={style.buttonsContainer}>
-                    <a target="blank" href={veteransSection.veteran.linkedin as string}>
-                      {icons.iconLinkedin(style.icon)}
-                    </a>
-                    <a target="blank" href={veteransSection.veteran.facebook as string}>
-                      {icons.iconFacebook(style.icon)}
-                    </a>
-                    <a target="blank" href={veteransSection.veteran.instagram as string}>
-                      {icons.iconInstagram(style.icon)}
-                    </a>
-                  </div>
-                </div>
-              )}
             </div>
           </Section>
         </SmokeWrapper>

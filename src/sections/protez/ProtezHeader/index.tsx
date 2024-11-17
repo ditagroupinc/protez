@@ -235,7 +235,10 @@ const ProtezHeader = ({
   return (
     <>
       <header className={style.protezHeader}>
-        <Link scroll={true} href={`${linksPrefix}${ProtezIDs.LetsGiveHope}`}>
+        <Link
+          scroll={true}
+          href={`${ancorLinks ? linksPrefix + ProtezIDs.LetsGiveHope : linksPrefix}`}
+        >
           {icons.protezLogo(style.protezLogo)}
         </Link>
         {width < 992 ? (
