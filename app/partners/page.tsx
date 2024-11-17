@@ -2,15 +2,14 @@
 
 import style from './style.module.scss'
 import icons from './icons'
-import Image from 'next/image'
 import Link from 'next/link'
 
 import { useLanguage } from '@/contexts/LanguageContext'
-// import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import Section from '@/components/Section'
 import ProtezHeader from '@/sections/protez/ProtezHeader'
 import Footer from '@/sections/Footer'
+import ProtezImage from '@/components/ProtezImage'
 
 const partnersLogos = [
   'directRelief',
@@ -44,7 +43,6 @@ const partnersLogos = [
 
 export default function AllOurPartners() {
   const { lang } = useLanguage()
-  // const { width } = useScreenModeAndSize()
 
   return (
     <>
@@ -54,17 +52,15 @@ export default function AllOurPartners() {
           {icons.partnersLogo.desktop[lang](style.title)}
           <div className={style.container}>
             <TextAppearanceWrapper className={style.partnerCard}>
-              <Image
-                // TODO: remove after review
-                src={`/protez/partnersLogos/${partnersLogos[0]}.svg`}
+              <ProtezImage
+                src={`/partnersLogos/${partnersLogos[0]}.svg`}
                 alt={partnersLogos[0]}
                 width={300}
                 height={230}
                 className={style.partnerLogo}
               />
-              <Image
-                // TODO: remove after review
-                src={`/protez/partnersLogos/${partnersLogos[0]}-color.svg`}
+              <ProtezImage
+                src={`/partnersLogos/${partnersLogos[0]}-color.svg`}
                 alt={partnersLogos[0]}
                 width={300}
                 height={230}
@@ -73,17 +69,15 @@ export default function AllOurPartners() {
             </TextAppearanceWrapper>
 
             <Link href="https://dita-group.com/" target="blank" className={style.partnerCard}>
-              <Image
-                // TODO: remove after review
-                src={`/protez/partnersLogos/dita.svg`}
+              <ProtezImage
+                src={`/partnersLogos/dita.svg`}
                 alt={'Dita Group'}
                 width={300}
                 height={230}
                 className={style.partnerLogo}
               />
-              <Image
-                // TODO: remove after review
-                src={`/protez/partnersLogos/dita-color.svg`}
+              <ProtezImage
+                src={`/partnersLogos/dita-color.svg`}
                 alt={'Dita Group'}
                 width={300}
                 height={230}
@@ -92,17 +86,15 @@ export default function AllOurPartners() {
             </Link>
             {partnersLogos.slice(2, 27).map((icon, index) => (
               <TextAppearanceWrapper key={index} className={style.partnerCard}>
-                <Image
-                  // TODO: remove after review
-                  src={`/protez/partnersLogos/${icon}.svg`}
+                <ProtezImage
+                  src={`/partnersLogos/${icon}.svg`}
                   alt={icon}
                   width={300}
                   height={230}
                   className={style.partnerLogo}
                 />
-                <Image
-                  // TODO: remove after review
-                  src={`/protez/partnersLogos/${icon}-color.svg`}
+                <ProtezImage
+                  src={`/partnersLogos/${icon}-color.svg`}
                   alt={icon}
                   width={300}
                   height={230}

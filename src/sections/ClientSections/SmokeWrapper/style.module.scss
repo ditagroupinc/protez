@@ -11,3 +11,76 @@
     linear-gradient(180deg, rgba(19, 19, 19, 0) 80.58%, #131313 100%);
   // position: relative;
 }
+
+.smokeContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.smoke,
+.smokeBg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-size: cover;
+}
+
+.smokeBg {
+  z-index: -1;
+  -webkit-animation: float alternate 30s infinite ease-in-out;
+  animation: float alternate 30s infinite ease-in-out;
+}
+
+.smoke {
+  -webkit-animation: float2 15s infinite ease-in-out;
+  animation: float2 15s infinite ease-in-out;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes float {
+  0% {
+    opacity: 0.8;
+    -webkit-transform: translateX(3%) scale(1.2);
+    transform: translateX(3%) scale(1.2);
+  }
+  50% {
+    opacity: 0.8;
+    -webkit-transform: translateX(0) scale(1.4);
+    transform: translateX(0) scale(1.4);
+  }
+  100% {
+    opacity: 0.8;
+    -webkit-transform: translateX(-3%) scale(1.2);
+    transform: translateX(-3%) scale(1.2);
+  }
+}
+
+@keyframes float2 {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-10%) scale(1.5);
+    transform: translateX(-10%) scale(1.5);
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: translateX(0) scale(1.2);
+    transform: translateX(0) scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(10%) scale(1.5);
+    transform: translateX(10%) scale(1.5);
+  }
+}

@@ -2,13 +2,10 @@
 
 import style from './style.module.scss'
 import Section from '@/components/Section'
-// import { useLanguage } from '@/contexts/LanguageContext'
 import Footer from '@/sections/Footer'
 import ProtezHeader from '@/sections/protez/ProtezHeader'
 
 export default function ArtemSvergun() {
-  // const { lang } = useLanguage()
-
   return (
     <>
       <ProtezHeader ancorLinks={false} arrowUp={false} />

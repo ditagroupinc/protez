@@ -16,7 +16,7 @@ import Footer from '@/sections/Footer'
 import Divider from '@/components/Divider'
 import Script from 'next/script'
 import SmokeWrapper from '@/sections/ClientSections/SmokeWrapper'
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 interface Veteran {
   ageRank: BilingualText
@@ -138,9 +138,8 @@ export default function VadymFedorov() {
           <Section className={style.section}>
             <div className={style.card}>
               <div className={style.imageContainer}>
-                <Image
-                  // TODO: remove after review
-                  src={`/protez/vadymFedorovPage/vadymFedorov.png`}
+                <ProtezImage
+                  src={`/vadymFedorovPage/vadymFedorov.png`}
                   alt={'vadymFedorov'}
                   className={style.image}
                   width={1306}
