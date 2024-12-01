@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const text = {
   english: 'Back to top   →',
-  ukrainian: 'Back to top   →',
+  ukrainian: 'Нагору   →',
 }
 
 export default function BackToTopButton({

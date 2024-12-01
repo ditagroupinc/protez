@@ -17,15 +17,15 @@ const protezAcademyText = {
     english:
       'Protez Academy is an educational project by the Protez Foundation in collaboration with Century College and contributions from specialists from University of Minnesota and Concordia University',
     ukrainian:
-      'Protez Academy is an educational project by the Protez Foundation in collaboration with Century College and contributions from specialists from University of Minnesota and Concordia University',
+      'Protez Academy — це освітній проєкт Фонду Protez у співпраці з Century College та за участі спеціалістів з Університету Міннесоти та Університету Конкордія.',
   },
   learnMore: {
     english: 'Learn more',
-    ukrainian: 'Learn more',
+    ukrainian: 'Дізнатися більше',
   },
   applyToAcademy: {
     english: 'Apply to Academy',
-    ukrainian: 'Apply to Academy',
+    ukrainian: 'Доєднатися до Academy',
   },
 }
 

@@ -92,6 +92,9 @@
   .footerLogo {
     margin: 0 auto;
     max-width: 265px;
+    &.ukrainian {
+      max-width: 100%;
+    }
   }
 
   .right {

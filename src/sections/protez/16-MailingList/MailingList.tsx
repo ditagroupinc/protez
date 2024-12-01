@@ -37,19 +37,19 @@ const mailingListSection = {
 
   email: {
     english: 'Your email*',
-    ukrainian: 'Your email*',
+    ukrainian: 'Твій імейл*',
   },
   phoneNumber: {
     english: 'Phone number',
-    ukrainian: 'Phone number',
+    ukrainian: 'Номер телефону',
   },
   address: {
     english: 'Address',
-    ukrainian: 'Address',
+    ukrainian: 'Адреса',
   },
   addYourAddress: {
     english: 'Add your address',
-    ukrainian: 'Add your address',
+    ukrainian: 'Додати вашу адресу',
   },
   addYourAddressTo: {
     english: 'Add your address to receive ...',

@@ -8,17 +8,17 @@ import style from './style.module.scss'
 
 import { ProtezIDs } from '@/consts'
 import { Body } from '@/components/Typography'
-import Button from '@/components/Button'
+// import Button from '@/components/Button'
 import Slider from 'react-slick'
 import { useRef, useState } from 'react'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
 const peopleTrustUsText = {
-  latestNews: {
-    english: 'Latest news',
-    ukrainian: 'Latest news',
-  },
+  // latestNews: {
+  //   english: 'Latest news',
+  //   ukrainian: 'Latest news',
+  // },
   cards: [
     {
       image: 'peopleTrustUsSlide1.png',
@@ -240,7 +240,7 @@ const PeopleTrustUs = () => {
               </div>
             )}
 
-            <Button
+            {/* <Button
               as="link"
               href="/"
               variant="secondary-white"
@@ -249,7 +249,7 @@ const PeopleTrustUs = () => {
               className={style.latestNewsButton}
             >
               {peopleTrustUsText.latestNews[lang]}
-            </Button>
+            </Button> */}
           </TextAppearanceWrapper>
         </div>
       </div>

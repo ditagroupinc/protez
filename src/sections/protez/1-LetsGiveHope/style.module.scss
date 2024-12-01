@@ -32,6 +32,9 @@
   gap: 40px;
   position: relative;
   z-index: 1;
+  &.ukrainianLang {
+    max-width: 440px;
+  }
 }
 
 .logo {
@@ -47,6 +50,7 @@
 .buttonsContainer {
   display: flex;
   gap: 16px;
+  justify-content: space-between;
 }
 
 .right {

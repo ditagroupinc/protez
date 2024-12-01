@@ -39,11 +39,11 @@ const ourStarSupportersSection: OurStarSupportersSection = {
       },
       name: {
         english: 'Tina Karol',
-        ukrainian: 'Tina Karol',
+        ukrainian: 'Тіна Кароль',
       },
       description: {
         english: 'Ukrainian singer',
-        ukrainian: 'Ukrainian singer',
+        ukrainian: 'Українська співачка',
       },
       instagramLink: 'https://www.instagram.com/tina_karol/',
       img: 'ourStarSupportersSlide1.png',

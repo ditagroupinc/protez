@@ -17,7 +17,7 @@ import ProtezImage from '@/components/ProtezImage'
 const specialThanksToAllOurPartnersSection = {
   discoverAllPartners: {
     english: 'Discover all partners',
-    ukrainian: 'Discover all partners',
+    ukrainian: 'Дізнатися про всіх партнерів',
   },
 }
 

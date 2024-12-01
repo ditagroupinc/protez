@@ -17,7 +17,7 @@ const letsGiveHopeText = {
     english:
       'We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.',
     ukrainian:
-      'We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.',
+      'Ми пропонуємо найсучасніші протези з персональним навчанням та підтримкою в США, а також забезпечуємо подальший догляд в Україні.',
   },
   needAProthesis: {
     english: 'Потрібeн протез',
@@ -42,7 +42,7 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
       <VideoAndFilter src={'flag-ukraine.mp4'} />
       <div className={style.overlay} />
       <div className={style.container}>
-        <div className={style.left}>
+        <div className={`${style.left} ${lang === 'ukrainian' ? style.ukrainianLang : ''}`}>
           {icons.protezLogo(style.logo)}
           <Body large={isDesktop} className={style.description}>
             {letsGiveHopeText.description[lang]}

@@ -16,13 +16,11 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 const ourResultsText = {
   date: {
     english: 'May 2022 – September 2023',
-    ukrainian: 'May 2022 – September 2023',
+    ukrainian: `Травень 2022 - Квітень 2024`,
   },
   text: {
-    english:
-      'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
-    ukrainian:
-      'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
+    english: `Over the past two years, we have been dedicated to restoring hope and mobility to Ukrainians affected by the war. Through our prosthetics assistance programs, we've empowered countless individuals to reclaim their independence and rebuild their lives. Join us in reflecting on our journey and see the impact we've made together.`,
+    ukrainian: `За останні два роки ми невпинно працюємо над поверненням надії та рухливості українцям, які постраждали від війни. Завдяки нашим програмам допомоги з протезуванням, ми допомогли багатьом людям знову стати незалежними та відновити своє життя. Приєднуйтесь до нас, щоб ознайомитися з нашим шляхом та побачити різницю, яку ми зробили разом.`,
   },
   moreResults: {
     english: 'More results',
@@ -31,26 +29,41 @@ const ourResultsText = {
   cards: [
     {
       number: 550,
-      description: 'Prostheses',
+      description: {
+        english: 'Prostheses',
+        ukrainian: `Встановлено протезів`,
+      },
       suffix: '+',
     },
     {
       number: 3,
-      description: 'Clinics opened',
+      description: {
+        english: 'Clinics opened',
+        ukrainian: `Відкрито клінік`,
+      },
     },
     {
       number: 250,
-      description: 'Patients',
+      description: {
+        english: 'Patients',
+        ukrainian: `Запротезовано пацієнтів`,
+      },
       suffix: '+',
     },
     {
       number: 80,
-      description: 'Specialists trained',
+      description: {
+        english: 'Specialists trained',
+        ukrainian: `Підготовлено спеціалістів`,
+      },
       suffix: '+',
     },
     {
-      number: 5500000,
-      description: 'Spent on mission',
+      number: 7000000,
+      description: {
+        english: 'Spent on mission',
+        ukrainian: `Витрачено на допомогу`,
+      },
       prefix: '$',
     },
   ],
@@ -92,7 +105,7 @@ const OurResults = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
                 <CountUp end={card.number} duration={2} className={style.count} />
                 {card.suffix && <span>{card.suffix}</span>}
               </div>
-              <H2 className={style.description}>{card.description}</H2>
+              <H2 className={style.description}>{card.description[lang]}</H2>
             </TextAppearanceWrapper>
           ))}
         </div>

@@ -14,7 +14,7 @@ import { icons } from './icons'
 import Slider from 'react-slick'
 
 import { ProtezIDs } from '@/consts'
-import { SeeAllButton } from '@/components/Button'
+// import { SeeAllButton } from '@/components/Button'
 
 import { Body, H3 } from '@/components/Typography'
 import { BilingualText } from '@/types'
@@ -35,13 +35,13 @@ interface Member {
 }
 
 const meetOurTeamSection: {
-  discover: BilingualText
+  // discover: BilingualText
   members: Member[]
 } = {
-  discover: {
-    english: 'Discover all team',
-    ukrainian: 'Дізнатися про всю команду',
-  },
+  // discover: {
+  //   english: 'Discover all team',
+  //   ukrainian: 'Дізнатися про всю команду',
+  // },
   members: [
     {
       photo: 'yuryAroshidze.png',
@@ -397,9 +397,9 @@ const MeetOurTeam = () => {
               ))}
             </Slider>
           </TextAppearanceWrapper>
-          <SeeAllButton href="/" className={style.discoverAllButton}>
+          {/* <SeeAllButton href="/" className={style.discoverAllButton}>
             <span className={style.buttonText}>{meetOurTeamSection.discover[lang]}</span>
-          </SeeAllButton>
+          </SeeAllButton> */}
         </>
       ) : (
         <>
@@ -430,9 +430,9 @@ const MeetOurTeam = () => {
               />
             ))}
 
-            <SeeAllButton href="/" className={style.discoverAllButton}>
+            {/* <SeeAllButton href="/" className={style.discoverAllButton}>
               <span className={style.buttonText}> {meetOurTeamSection.discover[lang]}</span>
-            </SeeAllButton>
+            </SeeAllButton> */}
           </div>
         </>
       )}

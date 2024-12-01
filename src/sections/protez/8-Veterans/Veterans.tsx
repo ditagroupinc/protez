@@ -73,6 +73,42 @@ const veteransSection: VeteransSection = {
       linkedin:
         'https://www.linkedin.com/posts/protez-foundation_vadym-fedorov-30-years-old-sergeant-vadym-activity-7045965954194784256-D_hH?utm_source=share&utm_medium=member_desktop',
     },
+    {
+      ageRank: {
+        english: '16 years old, Mariupol.',
+        ukrainian: '16 років, Маріуполь.',
+      },
+      name: {
+        english: 'Artem',
+        ukrainian: 'Артем',
+      },
+      surname: {
+        english: 'Svergun',
+        ukrainian: 'Свергун',
+      },
+      title: {
+        english:
+          'Artem played for the Mariupol youth soccer club, and he wanted to be a professional soccer player.',
+        ukrainian:
+          'Займався професійним футболом у складі команди Маріуполь юнацької збірної та мріяв присвятити своє життя футболу.',
+      },
+      text: {
+        english: `Artem’s dream was to dedicate his life to soccer.  On March 2nd, 2022, he went to the local field to play a scrimmage match with his friends. While they were warming up, a Russian drone dropped a grenade on the field. Artem’s best friend Ilya, a boy of 15, was killed. Artem and another boy were severely injured. As a result of the injuries, Artem’s left leg was amputated above the knee, and his right leg is paralyzed. Artem’s dream is now to be able to walk again.`,
+        ukrainian: `2 березня 2022 року пішов грати у футбол на стадіон разом із своїми друзями. У момент підготовки до гри до них кинули гранату з дрона. Найкращий друг Артема, Ілля, 15 років, загинув, а другий отримав поранення. Внаслідок травм ліву ногу Артему довелося ампутувати вище коліна, а права нога залишилася паралізованою. Єдина мрія Артема зараз - знову змогти ходити.`,
+      },
+      img: 'artemSvergun.png',
+      icon: 'artemSvergun',
+      video: 'https://www.youtube.com/embed/D1zR9DkYgu4',
+      facebook:
+        'https://www.facebook.com/prostheticsforukrainians/posts/pfbid02ABFsNzJ81L8tBotVsVVbDwhuoeGWLsrzjbq8WRhXBYS327eFWUskaHVGXHxe9KLtl',
+      instagram:
+        'https://www.instagram.com/p/CuGu1bEuIaf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA%3D%3D=',
+      url: 'ArtemSvergun',
+      videoLink:
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F778775984044964%2F&show_text=false&width=267&t=0',
+      linkedin:
+        'https://www.linkedin.com/posts/protez-foundation_our-young-hero-artem-16-years-old-activity-7086077525998583808-kZBW/?utm_source=share&utm_medium=member_ios',
+    },
   ],
   share: {
     english: 'Share me',
@@ -114,8 +150,6 @@ const Veterans = () => {
     wholeCardSliderRef.current?.slickPrev()
   }
 
-  const veteransArray: Veteran[] = Array(3).fill(veteransSection.veterans[0])
-
   const settings = {
     dots: false,
     infinite: true,
@@ -153,7 +187,7 @@ const Veterans = () => {
           <div className={style.card}>
             <div className={style.left}>
               <Slider ref={textSliderRef} {...settings}>
-                {veteransArray.map((slide, index) => (
+                {veteransSection.veterans.map((slide, index) => (
                   <div key={index}>
                     <div className={style.logoContainer}>
                       {icons.titles[slide.icon as keyof typeof icons.titles][lang](
@@ -173,7 +207,7 @@ const Veterans = () => {
               <div className={style.buttonsContainer}>
                 <div className={style.linksSliderWrapper}>
                   <Slider ref={linksSliderRef} {...settings}>
-                    {veteransArray.map((slide, index) => (
+                    {veteransSection.veterans.map((slide, index) => (
                       <div key={index}>
                         <div className={style.linksSlide}>
                           <div className={style.iconsContainer}>
@@ -214,7 +248,7 @@ const Veterans = () => {
             </div>
             <div className={style.right}>
               <Slider ref={imageSliderRef} {...settings} className={style.imagesSlider}>
-                {veteransArray.map((slide, index) => (
+                {veteransSection.veterans.map((slide, index) => (
                   <div key={index}>
                     <div className={style.imageSlideWrapper}>
                       <ProtezImage
@@ -245,7 +279,7 @@ const Veterans = () => {
         ) : (
           <>
             <Slider ref={wholeCardSliderRef} {...settings} className={style.wholeCardSlider}>
-              {veteransArray.map((slide, index) => (
+              {veteransSection.veterans.map((slide, index) => (
                 <div key={index}>
                   <div className={style.card}>
                     <div className={style.right}>

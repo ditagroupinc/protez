@@ -15,21 +15,18 @@ const prostheticsForUkrainiansText = {
   description1: {
     english:
       'We provide care for Ukrainians who have lost limbs and need prosthetics: from submitting an application through full rehabilitation.',
-    ukrainian:
-      'We provide care for Ukrainians who have lost limbs and need prosthetics: from submitting an application through full rehabilitation.',
+    ukrainian: `Ми надаємо повний спектр підтримки українцям, які втратили кінцівки та мають потребу в протезуванні: від моменту подачі заявки до повного відновлення здоров'я.`,
   },
   description2: {
     english:
       'The goal of our work is to help ukrainian children, civilians and soldiers who have lost limbs as a result of the war receive high quality prosthetics in the US free of charge.',
-    ukrainian:
-      'The goal of our work is to help ukrainian children, civilians and soldiers who have lost limbs as a result of the war receive high quality prosthetics in the US free of charge.',
+    ukrainian: `Наша місія полягає в тому, щоб надати можливість українським дітям, цивільним та військовим безкоштовно отримати протези високої якості в США.`,
   },
   cards: [
     {
       text: {
         english: 'Our goal is to help people who have lost limbs to restore their quality of life',
-        ukrainian:
-          'Our goal is to help people who have lost limbs to restore their quality of life',
+        ukrainian: `Наша мета - допомогти відновити якість життя людям, які втратили кінцівки.`,
       },
       icon: icons.disabledPerson,
     },
@@ -37,7 +34,7 @@ const prostheticsForUkrainiansText = {
     {
       text: {
         english: 'We provide mental health and emotional support during recovery.',
-        ukrainian: 'We provide mental health and emotional support during recovery.',
+        ukrainian: `Ми надаємо психологічну та емоційну підтримку під час відновлення.`,
       },
       icon: icons.helpHeart,
     },
@@ -45,7 +42,7 @@ const prostheticsForUkrainiansText = {
     {
       text: {
         english: 'We bring people together to help support victims of war.',
-        ukrainian: 'We bring people together to help support victims of war.',
+        ukrainian: `Ми об'єднуємо людей для допомоги жертвам війни.`,
       },
       icon: icons.people,
     },
@@ -54,8 +51,7 @@ const prostheticsForUkrainiansText = {
       text: {
         english:
           'We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.',
-        ukrainian:
-          'We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.',
+        ukrainian: `Ми надаємо передові протези в США, супроводжуючи це індивідуальною підготовкою та підтримкою, а також забезпечуємо послідовний догляд у Україні.`,
       },
       icon: icons.hand,
     },

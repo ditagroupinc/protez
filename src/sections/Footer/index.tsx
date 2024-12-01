@@ -15,7 +15,7 @@ import { forwardRef } from 'react'
 const footerSection = {
   giveHope: {
     english: 'Give Hope!',
-    ukrainian: 'Give Hope!',
+    ukrainian: 'Дати надію!',
   },
   protezAcademy: {
     english: 'Protez Academy',
@@ -23,7 +23,7 @@ const footerSection = {
   },
   subscribe: {
     english: 'Subscribe',
-    ukrainian: 'Subscribe',
+    ukrainian: 'Підписатись',
   },
   supportAcademy: {
     english: 'Support Academy',
@@ -36,7 +36,7 @@ const footerSection = {
   },
   sendChecks: {
     english: 'Please send checks to:',
-    ukrainian: 'Please send checks to:',
+    ukrainian: 'Надсилайте чеки на адресу:',
   },
   address: {
     english:
@@ -64,7 +64,7 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
           <div className={style.left}>
             {isDesktopLayout
               ? icons.footerLogo.desktop[lang](style.footerLogo)
-              : icons.footerLogo.mobile[lang](style.footerLogo)}
+              : icons.footerLogo.mobile[lang](`${style.footerLogo} ${style.ukrainian}`)}
 
             <div className={style.buttonGroup}>
               {layout === 'protezPage' ? (

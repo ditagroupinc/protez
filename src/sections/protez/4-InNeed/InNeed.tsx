@@ -6,17 +6,17 @@ import Section from '@/components/Section'
 
 import { ProtezIDs } from '@/consts'
 
-import Link from 'next/link'
+// import Link from 'next/link'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
-const inNeedText = {
-  viewStatisticsSource: {
-    english: 'View statistics source',
-    ukrainian: 'View statistics source',
-  },
-}
+// const inNeedText = {
+// viewStatisticsSource: {
+//   english: 'View statistics source',
+//   ukrainian: 'View statistics source',
+// },
+// }
 
 const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const { lang } = useLanguage()
@@ -43,10 +43,10 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
         {icons.ukrainianMapSmall(style.mapSmall)}
         <div className={style.textBlock}>
           {inNeedLogo[lang](style.title)}
-          <Link as="link" href="/" className={style.link}>
+          {/* <Link as="link" href="/" className={style.link}>
             {inNeedText.viewStatisticsSource[lang]}
             {icons.arrowRight(style.icon)}
-          </Link>
+          </Link> */}
         </div>
       </TextAppearanceWrapper>
     </Section>

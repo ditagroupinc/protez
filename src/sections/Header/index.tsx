@@ -47,35 +47,35 @@ const text = {
       {
         text: {
           english: 'People Trust Us',
-          ukrainian: 'PeopleTrustUs',
+          ukrainian: 'Люди довіряють нам',
         },
         id: ProtezIDs.PeopleTrustUs,
       },
       {
         text: {
           english: 'Prosthetics For Ukrainians',
-          ukrainian: 'ProstheticsForUkrainians',
+          ukrainian: 'Протезування для українців',
         },
         id: ProtezIDs.ProstheticsForUkrainians,
       },
       {
         text: {
           english: 'In Need',
-          ukrainian: 'In Need',
+          ukrainian: 'У потребі',
         },
         id: ProtezIDs.InNeed,
       },
       {
         text: {
           english: 'Our Results',
-          ukrainian: 'Our Results',
+          ukrainian: 'Наші результати',
         },
         id: ProtezIDs.OurResults,
       },
       {
         text: {
           english: 'Sample Prostheses Costs',
-          ukrainian: 'Sample Prostheses Costs',
+          ukrainian: 'Приблизні витрати на протези',
         },
         id: ProtezIDs.SampleProsthesesCosts,
       },
@@ -89,7 +89,7 @@ const text = {
       {
         text: {
           english: 'Veterans',
-          ukrainian: 'Veterans',
+          ukrainian: 'Ветерани',
         },
         id: ProtezIDs.Veterans,
       },
@@ -103,7 +103,7 @@ const text = {
       {
         text: {
           english: 'Press Release',
-          ukrainian: 'Press Release',
+          ukrainian: 'Прес-реліз',
         },
         id: ProtezIDs.PressRelease,
       },
@@ -117,42 +117,42 @@ const text = {
       {
         text: {
           english: 'Meet Our Team',
-          ukrainian: 'Meet Our Team',
+          ukrainian: 'Наша команда',
         },
         id: ProtezIDs.MeetOurTeam,
       },
       {
         text: {
           english: 'Office Locations',
-          ukrainian: 'Office Locations',
+          ukrainian: 'Наші клініки',
         },
         id: ProtezIDs.OfficeLocations,
       },
       {
         text: {
           english: 'Special Thanks To All Our Partners',
-          ukrainian: 'Special Thanks To All Our Partners',
+          ukrainian: 'Дякуємо Всім Нашим Партнерам',
         },
         id: ProtezIDs.SpecialThanksToAllOurPartners,
       },
       {
         text: {
           english: 'Our Star Supporters',
-          ukrainian: 'Our Star Supporters',
+          ukrainian: 'Дякуємо Всім Нашим Партнерам',
         },
         id: ProtezIDs.OurStarSupporters,
       },
       {
         text: {
           english: 'Mailing List',
-          ukrainian: 'Mailing List',
+          ukrainian: 'Список розсилки',
         },
         id: ProtezIDs.MailingList,
       },
       {
         text: {
           english: 'Merch',
-          ukrainian: 'Merch',
+          ukrainian: 'Мерч',
         },
         id: ProtezIDs.Merch,
       },
