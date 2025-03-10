@@ -1,9 +1,5 @@
 .section {
-  background: linear-gradient(
-    0deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.9)
-  );
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
   background-blend-mode: normal, screen;
   padding-bottom: 80px;
   padding-left: 0;
@@ -50,6 +46,21 @@
   font-weight: bold;
 }
 
+.privatButton {
+  height: 60px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #131313;
+  border-radius: 4px;
+  padding: 0 32px;
+  margin-top: auto; /* This pushes the button to the bottom */
+  & svg {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 1366px) {
   .title {
     font-size: calc(24px + 24 * ((100vw - 1366px) / 1194));
@@ -72,7 +83,7 @@
 .flexContainer {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: stretch;
   margin: 0 auto;
   margin-top: 144px;
 }
@@ -83,7 +94,11 @@
   flex: 1 1 50%;
   color: var(--black);
   max-width: 400px;
-  padding-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  // padding-top: 40px;
 }
 
 .addressContainer {
@@ -264,5 +279,9 @@
   .companyData {
     max-width: 100%;
     padding-top: 0;
+  }
+
+  .privatButton {
+    margin-top: 24px;
   }
 }

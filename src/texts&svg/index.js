@@ -909,6 +909,10 @@ const donatePage = {
       english: 'Nonprofit organization 501(c)(3)',
       ukrainian: 'Nonprofit organization 501(c)(3)',
     },
+    sendDonations: {
+      english: 'You can also send a donation through PrivatBank',
+      ukrainian: 'Надіслати донат ви також можете через сервіс ПриватБанк',
+    },
     ein: {
       english: 'EIN: 88-2437069',
       ukrainian: 'EIN: 88-2437069',
