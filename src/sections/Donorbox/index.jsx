@@ -8,9 +8,28 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const CompanyData = ({ className = '' }) => {
   const { lang } = useLanguage()
+  const { mobile } = useScreenModeAndSize()
 
   return (
     <div className={`${style.companyData} ${className}`}>
+      {mobile && (
+        <>
+          <div>
+            <p className={'h6 '}>{texts.donate.organizationData.sendDonations[lang]}</p>
+          </div>
+
+          <a
+            target="_blank"
+            href="https://next.privat24.ua/payments/form/%7B%22token%22:%22f7dfa6a1-d8f6-4602-9f21-9b1c99d61cb5%22%7D?fbclid=PAAaYO7jJkvqk11ELkvBzSn4XYumcT4TtR7w8hug3JdXPX7oZM67guqdNAUxI_aem_ASDuFPVJU_RL-637DNh004o5oAYju01DczwND11fGmX4Hn-s0aPgzb3b_RvBPxzDtkQ"
+            className={style.privatButton}
+            rel="noreferrer"
+          >
+            <button>{icons.privat24Logo()}</button>
+          </a>
+
+          <Divider className={style.divider} />
+        </>
+      )}
       <div className={`${style.addressContainer}`}>
         <p>
           <span className={'h6 '}>{texts.donate.organizationData.nonProfitOrganization[lang]}</span>
@@ -36,20 +55,24 @@ const CompanyData = ({ className = '' }) => {
         </a>
       </div>
 
-      <Divider className={style.divider} />
+      {!mobile && (
+        <>
+          <Divider className={style.divider} />
 
-      <div>
-        <p className={'h6 '}>{texts.donate.organizationData.sendDonations[lang]}</p>
-      </div>
+          <div>
+            <p className={'h6 '}>{texts.donate.organizationData.sendDonations[lang]}</p>
+          </div>
 
-      <a
-        target="_blank"
-        href="https://next.privat24.ua/payments/form/%7B%22token%22:%22f7dfa6a1-d8f6-4602-9f21-9b1c99d61cb5%22%7D?fbclid=PAAaYO7jJkvqk11ELkvBzSn4XYumcT4TtR7w8hug3JdXPX7oZM67guqdNAUxI_aem_ASDuFPVJU_RL-637DNh004o5oAYju01DczwND11fGmX4Hn-s0aPgzb3b_RvBPxzDtkQ"
-        className={style.privatButton}
-        rel="noreferrer"
-      >
-        <button>{icons.privat24Logo()}</button>
-      </a>
+          <a
+            target="_blank"
+            href="https://next.privat24.ua/payments/form/%7B%22token%22:%22f7dfa6a1-d8f6-4602-9f21-9b1c99d61cb5%22%7D?fbclid=PAAaYO7jJkvqk11ELkvBzSn4XYumcT4TtR7w8hug3JdXPX7oZM67guqdNAUxI_aem_ASDuFPVJU_RL-637DNh004o5oAYju01DczwND11fGmX4Hn-s0aPgzb3b_RvBPxzDtkQ"
+            className={style.privatButton}
+            rel="noreferrer"
+          >
+            <button>{icons.privat24Logo()}</button>
+          </a>
+        </>
+      )}
     </div>
   )
 }
