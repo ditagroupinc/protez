@@ -92,7 +92,6 @@
 
   &:hover {
     background-color: var(--red);
-    color: var(--white);
   }
 
   &:nth-child(1) {
@@ -113,6 +112,7 @@
 
   &:nth-child(5) {
     grid-area: spentOnMission;
+    background-color: var(--red);
   }
 }
 

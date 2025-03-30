@@ -74,8 +74,8 @@ const text = {
       },
       {
         text: {
-          english: 'Sample Prostheses Costs',
-          ukrainian: 'Приблизні витрати на протези',
+          english: 'Prostheses Costs',
+          ukrainian: 'Витрати на протези',
         },
         id: ProtezIDs.SampleProsthesesCosts,
       },
@@ -88,8 +88,8 @@ const text = {
       },
       {
         text: {
-          english: 'Veterans',
-          ukrainian: 'Ветерани',
+          english: 'Stories',
+          ukrainian: 'Історії',
         },
         id: ProtezIDs.Veterans,
       },
@@ -116,43 +116,43 @@ const text = {
       },
       {
         text: {
-          english: 'Meet Our Team',
-          ukrainian: 'Наша команда',
+          english: 'Team',
+          ukrainian: 'Команда',
         },
         id: ProtezIDs.MeetOurTeam,
       },
       {
         text: {
-          english: 'Office Locations',
-          ukrainian: 'Наші клініки',
+          english: 'Locations',
+          ukrainian: 'Клініки',
         },
         id: ProtezIDs.OfficeLocations,
       },
       {
         text: {
-          english: 'Special Thanks To All Our Partners',
-          ukrainian: 'Дякуємо Всім Нашим Партнерам',
+          english: 'Partners',
+          ukrainian: 'Партнери',
         },
         id: ProtezIDs.SpecialThanksToAllOurPartners,
       },
       {
         text: {
-          english: 'Our Star Supporters',
-          ukrainian: 'Дякуємо Всім Нашим Партнерам',
+          english: 'Ambassadors',
+          ukrainian: 'Амбасадори',
         },
         id: ProtezIDs.OurStarSupporters,
       },
       {
         text: {
-          english: 'Mailing List',
-          ukrainian: 'Список розсилки',
+          english: 'Subscribe to Updates',
+          ukrainian: 'Підписатися на оновлення',
         },
         id: ProtezIDs.MailingList,
       },
       {
         text: {
-          english: 'Merch',
-          ukrainian: 'Мерч',
+          english: 'Protez Merch',
+          ukrainian: 'Protez Мерч',
         },
         id: ProtezIDs.Merch,
       },

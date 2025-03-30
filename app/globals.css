@@ -16,6 +16,7 @@
   --dark-blue: #0d1125;
   --black: #131313;
   --red: #c31822;
+  --red-hover: #de1313;
   --light-grey: #f3f3f3;
   --grey: #c7c8cf;
   --navLeftWidth: 300px;
@@ -30,6 +31,18 @@
   --protezBorder: 1px solid #4e4e4e;
   /*  */
   --section-padding-horizontal: 168px;
+}
+
+@media (max-width: 1600px) {
+  :root {
+    --section-padding-horizontal: 130px;
+  }
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --section-padding-horizontal: 110px;
+  }
 }
 
 @media (max-width: 1366px) {
@@ -79,7 +92,7 @@
 html,
 body,
 a {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: var(--font-nunito-sans), sans-serif;
   font-style: normal;
   color: var(--white);
 }

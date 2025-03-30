@@ -170,6 +170,12 @@
       align-items: flex-end;
       &:hover {
         padding: 23px 15px 23px 23px;
+        background-color: var(--red);
+        color: var(--white);
+        & .icon path:not(:global(.noChangeColor)) {
+          fill: var(--white);
+        }
+        border-color: var(--red);
       }
       &:focus {
         border: 2px solid var(--red);
@@ -215,7 +221,7 @@
       }
       &:hover,
       &:focus {
-        padding: 10px 22px 12px 22px;
+        padding: 9px 21px 11px 21px;
         &.hasArrow {
           padding-right: 14px;
         }

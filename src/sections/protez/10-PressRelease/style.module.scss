@@ -100,11 +100,23 @@
   align-items: center;
   cursor: pointer;
 
-  background-color: transparent;
-  border-color: var(--grey);
-  &:hover {
+  &:first-child {
+    background-color: transparent;
+    border-color: var(--grey);
+    &:hover {
+      border-color: var(--black);
+    }
+  }
+
+  &:last-child {
+    & path {
+      fill: var(--white);
+    }
     background-color: var(--red);
     border-color: var(--red);
+    &:hover {
+      background-color: var(--red-hover);
+    }
   }
 }
 

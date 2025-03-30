@@ -29,19 +29,33 @@ interface PressReleaseSection {
 const pressReleaseSection: PressReleaseSection = {
   releases: [
     {
-      date: '27.03.2023',
+      date: '12 December 2024',
       title: {
-        english: 'Head of Zakarpattia Region',
-        ukrainian: 'Head of Zakarpattia Region',
+        ukrainian: 'Протезно-реабілітаційний центр на базі МВС: важлива ініціатива для військових',
+        english:
+          'Prosthetic and Rehabilitation Center based on the Ministry of Internal Affairs: an important initiative for military personnel',
       },
       text: {
-        english:
-          'The head of Zakarpattia Oblast, Viktor Mykyta, visited the Protez Foundation prosthesis clinic in the city of Svalyava. One of the goals is to improve prosthetics and rehabilitation for the military. We express our gratitude to the governor for his support and active position in supporting Ukrainian veterans.',
         ukrainian:
-          'The head of Zakarpattia Oblast, Viktor Mykyta, visited the Protez Foundation prosthesis clinic in the city of Svalyava. One of the goals is to improve prosthetics and rehabilitation for the military. We express our gratitude to the governor for his support and active position in supporting Ukrainian veterans.',
+          '12 грудня, у МВС України відбулася зустріч Міністра внутрішніх справ Ігоря Клименка разом з генеральним директором Protez Foundation Юрієм Арошидзе та президентом Direct Relief Томасом Тайге. У зустрічі також взяла участь заступниця Міністра внутрішніх справ України Катерина Павліченко. Головною темою перемовин стало питання створення протезно-реабілітаційного центру на базі одного з медичних закладів МВС.',
+        english:
+          'On December 12, a meeting was held at the Ministry of Internal Affairs of Ukraine with the Minister of Internal Affairs Ihor Klymenko, the General Director of the Protez Foundation Yurii Aroshidze, and the President of Direct Relief Thomas Tighe. The meeting was also attended by Deputy Minister of Internal Affairs of Ukraine Kateryna Pavlichenko. The main topic of negotiations was the creation of a prosthetic and rehabilitation center based on one of the medical institutions of the Ministry of Internal Affairs.',
       },
 
-      img: 'pressReleaseSlide1.png',
+      img: 'pressReleaseSlide2.png',
+    },
+    {
+      date: '25 January 2025',
+      title: {
+        ukrainian: 'Навчання команди Protez Foundation у США',
+        english: 'Training of the Protez Foundation team in the USA',
+      },
+      text: {
+        ukrainian: `Українська команда Protez Foundation успішно завершила своє двотижневе перебування в США! 🇺🇸 Цей період став чудовою нагодою для профільного навчання, а також для обговорення тем, що сприяють професійному зростанню та зміцненню єдності команди. Орієнтованість на навчання та побудова атмосфери взаємопідтримки є ключовими цінностями Protez Foundation.`,
+        english: `The Ukrainian team of the Protez Foundation has successfully completed its two-week stay in the USA! 🇺🇸`,
+      },
+
+      img: 'pressReleaseSlide3.png',
     },
   ],
 }
@@ -66,8 +80,6 @@ const PressRelease = () => {
     textSliderRef.current?.slickPrev()
     wholeCardSliderRef.current?.slickPrev()
   }
-
-  const releasesArray: Release[] = Array(3).fill(pressReleaseSection.releases[0])
 
   const settings = {
     infinite: true,
@@ -118,7 +130,7 @@ const PressRelease = () => {
         <div className={style.card}>
           <TextAppearanceWrapper className={style.left}>
             <Slider ref={imageSliderRef} {...settings} className={style.imageSlider}>
-              {releasesArray.map((slide, index) => (
+              {pressReleaseSection.releases.map((slide, index) => (
                 <div className={style.imageSlideWrapper} key={index}>
                   <div className={style.imageSlide}>
                     <ProtezImage
@@ -137,7 +149,7 @@ const PressRelease = () => {
           <TextAppearanceWrapper className={style.right}>
             {icons.pressReleaseLogo.desktop[lang](style.pageTitle)}
             <Slider ref={textSliderRef} {...settings} className={style.textSlider}>
-              {releasesArray.map((slide, index) => (
+              {pressReleaseSection.releases.map((slide, index) => (
                 <div className={style.textSlideWrapper} key={index}>
                   <div className={style.textSlide}>
                     <Body large={isDesktopLayout} className={style.cardDate}>
@@ -166,7 +178,7 @@ const PressRelease = () => {
           {icons.pressReleaseLogo.desktop[lang](style.pageTitle)}
 
           <Slider ref={wholeCardSliderRef} {...settings} className={style.wholeCardSlider}>
-            {releasesArray.map((slide, index) => (
+            {pressReleaseSection.releases.map((slide, index) => (
               <div key={index}>
                 <div className={style.cardWrapper}>
                   <div className={style.card}>

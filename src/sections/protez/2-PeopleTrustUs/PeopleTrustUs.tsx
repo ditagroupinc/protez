@@ -8,70 +8,48 @@ import style from './style.module.scss'
 
 import { ProtezIDs } from '@/consts'
 import { Body } from '@/components/Typography'
-// import Button from '@/components/Button'
+
 import Slider from 'react-slick'
 import { useRef, useState } from 'react'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
 const peopleTrustUsText = {
-  // latestNews: {
-  //   english: 'Latest news',
-  //   ukrainian: 'Latest news',
-  // },
   cards: [
     {
       image: 'peopleTrustUsSlide1.png',
       description: {
-        english:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
         ukrainian:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
+          'Підписано меморандум про продовження співпраці між Protez Foundation та Міністерством охорони здоров’я України. Наша мета — єдність задля підтримки та допомоги нашим героям, які заслуговують на найкраще. Разом ми зможемо досягти значних змін у сфері реабілітації та забезпечення якісними протезами.',
+        english:
+          'A memorandum on the continuation of cooperation between the Protez Foundation and the Ministry of Health of Ukraine has been signed. Our goal is unity in support and assistance to our heroes who deserve the best. Together we can achieve significant changes in the field of rehabilitation and provision of quality prosthetics.',
       },
     },
     {
       image: 'peopleTrustUsSlide2.png',
       description: {
-        english:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
         ukrainian:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
+          'Співпраця та єдність – це ключ до успіху в нашому спільному бажанні забезпечити протезування та реабілітацію наших героїв на високому рівні. Ми продовжили меморандум про співпрацю з Міністерством внутрішніх справ України та успішно реалізуємо спільні проєкти з навчання фахівців і протезування військових.',
+        english:
+          'Collaboration and unity are the key to success in our common desire to provide prosthetics and rehabilitation of our heroes at a high level. We have extended the memorandum of cooperation with the Ministry of Internal Affairs of Ukraine and successfully implement joint projects for training specialists and prosthetics for military personnel.',
       },
     },
     {
       image: 'peopleTrustUsSlide3.png',
       description: {
-        english:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
         ukrainian:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
+          'Величезна подяка легендарному генералу Валерію Залужному за героїзм і мужність у перші роки війни.',
+        english:
+          'A huge thank you to the legendary General Valerii Zaluzhnyi for his heroism and courage in the first years of the war.',
       },
     },
     {
-      image: 'peopleTrustUsSlide1.png',
+      image: 'peopleTrustUsSlide4.png',
       description: {
-        english:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
         ukrainian:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
-      },
-    },
-    {
-      image: 'peopleTrustUsSlide2.png',
-      description: {
+          'Direct Relief – наш надійний партнер, який надихає нас своєю місією допомагати людям у всьому світі. Їхня підтримка в досягненні цілей Фонду Протез в Україні є неоціненною.',
         english:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
-        ukrainian:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
-      },
-    },
-    {
-      image: 'peopleTrustUsSlide3.png',
-      description: {
-        english:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
-        ukrainian:
-          'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
+          'Direct Relief – our reliable partner who inspires us with their mission to help people around the world. Their support in achieving the goals of the Prosthetics Foundation in Ukraine is invaluable.',
       },
     },
   ],

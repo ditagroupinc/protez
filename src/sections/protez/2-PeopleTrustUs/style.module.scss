@@ -83,11 +83,20 @@
   align-items: center;
   cursor: pointer;
 
-  background-color: transparent;
-  border-color: var(--white);
-  &:hover {
+  &:first-child {
+    background-color: transparent;
+    border-color: var(--grey);
+    &:hover {
+      border-color: var(--white);
+    }
+  }
+
+  &:last-child {
     background-color: var(--red);
     border-color: var(--red);
+    &:hover {
+      background-color: var(--red-hover);
+    }
   }
 }
 

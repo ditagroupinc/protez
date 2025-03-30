@@ -57,6 +57,13 @@
   &:nth-of-type(3) {
     grid-area: kyiv;
   }
+
+  &:hover {
+    .image {
+      transform: scale(1.1);
+      opacity: 0.4;
+    }
+  }
 }
 
 .cardCountry {
@@ -72,6 +79,7 @@
 }
 
 .image {
+  transition: all var(--transitionProps);
   position: absolute;
   top: 0;
   left: 0;

@@ -6,6 +6,7 @@ import './globals.css'
 import Script from 'next/script'
 import LanguageContextProvider from '@/contexts/LanguageContext'
 import FacebookPixelEvents from '@/components/FacebookPixelEvents'
+import { nunitoSans } from './fonts'
 
 import { ReactElement } from 'react'
 
@@ -53,7 +54,7 @@ export default function RootLayout({ children }: { children: ReactElement }) {
       </Script>
 
       <LanguageContextProvider>
-        <html lang="en">
+        <html lang="en" className={nunitoSans.className}>
           <body>
             {children}
             <noscript>

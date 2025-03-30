@@ -1,6 +1,6 @@
 .section {
   padding-top: 100px;
-  padding-bottom: 120px;
+  padding-bottom: 100px;
   background-color: var(--white);
 }
 
@@ -23,27 +23,39 @@
 }
 
 .slickSlider {
-  margin-top: 60px;
+  margin-top: 40px;
 }
 
 .slickSlider :global(.slick-track) {
-  height: 372px;
+  height: 410px;
 }
-
+// 38px /2 = 19px
 .cardWrapper {
-  height: 372px;
+  height: 410px;
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   padding-right: 10px;
 }
 
 .card {
-  background-color: white;
+  background-color: var(--black);
   display: block;
   width: 100%;
   max-width: 372px;
+  height: 100%;
+  max-height: 372px;
+  transition: all var(--transitionProps);
+
+  &:hover {
+    max-height: 100%;
+    & .cardPicture {
+      opacity: 0.4;
+    }
+  }
 }
 .cardPicture {
+  transition: all var(--transitionProps);
   width: 100%;
   height: 100%;
   object-fit: cover;
