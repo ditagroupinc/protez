@@ -11,6 +11,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import Script from 'next/script'
 import Section from '@/components/Section'
 import Header from '@/sections/Header'
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 const donatePage = {
   description1: {
@@ -41,12 +42,18 @@ const donatePage = {
     ukrainian:
       'Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America',
   },
+  sendDonations: {
+    english: 'You can also send a donation through PrivatBank',
+    ukrainian: 'Надіслати донат ви також можете через сервіс ПриватБанк',
+  },
   email: 'info@protezfoundation.com',
+  phone: '+1 612-772-4777',
   madeBy: '2024 © Made by DITA GROUP Inc.',
 }
 
 export default function Donate() {
   const { lang } = useLanguage()
+  const { mobile } = useScreenModeAndSize()
 
   return (
     <>
@@ -66,18 +73,57 @@ export default function Donate() {
           </div>
           <div className={style.bottomContainer}>
             <div className={style.left}>
+              {mobile && (
+                <>
+                  <p className={'h6 '}>{donatePage.sendDonations[lang]}</p>
+                  <a
+                    target="_blank"
+                    href="https://next.privat24.ua/payments/form/%7B%22token%22:%22f7dfa6a1-d8f6-4602-9f21-9b1c99d61cb5%22%7D?fbclid=PAAaYO7jJkvqk11ELkvBzSn4XYumcT4TtR7w8hug3JdXPX7oZM67guqdNAUxI_aem_ASDuFPVJU_RL-637DNh004o5oAYju01DczwND11fGmX4Hn-s0aPgzb3b_RvBPxzDtkQ"
+                    className={style.privatButton}
+                    rel="noreferrer"
+                  >
+                    <button>{icons.privat24Logo()}</button>
+                  </a>
+
+                  <Divider className={style.divider} />
+                </>
+              )}
               <div className={style.aboveDivider}>
                 <Body>{donatePage.nonprofitOrganization[lang]}</Body>
               </div>
 
               <Divider className={style.divider} />
               <div className={style.belowDivider}>
-                <div>
-                  <Body className={style.descTitle}>{donatePage.sendChecks[lang]}</Body>
-                  <Body className={style.descAddress}>{donatePage.address[lang]}</Body>
-                </div>
-                <Body className={style.descTitle}>{donatePage.email}</Body>
+                <Body className={style.descTitle}>{donatePage.sendChecks[lang]}</Body>
+                <br />
+                Protez Foundation 3510
+                <br />
+                3510 Hopkins Pl, W130D
+                <br />
+                Oakdale, MN 55128
+                <br />
+                United States of America
+                <br />
+                <br />
+                <Body className={style.emailPhone}>{donatePage.phone}</Body>
+                <Body className={style.emailPhone}>{donatePage.email}</Body>
               </div>
+              {!mobile && (
+                <>
+                  <Divider className={style.divider} />
+
+                  <p className={'h6 '}>{donatePage.sendDonations[lang]}</p>
+
+                  <a
+                    target="_blank"
+                    href="https://next.privat24.ua/payments/form/%7B%22token%22:%22f7dfa6a1-d8f6-4602-9f21-9b1c99d61cb5%22%7D?fbclid=PAAaYO7jJkvqk11ELkvBzSn4XYumcT4TtR7w8hug3JdXPX7oZM67guqdNAUxI_aem_ASDuFPVJU_RL-637DNh004o5oAYju01DczwND11fGmX4Hn-s0aPgzb3b_RvBPxzDtkQ"
+                    className={style.privatButton}
+                    rel="noreferrer"
+                  >
+                    <button>{icons.privat24Logo()}</button>
+                  </a>
+                </>
+              )}
             </div>
             <div className={style.right}>
               {/* @ts-ignore @eslint-disable-next-line */}

@@ -127,7 +127,8 @@ export const MakeDonationButton = ({
 }) => (
   <Button
     as="link"
-    href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+    // href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+    href="/donate"
     target={'_blank'}
     variant="primary-red"
     size={size}

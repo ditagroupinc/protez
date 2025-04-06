@@ -69,6 +69,10 @@
     .descTitle {
       font-weight: 700;
     }
+    .emailPhone {
+      font-weight: 700;
+      color: var(--red);
+    }
   }
 
   .right {
@@ -78,6 +82,21 @@
     .donationForm {
       width: 100%;
     }
+  }
+}
+
+.privatButton {
+  height: 60px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #131313;
+  border-radius: 4px;
+  padding: 0 32px;
+  // margin-top: auto; /* This pushes the button to the bottom */
+  & svg {
+    width: 100%;
   }
 }
 

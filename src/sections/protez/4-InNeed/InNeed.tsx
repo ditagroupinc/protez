@@ -31,8 +31,8 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
       {isDesktopLayout && icons.ukrainanMap(style.map)}
       <div className={style.left}>
         <ProtezImage
-          src={`protezPage/inNeed/prostheticsForUkrainians.png`}
-          alt="veterans with their fa"
+          src={`protezPage/inNeed/inNeed.png`}
+          alt="veterans"
           width={1794}
           height={1956}
           className={style.image}

@@ -22,7 +22,8 @@ interface Veteran {
   text: BilingualText
   img: string
   icon: keyof typeof icons.titles
-  video: string
+  spinIcon?: keyof typeof icons.spinIcons
+  video?: string
   facebook: string
   instagram: string
   url: string
@@ -64,6 +65,7 @@ const veteransSection: VeteransSection = {
       },
       img: 'vadymFedorov.png',
       icon: 'vadymFedorov',
+      spinIcon: 'vadymFedorovSpinIcon',
       video: 'https://www.youtube.com/embed/D1zR9DkYgu4',
       facebook: 'https://www.facebook.com/donate/238890858497931/199310116131457/',
       instagram: 'https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==',
@@ -98,12 +100,48 @@ const veteransSection: VeteransSection = {
       },
       img: 'artemSvergun.png',
       icon: 'artemSvergun',
+      spinIcon: 'artemSvergunSpinIcon',
       video: 'https://www.youtube.com/embed/D1zR9DkYgu4',
       facebook:
         'https://www.facebook.com/prostheticsforukrainians/posts/pfbid02ABFsNzJ81L8tBotVsVVbDwhuoeGWLsrzjbq8WRhXBYS327eFWUskaHVGXHxe9KLtl',
       instagram:
         'https://www.instagram.com/p/CuGu1bEuIaf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA%3D%3D=',
       url: 'ArtemSvergun',
+      videoLink:
+        'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F778775984044964%2F&show_text=false&width=267&t=0',
+      linkedin:
+        'https://www.linkedin.com/posts/protez-foundation_our-young-hero-artem-16-years-old-activity-7086077525998583808-kZBW/?utm_source=share&utm_medium=member_ios',
+    },
+    {
+      ageRank: {
+        english: '10 years old',
+        ukrainian: '10 років',
+      },
+      name: {
+        english: 'Volodymyr',
+        ukrainian: 'Володимир',
+      },
+      surname: {
+        english: 'Kostyria',
+        ukrainian: 'Костиря',
+      },
+      title: {
+        english: 'His dream is to run, jump and play football...',
+        ukrainian: 'Його мрія — бігати, стрибати і грати у футбол...',
+      },
+      text: {
+        english: `Volodya, a 10-year-old boy from the Dnipropetrovsk region, was born with atrophied lower limbs and spent years moving on his hands and knees. After the amputation of both lower limbs, he traveled to Minneapolis with the support of the Protez Foundation and took his first steps on training prosthetics. His determination and joy were incredible, as he was able to walk proudly for the first time in his life.`,
+        ukrainian: `Володя, 10-річний хлопчик із Дніпропетровської області, народився з атрофованими нижніми кінцівками й багато років пересувався на руках та колінах. Після ампутації обох нижніх кінцівок він вирушив до Міннеаполіса за підтримки Protez Foundation і зробив там свої перші кроки на тренувальних протезах. Його рішучість і радість були неймовірними, адже вперше в житті він зміг гордо ходити.`,
+      },
+      img: 'volodymyrKostyria.png',
+      icon: 'volodymyrKostyria',
+      // spinIcon:
+      // video: 'https://www.youtube.com/embed/D1zR9DkYgu4',
+      facebook:
+        'https://www.facebook.com/prostheticsforukrainians/posts/pfbid02ABFsNzJ81L8tBotVsVVbDwhuoeGWLsrzjbq8WRhXBYS327eFWUskaHVGXHxe9KLtl',
+      instagram:
+        'https://www.instagram.com/p/CuGu1bEuIaf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA%3D%3D=',
+      url: 'volodymyrKostyria',
       videoLink:
         'https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F778775984044964%2F&show_text=false&width=267&t=0',
       linkedin:
@@ -258,18 +296,19 @@ const Veterans = () => {
                         width={1306}
                         height={1890}
                       />
-
-                      <button
-                        className={style.roundButton}
-                        onClick={() => {
-                          setIframeData({ opened: true, url: slide.videoLink })
-                        }}
-                      >
-                        {icons[`${slide.icon as keyof typeof icons.titles}Icon`](
-                          style.spinningName
-                        )}
-                        {icons.triangle(style.triangle)}
-                      </button>
+                      {slide.spinIcon ? (
+                        <button
+                          className={style.roundButton}
+                          onClick={() => {
+                            setIframeData({ opened: true, url: slide.videoLink })
+                          }}
+                        >
+                          {icons.spinIcons[slide.spinIcon](style.spinningName)}
+                          {icons.triangle(style.triangle)}
+                        </button>
+                      ) : (
+                        ''
+                      )}
                     </div>
                   </div>
                 ))}
@@ -292,17 +331,19 @@ const Veterans = () => {
                           height={1890}
                         />
 
-                        <button
-                          className={style.roundButton}
-                          onClick={() => {
-                            setIframeData({ opened: true, url: slide.videoLink })
-                          }}
-                        >
-                          {icons[`${slide.icon as keyof typeof icons.titles}Icon`](
-                            style.spinningName
-                          )}
-                          {icons.triangle(style.triangle)}
-                        </button>
+                        {slide.spinIcon ? (
+                          <button
+                            className={style.roundButton}
+                            onClick={() => {
+                              setIframeData({ opened: true, url: slide.videoLink })
+                            }}
+                          >
+                            {icons.spinIcons[slide.spinIcon](style.spinningName)}
+                            {icons.triangle(style.triangle)}
+                          </button>
+                        ) : (
+                          ''
+                        )}
                       </div>
                     </div>
                     <div className={style.left}>

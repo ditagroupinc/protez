@@ -1,4 +1,4 @@
-import style from './style.module.css'
+import style from './style.module.scss'
 
 const Divider = ({ vertical, className = '' }: { vertical?: boolean; className?: string }) => {
   return (
