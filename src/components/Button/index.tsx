@@ -127,7 +127,6 @@ export const MakeDonationButton = ({
 }) => (
   <Button
     as="link"
-    // href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
     href="/donate"
     target={'_blank'}
     variant="primary-red"
@@ -200,7 +199,7 @@ export const ApplyToAcademyButton = ({
   <Button
     as="link"
     href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-    target={'_blank'}
+    target="_blank"
     variant="primary-blue"
     size={size}
     rel="noopener noreferrer"

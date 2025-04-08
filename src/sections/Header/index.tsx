@@ -366,6 +366,7 @@ const Header = ({
                   <Button
                     as="link"
                     href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+                    target="_blank"
                     variant="secondary-white"
                     size="small"
                   >
@@ -438,6 +439,7 @@ const Header = ({
                   <Button
                     as="link"
                     href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+                    target="_blank"
                     variant="secondary-black"
                     size="normal"
                     arrow

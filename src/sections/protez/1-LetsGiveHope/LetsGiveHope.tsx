@@ -52,6 +52,7 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
             <Button
               variant="secondary-white"
               as="link"
+              target="_blank"
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
               size="normal"
               arrow
@@ -62,6 +63,7 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
               <Button
                 variant="secondary-white"
                 as="link"
+                target="_blank"
                 href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
                 size="normal"
               >

@@ -79,7 +79,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
             <Button
               as="link"
               href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-              target={'_blank'}
+              target="_blank"
               variant="primary-blue"
               size={isMobile ? 'normal' : 'small'}
               rel="noopener noreferrer"
