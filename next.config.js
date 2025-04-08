@@ -8,13 +8,11 @@ const nextConfig = {
   },
   images: {
     domains: ['protez.wpengine.com'],
-    unoptimized: true,
+    unoptimized: environment === 'pages' ? true : false,
   },
-
   reactStrictMode: false,
-  output: 'export',
-  basePath: '/protez',
-  // basePath: environment === 'local' ? '' : '/protez',
+  output: environment === 'pages' ? 'export' : undefined,
+  basePath: environment === 'pages' ? '/protez' : undefined,
 }
 
 module.exports = nextConfig

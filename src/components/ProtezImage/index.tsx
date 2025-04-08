@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+const environment = process.env.ENVIRONMENT
+
 export interface ProtezImageProps {
   src: string
   alt: string
@@ -19,9 +21,11 @@ export default function ProtezImage({
   layout,
   priority = false,
 }: ProtezImageProps) {
+  const path = environment === 'pages' ? `/protez/${src}` : `/${src}`
+
   return (
     <Image
-      src={`/protez/${src}`}
+      src={path}
       alt={alt}
       width={width}
       height={height}

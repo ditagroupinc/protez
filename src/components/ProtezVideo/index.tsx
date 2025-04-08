@@ -1,5 +1,7 @@
 import { forwardRef } from 'react'
 
+const environment = process.env.ENVIRONMENT
+
 export interface ProtezVideoProps {
   src: string
   className?: string
@@ -16,6 +18,8 @@ export const ProtezVideo = forwardRef<HTMLVideoElement, ProtezVideoProps & { sou
     { src, className, autoPlay, loop, muted, playsInline, controls, sourceType = 'video/mp4' },
     ref
   ) {
+    const path = environment === 'pages' ? `/protez/${src}` : `/${src}`
+
     return (
       <video
         ref={ref}
@@ -26,7 +30,7 @@ export const ProtezVideo = forwardRef<HTMLVideoElement, ProtezVideoProps & { sou
         playsInline={playsInline}
         className={className}
       >
-        <source src={`/protez/${src}`} type={sourceType} />
+        <source src={path} type={sourceType} />
       </video>
     )
   }
