@@ -10,11 +10,15 @@
 @tailwind utilities;
 
 :root {
-  --pink: #cd0062;
+  --pink: #b40a54;
   --blue: #00a3ff;
-  --dark-blue: #0170ce;
   --white: #ffffff;
-  --black: #0d1125;
+  --dark-blue: #0d1125;
+  --black: #131313;
+  --red: #c31822;
+  --red-hover: #de1313;
+  --light-grey: #f3f3f3;
+  --grey: #c7c8cf;
   --navLeftWidth: 300px;
   --navRightWidth: 64px;
   --paddingVW: 2vw;
@@ -22,40 +26,73 @@
   --textScale: 1.01;
   --headerPaddingSide: 108px;
   --headerPaddingTop: 90px;
+  --whiteBorder: 1px solid rgba(255, 255, 255, 0.24);
   --greyBorder: 1px solid rgba(13, 17, 37, 0.24);
+  --protezBorder: 1px solid #4e4e4e;
+  /*  */
+  --section-padding-horizontal: 168px;
 }
 
-@media screen and (max-width: 1920px) {
+@media (max-width: 1600px) {
+  :root {
+    --section-padding-horizontal: 130px;
+  }
+}
+
+@media (max-width: 1440px) {
+  :root {
+    --section-padding-horizontal: 110px;
+  }
+}
+
+@media (max-width: 1366px) {
+  :root {
+    --section-padding-horizontal: 80px;
+  }
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --section-padding-horizontal: 60px;
+  }
+}
+
+@media (max-width: 600px) {
+  :root {
+    --section-padding-horizontal: 24px;
+  }
+}
+
+/* @media screen and (max-width: 1920px) {
   :root {
     --headerPaddingSide: 42px;
     --headerPaddingTop: 42px;
   }
-}
+} */
 
-@media screen and (max-width: 1366px) {
+/* @media screen and (max-width: 1366px) {
   :root {
-    /* --navLeftWidth: 264px; */
     --headerPaddingTop: 21px;
   }
-}
+} */
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   :root {
     --headerPaddingSide: 30px;
     --headerPaddingTop: 17px;
   }
-}
+} */
 
-@media screen and (min-width: 1981px) {
+/* @media screen and (min-width: 1981px) {
   :root {
     --paddingVW: 4vw;
   }
-}
+} */
 
 html,
 body,
 a {
-  font-family: 'Outfit', sans-serif;
+  font-family: var(--font-nunito-sans), sans-serif;
   font-style: normal;
   color: var(--white);
 }
@@ -78,23 +115,23 @@ body::-webkit-scrollbar {
 /* -------------------------------------------------------------------------------------- */
 
 /* -------------------------------------------------------------------------------------- */
-.h1,
+/* .h1,
 .h3,
 .h4 {
   font-weight: 700;
   font-family: 'Outfit', sans-serif;
-}
-.h2,
+} */
+/* .h2,
 .h5,
 .h6,
 .p {
   font-weight: 400;
   font-family: 'Outfit', sans-serif;
-}
-
+} */
+/* 
 .h6 {
   line-height: 24px;
-}
+} */
 
 .textContainer {
   height: -webkit-fit-content;
@@ -126,9 +163,22 @@ body::-webkit-scrollbar {
     /* transition-delay: 0.5s; */
   }
 }
-/* } */
 
-@media screen and (min-width: 1366px) {
+.no-scroll {
+  overflow: hidden;
+}
+
+.svgTextBlock {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* @media screen and (min-width: 1366px) {
   .h1 {
     font-size: calc(32px + 40 * ((100vw - 1366px) / 1194));
     line-height: calc(40px + 40 * ((100vw - 1366px) / 1194));
@@ -216,59 +266,33 @@ body::-webkit-scrollbar {
     font-size: 26px;
     line-height: 40px;
   }
-}
-
+} */
+/* 
 .section {
-  /* padding-left: calc(300px + var(--headerPaddingSide) + 280px); */
   padding-left: calc(366px + 309 * ((100vw - 1366px) / 1194));
   padding-right: calc(175px + 150 * ((100vw - 1366px) / 1194));
-  /* padding-right: calc(64px + var(--headerPaddingSide) + 175px); */
+
   padding-top: 9%;
   min-height: 100vh;
   position: relative;
-}
-@media screen and (max-width: 1920px) {
-  .section {
-    /* padding-left: calc(300px + var(--headerPaddingSide) + 120px); */
-    /* padding-right: calc(64px + var(--headerPaddingSide) + 80px); */
-  }
-}
+} */
 
-/* beforeTablet */
-@media screen and (max-width: 1366px) {
-  .section {
-    /* padding-left: calc(300px + var(--headerPaddingSide) + 80px); */
-    /* padding-right: calc(64px + var(--headerPaddingSide) + 80px); */
-  }
-}
-
-@media screen and (max-width: 1180px) {
+/* @media screen and (max-width: 1180px) {
   .section {
     padding-left: var(--headerPaddingSide);
     padding-right: var(--headerPaddingSide);
   }
-}
+} */
 
-@media screen and (max-width: 480px) {
+/* @media screen and (max-width: 480px) {
   .section {
-    /* padding-top: 30px; */
     padding-top: 160px;
     padding-left: 24px;
     padding-right: 24px;
     min-height: auto;
     padding-bottom: 5rem;
   }
-}
-
-.svgTextBlock {
-  max-width: 100%;
-  width: 100%;
-  height: auto;
-}
-
-.hidden {
-  display: none !important;
-}
+} */
 
 /* desktop */
 /* @media screen and (max-width: 1920px) {

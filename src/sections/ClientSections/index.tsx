@@ -1,40 +1,49 @@
 'use client'
 
-import Image from 'next/image'
+import {
+  Suspense,
+  useEffect,
+  // useRef,
+  // useState,
+  lazy,
+} from 'react'
+// import { usePageSettings } from '@/contexts/PageSettingsContext'
 
-import { useEffect, Suspense, lazy } from 'react'
-import { useInView } from 'react-intersection-observer'
+import style from './style.module.scss'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { Languages } from '@/types'
+
+import VideoBlock from './VideoBlock'
+import SmokeWrapper from './SmokeWrapper'
 
 import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils/parsers'
 
-import Header from '@/sections/Header'
-import LetsGiveHope from '@/sections/LetsGiveHope'
+import FullScreenFallback from '@/components/FullScreenFallback'
 
-const Veterans = lazy(() => import('@/sections/Veterans'))
-const PressRelease = lazy(() => import('@/sections/PressRelease'))
-const Events = lazy(() => import('@/sections/Events'))
-const OurMission = lazy(() => import('@/sections/OurMission'))
-const OurTeam = lazy(() => import('@/sections/OurTeam'))
-const OurPartners = lazy(() => import('@/sections/OurPartners'))
-const News = lazy(() => import('@/sections/News'))
-const InNeed = lazy(() => import('@/sections/InNeed'))
-const OurResults = lazy(() => import('@/sections/OurResults'))
-const MailingList = lazy(() => import('@/sections/MailingList'))
-const Merch = lazy(() => import('@/sections/Merch'))
-const Prosthetics = lazy(() => import('@/sections/Prosthetics'))
-
-import ThankYou from '@/sections/ThankYou'
-
-import BackToTopButton from '@/components/BackToTopButton'
-import style from './style.module.scss'
-import SmokeBackground from '@/components/SmokeBackground'
-
-import CompanyDataNonProfit from '@/components/CompanyDataNonProfit'
-
-import { useLanguage } from '@/contexts/LanguageContext'
-
-import { usePageSettings } from '@/contexts/PageSettingsContext'
-import { Languages } from '@/types'
+import LetsGiveHope from '../protez/1-LetsGiveHope/LetsGiveHope'
+import ProtezImage from '@/components/ProtezImage'
+import Header from '../Header'
+const ProstheticsForUkrainians = lazy(
+  () => import('@/sections/protez/3-ProstheticsForUkrainians/ProstheticsForUkrainians')
+)
+const SampleProsthesesCosts = lazy(
+  () => import('@/sections/protez/6-SampleProsthesesCosts/SampleProsthesesCosts')
+)
+const ProtezAcademy = lazy(() => import('@/sections/protez/7-ProtezAcademy/ProtezAcademy'))
+const PeopleTrustUs = lazy(() => import('@/sections/protez/2-PeopleTrustUs/PeopleTrustUs'))
+const OurPatients = lazy(() => import('@/sections/protez/11-OurPatients/OurPatients'))
+const OfficeLocations = lazy(() => import('@/sections/protez/13-OfficeLocations/OfficeLocations'))
+const Veterans = lazy(() => import('@/sections/protez/8-Veterans/Veterans'))
+const Events = lazy(() => import('@/sections/protez/9-Events/Events'))
+const PressRelease = lazy(() => import('@/sections/protez/10-PressRelease/PressRelease'))
+const MeetOurTeam = lazy(() => import('@/sections/protez/12-MeetOurTeam/MeetOurTeam'))
+const OurStarSupporters = lazy(
+  () => import('@/sections/protez/15-OurStarSupporters/OurStarSupporters')
+)
+const SpecialThanksToAllOurPartners = lazy(() => import('@/sections/SpecialThanksToAllOurPartners'))
+const MailingList = lazy(() => import('@/sections/protez/16-MailingList/MailingList'))
+const Merch = lazy(() => import('@/sections/protez/17-Merch/Merch'))
+const Footer = lazy(() => import('@/sections/Footer'))
 
 export default function ClientSections({
   news,
@@ -51,23 +60,6 @@ export default function ClientSections({
 }) {
   const { setLang } = useLanguage()
 
-  const { isBackgroundWhite, setIsBackgroundWhite, setDisabledSections } = usePageSettings()
-
-  const [refLetsGiveHope, inViewLetsGiveHope] = useInView({ triggerOnce: false })
-  const [refOurTeam, inViewOurTeam] = useInView({ triggerOnce: false })
-
-  const [refInNeed, inViewInNeed] = useInView({ triggerOnce: false })
-  const [refOurPartners, inViewOurPartners] = useInView({ triggerOnce: false })
-  const [refMerch, inViewMerch] = useInView({ triggerOnce: false })
-  const [refMailingList, inViewMailingList] = useInView({ triggerOnce: true })
-  const [refThankYou, inViewThankYou] = useInView({ triggerOnce: false })
-
-  const showCompanyData = !(inViewMerch || inViewThankYou)
-
-  useEffect(() => {
-    setIsBackgroundWhite(inViewOurTeam || inViewOurPartners || inViewMerch || inViewThankYou)
-  }, [inViewOurTeam, inViewOurPartners, inViewMerch, inViewThankYou, setIsBackgroundWhite])
-
   useEffect(() => {
     if (country === 'Ukraine') setLang(Languages.Ukrainian)
   }, [])
@@ -80,65 +72,118 @@ export default function ClientSections({
     if (!events || events.length === 0) sectionsToDisable.push('events')
     if (!pressReleases || pressReleases.length === 0) sectionsToDisable.push('pressReleases')
     if (sectionsToDisable.length > 0) {
-      setDisabledSections(sectionsToDisable)
+      // setDisabledSections(sectionsToDisable)
     }
   }, [news])
 
   return (
     <>
-      <Header />
-      <Suspense fallback={<div className={style.fallback}></div>}>
-        <main className={style.main}>
-          <CompanyDataNonProfit
-            black={isBackgroundWhite}
-            bgIsPink={inViewInNeed}
-            className={`${style.companyDataNonProfit} ${showCompanyData ? '' : 'hidden'}`}
-          />
+      <Header layout="protezPage" />
 
-          <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smokeTop} />
-            <div className={style.flagsBlock}>
-              <LetsGiveHope ref={refLetsGiveHope} />
-              <OurMission />
-              <Image
-                src="/flag-usa.png"
-                object-fit="contain"
-                alt="Picture of the author"
-                priority
-                width={1306}
-                height={1890}
-                className={style.americanFlag}
-              />
-            </div>
-            {statistics && <OurResults results={statistics} />}
+      <main className={style.main}>
+        <SmokeWrapper>
+          <div className={style.flagsBlock}>
+            <LetsGiveHope />
+
+            <ProtezImage
+              src={`flag-usa.png`}
+              object-fit="contain"
+              alt="Picture of the author"
+              priority
+              width={620}
+              height={927}
+              className={style.americanFlag}
+            />
+            <Suspense fallback={<FullScreenFallback />}>
+              <PeopleTrustUs />
+            </Suspense>
           </div>
+        </SmokeWrapper>
 
-          <InNeed ref={refInNeed} />
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
+            <ProstheticsForUkrainians />
+          </SmokeWrapper>
+        </Suspense>
 
-          <Prosthetics />
-          <div className={`${style.smokeBlock} ${style.veteransAndEventsBlock}`}>
-            <SmokeBackground className={style.smoke} />
+        <Suspense fallback={<FullScreenFallback />}>
+          <VideoBlock />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
+            <SampleProsthesesCosts />
+          </SmokeWrapper>
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
+            <ProtezAcademy />
+          </SmokeWrapper>
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
             <Veterans />
-            {pressReleases && pressReleases.length > 0 && (
-              <PressRelease pressReleases={pressReleases} />
-            )}
-            {events && events.length > 0 && <Events events={events} />}
-          </div>
-          <OurTeam ref={refOurTeam} />
-          <OurPartners ref={refOurPartners} />
-          <div className={style.smokeBlock}>
-            <SmokeBackground className={style.smoke} />
-            {news && news.length > 0 && <News news={news} />}
+          </SmokeWrapper>
+        </Suspense>
 
-            <MailingList ref={refMailingList} inView={inViewMailingList} />
-          </div>
-          <Merch ref={refMerch} />
-          {!inViewLetsGiveHope && (
-            <BackToTopButton href={'letsGiveHope'} black={isBackgroundWhite} />
-          )}
-        </main>
-        <ThankYou ref={refThankYou} />
-      </Suspense>
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
+            <Events />
+          </SmokeWrapper>
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <PressRelease />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <OurPatients />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <MeetOurTeam />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <OfficeLocations />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SpecialThanksToAllOurPartners />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <OurStarSupporters />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SmokeWrapper>
+            <MailingList />
+          </SmokeWrapper>
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <Merch />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <Footer layout="protezPage" />
+        </Suspense>
+      </main>
     </>
   )
 }
+
+// {
+//    {statistics && <OurResults results={statistics} />}
+
+//    {pressReleases && pressReleases.length > 0 && (
+//               <PressRelease pressReleases={pressReleases} />
+//             )}
+
+//    {events && events.length > 0 && <Events events={events} />}
+
+//    {news && news.length > 0 && <News news={news} />}
+// }

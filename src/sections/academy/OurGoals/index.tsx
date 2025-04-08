@@ -1,63 +1,57 @@
-import { forwardRef, useMemo } from 'react'
+import { forwardRef } from 'react'
 
-import { useLanguage } from '@/contexts/LanguageContext'
+// import { useLanguage } from '@/contexts/LanguageContext'
 
-import Button from '@/components/Button'
+import Section from '@/components/Section'
 
-import AcademySection from '@/sections/academy/AcademySection'
-import AcademyGoalCard from '@/sections/academy/OurGoals/components/AcademyGoalCard'
-
-import texts from '@/texts&svg'
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { icons } from './icons'
 import style from './style.module.scss'
 
-const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
-  const { lang } = useLanguage()
+import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-  const goalCards = useMemo<Array<{ icon: JSX.Element; text: string }>>(() => {
-    return [
-      {
-        icon: icons.iconDisabledPerson(`${style.cardIcon}`),
-        text: texts.academyGoals.goals1[lang],
-      },
-      {
-        icon: icons.iconHand(`${style.cardIcon}`),
-        text: texts.academyGoals.goals2[lang],
-      },
-      {
-        icon: icons.iconHelpHeart(`${style.cardIcon}`),
-        text: texts.academyGoals.goals3[lang],
-      },
-    ]
-  }, [lang])
+import { AcademyIDs } from '@/consts'
+import { SeeAllButton } from '@/components/Button'
+
+const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
+  // const { lang } = useLanguage()
+  const { width } = useScreenModeAndSize()
+
+  const goalCards = [
+    {
+      icon: icons.disabledPerson,
+      text: 'New skills will allow them to make the prosthetics much faster (days instead of weeks), improve patient satisfaction and significantly reduce the rehabilitation time and number of follow ups.',
+    },
+    {
+      icon: icons.hand,
+      text: 'Specialists will learn modern approaches in evaluation, casting, fabrication and rehabilitation',
+    },
+    {
+      icon: icons.helpHeart,
+      text: 'The instructors are certified trained professionals from Century College, Concordia and University of Minnesota.',
+    },
+  ]
 
   return (
-    <AcademySection ref={ref} id="academySection" className={style.academyGoalsSection}>
+    <Section ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoals}>
       <div className={style.academyGoalsContent}>
-        <div className={style.sectionTitle}>{icons.goalLogo[lang]()}</div>
+        <div className={style.linkCell}>
+          <SeeAllButton href="/" className={style.applyBtn} color="blue">
+            <span>Apply to Academy</span>
+          </SeeAllButton>
+        </div>
+        <div className={style.titleCell}>
+          {width < 900 ? icons.goalLogo.mobile(style.title) : icons.goalLogo.desktop(style.title)}
+        </div>
         {goalCards.map((item, index) => (
-          <AcademyGoalCard
-            key={index}
-            image={item.icon}
-            desc={item.text}
-            className={style.cardItem}
-          />
+          <TextAppearanceWrapper key={index} className={style.card}>
+            {item.icon(style.icon)}
+            <h5 className={style.cardDesc}>{item.text}</h5>
+          </TextAppearanceWrapper>
         ))}
-        <Button
-          as="link"
-          href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-          target={'_blank'}
-          rel="noopener noreferrer"
-          variant="normal-blue"
-          size="normal"
-          className={style.applyBtn}
-        >
-          <p>{texts.academyHeader.buttons.applyToAcademy[lang]}</p>
-          {icons.arrowUp()}
-        </Button>
       </div>
-    </AcademySection>
+    </Section>
   )
 })
 

@@ -1,0 +1,111 @@
+.section {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.overlay {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--black);
+  opacity: 60%;
+}
+
+.container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.left {
+  display: flex;
+  width: 100%;
+  max-width: 415px;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+  &.ukrainianLang {
+    max-width: 440px;
+  }
+}
+
+.logo {
+  width: 100%;
+  max-width: 330px;
+  height: auto;
+}
+
+.description {
+  color: var(--white);
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.right {
+  max-width: 890px;
+  position: relative;
+  z-index: 1;
+}
+.title {
+  width: 100%;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1180px) {
+  .section {
+    padding-bottom: 40px;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  .container {
+    flex-direction: column-reverse;
+    max-width: 80%;
+    gap: 24px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .left {
+    max-width: 100%;
+    gap: 32px;
+  }
+
+  .description {
+    text-align: center;
+  }
+
+  .buttonsContainer {
+    gap: 16px;
+    flex-direction: column;
+  }
+
+  .right {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .title {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .container {
+    max-width: 100%;
+  }
+}

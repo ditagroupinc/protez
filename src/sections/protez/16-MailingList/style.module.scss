@@ -1,0 +1,247 @@
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 630px;
+  width: 100%;
+  position: relative;
+}
+
+.title {
+  width: 100%;
+  height: auto;
+}
+
+.form {
+  margin-top: 24px;
+
+  & input {
+    display: block;
+    width: 100%;
+    margin-top: 24px;
+    padding: 18px 0;
+    background-color: transparent;
+    color: #ffffff99;
+    border-bottom: 1px solid var(--White, #fff);
+
+    &:focus {
+      outline-color: transparent;
+      outline-style: none;
+      background-color: transparent;
+    }
+  }
+}
+
+.submitButton {
+  max-width: 180px;
+  width: 100%;
+  margin: 32px auto 0 auto;
+
+  &.default {
+  }
+
+  &.loading {
+    background: #ffffff99;
+    border: 1px solid #ffffff99;
+
+    & img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &.sent {
+    background: #4caf5099;
+
+    border: 1px solid #4caf5099;
+  }
+  &.error {
+    background: #c3182299;
+    border: 1px solid #c3182299;
+  }
+}
+
+.imageWrapper {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  max-height: 316px;
+  max-width: 331px;
+
+  min-width: 157px;
+  min-height: 157px;
+
+  opacity: 0.6;
+
+  &:nth-child(1) {
+    grid-area: photo1;
+    justify-self: start;
+  }
+
+  &:nth-child(2) {
+    grid-area: photo2;
+    max-width: 292px;
+    max-height: 244px;
+    justify-self: center;
+  }
+
+  &:nth-child(3) {
+    grid-area: photo3;
+    max-width: 194px;
+    max-height: 185px;
+    justify-self: center;
+  }
+
+  &:nth-child(4) {
+    grid-area: photo4;
+    max-width: 292px;
+    max-height: 244px;
+    justify-self: center;
+  }
+
+  &:nth-child(5) {
+    grid-area: photo5;
+    justify-self: end;
+  }
+
+  &:nth-child(6) {
+    grid-area: photo6;
+    justify-self: start;
+    align-self: center;
+  }
+
+  &:nth-child(7) {
+    grid-area: photo7;
+    align-self: center;
+    justify-self: end;
+  }
+
+  &:nth-child(8) {
+    grid-area: photo8;
+
+    align-self: end;
+  }
+
+  &:nth-child(9) {
+    grid-area: photo9;
+
+    max-width: 292px;
+    max-height: 244px;
+    justify-self: center;
+    align-self: end;
+  }
+
+  &:nth-child(10) {
+    grid-area: photo10;
+
+    max-width: 194px;
+    max-height: 185px;
+    justify-self: center;
+    align-self: end;
+  }
+
+  &:nth-child(11) {
+    grid-area: photo11;
+
+    max-width: 292px;
+    max-height: 244px;
+    justify-self: center;
+    align-self: end;
+  }
+
+  &:nth-child(12) {
+    grid-area: photo12;
+    justify-self: end;
+    align-self: end;
+  }
+}
+.images {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  height: 100%;
+  min-width: 100%;
+  display: grid;
+
+  // pointer-events: none;
+
+  grid-template-columns: 331fr 292fr 194fr 292fr 331fr;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    'photo1 photo2 photo3 photo4 photo5'
+    'photo6 . . . photo7'
+    'photo8 photo9 photo10 photo11 photo12';
+  row-gap: 64px;
+  column-gap: 120px;
+  &.show .image {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .imageWrapper {
+    &:nth-child(1) .image,
+    &:nth-child(5) .image,
+    &:nth-child(6) .image,
+    &:nth-child(7) .image,
+    &:nth-child(8) .image,
+    &:nth-child(12) .image {
+      transition-delay: 0.75s;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transform-origin: center;
+  transform: scale(0.5, 0.5);
+  transition:
+    opacity 0.25s,
+    transform 0.25s;
+  transition-delay: 0.5s;
+  transition-timing-function: cubic-bezier(0.26, 0.53, 0.74, 1.48);
+}
+
+@media screen and (max-width: 1180px) {
+  .images {
+    column-gap: 80px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    min-height: auto;
+    height: auto;
+    min-height: 471px;
+  }
+
+  .images {
+    row-gap: 0;
+  }
+
+  .container {
+    max-width: 450px;
+  }
+
+  .title {
+    margin: 0 auto;
+    max-width: 350px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    max-width: 250px;
+  }
+}

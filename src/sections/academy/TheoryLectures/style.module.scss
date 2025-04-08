@@ -1,0 +1,290 @@
+.theoryLectures {
+  display: grid;
+  grid-template-columns: 340fr 400fr 400fr 440fr;
+  grid-template-rows: 340px 320px 320px;
+  align-items: flex-end;
+  padding-top: 120px;
+  padding-bottom: 60px;
+
+  & > * {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 32px;
+    border: var(--greyBorder);
+  }
+}
+
+.card {
+  transition: all var(--transitionProps);
+  &:hover {
+    background-color: var(--blue);
+    & .number {
+      color: var(--white);
+    }
+
+    .desc {
+      color: var(--white);
+    }
+  }
+}
+
+.desc,
+.number {
+  transition: all var(--transitionProps);
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.applyBtn {
+  width: 100%;
+  max-width: 240px;
+  & span {
+    max-width: 85px;
+  }
+}
+
+.sectionTitle {
+  max-width: 100%;
+}
+
+.number {
+  color: var(--blue);
+}
+
+.gridTitle {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 4;
+  align-items: end;
+  justify-content: center;
+  padding-right: 16px;
+  border: 0;
+}
+
+.gridButton {
+  align-items: flex-end;
+  padding: 0;
+  border: 0;
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.grid1x1 {
+  height: 270px;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.grid1x4 {
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 4;
+  grid-column-end: 5;
+}
+
+.grid2x2 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.grid2x3 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  border-left: 0;
+}
+
+.grid3x3 {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  border-top: 0;
+}
+
+.grid3x4 {
+  grid-row-start: 3;
+  grid-row-end: 4;
+  grid-column-start: 4;
+  grid-column-end: 5;
+  border-left: 0;
+}
+
+@media screen and (max-width: 1366px) {
+  .theoryLectures {
+    padding-top: 100px;
+    padding-bottom: 60px;
+
+    grid-template-columns: 260fr 300fr 300fr 350fr;
+    grid-template-rows: 340px 300px 300px;
+  }
+  .grid1x1 {
+    height: 260px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .theoryLectures {
+    padding-top: 120px;
+    padding-bottom: 60px;
+
+    grid-template-columns: repeat(24, 1fr);
+    grid-template-rows: 340px 300px 300px;
+  }
+  .gridTitle {
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    grid-column: span 14;
+  }
+  // 1
+  .grid1x4 {
+    grid-row-start: 1;
+    grid-row-end: 2;
+
+    grid-column: span 10;
+  }
+  // 2
+  .grid1x1 {
+    height: 100%;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column: span 9;
+    border-right: 0;
+  }
+  // 3
+  .grid2x2 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column: span 9;
+  }
+
+  .gridButton {
+    justify-content: flex-end;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column: span 6;
+  }
+  // 4
+  .grid2x3 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column: span 8;
+    border-left: var(--greyBorder);
+    border-right: 0;
+    border-top: 0;
+  }
+  // 5
+  .grid3x3 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column: span 8;
+  }
+  // 6
+  .grid3x4 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column: span 8;
+    border-left: 0;
+    border-top: 0;
+  }
+}
+
+/* phone */
+@media screen and (max-width: 600px) {
+  .desc,
+  .number {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  .theoryLectures {
+    padding-top: 60px;
+    padding-bottom: 20px;
+
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(6, auto);
+  }
+  .card {
+    gap: 40px;
+    padding: 16px;
+  }
+
+  .applyBtn {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .gridTitle {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 13;
+    justify-content: flex-end;
+    padding-right: 0;
+    align-items: end;
+  }
+  // 1
+  .grid1x4 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 13;
+    border-bottom: 0;
+  }
+  // 2
+  .grid1x1 {
+    height: 100%;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column: span 6;
+    border-right: 0;
+  }
+  // 3
+  .grid2x2 {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column: span 6;
+  }
+
+  // 4
+  .grid2x3 {
+    grid-row-start: 4;
+    grid-row-end: 5;
+    grid-column: span 12;
+    border-right: var(--greyBorder);
+  }
+  // 5
+  .grid3x3 {
+    grid-row-start: 5;
+    grid-row-end: 6;
+    grid-column: span 12;
+  }
+  // 6
+  .grid3x4 {
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    border-left: var(--greyBorder);
+  }
+  .gridButton {
+    justify-content: flex-start;
+    grid-row-start: 6;
+    grid-row-end: 7;
+    grid-column: span 6;
+    padding: 0;
+  }
+}

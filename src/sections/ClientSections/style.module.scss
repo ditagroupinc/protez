@@ -1,9 +1,10 @@
 .main {
+  // background-color: var(--dark-blue);
   background-color: var(--black);
 }
 
 .fallback {
-  background-color: var(--black);
+  background-color: var(--dark-blue);
   height: 100vh;
 }
 
@@ -15,34 +16,15 @@
   position: absolute;
   pointer-events: none;
   left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  max-width: 50%;
-}
-
-.smokeBlock {
-  position: relative;
-}
-
-.smokeTop {
-  height: calc(100% - 100vh);
-  top: auto;
-  bottom: 0;
-}
-
-/* tablet */
-@media screen and (max-width: 1180px) {
-  .companyDataNonProfit {
-    display: none;
-  }
+  top: 33%;
+  max-width: 32%;
+  height: auto;
 }
 
 /* phone */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   .americanFlag {
     max-width: 90%;
-    top: 42%;
+    top: 39%;
   }
 }

@@ -1,6 +1,7 @@
 import { getAllSections, getCountry } from '@/lib/api'
 import ClientSections from '@/sections/ClientSections'
 import { parseNews, parseStatistics, parseEvents, parsePressRelease } from '@/utils/parsers'
+// import { notFound } from 'next/navigation'
 
 export interface WPPost extends Record<string, unknown> {
   node: {
@@ -14,6 +15,7 @@ export default async function Home() {
 
   const country = await getCurrentCountry()
 
+  // return notFound()
   return (
     <ClientSections
       news={news}

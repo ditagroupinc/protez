@@ -1,76 +1,110 @@
 'use client'
 
 import { Suspense, lazy } from 'react'
-import { useInView } from 'react-intersection-observer'
-
-import { notFound } from 'next/navigation'
-
-import BackToTopButton from '@/components/BackToTopButton'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademyHeader from '@/sections/academy/Header'
 import AcademyIntro from '@/sections/academy/Intro'
 
-// =================================================================
-// LAZY LOADING IMPORT
+import FullScreenFallback from '@/components/FullScreenFallback'
 
 const OurGoals = lazy(() => import('@/sections/academy/OurGoals'))
 const OurResults = lazy(() => import('@/sections/academy/OurResults'))
 const TheoryLectures = lazy(() => import('@/sections/academy/TheoryLectures'))
-const SpecialThanksToAllOurPartners = lazy(
-  () => import('@/sections/academy/SpecialThanksToAllOurPartners')
-)
-
-// =================================================================
+const SpecialThanksToAllOurPartners = lazy(() => import('@/sections/SpecialThanksToAllOurPartners'))
+const OurTeachers = lazy(() => import('@/sections/academy/OurTeachers'))
+const Footer = lazy(() => import('@/sections/Footer'))
+const Chief = lazy(() => import('@/sections/academy/Chief'))
+const AmputeeRehab = lazy(() => import('@/sections/academy/AmputeeRehab'))
+const SummitResults = lazy(() => import('@/sections/academy/SummitResults'))
+const Academy = lazy(() => import('@/sections/academy/Academy'))
+const PracticeSessions = lazy(() => import('@/sections/academy/PracticeSessions'))
+const AcademyStudents = lazy(() => import('@/sections/academy/AcademyStudents'))
+const WeAreInNews = lazy(() => import('@/sections/academy/WeAreInNews'))
+const Events = lazy(() => import('@/sections/academy/Events'))
 
 import style from './style.module.scss'
-
-const hidePage = true
-
-// sections:
-//todo AcademyHeader
-//* Welcome to the Academy
-//* Our Goals
-// Protez Academy
-//* Our Results
-// Academy Teachers
-// Yakov Gradinar
-//* Theory Lectures
-// Practice Sessions
-// Past and Upcoming Events
-// Academy Students
-// Amputee rehab
-// Summit Results
-// We're in the News
-//todo All our Partners
-// Thank you
+import Header from '@/sections/Header'
 
 export default function AcademyPage() {
-  const [refIntro, inViewIntro] = useInView({ triggerOnce: false })
+  const { width } = useScreenModeAndSize()
 
-  const { mobile, width } = useScreenModeAndSize()
-  const isMobile = mobile || width < 768
-
-  return hidePage ? (
-    notFound()
-  ) : (
+  return (
     <>
-      <AcademyHeader />
+      <Header layout="academyPage" />
       <main className={style.main}>
-        <AcademyIntro ref={refIntro} />
-        {!isMobile && <BackToTopButton href={'#academyIntro'} color="blue" black={!inViewIntro} />}
+        <AcademyIntro />
 
-        {/* OTHER SECTIONS ARE RENDERED AFTER THIS PAGE IS RENDRERED*/}
-        {/* THE WHOLE SECTION IS NOT WRAPPERED WITH SUSPENSE TO PREVENT FLICKERING EFFECT OF THE PAGE */}
-        <Suspense fallback={<h1>Loading...</h1>}>
+        <Suspense fallback={<FullScreenFallback />}>
           <OurGoals />
-          <OurResults />
-          <TheoryLectures />
-          <SpecialThanksToAllOurPartners />
         </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <Academy />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <OurResults />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <OurTeachers />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <Chief />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <TheoryLectures />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <PracticeSessions />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <Events />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <AcademyStudents />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <AmputeeRehab />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <SummitResults />
+        </Suspense>
+
+        {width > 600 ? (
+          <>
+            <Suspense fallback={<FullScreenFallback />}>
+              <WeAreInNews />
+            </Suspense>
+
+            <Suspense fallback={<FullScreenFallback />}>
+              <SpecialThanksToAllOurPartners />
+            </Suspense>
+          </>
+        ) : (
+          <>
+            <Suspense fallback={<FullScreenFallback />}>
+              <SpecialThanksToAllOurPartners />
+            </Suspense>
+
+            <Suspense fallback={<FullScreenFallback />}>
+              <WeAreInNews />
+            </Suspense>
+          </>
+        )}
       </main>
-      {/* footer section */}
+
+      <Suspense fallback={<FullScreenFallback />}>
+        <Footer layout="academyPage" />
+      </Suspense>
     </>
   )
 }

@@ -1,0 +1,468 @@
+@mixin fullHeightAutoWidth {
+  width: auto;
+  height: 100%;
+}
+
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--light-grey-bg);
+}
+
+.title {
+  max-width: 705px;
+  height: auto;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(60, 1fr);
+  grid-template-rows: 300px 180px 300px 300px 300px 300px 180px;
+}
+
+.partnerCard {
+  border-left: var(--greyBorder);
+  border-bottom: var(--greyBorder);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  &:hover .partnerLogo {
+    display: none;
+  }
+  &:hover .partnerLogoColor {
+    display: block;
+  }
+}
+.partnerLogo,
+.partnerLogoColor {
+  width: 100%;
+  height: auto;
+  transition: opacity var(--transitionProps);
+  max-width: 100%;
+  max-height: 100%;
+}
+.partnerLogoColor {
+  display: none;
+}
+
+.partnerCard {
+  &:nth-child(1) {
+    // grid-area: directRelief;
+    grid-column: span 12;
+    border-top: var(--greyBorder);
+  }
+  &:nth-child(2) {
+    // grid-area: dita;
+    grid-column: span 12;
+    border-top: var(--greyBorder);
+  }
+  &:nth-child(3) {
+    // grid-area: ottobock;
+    grid-column: span 12;
+    border-top: var(--greyBorder);
+  }
+  &:nth-child(4) {
+    // grid-area: antonov;
+    grid-column: span 12;
+    border-top: var(--greyBorder);
+  }
+  &:nth-child(5) {
+    // grid-area: blatchford;
+    grid-column: span 12;
+    border-top: var(--greyBorder);
+    border-right: var(--greyBorder);
+  }
+  &:nth-child(6) {
+    // grid-area: chaliceOfMercy;
+    grid-column: span 15;
+  }
+  &:nth-child(7) {
+    // grid-area: xtremity;
+    grid-column: span 15;
+  }
+  &:nth-child(8) {
+    // grid-area: cozen;
+    grid-column: span 15;
+  }
+  &:nth-child(9) {
+    // grid-area: sTconstantine;
+    grid-column: span 15;
+    border-right: var(--greyBorder);
+  }
+  &:nth-child(10) {
+    // grid-area: paradise;
+    grid-column: span 20;
+  }
+  &:nth-child(11) {
+    // grid-area: klmb;
+    grid-column: span 20;
+
+    & .partnerLogo,
+    & .partnerLogoColor {
+      @include fullHeightAutoWidth;
+    }
+  }
+  &:nth-child(12) {
+    // grid-area: ukraine;
+    grid-column: span 20;
+    border-right: var(--greyBorder);
+
+    & .partnerLogo,
+    & .partnerLogoColor {
+      @include fullHeightAutoWidth;
+    }
+  }
+  &:nth-child(13) {
+    // grid-area: cerebral;
+    grid-column: span 15;
+  }
+  &:nth-child(14) {
+    // grid-area: slumberland;
+    grid-column: span 15;
+  }
+  &:nth-child(15) {
+    // grid-area: businessBus;
+    grid-column: span 15;
+  }
+  &:nth-child(16) {
+    // grid-area: stMaron;
+    grid-column: span 15;
+    border-right: var(--greyBorder);
+  }
+  &:nth-child(17) {
+    // grid-area: humanaTravel;
+    grid-column: span 20;
+  }
+  &:nth-child(18) {
+    // grid-area: smak;
+    grid-column: span 20;
+  }
+  &:nth-child(19) {
+    // grid-area: uhf;
+    grid-column: span 20;
+    border-right: var(--greyBorder);
+  }
+  &:nth-child(20) {
+    // grid-area: ticketToAmerica;
+    grid-column: span 12;
+  }
+  &:nth-child(21) {
+    // grid-area: fubcom;
+    grid-column: span 12;
+  }
+  &:nth-child(22) {
+    // grid-area: highlightPrinting;
+    grid-column: span 12;
+  }
+  &:nth-child(23) {
+    // grid-area: 4front;
+    grid-column: span 12;
+  }
+  &:nth-child(24) {
+    // grid-area: proteor;
+    grid-column: span 12;
+    border-right: var(--greyBorder);
+  }
+  &:nth-child(25) {
+    // grid-area: monarch;
+    grid-column: span 20;
+  }
+  &:nth-child(26) {
+    // grid-area: ukrsib;
+    grid-column: span 20;
+  }
+  &:nth-child(27) {
+    // grid-area: ossur;
+    grid-column: span 20;
+    border-right: var(--greyBorder);
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .container {
+    grid-template-rows: 220px 180px 300px 300px 300px 220px 180px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    max-width: 80%;
+  }
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 150px 180px 150px 180px 150px 180px 150px 180px;
+  }
+
+  .partnerCard {
+    padding: 16px;
+    &:nth-child(1) {
+      // grid-area: directRelief;
+      grid-column: span 3;
+    }
+    &:nth-child(2) {
+      // grid-area: dita;
+      grid-column: span 3;
+    }
+    &:nth-child(3) {
+      // grid-area: ottobock;
+      grid-column: span 3;
+    }
+    &:nth-child(4) {
+      // grid-area: antonov;
+      grid-column: span 3;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(5) {
+      // grid-area: blatchford;
+      grid-column: span 4;
+      border-top: none;
+      border-right: none;
+    }
+    &:nth-child(6) {
+      // grid-area: chaliceOfMercy;
+      grid-column: span 4;
+    }
+    &:nth-child(7) {
+      // grid-area: xtremity;
+      grid-column: span 4;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(8) {
+      // grid-area: cozen;
+      grid-column: span 3;
+    }
+    &:nth-child(9) {
+      // grid-area: sTconstantine;
+      grid-column: span 3;
+      border-right: none;
+    }
+    &:nth-child(10) {
+      // grid-area: paradise;
+      grid-column: span 3;
+    }
+    &:nth-child(11) {
+      // grid-area: klmb;
+      grid-column: span 3;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(12) {
+      // grid-area: ukraine;
+      grid-column: span 4;
+      border-right: none;
+    }
+    &:nth-child(13) {
+      // grid-area: cerebral;
+      grid-column: span 4;
+    }
+    &:nth-child(14) {
+      // grid-area: slumberland;
+      grid-column: span 4;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(15) {
+      // grid-area: businessBus;
+      grid-column: span 3;
+    }
+    &:nth-child(16) {
+      // grid-area: stMaron;
+      grid-column: span 3;
+      border-right: none;
+    }
+    &:nth-child(17) {
+      // grid-area: humanaTravel;
+      grid-column: span 3;
+    }
+    &:nth-child(18) {
+      // grid-area: smak;
+      grid-column: span 3;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(19) {
+      // grid-area: uhf;
+      grid-column: span 4;
+      border-right: none;
+    }
+    &:nth-child(20) {
+      // grid-area: ticketToAmerica;
+      grid-column: span 4;
+    }
+    &:nth-child(21) {
+      // grid-area: fubcom;
+      grid-column: span 4;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(22) {
+      // grid-area: highlightPrinting;
+      grid-column: span 3;
+    }
+    &:nth-child(23) {
+      // grid-area: 4front;
+      grid-column: span 3;
+    }
+    &:nth-child(24) {
+      // grid-area: proteor;
+      grid-column: span 3;
+      border-right: none;
+    }
+    &:nth-child(25) {
+      // grid-area: monarch;
+      grid-column: span 3;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(26) {
+      // grid-area: ukrsib;
+      grid-column: span 4;
+    }
+    &:nth-child(27) {
+      // grid-area: ossur;
+      grid-column: span 4;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .section {
+    padding-bottom: 40px;
+  }
+
+  .title {
+    max-width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(12, 120px);
+    grid-template-areas:
+      'directRelief dita'
+      'ottobock ottobock'
+      'antonov blatchford'
+      'chaliceOfMercy chaliceOfMercy'
+      'xtremity cozen'
+      'sTconstantine sTconstantine'
+      'paradise klmb'
+      'slumberland slumberland'
+      'cerebral ukraine'
+      'businessBus businessBus'
+      'stMaron humanaTravel'
+      'ticketToAmerica ticketToAmerica '
+      'uhf smak'
+      'highlightPrinting highlightPrinting'
+      'fubcom front4'
+      'proteor proteor'
+      'monarch ukrsib'
+      'ossur ossur';
+  }
+
+  .partnerCard {
+    padding: 16px;
+    &:nth-child(1) {
+      grid-area: directRelief;
+    }
+    &:nth-child(2) {
+      grid-area: dita;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(3) {
+      grid-area: ottobock;
+      border-top: none;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(4) {
+      grid-area: antonov;
+      border-top: none;
+      border-right: none;
+    }
+    &:nth-child(5) {
+      grid-area: blatchford;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(6) {
+      grid-area: chaliceOfMercy;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(7) {
+      grid-area: xtremity;
+      border-right: none;
+    }
+    &:nth-child(8) {
+      grid-area: cozen;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(9) {
+      grid-area: sTconstantine;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(10) {
+      grid-area: paradise;
+    }
+    &:nth-child(11) {
+      grid-area: klmb;
+    }
+    &:nth-child(12) {
+      grid-area: ukraine;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(13) {
+      grid-area: cerebral;
+    }
+    &:nth-child(14) {
+      grid-area: slumberland;
+    }
+    &:nth-child(15) {
+      grid-area: businessBus;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(16) {
+      grid-area: stMaron;
+    }
+    &:nth-child(17) {
+      grid-area: humanaTravel;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(18) {
+      grid-area: smak;
+    }
+    &:nth-child(19) {
+      grid-area: uhf;
+    }
+    &:nth-child(20) {
+      grid-area: ticketToAmerica;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(21) {
+      grid-area: fubcom;
+      border-right: none;
+    }
+    &:nth-child(22) {
+      grid-area: highlightPrinting;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(23) {
+      grid-area: front4;
+
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(24) {
+      grid-area: proteor;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(25) {
+      grid-area: monarch;
+      border-right: none;
+    }
+    &:nth-child(26) {
+      grid-area: ukrsib;
+      border-right: var(--greyBorder);
+    }
+    &:nth-child(27) {
+      grid-area: ossur;
+    }
+  }
+}

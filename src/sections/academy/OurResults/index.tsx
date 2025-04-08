@@ -1,37 +1,63 @@
-import { useLanguage } from '@/contexts/LanguageContext'
+// import { useLanguage } from '@/contexts/LanguageContext'
 
 import Button from '@/components/Button'
 
-import AcademySection from '@/sections/academy/AcademySection'
-import AcademyResultCard from '@/sections/academy/OurResults/components/AcademyResultCard'
-
-import texts from '@/texts&svg'
+import Section from '@/components/Section'
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+import CountUp from 'react-countup'
 
 import { icons } from './icons'
 import style from './style.module.scss'
 
+import { AcademyIDs } from '@/consts'
+
 // =================================================================
+
+interface AcademyResultCardProps {
+  count: number
+  title: string
+  className?: string
+}
+
+const AcademyResultCard = ({ count, title, className }: AcademyResultCardProps) => {
+  return (
+    <TextAppearanceWrapper className={`${style.academyResultCard} ${className}`}>
+      <CountUp end={count} duration={2} className={style.count} />
+      <p className={style.desc}>{title}</p>
+    </TextAppearanceWrapper>
+  )
+}
 
 const academyResultsCount = [92, 26, 9, 2] as const
 
-type ResultStatistics = Record<string, { english: string; ukrainian: string }>
-
-const resultStatistics: ResultStatistics = texts.academyResults.statistics
+const resultStatistics = [
+  'People received prosthetics',
+  'Specialists trained',
+  'Prostheses were provided',
+  'Summits were organized',
+]
 
 // =================================================================
 
 const OurResults = () => {
-  const { lang } = useLanguage()
+  // const { lang } = useLanguage()
 
   return (
-    <AcademySection id="academyResults" className={style.academyResults}>
+    <Section id={AcademyIDs.OurResults} className={style.academyResults}>
       <div className={style.resultsContent}>
         <div className={style.leftPart}>
           <div className={style.sectionTitle}>{icons.academyResultsTitle()}</div>
           <div className={style.resultsInfo}>
             <div className={style.infoWrapper}>
-              <p className={style.date}>{texts.academyResults.date[lang]}</p>
-              <p className={style.desc}>{texts.academyResults.description[lang]}</p>
+              <p className={style.date}>
+                (May 2022 – September 2023)
+                {/* {texts.academyResults.date[lang]} */}
+              </p>
+              <p className={style.desc}>
+                Ukrainian Specialists already went through the Program and back in their home
+                country helping restore the lives of those who lost limbs during the war
+                {/* {texts.academyResults.description[lang]} */}
+              </p>
             </div>
             <div className={style.btnGroup}>
               <Button
@@ -40,12 +66,14 @@ const OurResults = () => {
                 target={'_blank'}
                 variant="primary-blue"
                 rel="noopener noreferrer"
-                size="big"
+                size="normal"
               >
-                {texts.academyHeader.buttons.applyToAcademy[lang]}
+                Apply to Academy
+                {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
               </Button>
-              <Button as="link" href="/donate" variant="normal-black" size="big">
-                {texts.academyHeader.buttons.supportAcademy[lang]}
+              <Button as="link" href="/donate" variant="secondary-black" size="normal">
+                Support Academy
+                {/* {texts.academyHeader.buttons.supportAcademy[lang]} */}
                 {icons.arrowUp(`${style.arrowUpIcon}`)}
               </Button>
             </div>
@@ -53,32 +81,28 @@ const OurResults = () => {
         </div>
         <div className={style.rightPart}>
           <div className={style.leftWrapper}>
-            {Object.keys(resultStatistics)
-              .slice(0, 2)
-              .map((key, index) => (
-                <AcademyResultCard
-                  key={index}
-                  title={resultStatistics[key][lang]}
-                  count={academyResultsCount[index]}
-                  className={style.card}
-                />
-              ))}
+            {resultStatistics.slice(0, 2).map((statistics, index) => (
+              <AcademyResultCard
+                key={index}
+                title={statistics}
+                count={academyResultsCount[index]}
+                className={style.card}
+              />
+            ))}
           </div>
           <div className={style.rightWrapper}>
-            {Object.keys(resultStatistics)
-              .slice(2)
-              .map((key, index) => (
-                <AcademyResultCard
-                  key={index}
-                  title={resultStatistics[key][lang]}
-                  count={academyResultsCount[index + 2]}
-                  className={style.card}
-                />
-              ))}
+            {resultStatistics.slice(2).map((statistics, index) => (
+              <AcademyResultCard
+                key={index}
+                title={statistics}
+                count={academyResultsCount[index + 2]}
+                className={style.card}
+              />
+            ))}
           </div>
         </div>
       </div>
-    </AcademySection>
+    </Section>
   )
 }
 
