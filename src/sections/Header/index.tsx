@@ -363,7 +363,12 @@ const Header = ({
                 <>
                   <MakeDonationButton lang={lang} size="small" />
 
-                  <Button as="link" href="/academy" variant="secondary-white" size="small">
+                  <Button
+                    as="link"
+                    href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+                    variant="secondary-white"
+                    size="small"
+                  >
                     {text[layout].actionButtons.needAProthesis[lang]}
                   </Button>
                 </>
