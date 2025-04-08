@@ -437,7 +437,7 @@ const Header = ({
 
                   <Button
                     as="link"
-                    href="/"
+                    href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
                     variant="secondary-black"
                     size="normal"
                     arrow

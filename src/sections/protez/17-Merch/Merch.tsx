@@ -120,7 +120,7 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
       <TextAppearanceWrapper className={style.titleWrapper}>
         {merchLogo[lang](style.title)}
         {isDesktopLayout && (
-          <SeeAllButton href="/" className={style.viewAllButton}>
+          <SeeAllButton href="https://www.protezmerch.com/" className={style.viewAllButton}>
             <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>
           </SeeAllButton>
         )}
@@ -146,7 +146,7 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
 
       {!isDesktopLayout && (
         <div className={style.buttonWrapper}>
-          <SeeAllButton href="/" className={style.viewAllButton}>
+          <SeeAllButton href="https://www.protezmerch.com/" className={style.viewAllButton}>
             <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>
           </SeeAllButton>
         </div>

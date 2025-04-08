@@ -40,7 +40,7 @@ const SpecialThanksToAllOurPartners = () => {
   return (
     <Section id={ProtezIDs.SpecialThanksToAllOurPartners} className={style.section}>
       <div className={style.buttonCell}>
-        <SeeAllButton href="/" className={style.discoverAllButton}>
+        <SeeAllButton href="/partners" className={style.discoverAllButton}>
           <span className={style.buttonText}>
             {specialThanksToAllOurPartnersSection.discoverAllPartners[lang]}
           </span>

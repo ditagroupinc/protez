@@ -69,10 +69,15 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
             <div className={style.buttonGroup}>
               {layout === 'protezPage' ? (
                 <>
-                  <Button as="link" href="/" variant="primary-black" size="normal">
+                  <Button as="link" href="/donate" variant="primary-black" size="normal">
                     {footerSection.giveHope[lang]}
                   </Button>
-                  <Button as="link" href="/" variant="secondary-white" size="normal">
+                  <Button
+                    as="link"
+                    href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+                    variant="secondary-white"
+                    size="normal"
+                  >
                     {footerSection.protezAcademy[lang]}
                   </Button>
                 </>

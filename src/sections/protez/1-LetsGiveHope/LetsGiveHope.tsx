@@ -49,11 +49,22 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
           </Body>
           <div className={style.buttonsContainer}>
             <MakeDonationButton lang={lang} size="normal" />
-            <Button variant="secondary-white" as="link" href="/" size="normal" arrow>
+            <Button
+              variant="secondary-white"
+              as="link"
+              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              size="normal"
+              arrow
+            >
               {letsGiveHopeText.needAProthesis[lang]}
             </Button>
             {!isDesktop && (
-              <Button variant="secondary-white" as="link" href="/" size="normal">
+              <Button
+                variant="secondary-white"
+                as="link"
+                href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+                size="normal"
+              >
                 {letsGiveHopeText.protezAcademy[lang]}
               </Button>
             )}
