@@ -135,13 +135,13 @@ const text = {
         },
         id: ProtezIDs.SpecialThanksToAllOurPartners,
       },
-      {
-        text: {
-          english: 'Ambassadors',
-          ukrainian: 'Амбасадори',
-        },
-        id: ProtezIDs.OurStarSupporters,
-      },
+      // {
+      //   text: {
+      //     english: 'Ambassadors',
+      //     ukrainian: 'Амбасадори',
+      //   },
+      //   id: ProtezIDs.OurStarSupporters,
+      // },
       {
         text: {
           english: 'Subscribe to Updates',

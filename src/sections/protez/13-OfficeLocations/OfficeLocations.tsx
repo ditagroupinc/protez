@@ -55,8 +55,8 @@ const officeLocationsSection = {
         ukrainian: 'Kyiv',
       },
       address: {
-        english: 'Coming soon',
-        ukrainian: 'Coming soon',
+        english: ' ',
+        ukrainian: ' ',
       },
       img: 'officeLocationsSlide3.png',
     },
