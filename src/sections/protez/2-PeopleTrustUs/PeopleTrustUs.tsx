@@ -17,6 +17,15 @@ import ProtezImage from '@/components/ProtezImage'
 const peopleTrustUsText = {
   cards: [
     {
+      image: 'peopleTrustUsSlide5.png',
+      description: {
+        ukrainian:
+          'Доктор Яків Градінар отримує нагороду від Президента України Володимира Зеленського.',
+        english:
+          'Dr. Yakov Gradinar receives an award from the President of Ukraine, Volodymyr Zelenskyy.',
+      },
+    },
+    {
       image: 'peopleTrustUsSlide1.png',
       description: {
         ukrainian:
