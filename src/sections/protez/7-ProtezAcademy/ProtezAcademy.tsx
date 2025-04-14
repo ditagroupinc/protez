@@ -73,7 +73,14 @@ const ProtezAcademy = () => {
             <Button as="link" href="/" variant="primary-blue" size="normal">
               {protezAcademyText.learnMore[lang]}
             </Button>
-            <Button as="link" href="/" variant="secondary-white" size="normal" arrow>
+            <Button
+              as="link"
+              target="_blank"
+              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              variant="secondary-white"
+              size="normal"
+              arrow
+            >
               {protezAcademyText.applyToAcademy[lang]}
             </Button>
           </TextAppearanceWrapper>

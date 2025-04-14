@@ -27,8 +27,24 @@ const ourResultsText = {
     ukrainian: 'More results',
   },
   cards: [
+    // {
+    //   number: 550,
+    //   description: {
+    //     english: 'Prostheses',
+    //     ukrainian: `Встановлено протезів`,
+    //   },
+    //   suffix: '+',
+    // },
     {
-      number: 550,
+      number: 500,
+      description: {
+        english: 'Patients',
+        ukrainian: `Пацієнтів`,
+      },
+      suffix: '+',
+    },
+    {
+      number: 800,
       description: {
         english: 'Prostheses',
         ukrainian: `Встановлено протезів`,
@@ -42,24 +58,24 @@ const ourResultsText = {
         ukrainian: `Відкрито клінік`,
       },
     },
+    // {
+    //   number: 250,
+    //   description: {
+    //     english: 'Patients',
+    //     ukrainian: `Запротезовано пацієнтів`,
+    //   },
+    //   suffix: '+',
+    // },
     {
-      number: 250,
-      description: {
-        english: 'Patients',
-        ukrainian: `Запротезовано пацієнтів`,
-      },
-      suffix: '+',
-    },
-    {
-      number: 80,
+      number: 100,
       description: {
         english: 'Specialists trained',
         ukrainian: `Підготовлено спеціалістів`,
       },
-      suffix: '+',
+      // suffix: '+',
     },
     {
-      number: 7000000,
+      number: 10000000,
       description: {
         english: 'Spent on mission',
         ukrainian: `Витрачено на допомогу`,

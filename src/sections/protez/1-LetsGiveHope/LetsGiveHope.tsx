@@ -53,7 +53,7 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
               variant="secondary-white"
               as="link"
               target="_blank"
-              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              href="https://forms.gle/WUVBvfZhYJsanGVbA"
               size="normal"
               arrow
             >
@@ -64,7 +64,7 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
                 variant="secondary-white"
                 as="link"
                 target="_blank"
-                href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+                href="https://forms.gle/WUVBvfZhYJsanGVbA"
                 size="normal"
               >
                 {letsGiveHopeText.protezAcademy[lang]}
