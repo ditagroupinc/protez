@@ -1,6 +1,7 @@
 'use client'
 
 import { Suspense, lazy } from 'react'
+import { notFound } from 'next/navigation'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
@@ -28,6 +29,8 @@ import Header from '@/sections/Header'
 
 export default function AcademyPage() {
   const { width } = useScreenModeAndSize()
+
+  return notFound()
 
   return (
     <>

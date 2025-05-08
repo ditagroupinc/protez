@@ -40,8 +40,8 @@ const officeLocationsSection = {
         ukrainian: 'Svalyava',
       },
       address: {
-        english: '3510 Hopkins Pl',
-        ukrainian: '3510 Hopkins Pl',
+        english: 'Naberezhna St, 14, 61',
+        ukrainian: 'вул. Набережна 14, 61',
       },
       img: 'officeLocationsSlide2.png',
     },
@@ -55,8 +55,8 @@ const officeLocationsSection = {
         ukrainian: 'Kyiv',
       },
       address: {
-        english: ' ',
-        ukrainian: ' ',
+        english: 'Khreshchatyk St, 7/11',
+        ukrainian: 'вул. Хрещатик 7/11',
       },
       img: 'officeLocationsSlide3.png',
     },
