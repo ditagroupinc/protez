@@ -96,7 +96,7 @@ export default function Donate() {
               <div className={style.belowDivider}>
                 <Body className={style.descTitle}>{donatePage.sendChecks[lang]}</Body>
                 <br />
-                Protez Foundation 3510
+                Protez Foundation
                 <br />
                 3510 Hopkins Pl, W130D
                 <br />
