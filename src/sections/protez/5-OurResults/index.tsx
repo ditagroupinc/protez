@@ -36,7 +36,7 @@ const ourResultsText = {
     //   suffix: '+',
     // },
     {
-      number: 500,
+      number: 735,
       description: {
         english: 'Patients',
         ukrainian: `Пацієнтів`,
@@ -44,7 +44,7 @@ const ourResultsText = {
       suffix: '+',
     },
     {
-      number: 800,
+      number: 1600,
       description: {
         english: 'Prostheses',
         ukrainian: `Встановлено протезів`,
