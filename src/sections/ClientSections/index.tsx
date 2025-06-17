@@ -31,6 +31,8 @@ const SampleProsthesesCosts = lazy(
 )
 const ProtezAcademy = lazy(() => import('@/sections/protez/7-ProtezAcademy/ProtezAcademy'))
 const PeopleTrustUs = lazy(() => import('@/sections/protez/2-PeopleTrustUs/PeopleTrustUs'))
+const InNeed = lazy(() => import('@/sections/protez/4-InNeed/InNeed'))
+const OurResults = lazy(() => import('@/sections/protez/5-OurResults/OurResults'))
 const OurPatients = lazy(() => import('@/sections/protez/11-OurPatients/OurPatients'))
 const OfficeLocations = lazy(() => import('@/sections/protez/13-OfficeLocations/OfficeLocations'))
 const Veterans = lazy(() => import('@/sections/protez/8-Veterans/Veterans'))
@@ -46,35 +48,29 @@ const Merch = lazy(() => import('@/sections/protez/17-Merch/Merch'))
 const Footer = lazy(() => import('@/sections/Footer'))
 
 export default function ClientSections({
-  news,
+  // news,
   statistics,
   events,
-  pressReleases,
+  // pressReleases,
   country,
 }: {
   news: SingleNews[] | null
-  statistics: Statistics | null
+  statistics: Statistics
   events: SingleEvent[] | null
   pressReleases: SinglePressRelease[] | null
   country: string
 }) {
   const { setLang } = useLanguage()
 
+  // console.log('news', news)
+  // console.log('statistics', statistics)
+  // console.log('events', events)
+  // console.log('pressReleases', pressReleases)
+  // console.log('country', country)
+
   useEffect(() => {
     if (country === 'Ukraine') setLang(Languages.Ukrainian)
   }, [])
-
-  useEffect(() => {
-    const sectionsToDisable = []
-
-    if (!news || news.length === 0) sectionsToDisable.push('news')
-    if (!statistics) sectionsToDisable.push('results')
-    if (!events || events.length === 0) sectionsToDisable.push('events')
-    if (!pressReleases || pressReleases.length === 0) sectionsToDisable.push('pressReleases')
-    if (sectionsToDisable.length > 0) {
-      // setDisabledSections(sectionsToDisable)
-    }
-  }, [news])
 
   return (
     <>
@@ -107,7 +103,10 @@ export default function ClientSections({
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
-          <VideoBlock />
+          <VideoBlock
+            inNeedSection={<InNeed />}
+            ourResultsSection={<OurResults results={statistics} />}
+          />
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
@@ -128,11 +127,13 @@ export default function ClientSections({
           </SmokeWrapper>
         </Suspense>
 
-        <Suspense fallback={<FullScreenFallback />}>
-          <SmokeWrapper>
-            <Events />
-          </SmokeWrapper>
-        </Suspense>
+        {events && events.length > 0 && (
+          <Suspense fallback={<FullScreenFallback />}>
+            <SmokeWrapper>
+              <Events events={events} />
+            </SmokeWrapper>
+          </Suspense>
+        )}
 
         <Suspense fallback={<FullScreenFallback />}>
           <PressRelease />

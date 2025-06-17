@@ -1,12 +1,15 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState, useEffect, ReactElement, cloneElement } from 'react'
 
 import style from './style.module.scss'
-import InNeed from '@/sections/protez/4-InNeed/InNeed'
-import OurResults from '@/sections/protez/5-OurResults'
 import SmokeWrapper from '../SmokeWrapper'
 import ProtezVideo from '@/components/ProtezVideo'
 
-const VideoBlock = () => {
+interface VideoBlockProps {
+  inNeedSection: ReactElement
+  ourResultsSection: ReactElement
+}
+
+const VideoBlock = ({ inNeedSection, ourResultsSection }: VideoBlockProps) => {
   const sectionRef = useRef<HTMLDivElement | null>(null)
   const [height, setHeight] = useState<number>(0)
 
@@ -51,10 +54,8 @@ const VideoBlock = () => {
         <div className={style.filter} />
         <div className={style.overlay} />
       </div>
-      <SmokeWrapper>
-        <InNeed />
-      </SmokeWrapper>
-      <OurResults ref={sectionRef} />
+      <SmokeWrapper>{inNeedSection}</SmokeWrapper>
+      {cloneElement(ourResultsSection, { ref: sectionRef })}
     </div>
   )
 }

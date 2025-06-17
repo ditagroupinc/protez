@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { getPath } from './utils'
 
 const environment = process.env.ENVIRONMENT
 
@@ -10,6 +11,7 @@ export interface ProtezImageProps {
   className?: string
   layout?: string
   priority?: boolean
+  external?: boolean
 }
 
 export default function ProtezImage({
@@ -20,8 +22,9 @@ export default function ProtezImage({
   className,
   layout,
   priority = false,
+  external = false,
 }: ProtezImageProps) {
-  const path = environment === 'pages' ? `/protez/${src}` : `/${src}`
+  const path = getPath(src, external, environment || '')
 
   return (
     <Image

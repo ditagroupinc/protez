@@ -12,6 +12,27 @@ import { Body, H2 } from '@/components/Typography'
 import Button, { MakeDonationButton } from '@/components/Button'
 import { ForwardedRef, forwardRef } from 'react'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import { extractNumber, extractPrefixSuffix } from './utils'
+
+interface StatisticsDataItem {
+  statisticsDataLabel: {
+    english: string
+    ukrainian: string
+  }
+  statisticsDataValue: string
+}
+
+interface Results {
+  statisticsDate: {
+    english: string
+    ukrainian: string
+  }
+  statisticsData: StatisticsDataItem[]
+}
+
+interface OurResultsProps {
+  results: Results
+}
 
 const ourResultsText = {
   date: {
@@ -26,70 +47,19 @@ const ourResultsText = {
     english: 'More results',
     ukrainian: 'More results',
   },
-  cards: [
-    // {
-    //   number: 550,
-    //   description: {
-    //     english: 'Prostheses',
-    //     ukrainian: `Встановлено протезів`,
-    //   },
-    //   suffix: '+',
-    // },
-    {
-      number: 735,
-      description: {
-        english: 'Patients',
-        ukrainian: `Пацієнтів`,
-      },
-      suffix: '+',
-    },
-    {
-      number: 1600,
-      description: {
-        english: 'Prostheses',
-        ukrainian: `Встановлено протезів`,
-      },
-      suffix: '+',
-    },
-    {
-      number: 3,
-      description: {
-        english: 'Clinics opened',
-        ukrainian: `Відкрито клінік`,
-      },
-    },
-    // {
-    //   number: 250,
-    //   description: {
-    //     english: 'Patients',
-    //     ukrainian: `Запротезовано пацієнтів`,
-    //   },
-    //   suffix: '+',
-    // },
-    {
-      number: 100,
-      description: {
-        english: 'Specialists trained',
-        ukrainian: `Підготовлено спеціалістів`,
-      },
-      // suffix: '+',
-    },
-    {
-      number: 10000000,
-      description: {
-        english: 'Spent on mission',
-        ukrainian: `Витрачено на допомогу`,
-      },
-      prefix: '$',
-    },
-  ],
 }
 
-const OurResults = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
+const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResults(
+  { results },
+  ref: ForwardedRef<HTMLDivElement>
+) {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
 
   const isDesktopLayout = width > 800
+
+  const dateText = results.statisticsDate
+  const cardsData = results.statisticsData
 
   return (
     <>
@@ -97,7 +67,7 @@ const OurResults = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
         <div className={style.left}>
           {icons.ourResultsLogo.desktop[lang](style.title)}
           <Body large={isDesktopLayout} className={style.date}>
-            {ourResultsText.date[lang]}
+            {dateText[lang]}
           </Body>
 
           <Body large={isDesktopLayout} className={style.text}>
@@ -114,16 +84,25 @@ const OurResults = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
           )}
         </div>
         <div className={style.right}>
-          {ourResultsText.cards.map((card, index) => (
-            <TextAppearanceWrapper key={index} className={style.card}>
-              <div className={style.count}>
-                {card.prefix && <span>{card.prefix}</span>}
-                <CountUp end={card.number} duration={2} className={style.count} />
-                {card.suffix && <span>{card.suffix}</span>}
-              </div>
-              <H2 className={style.description}>{card.description[lang]}</H2>
-            </TextAppearanceWrapper>
-          ))}
+          {cardsData.map((card, index) => {
+            const { prefix, suffix } = extractPrefixSuffix(card.statisticsDataValue)
+            const number = extractNumber(card.statisticsDataValue)
+
+            return (
+              <TextAppearanceWrapper key={index} className={style.card}>
+                <div className={style.count}>
+                  {prefix && <span>{prefix}</span>}
+                  {number > 0 ? (
+                    <CountUp end={number} duration={2} className={style.count} />
+                  ) : (
+                    <span>{card.statisticsDataValue}</span>
+                  )}
+                  {suffix && <span>{suffix}</span>}
+                </div>
+                <H2 className={style.description}>{card.statisticsDataLabel[lang]}</H2>
+              </TextAppearanceWrapper>
+            )
+          })}
         </div>
         {!isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>

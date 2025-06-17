@@ -55,21 +55,19 @@ async function getPosts() {
     })
 
     return {
-      news: postsByTopics.news ? parseNews(postsByTopics.news) : null,
-      statistics: postsByTopics.statistics ? parseStatistics(postsByTopics.statistics) : null,
-      events: postsByTopics.events ? parseEvents(postsByTopics.events) : null,
-      pressReleases: postsByTopics.pressReleases
-        ? parsePressRelease(postsByTopics.pressReleases)
-        : null,
+      news: parseNews(postsByTopics.news),
+      statistics: parseStatistics(postsByTopics.statistics),
+      events: parseEvents(postsByTopics.events),
+      pressReleases: parsePressRelease(postsByTopics.pressReleases),
     }
   } catch (error) {
     console.error('Error fetching posts:', error)
 
     return {
-      news: null,
-      statistics: null,
-      events: null,
-      pressReleases: null,
+      news: parseNews(''),
+      statistics: parseStatistics(''),
+      events: parseEvents(''),
+      pressReleases: parsePressRelease(''),
     }
   }
 }

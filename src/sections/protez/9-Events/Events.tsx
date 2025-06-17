@@ -14,108 +14,12 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { ProtezIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
+import { modifyAndSortEvents } from './utils'
+import { EventsProps } from './types'
 
-type Event = {
-  date: string
-  title: string
-  link: string
-  photo: string
-  location: string
-  upcoming?: boolean
-}
-// TODO: remove after review
+const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref) {
+  const sortedEvents = modifyAndSortEvents(events)
 
-const eventsCards: Event[] = [
-  {
-    link: '/',
-    photo: 'protezPage/events/protezEvent0.png',
-    date: '2025-02-01',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-  {
-    link: '/',
-    photo: 'protezPage/events/protezEvent0.png',
-    date: '2025-06-21',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-  {
-    link: '/',
-    photo: 'protezPage/events/protezEvent0.png',
-    date: '2025-06-21',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-  {
-    link: '/',
-    photo: 'protezPage/events/protezEvent0.png',
-    date: '2021-02-01',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-  {
-    link: '/',
-    photo: 'protezPage/events/protezEvent0.png',
-    date: '2021-12-03',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-  {
-    link: '/',
-    photo: 'protezPage/events/protezEvent0.png',
-    date: '2021-12-03',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-]
-
-const modifyAndSortEvents = (events: Event[]): Event[] => {
-  const now = new Date()
-
-  events.forEach(event => {
-    const eventDate = new Date(event.date)
-
-    event.upcoming = eventDate > now
-  })
-
-  // events.sort((a, b) => {
-  //   const dateA = new Date(a.date).getTime()
-  //   const dateB = new Date(b.date).getTime()
-
-  //   return dateA - dateB
-  // })
-
-  const upcomingEvents = events.filter(event => new Date(event.date) > now)
-  const pastEvents = events.filter(event => new Date(event.date) <= now)
-
-  // Sort each category by date
-  const sortByDate = (a: Event, b: Event) => new Date(a.date).getTime() - new Date(b.date).getTime()
-
-  upcomingEvents.sort(sortByDate)
-  pastEvents.sort(sortByDate)
-
-  // Concatenate the sorted arrays
-  const sortedEvents = [...upcomingEvents, ...pastEvents]
-
-  const formatDate = (dateString: string) => {
-    const date = new Date(dateString)
-    const day = String(date.getDate()).padStart(2, '0')
-    const month = String(date.getMonth() + 1).padStart(2, '0')
-
-    return `${day}/${month}`
-  }
-
-  const eventsWithAdjustedData = sortedEvents.map(event => {
-    return { ...event, date: formatDate(event.date) }
-  })
-
-  return eventsWithAdjustedData
-}
-
-const sortedEvents = modifyAndSortEvents(eventsCards)
-
-const Events = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
@@ -220,6 +124,7 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
                       width={340}
                       height={480}
                       className={style.cardPicture}
+                      external
                     />
 
                     <div className={style.cardDataBlock}>
