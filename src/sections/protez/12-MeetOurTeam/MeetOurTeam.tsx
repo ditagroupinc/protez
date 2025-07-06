@@ -57,7 +57,7 @@ const meetOurTeamSection: {
         },
       },
       name: {
-        english: 'Yury Aroshidze',
+        english: 'Yura Aroshidze',
         ukrainian: 'Юрій Арошідзе',
       },
       position: {

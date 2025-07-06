@@ -39,7 +39,7 @@ const pressReleaseSection: PressReleaseSection = {
         ukrainian:
           '12 грудня, у МВС України відбулася зустріч Міністра внутрішніх справ Ігоря Клименка разом з генеральним директором Protez Foundation Юрієм Арошидзе та президентом Direct Relief Томасом Тайге. У зустрічі також взяла участь заступниця Міністра внутрішніх справ України Катерина Павліченко. Головною темою перемовин стало питання створення протезно-реабілітаційного центру на базі одного з медичних закладів МВС.',
         english:
-          'On December 12, a meeting was held at the Ministry of Internal Affairs of Ukraine with the Minister of Internal Affairs Ihor Klymenko, the General Director of the Protez Foundation Yurii Aroshidze, and the President of Direct Relief Thomas Tighe. The meeting was also attended by Deputy Minister of Internal Affairs of Ukraine Kateryna Pavlichenko. The main topic of negotiations was the creation of a prosthetic and rehabilitation center based on one of the medical institutions of the Ministry of Internal Affairs.',
+          'On December 12, a meeting was held at the Ministry of Internal Affairs of Ukraine with the Minister of Internal Affairs Ihor Klymenko, the General Director of the Protez Foundation Yura Aroshidze, and the President of Direct Relief Thomas Tighe. The meeting was also attended by Deputy Minister of Internal Affairs of Ukraine Kateryna Pavlichenko. The main topic of negotiations was the creation of a prosthetic and rehabilitation center based on one of the medical institutions of the Ministry of Internal Affairs.',
       },
 
       img: 'pressReleaseSlide2.png',

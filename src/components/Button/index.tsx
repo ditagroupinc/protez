@@ -151,7 +151,7 @@ export const SupportWithAmazonButton = ({
 }) => (
   <Button
     as="link"
-    href="/"
+    href="https://www.amazon.com/hz/wishlist/ls/3S6RESSKHZZH7/ref=hz_ls_biz_ex"
     size={size}
     variant={color === 'white' ? 'secondary-white' : 'secondary-black'}
     className={`${className ? className : ''}`}
