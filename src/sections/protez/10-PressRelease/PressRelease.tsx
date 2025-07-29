@@ -57,6 +57,21 @@ const pressReleaseSection: PressReleaseSection = {
 
       img: 'pressReleaseSlide3.png',
     },
+    {
+      date: '2 July 2025',
+      title: {
+        ukrainian: 'Закладення капсули часу для Центру МВС',
+        english: 'Laying of the Time Capsule for the Ministry of Internal Affairs Center',
+      },
+      text: {
+        ukrainian: `Міністр внутрішніх справ Ігор Клименко разом із президентом Protez Foundation Юрієм Арошидзе заклали капсулу часу у фундамент першого Центру протезування та ортезування МВС України.
+        Нині об’єкт перебуває на стадії реконструкції. Після, у Центрі буде встановлено сучасне обладнання з найновішими технологіями. Простір стане територією підтримки, відновлення та гідності для захисників і захисниць з ампутаціями.`,
+        english: `Minister of Internal Affairs Ihor Klymenko, together with Protez Foundation President Yura Aroshidze, laid a time capsule in the foundation of Ukraine’s first Ministry of Internal Affairs Prosthetics and Orthotics Center.
+        The facility is currently under reconstruction. Once completed, it will be equipped with state-of-the-art technology. The Center will become a space of support, recovery, and dignity for defenders with amputations.`,
+      },
+
+      img: 'pressReleaseSlide5.png',
+    },
   ],
 }
 
@@ -124,13 +139,20 @@ const PressRelease = () => {
     ],
   }
 
+  const orderedPressReleaseArray = pressReleaseSection.releases.sort((a, b) => {
+    const dateA = new Date(a.date)
+    const dateB = new Date(b.date)
+
+    return dateB.getTime() - dateA.getTime()
+  })
+
   return (
     <Section id={ProtezIDs.PressRelease} className={style.section}>
       {isDesktopLayout ? (
         <div className={style.card}>
           <TextAppearanceWrapper className={style.left}>
             <Slider ref={imageSliderRef} {...settings} className={style.imageSlider}>
-              {pressReleaseSection.releases.map((slide, index) => (
+              {orderedPressReleaseArray.map((slide, index) => (
                 <div className={style.imageSlideWrapper} key={index}>
                   <div className={style.imageSlide}>
                     <ProtezImage
@@ -149,7 +171,7 @@ const PressRelease = () => {
           <TextAppearanceWrapper className={style.right}>
             {icons.pressReleaseLogo.desktop[lang](style.pageTitle)}
             <Slider ref={textSliderRef} {...settings} className={style.textSlider}>
-              {pressReleaseSection.releases.map((slide, index) => (
+              {orderedPressReleaseArray.map((slide, index) => (
                 <div className={style.textSlideWrapper} key={index}>
                   <div className={style.textSlide}>
                     <Body large={isDesktopLayout} className={style.cardDate}>
@@ -178,7 +200,7 @@ const PressRelease = () => {
           {icons.pressReleaseLogo.desktop[lang](style.pageTitle)}
 
           <Slider ref={wholeCardSliderRef} {...settings} className={style.wholeCardSlider}>
-            {pressReleaseSection.releases.map((slide, index) => (
+            {orderedPressReleaseArray.map((slide, index) => (
               <div key={index}>
                 <div className={style.cardWrapper}>
                   <div className={style.card}>
