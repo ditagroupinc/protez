@@ -72,6 +72,22 @@ const pressReleaseSection: PressReleaseSection = {
 
       img: 'pressReleaseSlide5.png',
     },
+    {
+      date: '12 Aug 2025',
+      title: {
+        ukrainian: `«L.P.S: Україна–США»: 10 ліцеїстів МВС вирушили до США`,
+        english: `“L.P.S: Ukraine–USA”: 10 lyceum students of the Ministry of Internal Affairs went to the USA`,
+      },
+      text: {
+        ukrainian: `10 ліцеїстів МВС вирушили до США у рамках освітньої поїздки «L.P.S: Ukraine–USA».
+        Це унікальна нагода для молодих українців ознайомитися з американською культурою, цінностями, системою безпеки та роботою поліції, рятувальників і військових. І водночас — гідно представити українську культуру, силу духу та патріотизм. 
+        Поїздка організована у співпраці Protez Foundation та МВС України. Ми працювали над цим проєктом понад чотири місяці, щоб створити для ліцеїстів насичену та цінну програму.`,
+        english: `10 lyceum students of the Ministry of Internal Affairs went to the USA as part of the educational trip “L.P.S: Ukraine-USA”.
+        This is a unique opportunity for young Ukrainians to get acquainted with American culture, values, the security system and the work of the police, rescuers and military. And at the same time - to adequately present Ukrainian culture, strength of spirit and patriotism.
+        The trip is organized in cooperation with the Prosthesis Foundation and the Ministry of Internal Affairs of Ukraine. We have been working on this project for more than four months to create a rich and valuable program for lyceum students.`,
+      },
+      img: 'pressReleaseSlide6.png',
+    },
   ],
 }
 
