@@ -73,7 +73,7 @@ const pressReleaseSection: PressReleaseSection = {
       img: 'pressReleaseSlide5.png',
     },
     {
-      date: '12 Aug 2025',
+      date: '04 Aug 2025',
       title: {
         ukrainian: `«L.P.S: Україна–США»: 10 ліцеїстів МВС вирушили до США`,
         english: `“L.P.S: Ukraine–USA”: 10 lyceum students of the Ministry of Internal Affairs went to the USA`,
