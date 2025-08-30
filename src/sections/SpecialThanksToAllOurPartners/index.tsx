@@ -10,7 +10,6 @@ import { ProtezIDs } from '@/consts'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import Link from 'next/link'
 import { SeeAllButton } from '@/components/Button'
 import ProtezImage from '@/components/ProtezImage'
 
@@ -23,11 +22,12 @@ const specialThanksToAllOurPartnersSection = {
 
 const partnersIcons: string[] = [
   'directRelief',
-  'chaliceOfMercy',
+  'brainRobotics',
   'ottobock',
   'paradize',
   'klmb',
   'monarch',
+  'chaliceOfMercy',
   'exp',
   'cozen',
   'blatchfold',
@@ -69,23 +69,6 @@ const SpecialThanksToAllOurPartners = () => {
           />
         </TextAppearanceWrapper>
       ))}
-
-      <Link href="https://dita-group.com/" target="blank" className={style.partnerCard}>
-        <ProtezImage
-          src={`partnersLogos/dita.svg`}
-          alt={'Dita Group'}
-          width={300}
-          height={230}
-          className={style.partnerLogo}
-        />
-        <ProtezImage
-          src={`partnersLogos/dita-color.svg`}
-          alt={'Dita Group'}
-          width={300}
-          height={230}
-          className={style.partnerLogoColor}
-        />
-      </Link>
     </Section>
   )
 }
