@@ -25,12 +25,12 @@ const partnersIcons: string[] = [
   'directRelief',
   'chaliceOfMercy',
   'ottobock',
-  'paradise',
+  'paradize',
   'klmb',
   'monarch',
-  'antonov',
+  'exp',
   'cozen',
-  'blatchford',
+  'blatchfold',
 ]
 
 const SpecialThanksToAllOurPartners = () => {
