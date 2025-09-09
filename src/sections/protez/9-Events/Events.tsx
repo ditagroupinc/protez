@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
@@ -21,7 +21,7 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
   const sortedEvents = modifyAndSortEvents(events)
 
   const { lang } = useLanguage()
-  const [activeSlide, setActiveSlide] = useState(0)
+  // const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
 
   const settings = {
@@ -74,7 +74,7 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
       },
     ],
 
-    beforeChange: (_current: number, next: number) => setActiveSlide(next),
+    // beforeChange: (_current: number, next: number) => setActiveSlide(next),
   }
   const sliderRef = useRef<Slider & React.Component>(null)
 
