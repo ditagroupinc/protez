@@ -32,7 +32,10 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
     slidesToShow: 5,
     slidesToScroll: 1,
     focusOnSelect: true,
-    centerMode: false,
+    // centerMode: false,
+    centerMode: true, // Enable center mode for desktop too
+    centerPadding: '0px', // No padding for desktop
+    initialSlide: 0, // Start with slide 0
 
     swipeToSlide: true,
     arrows: false,
@@ -49,7 +52,7 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          centerMode: false,
+          // centerMode: false,
         },
       },
 
@@ -57,7 +60,7 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
         breakpoint: 850,
         settings: {
           slidesToShow: 2,
-          centerMode: false,
+          // centerMode: false,
         },
       },
       {
@@ -100,19 +103,19 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
       <TextAppearanceWrapper className={style.sliderWrapper}>
         <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
           {sortedEvents.map((card, index) => {
-            let slideClass = ''
+            const slideClass = ''
 
-            if (index === (activeSlide + 2) % sortedEvents.length && width > 1500) {
-              slideClass = style.centerSlide
-            } else if (index === activeSlide && width > 1024 && width < 1500) {
-              slideClass = style.centerSlide
-            } else if (
-              index === (activeSlide + 1) % sortedEvents.length &&
-              width > 600 &&
-              width < 1024
-            ) {
-              slideClass = style.centerSlide
-            } else if (index === activeSlide && width < 600) slideClass = style.centerSlide
+            // if (index === (activeSlide + 2) % sortedEvents.length && width > 1500) {
+            //   slideClass = style.centerSlide
+            // } else if (index === activeSlide && width > 1024 && width < 1500) {
+            //   slideClass = style.centerSlide
+            // } else if (
+            //   index === (activeSlide + 1) % sortedEvents.length &&
+            //   width > 600 &&
+            //   width < 1024
+            // ) {
+            //   slideClass = style.centerSlide
+            // } else if (index === activeSlide && width < 600) slideClass = style.centerSlide
 
             return (
               <div key={index}>

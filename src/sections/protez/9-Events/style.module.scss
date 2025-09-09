@@ -231,7 +231,7 @@
   line-height: 22px;
 }
 
-.centerSlide .card {
+.slickSlider :global(.slick-center) .card {
   max-height: 100%;
   & .cardPicture {
     max-height: 480px;
@@ -240,6 +240,15 @@
     opacity: 1;
   }
 }
+// .centerSlide .card {
+//   max-height: 100%;
+//   & .cardPicture {
+//     max-height: 480px;
+//   }
+//   & .cardDataBlock {
+//     opacity: 1;
+//   }
+// }
 
 .locationButton {
   width: 48px;
@@ -356,7 +365,10 @@
     max-width: 100%;
   }
 
-  .centerSlide .card {
+  // .centerSlide .card {
+  //   max-height: 100%;
+  // }
+  .slickSlider :global(.slick-center) .card {
     max-height: 100%;
   }
 
