@@ -61,8 +61,8 @@ const meetOurTeamSection: {
         ukrainian: 'Юрій Арошідзе',
       },
       position: {
-        english: 'CEO “Protez Foundation”',
-        ukrainian: 'CEO “Protez Foundation”',
+        english: 'Co-Founder, CEO “Protez Foundation”',
+        ukrainian: 'Співзасновник, CEO “Protez Foundation”',
       },
     },
     {
