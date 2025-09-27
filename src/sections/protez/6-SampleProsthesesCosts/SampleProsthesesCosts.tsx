@@ -11,6 +11,7 @@ import { ProtezIDs } from '@/consts'
 import { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useState } from 'react'
+import { playfairDisplayItalic } from '../../../../app/fonts'
 
 const sampleProsthesesCostsText = {
   description: {
@@ -105,7 +106,7 @@ const PriceCard = ({
       onMouseLeave={handleMouseLeave}
     >
       <div className={style.priceCardTextBlock}>
-        <div className={style.priceCardText}>{text}</div>
+        <div className={`${style.priceCardText} ${playfairDisplayItalic.className}`}>{text}</div>
         <div className={style.priceCardPrice}>{price}</div>
       </div>
 

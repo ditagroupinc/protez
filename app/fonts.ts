@@ -1,10 +1,9 @@
-import { Nunito_Sans } from 'next/font/google'
+import localFont from 'next/font/local'
 
-export const nunitoSans = Nunito_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-nunito-sans',
-  // This configures all the font weights you need
-  weight: ['200', '300', '400', '500', '600', '700', '800', '900', '1000'],
-  style: ['normal', 'italic'],
+export const nunitoSans = localFont({
+  src: '../public/fonts/NunitoSans.ttf',
+})
+
+export const playfairDisplayItalic = localFont({
+  src: '../public/fonts/PlayfairDisplay-Italic.ttf',
 })
