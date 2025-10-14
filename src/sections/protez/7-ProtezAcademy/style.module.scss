@@ -29,19 +29,33 @@
 }
 
 .description {
-  margin-bottom: 48px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .buttonsContainer {
   display: flex;
   gap: 16px;
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+
+  & > *:first-child {
+    width: 100%;
+    flex-grow: 1;
+  }
+
+  & > *:not(:first-child) {
+    width: 40%;
+    flex-grow: 1;
+  }
 }
 
 .cardsWrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 220px;
+  grid-template-rows: 140px;
   grid-template-areas: 'ottobock  universityOfMinnesota xtremity';
 }
 
@@ -50,9 +64,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding-top: 79px;
-  padding-bottom: 79px;
 
   border-top: var(--protezBorder);
   border-bottom: var(--protezBorder);
@@ -79,27 +90,25 @@
     gap: 16px;
     margin-bottom: 80px;
     flex-direction: column;
+    & > *:first-child,
+    & > *:not(:first-child) {
+      width: 100%;
+      flex-grow: 1;
+    }
   }
 
   .cardsWrapper {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 140px);
     grid-template-areas:
-      'ottobock ottobock universityOfMinnesota  universityOfMinnesota'
-      'xtremity xtremity . .';
+      'ottobock universityOfMinnesota'
+      'xtremity xtremity';
   }
 
   .card {
-    &:nth-of-type(1) {
-      // grid-area: ottobock;
-    }
     &:nth-of-type(2) {
       // grid-area: universityOfMinnesota;
-      border-right: var(--protezBorder);
-    }
-    &:nth-of-type(3) {
-      // grid-area: xtremity;
       border-right: var(--protezBorder);
     }
   }
@@ -125,8 +134,21 @@
     max-width: 100%;
   }
 
-  .description {
-    text-align: center;
+  .cardsWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 100px);
+    grid-template-areas:
+      'ottobock'
+      'universityOfMinnesota'
+      'xtremity';
+  }
+
+  .card {
+    &:nth-of-type(1) {
+      // grid-area: universityOfMinnesota;
+      border-right: var(--protezBorder);
+    }
   }
 }
 
