@@ -1,12 +1,13 @@
 .section {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: 368px 300px 300px;
+  grid-template-rows: 368px 300px 300px 300px;
 
   grid-template-areas:
     'button title title title directRelief'
     '. chaliceOfMercy ottobock paradise klmb '
-    'monarch dita antonovGroup cozen blatchfold';
+    'monarch dita antonovGroup cozen blatchfold'
+    'fabtech . . . .';
 
   padding-top: 32px;
   padding-bottom: 80px;
@@ -121,16 +122,22 @@
   grid-area: dita;
 }
 
+.partnerCard:nth-child(13) {
+  grid-area: fabtech;
+  border-right: var(--greyBorder);
+}
+
 @media screen and (max-width: 1366px) {
   .section {
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 230px 280px 270px 300px;
+    grid-template-rows: 230px 280px 270px 300px 300px;
 
     grid-template-areas:
       'button button button . . title title title title title title title'
       '. . directRelief directRelief directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy'
       'ottobock ottobock ottobock paradise paradise paradise klmb klmb klmb monarch monarch monarch'
-      'dita dita dita antonovGroup antonovGroup antonovGroup cozen cozen cozen blatchfold blatchfold blatchfold';
+      'dita dita dita antonovGroup antonovGroup antonovGroup cozen cozen cozen blatchfold blatchfold blatchfold'
+      'fabtech fabtech fabtech . . . . . . . . .';
 
     padding-top: 120px;
     padding-bottom: 120px;
@@ -167,13 +174,14 @@
 @media screen and (max-width: 1024px) {
   .section {
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 230px 280px 280px 280px;
+    grid-template-rows: 230px 280px 280px 280px 280px;
 
     grid-template-areas:
       '. title title title title title'
       'directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy'
       'ottobock ottobock paradise paradise klmb klmb'
-      'monarch monarch dita dita button button';
+      'monarch monarch dita dita button button'
+      'fabtech fabtech . . . .';
 
     padding-top: 120px;
     padding-bottom: 60px;
@@ -227,7 +235,7 @@
   .section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 200px 160px 140px 140px 160px 72px;
+    grid-template-rows: 200px 160px 140px 140px 160px 160px 72px;
 
     grid-template-areas:
       'title title'
@@ -235,6 +243,7 @@
       'chaliceOfMercy ottobock'
       'paradise klmb'
       'dita dita'
+      'fabtech fabtech'
       'button button';
 
     padding-top: 40px;

@@ -460,9 +460,9 @@ const Header = ({
               )}
             </div>
 
-            <a className={style.phoneNumber} href="tel:+16127724777">
+            <a className={style.phoneNumber} href="tel:+16129972005">
               {icons.call(style.icon)}
-              <span> +1 612-772-4777</span>
+              <span> +1 612-997-2005</span>
             </a>
 
             <div className={style.languageButtonContainer}>

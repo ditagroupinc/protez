@@ -31,6 +31,7 @@ const partnersIcons: string[] = [
   'exp',
   'cozen',
   'blatchfold',
+  'fabtech',
 ]
 
 const SpecialThanksToAllOurPartners = () => {

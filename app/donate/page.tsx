@@ -47,7 +47,7 @@ const donatePage = {
     ukrainian: 'Надіслати донат ви також можете через сервіс ПриватБанк',
   },
   email: 'info@protezfoundation.com',
-  phone: '+1 612-772-4777',
+  phone: '+1 612-997-2005',
   madeBy: '2024 © Made by DITA GROUP Inc.',
 }
 
