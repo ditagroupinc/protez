@@ -355,7 +355,9 @@ const Header = ({
           {icons[layout].logo(style.protezLogo)}
         </Link>
         {width < 992 ? (
-          <BurgerButton color="red" onClick={toggleHeader} close={headerIsOpened} />
+          <div className={style.burgerButtonContainer}>
+            <BurgerButton color="red" onClick={toggleHeader} close={headerIsOpened} />
+          </div>
         ) : (
           <div className={style.topMenu}>
             <div className={style.buttonsGroup}>
