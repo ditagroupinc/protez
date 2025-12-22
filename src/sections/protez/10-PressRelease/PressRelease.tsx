@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -101,6 +101,14 @@ const PressRelease = () => {
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
+  useEffect(() => {
+    const autoplayInterval = setInterval(() => {
+      gotoNext()
+    }, 5000)
+
+    return () => clearInterval(autoplayInterval)
+  }, [isDesktopLayout])
+
   const gotoNext = () => {
     imageSliderRef.current?.slickNext()
     textSliderRef.current?.slickNext()
@@ -118,7 +126,7 @@ const PressRelease = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
 
     // TODO: reuse for other sliders

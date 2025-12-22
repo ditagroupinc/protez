@@ -16,9 +16,9 @@ import { playfairDisplayItalic } from '../../../../app/fonts'
 const sampleProsthesesCostsText = {
   description: {
     english:
-      'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
+      'Prosthetics are expensive life-changing devices. With help of volunteers and partners we were able to reduce the cost significantly, lower the overhead down to barebone minimum. Our program overhead is only 8%.',
     ukrainian:
-      'Lorem ipsum dolor sit amet consectetur. Sit morbi convallis massa elit nec cursus condimentum pellentesque in. Amet dictum odio orci magna posuere. Amet in sit commodo mauris. Enim purus ut integer ultrices faucibus nunc diam consequat vitae. Consequat turpis et ',
+      'Протези - це дорогі життєво необхідні пристрої. Завдяки допомозі волонтерів та партнерів нам вдалося суттєво знизити їхню вартість і скоротити адміністративні витрати до мінімально можливого рівня. Адміністративні витрати нашої програми становлять лише 8%.',
   },
   miscellaneous: {
     english: 'Miscellaneous',

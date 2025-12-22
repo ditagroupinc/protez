@@ -110,7 +110,7 @@ const text = {
       {
         text: {
           english: 'Our Patients',
-          ukrainian: 'Our Patients',
+          ukrainian: 'Наші пацієнти',
         },
         id: ProtezIDs.OurPatients,
       },

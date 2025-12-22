@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useEffect } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -59,6 +59,14 @@ const OurStarSupporters = () => {
   const imageSliderRef = useRef<Slider & React.Component>(null)
   const textSliderRef = useRef<Slider & React.Component>(null)
 
+  useEffect(() => {
+    const autoplayInterval = setInterval(() => {
+      gotoNext()
+    }, 5000)
+
+    return () => clearInterval(autoplayInterval)
+  }, [isDesktopLayout])
+
   const gotoNext = () => {
     imageSliderRef.current?.slickNext()
     textSliderRef.current?.slickNext()
@@ -76,7 +84,7 @@ const OurStarSupporters = () => {
     slidesToShow: 2,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
     responsive: [
       {

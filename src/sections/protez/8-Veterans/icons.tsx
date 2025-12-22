@@ -161,7 +161,7 @@ const artemSvergunUA = (className?: string) => (
   </svg>
 )
 
-const volodymyrKostyria = (className?: string) => (
+const volodymyrKostyriaUA = (className?: string) => (
   <svg
     width="564"
     height="148"
@@ -177,7 +177,7 @@ const volodymyrKostyria = (className?: string) => (
   </svg>
 )
 
-const volodymyrKostyriaUA = (className?: string) => (
+const volodymyrKostyria = (className?: string) => (
   <svg
     width="582"
     height="149"
