@@ -85,7 +85,12 @@
   }
 }
 
-.privatButton {
+.bankButtonContainer {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.bankButton {
   height: 60px;
   width: fit-content;
   display: flex;
@@ -101,21 +106,16 @@
 }
 
 @media (max-width: 1024px) {
-}
-
-@media screen and (max-width: 800px) {
-  .bottomContainer {
-    .left {
-      .aboveDivider,
-      .belowDivider {
-        max-width: 100%;
-        margin-right: 20px;
-      }
-    }
+  .bankButtonContainer {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .bankButton {
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 800px) {
   .section {
     padding-bottom: 40px;
 
@@ -133,6 +133,11 @@
     max-width: 425px;
     .left {
       flex-basis: auto;
+      .aboveDivider,
+      .belowDivider {
+        max-width: 100%;
+        margin-right: 20px;
+      }
     }
   }
 }

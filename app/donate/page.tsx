@@ -43,8 +43,8 @@ const donatePage = {
       'Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America',
   },
   sendDonations: {
-    english: 'You can also send a donation through PrivatBank',
-    ukrainian: 'Надіслати донат ви також можете через сервіс ПриватБанк',
+    english: 'You can also send a donation through PrivatBank or Monobank',
+    ukrainian: 'Надіслати донат ви також можете через сервіс ПриватБанк або Монобанк',
   },
   email: 'info@protezfoundation.com',
   phone: '+1 612-997-2005',
@@ -53,7 +53,7 @@ const donatePage = {
 
 export default function Donate() {
   const { lang } = useLanguage()
-  const { mobile } = useScreenModeAndSize()
+  const { width } = useScreenModeAndSize()
 
   return (
     <>
@@ -73,17 +73,27 @@ export default function Donate() {
           </div>
           <div className={style.bottomContainer}>
             <div className={style.left}>
-              {mobile && (
+              {width <= 800 && (
                 <>
                   <p className={'h6 '}>{donatePage.sendDonations[lang]}</p>
-                  <a
-                    target="_blank"
-                    href="https://next.privat24.ua/payments/form/%7B%22token%22:%22f7dfa6a1-d8f6-4602-9f21-9b1c99d61cb5%22%7D?fbclid=PAAaYO7jJkvqk11ELkvBzSn4XYumcT4TtR7w8hug3JdXPX7oZM67guqdNAUxI_aem_ASDuFPVJU_RL-637DNh004o5oAYju01DczwND11fGmX4Hn-s0aPgzb3b_RvBPxzDtkQ"
-                    className={style.privatButton}
-                    rel="noreferrer"
-                  >
-                    <button>{icons.privat24Logo()}</button>
-                  </a>
+                  <div className={style.bankButtonContainer}>
+                    <a
+                      target="_blank"
+                      href="https://next.privat24.ua/payments/form/%7B%22token%22:%22f7dfa6a1-d8f6-4602-9f21-9b1c99d61cb5%22%7D?fbclid=PAAaYO7jJkvqk11ELkvBzSn4XYumcT4TtR7w8hug3JdXPX7oZM67guqdNAUxI_aem_ASDuFPVJU_RL-637DNh004o5oAYju01DczwND11fGmX4Hn-s0aPgzb3b_RvBPxzDtkQ"
+                      className={style.bankButton}
+                      rel="noreferrer"
+                    >
+                      <button>{icons.privat24Logo()}</button>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://send.monobank.ua/jar/9vWarQiax"
+                      className={style.bankButton}
+                      rel="noreferrer"
+                    >
+                      <button>{icons.monobankLogo()}</button>
+                    </a>
+                  </div>
 
                   <Divider className={style.divider} />
                 </>
@@ -108,20 +118,30 @@ export default function Donate() {
                 <Body className={style.emailPhone}>{donatePage.phone}</Body>
                 <Body className={style.emailPhone}>{donatePage.email}</Body>
               </div>
-              {!mobile && (
+              {width > 800 && (
                 <>
                   <Divider className={style.divider} />
 
                   <p className={'h6 '}>{donatePage.sendDonations[lang]}</p>
 
-                  <a
-                    target="_blank"
-                    href="https://next.privat24.ua/payments/form/%7B%22token%22:%22f7dfa6a1-d8f6-4602-9f21-9b1c99d61cb5%22%7D?fbclid=PAAaYO7jJkvqk11ELkvBzSn4XYumcT4TtR7w8hug3JdXPX7oZM67guqdNAUxI_aem_ASDuFPVJU_RL-637DNh004o5oAYju01DczwND11fGmX4Hn-s0aPgzb3b_RvBPxzDtkQ"
-                    className={style.privatButton}
-                    rel="noreferrer"
-                  >
-                    <button>{icons.privat24Logo()}</button>
-                  </a>
+                  <div className={style.bankButtonContainer}>
+                    <a
+                      target="_blank"
+                      href="https://next.privat24.ua/payments/form/%7B%22token%22:%22f7dfa6a1-d8f6-4602-9f21-9b1c99d61cb5%22%7D?fbclid=PAAaYO7jJkvqk11ELkvBzSn4XYumcT4TtR7w8hug3JdXPX7oZM67guqdNAUxI_aem_ASDuFPVJU_RL-637DNh004o5oAYju01DczwND11fGmX4Hn-s0aPgzb3b_RvBPxzDtkQ"
+                      className={style.bankButton}
+                      rel="noreferrer"
+                    >
+                      <button>{icons.privat24Logo()}</button>
+                    </a>
+                    <a
+                      target="_blank"
+                      href="https://send.monobank.ua/jar/9vWarQiax"
+                      className={style.bankButton}
+                      rel="noreferrer"
+                    >
+                      <button>{icons.monobankLogo()}</button>
+                    </a>
+                  </div>
                 </>
               )}
             </div>
