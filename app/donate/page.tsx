@@ -12,6 +12,7 @@ import Script from 'next/script'
 import Section from '@/components/Section'
 import Header from '@/sections/Header'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import ProtezImage from '@/components/ProtezImage'
 
 const donatePage = {
   description1: {
@@ -46,6 +47,13 @@ const donatePage = {
     english: 'You can also send a donation through PrivatBank or Monobank',
     ukrainian: 'Надіслати донат ви також можете через сервіс ПриватБанк або Монобанк',
   },
+  zelle: {
+    english:
+      'Please include your email in comments to the transaction, so we could send you donation receipt',
+    ukrainian:
+      'Please include your email in comments to the transaction, so we could send you donation receipt',
+  },
+  financeEmail: 'finance@protezfoundation.com',
   email: 'info@protezfoundation.com',
   phone: '+1 612-997-2005',
   madeBy: '2024 © Made by DITA GROUP Inc.',
@@ -96,6 +104,25 @@ export default function Donate() {
                   </div>
 
                   <Divider className={style.divider} />
+
+                  <div className={style.zelleContainer}>
+                    <div className={style.zelleContainerLeft}>
+                      {icons.zelleLogo()}
+                      <Body className={style.zelleText}>{donatePage.zelle[lang]}</Body>
+                      <Body className={style.emailPhone}>{donatePage.financeEmail}</Body>
+                    </div>
+                    <div className={style.zelleContainerRight}>
+                      <ProtezImage
+                        src={`donatePage/zelle-qr.png`}
+                        alt={'zelle logo'}
+                        width={110}
+                        height={110}
+                        className={style.zelleQr}
+                      />
+                    </div>
+                  </div>
+
+                  <Divider className={style.divider} />
                 </>
               )}
               <div className={style.aboveDivider}>
@@ -141,6 +168,25 @@ export default function Donate() {
                     >
                       <button>{icons.monobankLogo()}</button>
                     </a>
+                  </div>
+
+                  <Divider className={style.divider} />
+
+                  <div className={style.zelleContainer}>
+                    <div className={style.zelleContainerLeft}>
+                      {icons.zelleLogo()}
+                      <Body className={style.zelleText}>{donatePage.zelle[lang]}</Body>
+                      <Body className={style.emailPhone}>{donatePage.financeEmail}</Body>
+                    </div>
+                    <div className={style.zelleContainerRight}>
+                      <ProtezImage
+                        src={`donatePage/zelle-qr.png`}
+                        alt={'zelle logo'}
+                        width={110}
+                        height={110}
+                        className={style.zelleQr}
+                      />
+                    </div>
                   </div>
                 </>
               )}
