@@ -102,6 +102,17 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
               <Body className={style.descAddress}>{footerSection.address[lang]}</Body>
             </div>
             <Body className={style.descTitle}>{footerSection.email}</Body>
+            <a
+              aria-label="Protez Foundation"
+              href="https://app.candid.org/profile/14058903/protez-foundation-88-2437069/?pkId=5383b219-0323-4c41-a06c-73d362f764a7"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                alt=""
+                src="https://widgets.guidestar.org/prod/v1/pdp/transparency-seal/14058903/svg"
+              />
+            </a>
           </div>
         </div>
       </div>
