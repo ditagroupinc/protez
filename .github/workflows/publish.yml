@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - academy-for-pages
+  workflow_dispatch:
 
 permissions:
   contents: read
