@@ -67,13 +67,23 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
           <div className={style.buttonGroup}>
             <Button
               as="link"
-              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              href="https://forms.gle/G41WPhY8HiXbvA667"
               target={'_blank'}
               variant="primary-blue"
               size={isMobile ? 'big' : 'small'}
               rel="noopener noreferrer"
             >
-              Apply to Academy
+              Особливості взаємодії з пацієнтами з втратою зору та ампутаціями
+            </Button>
+            <Button
+              as="link"
+              href="https://forms.gle/USf9fVTEgfzmGkBW9"
+              target={'_blank'}
+              variant="primary-blue"
+              size={isMobile ? 'big' : 'small'}
+              rel="noopener noreferrer"
+            >
+              Терапевтичні вправи: сучасний підхід до побудови занять
             </Button>
             <Button
               as="link"
