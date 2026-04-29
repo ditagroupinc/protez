@@ -67,13 +67,13 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
           <div className={style.buttonGroup}>
             <Button
               as="link"
-              href="https://forms.gle/G41WPhY8HiXbvA667"
+              href="https://forms.gle/USf9fVTEgfzmGkBW9"
               target={'_blank'}
               variant="primary-blue"
               size={isMobile ? 'big' : 'small'}
               rel="noopener noreferrer"
             >
-              Особливості взаємодії з пацієнтами з втратою зору та ампутаціями
+              «Терапевтичні вправи: сучасний підхід до побудови занять» — 16.05
             </Button>
             <Button
               as="link"
@@ -83,7 +83,27 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
               size={isMobile ? 'big' : 'small'}
               rel="noopener noreferrer"
             >
-              Терапевтичні вправи: сучасний підхід до побудови занять
+              «Терапевтичні вправи: сучасний підхід до побудови занять» — 30.05
+            </Button>
+            <Button
+              as="link"
+              href="https://forms.gle/USf9fVTEgfzmGkBW9"
+              target={'_blank'}
+              variant="primary-blue"
+              size={isMobile ? 'big' : 'small'}
+              rel="noopener noreferrer"
+            >
+              «Терапевтичні вправи: сучасний підхід до побудови занять» — 06.06
+            </Button>
+            <Button
+              as="link"
+              href="https://forms.gle/USf9fVTEgfzmGkBW9"
+              target={'_blank'}
+              variant="primary-blue"
+              size={isMobile ? 'big' : 'small'}
+              rel="noopener noreferrer"
+            >
+              «Терапевтичні вправи: сучасний підхід до побудови занять» — 13.06
             </Button>
             <Button
               as="link"
