@@ -1,28 +1,21 @@
 'use client'
 
-import {
-  Suspense,
-  useEffect,
-  // useRef,
-  // useState,
-  lazy,
-} from 'react'
-// import { usePageSettings } from '@/contexts/PageSettingsContext'
+import { Suspense, lazy } from 'react'
 
 import style from './style.module.scss'
-import { useLanguage } from '@/contexts/LanguageContext'
-import { Languages } from '@/types'
-
-import VideoBlock from './VideoBlock'
-import SmokeWrapper from './SmokeWrapper'
 
 import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils/parsers'
 
 import FullScreenFallback from '@/components/FullScreenFallback'
+import ProtezImage from '@/components/ProtezImage'
+import SuspenseSection from '@/components/SuspenseSection'
+
+import { useCountryLanguage } from '@/hooks/useCountryLanguage'
+
+import Header from '../Header'
+import VideoBlock from './VideoBlock'
 
 import LetsGiveHope from '../protez/1-LetsGiveHope/LetsGiveHope'
-import ProtezImage from '@/components/ProtezImage'
-import Header from '../Header'
 const ProstheticsForUkrainians = lazy(
   () => import('@/sections/protez/3-ProstheticsForUkrainians/ProstheticsForUkrainians')
 )
@@ -47,7 +40,7 @@ const MailingList = lazy(() => import('@/sections/protez/16-MailingList/MailingL
 const Merch = lazy(() => import('@/sections/protez/17-Merch/Merch'))
 const Footer = lazy(() => import('@/sections/Footer'))
 
-export default function ClientSections({
+export default function ProtezHomePage({
   // news,
   statistics,
   events,
@@ -60,24 +53,14 @@ export default function ClientSections({
   pressReleases: SinglePressRelease[] | null
   country: string
 }) {
-  const { setLang } = useLanguage()
-
-  // console.log('news', news)
-  // console.log('statistics', statistics)
-  // console.log('events', events)
-  // console.log('pressReleases', pressReleases)
-  // console.log('country', country)
-
-  useEffect(() => {
-    if (country === 'Ukraine') setLang(Languages.Ukrainian)
-  }, [])
+  useCountryLanguage(country)
 
   return (
     <>
       <Header layout="protezPage" />
 
       <main className={style.main}>
-        <SmokeWrapper>
+        <SuspenseSection withSmoke>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
 
@@ -94,84 +77,72 @@ export default function ClientSections({
               <PeopleTrustUs />
             </Suspense>
           </div>
-        </SmokeWrapper>
+        </SuspenseSection>
 
-        <Suspense fallback={<FullScreenFallback />}>
-          <SmokeWrapper>
-            <ProstheticsForUkrainians />
-          </SmokeWrapper>
-        </Suspense>
+        <SuspenseSection withSmoke>
+          <ProstheticsForUkrainians />
+        </SuspenseSection>
 
-        <Suspense fallback={<FullScreenFallback />}>
+        <SuspenseSection>
           <VideoBlock
             inNeedSection={<InNeed />}
             ourResultsSection={<OurResults results={statistics} />}
           />
-        </Suspense>
+        </SuspenseSection>
 
-        <Suspense fallback={<FullScreenFallback />}>
-          <SmokeWrapper>
-            <SampleProsthesesCosts />
-          </SmokeWrapper>
-        </Suspense>
+        <SuspenseSection withSmoke>
+          <SampleProsthesesCosts />
+        </SuspenseSection>
 
-        <Suspense fallback={<FullScreenFallback />}>
-          <SmokeWrapper>
-            <ProtezAcademy />
-          </SmokeWrapper>
-        </Suspense>
+        <SuspenseSection withSmoke>
+          <ProtezAcademy />
+        </SuspenseSection>
 
-        <Suspense fallback={<FullScreenFallback />}>
-          <SmokeWrapper>
-            <Veterans />
-          </SmokeWrapper>
-        </Suspense>
+        <SuspenseSection withSmoke>
+          <Veterans />
+        </SuspenseSection>
 
         {events && events.length > 0 && (
-          <Suspense fallback={<FullScreenFallback />}>
-            <SmokeWrapper>
-              <Events events={events} />
-            </SmokeWrapper>
-          </Suspense>
+          <SuspenseSection withSmoke>
+            <Events events={events} />
+          </SuspenseSection>
         )}
 
-        <Suspense fallback={<FullScreenFallback />}>
+        <SuspenseSection>
           <PressRelease />
-        </Suspense>
+        </SuspenseSection>
 
-        <Suspense fallback={<FullScreenFallback />}>
+        <SuspenseSection>
           <OurPatients />
-        </Suspense>
+        </SuspenseSection>
 
-        <Suspense fallback={<FullScreenFallback />}>
+        <SuspenseSection>
           <MeetOurTeam />
-        </Suspense>
+        </SuspenseSection>
 
-        <Suspense fallback={<FullScreenFallback />}>
+        <SuspenseSection>
           <OfficeLocations />
-        </Suspense>
+        </SuspenseSection>
 
-        <Suspense fallback={<FullScreenFallback />}>
+        <SuspenseSection>
           <SpecialThanksToAllOurPartners />
-        </Suspense>
+        </SuspenseSection>
 
         {/* <Suspense fallback={<FullScreenFallback />}>
           <OurStarSupporters />
         </Suspense> */}
 
-        <Suspense fallback={<FullScreenFallback />}>
-          <SmokeWrapper>
-            <MailingList />
-          </SmokeWrapper>
-        </Suspense>
+        <SuspenseSection withSmoke>
+          <MailingList />
+        </SuspenseSection>
 
-        <Suspense fallback={<FullScreenFallback />}>
+        <SuspenseSection>
           <Merch />
-        </Suspense>
+        </SuspenseSection>
 
-        <Suspense fallback={<FullScreenFallback />}>
+        <SuspenseSection>
           <Footer layout="protezPage" />
-        </Suspense>
+        </SuspenseSection>
       </main>
     </>
   )

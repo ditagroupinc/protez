@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef, useState } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 
@@ -175,14 +175,6 @@ const Veterans = () => {
   const linksSliderRef = useRef<Slider & React.Component>(null)
   const wholeCardSliderRef = useRef<Slider & React.Component>(null)
 
-  useEffect(() => {
-    const autoplayInterval = setInterval(() => {
-      gotoNext()
-    }, 5000)
-
-    return () => clearInterval(autoplayInterval)
-  }, [isDesktopLayout])
-
   const gotoNext = () => {
     imageSliderRef.current?.slickNext()
     textSliderRef.current?.slickNext()
@@ -203,7 +195,7 @@ const Veterans = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: false, // Вимкнено - використовуємо власний таймер
+    autoplay: true,
     autoplaySpeed: 5000,
 
     swipe: false,
