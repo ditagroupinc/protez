@@ -4,15 +4,15 @@
   grid-template-rows: 368px 300px 300px;
 
   grid-template-areas:
-    'button title title title directRelief'
-    '. chaliceOfMercy ottobock paradise klmb '
-    'monarch dita antonovGroup cozen blatchfold';
+    '. title title title concordia'
+    '. minnesota centuryCollage schoolOfMedicine esper'
+    'rotary kpi shupika beetroot fizychnaAssociasion';
 
   padding-bottom: 120px;
   padding-top: 80px;
 }
 
-.partnerCard {
+.card {
   border-left: var(--greyBorder);
   border-bottom: var(--greyBorder);
   display: flex;
@@ -40,238 +40,223 @@
   max-height: 100%;
 }
 
-.buttonCell {
-  grid-area: button;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  padding: 0;
-}
-.partnerCard:nth-child(3) {
-  grid-area: directRelief;
+.card:nth-child(2) {
+  grid-area: concordia;
   border-right: var(--greyBorder);
   border-top: var(--greyBorder);
   border-bottom: none;
 }
 
-.partnerCard:nth-child(4) {
-  grid-area: chaliceOfMercy;
+.card:nth-child(3) {
+  grid-area: minnesota;
+
+  border-top: var(--greyBorder);
+  border-bottom: none;
+}
+
+.card:nth-child(4) {
+  grid-area: centuryCollage;
   border-top: var(--greyBorder);
 }
 
-.partnerCard:nth-child(5) {
-  grid-area: ottobock;
+.card:nth-child(5) {
+  grid-area: schoolOfMedicine;
   border-top: var(--greyBorder);
 }
 
-.partnerCard:nth-child(6) {
-  grid-area: paradise;
-  border-top: var(--greyBorder);
-}
-
-.partnerCard:nth-child(7) {
-  grid-area: klmb;
+.card:nth-child(6) {
+  grid-area: esper;
   border-top: var(--greyBorder);
   border-right: var(--greyBorder);
 }
 
-.partnerCard:nth-child(8) {
-  grid-area: monarch;
+.card:nth-child(7) {
+  grid-area: rotary;
   border-top: var(--greyBorder);
 }
 
-.partnerCard:nth-child(9) {
-  grid-area: antonovGroup;
+.card:nth-child(8) {
+  grid-area: kpi;
+  border-top: var(--greyBorder);
 }
 
-.partnerCard:nth-child(10) {
-  grid-area: cozen;
+.card:nth-child(9) {
+  grid-area: shupika;
 }
 
-.partnerCard:nth-child(11) {
-  grid-area: blatchfold;
+.card:nth-child(10) {
+  grid-area: beetroot;
+}
+
+.card:nth-child(11) {
+  grid-area: fizychnaAssociasion;
   border-right: var(--greyBorder);
 }
 
-.partnerCard:nth-child(12) {
-  grid-area: dita;
-}
+// @media screen and (max-width: 1366px) {
+//   .specialThanksToAllOurPartners {
+//     grid-template-columns: repeat(12, 1fr);
+//     grid-template-rows: 230px 280px 270px 300px;
 
-.ditaLogo {
-  max-width: 100%;
+//     grid-template-areas:
+//       'button button . . . title title title title title title title'
+//       '. . directRelief directRelief directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy'
+//       'ottobock ottobock ottobock paradise paradise paradise klmb klmb klmb monarch monarch monarch'
+//       'dita dita dita antonovGroup antonovGroup antonovGroup cozen cozen cozen blatchfold blatchfold blatchfold';
 
-  & rect:global(.purpleFrame) {
-    transform: translate(344.078px, 21.5918px) !important;
-  }
-  &:hover > rect:global(.purpleFrame) {
-    fill: #3f29b0;
-  }
-}
+//     padding-top: 120px;
+//     padding-bottom: 120px;
+//   }
 
-@media screen and (max-width: 1366px) {
-  .specialThanksToAllOurPartners {
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: 230px 280px 270px 300px;
+//   .titleCell {
+//     padding-right: 0;
+//   }
 
-    grid-template-areas:
-      'button button . . . title title title title title title title'
-      '. . directRelief directRelief directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy'
-      'ottobock ottobock ottobock paradise paradise paradise klmb klmb klmb monarch monarch monarch'
-      'dita dita dita antonovGroup antonovGroup antonovGroup cozen cozen cozen blatchfold blatchfold blatchfold';
+//   .card:nth-child(3) {
+//     // grid-area: directRelief;
+//     border-right: none;
+//     border-bottom: none;
+//   }
 
-    padding-top: 120px;
-    padding-bottom: 120px;
-  }
+//   .card:nth-child(4) {
+//     // grid-area: chaliceOfMercy;
+//     border-right: var(--greyBorder);
+//     border-bottom: none;
+//   }
 
-  .titleCell {
-    padding-right: 0;
-  }
+//   .card:nth-child(7) {
+//     // grid-area: klmb;
+//     border-right: none;
+//     border-top: var(--greyBorder);
+//   }
 
-  .partnerCard:nth-child(3) {
-    // grid-area: directRelief;
-    border-right: none;
-    border-bottom: none;
-  }
+//   .card:nth-child(8) {
+//     // grid-area: monarch;
+//     border-right: var(--greyBorder);
+//   }
+// }
 
-  .partnerCard:nth-child(4) {
-    // grid-area: chaliceOfMercy;
-    border-right: var(--greyBorder);
-    border-bottom: none;
-  }
+// @media screen and (max-width: 1024px) {
+//   .specialThanksToAllOurPartners {
+//     grid-template-columns: repeat(6, 1fr);
+//     grid-template-rows: 230px 280px 280px 280px;
 
-  .partnerCard:nth-child(7) {
-    // grid-area: klmb;
-    border-right: none;
-    border-top: var(--greyBorder);
-  }
+//     grid-template-areas:
+//       '. title title title title title'
+//       'directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy'
+//       'ottobock ottobock paradise paradise klmb klmb'
+//       'monarch monarch dita dita button button';
 
-  .partnerCard:nth-child(8) {
-    // grid-area: monarch;
-    border-right: var(--greyBorder);
-  }
-}
+//     padding-top: 120px;
+//     padding-bottom: 60px;
+//   }
 
-@media screen and (max-width: 1024px) {
-  .specialThanksToAllOurPartners {
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 230px 280px 280px 280px;
+//   .buttonCell {
+//     grid-area: button;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//   }
 
-    grid-template-areas:
-      '. title title title title title'
-      'directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy'
-      'ottobock ottobock paradise paradise klmb klmb'
-      'monarch monarch dita dita button button';
+//   .card:nth-child(3) {
+//     // grid-area: directRelief;
+//     border-right: none;
+//   }
 
-    padding-top: 120px;
-    padding-bottom: 60px;
-  }
+//   .card:nth-child(7) {
+//     // grid-area: klmb;
+//     border-right: var(--greyBorder);
+//   }
 
-  .buttonCell {
-    grid-area: button;
-    justify-content: flex-start;
-    align-items: flex-start;
-  }
+//   .card:nth-child(8) {
+//     // grid-area: monarch;
+//     border-top: none;
+//     border-right: none;
+//   }
 
-  .partnerCard:nth-child(3) {
-    // grid-area: directRelief;
-    border-right: none;
-  }
+//   .card:nth-child(9) {
+//     // grid-area: antonovGroup;
+//     display: none;
+//   }
 
-  .partnerCard:nth-child(7) {
-    // grid-area: klmb;
-    border-right: var(--greyBorder);
-  }
+//   .card:nth-child(10) {
+//     // grid-area: cozen;
+//     display: none;
+//   }
 
-  .partnerCard:nth-child(8) {
-    // grid-area: monarch;
-    border-top: none;
-    border-right: none;
-  }
+//   .card:nth-child(11) {
+//     // grid-area: blatchfold;
+//     display: none;
+//   }
 
-  .partnerCard:nth-child(9) {
-    // grid-area: antonovGroup;
-    display: none;
-  }
+//   .card:nth-child(12) {
+//     // grid-area: dita;
+//     border-right: var(--greyBorder);
+//   }
+// }
 
-  .partnerCard:nth-child(10) {
-    // grid-area: cozen;
-    display: none;
-  }
+// /* phone */
+// @media screen and (max-width: 600px) {
+//   .specialThanksToAllOurPartners {
+//     display: grid;
+//     grid-template-columns: repeat(10, 1fr);
+//     grid-template-rows: 200px 180px 110px 110px 110px 140px;
 
-  .partnerCard:nth-child(11) {
-    // grid-area: blatchfold;
-    display: none;
-  }
+//     grid-template-areas:
+//       '. title title title title title title title title title '
+//       'directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief'
+//       'chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy ottobock ottobock ottobock ottobock ottobock'
+//       'paradise paradise paradise paradise paradise paradise paradise paradise paradise paradise'
+//       'klmb klmb klmb klmb monarch monarch monarch monarch monarch monarch'
+//       'dita dita dita dita dita button button button button button';
 
-  .partnerCard:nth-child(12) {
-    // grid-area: dita;
-    border-right: var(--greyBorder);
-  }
-}
+//     padding-top: 60px;
+//     padding-bottom: 60px;
+//   }
 
-/* phone */
-@media screen and (max-width: 600px) {
-  .specialThanksToAllOurPartners {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: 200px 180px 110px 110px 110px 140px;
+//   .button {
+//     width: 100%;
+//     justify-content: center;
+//   }
 
-    grid-template-areas:
-      '. title title title title title title title title title '
-      'directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief'
-      'chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy ottobock ottobock ottobock ottobock ottobock'
-      'paradise paradise paradise paradise paradise paradise paradise paradise paradise paradise'
-      'klmb klmb klmb klmb monarch monarch monarch monarch monarch monarch'
-      'dita dita dita dita dita button button button button button';
+//   .titleCell {
+//     padding-bottom: 16px;
+//   }
 
-    padding-top: 60px;
-    padding-bottom: 60px;
-  }
+//   .card:nth-child(3) {
+//     // grid-area: directRelief;
+//     border-right: var(--greyBorder);
+//   }
 
-  .button {
-    width: 100%;
-    justify-content: center;
-  }
+//   .card:nth-child(4) {
+//     // grid-area: chaliceOfMercy;
+//     border-right: none;
+//   }
 
-  .titleCell {
-    padding-bottom: 16px;
-  }
+//   .card:nth-child(5) {
+//     // grid-area: ottobock;
+//     border-bottom: none;
+//     border-right: var(--greyBorder);
+//   }
 
-  .partnerCard:nth-child(3) {
-    // grid-area: directRelief;
-    border-right: var(--greyBorder);
-  }
+//   .card:nth-child(6) {
+//     // grid-area: paradise;
+//     border-right: var(--greyBorder);
+//   }
 
-  .partnerCard:nth-child(4) {
-    // grid-area: chaliceOfMercy;
-    border-right: none;
-  }
+//   .card:nth-child(7) {
+//     // grid-area: klmb;
+//     border-right: none;
+//     border-top: none;
+//   }
 
-  .partnerCard:nth-child(5) {
-    // grid-area: ottobock;
-    border-bottom: none;
-    border-right: var(--greyBorder);
-  }
+//   .card:nth-child(8) {
+//     // grid-area: monarch;
+//     border-right: var(--greyBorder);
+//   }
 
-  .partnerCard:nth-child(6) {
-    // grid-area: paradise;
-    border-right: var(--greyBorder);
-  }
-
-  .partnerCard:nth-child(7) {
-    // grid-area: klmb;
-    border-right: none;
-    border-top: none;
-  }
-
-  .partnerCard:nth-child(8) {
-    // grid-area: monarch;
-    border-right: var(--greyBorder);
-  }
-
-  .ditaLogo {
-    & rect:global(.purpleFrame) {
-      fill: #3f29b0;
-    }
-  }
-}
+//   .ditaLogo {
+//     & rect:global(.purpleFrame) {
+//       fill: #3f29b0;
+//     }
+//   }
+// }

@@ -7,6 +7,8 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import AcademySection from '@/components/AcademySection'
 
+import SliderNavigation, { SliderPrevButton, SliderNextButton } from '@/components/SliderNavigation'
+
 import styles from './styles.module.scss'
 import { icons } from './icons'
 
@@ -119,14 +121,10 @@ const AcademyStudents = () => {
           })}
         </Slider>
         {width > 600 && (
-          <div className={styles.sliderNavigation}>
-            <button className={styles.sliderButton} onClick={gotoPrev}>
-              {icons.arrowLeft(styles.arrowLeft)}
-            </button>
-            <button className={styles.sliderButton} onClick={gotoNext}>
-              {icons.arrowRight(styles.arrowRight)}
-            </button>
-          </div>
+          <SliderNavigation className={styles.sliderNavigation}>
+            <SliderPrevButton onClick={gotoPrev} />
+            <SliderNextButton onClick={gotoNext} />
+          </SliderNavigation>
         )}
       </TextAppearanceWrapper>
     </AcademySection>

@@ -1,9 +1,6 @@
 import styles from './style.module.scss'
 
-import Button from '@/components/Button'
-
 import { useLanguage } from '@/contexts/LanguageContext'
-// import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { icons } from './icons'
 import Divider from '@/components/Divider'
@@ -21,33 +18,29 @@ const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
       <div className={styles.footerTop}>
         <div className={styles.footerTopContent}>
           <div className={styles.right}>
-            {/* {width < 800
-              ? icons.footerLogo.mobile[lang](styles.footerLogo)
-              : icons.footerLogo.desktop[lang](styles.footerLogo)} */}
-            {icons.footerLogo.mobile[lang](styles.footerLogo)}
-
+            {icons.footerLogo.desktop[lang](styles.footerLogo)}
             <div className={styles.buttonGroup}>
-              <Button as="link" variant="primary-white" href="/" className={styles.button}>
-                Subscribe
-              </Button>
-              {/* <Button as="link" variant="secondary-fill-black" href="/" className={styles.button}>
-                Support Academy
-              </Button> */}
               <button className={styles.supportAcademyButton}>Support Academy</button>
             </div>
           </div>
           <div className={styles.left}>
             <p>Nonprofit organization 501(c)(3) EIN: 88-2437069</p>
             <Divider className={styles.divider} />
-            <p className={styles.descTitle}>Please send checks to:</p>
-            <p className={styles.descAddress}>
-              Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America
-            </p>
+            <p className={styles.descTitle}>Юридична адреса:</p>
+            <p className={styles.descAddress}>вул. Хрещатик, 7/11</p>
+            <a href="tel:+380509843356" className={styles.descTitle}>
+              +38 050 984 33 56
+            </a>
             <p className={styles.descTitle}>info@protezfoundation.com</p>
           </div>
         </div>
       </div>
-      <div className={styles.footerBottom}>2024 © Made by DITA GROUP Inc.</div>
+      <div className={styles.footerBottom}>
+        <span>2026 © Made by DITA GROUP Inc.</span>
+        <a href="/termsConditions" className={styles.termsLink}>
+          Умови та правила сайту
+        </a>
+      </div>
     </footer>
   )
 })

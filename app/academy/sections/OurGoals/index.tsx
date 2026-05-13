@@ -1,62 +1,110 @@
-import { forwardRef } from 'react'
+import { forwardRef, useRef } from 'react'
 
-// import { useLanguage } from '@/contexts/LanguageContext'
+import Image from 'next/image'
 
-import Link from 'next/link'
+import Slider from 'react-slick'
 
 import AcademySection from '@/components/AcademySection'
 
-import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+import SliderNavigation, { SliderPrevButton, SliderNextButton } from '@/components/SliderNavigation'
 
-// import texts from '@/texts&svg'
-
-import { icons } from './icons'
 import style from './style.module.scss'
 
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-
 import { AcademyIDs } from '../../consts'
+import { icons } from './icons'
 
-const OurGoals = forwardRef<HTMLDivElement>((_, ref) => {
-  // const { lang } = useLanguage()
-  const { width } = useScreenModeAndSize()
+const cards = [
+  {
+    icon: 'feedback-message.svg',
+    text: 'Розвиток сучасної системи освіти для фахівців у сфері протезування, ортезування та реабілітації',
+  },
+  {
+    icon: 'feedback-message.svg',
+    text: 'Впровадження міжнародних стандартів (ICF, ISPO, доказова практика) в українську клінічну роботу',
+  },
+  {
+    icon: 'document-bookmark.svg',
+    text: 'Підвищення кваліфікації мультидисциплінарних команд через практичне навчання',
+  },
+  {
+    icon: 'caring-hands.svg',
+    text: 'Підтримка пацієнтів через покращення якості протезування та реабілітаційного супроводу',
+  },
+  {
+    icon: 'graduation-cap.svg',
+    text: 'Розвиток інновацій, технологій та науково-практичних рішень у сфері',
+  },
+  {
+    icon: 'mentorship.svg',
+    text: 'Побудова партнерств з українськими та міжнародними організаціями',
+  },
+  {
+    icon: 'team-circle.svg',
+    text: 'Формування професійної спільноти та обміну досвідом між фахівцями',
+  },
+]
 
-  const goalCards = [
-    {
-      icon: icons.iconDisabledPerson,
-      text: 'New skills will allow them to make the prosthetics much faster (days instead of weeks), improve patient satisfaction and significantly reduce the rehabilitation time and number of follow ups.',
-    },
-    {
-      icon: icons.iconHand,
-      text: 'Specialists will learn modern approaches in evaluation, casting, fabrication and rehabilitation',
-    },
-    {
-      icon: icons.iconHelpHeart,
-      text: 'The instructors are certified trained professionals from Century College, Concordia and University of Minnesota.',
-    },
-  ]
+const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
+  const sliderRef = useRef<Slider & React.Component>(null)
+
+  const gotoNext = () => {
+    sliderRef.current?.slickNext()
+  }
+  const gotoPrev = () => {
+    sliderRef.current?.slickPrev()
+  }
+
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    responsive: [
+      { breakpoint: 1366, settings: { slidesToShow: 4 } },
+      { breakpoint: 1024, settings: { slidesToShow: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 2 } },
+      { breakpoint: 600, settings: { slidesToShow: 1 } },
+    ],
+  }
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoals}>
-      <div className={style.academyGoalsContent}>
-        <div className={style.linkCell}>
-          <Link href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6" target="blank" className={style.link}>
-            <p>Apply to Academy</p>
-            {icons.arrowUp(style.icon)}
-          </Link>
+      <div className={style.container}>
+        {icons.goalsLogo.desktop(style.title)}
+        <SliderNavigation>
+          <SliderPrevButton onClick={gotoPrev} />
+          <SliderNextButton onClick={gotoNext} />
+        </SliderNavigation>
+      </div>
+
+      <div className={style.sliderWrapper}>
+        <div className={style.slider}>
+          <Slider {...settings} ref={sliderRef}>
+            {cards.map((item, index) => (
+              <div key={index}>
+                <div className={style.card}>
+                  <Image
+                    src={`/protez/academyPage/icons/${item.icon}`}
+                    alt={item.icon}
+                    width={48}
+                    height={48}
+                    className={style.icon}
+                  />
+                  <p className={style.cardDesc}>{item.text}</p>
+                </div>
+              </div>
+            ))}
+          </Slider>
         </div>
-        <div className={style.titleCell}>
-          {width < 900 ? icons.goalLogo.mobile(style.title) : icons.goalLogo.desktop(style.title)}
-        </div>
-        {goalCards.map((item, index) => (
-          <TextAppearanceWrapper key={index} className={style.card}>
-            {item.icon(style.icon)}
-            <h5 className={style.cardDesc}>{item.text}</h5>
-          </TextAppearanceWrapper>
-        ))}
       </div>
     </AcademySection>
   )
 })
+
+if (process.env.NODE_ENV !== 'production') {
+  OurGoals.displayName = 'OurGoals'
+}
 
 export default OurGoals

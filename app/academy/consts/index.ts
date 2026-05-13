@@ -1,8 +1,10 @@
 export enum AcademyIDs {
   Intro = 'academyIntro',
+  MissionAndValues = 'missionAndValues',
   OurGoals = 'ourGoals',
   Academy = 'academy',
   OurResults = 'ourResults',
+  OurSponsors = 'ourSponsors',
   OurTeachers = 'ourTeachers',
   Chief = 'chief',
   TheoryLectures = 'theoryLectures',

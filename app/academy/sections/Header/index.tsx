@@ -104,7 +104,7 @@ const AcademyHeader = () => {
               className={styles.applyBtn}
             >
               {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
-              Apply to Academy
+              Зараєструватися на навчання
             </Button>
             <Button as="link" href="/" variant="secondary-white" size="small">
               {/* {texts.academyHeader.buttons.foundation[lang]} */}

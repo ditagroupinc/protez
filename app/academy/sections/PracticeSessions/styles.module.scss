@@ -14,50 +14,8 @@
 
 .sliderNavigation {
   position: absolute;
-  display: flex;
-  gap: 16px;
   top: 0;
   right: 0;
-}
-
-.sliderButton {
-  width: 48px;
-  height: 48px;
-  transition: all var(--transitionProps);
-  border-radius: 50%;
-  border-width: 1px;
-  border-style: solid;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
-  &:nth-child(1) {
-    background-color: var(--white);
-    border-color: #0d1125;
-    &:hover {
-      background-color: var(--blue);
-      border-color: var(--blue);
-      & .arrowLeft path {
-        transition: all var(--transitionProps);
-        fill: var(--white);
-      }
-    }
-  }
-
-  &:nth-child(2) {
-    background-color: var(--blue);
-    border-color: var(--blue);
-    &:hover {
-      background-color: var(--white);
-      border-color: #0d1125;
-      & .arrowRight path {
-        transition: all var(--transitionProps);
-        fill: #0d1125;
-      }
-    }
-  }
 }
 
 .slickSlider :global(.slick-track) {

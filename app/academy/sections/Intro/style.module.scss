@@ -2,14 +2,17 @@
   display: flex;
   align-items: center;
   position: relative;
+  justify-content: end;
   min-height: 100vh;
-  padding-top: 160px;
-  padding-bottom: 40px;
-
-  min-height: 100vh;
+  padding-top: 180px;
+  padding-bottom: 42px;
+  padding-left: 0;
+  padding-right: 0;
+  flex-direction: column;
 }
 
 .overlay {
+  pointer-events: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -19,58 +22,62 @@
   opacity: 60%;
 }
 
-.academyContent {
+.content {
   width: 100%;
   position: relative;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   gap: 40px;
   z-index: 1;
-
-  .leftPart {
-    max-width: 100%;
-
-    .sectionTitle {
-      margin-bottom: 24px;
-
-      svg {
-        max-width: 100%;
-        height: fit-content;
-      }
-    }
-
-    .academyDesc {
-      color: var(--white);
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 22px;
-      margin-bottom: 32px;
-    }
-
-    .buttonGroup {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-
-      & > a {
-        justify-content: center;
-      }
-
-      .arrowUp {
-        width: 20px;
-        height: 20px;
-      }
-    }
-  }
-
-  .rightPart {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 80px);
-  }
+  padding-left: 168px;
+  padding-right: 168px;
+  padding-bottom: 87px;
 }
 
-.academyCard {
+.leftPart {
+  max-width: 558px;
+}
+
+.sectionTitle {
+  margin-bottom: 40px;
+}
+
+.sectionTitle svg {
+  max-width: 100%;
+  height: fit-content;
+}
+
+.academyDesc {
+  color: var(--white);
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 48px;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 16px;
+}
+
+.buttonGroup > a {
+  justify-content: center;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+}
+
+.rightPart {
+  display: grid;
+  grid-template-columns: repeat(2, 310px);
+  grid-template-rows: 104px repeat(2, 184px);
+}
+
+.card {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,101 +89,193 @@
   &:hover {
     background-color: var(--blue);
   }
-}
 
-@media (min-width: 768px) {
-  .academyContent {
-    .leftPart {
-      max-width: 558px;
+  &:first-child {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
 
-      .sectionTitle {
-        margin-bottom: 40px;
-      }
+  &:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+  }
 
-      .academyDesc {
-        font-size: 18px;
-        line-height: 26px;
-        margin-bottom: 48px;
-      }
-
-      .buttonGroup {
-        // flex-direction: row;
-      }
-    }
-
-    .rightPart {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: repeat(2, 210px);
-
-      .academyCard {
-        &:first-child {
-          grid-column-start: 3;
-          grid-row-start: 1;
-          grid-row-end: 2;
-        }
-
-        &:nth-child(2) {
-          grid-column-start: 1;
-          grid-column-end: 2;
-          grid-row-start: 2;
-          grid-row-end: 3;
-        }
-
-        &:last-child {
-          grid-column-start: 2;
-          grid-column-end: 3;
-          grid-row-start: 2;
-          grid-row-end: 3;
-        }
-      }
-    }
+  &:last-child {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
   }
 }
 
-@media (min-width: 1024px) {
+.titleContainer {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 15px;
+  display: flex;
+  align-items: end;
+}
+.greyTitle {
+  color: var(--white, #fff);
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  opacity: 0.5;
+}
+
+.blackButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px 24px 24px;
+  text-align: left;
+
+  // border: 1px solid var(--dark);
+  background-color: #111;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 20px;
+
+  max-width: 240px;
+
+  cursor: pointer;
+  transition: background-color var(--transitionProps);
+
+  &:hover {
+    background-color: var(--blue);
+  }
+}
+
+.slider {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  margin-top: 40px;
+  overflow: hidden;
+
+  :global(.slick-slider:not(.slick-initialized)) {
+    visibility: hidden;
+  }
+
+  :global(.slick-track) {
+    display: flex;
+    align-items: center;
+  }
+
+  :global(.slick-slide) {
+    height: auto;
+    margin-right: 16px;
+  }
+}
+
+.sliderTitleContainer {
+  // width: 100%;
+  // height: 100%;
+  padding-bottom: 17px;
+  padding-left: 168px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.academyLogo {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.wideCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 327px;
+  height: 120px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  transition: all var(--transitionProps);
+}
+@media (max-width: 1366px) {
   .academyIntro {
     padding-top: 300px;
-    padding-bottom: 136px;
+  }
+
+  .content {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .rightPart {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 210px);
+  }
+
+  .card {
+    &:first-child {
+      grid-column-start: 3;
+      grid-column-end: auto;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+
+    &:nth-child(2) {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
+
+    &:last-child {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 2;
+      grid-row-end: 3;
+    }
   }
 }
 
-@media (min-width: 1366px) {
+@media (max-width: 1024px) {
   .academyIntro {
-    padding-top: 180px;
-    padding-bottom: 60px;
+    padding-top: 160px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftPart {
+    max-width: 100%;
   }
 
-  .academyContent {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  .sectionTitle {
+    margin-bottom: 24px;
+  }
 
-    .rightPart {
-      grid-template-columns: repeat(2, 306px);
-      grid-template-rows: repeat(3, 240px);
+  .academyDesc {
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 32px;
+  }
 
-      .academyCard {
-        &:first-child {
-          grid-column-start: 2;
-          grid-column-end: 3;
-          grid-row-start: 1;
-          grid-row-end: 2;
-        }
+  .rightPart {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 80px);
+  }
 
-        &:nth-child(2) {
-          grid-column-start: 1;
-          grid-column-end: 2;
-          grid-row-start: 2;
-          grid-row-end: 3;
-        }
-
-        &:last-child {
-          grid-column-start: 2;
-          grid-column-end: 3;
-          grid-row-start: 3;
-          grid-row-end: 4;
-        }
-      }
+  .card {
+    &:first-child,
+    &:nth-child(2),
+    &:last-child {
+      grid-column-start: auto;
+      grid-column-end: auto;
+      grid-row-start: auto;
+      grid-row-end: auto;
     }
   }
 }

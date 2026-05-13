@@ -1,8 +1,8 @@
-import { forwardRef } from 'react'
+import { forwardRef, useEffect, useState } from 'react'
 
 // import { useLanguage } from '@/contexts/LanguageContext'
 
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+// import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import Button from '@/components/Button'
 
@@ -10,59 +10,135 @@ import AcademySection from '@/components/AcademySection'
 
 import VideoAndFilter from '@/components/VideoAndFilter'
 
-import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+// import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import Image from 'next/image'
 
 import { icons } from './icons'
 import style from './style.module.scss'
 
 import { AcademyIDs } from '../../consts'
+import Slider from 'react-slick'
 
-// introVideo.mp4
+const sliderCards = [
+  '4-front_white.svg',
+  'beetroot_white.svg',
+  'biznes_white.svg',
+  'blatchfold_white.svg',
+  'brain-robotics_white.png',
+  'century-collage_white.svg',
+  'cerebral_white.svg',
+  'chalice-of-mercy_white.svg',
+  'concordia_white.svg',
+  'cozen_white.svg',
+  // 'direct-relief_white.svg',
+  // 'dita-group_white.svg',
+  // 'donorbox_white.svg',
+  // 'esper_white.svg',
+  // 'evangelical-church_white.svg',
+  // 'exp_white.svg',
+  // 'fabtech_white.svg',
+  // 'fizychna-associasion_white.svg',
+  // 'highlight-printing_white.svg',
+  // 'humana-travel_white.svg',
+  // 'klmb_white.svg',
+  // 'kpi_white.svg',
+  // 'mhp_white.svg',
+  // 'minnesota_white.svg',
+  // 'monarch_white.svg',
+  // 'ossur_white.svg',
+  // 'ottobock._white.svg',
+  // 'paradize_white.svg',
+  // 'proteor_white.svg',
+  // 'rotary_white.svg',
+  // 'school-of-medicine_white.svg',
+  // 'shupika_white.svg',
+  // 'slumberland_white.svg',
+  // 'smak_white.svg',
+  // 'st-constantin_white.svg',
+  // 'st-maron_white.svg',
+  // 'ticket-to-america_white.svg',
+  // 'ua_white.svg',
+  // 'ukrainian-habitat-fund_white.svg',
+  // 'ukrsibbank_white.svg',
+  // 'united-help-ukraine_white.svg',
+  // 'xtremity_white.svg',
+]
 
-const AcademyCard = ({
-  image,
-  width,
-  height,
-  className,
-}: {
-  image: string
-  width: number
-  height: number
-  className?: string
-}) => {
+const Card = ({ image, className }: { image: string; className?: string }) => {
   return (
-    <TextAppearanceWrapper className={`${style.academyCard} ${className}`}>
+    <div className={className}>
       <Image
-        // TODO: remove after review
         src={`/protez/${image}`}
         object-fit="contain"
         alt={image as string}
-        width={width}
-        height={height}
+        width={200}
+        height={120}
         className={style.academyLogo}
       />
-    </TextAppearanceWrapper>
+    </div>
   )
 }
 
 const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
   // const { lang } = useLanguage()
-  const { mobile, width } = useScreenModeAndSize()
+  // const { mobile, width } = useScreenModeAndSize()
+  const [sliderReady, setSliderReady] = useState(false)
 
-  const isMobile = width < 768 || mobile
+  useEffect(() => {
+    setSliderReady(true)
+  }, [])
+
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 50000,
+    cssEase: 'linear',
+    pauseOnHover: false,
+    pauseOnFocus: false,
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    variableWidth: true,
+    centerMode: false,
+    responsive: [
+      {
+        breakpoint: 1366,
+        settings: {
+          slidesToShow: 4,
+          variableWidth: true,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          variableWidth: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          variableWidth: true,
+        },
+      },
+    ],
+  }
+
+  // const isMobile = width < 768 || mobile
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.Intro} className={style.academyIntro}>
       <VideoAndFilter src={'academyPage/intro/introVideo.mp4'} />
       <div className={style.overlay}></div>
-      <div className={style.academyContent}>
+      <div className={style.content}>
         <div className={style.leftPart}>
           <div className={style.sectionTitle}>{icons.academyIntroTitle()}</div>
           <p className={style.academyDesc}>
-            Protez Academy is an educational project by the Protez Foundation in collaboration with
-            Century College and contributions from specialists from University of Minnesota and
-            Concordia University
+            Protez Academy - це освітній проєкт Фонду Протез у співпраці з Century College та за
+            участю фахівців з Університету Міннесоти та Університету Конкордія
           </p>
           <div className={style.buttonGroup}>
             <Button
@@ -70,72 +146,47 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
               href="https://forms.gle/USf9fVTEgfzmGkBW9"
               target={'_blank'}
               variant="primary-blue"
-              size={isMobile ? 'big' : 'small'}
+              // size={isMobile ? 'big' : 'small'}
+              size="big"
               rel="noopener noreferrer"
             >
-              «Терапевтичні вправи: сучасний підхід до побудови занять» — 16.05
+              Зареєструватися на навчання
             </Button>
-            <Button
-              as="link"
-              href="https://forms.gle/USf9fVTEgfzmGkBW9"
-              target={'_blank'}
-              variant="primary-blue"
-              size={isMobile ? 'big' : 'small'}
-              rel="noopener noreferrer"
-            >
-              «Терапевтичні вправи: сучасний підхід до побудови занять» — 30.05
-            </Button>
-            <Button
-              as="link"
-              href="https://forms.gle/USf9fVTEgfzmGkBW9"
-              target={'_blank'}
-              variant="primary-blue"
-              size={isMobile ? 'big' : 'small'}
-              rel="noopener noreferrer"
-            >
-              «Терапевтичні вправи: сучасний підхід до побудови занять» — 06.06
-            </Button>
-            <Button
-              as="link"
-              href="https://forms.gle/USf9fVTEgfzmGkBW9"
-              target={'_blank'}
-              variant="primary-blue"
-              size={isMobile ? 'big' : 'small'}
-              rel="noopener noreferrer"
-            >
-              «Терапевтичні вправи: сучасний підхід до побудови занять» — 13.06
-            </Button>
-            <Button
-              as="link"
-              href="/donate"
-              variant="secondary-white"
-              size={isMobile ? 'big' : 'small'}
-            >
+
+            <Button as="link" href="/donate" variant="secondary-white" size="big">
               Support Academy
-              {icons.arrowUp(`${style.arrowUp}`)}
+              {icons.arrowUp(`${style.arrow}`)}
             </Button>
           </div>
         </div>
         <div className={style.rightPart}>
-          <AcademyCard
-            image="academyPage/intro/minnesotaUniversity.svg"
-            width={isMobile ? 157 : 182}
-            height={isMobile ? 28 : 33}
-            className={style.academyCard}
-          />
-          <AcademyCard
-            image="academyPage/intro/centuryCollege.svg"
-            width={isMobile ? 43 : 64}
-            height={isMobile ? 59 : 86}
-            className={style.academyCard}
-          />
-          <AcademyCard
-            image="academyPage/intro/concordiaUniversity.svg"
-            width={isMobile ? 151 : 172}
-            height={isMobile ? 37 : 42}
-            className={style.academyCard}
-          />
+          <div className={style.titleContainer}>
+            <span className={style.greyTitle}>Наші спонсори</span>
+          </div>
+          <a href={`#${AcademyIDs.SpecialThanksToAllOurPartners}`} className={style.blackButton}>
+            Всі спонсори та партнери
+            {icons.arrowDown(style.arrow)}
+          </a>
+
+          <Card image="academyPage/partners/white/rotary_white.svg" className={style.card} />
+          <Card image="academyPage/partners/white/direct-relief_white.svg" className={style.card} />
         </div>
+      </div>
+      <div className={style.slider}>
+        <div className={style.sliderTitleContainer}>
+          <span className={style.greyTitle}>Наші партнери:</span>
+        </div>
+        {sliderReady && (
+          <Slider {...settings}>
+            {sliderCards.map((card, index) => {
+              return (
+                <div key={index}>
+                  <Card image={`academyPage/partners/white/${card}`} className={style.wideCard} />
+                </div>
+              )
+            })}
+          </Slider>
+        )}
       </div>
     </AcademySection>
   )

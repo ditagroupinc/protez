@@ -7,6 +7,8 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import AcademySection from '@/components/AcademySection'
 
+import { SliderPrevButton, SliderNextButton } from '@/components/SliderNavigation'
+
 import styles from './styles.module.scss'
 import { icons } from './icons'
 
@@ -259,12 +261,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
         </Slider>
         {width > 600 && (
           <>
-            <button className={styles.sliderButton} onClick={gotoPrev}>
-              {icons.arrowLeft(styles.arrowLeft)}
-            </button>
-            <button className={styles.sliderButton} onClick={gotoNext}>
-              {icons.arrowRight(styles.arrowRight)}
-            </button>
+            <SliderPrevButton onClick={gotoPrev} className={styles.prevButton} />
+            <SliderNextButton onClick={gotoNext} className={styles.nextButton} />
           </>
         )}
       </TextAppearanceWrapper>

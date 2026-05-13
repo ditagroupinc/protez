@@ -14,27 +14,25 @@ import { AcademyIDs } from '../../consts'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import Link from 'next/link'
-
 const partnersIcons: string[] = [
-  'directRelief.svg',
-  'chaliceOfMercy.svg',
-  'ottobock.svg',
-  'paradise.svg',
-  'klmb.svg',
-  'monarch.svg',
-  // 'dita.svg',
-  'antonovGroup.svg',
-  'cozen.svg',
-  'blatchfold.svg',
+  'concordia_dark.svg',
+  'minnesota_dark.svg',
+  'century-collage_dark.svg',
+  'school-of-medicine_dark.svg',
+  'esper_dark.svg',
+  'rotary_dark.svg',
+  'kpi_dark.svg',
+  'shupika_dark.svg',
+  'beetroot_dark.svg',
+  'fizychna-associasion_dark.svg',
 ]
 
-const PartnerCard = ({ icon }: { icon: string }): React.ReactElement => (
-  <TextAppearanceWrapper className={styles.partnerCard}>
+const Card = ({ icon }: { icon: string }): React.ReactElement => (
+  <TextAppearanceWrapper className={styles.card}>
     <Image
       // TODO: remove after review
 
-      src={`/protez/partnersLogos/${icon}`}
+      src={`/protez/academyPage/partners/dark/${icon}`}
       alt={icon}
       width={300}
       height={230}
@@ -52,33 +50,14 @@ const SpecialThanksToAllOurPartners = () => {
       id={AcademyIDs.SpecialThanksToAllOurPartners}
       className={styles.specialThanksToAllOurPartners}
     >
-      <div className={styles.buttonCell}>
-        <Button as="link" href="/" variant="secondary-fill-black" className={styles.button}>
-          Discover all <br />
-          Partners
-          {icons.arrowUp()}
-        </Button>
-      </div>
       <div className={styles.titleCell}>
         {width < 600
           ? icons.specialThanksToAllOurPartnersLogo.mobile[lang](styles.title)
           : icons.specialThanksToAllOurPartnersLogo.desktop[lang](styles.title)}
       </div>
       {partnersIcons.map((icon, index) => (
-        <PartnerCard icon={icon} key={index} />
+        <Card icon={icon} key={index} />
       ))}
-      {/* <TextAppearanceWrapper>
-        <Link
-          href="https://dita-group.com/"
-          target="blank"
-          className={`${style.partnerCard} ${dita && style.dita}`}
-        >
-          {globalIcons.ditaLogo(`${style.partnerLogo}`)}
-        </Link>
-      </TextAppearanceWrapper> */}
-      <Link href="https://dita-group.com/" target="blank" className={styles.partnerCard}>
-        {icons.ditaLogo(styles.ditaLogo)}
-      </Link>
     </AcademySection>
   )
 }

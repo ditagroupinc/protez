@@ -14,7 +14,9 @@ import AcademyIntro from './sections/Intro'
 
 import FullScreenFallback from './components/fallback'
 
+const MissionAndValues = lazy(() => import('./sections/MissionAndValues'))
 const OurGoals = lazy(() => import('./sections/OurGoals'))
+const OurSponsors = lazy(() => import('./sections/OurSponsors'))
 const OurResults = lazy(() => import('./sections/OurResults'))
 const TheoryLectures = lazy(() => import('./sections/TheoryLectures'))
 const SpecialThanksToAllOurPartners = lazy(() => import('./sections/SpecialThanksToAllOurPartners'))
@@ -55,6 +57,10 @@ export default function AcademyPage() {
       <AcademyHeader />
       <main className={style.main}>
         <AcademyIntro ref={refIntro} />
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <MissionAndValues />
+        </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
           <OurGoals />
@@ -109,11 +115,19 @@ export default function AcademyPage() {
             <Suspense fallback={<FullScreenFallback />}>
               <SpecialThanksToAllOurPartners />
             </Suspense>
+
+            <Suspense fallback={<FullScreenFallback />}>
+              <OurSponsors />
+            </Suspense>
           </>
         ) : (
           <>
             <Suspense fallback={<FullScreenFallback />}>
               <SpecialThanksToAllOurPartners />
+            </Suspense>
+
+            <Suspense fallback={<FullScreenFallback />}>
+              <OurSponsors />
             </Suspense>
 
             <Suspense fallback={<FullScreenFallback />}>

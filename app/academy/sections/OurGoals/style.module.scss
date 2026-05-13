@@ -1,48 +1,24 @@
 .academyGoals {
-  padding-top: 120px;
+  padding-top: 80px;
   padding-bottom: 120px;
 }
-.academyGoalsContent {
-  display: grid;
-  grid-template-columns: minmax(0, 400px) minmax(0, 390px) minmax(0, 390px) minmax(0, 400px);
-  grid-template-rows: minmax(400px, 1fr) minmax(0, 320px);
-  grid-template-areas:
-    'link . title skills'
-    '. instructors specialists .';
-}
 
-.linkCell {
+.container {
   display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  grid-area: link;
-}
-.link {
-  max-width: 240px;
-  padding: 24px 16px 24px 24px;
-  display: flex;
+  align-items: end;
   justify-content: space-between;
-  align-items: flex-end;
-  background-color: var(--blue);
-
-  color: var(--white);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 28px;
+  margin-bottom: 40px;
 }
 
-.titleCell {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 16px;
-  padding-left: 32px;
-  grid-area: title;
+.sliderWrapper {
+  position: relative;
 }
 
-.title {
-  max-width: 100%;
+.slider {
+  :global(.slick-list) {
+    overflow: hidden;
+    border-right: var(--greyBorder);
+  }
 }
 
 .card {
@@ -50,14 +26,12 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 8px;
-  width: 100%;
-  height: 100%;
+  height: 276px;
   padding: 32px;
   font-size: 18px;
   line-height: 26px;
   transition: all var(--transitionProps);
-
-  border-right: var(--greyBorder);
+  border-left: var(--greyBorder);
   border-top: var(--greyBorder);
   border-bottom: var(--greyBorder);
 
@@ -69,135 +43,40 @@
   &:hover {
     background-color: var(--blue);
     color: var(--white);
-    & .icon path {
-      transition: all var(--transitionProps);
-      fill: var(--white);
-    }
-  }
-  &:nth-of-type(3) {
-    grid-area: skills;
-    border-left: var(--greyBorder);
-  }
-
-  &:nth-child(4) {
-    grid-area: specialists;
-  }
-
-  &:nth-child(5) {
-    grid-area: instructors;
-    border-left: var(--greyBorder);
   }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1366px) {
   .academyGoals {
+    padding-top: 80px;
     padding-bottom: 80px;
   }
-  .academyGoalsContent {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 400px));
-    grid-template-areas:
-      'link title skills'
-      'instructors specialists .';
-  }
-
-  .linkCell {
-    justify-content: flex-start;
-  }
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 1024px) {
   .academyGoals {
+    padding-top: 60px;
     padding-bottom: 60px;
   }
-  .academyGoalsContent {
-    display: grid;
-    grid-template-columns: 24fr 34fr 32fr;
-    grid-template-rows: 40fr 30fr 30fr;
-    grid-template-areas:
-      '. title skills'
-      '. instructors .'
-      'link . specialists';
-  }
 
-  .linkCell {
-    justify-content: center;
-    align-items: flex-start;
-  }
-  .link {
-    max-width: 100%;
-    width: 100%;
-  }
   .card {
-    &:nth-child(4) {
-      border-left: var(--greyBorder);
-    }
+    padding: 24px;
   }
 }
 
-/* Adjustments for screens smaller than 576px */
-@media (max-width: 950px) {
+@media (max-width: 600px) {
   .academyGoals {
     padding-top: 40px;
-    padding-bottom: 20px;
-  }
-  .academyGoalsContent {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: 126fr 244fr 250fr 72fr;
-    grid-template-areas:
-      'title title'
-      'skills skills'
-      'instructors specialists'
-      'instructors link';
+    padding-bottom: 40px;
   }
 
-  .linkCell {
-    grid-area: link;
-  }
-  .link {
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20px;
-
-    & p {
-      max-width: 120px;
-    }
-  }
-
-  .titleCell {
-    align-items: flex-end;
-    justify-content: flex-start;
-    padding-left: 0;
-    padding-right: 0;
-    padding-bottom: 16px;
+  .sliderNavigation {
+    display: none;
   }
 
   .card {
     padding: 24px;
     font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
     line-height: 22px;
-    gap: 24px;
-    justify-content: flex-start;
-
-    & .icon {
-      width: 40px;
-      height: 40px;
-    }
-
-    &:nth-of-type(3) {
-      border-bottom: none;
-    }
-
-    &:nth-child(4) {
-      border-left: none;
-    }
-
-    &:nth-child(5) {
-      border-left: var(--greyBorder);
-    }
   }
 }
