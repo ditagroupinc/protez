@@ -32,9 +32,6 @@ const Veterans = lazy(() => import('@/sections/protez/8-Veterans/Veterans'))
 const Events = lazy(() => import('@/sections/protez/9-Events/Events'))
 const PressRelease = lazy(() => import('@/sections/protez/10-PressRelease/PressRelease'))
 const MeetOurTeam = lazy(() => import('@/sections/protez/12-MeetOurTeam/MeetOurTeam'))
-// const OurStarSupporters = lazy(
-//   () => import('@/sections/protez/15-OurStarSupporters/OurStarSupporters')
-// )
 const SpecialThanksToAllOurPartners = lazy(() => import('@/sections/SpecialThanksToAllOurPartners'))
 const MailingList = lazy(() => import('@/sections/protez/16-MailingList/MailingList'))
 const Merch = lazy(() => import('@/sections/protez/17-Merch/Merch'))
@@ -127,10 +124,6 @@ export default function ProtezHomePage({
         <SuspenseSection>
           <SpecialThanksToAllOurPartners />
         </SuspenseSection>
-
-        {/* <Suspense fallback={<FullScreenFallback />}>
-          <OurStarSupporters />
-        </Suspense> */}
 
         <SuspenseSection withSmoke>
           <MailingList />
