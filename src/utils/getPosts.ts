@@ -17,7 +17,7 @@ const DATA_MAP = {
 
 export async function getPosts() {
   try {
-    const posts = (await getAllSections()) as WPPost[]
+    const posts = (await getAllSections()) as unknown
 
     const postsByTopics = {
       news: '',
@@ -26,7 +26,11 @@ export async function getPosts() {
       pressReleases: '',
     }
 
-    posts.forEach(post => {
+    if (!Array.isArray(posts)) {
+      throw new Error('getAllSections did not return an array')
+    }
+
+    ;(posts as WPPost[]).forEach(post => {
       const { title, content } = post.node
       const key = DATA_MAP[title as keyof typeof DATA_MAP]
 

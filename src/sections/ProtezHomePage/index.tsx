@@ -70,6 +70,8 @@ export default function ProtezHomePage({
               height={927}
               className={style.americanFlag}
             />
+            {/* Independent Suspense so LetsGiveHope and the flag render immediately
+                while PeopleTrustUs hydrates above the fold. */}
             <Suspense fallback={<FullScreenFallback />}>
               <PeopleTrustUs />
             </Suspense>

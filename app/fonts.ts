@@ -9,6 +9,9 @@ export const nunitoSans = Nunito_Sans({
   style: ['normal', 'italic'],
 })
 
+// Kept as a local font because SampleProsthesesCosts.tsx still consumes the
+// `.className` directly. Migrate to next/font/google when that section is
+// reworked.
 export const playfairDisplayItalic = localFont({
   src: '../public/fonts/PlayfairDisplay-Italic.ttf',
 })
