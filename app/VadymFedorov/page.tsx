@@ -15,7 +15,7 @@ import Header from '@/sections/Header'
 import Footer from '@/sections/Footer'
 import Divider from '@/components/Divider'
 import Script from 'next/script'
-import SmokeWrapper from '@/sections/ClientSections/SmokeWrapper'
+import SmokeWrapper from '@/sections/ProtezHomePage/SmokeWrapper'
 import ProtezImage from '@/components/ProtezImage'
 
 interface Veteran {

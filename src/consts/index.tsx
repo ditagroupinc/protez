@@ -31,7 +31,6 @@ export enum ProtezIDs {
   MeetOurTeam = 'meetOurTeam',
   OfficeLocations = 'officeLocations',
   SpecialThanksToAllOurPartners = 'specialThanksToAllOurPartners',
-  OurStarSupporters = 'ourStarSupporters',
   MailingList = 'mailingList',
   Merch = 'merch',
   Footer = 'footer',
