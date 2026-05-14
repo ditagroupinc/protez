@@ -1,0 +1,70 @@
+.container {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  max-width: var(--navRightWidth);
+  right: var(--paddingVW);
+  top: 50%;
+  transform: translateY(-50%);
+  gap: 40px;
+  z-index: 9;
+}
+
+.link.pink {
+  &:hover .icon rect {
+    transition: fill var(--transitionProps);
+    fill: var(--pink);
+  }
+}
+
+.link.blue {
+  &:hover .icon rect {
+    transition: fill var(--transitionProps);
+    fill: var(--blue);
+  }
+}
+
+.icon {
+  transition: fill var(--transitionProps);
+
+  width: 48px;
+  height: 48px;
+}
+
+/* desktop */
+@media screen and (max-width: 1920px) {
+  /* .container {
+    gap: 24px;
+  } */
+
+  /* .icon {
+    width: 56px;
+    height: 56px;
+  } */
+}
+
+/* beforeTablet */
+/* @media screen and (max-width: 1366px) {
+  .icon {
+    width: 48px;
+    height: 48px;
+  }
+} */
+
+@media screen and (max-width: 500px) {
+  .container {
+    gap: 8px;
+    top: auto;
+    bottom: 14px;
+    transform: none;
+    z-index: 999;
+  }
+  .icon {
+    width: 40px;
+    height: 40px;
+  }
+  .link:last-of-type {
+    display: none;
+  }
+}

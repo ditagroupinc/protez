@@ -1,0 +1,177 @@
+.academyStudents {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.title {
+  margin-left: 0;
+  max-width: 100%;
+}
+
+.sliderWrapper {
+  position: relative;
+}
+
+.sliderNavigation {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.slickSlider :global(.slick-track) {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 24px;
+  height: 574px;
+}
+
+.cardWrapper {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 574px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all var(--transitionProps);
+}
+
+.image {
+  transition: all 0.5s;
+  object-fit: cover;
+
+  width: 100%;
+  height: 100%;
+}
+
+.centerSlide .card {
+  max-height: 100%;
+}
+
+@media (max-width: 1366px) {
+  .title {
+    margin-left: 0;
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .sliderNavigation {
+    top: -88px;
+  }
+
+  .card,
+  .centerSlide .card {
+    max-height: 400px;
+    max-width: 466px;
+  }
+
+  .leftSlide .card {
+    max-height: 100%;
+    max-width: 680px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .academyStudents {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+  .slickSlider :global(.slick-track) {
+    height: 620px;
+  }
+  .cardWrapper {
+    height: 620px;
+  }
+
+  .card,
+  .centerSlide .card {
+    max-height: 440px;
+    max-width: 432px;
+  }
+
+  .leftSlide .card {
+    max-height: 100%;
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 600px) {
+  .academyStudents {
+    padding: 60px 0;
+  }
+  .title {
+    margin-bottom: 32px;
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+  .slickSlider :global(.slick-track) {
+    height: 360px;
+    gap: 0;
+  }
+  .cardWrapper {
+    height: 360px;
+    padding-left: 6px;
+    padding-right: 6px;
+  }
+
+  .card,
+  .centerSlide .card {
+    max-height: 280px;
+    max-width: 100%;
+  }
+
+  .leftSlide .card {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  .image {
+    object-position: top;
+  }
+
+  .slickSlider {
+    & :global(.slick-dots) {
+      border-radius: 4px;
+      display: flex;
+      padding-top: 32px;
+      padding-right: 24px;
+      padding-left: 24px;
+      position: static;
+    }
+    & :global(.slick-dots li) {
+      margin: 0;
+      width: calc(100% / 8);
+      height: 3px;
+      background-color: var(--dark);
+      opacity: 0.06;
+    }
+
+    & :global(.slick-dots li.slick-active) {
+      border-radius: 4px;
+      background-color: var(--blue);
+      opacity: 1;
+    }
+
+    & :global(.slick-dots li button:before) {
+      display: none;
+    }
+
+    & :global(.slick-dots li button) {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+    }
+  }
+}

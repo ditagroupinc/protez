@@ -1,0 +1,262 @@
+.specialThanksToAllOurPartners {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 368px 300px 300px;
+
+  grid-template-areas:
+    '. title title title concordia'
+    '. minnesota centuryCollage schoolOfMedicine esper'
+    'rotary kpi shupika beetroot fizychnaAssociasion';
+
+  padding-bottom: 120px;
+  padding-top: 80px;
+}
+
+.card {
+  border-left: var(--greyBorder);
+  border-bottom: var(--greyBorder);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+.partnerLogo {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.titleCell {
+  grid-area: title;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.title {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card:nth-child(2) {
+  grid-area: concordia;
+  border-right: var(--greyBorder);
+  border-top: var(--greyBorder);
+  border-bottom: none;
+}
+
+.card:nth-child(3) {
+  grid-area: minnesota;
+
+  border-top: var(--greyBorder);
+  border-bottom: none;
+}
+
+.card:nth-child(4) {
+  grid-area: centuryCollage;
+  border-top: var(--greyBorder);
+}
+
+.card:nth-child(5) {
+  grid-area: schoolOfMedicine;
+  border-top: var(--greyBorder);
+}
+
+.card:nth-child(6) {
+  grid-area: esper;
+  border-top: var(--greyBorder);
+  border-right: var(--greyBorder);
+}
+
+.card:nth-child(7) {
+  grid-area: rotary;
+  border-top: var(--greyBorder);
+}
+
+.card:nth-child(8) {
+  grid-area: kpi;
+  border-top: var(--greyBorder);
+}
+
+.card:nth-child(9) {
+  grid-area: shupika;
+}
+
+.card:nth-child(10) {
+  grid-area: beetroot;
+}
+
+.card:nth-child(11) {
+  grid-area: fizychnaAssociasion;
+  border-right: var(--greyBorder);
+}
+
+// @media screen and (max-width: 1366px) {
+//   .specialThanksToAllOurPartners {
+//     grid-template-columns: repeat(12, 1fr);
+//     grid-template-rows: 230px 280px 270px 300px;
+
+//     grid-template-areas:
+//       'button button . . . title title title title title title title'
+//       '. . directRelief directRelief directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy'
+//       'ottobock ottobock ottobock paradise paradise paradise klmb klmb klmb monarch monarch monarch'
+//       'dita dita dita antonovGroup antonovGroup antonovGroup cozen cozen cozen blatchfold blatchfold blatchfold';
+
+//     padding-top: 120px;
+//     padding-bottom: 120px;
+//   }
+
+//   .titleCell {
+//     padding-right: 0;
+//   }
+
+//   .card:nth-child(3) {
+//     // grid-area: directRelief;
+//     border-right: none;
+//     border-bottom: none;
+//   }
+
+//   .card:nth-child(4) {
+//     // grid-area: chaliceOfMercy;
+//     border-right: var(--greyBorder);
+//     border-bottom: none;
+//   }
+
+//   .card:nth-child(7) {
+//     // grid-area: klmb;
+//     border-right: none;
+//     border-top: var(--greyBorder);
+//   }
+
+//   .card:nth-child(8) {
+//     // grid-area: monarch;
+//     border-right: var(--greyBorder);
+//   }
+// }
+
+// @media screen and (max-width: 1024px) {
+//   .specialThanksToAllOurPartners {
+//     grid-template-columns: repeat(6, 1fr);
+//     grid-template-rows: 230px 280px 280px 280px;
+
+//     grid-template-areas:
+//       '. title title title title title'
+//       'directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy'
+//       'ottobock ottobock paradise paradise klmb klmb'
+//       'monarch monarch dita dita button button';
+
+//     padding-top: 120px;
+//     padding-bottom: 60px;
+//   }
+
+//   .buttonCell {
+//     grid-area: button;
+//     justify-content: flex-start;
+//     align-items: flex-start;
+//   }
+
+//   .card:nth-child(3) {
+//     // grid-area: directRelief;
+//     border-right: none;
+//   }
+
+//   .card:nth-child(7) {
+//     // grid-area: klmb;
+//     border-right: var(--greyBorder);
+//   }
+
+//   .card:nth-child(8) {
+//     // grid-area: monarch;
+//     border-top: none;
+//     border-right: none;
+//   }
+
+//   .card:nth-child(9) {
+//     // grid-area: antonovGroup;
+//     display: none;
+//   }
+
+//   .card:nth-child(10) {
+//     // grid-area: cozen;
+//     display: none;
+//   }
+
+//   .card:nth-child(11) {
+//     // grid-area: blatchfold;
+//     display: none;
+//   }
+
+//   .card:nth-child(12) {
+//     // grid-area: dita;
+//     border-right: var(--greyBorder);
+//   }
+// }
+
+// /* phone */
+// @media screen and (max-width: 600px) {
+//   .specialThanksToAllOurPartners {
+//     display: grid;
+//     grid-template-columns: repeat(10, 1fr);
+//     grid-template-rows: 200px 180px 110px 110px 110px 140px;
+
+//     grid-template-areas:
+//       '. title title title title title title title title title '
+//       'directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief directRelief'
+//       'chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy ottobock ottobock ottobock ottobock ottobock'
+//       'paradise paradise paradise paradise paradise paradise paradise paradise paradise paradise'
+//       'klmb klmb klmb klmb monarch monarch monarch monarch monarch monarch'
+//       'dita dita dita dita dita button button button button button';
+
+//     padding-top: 60px;
+//     padding-bottom: 60px;
+//   }
+
+//   .button {
+//     width: 100%;
+//     justify-content: center;
+//   }
+
+//   .titleCell {
+//     padding-bottom: 16px;
+//   }
+
+//   .card:nth-child(3) {
+//     // grid-area: directRelief;
+//     border-right: var(--greyBorder);
+//   }
+
+//   .card:nth-child(4) {
+//     // grid-area: chaliceOfMercy;
+//     border-right: none;
+//   }
+
+//   .card:nth-child(5) {
+//     // grid-area: ottobock;
+//     border-bottom: none;
+//     border-right: var(--greyBorder);
+//   }
+
+//   .card:nth-child(6) {
+//     // grid-area: paradise;
+//     border-right: var(--greyBorder);
+//   }
+
+//   .card:nth-child(7) {
+//     // grid-area: klmb;
+//     border-right: none;
+//     border-top: none;
+//   }
+
+//   .card:nth-child(8) {
+//     // grid-area: monarch;
+//     border-right: var(--greyBorder);
+//   }
+
+//   .ditaLogo {
+//     & rect:global(.purpleFrame) {
+//       fill: #3f29b0;
+//     }
+//   }
+// }

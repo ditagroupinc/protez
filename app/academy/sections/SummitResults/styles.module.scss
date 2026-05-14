@@ -1,0 +1,238 @@
+.summitResults {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.resultInfo {
+  display: flex;
+
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+.desc {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--dark);
+  transition: all var(--transitionProps);
+}
+
+.count {
+  color: var(--blue);
+  font-size: 60px;
+  line-height: 76px;
+  font-weight: 800;
+  transition: all var(--transitionProps);
+}
+
+.left {
+  width: 100%;
+  max-width: 508px;
+}
+
+.title {
+  margin-bottom: 40px;
+  max-width: 100%;
+}
+
+.right {
+  display: grid;
+  width: 100%;
+  max-width: 780px;
+  grid-template-columns: repeat(3, 1fr);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 220px;
+  padding: 24px 32px 32px 32px;
+  border: var(--greyBorder);
+  transition: all var(--transitionProps);
+  &:hover {
+    background-color: var(--blue);
+    & .count {
+      color: var(--white);
+    }
+
+    .desc {
+      color: var(--white);
+    }
+  }
+}
+
+.card:nth-child(1) {
+  border-right: none;
+}
+
+.card:nth-child(2) {
+  border-right: none;
+}
+
+.playerContent {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark);
+    opacity: 40%;
+    z-index: 2;
+  }
+}
+
+.summitVideo {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+}
+
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.playerButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%;
+  color: var(--white);
+  background-color: rgb(255 255 255 / 10%);
+  border: 1px solid rgb(255 255 255 / 30%);
+  transition: transform var(--transitionProps);
+  z-index: 3;
+
+  &:active {
+    transform: translate(-50%, -50%) scale(0.92);
+  }
+}
+
+.playIcon {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 1366px) {
+  .summitResults {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+
+  .right {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .summitResults {
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  .resultInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+  }
+
+  .left {
+    width: 100%;
+    max-width: 508px;
+  }
+
+  .title {
+    margin: 0 auto 40px auto;
+  }
+
+  .right {
+    max-width: 100%;
+  }
+
+  .card {
+    height: 200px;
+  }
+}
+
+@media (max-width: 600px) {
+  .summitResults {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .resultInfo {
+    margin-bottom: 40px;
+    gap: 32px;
+  }
+
+  .desc {
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--dark);
+  }
+
+  .left {
+    max-width: 100%;
+  }
+
+  .title {
+    margin: 0 0 24px 0;
+    max-width: 230px;
+    height: auto;
+  }
+
+  .right {
+    max-width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      'visitors invitedGuests'
+      'prosthetists prosthetists';
+  }
+  .card {
+    height: 125px;
+    padding: 16px;
+  }
+
+  .card:nth-child(1) {
+    grid-area: visitors;
+  }
+
+  .card:nth-child(2) {
+    grid-area: invitedGuests;
+    border-right: var(--greyBorder);
+  }
+  .card:nth-child(3) {
+    grid-area: prosthetists;
+    border-top: none;
+  }
+
+  .count {
+    font-size: 40px;
+    line-height: normal;
+  }
+}

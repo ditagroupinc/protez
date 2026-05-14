@@ -7,7 +7,12 @@ const nextConfig = {
     scrollRestoration: true,
   },
   images: {
-    domains: ['protez.wpengine.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'protez.wpengine.com',
+      },
+    ],
     unoptimized: environment === 'pages' ? true : false,
   },
   reactStrictMode: false,

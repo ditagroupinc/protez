@@ -1,0 +1,46 @@
+.sliderNavigation {
+  display: flex;
+  gap: 16px;
+}
+
+.sliderButton {
+  width: 48px;
+  height: 48px;
+  transition: all var(--transitionProps);
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.prevButton {
+  background-color: var(--white);
+  border-color: #0d1125;
+  color: #0d1125;
+
+  &:hover {
+    background-color: var(--blue);
+    border-color: var(--blue);
+    color: var(--white);
+  }
+}
+
+.nextButton {
+  background-color: var(--blue);
+  border-color: var(--blue);
+  color: var(--white);
+
+  &:hover {
+    background-color: var(--white);
+    border-color: #0d1125;
+    color: #0d1125;
+  }
+}
+
+.arrowIcon {
+  transition: all var(--transitionProps);
+}

@@ -97,7 +97,7 @@
   }
 }
 
-.protezFoundationLinkWrapper {
+.protezAcademyLinkWrapper {
   height: 40px;
   flex-shrink: 0;
   display: flex;
@@ -106,7 +106,7 @@
   @include padding-side-mixin;
 }
 
-.protezFoundationLink {
+.protezAcademyLink {
   display: flex;
   align-items: center;
   gap: 8px;

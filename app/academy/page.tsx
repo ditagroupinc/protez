@@ -1,42 +1,66 @@
 'use client'
 
 import { Suspense, lazy } from 'react'
-import { notFound } from 'next/navigation'
+import { useInView } from 'react-intersection-observer'
+
+// import { notFound } from 'next/navigation'
+
+import BackToTopButton from '@academy/components/BackToTopButton'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademyIntro from '@/sections/academy/Intro'
+import AcademyHeader from './sections/Header'
+import AcademyIntro from './sections/Intro'
 
-import FullScreenFallback from '@/components/FullScreenFallback'
+import FullScreenFallback from './components/fallback'
 
-const OurGoals = lazy(() => import('@/sections/academy/OurGoals'))
-const OurResults = lazy(() => import('@/sections/academy/OurResults'))
-const TheoryLectures = lazy(() => import('@/sections/academy/TheoryLectures'))
-const SpecialThanksToAllOurPartners = lazy(() => import('@/sections/SpecialThanksToAllOurPartners'))
-const OurTeachers = lazy(() => import('@/sections/academy/OurTeachers'))
-const Footer = lazy(() => import('@/sections/Footer'))
-const Chief = lazy(() => import('@/sections/academy/Chief'))
-const AmputeeRehab = lazy(() => import('@/sections/academy/AmputeeRehab'))
-const SummitResults = lazy(() => import('@/sections/academy/SummitResults'))
-const Academy = lazy(() => import('@/sections/academy/Academy'))
-const PracticeSessions = lazy(() => import('@/sections/academy/PracticeSessions'))
-const AcademyStudents = lazy(() => import('@/sections/academy/AcademyStudents'))
-const WeAreInNews = lazy(() => import('@/sections/academy/WeAreInNews'))
-const Events = lazy(() => import('@/sections/academy/Events'))
+const MissionAndValues = lazy(() => import('./sections/MissionAndValues'))
+const OurGoals = lazy(() => import('./sections/OurGoals'))
+const OurSponsors = lazy(() => import('./sections/OurSponsors'))
+const OurResults = lazy(() => import('./sections/OurResults'))
+const TheoryLectures = lazy(() => import('./sections/TheoryLectures'))
+const SpecialThanksToAllOurPartners = lazy(() => import('./sections/SpecialThanksToAllOurPartners'))
+const OurTeachers = lazy(() => import('./sections/OurTeachers'))
+const Footer = lazy(() => import('./sections/Footer'))
+const Chief = lazy(() => import('./sections/Chief'))
+const AmputeeRehab = lazy(() => import('./sections/AmputeeRehab'))
+const SummitResults = lazy(() => import('./sections/SummitResults'))
+const Academy = lazy(() => import('./sections/Academy'))
+const PracticeSessions = lazy(() => import('./sections/PracticeSessions'))
+const AcademyStudents = lazy(() => import('./sections/AcademyStudents'))
+const WeAreInNews = lazy(() => import('./sections/WeAreInNews'))
+const Events = lazy(() => import('./sections/Events'))
 
 import style from './style.module.scss'
-import Header from '@/sections/Header'
 
 export default function AcademyPage() {
-  const { width } = useScreenModeAndSize()
+  const [refIntro, inViewIntro] = useInView({ triggerOnce: false })
+  const [refChief, inViewChief] = useInView({ triggerOnce: false })
+  const [refEvents, inViewEvents] = useInView({ triggerOnce: false })
+  const [refSummit, inViewSummit] = useInView({ triggerOnce: false })
+  const [refWeAreInNews, inViewWeAreInNews] = useInView({ triggerOnce: false })
+  const [refThankYou, inViewThankYou] = useInView({ triggerOnce: false })
 
-  return notFound()
+  const showBlackBackToTopButton =
+    !inViewIntro &&
+    !inViewChief &&
+    !inViewEvents &&
+    !inViewSummit &&
+    !inViewWeAreInNews &&
+    !inViewThankYou
+
+  const { mobile, width } = useScreenModeAndSize()
+  const isMobile = mobile || width < 768
 
   return (
     <>
-      <Header layout="academyPage" />
+      <AcademyHeader />
       <main className={style.main}>
-        <AcademyIntro />
+        <AcademyIntro ref={refIntro} />
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <MissionAndValues />
+        </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
           <OurGoals />
@@ -55,7 +79,7 @@ export default function AcademyPage() {
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
-          <Chief />
+          <Chief ref={refChief} />
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
@@ -67,7 +91,7 @@ export default function AcademyPage() {
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
-          <Events />
+          <Events ref={refEvents} />
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
@@ -79,17 +103,21 @@ export default function AcademyPage() {
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
-          <SummitResults />
+          <SummitResults ref={refSummit} />
         </Suspense>
 
         {width > 600 ? (
           <>
             <Suspense fallback={<FullScreenFallback />}>
-              <WeAreInNews />
+              <WeAreInNews ref={refWeAreInNews} />
             </Suspense>
 
             <Suspense fallback={<FullScreenFallback />}>
               <SpecialThanksToAllOurPartners />
+            </Suspense>
+
+            <Suspense fallback={<FullScreenFallback />}>
+              <OurSponsors />
             </Suspense>
           </>
         ) : (
@@ -99,14 +127,22 @@ export default function AcademyPage() {
             </Suspense>
 
             <Suspense fallback={<FullScreenFallback />}>
-              <WeAreInNews />
+              <OurSponsors />
+            </Suspense>
+
+            <Suspense fallback={<FullScreenFallback />}>
+              <WeAreInNews ref={refWeAreInNews} />
             </Suspense>
           </>
+        )}
+
+        {!isMobile && (
+          <BackToTopButton href={'academyIntro'} color="blue" black={showBlackBackToTopButton} />
         )}
       </main>
 
       <Suspense fallback={<FullScreenFallback />}>
-        <Footer layout="academyPage" />
+        <Footer ref={refThankYou} />
       </Suspense>
     </>
   )
