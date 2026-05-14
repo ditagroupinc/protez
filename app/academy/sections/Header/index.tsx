@@ -1,11 +1,10 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
-// import { Languages } from '@/types'
-// import texts from '@academy/components/texts-svg'
+import { Languages } from '@/types'
 
-// import { useLanguage } from '@/contexts/LanguageContext'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 import Button from '@academy/components/Button'
 import SocialMediaLinks from '@academy/components/SocialMediaLinks'
@@ -36,7 +35,6 @@ const AncorLinkIds = [
   AcademyIDs.AcademyStudents,
   AcademyIDs.AmputeeRehab,
   AcademyIDs.SummitResults,
-  AcademyIDs.WeAreInNews,
   AcademyIDs.SpecialThanksToAllOurPartners,
   AcademyIDs.OurSponsors,
 ] as const
@@ -50,14 +48,14 @@ const AcademyHeader = () => {
 
   const t = useAcademyTexts()
 
-  // const { lang } = useLanguage()
+  const { lang, setLang } = useLanguage()
 
-  // const handleLanguageChange = useCallback(() => {
-  //   const langToSet = lang === Languages.English ? Languages.Ukrainian : Languages.English
+  const handleLanguageChange = useCallback(() => {
+    const langToSet = lang === Languages.English ? Languages.Ukrainian : Languages.English
 
-  //   setLang(langToSet)
-  //   localStorage.setItem('lang', langToSet)
-  // }, [lang, setLang])
+    setLang(langToSet)
+    localStorage.setItem('lang', langToSet)
+  }, [lang, setLang])
 
   const isMobile = width < 768
 
@@ -115,10 +113,18 @@ const AcademyHeader = () => {
             </Button>
             <div className={styles.languageWrapper}>
               {icons.iconWorld(`${styles.worldIcon}`)}
-              <button disabled className={styles.localeBtn}>
+              <button
+                onClick={handleLanguageChange}
+                disabled={lang === Languages.English}
+                className={styles.localeBtn}
+              >
                 EN
               </button>
-              <button disabled className={`${styles.localeBtn} ${styles.localeBtnActive}`}>
+              <button
+                onClick={handleLanguageChange}
+                disabled={lang === Languages.Ukrainian}
+                className={styles.localeBtn}
+              >
                 UA
               </button>
             </div>
@@ -184,7 +190,7 @@ const AcademyHeader = () => {
             </a>
 
             <div className={styles.languageButtonContainer}>
-              <button className={styles.languageButton}>
+              <button className={styles.languageButton} onClick={handleLanguageChange}>
                 {icons.iconWorld(styles.icon)}
                 <span>{t.header.cta.language}</span>
               </button>

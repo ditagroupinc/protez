@@ -57,13 +57,6 @@
   }
 }
 
-.localeBtnActive {
-  &:disabled,
-  &[disabled] {
-    opacity: 1;
-  }
-}
-
 .sideMenu {
   position: fixed;
   right: 0;
