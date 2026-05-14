@@ -12,14 +12,14 @@ import { forwardRef } from 'react'
 
 const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
-  const title = useAcademyTitle('footer')
+  const { desktop: titleDesktop } = useAcademyTitle('footer')
 
   return (
     <footer ref={ref} id={AcademyIDs.Footer} className={styles.footer}>
       <div className={styles.footerTop}>
         <div className={styles.footerTopContent}>
           <div className={styles.right}>
-            <ProtezImage {...title.desktop} className={styles.footerLogo} />
+            <ProtezImage {...titleDesktop} className={styles.footerLogo} />
             <div className={styles.buttonGroup}>
               <button className={styles.supportAcademyButton}>{t.footer.supportAcademy}</button>
             </div>

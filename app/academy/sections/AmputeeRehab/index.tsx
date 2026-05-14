@@ -7,13 +7,13 @@ import ProtezImage from '@/components/ProtezImage'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import { useLanguage } from '@/contexts/LanguageContext'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 import { AcademyIDs } from '../../consts'
 
 const AmputeeRehab = () => {
-  const { lang } = useLanguage()
   const t = useAcademyTexts()
+  const { desktop: titleDesktop } = useAcademyTitle('amputeeRehab')
 
   return (
     <section id={AcademyIDs.AmputeeRehab} className={styles.amputeeRehab}>
@@ -29,7 +29,10 @@ const AmputeeRehab = () => {
         <div className={styles.amputeeRehabContent}>
           <div className={styles.left}>
             <TextAppearanceWrapper>
-              {icons.amputeeRehabLogo.desktop[lang](styles.title)}
+              <ProtezImage {...titleDesktop} className={styles.title} />
+            </TextAppearanceWrapper>
+            <TextAppearanceWrapper>
+              <p className={styles.description}>{t.amputeeRehab.description}</p>
             </TextAppearanceWrapper>
             <TextAppearanceWrapper className={styles.buttons}>
               <Button

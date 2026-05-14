@@ -116,7 +116,7 @@
         { "value": 92, "label": "Людей отримали протези" },
         { "value": 26, "label": "Фахівців пройшли навчання" },
         { "value": 9, "label": "Протезів було надано" },
-        { "value": 2, "label": "Самітів організовано" }
+        { "value": 3, "label": "Самітів організовано" }
       ],
       "cta": {
         "apply": "Подати заявку в Academy",
@@ -136,12 +136,19 @@
         { "name": "Troy Decker", "position": "Викладач", "photo": "troyDecker.png" },
         { "name": "Lisa King", "position": "Викладач", "photo": "lisaKing.png" },
         { "name": "Yakov Gradinar", "position": "Викладач", "photo": "yakovGradinar.png" },
-        { "name": "Gallegos Sebastian Guadalupe", "position": "Викладач", "photo": "gallegosSebastianGuadalupe.png" }
+        {
+          "name": "Gallegos Sebastian Guadalupe",
+          "position": "Викладач",
+          "photo": "gallegosSebastianGuadalupe.png"
+        }
       ]
     },
     "theoryLectures": {
       "items": [
-        { "number": "/01", "desc": "Етіологія політравми та подальше ведення пацієнтів із політравмою" },
+        {
+          "number": "/01",
+          "desc": "Етіологія політравми та подальше ведення пацієнтів із політравмою"
+        },
         { "number": "/02", "desc": "Приклади післяопераційного догляду" },
         { "number": "/03", "desc": "Завдання консультації перед ампутацією" },
         { "number": "/04", "desc": "Різні рівні ампутацій верхніх і нижніх кінцівок" },
@@ -153,8 +160,14 @@
     "practiceSessions": {
       "items": [
         { "image": "academyPage/practiceSessions/practice0.png", "text": "Підготовчий етап" },
-        { "image": "academyPage/practiceSessions/practice1.png", "text": "Діагностична (тестова) гільза" },
-        { "image": "academyPage/practiceSessions/practice2.png", "text": "Зняття мірок і виготовлення протеза" }
+        {
+          "image": "academyPage/practiceSessions/practice1.png",
+          "text": "Діагностична (тестова) гільза"
+        },
+        {
+          "image": "academyPage/practiceSessions/practice2.png",
+          "text": "Зняття мірок і виготовлення протеза"
+        }
       ],
       "imageAlt": "фото практичних занять у Protez Academy"
     },
@@ -184,6 +197,7 @@
     },
     "amputeeRehab": {
       "imageAlt": "саміт",
+      "description": "Це щорічна ключова подія в Україні, яка об'єднує провідних українських та міжнародних експертів у галузі реабілітації. Учасники: фізичні терапевти, спеціалісти з ФРМ, ерготерапевти та протезисти.\nТакож у Саміті беруть участь представники українського уряду, що підкреслює важливість заходу на державному рівні.",
       "cta": {
         "apply": "Подати заявку в Academy",
         "support": "Підтримати Academy"
@@ -191,7 +205,7 @@
       "partners": [
         { "src": "esper_white.svg", "alt": "Esper" },
         { "src": "direct-relief_white.svg", "alt": "Direct Relief" },
-        { "src": "dita-group_white.svg", "alt": "Dita Group" }
+        { "src": "brain-robotics_white.png", "alt": "Brain Robotics" }
       ]
     },
     "events": {
@@ -202,20 +216,56 @@
       "imageAlt": "фото події",
       "backgroundAlt": "Прапор України",
       "items": [
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-02-01", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-06-21", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-06-21", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-02-01", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-12-03", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-12-03", "title": "Hommage national à Léon Gautier.", "location": "Washington" }
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2025-02-01",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2025-06-21",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2025-06-21",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2021-02-01",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2021-12-03",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2021-12-03",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        }
       ]
     },
     "summitResults": {
       "imageAlt": "саміт",
       "stats": [
-        { "count": 200, "label": "Відвідувачів" },
-        { "count": 22, "label": "Запрошених гостей" },
-        { "count": 12, "label": "Протезистів" }
+        { "count": 2000, "label": "Відвідувачів" },
+        { "count": 50, "label": "Запрошених гостей" },
+        { "count": 20, "label": "Протезистів" }
       ]
     },
     "weAreInNews": {

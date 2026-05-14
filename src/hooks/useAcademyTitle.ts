@@ -82,6 +82,9 @@ const TITLES = {
   ourTeachers: {
     desktop: { base: 'we-train', alt: 'We train', width: 482, height: 149 },
   },
+  amputeeRehab: {
+    desktop: { base: 'summit', alt: 'Summit', width: 596, height: 243 },
+  },
   footer: {
     desktop: { base: 'footer', alt: 'PROTEZ Academy', width: 635, height: 165 },
     mobile: { base: 'footer_mobile', alt: 'PROTEZ Academy', width: 325, height: 92 },

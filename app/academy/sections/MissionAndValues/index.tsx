@@ -15,14 +15,14 @@ import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
-  const title = useAcademyTitle('missionAndValues')
+  const { desktop: titleDesktop } = useAcademyTitle('missionAndValues')
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.MissionAndValues} className={style.academyGoals}>
       <div className={style.container}>
         <div className={style.right}>
           <TextAppearanceWrapper>
-            <ProtezImage {...title.desktop} className={style.title} />
+            <ProtezImage {...titleDesktop} className={style.title} />
           </TextAppearanceWrapper>
           <TextAppearanceWrapper>
             <p className={style.description}>{t.mission.statement}</p>

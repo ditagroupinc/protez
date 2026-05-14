@@ -116,7 +116,7 @@
         { "value": 92, "label": "People received prosthetics" },
         { "value": 26, "label": "Specialists trained" },
         { "value": 9, "label": "Prostheses were provided" },
-        { "value": 2, "label": "Summits were organized" }
+        { "value": 3, "label": "Summits were organized" }
       ],
       "cta": {
         "apply": "Apply to Academy",
@@ -136,12 +136,19 @@
         { "name": "Troy Decker", "position": "Teacher", "photo": "troyDecker.png" },
         { "name": "Lisa King", "position": "Teacher", "photo": "lisaKing.png" },
         { "name": "Yakov Gradinar", "position": "Teacher", "photo": "yakovGradinar.png" },
-        { "name": "Gallegos Sebastian Guadalupe", "position": "Teacher", "photo": "gallegosSebastianGuadalupe.png" }
+        {
+          "name": "Gallegos Sebastian Guadalupe",
+          "position": "Teacher",
+          "photo": "gallegosSebastianGuadalupe.png"
+        }
       ]
     },
     "theoryLectures": {
       "items": [
-        { "number": "/01", "desc": "Etiology of polytrauma and subsequent management of polytrauma patients" },
+        {
+          "number": "/01",
+          "desc": "Etiology of polytrauma and subsequent management of polytrauma patients"
+        },
         { "number": "/02", "desc": "Examples of post-operative care" },
         { "number": "/03", "desc": "Objectives of pre-amputation consultation" },
         { "number": "/04", "desc": "Different levels of upper and lower limb amputations" },
@@ -153,8 +160,14 @@
     "practiceSessions": {
       "items": [
         { "image": "academyPage/practiceSessions/practice0.png", "text": "Preparatory stage" },
-        { "image": "academyPage/practiceSessions/practice1.png", "text": "Diagnostic (test) socket" },
-        { "image": "academyPage/practiceSessions/practice2.png", "text": "Casting and measuring the prosthesis" }
+        {
+          "image": "academyPage/practiceSessions/practice1.png",
+          "text": "Diagnostic (test) socket"
+        },
+        {
+          "image": "academyPage/practiceSessions/practice2.png",
+          "text": "Casting and measuring the prosthesis"
+        }
       ],
       "imageAlt": "picture of practice sessions in Protez Academy"
     },
@@ -184,6 +197,7 @@
     },
     "amputeeRehab": {
       "imageAlt": "summit",
+      "description": "This is the key annual event in Ukraine, bringing together leading Ukrainian and international experts in the field of rehabilitation. Participants include physical therapists, PRM specialists, occupational therapists, and prosthetists.\nThe Summit also features representatives of the Ukrainian government, underscoring the event's importance at the national level.",
       "cta": {
         "apply": "Apply to Academy",
         "support": "Support Academy"
@@ -191,7 +205,7 @@
       "partners": [
         { "src": "esper_white.svg", "alt": "Esper" },
         { "src": "direct-relief_white.svg", "alt": "Direct Relief" },
-        { "src": "dita-group_white.svg", "alt": "Dita Group" }
+        { "src": "brain-robotics_white.png", "alt": "Brain Robotics" }
       ]
     },
     "events": {
@@ -202,20 +216,56 @@
       "imageAlt": "events picture",
       "backgroundAlt": "Ukrainian flag",
       "items": [
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-02-01", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-06-21", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-06-21", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-02-01", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-12-03", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-12-03", "title": "Hommage national à Léon Gautier.", "location": "Washington" }
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2025-02-01",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2025-06-21",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2025-06-21",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2021-02-01",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2021-12-03",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2021-12-03",
+          "title": "Hommage national à Léon Gautier.",
+          "location": "Washington"
+        }
       ]
     },
     "summitResults": {
       "imageAlt": "summit",
       "stats": [
-        { "count": 200, "label": "Visitors" },
-        { "count": 22, "label": "Invited guests" },
-        { "count": 12, "label": "Prosthetists" }
+        { "count": 2000, "label": "Visitors" },
+        { "count": 50, "label": "Invited guests" },
+        { "count": 20, "label": "Prosthetists" }
       ]
     },
     "weAreInNews": {

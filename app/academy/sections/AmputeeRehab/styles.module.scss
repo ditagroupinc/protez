@@ -48,6 +48,13 @@
   max-width: 660px;
 }
 
+.description {
+  color: var(--white);
+  font-size: 18px;
+  line-height: 28px;
+  white-space: pre-line;
+}
+
 .buttons {
   display: flex;
   align-items: center;
