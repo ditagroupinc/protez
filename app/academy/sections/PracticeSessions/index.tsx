@@ -22,26 +22,13 @@ import Slider from 'react-slick'
 
 import { AcademyIDs } from '../../consts'
 
-const practiceImages = [
-  'academyPage/practiceSessions/practice0.png',
-  'academyPage/practiceSessions/practice1.png',
-  'academyPage/practiceSessions/practice2.png',
-  'academyPage/practiceSessions/practice0.png',
-  'academyPage/practiceSessions/practice1.png',
-  'academyPage/practiceSessions/practice2.png',
-]
-
 const PracticeSessions = () => {
   const { lang } = useLanguage()
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
   const t = useAcademyTexts()
 
-  const items = t.practiceSessions.items
-  const cards = practiceImages.map((image, index) => ({
-    image,
-    text: items[index % items.length],
-  }))
+  const cards = [...t.practiceSessions.items, ...t.practiceSessions.items]
 
   const settings = {
     dots: false,

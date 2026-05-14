@@ -12,14 +12,6 @@ import Button from '@academy/components/Button'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
-const cardIcons = [
-  'support-ukraine.svg',
-  'professional-excellence.svg',
-  'practical-experience.svg',
-  'global-development.svg',
-  'innovation.svg',
-]
-
 const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
 
@@ -60,8 +52,8 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
         {t.mission.values.map((item, index) => (
           <TextAppearanceWrapper key={index} className={style.card}>
             <ProtezImage
-              src={`academyPage/icons/${cardIcons[index]}`}
-              alt={cardIcons[index]}
+              src={`academyPage/icons/${item.icon}`}
+              alt={item.icon}
               width={48}
               height={48}
               className={style.icon}

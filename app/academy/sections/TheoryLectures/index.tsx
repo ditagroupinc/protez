@@ -11,49 +11,52 @@ import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 import { AcademyIDs } from '../../consts'
 
+const gridClassByNumber: Record<string, string> = {
+  '/01': 'grid1x4',
+  '/02': 'grid1x1',
+  '/03': 'grid2x2',
+  '/04': 'grid2x3',
+  '/05': 'grid3x3',
+  '/06': 'grid3x4',
+}
+
 const TheoryLectures = () => {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
   const t = useAcademyTexts()
-  const items = t.theoryLectures.items
+  const byNumber = (n: string) => t.theoryLectures.items.find(i => i.number === n)
+
+  const lecture = (n: string) => {
+    const item = byNumber(n)
+    const cls = styles[gridClassByNumber[n]]
+
+    return (
+      <TextAppearanceWrapper className={`${cls} ${styles.card}`}>
+        <span className={styles.number}>{item?.number}</span>
+        <p className={styles.desc}>{item?.desc}</p>
+      </TextAppearanceWrapper>
+    )
+  }
 
   return (
     <AcademySection id={AcademyIDs.TheoryLectures} className={styles.theoryLectures}>
-      <TextAppearanceWrapper className={`${styles.grid1x1} ${styles.card}`}>
-        <span className={styles.number}>/02</span>
-        <p className={styles.desc}>{items[1]}</p>
-      </TextAppearanceWrapper>
+      {lecture('/02')}
       <TextAppearanceWrapper className={styles.gridTitle}>
         {width < 600
           ? icons.theoryLecturesLogo.mobile[lang](styles.sectionTitle)
           : icons.theoryLecturesLogo.desktop[lang](styles.sectionTitle)}
       </TextAppearanceWrapper>
-      <TextAppearanceWrapper className={`${styles.grid1x4} ${styles.card}`}>
-        <span className={styles.number}>/01</span>
-        <p className={styles.desc}>{items[0]}</p>
-      </TextAppearanceWrapper>
-      <TextAppearanceWrapper className={`${styles.grid2x2} ${styles.card}`}>
-        <span className={styles.number}>/03</span>
-        <p className={styles.desc}>{items[2]}</p>
-      </TextAppearanceWrapper>
-      <TextAppearanceWrapper className={`${styles.grid2x3} ${styles.card}`}>
-        <span className={styles.number}>/04</span>
-        <p className={styles.desc}>{items[3]}</p>
-      </TextAppearanceWrapper>
+      {lecture('/01')}
+      {lecture('/03')}
+      {lecture('/04')}
       <div className={styles.gridButton}>
         <Button as={'link'} variant="normal-blue" href={'/'} className={styles.applyBtn}>
           {t.theoryLectures.cta}
           {icons.arrowUp()}
         </Button>
       </div>
-      <TextAppearanceWrapper className={`${styles.grid3x3} ${styles.card}`}>
-        <span className={styles.number}>/05</span>
-        <p className={styles.desc}>{items[4]}</p>
-      </TextAppearanceWrapper>
-      <TextAppearanceWrapper className={`${styles.grid3x4} ${styles.card}`}>
-        <span className={styles.number}>/06</span>
-        <p className={styles.desc}>{items[5]}</p>
-      </TextAppearanceWrapper>
+      {lecture('/05')}
+      {lecture('/06')}
     </AcademySection>
   )
 }

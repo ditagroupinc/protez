@@ -18,16 +18,6 @@ import { icons } from './icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
-const cardIcons = [
-  'feedback-message.svg',
-  'feedback-message.svg',
-  'document-bookmark.svg',
-  'caring-hands.svg',
-  'graduation-cap.svg',
-  'mentorship.svg',
-  'team-circle.svg',
-]
-
 const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
   const sliderRef = useRef<Slider & React.Component>(null)
@@ -71,13 +61,13 @@ const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
               <div key={index}>
                 <div className={style.card}>
                   <ProtezImage
-                    src={`academyPage/icons/${cardIcons[index]}`}
-                    alt={cardIcons[index]}
+                    src={`academyPage/icons/${item.icon}`}
+                    alt={item.icon}
                     width={48}
                     height={48}
                     className={style.icon}
                   />
-                  <p className={style.cardDesc}>{item}</p>
+                  <p className={style.cardDesc}>{item.text}</p>
                 </div>
               </div>
             ))}

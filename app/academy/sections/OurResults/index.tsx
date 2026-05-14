@@ -12,7 +12,7 @@ import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 const OurResults = () => {
   const t = useAcademyTexts()
-  const stats = t.ourResults.stats
+  const { stats, datesRange, description, cta } = t.ourResults
 
   return (
     <AcademySection id={AcademyIDs.OurResults} className={style.academyResults}>
@@ -23,8 +23,8 @@ const OurResults = () => {
           </TextAppearanceWrapper>
           <div className={style.resultsInfo}>
             <TextAppearanceWrapper className={style.infoWrapper}>
-              <p className={style.date}>{t.ourResults.datesRange}</p>
-              <p className={style.desc}>{t.ourResults.description}</p>
+              <p className={style.date}>{datesRange}</p>
+              <p className={style.desc}>{description}</p>
             </TextAppearanceWrapper>
             <TextAppearanceWrapper className={style.btnGroup}>
               <Button
@@ -35,10 +35,10 @@ const OurResults = () => {
                 rel="noopener noreferrer"
                 size="big"
               >
-                {t.ourResults.cta.apply}
+                {cta.apply}
               </Button>
               <Button as="link" href="/donate" variant="normal-black" size="big">
-                {t.ourResults.cta.support}
+                {cta.support}
                 {icons.arrowUp(`${style.arrowUpIcon}`)}
               </Button>
             </TextAppearanceWrapper>
@@ -50,7 +50,7 @@ const OurResults = () => {
               <AcademyResultCard
                 key={index}
                 title={stat.label}
-                count={parseInt(stat.value, 10)}
+                count={stat.value}
                 className={style.card}
               />
             ))}
@@ -60,7 +60,7 @@ const OurResults = () => {
               <AcademyResultCard
                 key={index}
                 title={stat.label}
-                count={parseInt(stat.value, 10)}
+                count={stat.value}
                 className={style.card}
               />
             ))}

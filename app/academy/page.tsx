@@ -108,9 +108,9 @@ export default function AcademyPage() {
 
         {width > 600 ? (
           <>
-            <Suspense fallback={<FullScreenFallback />}>
+            {/* <Suspense fallback={<FullScreenFallback />}>
               <WeAreInNews ref={refWeAreInNews} />
-            </Suspense>
+            </Suspense> */}
 
             <Suspense fallback={<FullScreenFallback />}>
               <SpecialThanksToAllOurPartners />
@@ -130,9 +130,9 @@ export default function AcademyPage() {
               <OurSponsors />
             </Suspense>
 
-            <Suspense fallback={<FullScreenFallback />}>
+            {/* <Suspense fallback={<FullScreenFallback />}>
               <WeAreInNews ref={refWeAreInNews} />
-            </Suspense>
+            </Suspense> */}
           </>
         )}
 

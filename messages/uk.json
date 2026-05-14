@@ -51,22 +51,27 @@
       "imageAlt": "Mission and values",
       "values": [
         {
+          "icon": "support-ukraine.svg",
           "title": "Людиноцентричність",
           "text": "Пацієнт — у центрі всіх рішень. Ми працюємо не з діагнозом, а з людиною, її цілями, функцією та якістю життя."
         },
         {
+          "icon": "professional-excellence.svg",
           "title": "Якість і професійність",
           "text": "Ми навчаємо сучасним, доказовим і клінічно релевантним підходам, які дають реальний результат у практиці."
         },
         {
+          "icon": "practical-experience.svg",
           "title": "Практичність",
           "text": "Освіта має формувати навички. Ми фокусуємось на тому, що можна застосувати одразу в роботі з пацієнтом."
         },
         {
+          "icon": "global-development.svg",
           "title": "Постійний розвиток",
           "text": "Ми постійно розвиваємося, впроваджуючи нові підходи та технології у свою практику."
         },
         {
+          "icon": "innovation.svg",
           "title": "Інноваційність",
           "text": "Ми шукаємо, тестуємо та впроваджуємо нові технології, рішення і формати навчання у протезуванні та реабілітації."
         }
@@ -74,23 +79,44 @@
     },
     "goals": {
       "items": [
-        "Розвиток сучасної системи освіти для фахівців у сфері протезування, ортезування та реабілітації",
-        "Впровадження міжнародних стандартів (ICF, ISPO, доказова практика) в українську клінічну роботу",
-        "Підвищення кваліфікації мультидисциплінарних команд через практичне навчання",
-        "Підтримка пацієнтів через покращення якості протезування та реабілітаційного супроводу",
-        "Розвиток інновацій, технологій та науково-практичних рішень у сфері",
-        "Побудова партнерств з українськими та міжнародними організаціями",
-        "Формування професійної спільноти та обміну досвідом між фахівцями"
+        {
+          "icon": "feedback-message.svg",
+          "text": "Розвиток сучасної системи освіти для фахівців у сфері протезування, ортезування та реабілітації"
+        },
+        {
+          "icon": "feedback-message.svg",
+          "text": "Впровадження міжнародних стандартів (ICF, ISPO, доказова практика) в українську клінічну роботу"
+        },
+        {
+          "icon": "document-bookmark.svg",
+          "text": "Підвищення кваліфікації мультидисциплінарних команд через практичне навчання"
+        },
+        {
+          "icon": "caring-hands.svg",
+          "text": "Підтримка пацієнтів через покращення якості протезування та реабілітаційного супроводу"
+        },
+        {
+          "icon": "graduation-cap.svg",
+          "text": "Розвиток інновацій, технологій та науково-практичних рішень у сфері"
+        },
+        {
+          "icon": "mentorship.svg",
+          "text": "Побудова партнерств з українськими та міжнародними організаціями"
+        },
+        {
+          "icon": "team-circle.svg",
+          "text": "Формування професійної спільноти та обміну досвідом між фахівцями"
+        }
       ]
     },
     "ourResults": {
       "datesRange": "[TODO translate] (May 2022 – September 2023)",
       "description": "[TODO translate] Ukrainian Specialists already went through the Program and back in their home country helping restore the lives of those who lost limbs during the war",
       "stats": [
-        { "value": "92", "label": "[TODO translate] People received prosthetics" },
-        { "value": "26", "label": "[TODO translate] Specialists trained" },
-        { "value": "9", "label": "[TODO translate] Prostheses were provided" },
-        { "value": "2", "label": "[TODO translate] Summits were organized" }
+        { "value": 92, "label": "[TODO translate] People received prosthetics" },
+        { "value": 26, "label": "[TODO translate] Specialists trained" },
+        { "value": 9, "label": "[TODO translate] Prostheses were provided" },
+        { "value": 2, "label": "[TODO translate] Summits were organized" }
       ],
       "cta": {
         "apply": "[TODO translate] Apply to Academy",
@@ -104,20 +130,20 @@
     "ourTeachers": { "members": [] },
     "theoryLectures": {
       "items": [
-        "[TODO translate] Etiology of polytrauma and subsequent management of polytrauma patients",
-        "[TODO translate] Examples of post-operative care",
-        "[TODO translate] Objectives of pre-amputation consultation",
-        "[TODO translate] Different levels of upper and lower limb amputations",
-        "[TODO translate] Overview of cadaver anatomy",
-        "[TODO translate] Physiology"
+        { "number": "/01", "desc": "[TODO translate] Etiology of polytrauma and subsequent management of polytrauma patients" },
+        { "number": "/02", "desc": "[TODO translate] Examples of post-operative care" },
+        { "number": "/03", "desc": "[TODO translate] Objectives of pre-amputation consultation" },
+        { "number": "/04", "desc": "[TODO translate] Different levels of upper and lower limb amputations" },
+        { "number": "/05", "desc": "[TODO translate] Overview of cadaver anatomy" },
+        { "number": "/06", "desc": "[TODO translate] Physiology" }
       ],
       "cta": "[TODO translate] Apply to Academy"
     },
     "practiceSessions": {
       "items": [
-        "[TODO translate] Preparatory stage",
-        "[TODO translate] Diagnostic (test) socket",
-        "[TODO translate] Casting and measuring the prosthesis"
+        { "image": "academyPage/practiceSessions/practice0.png", "text": "[TODO translate] Preparatory stage" },
+        { "image": "academyPage/practiceSessions/practice1.png", "text": "[TODO translate] Diagnostic (test) socket" },
+        { "image": "academyPage/practiceSessions/practice2.png", "text": "[TODO translate] Casting and measuring the prosthesis" }
       ],
       "imageAlt": "[TODO translate] picture of practice sessions in Protez Academy"
     },
