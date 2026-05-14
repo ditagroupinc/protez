@@ -2,9 +2,7 @@ name: publish-to-github-pages
 on:
   push:
     branches:
-      - academy-for-pages
       - main-for-pages
-  workflow_dispatch:
 
 permissions:
   contents: read
