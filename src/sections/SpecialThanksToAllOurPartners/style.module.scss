@@ -15,7 +15,7 @@
   background-color: var(--light-grey);
 }
 
-.card {
+.partnerCard {
   border-left: var(--greyBorder);
   border-bottom: var(--greyBorder);
   display: flex;
@@ -79,41 +79,47 @@
   border-bottom: none;
 }
 
-.card:nth-child(3) {
-  grid-area: minnesota;
-
-  border-top: var(--greyBorder);
-  border-bottom: none;
-}
-
-.card:nth-child(4) {
-  grid-area: centuryCollage;
+.partnerCard:nth-child(4) {
+  grid-area: chaliceOfMercy;
   border-top: var(--greyBorder);
 }
 
-.card:nth-child(5) {
-  grid-area: schoolOfMedicine;
+.partnerCard:nth-child(5) {
+  grid-area: ottobock;
   border-top: var(--greyBorder);
 }
 
-.card:nth-child(6) {
-  grid-area: esper;
+.partnerCard:nth-child(6) {
+  grid-area: paradise;
+  border-top: var(--greyBorder);
+}
+
+.partnerCard:nth-child(7) {
+  grid-area: klmb;
   border-top: var(--greyBorder);
   border-right: var(--greyBorder);
 }
 
-.card:nth-child(7) {
-  grid-area: rotary;
+.partnerCard:nth-child(8) {
+  grid-area: monarch;
   border-top: var(--greyBorder);
 }
 
-.card:nth-child(8) {
-  grid-area: kpi;
-  border-top: var(--greyBorder);
+.partnerCard:nth-child(9) {
+  grid-area: antonovGroup;
 }
 
-.card:nth-child(9) {
-  grid-area: shupika;
+.partnerCard:nth-child(10) {
+  grid-area: cozen;
+}
+
+.partnerCard:nth-child(11) {
+  grid-area: blatchfold;
+  border-right: var(--greyBorder);
+}
+
+.partnerCard:nth-child(12) {
+  grid-area: dita;
 }
 
 .partnerCard:nth-child(13) {

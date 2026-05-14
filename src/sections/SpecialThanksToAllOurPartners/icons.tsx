@@ -46,7 +46,6 @@ const specialThanksToAllOurPartnersTitleMobile = (className?: string) => (
   </svg>
 )
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const ditaLogo = (className?: string) => (
   <svg
     width="656"
@@ -114,4 +113,5 @@ export const icons = {
       ukrainian: specialThanksToAllOurPartnersTitleDesktopUkrainian,
     },
   },
+  ditaLogo,
 }
