@@ -6,6 +6,7 @@ import _ from 'lodash'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 import AcademySection from '@academy/components/AcademySection'
 
@@ -23,19 +24,10 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { AcademyIDs } from '../../consts'
 
-// TODO: remove after review
-const academyCards = [
-  'academyPage/academy/academyCard0.png',
-  'academyPage/academy/academyCard1.png',
-  'academyPage/academy/academyCard2video.mp4',
-  'academyPage/academy/academyCard3.png',
-  'academyPage/academy/academyCard4video.mp4',
-  'academyPage/academy/academyCard5.png',
-  'academyPage/academy/academyCard6.png',
-]
-
 const Academy = () => {
   const { lang } = useLanguage()
+  const t = useAcademyTexts()
+  const academyCards = t.academyGallery.cards
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
 
@@ -181,9 +173,8 @@ const Academy = () => {
                         />
                       ) : (
                         <ProtezImage
-                          // TODO: remove after review
                           src={`${card}`}
-                          alt="picture of Protez Academy students and teachers"
+                          alt={t.academyGallery.imageAlt}
                           width={720}
                           height={520}
                           className={styles.image}

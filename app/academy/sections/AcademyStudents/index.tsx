@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 import AcademySection from '@academy/components/AcademySection'
 
@@ -21,19 +22,10 @@ import Slider from 'react-slick'
 
 import { AcademyIDs } from '../../consts'
 
-// TODO: remove after review
-const academyStudentsCards = [
-  'academyPage/students/studentCard0.png',
-  'academyPage/students/studentCard1.png',
-  'academyPage/students/studentCard2.png',
-  'academyPage/students/studentCard3.png',
-  'academyPage/students/studentCard4.png',
-  'academyPage/students/studentCard5.png',
-  'academyPage/students/studentCard6.png',
-]
-
 const AcademyStudents = () => {
   const { lang } = useLanguage()
+  const t = useAcademyTexts()
+  const academyStudentsCards = t.academyStudents.cards
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
 
@@ -112,9 +104,8 @@ const AcademyStudents = () => {
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <div className={`${styles.card} `}>
                     <ProtezImage
-                      // TODO: remove after review
                       src={`${card}`}
-                      alt="photo of students of Protez Academy"
+                      alt={t.academyStudents.imageAlt}
                       width={490}
                       height={500}
                       className={styles.image}

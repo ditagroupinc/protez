@@ -9,15 +9,16 @@ import style from './style.module.scss'
 import { AcademyIDs } from '../../consts'
 import { icons } from './icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-
-const sponsors = ['direct-relief_dark.svg', 'rotary_dark.svg']
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 const OurSponsors = forwardRef<HTMLDivElement>(function (_, ref) {
+  const t = useAcademyTexts()
+
   return (
     <AcademySection ref={ref} id={AcademyIDs.OurSponsors} className={style.ourSponsors}>
       <TextAppearanceWrapper>{icons.ourSponsorsLogo.desktop(style.title)}</TextAppearanceWrapper>
       <TextAppearanceWrapper className={style.cardsContainer}>
-        {sponsors.map((sponsor, index) => (
+        {t.ourSponsors.items.map((sponsor, index) => (
           <div key={index} className={style.card}>
             <ProtezImage
               src={`academyPage/partners/dark/${sponsor}`}

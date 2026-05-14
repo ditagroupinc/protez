@@ -28,7 +28,7 @@ const SummitResults = lazy(() => import('./sections/SummitResults'))
 const Academy = lazy(() => import('./sections/Academy'))
 // const PracticeSessions = lazy(() => import('./sections/PracticeSessions'))
 const AcademyStudents = lazy(() => import('./sections/AcademyStudents'))
-const WeAreInNews = lazy(() => import('./sections/WeAreInNews'))
+// const WeAreInNews = lazy(() => import('./sections/WeAreInNews'))
 const Events = lazy(() => import('./sections/Events'))
 
 import style from './style.module.scss'
@@ -38,7 +38,7 @@ export default function AcademyPage() {
   const [refChief, inViewChief] = useInView({ triggerOnce: false })
   const [refEvents, inViewEvents] = useInView({ triggerOnce: false })
   const [refSummit, inViewSummit] = useInView({ triggerOnce: false })
-  const [refWeAreInNews, inViewWeAreInNews] = useInView({ triggerOnce: false })
+  const [, inViewWeAreInNews] = useInView({ triggerOnce: false })
   const [refThankYou, inViewThankYou] = useInView({ triggerOnce: false })
 
   const showBlackBackToTopButton =

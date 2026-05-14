@@ -8,23 +8,18 @@ import ProtezImage from '@/components/ProtezImage'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { AcademyIDs } from '../../consts'
-
-const partnersLogos = [
-  { src: 'esper_white.svg', alt: 'Esper' },
-  { src: 'direct-relief_white.svg', alt: 'Direct Relief' },
-  { src: 'dita-group_white.svg', alt: 'Dita Group' },
-]
 
 const AmputeeRehab = () => {
   const { lang } = useLanguage()
+  const t = useAcademyTexts()
 
   return (
     <section id={AcademyIDs.AmputeeRehab} className={styles.amputeeRehab}>
       <ProtezImage
-        // TODO: remove after review
         src="academyPage/amputeeRehab/summit.png"
-        alt="summit"
+        alt={t.amputeeRehab.imageAlt}
         width={1920}
         height={880}
         className={styles.amputeeRehabImage}
@@ -37,11 +32,7 @@ const AmputeeRehab = () => {
               {icons.amputeeRehabLogo.desktop[lang](styles.title)}
             </TextAppearanceWrapper>
             <TextAppearanceWrapper>
-              <p className={styles.desc}>
-                Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam.
-                Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc
-                suspendisse donec varius integer nisi urna eu. Egestas et id nunc ultrices sit ut
-              </p>
+              <p className={styles.desc}>{t.amputeeRehab.description}</p>
             </TextAppearanceWrapper>
             <TextAppearanceWrapper className={styles.buttons}>
               <Button
@@ -51,7 +42,7 @@ const AmputeeRehab = () => {
                 href={'/'}
                 className={styles.button}
               >
-                Apply to Academy
+                {t.amputeeRehab.cta.apply}
               </Button>
               <Button
                 as={'link'}
@@ -60,13 +51,13 @@ const AmputeeRehab = () => {
                 href={'/'}
                 className={styles.button}
               >
-                Support Academy
+                {t.amputeeRehab.cta.support}
                 {icons.arrowUp(styles.arrowUp)}
               </Button>
             </TextAppearanceWrapper>
           </div>
           <div className={styles.right}>
-            {partnersLogos.map(({ src, alt }, index) => (
+            {t.amputeeRehab.partners.map(({ src, alt }, index) => (
               <TextAppearanceWrapper key={index} className={styles.card}>
                 <ProtezImage
                   src={`academyPage/partners/white/${src}`}

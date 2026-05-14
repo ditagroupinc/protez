@@ -127,7 +127,18 @@
       "role": "CHIEF MEDICAL OFFICER, CERTIFIED PROSTHETIST AND ORTHOTIST",
       "description": "During the course of the program they will learn proven methods developed by the US healthcare practitioners over many years of treating veterans and also Dr. Yakov Gradinar’s personal technical know-how’s employed in his 15 years of practice. More importantly, the program is a way for overworked and underpaid Ukrainian doctors to come to the US where they will take a break from hearing sirens and rockets while learning practical skills to help many more Ukrainians in the future."
     },
-    "ourTeachers": { "members": [] },
+    "ourTeachers": {
+      "members": [
+        { "name": "Kierstin Nelson", "position": "Teacher", "photo": "kierstinNelson.png" },
+        { "name": "Michael Le Buhn Jr.", "position": "Teacher", "photo": "michaelLeBuhnJr.png" },
+        { "name": "Jeanne Lojovich", "position": "Teacher", "photo": "jeanneLojovich.png" },
+        { "name": "Adam Warden", "position": "Teacher", "photo": "adamWarden.png" },
+        { "name": "Troy Decker", "position": "Teacher", "photo": "troyDecker.png" },
+        { "name": "Lisa King", "position": "Teacher", "photo": "lisaKing.png" },
+        { "name": "Yakov Gradinar", "position": "Teacher", "photo": "yakovGradinar.png" },
+        { "name": "Gallegos Sebastian Guadalupe", "position": "Teacher", "photo": "gallegosSebastianGuadalupe.png" }
+      ]
+    },
     "theoryLectures": {
       "items": [
         { "number": "/01", "desc": "Etiology of polytrauma and subsequent management of polytrauma patients" },
@@ -147,13 +158,143 @@
       ],
       "imageAlt": "picture of practice sessions in Protez Academy"
     },
-    "academyGallery": {},
-    "academyStudents": {},
-    "amputeeRehab": {},
-    "events": {},
-    "summitResults": {},
-    "weAreInNews": {},
-    "ourSponsors": {},
-    "specialThanksToAllOurPartners": {}
+    "academyGallery": {
+      "imageAlt": "picture of Protez Academy students and teachers",
+      "cards": [
+        "academyPage/academy/academyCard0.png",
+        "academyPage/academy/academyCard1.png",
+        "academyPage/academy/academyCard2video.mp4",
+        "academyPage/academy/academyCard3.png",
+        "academyPage/academy/academyCard4video.mp4",
+        "academyPage/academy/academyCard5.png",
+        "academyPage/academy/academyCard6.png"
+      ]
+    },
+    "academyStudents": {
+      "imageAlt": "photo of students of Protez Academy",
+      "cards": [
+        "academyPage/students/studentCard0.png",
+        "academyPage/students/studentCard1.png",
+        "academyPage/students/studentCard2.png",
+        "academyPage/students/studentCard3.png",
+        "academyPage/students/studentCard4.png",
+        "academyPage/students/studentCard5.png",
+        "academyPage/students/studentCard6.png"
+      ]
+    },
+    "amputeeRehab": {
+      "description": "Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam. Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc suspendisse donec varius integer nisi urna eu. Egestas et id nunc ultrices sit ut",
+      "imageAlt": "summit",
+      "cta": {
+        "apply": "Apply to Academy",
+        "support": "Support Academy"
+      },
+      "partners": [
+        { "src": "esper_white.svg", "alt": "Esper" },
+        { "src": "direct-relief_white.svg", "alt": "Direct Relief" },
+        { "src": "dita-group_white.svg", "alt": "Dita Group" }
+      ]
+    },
+    "events": {
+      "status": {
+        "upcoming": "Upcoming event",
+        "past": "Past event"
+      },
+      "imageAlt": "events picture",
+      "backgroundAlt": "Ukrainian flag",
+      "items": [
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-02-01", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-06-21", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-06-21", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-02-01", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-12-03", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-12-03", "title": "Hommage national à Léon Gautier.", "location": "Washington" }
+      ]
+    },
+    "summitResults": {
+      "description": "Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam. Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc suspendisse donec",
+      "imageAlt": "summit",
+      "stats": [
+        { "count": 200, "label": "Visitors" },
+        { "count": 22, "label": "Invited guests" },
+        { "count": 12, "label": "Prosthetists" }
+      ]
+    },
+    "weAreInNews": {
+      "imageAlt": "news picture",
+      "items": [
+        {
+          "link": "/",
+          "photo": "academyPage/news/academyNews0.png",
+          "date": "19.03.2023",
+          "address": "1plus1.ua",
+          "logo": "academyPage/news/1plus1.svg",
+          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
+          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/news/academyNews0.png",
+          "date": "19.03.2023",
+          "address": "1plus1.ua",
+          "logo": "academyPage/news/1plus1.svg",
+          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
+          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/news/academyNews0.png",
+          "date": "19.03.2023",
+          "address": "1plus1.ua",
+          "logo": "academyPage/news/1plus1.svg",
+          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
+          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/news/academyNews0.png",
+          "date": "19.03.2023",
+          "address": "1plus1.ua",
+          "logo": "academyPage/news/1plus1.svg",
+          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
+          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/news/academyNews0.png",
+          "date": "19.03.2023",
+          "address": "1plus1.ua",
+          "logo": "academyPage/news/1plus1.svg",
+          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
+          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+        },
+        {
+          "link": "/",
+          "photo": "academyPage/news/academyNews0.png",
+          "date": "19.03.2023",
+          "address": "1plus1.ua",
+          "logo": "academyPage/news/1plus1.svg",
+          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
+          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+        }
+      ]
+    },
+    "ourSponsors": {
+      "items": ["direct-relief_dark.svg", "rotary_dark.svg"]
+    },
+    "specialThanksToAllOurPartners": {
+      "items": [
+        "concordia_dark.svg",
+        "minnesota_dark.svg",
+        "century-collage_dark.svg",
+        "school-of-medicine_dark.svg",
+        "esper_dark.svg",
+        "rotary_dark.svg",
+        "kpi_dark.svg",
+        "shupika_dark.svg",
+        "beetroot_dark.svg",
+        "fizychna-associasion_dark.svg"
+      ]
+    }
   }
 }

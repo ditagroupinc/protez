@@ -141,20 +141,92 @@ const { desktop, mobile } = useAcademyTitle('theoryLectures')
 - `footer_en.svg`, `footer_uk.svg`, `footer_mobile_en.svg`, `footer_mobile_uk.svg`
 - Усі `*_mobile_*.svg` варіанти (для секцій, що мають мобільну гілку)
 
-## Кроки імплементації
+## Розбивка на Claude Code сесії
 
-### 1. Додати відсутні SVG-файли у `public/academyPage/titles/`
+Робота включає 13 секцій × 2 файли + новий хук + асети. Деякі `icons.tsx` дуже великі (Chief — 212 рядків з масивним inline SVG path), тому одна сесія не вмістить усе через контекстне вікно. Ділимо на 3 сесії — кожна самостійна (lint+build чисто, сайт працює) і її можна закомітити окремо.
 
-Користувач постачає (або експорт з Figma) для всіх позицій з таблиці вище. Без цього кроку решта впаде в 404.
+**Передумова перед будь-якою сесією**: у `public/academyPage/titles/` мають бути ВСІ файли, що потрібні цій сесії. Без файлів — 404. Список файлів див. у секції «Бракує файлів».
 
-### 2. Створити хук
+---
 
-- NEW: `src/hooks/useAcademyTitle.ts` (код вище).
-- `width` / `height` для кожного запису — узяти з атрибуту `viewBox` (або `width`/`height`) поточного inline SVG у відповідному `icons.tsx`. Це найшвидший шлях не помилитися.
+### Session 1 — Foundation + 5 desktop-only секцій
 
-### 3. Для кожної секції з мапінгу
+**Мета**: створити хук і провести міграцію на найпростіших секціях (де JSX викликає тільки `.desktop`, без mobile-гілки). Якщо щось не так зі структурою хука — виявимо тут, а не на 10-ій секції.
 
-Файли: `app/academy/sections/<Section>/index.tsx` + `app/academy/sections/<Section>/icons.tsx`.
+**Кроки**:
+
+1. Створити `src/hooks/useAcademyTitle.ts` з кодом і **всіма** записами `TITLES` (заповненими width/height). Width/height беремо з атрибутів `width=`/`height=` у поточних inline SVG. Швидкий шлях:
+   ```bash
+   for d in app/academy/sections/*/icons.tsx; do
+     echo "=== $d ==="
+     grep -n "width=\|height=\|viewBox=" "$d" | head -8
+   done
+   ```
+   Записуємо ВСІ секції з мапінгу (не лише ті, що мігруємо в цій сесії) — буде менше повертатись пізніше.
+
+2. Мігрувати секції (для кожної: правка `index.tsx` + чищення `icons.tsx`, як описано нижче в розділі «Шаблон правок секції»):
+   - `Intro` → `welcome` (з `priority={true}` на desktop, бо above-fold)
+   - `Academy` (gallery) → `protez-academy`
+   - `OurResults` → `our-results`
+   - `AcademyStudents` → `academy-students`
+   - `OurTeachers` → `we-train`
+
+3. Перевірка: `npm run lint && npm run build`, відкрити `/academy` у UK і EN, перевірити мережу для цих 5 секцій.
+
+**Файли**:
+- NEW: `src/hooks/useAcademyTitle.ts`
+- EDIT: `Intro/index.tsx`+`icons.tsx`, `Academy/index.tsx`+`icons.tsx`, `OurResults/index.tsx`+`icons.tsx`, `AcademyStudents/index.tsx`+`icons.tsx`, `OurTeachers/index.tsx`+`icons.tsx`
+
+**Definition of done**: 5 секцій рендерять локалізовані SVG; решта 8 секцій лишається на inline SVG і досі працює.
+
+---
+
+### Session 2 — 4 desktop-only секції + Footer
+
+**Мета**: добити решту desktop-only секцій плюс Footer (у якого є mobile-гілка, але без `lang`-розгалуження в JSX).
+
+**Кроки**:
+
+1. Мігрувати:
+   - `MissionAndValues` → `mission-and-values` (JSX викликає лише `.desktop`, навіть якщо `icons.tsx` має mobile-функцію — то мертвий код, видаляємо обидві)
+   - `OurGoals` → `our-goals` (аналогічно — лише `.desktop` в JSX)
+   - `OurSponsors` → `our-sponsors` (аналогічно)
+   - `Footer` → `footer` + `footer_mobile` (тут JSX рендерить `desktop[lang]`, а є й окремий `mobile` рендер у компоненті — перевіряємо обидві гілки)
+
+2. Перевірка: lint+build, візуальна перевірка 4 секцій у UK/EN, для Footer — окремо перевірити mobile-viewport.
+
+**Файли**: `MissionAndValues/index.tsx`+`icons.tsx`, `OurGoals/index.tsx`+`icons.tsx`, `OurSponsors/index.tsx`+`icons.tsx`, `Footer/index.tsx`+`icons.tsx`
+
+**Definition of done**: 9 з 13 секцій мігровано; всі вони працюють у обох мовах.
+
+---
+
+### Session 3 — 4 секції з desktop/mobile-розгалуженням + фінальний QA
+
+**Мета**: найскладніші секції, де JSX має умовний рендер `isMobile ? mobile : desktop` (або `isTablet ? tablet : desktop`). Тут хук повертає і `desktop`, і `mobile` — обидва треба підставити у відповідні гілки.
+
+**Кроки**:
+
+1. Мігрувати:
+   - `Chief` → `yakov-gradinar` + `yakov-gradinar_mobile` (УВАГА: `icons.tsx` Chief — 212 рядків, найбільший — можна виправити в один Edit з `replace_all` або повністю переписати файл).
+   - `Events` → `current-training-programs` + `current-training-programs_mobile`
+   - `SummitResults` → `summit-results` + `summit-results_mobile` (поточна гілка `isTablet`/`tablet` → перейменовується на `mobile`)
+   - `SpecialThanksToAllOurPartners` → `special-thanks-to-all-our-partners` + `special-thanks-to-all-our-partners_mobile`
+
+2. Фінальний QA-прохід:
+   - `npm run lint && npm run build` — чисто.
+   - Browser DevTools → Network: всі title-SVG вантажаться без 404, правильний `_<lang>.svg` файл для поточної мови; resize до мобільного — приходять `_mobile_*.svg`.
+   - Lighthouse на `/academy` — LCP не виріс (бо в Session 1 додали `priority` для Intro).
+   - Console — без warning'ів про missing `alt` / `width` / `height`.
+   - Перевірити, що JS-бандл `/academy` помітно зменшився (порівняти з main).
+
+**Файли**: `Chief/index.tsx`+`icons.tsx`, `Events/index.tsx`+`icons.tsx`, `SummitResults/index.tsx`+`icons.tsx`, `SpecialThanksToAllOurPartners/index.tsx`+`icons.tsx`
+
+**Definition of done**: усі 13 секцій з мапінгу мігровано. Сторінка `/academy` у двох мовах рендерить локалізовані title-SVG.
+
+---
+
+## Шаблон правок секції (застосовується в кожній сесії)
 
 **У `index.tsx`**:
 1. Додати імпорти:
@@ -167,25 +239,27 @@ const { desktop, mobile } = useAcademyTitle('theoryLectures')
    const title = useAcademyTitle('<sectionKey>')
    ```
 3. Замінити `{icons.<x>Logo.desktop[lang](style.title)}` → `<ProtezImage {...title.desktop} className={style.title} />`.
-4. Для гілок з `isMobile` / `isTablet` — підставити `<ProtezImage {...title.mobile} … />` у відповідну гілку.
-5. Прибрати непотрібний `lang` із деструктуризацій `useLanguage()`, якщо більше не використовується.
+4. Для гілок з `isMobile` / `isTablet` — підставити `<ProtezImage {...title.mobile!} … />` у відповідну гілку (`!` бо TS не знає, що `mobile` гарантовано є для цих секцій; альтернатива — early return / fallback).
+5. Прибрати непотрібний `lang` із деструктуризацій `useLanguage()`, якщо більше ніде не використовується.
 
 **У `icons.tsx`**:
 1. Видалити інлайн-функції `<section>TitleDesktop` / `Mobile` / `Tablet` і відповідні поля з `icons` об'єкта.
 2. Інші icons (`arrowUp`, лого хедера, кнопки тощо) — НЕ чіпати.
 3. Якщо після видалення в `icons` лишаються тільки titles — видалити `icons.tsx` цілком і прибрати імпорт з `index.tsx`.
 
-### 4. Для секцій без мапінгу
+## Окремі нотатки
 
-Не чіпаємо в цьому проході. Залишаємо старі inline-функції в `icons.tsx`. Документуємо в коміт-меседжі.
-
-### 5. Особливий випадок — `SummitResults`
+### Особливий випадок — `SummitResults`
 
 Поточно є `desktop` + `tablet` (не `mobile`). У хуку це поле `mobile` (семантично — «не-desktop»). У JSX замінити `isTablet ? icons.X.tablet : icons.X.desktop` на той самий патерн з `title.mobile`/`title.desktop`. CSS-логіка перемикання — без змін.
 
-### 6. Особливий випадок — `Footer`
+### Особливий випадок — `Footer`
 
 Поточно лише `footerTitleDesktop` / `footerTitleMobile` без локалізації. Тепер: `useAcademyTitle('footer')` повертає `{ desktop, mobile }` локалізованих файлів `footer_<lang>.svg` та `footer_mobile_<lang>.svg`. Гілка рендера лишається без змін.
+
+### Секції без мапінгу
+
+`TheoryLectures`, `PracticeSessions`, `AmputeeRehab`, `WeAreInNews` — не чіпаємо в цих 3 сесіях. Залишаємо старі inline-функції в `icons.tsx`. Винесемо в окрему сесію, коли користувач визначиться з мапінгом.
 
 ## Критичні файли
 

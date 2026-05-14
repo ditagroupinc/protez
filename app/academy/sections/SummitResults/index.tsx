@@ -3,6 +3,7 @@ import { useState, useRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 import AcademySection from '@academy/components/AcademySection'
 
@@ -16,6 +17,7 @@ import { AcademyIDs } from '../../consts'
 
 const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
+  const t = useAcademyTexts()
   const { width } = useScreenModeAndSize()
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -37,24 +39,16 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
               : icons.summitResultsLogo.desktop[lang](styles.title)}
           </TextAppearanceWrapper>
           <TextAppearanceWrapper className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam.
-            Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc
-            suspendisse donec
+            {t.summitResults.description}
           </TextAppearanceWrapper>
         </div>
         <div className={styles.right}>
-          <TextAppearanceWrapper className={styles.card}>
-            <span className={styles.count}>200</span>
-            <p className={styles.desc}>Visitors</p>
-          </TextAppearanceWrapper>
-          <TextAppearanceWrapper className={styles.card}>
-            <span className={styles.count}>22</span>
-            <p className={styles.desc}>Invited guests</p>
-          </TextAppearanceWrapper>
-          <TextAppearanceWrapper className={styles.card}>
-            <span className={styles.count}>12</span>
-            <p className={styles.desc}>Prosthetists</p>
-          </TextAppearanceWrapper>
+          {t.summitResults.stats.map((stat, index) => (
+            <TextAppearanceWrapper key={index} className={styles.card}>
+              <span className={styles.count}>{stat.count}</span>
+              <p className={styles.desc}>{stat.label}</p>
+            </TextAppearanceWrapper>
+          ))}
         </div>
       </div>
 
@@ -68,9 +62,8 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
         {!isPlaying && (
           <>
             <ProtezImage
-              // TODO: remove after review
               src="academyPage/summitResults/summitResults.png"
-              alt="summit"
+              alt={t.summitResults.imageAlt}
               width={1584}
               height={800}
               className={styles.videoOverlay}

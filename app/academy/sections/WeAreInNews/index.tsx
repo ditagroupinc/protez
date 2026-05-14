@@ -4,6 +4,7 @@ import { useRef, useState } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 import AcademySection from '@academy/components/AcademySection'
 
@@ -22,67 +23,10 @@ import { forwardRef } from 'react'
 
 import { AcademyIDs } from '../../consts'
 
-// TODO: remove after review
-
-const newsCards = [
-  {
-    link: '/',
-    photo: 'academyPage/news/academyNews0.png',
-    date: '19.03.2023',
-    address: '1plus1.ua',
-    logo: 'academyPage/news/1plus1.svg',
-    title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
-    text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
-  },
-  {
-    link: '/',
-    photo: 'academyPage/news/academyNews0.png',
-    date: '19.03.2023',
-    address: '1plus1.ua',
-    logo: 'academyPage/news/1plus1.svg',
-    title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
-    text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
-  },
-  {
-    link: '/',
-    photo: 'academyPage/news/academyNews0.png',
-    date: '19.03.2023',
-    address: '1plus1.ua',
-    logo: 'academyPage/news/1plus1.svg',
-    title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
-    text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
-  },
-  {
-    link: '/',
-    photo: 'academyPage/news/academyNews0.png',
-    date: '19.03.2023',
-    address: '1plus1.ua',
-    logo: 'academyPage/news/1plus1.svg',
-    title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
-    text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
-  },
-  {
-    link: '/',
-    photo: 'academyPage/news/academyNews0.png',
-    date: '19.03.2023',
-    address: '1plus1.ua',
-    logo: 'academyPage/news/1plus1.svg',
-    title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
-    text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
-  },
-  {
-    link: '/',
-    photo: 'academyPage/news/academyNews0.png',
-    date: '19.03.2023',
-    address: '1plus1.ua',
-    logo: 'academyPage/news/1plus1.svg',
-    title: 'Oakdale foundation helps hurt Ukrainian soldiers walk again',
-    text: 'Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”',
-  },
-]
-
 const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
+  const t = useAcademyTexts()
+  const newsCards = t.weAreInNews.items
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
 
@@ -162,9 +106,8 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <a href={card.link} target="blank" className={styles.card}>
                     <ProtezImage
-                      // TODO: remove after review
                       src={`${card.photo}`}
-                      alt="news picture"
+                      alt={t.weAreInNews.imageAlt}
                       width={488}
                       height={520}
                       className={`${styles.cardPicture}`}
@@ -175,9 +118,8 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
                       </div>
 
                       <ProtezImage
-                        // TODO: remove after review
                         src={`${card.logo}`}
-                        alt="news picture"
+                        alt={t.weAreInNews.imageAlt}
                         width={488}
                         height={520}
                         className={`${styles.cardLogo}`}

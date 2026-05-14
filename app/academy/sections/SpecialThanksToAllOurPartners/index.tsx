@@ -7,29 +7,15 @@ import { icons } from './icons'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 import { AcademyIDs } from '../../consts'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-const partnersIcons: string[] = [
-  'concordia_dark.svg',
-  'minnesota_dark.svg',
-  'century-collage_dark.svg',
-  'school-of-medicine_dark.svg',
-  'esper_dark.svg',
-  'rotary_dark.svg',
-  'kpi_dark.svg',
-  'shupika_dark.svg',
-  'beetroot_dark.svg',
-  'fizychna-associasion_dark.svg',
-]
-
 const Card = ({ icon }: { icon: string }): React.ReactElement => (
   <TextAppearanceWrapper className={styles.card}>
     <ProtezImage
-      // TODO: remove after review
-
       src={`academyPage/partners/dark/${icon}`}
       alt={icon}
       width={300}
@@ -42,6 +28,7 @@ const Card = ({ icon }: { icon: string }): React.ReactElement => (
 const SpecialThanksToAllOurPartners = () => {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
+  const t = useAcademyTexts()
 
   return (
     <AcademySection
@@ -53,7 +40,7 @@ const SpecialThanksToAllOurPartners = () => {
           ? icons.specialThanksToAllOurPartnersLogo.mobile[lang](styles.title)
           : icons.specialThanksToAllOurPartnersLogo.desktop[lang](styles.title)}
       </TextAppearanceWrapper>
-      {partnersIcons.map((icon, index) => (
+      {t.specialThanksToAllOurPartners.items.map((icon, index) => (
         <Card icon={icon} key={index} />
       ))}
     </AcademySection>

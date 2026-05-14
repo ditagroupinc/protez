@@ -1,9 +1,10 @@
 import ProtezImage from '@/components/ProtezImage'
 
-import { useRef, useState } from 'react'
+import { useRef, useState, useMemo } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 import AcademySection from '@academy/components/AcademySection'
 
@@ -18,87 +19,29 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { AcademyIDs } from '../../consts'
 
-type Event = {
+type EventInput = {
   date: string
   title: string
   link: string
   photo: string
   location: string
-  upcoming?: boolean
 }
-// TODO: remove after review
 
-const eventsCards: Event[] = [
-  {
-    link: '/',
-    photo: 'academyPage/events/academyEvent0.png',
-    date: '2025-02-01',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-  {
-    link: '/',
-    photo: 'academyPage/events/academyEvent0.png',
-    date: '2025-06-21',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-  {
-    link: '/',
-    photo: 'academyPage/events/academyEvent0.png',
-    date: '2025-06-21',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-  {
-    link: '/',
-    photo: 'academyPage/events/academyEvent0.png',
-    date: '2021-02-01',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-  {
-    link: '/',
-    photo: 'academyPage/events/academyEvent0.png',
-    date: '2021-12-03',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-  {
-    link: '/',
-    photo: 'academyPage/events/academyEvent0.png',
-    date: '2021-12-03',
-    title: 'Hommage national à Léon Gautier.',
-    location: 'Washington',
-  },
-]
+type Event = EventInput & { upcoming: boolean }
 
-const modifyAndSortEvents = (events: Event[]): Event[] => {
+const modifyAndSortEvents = (events: readonly EventInput[]): Event[] => {
   const now = new Date()
 
-  events.forEach(event => {
-    const eventDate = new Date(event.date)
+  const withUpcoming: Event[] = events.map(event => ({
+    ...event,
+    upcoming: new Date(event.date) > now,
+  }))
 
-    event.upcoming = eventDate > now
-  })
-
-  // events.sort((a, b) => {
-  //   const dateA = new Date(a.date).getTime()
-  //   const dateB = new Date(b.date).getTime()
-
-  //   return dateA - dateB
-  // })
-
-  const upcomingEvents = events.filter(event => new Date(event.date) > now)
-  const pastEvents = events.filter(event => new Date(event.date) <= now)
-
-  // Sort each category by date
   const sortByDate = (a: Event, b: Event) => new Date(a.date).getTime() - new Date(b.date).getTime()
 
-  upcomingEvents.sort(sortByDate)
-  pastEvents.sort(sortByDate)
+  const upcomingEvents = withUpcoming.filter(event => event.upcoming).sort(sortByDate)
+  const pastEvents = withUpcoming.filter(event => !event.upcoming).sort(sortByDate)
 
-  // Concatenate the sorted arrays
   const sortedEvents = [...upcomingEvents, ...pastEvents]
 
   const formatDate = (dateString: string) => {
@@ -109,19 +52,16 @@ const modifyAndSortEvents = (events: Event[]): Event[] => {
     return `${day}/${month}`
   }
 
-  const eventsWithAdjustedData = sortedEvents.map(event => {
-    return { ...event, date: formatDate(event.date) }
-  })
-
-  return eventsWithAdjustedData
+  return sortedEvents.map(event => ({ ...event, date: formatDate(event.date) }))
 }
-
-const sortedEvents = modifyAndSortEvents(eventsCards)
 
 const Events = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
+  const t = useAcademyTexts()
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
+
+  const sortedEvents = useMemo(() => modifyAndSortEvents(t.events.items), [t.events.items])
 
   const settings = {
     dots: false,
@@ -183,11 +123,9 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={styles.events}>
-      {/* TODO: remove after review
-       */}
       <ProtezImage
         src="events-background-Ukraine.png"
-        alt="Ukrainian flag"
+        alt={t.events.backgroundAlt}
         width={1920}
         height={1080}
         className={styles.backgroundImage}
@@ -220,9 +158,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <a href={card.link} target="blank" className={styles.card}>
                     <ProtezImage
-                      // TODO: remove after review
                       src={`${card.photo}`}
-                      alt="events picture"
+                      alt={t.events.imageAlt}
                       width={340}
                       height={480}
                       className={styles.cardPicture}
@@ -232,10 +169,12 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
                       <div className={styles.cardDateAndStatus}>
                         {card.upcoming ? (
                           <span className={`${styles.cardStatus} ${styles.upcoming}`}>
-                            Upcoming event
+                            {t.events.status.upcoming}
                           </span>
                         ) : (
-                          <span className={`${styles.cardStatus} ${styles.past}`}>Past event</span>
+                          <span className={`${styles.cardStatus} ${styles.past}`}>
+                            {t.events.status.past}
+                          </span>
                         )}
 
                         <span className={styles.cardDate}>{card.date}</span>
