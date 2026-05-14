@@ -29,7 +29,8 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@academy/*": ["./app/academy/*"]
     }
   },
   "include": [

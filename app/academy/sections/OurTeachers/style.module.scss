@@ -1,0 +1,199 @@
+.ourTeachers {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: 524px 524px 524px;
+
+  grid-template-areas:
+    '. . title title title kierstinNelson kierstinNelson michaelLeBuhnJr michaelLeBuhnJr'
+    'jeanneLojovich jeanneLojovich adamWarden adamWarden troyDecker troyDecker lisaKing lisaKing .'
+    '. yakovGradinar yakovGradinar gallegosSebastianGuadalupe gallegosSebastianGuadalupe . . . .';
+}
+
+.teacherCard {
+  width: 100%;
+  max-width: 100%;
+}
+.teachersLogo {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.titleCell {
+  grid-area: title;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 16px;
+}
+
+.teacherCard:nth-child(2) {
+  grid-area: kierstinNelson;
+}
+
+.teacherCard:nth-child(3) {
+  grid-area: michaelLeBuhnJr;
+  border-right: var(--greyBorder);
+}
+
+.teacherCard:nth-child(4) {
+  grid-area: jeanneLojovich;
+}
+
+.teacherCard:nth-child(5) {
+  grid-area: adamWarden;
+}
+
+.teacherCard:nth-child(6) {
+  grid-area: troyDecker;
+}
+
+.teacherCard:nth-child(7) {
+  grid-area: lisaKing;
+  border-right: var(--greyBorder);
+}
+
+.teacherCard:nth-child(8) {
+  grid-area: yakovGradinar;
+}
+
+.teacherCard:nth-child(9) {
+  grid-area: gallegosSebastianGuadalupe;
+  border-right: var(--greyBorder);
+}
+
+.slickSlider {
+  & :global(.slick-dots) {
+    border-radius: 4px;
+    display: flex;
+    padding-top: 32px;
+    position: static;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+  & :global(.slick-dots li) {
+    margin: 0;
+    width: calc(100% / 8);
+    height: 3px;
+    background-color: var(--dark);
+    opacity: 0.06;
+  }
+
+  & :global(.slick-dots li.slick-active) {
+    border-radius: 4px;
+    background-color: var(--blue);
+    opacity: 1;
+  }
+
+  & :global(.slick-dots li button:before) {
+    display: none;
+  }
+
+  & :global(.slick-dots li button) {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+}
+
+.cardWrapper {
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 1366px) {
+  .ourTeachers {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    grid-template-rows: 460px 460px 460px;
+
+    grid-template-areas:
+      '. . title title title title title kierstinNelson kierstinNelson kierstinNelson michaelLeBuhnJr michaelLeBuhnJr michaelLeBuhnJr'
+      'jeanneLojovich jeanneLojovich jeanneLojovich adamWarden adamWarden adamWarden troyDecker troyDecker troyDecker lisaKing lisaKing lisaKing .'
+      '. yakovGradinar yakovGradinar yakovGradinar gallegosSebastianGuadalupe gallegosSebastianGuadalupe gallegosSebastianGuadalupe . . . . . .';
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .ourTeachers {
+    padding-top: 120px;
+    padding-bottom: 120px;
+
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: 160px 460px 460px 460px;
+
+    grid-template-areas:
+      'title title title title title title title title'
+      '. kierstinNelson kierstinNelson michaelLeBuhnJr michaelLeBuhnJr jeanneLojovich jeanneLojovich .'
+      'adamWarden adamWarden troyDecker troyDecker lisaKing lisaKing yakovGradinar yakovGradinar'
+      '. gallegosSebastianGuadalupe gallegosSebastianGuadalupe . . . . .';
+  }
+
+  .titleCell {
+    grid-area: title;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 0;
+    padding-bottom: 40px;
+  }
+
+  .teacherCard:nth-child(3) {
+    grid-area: michaelLeBuhnJr;
+    border-right: none;
+  }
+
+  .teacherCard:nth-child(4) {
+    grid-area: jeanneLojovich;
+    border-right: var(--greyBorder);
+  }
+
+  .teacherCard:nth-child(7) {
+    grid-area: lisaKing;
+    border-right: none;
+  }
+
+  .teacherCard:nth-child(8) {
+    grid-area: yakovGradinar;
+    border-right: var(--greyBorder);
+  }
+}
+
+/* phone */
+@media screen and (max-width: 600px) {
+  .ourTeachers {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 0;
+    padding-right: 0;
+
+    display: block;
+  }
+  .titleCell {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-bottom: 32px;
+    justify-content: flex-end;
+  }
+
+  .teachersLogo {
+    max-width: 280px;
+    height: auto;
+  }
+
+  .teacherCard {
+    border-right: var(--greyBorder);
+  }
+  .slickSlider {
+    & :global(.slick-track) {
+      min-height: 480px;
+      height: 100%;
+    }
+  }
+
+  .cardWrapper {
+    height: 480px;
+    padding: 0;
+    padding-right: 20px;
+  }
+}

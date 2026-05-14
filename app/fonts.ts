@@ -7,6 +7,7 @@ export const nunitoSans = Nunito_Sans({
   variable: '--font-nunito-sans',
   weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
   style: ['normal', 'italic'],
+  adjustFontFallback: false,
 })
 
 // Kept as a local font because SampleProsthesesCosts.tsx still consumes the

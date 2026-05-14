@@ -1,0 +1,181 @@
+.amputeeRehab {
+  background-color: var(--dark);
+  position: relative;
+}
+
+.amputeeRehabImage {
+  position: absolute;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.amputeeRehabOverlay {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark);
+    opacity: 60%;
+    z-index: 2;
+  }
+}
+
+.amputeeRehabContent {
+  position: relative;
+  z-index: 3;
+  padding: 140px 168px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  gap: 24px;
+}
+
+.title {
+  max-width: 100%;
+  height: auto;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 660px;
+}
+.desc {
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--white);
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.arrowUp {
+  width: 24px;
+  height: 24px;
+}
+
+.right {
+  height: 100%;
+  width: 100%;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 200px);
+  grid-template-areas:
+    '. esper'
+    'directRelief .'
+    '. dita';
+}
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  width: 100%;
+  height: 100%;
+  border: var(--whiteBorder);
+  color: var(--white);
+  transition: all var(--transitionProps);
+  &:hover {
+    background-color: var(--blue);
+  }
+}
+
+.card:nth-child(1) {
+  grid-area: esper;
+}
+
+.card:nth-child(2) {
+  grid-area: directRelief;
+}
+
+.card:nth-child(3) {
+  grid-area: dita;
+}
+
+.partnerLogo {
+  max-width: 100%;
+  & path {
+    fill: var(--white);
+  }
+}
+
+@media (max-width: 1366px) {
+  .amputeeRehabContent {
+    padding: 100px 80px;
+  }
+
+  .left {
+    max-width: 500px;
+  }
+
+  .right {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .amputeeRehabContent {
+    padding: 140px 60px 120px 60px;
+  }
+
+  .amputeeRehabContent {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 40px;
+  }
+
+  .right {
+    height: fit-content;
+    max-width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 200px);
+    grid-template-areas:
+      '. . esper'
+      'directRelief dita .';
+  }
+}
+
+@media (max-width: 600px) {
+  .amputeeRehabContent {
+    padding: 80px 24px;
+  }
+
+  .left {
+    gap: 40px;
+    max-width: 100%;
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .button {
+    justify-content: center;
+  }
+
+  .right {
+    grid-template-columns: 1fr;
+
+    grid-template-rows: repeat(3, 100px);
+    grid-template-areas:
+      'esper'
+      'directRelief'
+      'dita';
+  }
+}
