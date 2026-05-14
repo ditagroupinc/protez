@@ -39,7 +39,9 @@ const AmputeeRehab = () => {
                 as={'link'}
                 variant="primary-blue"
                 size="big"
-                href={'/'}
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf_4yg5XXs1eBQtnQzXGX7HagkbzW7xfim9kAuTXnhEj6CK-A/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
                 className={styles.button}
               >
                 {t.amputeeRehab.cta.apply}
@@ -48,7 +50,7 @@ const AmputeeRehab = () => {
                 as={'link'}
                 variant="secondary-white"
                 size="big"
-                href={'/'}
+                href="/donate"
                 className={styles.button}
               >
                 {t.amputeeRehab.cta.support}

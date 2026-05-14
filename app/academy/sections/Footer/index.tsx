@@ -21,7 +21,9 @@ const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
           <div className={styles.right}>
             <ProtezImage {...titleDesktop} className={styles.footerLogo} />
             <div className={styles.buttonGroup}>
-              <button className={styles.supportAcademyButton}>{t.footer.supportAcademy}</button>
+              <a href="/donate" className={styles.supportAcademyButton}>
+                {t.footer.supportAcademy}
+              </a>
             </div>
           </div>
           <div className={styles.left}>

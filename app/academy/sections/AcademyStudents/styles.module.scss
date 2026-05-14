@@ -115,6 +115,8 @@
     margin-bottom: 32px;
     padding-right: 24px;
     padding-left: 24px;
+    display: flex;
+    justify-content: center;
   }
   .slickSlider :global(.slick-track) {
     height: 360px;

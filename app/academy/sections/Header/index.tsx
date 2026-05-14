@@ -173,7 +173,7 @@ const AcademyHeader = () => {
               </Button>
               <Button
                 as="link"
-                href="/"
+                href="/donate"
                 variant="secondary-black"
                 size="small"
                 className={styles.lowerPartButton}

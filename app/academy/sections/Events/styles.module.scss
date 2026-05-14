@@ -20,10 +20,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: var(--section-padding-horizontal);
+  padding-right: var(--section-padding-horizontal);
 }
 
 .title {
-  max-width: 100%;
+  max-width: 536px;
   margin-bottom: 32px;
 }
 
@@ -39,7 +41,7 @@
 }
 
 .prevButton {
-  left: 168px;
+  left: var(--section-padding-horizontal);
   background-color: transparent;
   border-color: var(--white);
   color: var(--white);
@@ -52,7 +54,7 @@
 }
 
 .nextButton {
-  right: 168px;
+  right: var(--section-padding-horizontal);
   background-color: var(--blue);
   border-color: var(--blue);
   color: var(--white);
@@ -227,12 +229,6 @@
     padding-top: 120px;
     padding-bottom: 100px;
   }
-  .prevButton {
-    left: 80px;
-  }
-  .nextButton {
-    right: 80px;
-  }
 }
 
 @media (max-width: 1024px) {
@@ -242,13 +238,6 @@
   }
   .title {
     margin-bottom: 40px;
-  }
-
-  .prevButton {
-    left: 60px;
-  }
-  .nextButton {
-    right: 60px;
   }
 }
 
@@ -300,6 +289,7 @@
   }
 
   .title {
+    max-width: 327px;
     margin-bottom: 32px;
   }
 
@@ -320,14 +310,6 @@
   }
   .cardDataBlock {
     padding-bottom: 20px;
-  }
-
-  .locationWrapper {
-    margin-top: auto;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 8px;
   }
 }
 

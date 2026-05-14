@@ -42,6 +42,17 @@
 }
 
 @media (max-width: 1024px) {
+  .cardsContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    border-right: var(--greyBorder);
+    &:last-child {
+      border-top: none;
+    }
+  }
 }
 
 @media (max-width: 600px) {

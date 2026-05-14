@@ -49,7 +49,7 @@ const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
     <AcademySection ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoals}>
       <TextAppearanceWrapper className={style.container}>
         <ProtezImage {...titleDesktop} className={style.title} />
-        <SliderNavigation>
+        <SliderNavigation className={style.sliderNavigation}>
           <SliderPrevButton onClick={gotoPrev} />
           <SliderNextButton onClick={gotoNext} />
         </SliderNavigation>

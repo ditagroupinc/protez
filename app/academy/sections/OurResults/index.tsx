@@ -32,7 +32,7 @@ const OurResults = () => {
             <TextAppearanceWrapper className={style.btnGroup}>
               <Button
                 as="link"
-                href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf_4yg5XXs1eBQtnQzXGX7HagkbzW7xfim9kAuTXnhEj6CK-A/viewform"
                 target={'_blank'}
                 variant="primary-blue"
                 rel="noopener noreferrer"

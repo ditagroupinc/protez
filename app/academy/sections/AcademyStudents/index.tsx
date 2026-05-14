@@ -78,8 +78,8 @@ const AcademyStudents = () => {
 
   return (
     <AcademySection id={AcademyIDs.AcademyStudents} className={styles.academyStudents}>
-      <TextAppearanceWrapper>
-        <ProtezImage {...titleDesktop} className={styles.title} />
+      <TextAppearanceWrapper className={styles.title}>
+        <ProtezImage {...titleDesktop} />
       </TextAppearanceWrapper>
 
       <TextAppearanceWrapper className={styles.sliderWrapper}>
