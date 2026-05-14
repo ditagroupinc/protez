@@ -23,7 +23,7 @@ export default function TeacherCard({
   return (
     <TextAppearanceWrapper
       isDisabled={width < 600}
-      className={`${style.teamCard} ${className && className}`}
+      className={`${style.teamCard} ${className ?? ''}`}
     >
       <ProtezImage
         src={`academyPage/teachers/${photo}`}
@@ -33,7 +33,7 @@ export default function TeacherCard({
         height={300}
         className={style.teacherImage}
       />
-      <div className={`${style.container} ${black && style.black}`}>
+      <div className={`${style.container} ${black ? style.black : ''}`}>
         <h5 className={`h5 ${style.name}`}>{name}</h5>
 
         <h6 className={`h6 ${style.position}`}>{position}</h6>

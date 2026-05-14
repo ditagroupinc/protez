@@ -1,6 +1,6 @@
 import style from './socialMediaLinks.module.css'
 
-import { socialLinks } from '@academy/sections/Header/icons'
+import { socialLinks } from './icons'
 
 export default function SocialMediaLinks({ className = '', color = 'pink' }) {
   return (
@@ -10,7 +10,8 @@ export default function SocialMediaLinks({ className = '', color = 'pink' }) {
           key={index}
           href={link.address}
           className={`${style.link} ${style[color]}`}
-          target="blank"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           {link.icon(style.icon)}
         </a>
