@@ -98,13 +98,14 @@ export type AcademyTitleName = keyof typeof TITLES
 export function useAcademyTitle(name: AcademyTitleName): TitleSpec {
   const { lang } = useLanguage()
   const suffix = LANG_SUFFIX[lang]
-  const spec = TITLES[name] as TitleEntry
+  const spec = TITLES[name]
   const buildSrc = (base: string) => `${BASE}/${base}_${suffix}.svg`
+  const mobile = 'mobile' in spec ? spec.mobile : undefined
 
   return {
     desktop: { ...spec.desktop, src: buildSrc(spec.desktop.base) },
-    ...(spec.mobile && {
-      mobile: { ...spec.mobile, src: buildSrc(spec.mobile.base) },
+    ...(mobile && {
+      mobile: { ...mobile, src: buildSrc(mobile.base) },
     }),
   }
 }
