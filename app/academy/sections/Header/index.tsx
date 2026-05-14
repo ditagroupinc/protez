@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react'
 
-import { Languages } from '@/types'
+// import { Languages } from '@/types'
 // import texts from '@academy/components/texts-svg'
 
-import { useLanguage } from '@/contexts/LanguageContext'
+// import { useLanguage } from '@/contexts/LanguageContext'
 
 import Button from '@academy/components/Button'
 import SocialMediaLinks from '@academy/components/SocialMediaLinks'
@@ -47,7 +47,7 @@ const AcademyHeader = () => {
 
   const ref = useOutsideClick(() => setHeaderIsOpened(false))
 
-  const { lang } = useLanguage()
+  // const { lang } = useLanguage()
 
   // const handleLanguageChange = useCallback(() => {
   //   const langToSet = lang === Languages.English ? Languages.Ukrainian : Languages.English
