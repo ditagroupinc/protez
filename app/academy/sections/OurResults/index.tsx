@@ -8,10 +8,13 @@ import style from './style.module.scss'
 
 import { AcademyIDs } from '../../consts'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+import ProtezImage from '@/components/ProtezImage'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 const OurResults = () => {
   const t = useAcademyTexts()
+  const { desktop: titleDesktop } = useAcademyTitle('ourResults')
   const { stats, datesRange, description, cta } = t.ourResults
 
   return (
@@ -19,7 +22,7 @@ const OurResults = () => {
       <div className={style.resultsContent}>
         <div className={style.leftPart}>
           <TextAppearanceWrapper className={style.sectionTitle}>
-            {icons.academyResultsTitle()}
+            <ProtezImage {...titleDesktop} />
           </TextAppearanceWrapper>
           <div className={style.resultsInfo}>
             <TextAppearanceWrapper className={style.infoWrapper}>

@@ -2,9 +2,9 @@ import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState } from 'react'
 
-import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import AcademySection from '@academy/components/AcademySection'
 
@@ -14,7 +14,6 @@ import SliderNavigation, {
 } from '@academy/components/SliderNavigation'
 
 import styles from './styles.module.scss'
-import { icons } from './icons'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
@@ -23,8 +22,8 @@ import Slider from 'react-slick'
 import { AcademyIDs } from '../../consts'
 
 const AcademyStudents = () => {
-  const { lang } = useLanguage()
   const t = useAcademyTexts()
+  const { desktop: titleDesktop } = useAcademyTitle('academyStudents')
   const academyStudentsCards = t.academyStudents.cards
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
@@ -80,7 +79,7 @@ const AcademyStudents = () => {
   return (
     <AcademySection id={AcademyIDs.AcademyStudents} className={styles.academyStudents}>
       <TextAppearanceWrapper>
-        {icons.academyStudentsLogo.desktop[lang](styles.title)}
+        <ProtezImage {...titleDesktop} className={styles.title} />
       </TextAppearanceWrapper>
 
       <TextAppearanceWrapper className={styles.sliderWrapper}>

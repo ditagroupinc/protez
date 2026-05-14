@@ -14,6 +14,7 @@ import VideoAndFilter from '@/components/VideoAndFilter'
 import ProtezImage from '@/components/ProtezImage'
 
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import { icons } from './icons'
 import style from './style.module.scss'
@@ -85,6 +86,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
   // const { lang } = useLanguage()
   // const { mobile, width } = useScreenModeAndSize()
   const t = useAcademyTexts()
+  const { desktop: introTitle } = useAcademyTitle('intro')
   const [sliderReady, setSliderReady] = useState(false)
 
   useEffect(() => {
@@ -138,7 +140,9 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
       <div className={style.overlay}></div>
       <div className={style.content}>
         <div className={style.leftPart}>
-          <div className={style.sectionTitle}>{icons.academyIntroTitle()}</div>
+          <div className={style.sectionTitle}>
+            <ProtezImage {...introTitle} priority />
+          </div>
           <p className={style.academyDesc}>{t.intro.description}</p>
           <div className={style.buttonGroup}>
             <Button

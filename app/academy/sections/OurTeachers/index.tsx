@@ -1,25 +1,25 @@
 import React, { useRef } from 'react'
 
-import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import AcademySection from '@academy/components/AcademySection'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+import ProtezImage from '@/components/ProtezImage'
 
 import styles from './style.module.scss'
 import TeacherCard from './TeacherCard'
-import { icons } from './icons.js'
 
 import Slider from 'react-slick'
 
 import { AcademyIDs } from '../../consts'
 
 const OurTeachers = () => {
-  const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
   const t = useAcademyTexts()
+  const { desktop: titleDesktop } = useAcademyTitle('ourTeachers')
 
   const sliderRef = useRef(null)
   const settings = {
@@ -41,7 +41,7 @@ const OurTeachers = () => {
   return (
     <AcademySection id={AcademyIDs.OurTeachers} className={styles.ourTeachers}>
       <TextAppearanceWrapper className={styles.titleCell}>
-        {icons.ourTeachersLogo.desktop[lang](styles.teachersLogo)}
+        <ProtezImage {...titleDesktop} className={styles.teachersLogo} />
       </TextAppearanceWrapper>
       {width < 600 ? (
         <TextAppearanceWrapper>
