@@ -161,7 +161,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
         </div>
         <div className={style.rightPart}>
           <div className={style.titleContainer}>
-            <span className={style.greyTitle}>Наші спонсори</span>
+            <span className={style.greyTitle}>Наші спонсори:</span>
           </div>
           <a href={`#${AcademyIDs.SpecialThanksToAllOurPartners}`} className={style.blackButton}>
             Всі спонсори та партнери

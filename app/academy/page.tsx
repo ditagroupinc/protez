@@ -18,15 +18,15 @@ const MissionAndValues = lazy(() => import('./sections/MissionAndValues'))
 const OurGoals = lazy(() => import('./sections/OurGoals'))
 const OurSponsors = lazy(() => import('./sections/OurSponsors'))
 const OurResults = lazy(() => import('./sections/OurResults'))
-const TheoryLectures = lazy(() => import('./sections/TheoryLectures'))
+// const TheoryLectures = lazy(() => import('./sections/TheoryLectures'))
 const SpecialThanksToAllOurPartners = lazy(() => import('./sections/SpecialThanksToAllOurPartners'))
-const OurTeachers = lazy(() => import('./sections/OurTeachers'))
+// const OurTeachers = lazy(() => import('./sections/OurTeachers'))
 const Footer = lazy(() => import('./sections/Footer'))
 const Chief = lazy(() => import('./sections/Chief'))
 const AmputeeRehab = lazy(() => import('./sections/AmputeeRehab'))
 const SummitResults = lazy(() => import('./sections/SummitResults'))
 const Academy = lazy(() => import('./sections/Academy'))
-const PracticeSessions = lazy(() => import('./sections/PracticeSessions'))
+// const PracticeSessions = lazy(() => import('./sections/PracticeSessions'))
 const AcademyStudents = lazy(() => import('./sections/AcademyStudents'))
 const WeAreInNews = lazy(() => import('./sections/WeAreInNews'))
 const Events = lazy(() => import('./sections/Events'))
@@ -74,21 +74,21 @@ export default function AcademyPage() {
           <OurResults />
         </Suspense>
 
-        <Suspense fallback={<FullScreenFallback />}>
+        {/* <Suspense fallback={<FullScreenFallback />}>
           <OurTeachers />
-        </Suspense>
+        </Suspense> */}
 
         <Suspense fallback={<FullScreenFallback />}>
           <Chief ref={refChief} />
         </Suspense>
 
-        <Suspense fallback={<FullScreenFallback />}>
+        {/* <Suspense fallback={<FullScreenFallback />}>
           <TheoryLectures />
-        </Suspense>
+        </Suspense> */}
 
-        <Suspense fallback={<FullScreenFallback />}>
+        {/* <Suspense fallback={<FullScreenFallback />}>
           <PracticeSessions />
-        </Suspense>
+        </Suspense> */}
 
         <Suspense fallback={<FullScreenFallback />}>
           <Events ref={refEvents} />

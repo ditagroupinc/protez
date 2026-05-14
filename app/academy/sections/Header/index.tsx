@@ -25,19 +25,18 @@ import { icons } from './icons'
 
 const AncorLinks = [
   { id: AcademyIDs.Intro, text: 'Home' },
+  { id: AcademyIDs.MissionAndValues, text: 'Mission and Values' },
   { id: AcademyIDs.OurGoals, text: 'Our Goals' },
   { id: AcademyIDs.Academy, text: 'Academy' },
   { id: AcademyIDs.OurResults, text: 'Our Results' },
-  { id: AcademyIDs.OurTeachers, text: 'Academy Teachers' },
   { id: AcademyIDs.Chief, text: 'Chief' },
-  { id: AcademyIDs.TheoryLectures, text: 'Theory Lectures' },
-  { id: AcademyIDs.PracticeSessions, text: 'Practice Sessions' },
   { id: AcademyIDs.PastAndUpcomingEvents, text: 'Events' },
   { id: AcademyIDs.AcademyStudents, text: 'Students' },
   { id: AcademyIDs.AmputeeRehab, text: 'Amputee Rehab' },
   { id: AcademyIDs.SummitResults, text: 'Summit' },
   { id: AcademyIDs.WeAreInNews, text: 'We Are In News' },
   { id: AcademyIDs.SpecialThanksToAllOurPartners, text: 'Partners' },
+  { id: AcademyIDs.OurSponsors, text: 'Our Sponsors' },
 ]
 
 const AcademyHeader = () => {
