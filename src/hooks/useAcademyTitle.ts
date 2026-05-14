@@ -1,9 +1,12 @@
 'use client'
 
+import { useEffect, useState } from 'react'
+
 import { useLanguage } from '@/contexts/LanguageContext'
 import { Languages } from '@/types'
 
 const BASE = 'academyPage/titles'
+const MOBILE_BREAKPOINT_PX = 800
 
 type TitleVariant = { src: string; width: number; height: number; alt: string }
 type TitleSpec = { desktop: TitleVariant; mobile?: TitleVariant }
@@ -98,17 +101,40 @@ const LANG_SUFFIX = {
 
 export type AcademyTitleName = keyof typeof TITLES
 
+function useIsMobileViewport(breakpointPx: number): boolean {
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const mql = window.matchMedia(`(max-width: ${breakpointPx}px)`)
+    const sync = () => setIsMobile(mql.matches)
+    sync()
+    mql.addEventListener('change', sync)
+    return () => mql.removeEventListener('change', sync)
+  }, [breakpointPx])
+
+  return isMobile
+}
+
 export function useAcademyTitle(name: AcademyTitleName): TitleSpec {
   const { lang } = useLanguage()
   const suffix = LANG_SUFFIX[lang]
   const spec = TITLES[name]
   const buildSrc = (base: string) => `${BASE}/${base}_${suffix}.svg`
-  const mobile = 'mobile' in spec ? spec.mobile : undefined
+  const mobileSpec = 'mobile' in spec ? spec.mobile : undefined
+  const isMobile = useIsMobileViewport(MOBILE_BREAKPOINT_PX)
 
+  const desktopVariant: TitleVariant = {
+    ...spec.desktop,
+    src: buildSrc(spec.desktop.base),
+  }
+  const mobileVariant: TitleVariant | undefined = mobileSpec
+    ? { ...mobileSpec, src: buildSrc(mobileSpec.base) }
+    : undefined
+
+  // `desktop` carries the *active* variant — mobile when viewport ≤ MOBILE_BREAKPOINT_PX
+  // and a mobile asset exists, otherwise desktop. Existing consumers read only `desktop`.
   return {
-    desktop: { ...spec.desktop, src: buildSrc(spec.desktop.base) },
-    ...(mobile && {
-      mobile: { ...mobile, src: buildSrc(mobile.base) },
-    }),
+    desktop: isMobile && mobileVariant ? mobileVariant : desktopVariant,
+    ...(mobileVariant && { mobile: mobileVariant }),
   }
 }

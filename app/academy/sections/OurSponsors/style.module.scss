@@ -42,15 +42,16 @@
 }
 
 @media (max-width: 1024px) {
-  .cardsContainer {
-    display: flex;
-    flex-direction: column;
+  .ourSponsors {
+    padding-bottom: 80px;
   }
 
   .card {
-    border-right: var(--greyBorder);
-    &:last-child {
-      border-top: none;
+    height: 110px;
+    min-height: 0;
+    & .icon {
+      height: 100%;
+      width: auto;
     }
   }
 }

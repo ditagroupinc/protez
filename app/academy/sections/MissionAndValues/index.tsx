@@ -1,5 +1,7 @@
 import { forwardRef } from 'react'
 
+import Slider from 'react-slick'
+
 import ProtezImage from '@/components/ProtezImage'
 
 import AcademySection from '@academy/components/AcademySection'
@@ -12,6 +14,21 @@ import Button from '@academy/components/Button'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
+
+const sliderSettings = {
+  dots: true,
+  arrows: false,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 5,
+  slidesToScroll: 1,
+  responsive: [
+    { breakpoint: 1366, settings: { slidesToShow: 4 } },
+    { breakpoint: 1024, settings: { slidesToShow: 3 } },
+    { breakpoint: 768, settings: { slidesToShow: 2 } },
+    { breakpoint: 600, settings: { slidesToShow: 1 } },
+  ],
+}
 
 const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
@@ -50,23 +67,29 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
         </div>
       </div>
 
-      <div className={style.cardsContainer}>
-        {t.mission.values.map((item, index) => (
-          <TextAppearanceWrapper key={index} className={style.card}>
-            <ProtezImage
-              src={`academyPage/icons/${item.icon}`}
-              alt={item.icon}
-              width={48}
-              height={48}
-              className={style.icon}
-            />
-            <div className={style.cardContent}>
-              <p className={style.cardTitle}>{item.title}</p>
-              {item.text}
-            </div>
-          </TextAppearanceWrapper>
-        ))}
-      </div>
+      <TextAppearanceWrapper className={style.sliderWrapper}>
+        <div className={style.slider}>
+          <Slider {...sliderSettings}>
+            {t.mission.values.map((item, index) => (
+              <div key={index}>
+                <div className={style.card}>
+                  <ProtezImage
+                    src={`academyPage/icons/${item.icon}`}
+                    alt={item.icon}
+                    width={48}
+                    height={48}
+                    className={style.icon}
+                  />
+                  <div className={style.cardContent}>
+                    <p className={style.cardTitle}>{item.title}</p>
+                    {item.text}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+        </div>
+      </TextAppearanceWrapper>
     </AcademySection>
   )
 })

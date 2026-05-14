@@ -200,5 +200,9 @@
   }
   .card:nth-child(3) {
     border-left: var(--whiteBorder);
+    & img {
+      height: 100%;
+      width: auto;
+    }
   }
 }

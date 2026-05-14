@@ -31,7 +31,7 @@ const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
   }
 
   const settings = {
-    dots: false,
+    dots: true,
     arrows: false,
     infinite: true,
     speed: 500,
