@@ -1,6 +1,5 @@
 import style from './style.module.scss'
-import texts from '@academy/components/texts-svg'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 export default function BackToTopButton({
   href,
@@ -13,14 +12,14 @@ export default function BackToTopButton({
   black?: boolean
   color?: 'pink' | 'blue'
 }) {
-  const { lang } = useLanguage()
+  const t = useAcademyTexts()
 
   return (
     <a
       className={`${style.button} h6 ${black ? style.black : ''} ${style[color]} ${className}`}
       href={`#${href}`}
     >
-      {texts.home.backToTop[lang]}
+      {t.common.backToTop}
     </a>
   )
 }

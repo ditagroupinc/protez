@@ -1,5 +1,8 @@
 {
   "academy": {
+    "common": {
+      "backToTop": "back to top  →"
+    },
     "intro": {
       "description": "Protez Academy is an educational project of the Protez Foundation in collaboration with Century College and with the participation of specialists from the University of Minnesota and Concordia University",
       "cta": {
@@ -29,7 +32,7 @@
       "cta": {
         "applyTop": "Register for the program",
         "foundation": "Protez Foundation",
-        "applyBottom": "Apply to Academy",
+        "applyBottom": "Register for the program",
         "support": "Support Academy",
         "language": "Українська"
       },
@@ -110,7 +113,7 @@
       ]
     },
     "ourResults": {
-      "datesRange": "(May 2022 – September 2023)",
+      "datesRange": "(May 2022 – May 2026)",
       "description": "Ukrainian Specialists already went through the Program and back in their home country helping restore the lives of those who lost limbs during the war",
       "stats": [
         { "value": 92, "label": "People received prosthetics" },
@@ -119,7 +122,7 @@
         { "value": 3, "label": "Summits were organized" }
       ],
       "cta": {
-        "apply": "Apply to Academy",
+        "apply": "Register for the program",
         "support": "Support Academy"
       }
     },
@@ -155,7 +158,7 @@
         { "number": "/05", "desc": "Overview of cadaver anatomy" },
         { "number": "/06", "desc": "Physiology" }
       ],
-      "cta": "Apply to Academy"
+      "cta": "Register for the program"
     },
     "practiceSessions": {
       "items": [
@@ -199,7 +202,7 @@
       "imageAlt": "summit",
       "description": "This is the key annual event in Ukraine, bringing together leading Ukrainian and international experts in the field of rehabilitation. Participants include physical therapists, PRM specialists, occupational therapists, and prosthetists.\nThe Summit also features representatives of the Ukrainian government, underscoring the event's importance at the national level.",
       "cta": {
-        "apply": "Apply to Academy",
+        "apply": "Register for the program",
         "support": "Support Academy"
       },
       "partners": [

@@ -1,11 +1,11 @@
 import style from './socialMediaLinks.module.css'
 
-import texts from '@academy/components/texts-svg'
+import { socialLinks } from '@academy/sections/Header/icons'
 
 export default function SocialMediaLinks({ className = '', color = 'pink' }) {
   return (
     <div className={`${style.container} ${className}`}>
-      {texts.socialMediaLinks.map((link, index) => (
+      {socialLinks.map((link, index) => (
         <a
           key={index}
           href={link.address}
