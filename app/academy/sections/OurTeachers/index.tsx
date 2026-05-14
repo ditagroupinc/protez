@@ -51,7 +51,6 @@ const OurTeachers = () => {
                 <TeacherCard
                   className={styles.teacherCard}
                   photo={card.photo}
-                  links={{}}
                   name={card.name}
                   position={card.position}
                 />
@@ -65,7 +64,6 @@ const OurTeachers = () => {
             className={styles.teacherCard}
             key={index}
             photo={card.photo}
-            links={{}}
             name={card.name}
             position={card.position}
           />

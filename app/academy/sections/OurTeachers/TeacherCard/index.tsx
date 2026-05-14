@@ -15,14 +15,14 @@ interface Links {
 
 export default function TeacherCard({
   photo,
-  links,
+  links = {},
   name,
   position,
   black,
   className,
 }: {
   photo: string
-  links: Links
+  links?: Links
   name: string
   position: string
   black?: boolean
@@ -37,7 +37,6 @@ export default function TeacherCard({
       className={`${style.teamCard} ${className && className}`}
     >
       <ProtezImage
-        // TODO: remove after review
         src={`academyPage/teachers/${photo}`}
         object-fit="contain"
         alt={photo}

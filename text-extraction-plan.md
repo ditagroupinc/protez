@@ -1,8 +1,10 @@
 # Text Extraction Plan — `app/academy`
 
+> **Update (post-switch-titles)**: `switch-titles.md` уже відпрацьовано — 13 секцій із мапінгу мігровані з inline SVG-titles на `<ProtezImage>` + хук `useAcademyTitle`. Це впливає на цей план у кількох місцях — див. секцію **«Стан після switch-titles»** нижче. Решта плану лишається валідною.
+
 ## Контекст і ціль
 
-**До**: усі тексти в `app/academy/sections/*` захардкоджені прямо в JSX. Частина секцій українською (Intro, MissionAndValues, OurGoals), частина — англійською (Header nav, OurResults, TheoryLectures, PracticeSessions, Chief, OurTeachers). SVG-іконки мають свої двомовні рендерери у `icons.tsx`.
+**До**: усі тексти в `app/academy/sections/*` захардкоджені прямо в JSX. Частина секцій українською (Intro, MissionAndValues, OurGoals), частина — англійською (Header nav, OurResults, TheoryLectures, PracticeSessions, Chief, OurTeachers). SVG-іконки мають свої двомовні рендерери у `icons.tsx` (тільки для секцій, які НЕ були мігровані switch-titles — див. нижче).
 
 **Після цієї фази**:
 - Один JSON-файл на мову для всієї сторінки academy: `messages/uk.json`, `messages/en.json`.
@@ -10,7 +12,39 @@
 - Структура JSON готова для подальшого підключення `next-intl` (Session 1+ з `plan.md`) **без зміни ключів**.
 - Перемикання мови продовжує працювати через існуючий `LanguageContext`.
 
-**Що НЕ робимо**: НЕ встановлюємо next-intl, НЕ переносимо сторінки під `app/[locale]/`, НЕ чіпаємо `texts-svg/index.js`, `icons.tsx`, `LanguageContext`.
+**Що НЕ робимо**: НЕ встановлюємо next-intl, НЕ переносимо сторінки під `app/[locale]/`, НЕ чіпаємо `texts-svg/index.js`, `LanguageContext`, нову інфраструктуру title-ів з switch-titles (`useAcademyTitle`, `ProtezImage`-виклики, файли у `public/academyPage/titles/`).
+
+---
+
+## Стан після switch-titles
+
+Що змінилось у репо до старту цього плану:
+
+1. **`useAcademyTexts.ts` уже існує** (`src/hooks/useAcademyTexts.ts`). Session 1 крок A.5 — пропустити, але перевірити що файл відповідає коду нижче.
+
+2. **`useAcademyTitle.ts` додано** як сусідній хук (`src/hooks/useAcademyTitle.ts`). Не чіпаємо.
+
+3. **`icons.tsx` у мігрованих секціях** (Intro, MissionAndValues, OurGoals, Academy, OurResults, Chief, Events, AcademyStudents, SummitResults, SpecialThanksToAllOurPartners, OurSponsors, OurTeachers, Footer) — title-функції видалені; файли або відсутні (якщо лишались лише titles), або тримають інші icons (`arrowUp` тощо). **Стара заборона «не чіпати icons.tsx» застаріла для цих секцій** — текстову екстракцію вона все одно не зачіпає (тексти живуть у JSX, не в icons.tsx).
+
+4. **`icons.tsx` у НЕ мігрованих секціях** (`TheoryLectures`, `PracticeSessions`, `AmputeeRehab`, `WeAreInNews`, `Header`) — лишаються з inline SVG. Тут заборона досі діє: НЕ чіпаємо їх у цьому плані.
+
+5. **Деструктуризація `lang` з `useLanguage()`**: у мігрованих секціях вона могла бути прибрана, якщо більше не лишилось `icons.X[lang](...)` викликів. Коли вставлятимете `useAcademyTexts()`, не покладайтесь на `lang` як на існуючий ідентифікатор у скоупі — хук сам читає мову всередині.
+
+6. **JSX вже містить `<ProtezImage {...title.desktop} />`** у мігрованих секціях. Текстова заміна йде на інших рядках (description, cta, statement, items, …) — конфліктів з title-кодом немає.
+
+7. **Бандл-метрики**: фінальний `npm run build` у Session 3 покаже кумулятивне падіння (switch-titles + text-extraction). Якщо потрібен «голий» внесок text-extraction — зняти базлайн розміру `/academy` до старту Session 1.
+
+8. **Footer (Session 1, крок B.3)**: footer-логотип уже на `<ProtezImage>`, текстова заміна (supportAcademy, nonprofit, phone, email, copyright, terms, legalAddress) — окремі рядки, без перетину.
+
+9. **Mission/Goals/Results/Chief (Session 2)**: title-рядки вже на `<ProtezImage>`. Замінюємо лише текстовий контент (statement, values[].title/text, items, stats[].label, role/description тощо).
+
+10. **TheoryLectures / PracticeSessions** (Session 2) і **AmputeeRehab / WeAreInNews** (Session 3) — title досі inline, треба зберегти існуючі `icons.X[lang](...)` виклики. Тут `const { lang } = useLanguage()` лишається.
+
+---
+
+## Початкове "Що НЕ робимо" (історичне формулювання)
+
+НЕ встановлюємо next-intl, НЕ переносимо сторінки під `app/[locale]/`, НЕ чіпаємо `texts-svg/index.js`, `LanguageContext`. `icons.tsx` чіпаємо лише в немігрованих секціях — і навіть там тільки за необхідності.
 
 ---
 
@@ -171,7 +205,7 @@ const t = useAcademyTexts()
 
 3. Замінити захардкоджені рядки на `t.intro.description`, `t.header.nav.intro` тощо.
 
-4. **НЕ чіпати** `icons.<section>[lang](...)` виклики — вони лишаються через `useLanguage()`.
+4. **НЕ чіпати** `icons.<section>[lang](...)` виклики у немігрованих секціях (Header, TheoryLectures, PracticeSessions, AmputeeRehab, WeAreInNews). Для решти секцій titles вже на `<ProtezImage>` — ці виклики просто не існують.
 
 5. Якщо `Header` має масив `AncorLinks` з захардкодженими labels: лишити структуру масиву (там id + scrollTo логіка), але `label` діставати з `t.header.nav[id]`.
 
@@ -341,7 +375,7 @@ const t = useAcademyTexts()
 2. Заповнити відповідний namespace у `messages/{uk,en}.json`.
 3. Якщо є слайдер-captions, list-описи — у JSON-масив.
 4. Замінити рядки на `t.<section>.*`.
-5. **НЕ чіпати** `icons.<section>[lang](...)` — вони лишаються.
+5. **НЕ чіпати** `icons.<section>[lang](...)` у немігрованих секціях (TheoryLectures, PracticeSessions, AmputeeRehab, WeAreInNews); у мігрованих їх уже немає — на їх місці `<ProtezImage {...title.desktop} />`.
 6. Parity check після кожної (або пакетно в кінці).
 
 #### B. Фінальний cleanup
@@ -402,9 +436,9 @@ const t = useAcademyTexts()
 **NEW**:
 - `messages/uk.json`
 - `messages/en.json`
-- `src/hooks/useAcademyTexts.ts`
+- `src/hooks/useAcademyTexts.ts` — *уже існує після switch-titles, лише перевірити вміст*
 - `scripts/check-messages-parity.js` (опційно)
 
 **EDIT**: усі `app/academy/sections/*/index.tsx` (точкова заміна рядків на `t.*`), `tsconfig.json` (за потреби).
 
-**НЕ ЧІПАЄМО**: `next.config.js`, `app/layout.tsx`, `src/contexts/LanguageContext.tsx`, `app/academy/components/texts-svg/index.js`, `app/academy/sections/*/icons.tsx`.
+**НЕ ЧІПАЄМО**: `next.config.js`, `app/layout.tsx`, `src/contexts/LanguageContext.tsx`, `app/academy/components/texts-svg/index.js`, `src/hooks/useAcademyTitle.ts`, `public/academyPage/titles/*`, `app/academy/sections/*/icons.tsx` **немігрованих секцій** (Header, TheoryLectures, PracticeSessions, AmputeeRehab, WeAreInNews).

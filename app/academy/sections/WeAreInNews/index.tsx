@@ -119,7 +119,7 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
 
                       <ProtezImage
                         src={`${card.logo}`}
-                        alt={t.weAreInNews.imageAlt}
+                        alt={card.address}
                         width={488}
                         height={520}
                         className={`${styles.cardLogo}`}

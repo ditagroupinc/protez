@@ -38,16 +38,10 @@ export default function AcademyPage() {
   const [refChief, inViewChief] = useInView({ triggerOnce: false })
   const [refEvents, inViewEvents] = useInView({ triggerOnce: false })
   const [refSummit, inViewSummit] = useInView({ triggerOnce: false })
-  const [, inViewWeAreInNews] = useInView({ triggerOnce: false })
   const [refThankYou, inViewThankYou] = useInView({ triggerOnce: false })
 
   const showBlackBackToTopButton =
-    !inViewIntro &&
-    !inViewChief &&
-    !inViewEvents &&
-    !inViewSummit &&
-    !inViewWeAreInNews &&
-    !inViewThankYou
+    !inViewIntro && !inViewChief && !inViewEvents && !inViewSummit && !inViewThankYou
 
   const { mobile, width } = useScreenModeAndSize()
   const isMobile = mobile || width < 768
