@@ -27,7 +27,7 @@
         "ourSponsors": "Our Sponsors"
       },
       "cta": {
-        "applyTop": "Зараєструватися на навчання",
+        "applyTop": "Зареєструватися на навчання",
         "foundation": "Protez Foundation",
         "applyBottom": "Apply to Academy",
         "support": "Support Academy",
@@ -45,13 +45,82 @@
       "copyright": "2026 © Made by DITA GROUP Inc.",
       "terms": "Умови та правила сайту"
     },
-    "mission": { "values": [] },
-    "goals": { "items": [] },
-    "ourResults": { "stats": [], "cta": {} },
-    "chief": {},
+    "mission": {
+      "statement": "Місія: Розвивати систему протезування та реабілітації в Україні через сучасну освіту, інтеграцію міжнародного досвіду та практичних рішень, щоб кожна людина після ампутації мала доступ до якісного, функціонального та людиноцентричного відновлення.",
+      "button": "Про Academy",
+      "imageAlt": "Mission and values",
+      "values": [
+        {
+          "title": "Людиноцентричність",
+          "text": "Пацієнт — у центрі всіх рішень. Ми працюємо не з діагнозом, а з людиною, її цілями, функцією та якістю життя."
+        },
+        {
+          "title": "Якість і професійність",
+          "text": "Ми навчаємо сучасним, доказовим і клінічно релевантним підходам, які дають реальний результат у практиці."
+        },
+        {
+          "title": "Практичність",
+          "text": "Освіта має формувати навички. Ми фокусуємось на тому, що можна застосувати одразу в роботі з пацієнтом."
+        },
+        {
+          "title": "Постійний розвиток",
+          "text": "Ми постійно розвиваємося, впроваджуючи нові підходи та технології у свою практику."
+        },
+        {
+          "title": "Інноваційність",
+          "text": "Ми шукаємо, тестуємо та впроваджуємо нові технології, рішення і формати навчання у протезуванні та реабілітації."
+        }
+      ]
+    },
+    "goals": {
+      "items": [
+        "Розвиток сучасної системи освіти для фахівців у сфері протезування, ортезування та реабілітації",
+        "Впровадження міжнародних стандартів (ICF, ISPO, доказова практика) в українську клінічну роботу",
+        "Підвищення кваліфікації мультидисциплінарних команд через практичне навчання",
+        "Підтримка пацієнтів через покращення якості протезування та реабілітаційного супроводу",
+        "Розвиток інновацій, технологій та науково-практичних рішень у сфері",
+        "Побудова партнерств з українськими та міжнародними організаціями",
+        "Формування професійної спільноти та обміну досвідом між фахівцями"
+      ]
+    },
+    "ourResults": {
+      "datesRange": "[TODO translate] (May 2022 – September 2023)",
+      "description": "[TODO translate] Ukrainian Specialists already went through the Program and back in their home country helping restore the lives of those who lost limbs during the war",
+      "stats": [
+        { "value": "92", "label": "[TODO translate] People received prosthetics" },
+        { "value": "26", "label": "[TODO translate] Specialists trained" },
+        { "value": "9", "label": "[TODO translate] Prostheses were provided" },
+        { "value": "2", "label": "[TODO translate] Summits were organized" }
+      ],
+      "cta": {
+        "apply": "[TODO translate] Apply to Academy",
+        "support": "[TODO translate] Support Academy"
+      }
+    },
+    "chief": {
+      "role": "[TODO translate] CHIEF MEDICAL OFFICER, CERTIFIED PROSTHETIST AND ORTHOTIST",
+      "description": "[TODO translate] During the course of the program they will learn proven methods developed by the US healthcare practitioners over many years of treating veterans and also Dr. Yakov Gradinar’s personal technical know-how’s employed in his 15 years of practice. More importantly, the program is a way for overworked and underpaid Ukrainian doctors to come to the US where they will take a break from hearing sirens and rockets while learning practical skills to help many more Ukrainians in the future."
+    },
     "ourTeachers": { "members": [] },
-    "theoryLectures": { "items": [] },
-    "practiceSessions": { "items": [] },
+    "theoryLectures": {
+      "items": [
+        "[TODO translate] Etiology of polytrauma and subsequent management of polytrauma patients",
+        "[TODO translate] Examples of post-operative care",
+        "[TODO translate] Objectives of pre-amputation consultation",
+        "[TODO translate] Different levels of upper and lower limb amputations",
+        "[TODO translate] Overview of cadaver anatomy",
+        "[TODO translate] Physiology"
+      ],
+      "cta": "[TODO translate] Apply to Academy"
+    },
+    "practiceSessions": {
+      "items": [
+        "[TODO translate] Preparatory stage",
+        "[TODO translate] Diagnostic (test) socket",
+        "[TODO translate] Casting and measuring the prosthesis"
+      ],
+      "imageAlt": "[TODO translate] picture of practice sessions in Protez Academy"
+    },
     "academyGallery": {},
     "academyStudents": {},
     "amputeeRehab": {},

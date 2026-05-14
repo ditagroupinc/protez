@@ -27,11 +27,11 @@
         "ourSponsors": "Our Sponsors"
       },
       "cta": {
-        "applyTop": "[TODO translate] Зараєструватися на навчання",
+        "applyTop": "[TODO translate] Зареєструватися на навчання",
         "foundation": "Protez Foundation",
         "applyBottom": "Apply to Academy",
         "support": "Support Academy",
-        "language": "English"
+        "language": "Українська"
       },
       "phone": "+1 612-772-4777"
     },
@@ -45,13 +45,82 @@
       "copyright": "2026 © Made by DITA GROUP Inc.",
       "terms": "[TODO translate] Умови та правила сайту"
     },
-    "mission": { "values": [] },
-    "goals": { "items": [] },
-    "ourResults": { "stats": [], "cta": {} },
-    "chief": {},
+    "mission": {
+      "statement": "[TODO translate] Місія: Розвивати систему протезування та реабілітації в Україні через сучасну освіту, інтеграцію міжнародного досвіду та практичних рішень, щоб кожна людина після ампутації мала доступ до якісного, функціонального та людиноцентричного відновлення.",
+      "button": "[TODO translate] Про Academy",
+      "imageAlt": "Mission and values",
+      "values": [
+        {
+          "title": "[TODO translate] Людиноцентричність",
+          "text": "[TODO translate] Пацієнт — у центрі всіх рішень. Ми працюємо не з діагнозом, а з людиною, її цілями, функцією та якістю життя."
+        },
+        {
+          "title": "[TODO translate] Якість і професійність",
+          "text": "[TODO translate] Ми навчаємо сучасним, доказовим і клінічно релевантним підходам, які дають реальний результат у практиці."
+        },
+        {
+          "title": "[TODO translate] Практичність",
+          "text": "[TODO translate] Освіта має формувати навички. Ми фокусуємось на тому, що можна застосувати одразу в роботі з пацієнтом."
+        },
+        {
+          "title": "[TODO translate] Постійний розвиток",
+          "text": "[TODO translate] Ми постійно розвиваємося, впроваджуючи нові підходи та технології у свою практику."
+        },
+        {
+          "title": "[TODO translate] Інноваційність",
+          "text": "[TODO translate] Ми шукаємо, тестуємо та впроваджуємо нові технології, рішення і формати навчання у протезуванні та реабілітації."
+        }
+      ]
+    },
+    "goals": {
+      "items": [
+        "[TODO translate] Розвиток сучасної системи освіти для фахівців у сфері протезування, ортезування та реабілітації",
+        "[TODO translate] Впровадження міжнародних стандартів (ICF, ISPO, доказова практика) в українську клінічну роботу",
+        "[TODO translate] Підвищення кваліфікації мультидисциплінарних команд через практичне навчання",
+        "[TODO translate] Підтримка пацієнтів через покращення якості протезування та реабілітаційного супроводу",
+        "[TODO translate] Розвиток інновацій, технологій та науково-практичних рішень у сфері",
+        "[TODO translate] Побудова партнерств з українськими та міжнародними організаціями",
+        "[TODO translate] Формування професійної спільноти та обміну досвідом між фахівцями"
+      ]
+    },
+    "ourResults": {
+      "datesRange": "(May 2022 – September 2023)",
+      "description": "Ukrainian Specialists already went through the Program and back in their home country helping restore the lives of those who lost limbs during the war",
+      "stats": [
+        { "value": "92", "label": "People received prosthetics" },
+        { "value": "26", "label": "Specialists trained" },
+        { "value": "9", "label": "Prostheses were provided" },
+        { "value": "2", "label": "Summits were organized" }
+      ],
+      "cta": {
+        "apply": "Apply to Academy",
+        "support": "Support Academy"
+      }
+    },
+    "chief": {
+      "role": "CHIEF MEDICAL OFFICER, CERTIFIED PROSTHETIST AND ORTHOTIST",
+      "description": "During the course of the program they will learn proven methods developed by the US healthcare practitioners over many years of treating veterans and also Dr. Yakov Gradinar’s personal technical know-how’s employed in his 15 years of practice. More importantly, the program is a way for overworked and underpaid Ukrainian doctors to come to the US where they will take a break from hearing sirens and rockets while learning practical skills to help many more Ukrainians in the future."
+    },
     "ourTeachers": { "members": [] },
-    "theoryLectures": { "items": [] },
-    "practiceSessions": { "items": [] },
+    "theoryLectures": {
+      "items": [
+        "Etiology of polytrauma and subsequent management of polytrauma patients",
+        "Examples of post-operative care",
+        "Objectives of pre-amputation consultation",
+        "Different levels of upper and lower limb amputations",
+        "Overview of cadaver anatomy",
+        "Physiology"
+      ],
+      "cta": "Apply to Academy"
+    },
+    "practiceSessions": {
+      "items": [
+        "Preparatory stage",
+        "Diagnostic (test) socket",
+        "Casting and measuring the prosthesis"
+      ],
+      "imageAlt": "picture of practice sessions in Protez Academy"
+    },
     "academyGallery": {},
     "academyStudents": {},
     "amputeeRehab": {},

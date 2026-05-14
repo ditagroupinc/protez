@@ -16,39 +16,20 @@ import style from './style.module.scss'
 import { AcademyIDs } from '../../consts'
 import { icons } from './icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
-const cards = [
-  {
-    icon: 'feedback-message.svg',
-    text: 'Розвиток сучасної системи освіти для фахівців у сфері протезування, ортезування та реабілітації',
-  },
-  {
-    icon: 'feedback-message.svg',
-    text: 'Впровадження міжнародних стандартів (ICF, ISPO, доказова практика) в українську клінічну роботу',
-  },
-  {
-    icon: 'document-bookmark.svg',
-    text: 'Підвищення кваліфікації мультидисциплінарних команд через практичне навчання',
-  },
-  {
-    icon: 'caring-hands.svg',
-    text: 'Підтримка пацієнтів через покращення якості протезування та реабілітаційного супроводу',
-  },
-  {
-    icon: 'graduation-cap.svg',
-    text: 'Розвиток інновацій, технологій та науково-практичних рішень у сфері',
-  },
-  {
-    icon: 'mentorship.svg',
-    text: 'Побудова партнерств з українськими та міжнародними організаціями',
-  },
-  {
-    icon: 'team-circle.svg',
-    text: 'Формування професійної спільноти та обміну досвідом між фахівцями',
-  },
+const cardIcons = [
+  'feedback-message.svg',
+  'feedback-message.svg',
+  'document-bookmark.svg',
+  'caring-hands.svg',
+  'graduation-cap.svg',
+  'mentorship.svg',
+  'team-circle.svg',
 ]
 
 const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
+  const t = useAcademyTexts()
   const sliderRef = useRef<Slider & React.Component>(null)
 
   const gotoNext = () => {
@@ -86,17 +67,17 @@ const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
       <div className={style.sliderWrapper}>
         <div className={style.slider}>
           <Slider {...settings} ref={sliderRef}>
-            {cards.map((item, index) => (
+            {t.goals.items.map((item, index) => (
               <div key={index}>
                 <div className={style.card}>
                   <ProtezImage
-                    src={`academyPage/icons/${item.icon}`}
-                    alt={item.icon}
+                    src={`academyPage/icons/${cardIcons[index]}`}
+                    alt={cardIcons[index]}
                     width={48}
                     height={48}
                     className={style.icon}
                   />
-                  <p className={style.cardDesc}>{item.text}</p>
+                  <p className={style.cardDesc}>{item}</p>
                 </div>
               </div>
             ))}

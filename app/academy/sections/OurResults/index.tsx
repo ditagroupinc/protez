@@ -1,35 +1,18 @@
-// import { useLanguage } from '@/contexts/LanguageContext'
-
 import Button from '@academy/components/Button'
 
 import AcademySection from '@academy/components/AcademySection'
 import AcademyResultCard from './components/AcademyResultCard'
-
-// import texts from '@academy/components/texts-svg'
 
 import { icons } from './icons'
 import style from './style.module.scss'
 
 import { AcademyIDs } from '../../consts'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-
-// =================================================================
-
-const academyResultsCount = [92, 26, 9, 2] as const
-
-// type ResultStatistics = Record<string, { english: string; ukrainian: string }>
-
-const resultStatistics = [
-  'People received prosthetics',
-  'Specialists trained',
-  'Prostheses were provided',
-  'Summits were organized',
-]
-
-// =================================================================
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 const OurResults = () => {
-  // const { lang } = useLanguage()
+  const t = useAcademyTexts()
+  const stats = t.ourResults.stats
 
   return (
     <AcademySection id={AcademyIDs.OurResults} className={style.academyResults}>
@@ -40,15 +23,8 @@ const OurResults = () => {
           </TextAppearanceWrapper>
           <div className={style.resultsInfo}>
             <TextAppearanceWrapper className={style.infoWrapper}>
-              <p className={style.date}>
-                (May 2022 – September 2023)
-                {/* {texts.academyResults.date[lang]} */}
-              </p>
-              <p className={style.desc}>
-                Ukrainian Specialists already went through the Program and back in their home
-                country helping restore the lives of those who lost limbs during the war
-                {/* {texts.academyResults.description[lang]} */}
-              </p>
+              <p className={style.date}>{t.ourResults.datesRange}</p>
+              <p className={style.desc}>{t.ourResults.description}</p>
             </TextAppearanceWrapper>
             <TextAppearanceWrapper className={style.btnGroup}>
               <Button
@@ -59,12 +35,10 @@ const OurResults = () => {
                 rel="noopener noreferrer"
                 size="big"
               >
-                Apply to Academy
-                {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
+                {t.ourResults.cta.apply}
               </Button>
               <Button as="link" href="/donate" variant="normal-black" size="big">
-                Support Academy
-                {/* {texts.academyHeader.buttons.supportAcademy[lang]} */}
+                {t.ourResults.cta.support}
                 {icons.arrowUp(`${style.arrowUpIcon}`)}
               </Button>
             </TextAppearanceWrapper>
@@ -72,21 +46,21 @@ const OurResults = () => {
         </div>
         <div className={style.rightPart}>
           <div className={style.leftWrapper}>
-            {resultStatistics.slice(0, 2).map((statistics, index) => (
+            {stats.slice(0, 2).map((stat, index) => (
               <AcademyResultCard
                 key={index}
-                title={statistics}
-                count={academyResultsCount[index]}
+                title={stat.label}
+                count={parseInt(stat.value, 10)}
                 className={style.card}
               />
             ))}
           </div>
           <div className={style.rightWrapper}>
-            {resultStatistics.slice(2).map((statistics, index) => (
+            {stats.slice(2).map((stat, index) => (
               <AcademyResultCard
                 key={index}
-                title={statistics}
-                count={academyResultsCount[index + 2]}
+                title={stat.label}
+                count={parseInt(stat.value, 10)}
                 className={style.card}
               />
             ))}

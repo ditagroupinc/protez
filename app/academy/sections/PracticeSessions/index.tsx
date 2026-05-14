@@ -16,32 +16,32 @@ import styles from './styles.module.scss'
 import { icons } from './icons'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 import Slider from 'react-slick'
 
 import { AcademyIDs } from '../../consts'
 
-// TODO: remove after review
-
-const practiceSessionsCards = [
-  { image: 'academyPage/practiceSessions/practice0.png', text: 'Preparatory stage' },
-  { image: 'academyPage/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
-  {
-    image: 'academyPage/practiceSessions/practice2.png',
-    text: 'Casting and measuring the prosthesis',
-  },
-  { image: 'academyPage/practiceSessions/practice0.png', text: 'Preparatory stage' },
-  { image: 'academyPage/practiceSessions/practice1.png', text: 'Diagnostic (test) socket' },
-  {
-    image: 'academyPage/practiceSessions/practice2.png',
-    text: 'Casting and measuring the prosthesis',
-  },
+const practiceImages = [
+  'academyPage/practiceSessions/practice0.png',
+  'academyPage/practiceSessions/practice1.png',
+  'academyPage/practiceSessions/practice2.png',
+  'academyPage/practiceSessions/practice0.png',
+  'academyPage/practiceSessions/practice1.png',
+  'academyPage/practiceSessions/practice2.png',
 ]
 
 const PracticeSessions = () => {
   const { lang } = useLanguage()
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
+  const t = useAcademyTexts()
+
+  const items = t.practiceSessions.items
+  const cards = practiceImages.map((image, index) => ({
+    image,
+    text: items[index % items.length],
+  }))
 
   const settings = {
     dots: false,
@@ -99,17 +99,17 @@ const PracticeSessions = () => {
       </TextAppearanceWrapper>
       <TextAppearanceWrapper className={styles.sliderWrapper}>
         <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
-          {practiceSessionsCards.map((card, index) => {
+          {cards.map((card, index) => {
             let slideClass = ''
 
             switch (index) {
               case activeSlide:
                 slideClass = styles.leftSlide
                 break
-              case (activeSlide + 1) % practiceSessionsCards.length:
+              case (activeSlide + 1) % cards.length:
                 slideClass = styles.centerSlide
                 break
-              case (activeSlide + 2) % practiceSessionsCards.length:
+              case (activeSlide + 2) % cards.length:
                 slideClass = styles.rightSlide
                 break
               default:
@@ -121,9 +121,8 @@ const PracticeSessions = () => {
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <div className={`${styles.card} `}>
                     <ProtezImage
-                      // TODO: remove after review
                       src={`${card.image}`}
-                      alt="picture of practice sessions in Protez Academy"
+                      alt={t.practiceSessions.imageAlt}
                       width={490}
                       height={500}
                       className={styles.image}

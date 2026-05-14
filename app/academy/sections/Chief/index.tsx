@@ -6,6 +6,7 @@ import { forwardRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
@@ -14,6 +15,7 @@ import { AcademyIDs } from '../../consts'
 const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
   const { width } = useScreenModeAndSize()
+  const t = useAcademyTexts()
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.Chief} className={styles.chief}>
@@ -24,15 +26,10 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
             : icons.chiefLogo.desktop[lang](styles.sectionTitle)}
 
           <TextAppearanceWrapper className={styles.profession}>
-            CHIEF MEDICAL OFFICER, <br /> CERTIFIED PROSTHETIST AND ORTHOTIST
+            {t.chief.role}
           </TextAppearanceWrapper>
           <TextAppearanceWrapper className={styles.desc}>
-            During the course of the program they will learn proven methods developed by the US
-            healthcare practitioners over many years of treating veterans and also Dr. Yakov
-            Gradinar’s personal technical know-how’s employed in his 15 years of practice. More
-            importantly, the program is a way for overworked and underpaid Ukrainian doctors to come
-            to the US where they will take a break from hearing sirens and rockets while learning
-            practical skills to help many more Ukrainians in the future.
+            {t.chief.description}
           </TextAppearanceWrapper>
           <ul className={styles.socialLinkWrapper}>
             <li>
@@ -66,7 +63,6 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
         </div>
         <div className={styles.right}>
           <ProtezImage
-            // TODO: remove after review
             src="academyPage/chief/yakov-gradinar.png"
             alt="yakov-gradinar"
             width={672}
