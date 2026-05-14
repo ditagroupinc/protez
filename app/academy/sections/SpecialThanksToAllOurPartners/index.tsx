@@ -3,11 +3,9 @@ import AcademySection from '@academy/components/AcademySection'
 import ProtezImage from '@/components/ProtezImage'
 
 import styles from './styles.module.scss'
-import { icons } from './icons'
 
-import { useLanguage } from '@/contexts/LanguageContext'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import { AcademyIDs } from '../../consts'
 
@@ -26,9 +24,8 @@ const Card = ({ icon }: { icon: string }): React.ReactElement => (
 )
 
 const SpecialThanksToAllOurPartners = () => {
-  const { lang } = useLanguage()
-  const { width } = useScreenModeAndSize()
   const t = useAcademyTexts()
+  const { desktop: titleDesktop } = useAcademyTitle('specialThanksToAllOurPartners')
 
   return (
     <AcademySection
@@ -36,9 +33,7 @@ const SpecialThanksToAllOurPartners = () => {
       className={styles.specialThanksToAllOurPartners}
     >
       <TextAppearanceWrapper className={styles.titleCell}>
-        {width < 600
-          ? icons.specialThanksToAllOurPartnersLogo.mobile[lang](styles.title)
-          : icons.specialThanksToAllOurPartnersLogo.desktop[lang](styles.title)}
+        <ProtezImage {...titleDesktop} className={styles.title} />
       </TextAppearanceWrapper>
       {t.specialThanksToAllOurPartners.items.map((icon, index) => (
         <Card icon={icon} key={index} />

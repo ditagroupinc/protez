@@ -1,9 +1,8 @@
 import ProtezImage from '@/components/ProtezImage'
 import { useState, useRef } from 'react'
 
-import { useLanguage } from '@/contexts/LanguageContext'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import AcademySection from '@academy/components/AcademySection'
 
@@ -16,9 +15,8 @@ import { icons } from './icons'
 import { AcademyIDs } from '../../consts'
 
 const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
-  const { lang } = useLanguage()
   const t = useAcademyTexts()
-  const { width } = useScreenModeAndSize()
+  const { desktop: titleDesktop } = useAcademyTitle('summitResults')
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 
@@ -34,9 +32,7 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
       <div className={styles.resultInfo}>
         <div className={styles.left}>
           <TextAppearanceWrapper>
-            {width >= 600 && width <= 1024
-              ? icons.summitResultsLogo.tablet[lang](styles.title)
-              : icons.summitResultsLogo.desktop[lang](styles.title)}
+            <ProtezImage {...titleDesktop} className={styles.title} />
           </TextAppearanceWrapper>
         </div>
         <div className={styles.right}>

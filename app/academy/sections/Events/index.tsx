@@ -2,9 +2,9 @@ import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState, useMemo } from 'react'
 
-import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import AcademySection from '@academy/components/AcademySection'
 
@@ -56,8 +56,8 @@ const modifyAndSortEvents = (events: readonly EventInput[]): Event[] => {
 }
 
 const Events = forwardRef<HTMLDivElement>(function (_, ref) {
-  const { lang } = useLanguage()
   const t = useAcademyTexts()
+  const { desktop: titleDesktop } = useAcademyTitle('events')
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
 
@@ -131,9 +131,7 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
         className={styles.backgroundImage}
       />
       <TextAppearanceWrapper className={styles.titleWrapper}>
-        {width < 1024
-          ? icons.eventsLogo.mobile[lang](styles.title)
-          : icons.eventsLogo.desktop[lang](styles.title)}
+        <ProtezImage {...titleDesktop} className={styles.title} />
       </TextAppearanceWrapper>
 
       <TextAppearanceWrapper className={styles.sliderWrapper}>

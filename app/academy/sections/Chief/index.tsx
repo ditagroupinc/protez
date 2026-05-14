@@ -4,26 +4,22 @@ import { icons } from './icons'
 import ProtezImage from '@/components/ProtezImage'
 import { forwardRef } from 'react'
 
-import { useLanguage } from '@/contexts/LanguageContext'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { AcademyIDs } from '../../consts'
 
 const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
-  const { lang } = useLanguage()
-  const { width } = useScreenModeAndSize()
   const t = useAcademyTexts()
+  const { desktop: titleDesktop } = useAcademyTitle('chief')
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.Chief} className={styles.chief}>
       <div className={styles.chiefContent}>
         <div className={styles.left}>
-          {width < 600
-            ? icons.chiefLogo.mobile[lang](styles.sectionTitle)
-            : icons.chiefLogo.desktop[lang](styles.sectionTitle)}
+          <ProtezImage {...titleDesktop} className={styles.sectionTitle} />
 
           <TextAppearanceWrapper className={styles.profession}>
             {t.chief.role}
