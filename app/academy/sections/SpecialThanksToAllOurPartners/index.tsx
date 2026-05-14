@@ -1,6 +1,6 @@
 import AcademySection from '@academy/components/AcademySection'
 
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 import styles from './styles.module.scss'
 import { icons } from './icons'
@@ -27,10 +27,10 @@ const partnersIcons: string[] = [
 
 const Card = ({ icon }: { icon: string }): React.ReactElement => (
   <TextAppearanceWrapper className={styles.card}>
-    <Image
+    <ProtezImage
       // TODO: remove after review
 
-      src={`/protez/academyPage/partners/dark/${icon}`}
+      src={`academyPage/partners/dark/${icon}`}
       alt={icon}
       width={300}
       height={230}
@@ -48,11 +48,11 @@ const SpecialThanksToAllOurPartners = () => {
       id={AcademyIDs.SpecialThanksToAllOurPartners}
       className={styles.specialThanksToAllOurPartners}
     >
-      <div className={styles.titleCell}>
+      <TextAppearanceWrapper className={styles.titleCell}>
         {width < 600
           ? icons.specialThanksToAllOurPartnersLogo.mobile[lang](styles.title)
           : icons.specialThanksToAllOurPartnersLogo.desktop[lang](styles.title)}
-      </div>
+      </TextAppearanceWrapper>
       {partnersIcons.map((icon, index) => (
         <Card icon={icon} key={index} />
       ))}

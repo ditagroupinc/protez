@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState } from 'react'
 
@@ -94,8 +94,9 @@ const PracticeSessions = () => {
 
   return (
     <AcademySection id={AcademyIDs.PracticeSessions} className={styles.practiceSessions}>
-      {icons.practiceSessionsLogo.desktop[lang](styles.title)}
-
+      <TextAppearanceWrapper>
+        {icons.practiceSessionsLogo.desktop[lang](styles.title)}
+      </TextAppearanceWrapper>
       <TextAppearanceWrapper className={styles.sliderWrapper}>
         <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
           {practiceSessionsCards.map((card, index) => {
@@ -119,9 +120,9 @@ const PracticeSessions = () => {
               <div key={index}>
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <div className={`${styles.card} `}>
-                    <Image
+                    <ProtezImage
                       // TODO: remove after review
-                      src={`/protez/${card.image}`}
+                      src={`${card.image}`}
                       alt="picture of practice sessions in Protez Academy"
                       width={490}
                       height={500}

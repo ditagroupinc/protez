@@ -11,6 +11,7 @@ import { icons } from './icons'
 import style from './style.module.scss'
 
 import { AcademyIDs } from '../../consts'
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 // =================================================================
 
@@ -34,9 +35,11 @@ const OurResults = () => {
     <AcademySection id={AcademyIDs.OurResults} className={style.academyResults}>
       <div className={style.resultsContent}>
         <div className={style.leftPart}>
-          <div className={style.sectionTitle}>{icons.academyResultsTitle()}</div>
+          <TextAppearanceWrapper className={style.sectionTitle}>
+            {icons.academyResultsTitle()}
+          </TextAppearanceWrapper>
           <div className={style.resultsInfo}>
-            <div className={style.infoWrapper}>
+            <TextAppearanceWrapper className={style.infoWrapper}>
               <p className={style.date}>
                 (May 2022 – September 2023)
                 {/* {texts.academyResults.date[lang]} */}
@@ -46,8 +49,8 @@ const OurResults = () => {
                 country helping restore the lives of those who lost limbs during the war
                 {/* {texts.academyResults.description[lang]} */}
               </p>
-            </div>
-            <div className={style.btnGroup}>
+            </TextAppearanceWrapper>
+            <TextAppearanceWrapper className={style.btnGroup}>
               <Button
                 as="link"
                 href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
@@ -64,7 +67,7 @@ const OurResults = () => {
                 {/* {texts.academyHeader.buttons.supportAcademy[lang]} */}
                 {icons.arrowUp(`${style.arrowUpIcon}`)}
               </Button>
-            </div>
+            </TextAppearanceWrapper>
           </div>
         </div>
         <div className={style.rightPart}>

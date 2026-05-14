@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState } from 'react'
 
@@ -87,7 +87,9 @@ const AcademyStudents = () => {
 
   return (
     <AcademySection id={AcademyIDs.AcademyStudents} className={styles.academyStudents}>
-      {icons.academyStudentsLogo.desktop[lang](styles.title)}
+      <TextAppearanceWrapper>
+        {icons.academyStudentsLogo.desktop[lang](styles.title)}
+      </TextAppearanceWrapper>
 
       <TextAppearanceWrapper className={styles.sliderWrapper}>
         <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
@@ -109,9 +111,9 @@ const AcademyStudents = () => {
               <div key={index}>
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <div className={`${styles.card} `}>
-                    <Image
+                    <ProtezImage
                       // TODO: remove after review
-                      src={`/protez/${card}`}
+                      src={`${card}`}
                       alt="photo of students of Protez Academy"
                       width={490}
                       height={500}

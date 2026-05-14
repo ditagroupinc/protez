@@ -1,6 +1,6 @@
 import { forwardRef, useRef } from 'react'
 
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 import Slider from 'react-slick'
 
@@ -15,6 +15,7 @@ import style from './style.module.scss'
 
 import { AcademyIDs } from '../../consts'
 import { icons } from './icons'
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 const cards = [
   {
@@ -74,13 +75,13 @@ const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoals}>
-      <div className={style.container}>
+      <TextAppearanceWrapper className={style.container}>
         {icons.goalsLogo.desktop(style.title)}
         <SliderNavigation>
           <SliderPrevButton onClick={gotoPrev} />
           <SliderNextButton onClick={gotoNext} />
         </SliderNavigation>
-      </div>
+      </TextAppearanceWrapper>
 
       <div className={style.sliderWrapper}>
         <div className={style.slider}>
@@ -88,8 +89,8 @@ const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
             {cards.map((item, index) => (
               <div key={index}>
                 <div className={style.card}>
-                  <Image
-                    src={`/protez/academyPage/icons/${item.icon}`}
+                  <ProtezImage
+                    src={`academyPage/icons/${item.icon}`}
                     alt={item.icon}
                     width={48}
                     height={48}

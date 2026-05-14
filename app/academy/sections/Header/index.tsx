@@ -96,7 +96,7 @@ const AcademyHeader = () => {
           <div className={styles.btnGroup}>
             <Button
               as="link"
-              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf_4yg5XXs1eBQtnQzXGX7HagkbzW7xfim9kAuTXnhEj6CK-A/viewform"
               target={'_blank'}
               variant="primary-blue"
               size="small"
@@ -112,18 +112,10 @@ const AcademyHeader = () => {
             </Button>
             <div className={styles.languageWrapper}>
               {icons.iconWorld(`${styles.worldIcon}`)}
-              <button
-                // onClick={handleLanguageChange}
-                disabled={lang === Languages.English}
-                className={styles.localeBtn}
-              >
+              <button disabled className={styles.localeBtn}>
                 EN
               </button>
-              <button
-                // onClick={handleLanguageChange}
-                disabled={lang === Languages.Ukrainian}
-                className={styles.localeBtn}
-              >
+              <button disabled className={`${styles.localeBtn} ${styles.localeBtnActive}`}>
                 UA
               </button>
             </div>
@@ -160,7 +152,7 @@ const AcademyHeader = () => {
             <div className={styles.lowerPartButtonsContainer}>
               <Button
                 as="link"
-                href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSf_4yg5XXs1eBQtnQzXGX7HagkbzW7xfim9kAuTXnhEj6CK-A/viewform"
                 target={'_blank'}
                 variant="primary-blue"
                 size="small"

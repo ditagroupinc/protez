@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState } from 'react'
 
@@ -185,18 +185,18 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
     <AcademySection ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={styles.events}>
       {/* TODO: remove after review
        */}
-      <Image
-        src="/protez/events-background-Ukraine.png"
+      <ProtezImage
+        src="events-background-Ukraine.png"
         alt="Ukrainian flag"
         width={1920}
         height={1080}
         className={styles.backgroundImage}
       />
-      <div className={styles.titleWrapper}>
+      <TextAppearanceWrapper className={styles.titleWrapper}>
         {width < 1024
           ? icons.eventsLogo.mobile[lang](styles.title)
           : icons.eventsLogo.desktop[lang](styles.title)}
-      </div>
+      </TextAppearanceWrapper>
 
       <TextAppearanceWrapper className={styles.sliderWrapper}>
         <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
@@ -219,9 +219,9 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
               <div key={index}>
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <a href={card.link} target="blank" className={styles.card}>
-                    <Image
+                    <ProtezImage
                       // TODO: remove after review
-                      src={`/protez/${card.photo}`}
+                      src={`${card.photo}`}
                       alt="events picture"
                       width={340}
                       height={480}

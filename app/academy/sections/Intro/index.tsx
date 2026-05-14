@@ -11,7 +11,7 @@ import AcademySection from '@academy/components/AcademySection'
 import VideoAndFilter from '@/components/VideoAndFilter'
 
 // import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 import { icons } from './icons'
 import style from './style.module.scss'
@@ -67,8 +67,8 @@ const sliderCards = [
 const Card = ({ image, className }: { image: string; className?: string }) => {
   return (
     <div className={className}>
-      <Image
-        src={`/protez/${image}`}
+      <ProtezImage
+        src={`${image}`}
         object-fit="contain"
         alt={image as string}
         width={200}
@@ -143,7 +143,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
           <div className={style.buttonGroup}>
             <Button
               as="link"
-              href="https://forms.gle/USf9fVTEgfzmGkBW9"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSf_4yg5XXs1eBQtnQzXGX7HagkbzW7xfim9kAuTXnhEj6CK-A/viewform"
               target={'_blank'}
               variant="primary-blue"
               // size={isMobile ? 'big' : 'small'}

@@ -1,7 +1,7 @@
 import AcademySection from '@academy/components/AcademySection'
 import styles from './styles.module.scss'
 import { icons } from './icons'
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 import { forwardRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -65,9 +65,9 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
           </ul>
         </div>
         <div className={styles.right}>
-          <Image
+          <ProtezImage
             // TODO: remove after review
-            src="/protez/academyPage/chief/yakov-gradinar.png"
+            src="academyPage/chief/yakov-gradinar.png"
             alt="yakov-gradinar"
             width={672}
             height={880}

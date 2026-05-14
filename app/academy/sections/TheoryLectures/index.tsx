@@ -20,11 +20,11 @@ const TheoryLectures = () => {
         <span className={styles.number}>/02</span>
         <p className={styles.desc}>Examples of post-operative care</p>
       </TextAppearanceWrapper>
-      <div className={styles.gridTitle}>
+      <TextAppearanceWrapper className={styles.gridTitle}>
         {width < 600
           ? icons.theoryLecturesLogo.mobile[lang](styles.sectionTitle)
           : icons.theoryLecturesLogo.desktop[lang](styles.sectionTitle)}
-      </div>
+      </TextAppearanceWrapper>
       <TextAppearanceWrapper className={`${styles.grid1x4} ${styles.card}`}>
         <span className={styles.number}>/01</span>
         <p className={styles.desc}>

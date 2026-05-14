@@ -89,9 +89,9 @@ const OurTeachers = () => {
 
   return (
     <AcademySection id={AcademyIDs.OurTeachers} className={styles.ourTeachers}>
-      <div className={styles.titleCell}>
+      <TextAppearanceWrapper className={styles.titleCell}>
         {icons.ourTeachersLogo.desktop[lang](styles.teachersLogo)}
-      </div>
+      </TextAppearanceWrapper>
       {width < 600 ? (
         <TextAppearanceWrapper>
           <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>

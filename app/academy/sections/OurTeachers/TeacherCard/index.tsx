@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 import style from './style.module.scss'
 
 import globalIcons from '@academy/components/texts-svg/icons'
@@ -36,9 +36,9 @@ export default function TeacherCard({
       isDisabled={width < 600}
       className={`${style.teamCard} ${className && className}`}
     >
-      <Image
+      <ProtezImage
         // TODO: remove after review
-        src={`/protez/academyPage/teachers/${photo}`}
+        src={`academyPage/teachers/${photo}`}
         object-fit="contain"
         alt={photo}
         width={345}

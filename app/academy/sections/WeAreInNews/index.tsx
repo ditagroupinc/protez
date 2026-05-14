@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState } from 'react'
 
@@ -136,10 +136,11 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.WeAreInNews} className={styles.weAreInNews}>
-      {width < 600
-        ? icons.weAreInNewsLogo.mobile[lang](styles.title)
-        : icons.weAreInNewsLogo.desktop[lang](styles.title)}
-
+      <TextAppearanceWrapper>
+        {width < 600
+          ? icons.weAreInNewsLogo.mobile[lang](styles.title)
+          : icons.weAreInNewsLogo.desktop[lang](styles.title)}
+      </TextAppearanceWrapper>
       <div className={styles.sliderWrapper}>
         <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
           {newsCards.map((card, index) => {
@@ -160,9 +161,9 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
               <div key={index}>
                 <div className={`${styles.cardWrapper} ${slideClass}`}>
                   <a href={card.link} target="blank" className={styles.card}>
-                    <Image
+                    <ProtezImage
                       // TODO: remove after review
-                      src={`/protez/${card.photo}`}
+                      src={`${card.photo}`}
                       alt="news picture"
                       width={488}
                       height={520}
@@ -173,9 +174,9 @@ const WeAreInNews = forwardRef<HTMLDivElement>(function (_, ref) {
                         <span>{card.date}</span>|<span>{card.address}</span>
                       </div>
 
-                      <Image
+                      <ProtezImage
                         // TODO: remove after review
-                        src={`/protez/${card.logo}`}
+                        src={`${card.logo}`}
                         alt="news picture"
                         width={488}
                         height={520}

@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState, useEffect } from 'react'
 
@@ -142,8 +142,7 @@ const Academy = () => {
 
   return (
     <AcademySection id={AcademyIDs.Academy} className={styles.academy}>
-      {icons.academyLogo.desktop[lang](styles.title)}
-
+      <TextAppearanceWrapper>{icons.academyLogo.desktop[lang](styles.title)}</TextAppearanceWrapper>
       <TextAppearanceWrapper>
         <div className={styles.sliderWrapper}>
           <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
@@ -173,7 +172,7 @@ const Academy = () => {
                     <div className={`${styles.card} `}>
                       {card.includes('.mp4') ? (
                         <video
-                          src={`/protez/${card}`}
+                          src={`${card}`}
                           autoPlay
                           loop
                           muted
@@ -181,9 +180,9 @@ const Academy = () => {
                           className={styles.video}
                         />
                       ) : (
-                        <Image
+                        <ProtezImage
                           // TODO: remove after review
-                          src={`/protez/${card}`}
+                          src={`${card}`}
                           alt="picture of Protez Academy students and teachers"
                           width={720}
                           height={520}

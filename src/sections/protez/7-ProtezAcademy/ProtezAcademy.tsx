@@ -70,7 +70,7 @@ const ProtezAcademy = () => {
         </Body>
         {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
-            <Button as="link" href="/" variant="primary-blue" size="normal">
+            <Button as="link" href="/academy" variant="primary-blue" size="normal">
               {protezAcademyText.learnMore[lang]}
             </Button>
             <Button
@@ -94,7 +94,7 @@ const ProtezAcademy = () => {
       </div>
       {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
-          <Button as="link" href="/" variant="primary-blue" size="normal">
+          <Button as="link" href="/academy" variant="primary-blue" size="normal">
             {protezAcademyText.learnMore[lang]}
           </Button>
           <Button as="link" href="/" variant="secondary-white" arrow size="normal">

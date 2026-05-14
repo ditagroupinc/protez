@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 import { useState, useRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
@@ -31,15 +31,16 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
     <AcademySection ref={ref} id={AcademyIDs.SummitResults} className={styles.summitResults}>
       <div className={styles.resultInfo}>
         <div className={styles.left}>
-          {width >= 600 && width <= 1024
-            ? icons.summitResultsLogo.tablet[lang](styles.title)
-            : icons.summitResultsLogo.desktop[lang](styles.title)}
-
-          <p className={styles.desc}>
+          <TextAppearanceWrapper>
+            {width >= 600 && width <= 1024
+              ? icons.summitResultsLogo.tablet[lang](styles.title)
+              : icons.summitResultsLogo.desktop[lang](styles.title)}
+          </TextAppearanceWrapper>
+          <TextAppearanceWrapper className={styles.desc}>
             Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam.
             Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc
             suspendisse donec
-          </p>
+          </TextAppearanceWrapper>
         </div>
         <div className={styles.right}>
           <TextAppearanceWrapper className={styles.card}>
@@ -61,18 +62,17 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
         <video
           ref={videoRef}
           controls
-          src="/protez/academyPage/summitResults/summitResults.mp4"
+          src="academyPage/summitResults/summitResults.mp4"
           className={styles.summitVideo}
         />
         {!isPlaying && (
           <>
-            <Image
+            <ProtezImage
               // TODO: remove after review
-              src="/protez/academyPage/summitResults/summitResults.png"
+              src="academyPage/summitResults/summitResults.png"
               alt="summit"
               width={1584}
               height={800}
-              layout="responsive"
               className={styles.videoOverlay}
             />
 

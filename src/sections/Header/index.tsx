@@ -24,9 +24,9 @@ import { ApplyToAcademyButton } from '../../components/Button/index'
 import BackToTopButton from './BackToTopButton'
 
 const text = {
-  protezFoundation: {
-    english: 'Protez Foundation',
-    ukrainian: 'Protez Foundation',
+  protezAcademy: {
+    english: 'Protez Academy',
+    ukrainian: 'Protez Academy',
   },
 
   protezPage: {
@@ -401,22 +401,31 @@ const Header = ({
           </div>
         )}
         <div className={`${style.sideMenu} ${headerIsOpened ? style.opened : ''}`}>
-          <div className={style.protezFoundationLinkWrapper}>
-            <Link href={'/'} className={`${style.protezFoundationLink} ${style[accentColor]}`}>
-              <H3>{text.protezFoundation[lang]}</H3>
-              {icons.arrowUp(`${style.icon} ${style[accentColor]}`)}
+          <div className={style.protezAcademyLinkWrapper}>
+            <Link href={'/academy'} className={`${style.protezAcademyLink} ${style.blue}`}>
+              <H3>{text.protezAcademy[lang]}</H3>
+              {icons.arrowUp(`${style.icon} ${style.blue}`)}
             </Link>
           </div>
           <div className={style.navigationWrapper}>
             <nav ref={ref} className={`${style.navigation} ${style[accentColor]}`}>
               <ul className={style.ancorList}>
-                {text[layout].navigation.map(({ id, text }) => (
-                  <li key={id} className={style.ancorItem} onClick={closeHeaderOnAncorClick}>
-                    <Link href={`${linksPrefix}${id}`} className={style.ancorLink}>
-                      <H3>{text[lang]}</H3>
-                    </Link>
-                  </li>
-                ))}
+                {text[layout].navigation.map(item => {
+                  const { id, text } = item
+                  const customHref = 'href' in item ? (item.href as string) : undefined
+                  const itemAccent = 'accent' in item ? (item.accent as string) : undefined
+
+                  return (
+                    <li key={id} className={style.ancorItem} onClick={closeHeaderOnAncorClick}>
+                      <Link
+                        href={customHref ?? `${linksPrefix}${id}`}
+                        className={`${style.ancorLink} ${itemAccent ? style[itemAccent] : ''}`}
+                      >
+                        <H3>{text[lang]}</H3>
+                      </Link>
+                    </li>
+                  )
+                })}
               </ul>
             </nav>
           </div>

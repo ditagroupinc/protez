@@ -3,7 +3,7 @@ import styles from './styles.module.scss'
 
 import Button from '@academy/components/Button'
 
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
@@ -15,26 +15,29 @@ const AmputeeRehab = () => {
 
   return (
     <section id={AcademyIDs.AmputeeRehab} className={styles.amputeeRehab}>
-      <Image
+      <ProtezImage
         // TODO: remove after review
-        src="/protez/academyPage/amputeeRehab/summit.jpg"
+        src="academyPage/amputeeRehab/summit.png"
         alt="summit"
         width={1920}
         height={880}
-        layout="responsive"
         className={styles.amputeeRehabImage}
       />
 
       <div className={styles.amputeeRehabOverlay}>
         <div className={styles.amputeeRehabContent}>
           <div className={styles.left}>
-            {icons.amputeeRehabLogo.desktop[lang](styles.title)}
-            <p className={styles.desc}>
-              Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam.
-              Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc
-              suspendisse donec varius integer nisi urna eu. Egestas et id nunc ultrices sit ut
-            </p>
-            <div className={styles.buttons}>
+            <TextAppearanceWrapper>
+              {icons.amputeeRehabLogo.desktop[lang](styles.title)}
+            </TextAppearanceWrapper>
+            <TextAppearanceWrapper>
+              <p className={styles.desc}>
+                Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam.
+                Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc
+                suspendisse donec varius integer nisi urna eu. Egestas et id nunc ultrices sit ut
+              </p>
+            </TextAppearanceWrapper>
+            <TextAppearanceWrapper className={styles.buttons}>
               <Button
                 as={'link'}
                 variant="primary-blue"
@@ -54,7 +57,7 @@ const AmputeeRehab = () => {
                 Support Academy
                 {icons.arrowUp(styles.arrowUp)}
               </Button>
-            </div>
+            </TextAppearanceWrapper>
           </div>
           <div className={styles.right}>
             {icons.partnersLogos.map((logo, index) => (

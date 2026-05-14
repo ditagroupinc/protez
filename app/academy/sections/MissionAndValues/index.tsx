@@ -1,6 +1,6 @@
 import { forwardRef } from 'react'
 
-import Image from 'next/image'
+import ProtezImage from '@/components/ProtezImage'
 
 import AcademySection from '@academy/components/AcademySection'
 
@@ -9,6 +9,7 @@ import style from './style.module.scss'
 import { AcademyIDs } from '../../consts'
 import { icons } from './icons'
 import Button from '@academy/components/Button'
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 const cards = [
   {
@@ -60,12 +61,16 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
     <AcademySection ref={ref} id={AcademyIDs.MissionAndValues} className={style.academyGoals}>
       <div className={style.container}>
         <div className={style.right}>
-          {icons.missionAndValuesLogo.desktop(style.title)}
-          <p className={style.description}>
-            Місія: Розвивати систему протезування та реабілітації в Україні через сучасну освіту,
-            інтеграцію міжнародного досвіду та практичних рішень, щоб кожна людина після ампутації
-            мала доступ до якісного, функціонального та людиноцентричного відновлення.
-          </p>
+          <TextAppearanceWrapper>
+            {icons.missionAndValuesLogo.desktop(style.title)}
+          </TextAppearanceWrapper>
+          <TextAppearanceWrapper>
+            <p className={style.description}>
+              Місія: Розвивати систему протезування та реабілітації в Україні через сучасну освіту,
+              інтеграцію міжнародного досвіду та практичних рішень, щоб кожна людина після ампутації
+              мала доступ до якісного, функціонального та людиноцентричного відновлення.
+            </p>
+          </TextAppearanceWrapper>
           <Button
             as="link"
             href="/donate"
@@ -79,8 +84,8 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
         </div>
 
         <div className={style.left}>
-          <Image
-            src="/protez/academyPage/mission-and-values.png"
+          <ProtezImage
+            src="academyPage/mission-and-values.png"
             alt="Mission and values"
             width={720}
             height={520}
@@ -91,9 +96,9 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
 
       <div className={style.cardsContainer}>
         {cards.map((item, index) => (
-          <div key={index} className={style.card}>
-            <Image
-              src={`/protez/academyPage/icons/${item.icon}`}
+          <TextAppearanceWrapper key={index} className={style.card}>
+            <ProtezImage
+              src={`academyPage/icons/${item.icon}`}
               alt={item.icon}
               width={48}
               height={48}
@@ -103,7 +108,7 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
               <p className={style.cardTitle}>{item.title}</p>
               {item.text}
             </div>
-          </div>
+          </TextAppearanceWrapper>
         ))}
       </div>
     </AcademySection>
