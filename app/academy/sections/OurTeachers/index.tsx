@@ -3,7 +3,7 @@ import React, { useRef } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademySection from '@/components/AcademySection'
+import AcademySection from '@academy/components/AcademySection'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 

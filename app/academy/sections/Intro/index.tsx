@@ -4,9 +4,9 @@ import { forwardRef, useEffect, useState } from 'react'
 
 // import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import Button from '@/components/Button'
+import Button from '@academy/components/Button'
 
-import AcademySection from '@/components/AcademySection'
+import AcademySection from '@academy/components/AcademySection'
 
 import VideoAndFilter from '@/components/VideoAndFilter'
 

@@ -1,5 +1,5 @@
 import { BilingualText } from '../types'
-import cheerio from 'cheerio'
+import * as cheerio from 'cheerio'
 
 export interface SingleNews {
   image: string

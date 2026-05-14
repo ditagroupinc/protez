@@ -7,9 +7,12 @@ import _ from 'lodash'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademySection from '@/components/AcademySection'
+import AcademySection from '@academy/components/AcademySection'
 
-import SliderNavigation, { SliderPrevButton, SliderNextButton } from '@/components/SliderNavigation'
+import SliderNavigation, {
+  SliderPrevButton,
+  SliderNextButton,
+} from '@academy/components/SliderNavigation'
 
 import styles from './styles.module.scss'
 import { icons } from './icons'

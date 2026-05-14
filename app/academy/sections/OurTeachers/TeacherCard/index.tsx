@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import style from './style.module.scss'
 
-import globalIcons from '@/texts&svg/icons'
+import globalIcons from '@academy/components/texts-svg/icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'

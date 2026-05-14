@@ -1,16 +1,14 @@
-import { forwardRef, useRef } from 'react'
+import { forwardRef } from 'react'
 
 import Image from 'next/image'
 
-import Slider from 'react-slick'
-
-import AcademySection from '@/components/AcademySection'
+import AcademySection from '@academy/components/AcademySection'
 
 import style from './style.module.scss'
 
 import { AcademyIDs } from '../../consts'
 import { icons } from './icons'
-import Button from '@/components/Button'
+import Button from '@academy/components/Button'
 
 const cards = [
   {

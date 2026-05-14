@@ -1,0 +1,209 @@
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: var(--light-grey-bg);
+}
+
+.title {
+  max-width: 705px;
+  height: auto;
+  margin-top: 60px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(60, 1fr);
+  grid-template-rows: 300px 180px 300px 300px 300px 300px 180px;
+  border-top: var(--greyBorder);
+  border-right: var(--greyBorder);
+}
+
+.partnerLogo,
+.partnerLogoColor {
+  width: 100%;
+  height: auto;
+  transition: opacity var(--transitionProps);
+  max-width: 100%;
+  max-height: 150px;
+}
+
+.partnerLogoColor {
+  display: none;
+}
+
+.partnerCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  &:hover .partnerLogo {
+    display: none;
+  }
+  &:hover .partnerLogoColor {
+    display: block;
+  }
+  border-left: var(--greyBorder);
+  border-bottom: var(--greyBorder);
+
+  &:nth-child(6),
+  &:nth-child(7),
+  &:nth-child(8),
+  &:nth-child(9),
+  &:nth-child(15),
+  &:nth-child(16),
+  &:nth-child(17),
+  &:nth-child(18),
+  &:nth-child(27),
+  &:nth-child(28),
+  &:nth-child(29),
+  &:nth-child(30) {
+    grid-column: span 15;
+  }
+
+  &:nth-child(1),
+  &:nth-child(2),
+  &:nth-child(3),
+  &:nth-child(4),
+  &:nth-child(5),
+  &:nth-child(10),
+  &:nth-child(11),
+  &:nth-child(12),
+  &:nth-child(13),
+  &:nth-child(14),
+  &:nth-child(22),
+  &:nth-child(23),
+  &:nth-child(24),
+  &:nth-child(25),
+  &:nth-child(26) {
+    grid-column: span 12;
+  }
+
+  &:nth-child(19),
+  &:nth-child(20),
+  &:nth-child(21) {
+    grid-column: span 20;
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .container {
+    grid-template-rows: 220px 180px 300px 300px 300px 220px 180px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    max-width: 80%;
+  }
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 150px 180px 150px 180px 150px 180px 150px 180px 180px;
+  }
+
+  .partnerLogo,
+  .partnerLogoColor {
+    max-height: 100%;
+  }
+
+  .partnerCard {
+    padding: 16px;
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
+    &:nth-child(8),
+    &:nth-child(9),
+    &:nth-child(10),
+    &:nth-child(11),
+    &:nth-child(15),
+    &:nth-child(16),
+    &:nth-child(17),
+    &:nth-child(18),
+    &:nth-child(22),
+    &:nth-child(23),
+    &:nth-child(24),
+    &:nth-child(25) {
+      grid-column: span 3;
+    }
+
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(12),
+    &:nth-child(13),
+    &:nth-child(14),
+    &:nth-child(19),
+    &:nth-child(20),
+    &:nth-child(21),
+    &:nth-child(26),
+    &:nth-child(27),
+    &:nth-child(28) {
+      grid-column: span 4;
+    }
+
+    &:nth-child(29),
+    &:nth-child(30) {
+      grid-column: span 6;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .section {
+    padding-bottom: 40px;
+  }
+
+  .title {
+    max-width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(20, 120px);
+  }
+
+  .partnerCard {
+    padding: 16px;
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(4),
+    &:nth-child(5),
+    &:nth-child(7),
+    &:nth-child(8),
+    &:nth-child(10),
+    &:nth-child(11),
+    &:nth-child(13),
+    &:nth-child(14),
+    &:nth-child(16),
+    &:nth-child(17),
+    &:nth-child(19),
+    &:nth-child(20),
+    &:nth-child(22),
+    &:nth-child(23),
+    &:nth-child(25),
+    &:nth-child(26),
+    &:nth-child(28),
+    &:nth-child(29) {
+      grid-column: span 1;
+    }
+
+    &:nth-child(3),
+    &:nth-child(6),
+    &:nth-child(9),
+    &:nth-child(12),
+    &:nth-child(15),
+    &:nth-child(18),
+    &:nth-child(21),
+    &:nth-child(24),
+    &:nth-child(27),
+    &:nth-child(30) {
+      grid-column: span 2;
+    }
+  }
+}

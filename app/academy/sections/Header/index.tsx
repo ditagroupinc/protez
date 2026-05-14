@@ -3,17 +3,17 @@
 import { useState, useEffect } from 'react'
 
 import { Languages } from '@/types'
-// import texts from '@/texts&svg'
+// import texts from '@academy/components/texts-svg'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 
-import Button from '@/components/Button'
-import SocialMediaLinks from '@/components/SocialMediaLinks'
+import Button from '@academy/components/Button'
+import SocialMediaLinks from '@academy/components/SocialMediaLinks'
 
 import useOutsideClick from '@/hooks/useOutsideClick'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import { BurgerButton } from '@/sections/Header/components/BurgerButton'
+import { BurgerButton } from '@academy/components/BurgerButton'
 
 import styles from './styles.module.scss'
 

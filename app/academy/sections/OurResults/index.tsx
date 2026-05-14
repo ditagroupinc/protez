@@ -1,11 +1,11 @@
 // import { useLanguage } from '@/contexts/LanguageContext'
 
-import Button from '@/components/Button'
+import Button from '@academy/components/Button'
 
-import AcademySection from '@/components/AcademySection'
+import AcademySection from '@academy/components/AcademySection'
 import AcademyResultCard from './components/AcademyResultCard'
 
-// import texts from '@/texts&svg'
+// import texts from '@academy/components/texts-svg'
 
 import { icons } from './icons'
 import style from './style.module.scss'

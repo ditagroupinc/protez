@@ -1,4 +1,4 @@
-import AcademySection from '@/components/AcademySection'
+import AcademySection from '@academy/components/AcademySection'
 import styles from './styles.module.scss'
 import { icons } from './icons'
 import Image from 'next/image'

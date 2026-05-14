@@ -1,0 +1,30 @@
+.main {
+  // background-color: var(--dark-blue);
+  background-color: var(--black);
+}
+
+.fallback {
+  background-color: var(--dark-blue);
+  height: 100vh;
+}
+
+.flagsBlock {
+  position: relative;
+}
+
+.americanFlag {
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 33%;
+  max-width: 32%;
+  height: auto;
+}
+
+/* phone */
+@media screen and (max-width: 600px) {
+  .americanFlag {
+    max-width: 90%;
+    top: 39%;
+  }
+}

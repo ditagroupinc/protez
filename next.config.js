@@ -1,16 +1,18 @@
 /** @type {import('next').NextConfig} */
+
+const environment = process.env.ENVIRONMENT
+
 const nextConfig = {
   experimental: {
     scrollRestoration: true,
   },
   images: {
     domains: ['protez.wpengine.com'],
-    unoptimized: true,
+    unoptimized: environment === 'pages' ? true : false,
   },
-
   reactStrictMode: false,
-  output: 'export',
-  basePath: '/protez',
+  output: environment === 'pages' ? 'export' : undefined,
+  basePath: environment === 'pages' ? '/protez' : undefined,
 }
 
 module.exports = nextConfig

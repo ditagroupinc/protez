@@ -1,10 +1,10 @@
-import Button from '@/components/Button'
+import Button from '@academy/components/Button'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import styles from './styles.module.scss'
 import { icons } from './icons'
-import AcademySection from '@/components/AcademySection'
+import AcademySection from '@academy/components/AcademySection'
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 

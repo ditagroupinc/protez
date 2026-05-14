@@ -2,7 +2,7 @@ import { forwardRef } from 'react'
 
 import Image from 'next/image'
 
-import AcademySection from '@/components/AcademySection'
+import AcademySection from '@academy/components/AcademySection'
 
 import style from './style.module.scss'
 

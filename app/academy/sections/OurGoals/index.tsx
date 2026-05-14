@@ -4,9 +4,12 @@ import Image from 'next/image'
 
 import Slider from 'react-slick'
 
-import AcademySection from '@/components/AcademySection'
+import AcademySection from '@academy/components/AcademySection'
 
-import SliderNavigation, { SliderPrevButton, SliderNextButton } from '@/components/SliderNavigation'
+import SliderNavigation, {
+  SliderPrevButton,
+  SliderNextButton,
+} from '@academy/components/SliderNavigation'
 
 import style from './style.module.scss'
 

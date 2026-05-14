@@ -1,7 +1,7 @@
 import { icons } from './icons'
 import styles from './styles.module.scss'
 
-import Button from '@/components/Button'
+import Button from '@academy/components/Button'
 
 import Image from 'next/image'
 

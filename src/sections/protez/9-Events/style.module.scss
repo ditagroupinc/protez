@@ -1,0 +1,398 @@
+.events {
+  padding: 120px 0 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.backgroundImage {
+  pointer-events: none;
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 42%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.titleWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  max-width: 100%;
+  margin-bottom: 32px;
+}
+
+.sliderWrapper {
+  position: relative;
+}
+
+.sliderButton {
+  width: 48px;
+  height: 48px;
+  transition: all var(--transitionProps);
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:first-child {
+    background-color: transparent;
+    border-color: var(--grey);
+    &:hover {
+      border-color: var(--white);
+    }
+  }
+
+  &:last-child {
+    background-color: var(--red);
+    border-color: var(--red);
+    &:hover {
+      background-color: var(--red-hover);
+    }
+  }
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+}
+//
+
+.sliderButton {
+  width: 48px;
+  height: 48px;
+  transition: all var(--transitionProps);
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  background-color: transparent;
+  border-color: var(--white);
+  &:hover {
+    background-color: var(--red);
+    border-color: var(--red);
+  }
+
+  &:nth-of-type(1) {
+    left: 168px;
+  }
+
+  &:nth-of-type(2) {
+    right: 168px;
+  }
+}
+
+.slickSlider :global(.slick-track) {
+  height: 480px;
+}
+
+.cardWrapper {
+  padding-left: 12px;
+  padding-right: 12px;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 480px;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
+  max-width: 340px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition: all var(--transitionProps);
+}
+
+.cardPicture {
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  max-height: 340px;
+
+  transition: all 0.5s;
+  z-index: 1;
+
+  opacity: 0.3;
+}
+
+.cardDataBlock {
+  position: relative;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 32px;
+
+  opacity: 0.5;
+}
+
+.cardDateAndStatus {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardStatus {
+  display: flex;
+  padding: 6px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 24px;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+
+  &.upcoming {
+    background: var(--red);
+    color: var(--white);
+  }
+  &.past {
+    background: var(--white);
+    color: var(--black);
+  }
+}
+
+.cardDate {
+  color: var(--white);
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+}
+
+.cardTitle {
+  color: var(--white);
+
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 28px;
+
+  transition: all var(--transitionProps);
+
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.locationWrapper {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.locationIcon {
+  width: 24px;
+  height: 24px;
+}
+
+.locationText {
+  color: var(--white);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.slickSlider :global(.slick-center) .card {
+  max-height: 100%;
+  & .cardPicture {
+    max-height: 480px;
+  }
+  & .cardDataBlock {
+    opacity: 1;
+  }
+}
+// .centerSlide .card {
+//   max-height: 100%;
+//   & .cardPicture {
+//     max-height: 480px;
+//   }
+//   & .cardDataBlock {
+//     opacity: 1;
+//   }
+// }
+
+.locationButton {
+  width: 48px;
+  height: 48px;
+  transition: all var(--transitionProps);
+  background-color: var(--red);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-left: auto;
+}
+
+@media (max-width: 1500px) {
+  .events {
+    padding-top: 120px;
+    padding-bottom: 100px;
+  }
+  .sliderButton {
+    &:nth-of-type(1) {
+      left: 80px;
+    }
+
+    &:nth-of-type(2) {
+      right: 80px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .events {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .sliderButton {
+    &:nth-of-type(1) {
+      left: 60px;
+    }
+
+    &:nth-of-type(2) {
+      right: 60px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .events {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+  .slickSlider {
+    & :global(.slick-dots) {
+      border-radius: 4px;
+      display: flex !important;
+      padding-top: 32px;
+      padding-right: 24px;
+      padding-left: 24px;
+      position: static;
+    }
+    & :global(.slick-dots li) {
+      margin: 0;
+      flex: 1 1 2%;
+      height: 3px;
+      background-color: var(--white);
+      opacity: 0.06;
+    }
+
+    & :global(.slick-dots li.slick-active) {
+      border-radius: 4px;
+      background-color: var(--red);
+      opacity: 1;
+    }
+
+    & :global(.slick-dots li button:before) {
+      display: none;
+    }
+
+    & :global(.slick-dots li button) {
+      width: 100%;
+      height: 100%;
+      padding: 0;
+    }
+  }
+
+  .pastAndUpcomingEvents {
+    padding: 60px 0 60px 0;
+  }
+
+  .titleWrapper {
+    padding: 0 24px;
+  }
+
+  .title {
+    margin-bottom: 32px;
+  }
+
+  .slickSlider :global(.slick-track) {
+    height: 400px;
+  }
+
+  .cardWrapper {
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 400px;
+  }
+
+  .card {
+    max-height: 340px;
+    max-width: 100%;
+  }
+
+  // .centerSlide .card {
+  //   max-height: 100%;
+  // }
+  .slickSlider :global(.slick-center) .card {
+    max-height: 100%;
+  }
+
+  .cardPicture {
+    max-height: 100%;
+  }
+  .cardDataBlock {
+    padding: 32px;
+  }
+
+  .locationWrapper {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 375px) {
+  .cardDataBlock {
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+}
