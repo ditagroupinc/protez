@@ -13,6 +13,8 @@ import VideoAndFilter from '@/components/VideoAndFilter'
 // import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import ProtezImage from '@/components/ProtezImage'
 
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+
 import { icons } from './icons'
 import style from './style.module.scss'
 
@@ -82,6 +84,7 @@ const Card = ({ image, className }: { image: string; className?: string }) => {
 const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
   // const { lang } = useLanguage()
   // const { mobile, width } = useScreenModeAndSize()
+  const t = useAcademyTexts()
   const [sliderReady, setSliderReady] = useState(false)
 
   useEffect(() => {
@@ -136,10 +139,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
       <div className={style.content}>
         <div className={style.leftPart}>
           <div className={style.sectionTitle}>{icons.academyIntroTitle()}</div>
-          <p className={style.academyDesc}>
-            Protez Academy - це освітній проєкт Фонду Протез у співпраці з Century College та за
-            участю фахівців з Університету Міннесоти та Університету Конкордія
-          </p>
+          <p className={style.academyDesc}>{t.intro.description}</p>
           <div className={style.buttonGroup}>
             <Button
               as="link"
@@ -150,21 +150,21 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
               size="big"
               rel="noopener noreferrer"
             >
-              Зареєструватися на навчання
+              {t.intro.cta.register}
             </Button>
 
             <Button as="link" href="/donate" variant="secondary-white" size="big">
-              Support Academy
+              {t.intro.cta.support}
               {icons.arrowUp(`${style.arrow}`)}
             </Button>
           </div>
         </div>
         <div className={style.rightPart}>
           <div className={style.titleContainer}>
-            <span className={style.greyTitle}>Наші спонсори:</span>
+            <span className={style.greyTitle}>{t.intro.sponsorsTitle}</span>
           </div>
           <a href={`#${AcademyIDs.SpecialThanksToAllOurPartners}`} className={style.blackButton}>
-            Всі спонсори та партнери
+            {t.intro.allSponsorsLink}
             {icons.arrowDown(style.arrow)}
           </a>
 
@@ -174,7 +174,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
       </div>
       <div className={style.slider}>
         <div className={style.sliderTitleContainer}>
-          <span className={style.greyTitle}>Наші партнери:</span>
+          <span className={style.greyTitle}>{t.intro.partnersTitle}</span>
         </div>
         {sliderReady && (
           <Slider {...settings}>

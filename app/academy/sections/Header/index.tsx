@@ -15,6 +15,8 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { BurgerButton } from '@academy/components/BurgerButton'
 
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+
 import styles from './styles.module.scss'
 
 import { AcademyIDs } from '../../consts'
@@ -23,21 +25,21 @@ import Link from 'next/link'
 
 import { icons } from './icons'
 
-const AncorLinks = [
-  { id: AcademyIDs.Intro, text: 'Home' },
-  { id: AcademyIDs.MissionAndValues, text: 'Mission and Values' },
-  { id: AcademyIDs.OurGoals, text: 'Our Goals' },
-  { id: AcademyIDs.Academy, text: 'Academy' },
-  { id: AcademyIDs.OurResults, text: 'Our Results' },
-  { id: AcademyIDs.Chief, text: 'Chief' },
-  { id: AcademyIDs.PastAndUpcomingEvents, text: 'Events' },
-  { id: AcademyIDs.AcademyStudents, text: 'Students' },
-  { id: AcademyIDs.AmputeeRehab, text: 'Amputee Rehab' },
-  { id: AcademyIDs.SummitResults, text: 'Summit' },
-  { id: AcademyIDs.WeAreInNews, text: 'We Are In News' },
-  { id: AcademyIDs.SpecialThanksToAllOurPartners, text: 'Partners' },
-  { id: AcademyIDs.OurSponsors, text: 'Our Sponsors' },
-]
+const AncorLinkIds = [
+  AcademyIDs.Intro,
+  AcademyIDs.MissionAndValues,
+  AcademyIDs.OurGoals,
+  AcademyIDs.Academy,
+  AcademyIDs.OurResults,
+  AcademyIDs.Chief,
+  AcademyIDs.PastAndUpcomingEvents,
+  AcademyIDs.AcademyStudents,
+  AcademyIDs.AmputeeRehab,
+  AcademyIDs.SummitResults,
+  AcademyIDs.WeAreInNews,
+  AcademyIDs.SpecialThanksToAllOurPartners,
+  AcademyIDs.OurSponsors,
+] as const
 
 const AcademyHeader = () => {
   const [headerIsOpened, setHeaderIsOpened] = useState(false)
@@ -45,6 +47,8 @@ const AcademyHeader = () => {
   const { width } = useScreenModeAndSize()
 
   const ref = useOutsideClick(() => setHeaderIsOpened(false))
+
+  const t = useAcademyTexts()
 
   // const { lang } = useLanguage()
 
@@ -103,11 +107,11 @@ const AcademyHeader = () => {
               className={styles.applyBtn}
             >
               {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
-              Зараєструватися на навчання
+              {t.header.cta.applyTop}
             </Button>
             <Button as="link" href="/" variant="secondary-white" size="small">
               {/* {texts.academyHeader.buttons.foundation[lang]} */}
-              Protez Foundation
+              {t.header.cta.foundation}
             </Button>
             <div className={styles.languageWrapper}>
               {icons.iconWorld(`${styles.worldIcon}`)}
@@ -129,17 +133,17 @@ const AcademyHeader = () => {
         <div className={`${styles.sideMenu} ${headerIsOpened ? styles.opened : ''}`}>
           <div className={styles.protezFoundationLinkWrapper}>
             <Link href={'/'} className={styles.protezFoundationLink}>
-              <span>Protez Foundation</span>
+              <span>{t.header.cta.foundation}</span>
               {icons.arrowUp(styles.icon)}
             </Link>
           </div>
           <div className={styles.navigationWrapper}>
             <nav ref={ref} className={styles.navigation}>
               <ul className={styles.ancorList}>
-                {AncorLinks.map(({ id, text }) => (
+                {AncorLinkIds.map(id => (
                   <li key={id} className={styles.ancorItem} onClick={closeHeaderOnAncorClick}>
                     <a href={`#${id}`} className={styles.ancorLink}>
-                      {text}
+                      {t.header.nav[id]}
                     </a>
                   </li>
                 ))}
@@ -158,7 +162,7 @@ const AcademyHeader = () => {
                 rel="noopener noreferrer"
                 className={styles.lowerPartButton}
               >
-                Apply to Academy
+                {t.header.cta.applyBottom}
                 {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
               </Button>
               <Button
@@ -168,7 +172,7 @@ const AcademyHeader = () => {
                 size="small"
                 className={styles.lowerPartButton}
               >
-                Support Academy
+                {t.header.cta.support}
                 {/* {texts.academyHeader.buttons.supportAcademy[lang]} */}
                 {icons.arrowUp(`${styles.icon} ${styles.black}`)}
               </Button>
@@ -176,13 +180,13 @@ const AcademyHeader = () => {
 
             <a className={styles.phoneNumber} href="tel:+16127724777">
               {icons.call(styles.icon)}
-              <span> +1 612-772-4777</span>
+              <span> {t.header.phone}</span>
             </a>
 
             <div className={styles.languageButtonContainer}>
               <button className={styles.languageButton}>
                 {icons.iconWorld(styles.icon)}
-                <span>English</span>
+                <span>{t.header.cta.language}</span>
               </button>
             </div>
           </div>

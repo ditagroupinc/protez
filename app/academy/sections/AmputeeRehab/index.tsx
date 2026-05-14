@@ -10,6 +10,12 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { useLanguage } from '@/contexts/LanguageContext'
 import { AcademyIDs } from '../../consts'
 
+const partnersLogos = [
+  { src: 'esper_white.svg', alt: 'Esper' },
+  { src: 'direct-relief_white.svg', alt: 'Direct Relief' },
+  { src: 'dita-group_white.svg', alt: 'Dita Group' },
+]
+
 const AmputeeRehab = () => {
   const { lang } = useLanguage()
 
@@ -60,9 +66,15 @@ const AmputeeRehab = () => {
             </TextAppearanceWrapper>
           </div>
           <div className={styles.right}>
-            {icons.partnersLogos.map((logo, index) => (
+            {partnersLogos.map(({ src, alt }, index) => (
               <TextAppearanceWrapper key={index} className={styles.card}>
-                {logo(styles.partnerLogo)}
+                <ProtezImage
+                  src={`academyPage/partners/white/${src}`}
+                  alt={alt}
+                  width={300}
+                  height={150}
+                  className={styles.partnerLogo}
+                />
               </TextAppearanceWrapper>
             ))}
           </div>

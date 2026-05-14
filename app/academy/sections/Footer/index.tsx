@@ -1,6 +1,7 @@
 import styles from './style.module.scss'
 
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 import { icons } from './icons'
 import Divider from '@/components/Divider'
@@ -11,6 +12,7 @@ import { forwardRef } from 'react'
 
 const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
   const { lang } = useLanguage()
+  const t = useAcademyTexts()
   // const { width } = useScreenModeAndSize()
 
   return (
@@ -20,25 +22,25 @@ const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
           <div className={styles.right}>
             {icons.footerLogo.desktop[lang](styles.footerLogo)}
             <div className={styles.buttonGroup}>
-              <button className={styles.supportAcademyButton}>Support Academy</button>
+              <button className={styles.supportAcademyButton}>{t.footer.supportAcademy}</button>
             </div>
           </div>
           <div className={styles.left}>
-            <p>Nonprofit organization 501(c)(3) EIN: 88-2437069</p>
+            <p>{t.footer.nonprofit}</p>
             <Divider className={styles.divider} />
-            <p className={styles.descTitle}>Юридична адреса:</p>
-            <p className={styles.descAddress}>вул. Хрещатик, 7/11</p>
+            <p className={styles.descTitle}>{t.footer.legalAddressLabel}</p>
+            <p className={styles.descAddress}>{t.footer.legalAddress}</p>
             <a href="tel:+380509843356" className={styles.descTitle}>
-              +38 050 984 33 56
+              {t.footer.phone}
             </a>
-            <p className={styles.descTitle}>info@protezfoundation.com</p>
+            <p className={styles.descTitle}>{t.footer.email}</p>
           </div>
         </div>
       </div>
       <div className={styles.footerBottom}>
-        <span>2026 © Made by DITA GROUP Inc.</span>
+        <span>{t.footer.copyright}</span>
         <a href="/termsConditions" className={styles.termsLink}>
-          Умови та правила сайту
+          {t.footer.terms}
         </a>
       </div>
     </footer>

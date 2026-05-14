@@ -1,0 +1,64 @@
+{
+  "academy": {
+    "intro": {
+      "description": "Protez Academy - це освітній проєкт Фонду Протез у співпраці з Century College та за участю фахівців з Університету Міннесоти та Університету Конкордія",
+      "cta": {
+        "register": "Зареєструватися на навчання",
+        "support": "Support Academy"
+      },
+      "sponsorsTitle": "Наші спонсори:",
+      "partnersTitle": "Наші партнери:",
+      "allSponsorsLink": "Всі спонсори та партнери"
+    },
+    "header": {
+      "nav": {
+        "academyIntro": "Home",
+        "missionAndValues": "Mission and Values",
+        "ourGoals": "Our Goals",
+        "academy": "Academy",
+        "ourResults": "Our Results",
+        "chief": "Chief",
+        "pastAndUpcomingEvents": "Events",
+        "academyStudents": "Students",
+        "amputeeRehab": "Amputee Rehab",
+        "summitResults": "Summit",
+        "weAreInNews": "We Are In News",
+        "specialThanksToAllOurPartners": "Partners",
+        "ourSponsors": "Our Sponsors"
+      },
+      "cta": {
+        "applyTop": "Зараєструватися на навчання",
+        "foundation": "Protez Foundation",
+        "applyBottom": "Apply to Academy",
+        "support": "Support Academy",
+        "language": "English"
+      },
+      "phone": "+1 612-772-4777"
+    },
+    "footer": {
+      "supportAcademy": "Support Academy",
+      "nonprofit": "Nonprofit organization 501(c)(3) EIN: 88-2437069",
+      "legalAddressLabel": "Юридична адреса:",
+      "legalAddress": "вул. Хрещатик, 7/11",
+      "phone": "+38 050 984 33 56",
+      "email": "info@protezfoundation.com",
+      "copyright": "2026 © Made by DITA GROUP Inc.",
+      "terms": "Умови та правила сайту"
+    },
+    "mission": { "values": [] },
+    "goals": { "items": [] },
+    "ourResults": { "stats": [], "cta": {} },
+    "chief": {},
+    "ourTeachers": { "members": [] },
+    "theoryLectures": { "items": [] },
+    "practiceSessions": { "items": [] },
+    "academyGallery": {},
+    "academyStudents": {},
+    "amputeeRehab": {},
+    "events": {},
+    "summitResults": {},
+    "weAreInNews": {},
+    "ourSponsors": {},
+    "specialThanksToAllOurPartners": {}
+  }
+}
