@@ -12,3 +12,7 @@ background: linear-gradient(180deg, rgba(19, 19, 19, 0) 84.03%, #131313 98.09%);
     position: relative
 
     Yura Aroshidze
+
+
+ Тепер у коді може використовуватись ключ amputeeRehab.description або summitResults.description — варто перевірити та видалити їх    
+  рендеринг також, інакше next-intl кине помилку про відсутній ключ. Якщо хочете — підкажу де шукати в app/academy/sections/. 

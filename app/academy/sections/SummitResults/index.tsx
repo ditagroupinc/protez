@@ -38,9 +38,6 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
               ? icons.summitResultsLogo.tablet[lang](styles.title)
               : icons.summitResultsLogo.desktop[lang](styles.title)}
           </TextAppearanceWrapper>
-          <TextAppearanceWrapper className={styles.desc}>
-            {t.summitResults.description}
-          </TextAppearanceWrapper>
         </div>
         <div className={styles.right}>
           {t.summitResults.stats.map((stat, index) => (

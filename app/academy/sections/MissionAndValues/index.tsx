@@ -11,16 +11,18 @@ import { icons } from './icons'
 import Button from '@academy/components/Button'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
+  const title = useAcademyTitle('missionAndValues')
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.MissionAndValues} className={style.academyGoals}>
       <div className={style.container}>
         <div className={style.right}>
           <TextAppearanceWrapper>
-            {icons.missionAndValuesLogo.desktop(style.title)}
+            <ProtezImage {...title.desktop} className={style.title} />
           </TextAppearanceWrapper>
           <TextAppearanceWrapper>
             <p className={style.description}>{t.mission.statement}</p>

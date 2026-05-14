@@ -12,13 +12,6 @@
   gap: 40px;
 }
 
-.desc {
-  font-size: 18px;
-  line-height: 26px;
-  color: var(--dark);
-  transition: all var(--transitionProps);
-}
-
 .count {
   color: var(--blue);
   font-size: 60px;
@@ -187,12 +180,6 @@
   .resultInfo {
     margin-bottom: 40px;
     gap: 32px;
-  }
-
-  .desc {
-    font-size: 16px;
-    line-height: 22px;
-    color: var(--dark);
   }
 
   .left {

@@ -1,9 +1,9 @@
 import styles from './style.module.scss'
 
-import { useLanguage } from '@/contexts/LanguageContext'
+import ProtezImage from '@/components/ProtezImage'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
-import { icons } from './icons'
 import Divider from '@/components/Divider'
 
 import { AcademyIDs } from '../../consts'
@@ -11,16 +11,15 @@ import { AcademyIDs } from '../../consts'
 import { forwardRef } from 'react'
 
 const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
-  const { lang } = useLanguage()
   const t = useAcademyTexts()
-  // const { width } = useScreenModeAndSize()
+  const title = useAcademyTitle('footer')
 
   return (
     <footer ref={ref} id={AcademyIDs.Footer} className={styles.footer}>
       <div className={styles.footerTop}>
         <div className={styles.footerTopContent}>
           <div className={styles.right}>
-            {icons.footerLogo.desktop[lang](styles.footerLogo)}
+            <ProtezImage {...title.desktop} className={styles.footerLogo} />
             <div className={styles.buttonGroup}>
               <button className={styles.supportAcademyButton}>{t.footer.supportAcademy}</button>
             </div>

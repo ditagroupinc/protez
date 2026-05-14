@@ -1,14 +1,14 @@
 {
   "academy": {
     "intro": {
-      "description": "[TODO translate] Protez Academy - це освітній проєкт Фонду Протез у співпраці з Century College та за участю фахівців з Університету Міннесоти та Університету Конкордія",
+      "description": "Protez Academy is an educational project of the Protez Foundation in collaboration with Century College and with the participation of specialists from the University of Minnesota and Concordia University",
       "cta": {
-        "register": "[TODO translate] Зареєструватися на навчання",
+        "register": "Register for the program",
         "support": "Support Academy"
       },
-      "sponsorsTitle": "[TODO translate] Наші спонсори:",
-      "partnersTitle": "[TODO translate] Наші партнери:",
-      "allSponsorsLink": "[TODO translate] Всі спонсори та партнери"
+      "sponsorsTitle": "Our sponsors:",
+      "partnersTitle": "Our partners:",
+      "allSponsorsLink": "All sponsors and partners"
     },
     "header": {
       "nav": {
@@ -27,7 +27,7 @@
         "ourSponsors": "Our Sponsors"
       },
       "cta": {
-        "applyTop": "[TODO translate] Зареєструватися на навчання",
+        "applyTop": "Register for the program",
         "foundation": "Protez Foundation",
         "applyBottom": "Apply to Academy",
         "support": "Support Academy",
@@ -38,42 +38,42 @@
     "footer": {
       "supportAcademy": "Support Academy",
       "nonprofit": "Nonprofit organization 501(c)(3) EIN: 88-2437069",
-      "legalAddressLabel": "[TODO translate] Юридична адреса:",
-      "legalAddress": "[TODO translate] вул. Хрещатик, 7/11",
+      "legalAddressLabel": "Legal address:",
+      "legalAddress": "7/11 Khreshchatyk Street",
       "phone": "+38 050 984 33 56",
       "email": "info@protezfoundation.com",
       "copyright": "2026 © Made by DITA GROUP Inc.",
-      "terms": "[TODO translate] Умови та правила сайту"
+      "terms": "Terms and conditions"
     },
     "mission": {
-      "statement": "[TODO translate] Місія: Розвивати систему протезування та реабілітації в Україні через сучасну освіту, інтеграцію міжнародного досвіду та практичних рішень, щоб кожна людина після ампутації мала доступ до якісного, функціонального та людиноцентричного відновлення.",
-      "button": "[TODO translate] Про Academy",
+      "statement": "Mission: To develop the prosthetics and rehabilitation system in Ukraine through modern education, the integration of international experience, and practical solutions, so that every person after amputation has access to quality, functional, and human-centered recovery.",
+      "button": "About Academy",
       "imageAlt": "Mission and values",
       "values": [
         {
           "icon": "support-ukraine.svg",
-          "title": "[TODO translate] Людиноцентричність",
-          "text": "[TODO translate] Пацієнт — у центрі всіх рішень. Ми працюємо не з діагнозом, а з людиною, її цілями, функцією та якістю життя."
+          "title": "Human-centeredness",
+          "text": "The patient is at the center of every decision. We work not with a diagnosis, but with a person — their goals, function, and quality of life."
         },
         {
           "icon": "professional-excellence.svg",
-          "title": "[TODO translate] Якість і професійність",
-          "text": "[TODO translate] Ми навчаємо сучасним, доказовим і клінічно релевантним підходам, які дають реальний результат у практиці."
+          "title": "Quality and professionalism",
+          "text": "We teach modern, evidence-based, and clinically relevant approaches that deliver real results in practice."
         },
         {
           "icon": "practical-experience.svg",
-          "title": "[TODO translate] Практичність",
-          "text": "[TODO translate] Освіта має формувати навички. Ми фокусуємось на тому, що можна застосувати одразу в роботі з пацієнтом."
+          "title": "Practicality",
+          "text": "Education must build skills. We focus on what can be applied immediately when working with a patient."
         },
         {
           "icon": "global-development.svg",
-          "title": "[TODO translate] Постійний розвиток",
-          "text": "[TODO translate] Ми постійно розвиваємося, впроваджуючи нові підходи та технології у свою практику."
+          "title": "Continuous development",
+          "text": "We continuously grow by adopting new approaches and technologies in our practice."
         },
         {
           "icon": "innovation.svg",
-          "title": "[TODO translate] Інноваційність",
-          "text": "[TODO translate] Ми шукаємо, тестуємо та впроваджуємо нові технології, рішення і формати навчання у протезуванні та реабілітації."
+          "title": "Innovation",
+          "text": "We search for, test, and implement new technologies, solutions, and learning formats in prosthetics and rehabilitation."
         }
       ]
     },
@@ -81,31 +81,31 @@
       "items": [
         {
           "icon": "feedback-message.svg",
-          "text": "[TODO translate] Розвиток сучасної системи освіти для фахівців у сфері протезування, ортезування та реабілітації"
+          "text": "Developing a modern education system for specialists in prosthetics, orthotics, and rehabilitation"
         },
         {
           "icon": "feedback-message.svg",
-          "text": "[TODO translate] Впровадження міжнародних стандартів (ICF, ISPO, доказова практика) в українську клінічну роботу"
+          "text": "Implementing international standards (ICF, ISPO, evidence-based practice) in Ukrainian clinical work"
         },
         {
           "icon": "document-bookmark.svg",
-          "text": "[TODO translate] Підвищення кваліфікації мультидисциплінарних команд через практичне навчання"
+          "text": "Upskilling multidisciplinary teams through hands-on training"
         },
         {
           "icon": "caring-hands.svg",
-          "text": "[TODO translate] Підтримка пацієнтів через покращення якості протезування та реабілітаційного супроводу"
+          "text": "Supporting patients by improving the quality of prosthetics and rehabilitation care"
         },
         {
           "icon": "graduation-cap.svg",
-          "text": "[TODO translate] Розвиток інновацій, технологій та науково-практичних рішень у сфері"
+          "text": "Advancing innovation, technology, and applied scientific solutions in the field"
         },
         {
           "icon": "mentorship.svg",
-          "text": "[TODO translate] Побудова партнерств з українськими та міжнародними організаціями"
+          "text": "Building partnerships with Ukrainian and international organizations"
         },
         {
           "icon": "team-circle.svg",
-          "text": "[TODO translate] Формування професійної спільноти та обміну досвідом між фахівцями"
+          "text": "Building a professional community and fostering experience sharing among specialists"
         }
       ]
     },
@@ -183,7 +183,6 @@
       ]
     },
     "amputeeRehab": {
-      "description": "Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam. Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc suspendisse donec varius integer nisi urna eu. Egestas et id nunc ultrices sit ut",
       "imageAlt": "summit",
       "cta": {
         "apply": "Apply to Academy",
@@ -212,7 +211,6 @@
       ]
     },
     "summitResults": {
-      "description": "Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam. Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc suspendisse donec",
       "imageAlt": "summit",
       "stats": [
         { "count": 200, "label": "Visitors" },

@@ -31,9 +31,6 @@ const AmputeeRehab = () => {
             <TextAppearanceWrapper>
               {icons.amputeeRehabLogo.desktop[lang](styles.title)}
             </TextAppearanceWrapper>
-            <TextAppearanceWrapper>
-              <p className={styles.desc}>{t.amputeeRehab.description}</p>
-            </TextAppearanceWrapper>
             <TextAppearanceWrapper className={styles.buttons}>
               <Button
                 as={'link'}

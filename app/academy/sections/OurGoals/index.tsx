@@ -14,12 +14,13 @@ import SliderNavigation, {
 import style from './style.module.scss'
 
 import { AcademyIDs } from '../../consts'
-import { icons } from './icons'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
+  const title = useAcademyTitle('goals')
   const sliderRef = useRef<Slider & React.Component>(null)
 
   const gotoNext = () => {
@@ -47,7 +48,7 @@ const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
   return (
     <AcademySection ref={ref} id={AcademyIDs.OurGoals} className={style.academyGoals}>
       <TextAppearanceWrapper className={style.container}>
-        {icons.goalsLogo.desktop(style.title)}
+        <ProtezImage {...title.desktop} className={style.title} />
         <SliderNavigation>
           <SliderPrevButton onClick={gotoPrev} />
           <SliderNextButton onClick={gotoNext} />

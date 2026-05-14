@@ -110,56 +110,56 @@
       ]
     },
     "ourResults": {
-      "datesRange": "[TODO translate] (May 2022 – September 2023)",
-      "description": "[TODO translate] Ukrainian Specialists already went through the Program and back in their home country helping restore the lives of those who lost limbs during the war",
+      "datesRange": "(Травень 2022 – Вересень 2023)",
+      "description": "Українські фахівці вже пройшли програму та повернулися на батьківщину, де допомагають відновлювати життя тих, хто втратив кінцівки під час війни",
       "stats": [
-        { "value": 92, "label": "[TODO translate] People received prosthetics" },
-        { "value": 26, "label": "[TODO translate] Specialists trained" },
-        { "value": 9, "label": "[TODO translate] Prostheses were provided" },
-        { "value": 2, "label": "[TODO translate] Summits were organized" }
+        { "value": 92, "label": "Людей отримали протези" },
+        { "value": 26, "label": "Фахівців пройшли навчання" },
+        { "value": 9, "label": "Протезів було надано" },
+        { "value": 2, "label": "Самітів організовано" }
       ],
       "cta": {
-        "apply": "[TODO translate] Apply to Academy",
-        "support": "[TODO translate] Support Academy"
+        "apply": "Подати заявку в Academy",
+        "support": "Підтримати Academy"
       }
     },
     "chief": {
-      "role": "[TODO translate] CHIEF MEDICAL OFFICER, CERTIFIED PROSTHETIST AND ORTHOTIST",
-      "description": "[TODO translate] During the course of the program they will learn proven methods developed by the US healthcare practitioners over many years of treating veterans and also Dr. Yakov Gradinar’s personal technical know-how’s employed in his 15 years of practice. More importantly, the program is a way for overworked and underpaid Ukrainian doctors to come to the US where they will take a break from hearing sirens and rockets while learning practical skills to help many more Ukrainians in the future."
+      "role": "ГОЛОВНИЙ ЛІКАР, СЕРТИФІКОВАНИЙ ПРОТЕЗИСТ І ОРТЕЗИСТ",
+      "description": "Протягом програми вони ознайомляться з перевіреними методиками, які американські медичні фахівці розвинули за багато років роботи з ветеранами, а також з особистими технічними напрацюваннями д-ра Якова Градинара, набутими за 15 років практики. Ще важливіше — програма дає перевантаженим і недооціненим українським лікарям можливість приїхати до США, перепочити від звуків сирен і ракет і водночас здобути практичні навички, щоб у майбутньому допомогти ще більшій кількості українців."
     },
     "ourTeachers": {
       "members": [
-        { "name": "Kierstin Nelson", "position": "[TODO translate] Teacher", "photo": "kierstinNelson.png" },
-        { "name": "Michael Le Buhn Jr.", "position": "[TODO translate] Teacher", "photo": "michaelLeBuhnJr.png" },
-        { "name": "Jeanne Lojovich", "position": "[TODO translate] Teacher", "photo": "jeanneLojovich.png" },
-        { "name": "Adam Warden", "position": "[TODO translate] Teacher", "photo": "adamWarden.png" },
-        { "name": "Troy Decker", "position": "[TODO translate] Teacher", "photo": "troyDecker.png" },
-        { "name": "Lisa King", "position": "[TODO translate] Teacher", "photo": "lisaKing.png" },
-        { "name": "Yakov Gradinar", "position": "[TODO translate] Teacher", "photo": "yakovGradinar.png" },
-        { "name": "Gallegos Sebastian Guadalupe", "position": "[TODO translate] Teacher", "photo": "gallegosSebastianGuadalupe.png" }
+        { "name": "Kierstin Nelson", "position": "Викладач", "photo": "kierstinNelson.png" },
+        { "name": "Michael Le Buhn Jr.", "position": "Викладач", "photo": "michaelLeBuhnJr.png" },
+        { "name": "Jeanne Lojovich", "position": "Викладач", "photo": "jeanneLojovich.png" },
+        { "name": "Adam Warden", "position": "Викладач", "photo": "adamWarden.png" },
+        { "name": "Troy Decker", "position": "Викладач", "photo": "troyDecker.png" },
+        { "name": "Lisa King", "position": "Викладач", "photo": "lisaKing.png" },
+        { "name": "Yakov Gradinar", "position": "Викладач", "photo": "yakovGradinar.png" },
+        { "name": "Gallegos Sebastian Guadalupe", "position": "Викладач", "photo": "gallegosSebastianGuadalupe.png" }
       ]
     },
     "theoryLectures": {
       "items": [
-        { "number": "/01", "desc": "[TODO translate] Etiology of polytrauma and subsequent management of polytrauma patients" },
-        { "number": "/02", "desc": "[TODO translate] Examples of post-operative care" },
-        { "number": "/03", "desc": "[TODO translate] Objectives of pre-amputation consultation" },
-        { "number": "/04", "desc": "[TODO translate] Different levels of upper and lower limb amputations" },
-        { "number": "/05", "desc": "[TODO translate] Overview of cadaver anatomy" },
-        { "number": "/06", "desc": "[TODO translate] Physiology" }
+        { "number": "/01", "desc": "Етіологія політравми та подальше ведення пацієнтів із політравмою" },
+        { "number": "/02", "desc": "Приклади післяопераційного догляду" },
+        { "number": "/03", "desc": "Завдання консультації перед ампутацією" },
+        { "number": "/04", "desc": "Різні рівні ампутацій верхніх і нижніх кінцівок" },
+        { "number": "/05", "desc": "Огляд анатомії на кадаврі" },
+        { "number": "/06", "desc": "Фізіологія" }
       ],
-      "cta": "[TODO translate] Apply to Academy"
+      "cta": "Подати заявку в Academy"
     },
     "practiceSessions": {
       "items": [
-        { "image": "academyPage/practiceSessions/practice0.png", "text": "[TODO translate] Preparatory stage" },
-        { "image": "academyPage/practiceSessions/practice1.png", "text": "[TODO translate] Diagnostic (test) socket" },
-        { "image": "academyPage/practiceSessions/practice2.png", "text": "[TODO translate] Casting and measuring the prosthesis" }
+        { "image": "academyPage/practiceSessions/practice0.png", "text": "Підготовчий етап" },
+        { "image": "academyPage/practiceSessions/practice1.png", "text": "Діагностична (тестова) гільза" },
+        { "image": "academyPage/practiceSessions/practice2.png", "text": "Зняття мірок і виготовлення протеза" }
       ],
-      "imageAlt": "[TODO translate] picture of practice sessions in Protez Academy"
+      "imageAlt": "фото практичних занять у Protez Academy"
     },
     "academyGallery": {
-      "imageAlt": "[TODO translate] picture of Protez Academy students and teachers",
+      "imageAlt": "фото студентів і викладачів Protez Academy",
       "cards": [
         "academyPage/academy/academyCard0.png",
         "academyPage/academy/academyCard1.png",
@@ -171,7 +171,7 @@
       ]
     },
     "academyStudents": {
-      "imageAlt": "[TODO translate] photo of students of Protez Academy",
+      "imageAlt": "фото студентів Protez Academy",
       "cards": [
         "academyPage/students/studentCard0.png",
         "academyPage/students/studentCard1.png",
@@ -183,11 +183,10 @@
       ]
     },
     "amputeeRehab": {
-      "description": "[TODO translate] Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam. Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc suspendisse donec varius integer nisi urna eu. Egestas et id nunc ultrices sit ut",
-      "imageAlt": "[TODO translate] summit",
+      "imageAlt": "саміт",
       "cta": {
-        "apply": "[TODO translate] Apply to Academy",
-        "support": "[TODO translate] Support Academy"
+        "apply": "Подати заявку в Academy",
+        "support": "Підтримати Academy"
       },
       "partners": [
         { "src": "esper_white.svg", "alt": "Esper" },
@@ -197,31 +196,30 @@
     },
     "events": {
       "status": {
-        "upcoming": "[TODO translate] Upcoming event",
-        "past": "[TODO translate] Past event"
+        "upcoming": "Майбутня подія",
+        "past": "Минула подія"
       },
-      "imageAlt": "[TODO translate] events picture",
-      "backgroundAlt": "[TODO translate] Ukrainian flag",
+      "imageAlt": "фото події",
+      "backgroundAlt": "Прапор України",
       "items": [
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-02-01", "title": "[TODO translate] Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-06-21", "title": "[TODO translate] Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-06-21", "title": "[TODO translate] Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-02-01", "title": "[TODO translate] Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-12-03", "title": "[TODO translate] Hommage national à Léon Gautier.", "location": "Washington" },
-        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-12-03", "title": "[TODO translate] Hommage national à Léon Gautier.", "location": "Washington" }
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-02-01", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-06-21", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2025-06-21", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-02-01", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-12-03", "title": "Hommage national à Léon Gautier.", "location": "Washington" },
+        { "link": "/", "photo": "academyPage/events/academyEvent0.png", "date": "2021-12-03", "title": "Hommage national à Léon Gautier.", "location": "Washington" }
       ]
     },
     "summitResults": {
-      "description": "[TODO translate] Lorem ipsum dolor sit amet consectetur. Turpis pulvinar odio pulvinar mi diam. Vestibulum nec nec commodo tincidunt sed iaculis lectus. Volutpat ultricies nunc suspendisse donec",
-      "imageAlt": "[TODO translate] summit",
+      "imageAlt": "саміт",
       "stats": [
-        { "count": 200, "label": "[TODO translate] Visitors" },
-        { "count": 22, "label": "[TODO translate] Invited guests" },
-        { "count": 12, "label": "[TODO translate] Prosthetists" }
+        { "count": 200, "label": "Відвідувачів" },
+        { "count": 22, "label": "Запрошених гостей" },
+        { "count": 12, "label": "Протезистів" }
       ]
     },
     "weAreInNews": {
-      "imageAlt": "[TODO translate] news picture",
+      "imageAlt": "фото з новини",
       "items": [
         {
           "link": "/",
@@ -229,8 +227,8 @@
           "date": "19.03.2023",
           "address": "1plus1.ua",
           "logo": "academyPage/news/1plus1.svg",
-          "title": "[TODO translate] Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "[TODO translate] Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
+          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
         },
         {
           "link": "/",
@@ -238,8 +236,8 @@
           "date": "19.03.2023",
           "address": "1plus1.ua",
           "logo": "academyPage/news/1plus1.svg",
-          "title": "[TODO translate] Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "[TODO translate] Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
+          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
         },
         {
           "link": "/",
@@ -247,8 +245,8 @@
           "date": "19.03.2023",
           "address": "1plus1.ua",
           "logo": "academyPage/news/1plus1.svg",
-          "title": "[TODO translate] Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "[TODO translate] Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
+          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
         },
         {
           "link": "/",
@@ -256,8 +254,8 @@
           "date": "19.03.2023",
           "address": "1plus1.ua",
           "logo": "academyPage/news/1plus1.svg",
-          "title": "[TODO translate] Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "[TODO translate] Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
+          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
         },
         {
           "link": "/",
@@ -265,8 +263,8 @@
           "date": "19.03.2023",
           "address": "1plus1.ua",
           "logo": "academyPage/news/1plus1.svg",
-          "title": "[TODO translate] Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "[TODO translate] Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
+          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
         },
         {
           "link": "/",
@@ -274,8 +272,8 @@
           "date": "19.03.2023",
           "address": "1plus1.ua",
           "logo": "academyPage/news/1plus1.svg",
-          "title": "[TODO translate] Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "[TODO translate] Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
+          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
         }
       ]
     },
