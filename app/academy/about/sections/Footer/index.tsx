@@ -13,7 +13,7 @@ const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
     <footer ref={ref} id={AcademyAboutIDs.Footer} className={styles.footer}>
       <div className={styles.footerBottom}>
         <span>{t.footer.copyright}</span>
-        <a href="/termsConditions" className={styles.termsLink}>
+        <a href="/about/terms-conditions" className={styles.termsLink}>
           {t.footer.terms}
         </a>
       </div>
