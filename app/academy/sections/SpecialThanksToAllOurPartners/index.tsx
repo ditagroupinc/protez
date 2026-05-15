@@ -25,7 +25,7 @@ const Card = ({ icon }: { icon: string }): React.ReactElement => (
 
 const SpecialThanksToAllOurPartners = () => {
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('specialThanksToAllOurPartners')
+  const { desktop: titleDesktop } = useAcademyTitle('special-thanks-to-all-our-partners')
 
   return (
     <AcademySection

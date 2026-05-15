@@ -19,7 +19,7 @@ import { AcademyIDs } from '../../consts'
 const OurTeachers = () => {
   const { width } = useScreenModeAndSize()
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('ourTeachers')
+  const { desktop: titleDesktop } = useAcademyTitle('we-train')
 
   const sliderRef = useRef(null)
   const settings = {

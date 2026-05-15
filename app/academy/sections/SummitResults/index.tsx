@@ -16,7 +16,7 @@ import { AcademyIDs } from '../../consts'
 
 const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('summitResults')
+  const { desktop: titleDesktop } = useAcademyTitle('summit-results')
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
 

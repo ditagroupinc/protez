@@ -13,7 +13,7 @@ import { AcademyIDs } from '../../consts'
 
 const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('chief')
+  const { desktop: titleDesktop } = useAcademyTitle('yakov-gradinar')
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.Chief} className={styles.chief}>

@@ -33,7 +33,7 @@ const sliderSettings = {
 
 const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('missionAndValues')
+  const { desktop: titleDesktop } = useAcademyTitle('mission-and-values')
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.MissionAndValues} className={style.academyGoals}>

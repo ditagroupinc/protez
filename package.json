@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "generate:academy-titles": "node scripts/generate-academy-titles.mjs",
+    "predev": "npm run generate:academy-titles",
+    "prebuild": "npm run generate:academy-titles",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

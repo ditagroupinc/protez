@@ -13,7 +13,7 @@ import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 const OurSponsors = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('ourSponsors')
+  const { desktop: titleDesktop } = useAcademyTitle('our-sponsors')
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.OurSponsors} className={style.ourSponsors}>

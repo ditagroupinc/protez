@@ -57,7 +57,7 @@ const modifyAndSortEvents = (events: readonly EventInput[]): Event[] => {
 
 const Events = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('events')
+  const { desktop: titleDesktop } = useAcademyTitle('current-training-programs')
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
 

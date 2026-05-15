@@ -23,7 +23,7 @@ import { AcademyIDs } from '../../consts'
 
 const AcademyStudents = () => {
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('academyStudents')
+  const { desktop: titleDesktop } = useAcademyTitle('academy-students')
   const academyStudentsCards = t.academyStudents.cards
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()

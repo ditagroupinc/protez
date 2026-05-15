@@ -14,7 +14,7 @@ import { ACADEMY_APPLY_FORM_URL, DONATE_URL } from '../../consts/links'
 
 const AmputeeRehab = () => {
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('amputeeRehab')
+  const { desktop: titleDesktop } = useAcademyTitle('summit')
 
   return (
     <section id={AcademyIDs.AmputeeRehab} className={styles.amputeeRehab}>

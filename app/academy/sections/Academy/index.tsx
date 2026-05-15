@@ -25,7 +25,7 @@ import { AcademyIDs } from '../../consts'
 
 const Academy = () => {
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('academy')
+  const { desktop: titleDesktop } = useAcademyTitle('protez-academy')
   const academyCards = t.academyGallery.cards
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()

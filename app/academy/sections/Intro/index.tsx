@@ -87,7 +87,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
   // const { lang } = useLanguage()
   // const { mobile, width } = useScreenModeAndSize()
   const t = useAcademyTexts()
-  const { desktop: introTitle } = useAcademyTitle('intro')
+  const { desktop: introTitle } = useAcademyTitle('welcome')
   const [sliderReady, setSliderReady] = useState(false)
 
   useEffect(() => {

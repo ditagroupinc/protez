@@ -15,7 +15,7 @@ import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 const OurResults = () => {
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('ourResults')
+  const { desktop: titleDesktop } = useAcademyTitle('our-results')
   const { stats, datesRange, description } = t.ourResults
   const cta = t.cta
 

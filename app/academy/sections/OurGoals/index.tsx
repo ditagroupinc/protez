@@ -20,7 +20,7 @@ import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
-  const { desktop: titleDesktop } = useAcademyTitle('goals')
+  const { desktop: titleDesktop } = useAcademyTitle('our-goals')
   const sliderRef = useRef<Slider & React.Component>(null)
 
   const gotoNext = () => {
