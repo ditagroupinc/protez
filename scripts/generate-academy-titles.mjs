@@ -92,14 +92,17 @@ const unionType = bases.map((b) => `  | '${b}'`).join('\n')
 
 const formatDim = (d) => `{ width: ${d.width}, height: ${d.height} }`
 
+const IDENT_RE = /^[A-Za-z_$][A-Za-z0-9_$]*$/
+const formatKey = (k) => (IDENT_RE.test(k) ? k : `'${k}'`)
+
 const entries = bases
   .map((base) => {
     const e = titles.get(base)
-    return `  '${base}': {
+    return `  ${formatKey(base)}: {
     base: '${base}',
     alt: '${base}',
     desktop: { en: ${formatDim(e.desktop.en)}, uk: ${formatDim(e.desktop.uk)} },
-    mobile:  { en: ${formatDim(e.mobile.en)},  uk: ${formatDim(e.mobile.uk)} },
+    mobile: { en: ${formatDim(e.mobile.en)}, uk: ${formatDim(e.mobile.uk)} },
   },`
   })
   .join('\n')
