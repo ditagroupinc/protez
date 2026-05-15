@@ -1,0 +1,58 @@
+{
+  "common": {
+    "backToTop": "back to top  →"
+  },
+  "cta": {
+    "apply": "Register for the program",
+    "support": "Support Academy"
+  },
+  "header": {
+    "nav": {
+      "missionAndValues1": "Mission and Values",
+      "missionAndValues2": "Our Values",
+      "practiceSessions": "Practice Sessions"
+    },
+    "cta": {
+      "foundation": "Protez Foundation",
+      "language": "Українська"
+    },
+    "phone": "+1 612-772-4777"
+  },
+  "footer": {
+    "nonprofit": "Nonprofit organization 501(c)(3) EIN: 88-2437069",
+    "legalAddressLabel": "Legal address:",
+    "legalAddress": "Kyiv, 7/11 Khreshchatyk Street",
+    "phone": "+38 050 984 33 56",
+    "email": "info@protezfoundation.com",
+    "copyright": "2026 © Made by DITA GROUP Inc.",
+    "terms": "Terms and conditions"
+  },
+  "mission": {
+    "statement": "We are building an educational platform where knowledge turns into practice. Our programs combine a theoretical foundation with hands-on work on prosthetic models and various types of specialized equipment — exactly as it happens in real-world conditions when working with patients.",
+    "imageAlt": "About us"
+  },
+  "history": {
+    "title": "History",
+    "paragraphs": [
+      "Protez Academy was founded in 2023 as the educational branch of Protez Foundation, in response to the need for systemic development of prosthetics, orthotics, and multidisciplinary rehabilitation in Ukraine.",
+      "After launching prosthetic centers and working with a large number of patients, the team realized that quality recovery requires not only modern technologies, but also well-trained specialists, the exchange of practical experience, and continuous professional education.",
+      "That is how Protez Academy was formed — a platform that combines education, clinical practice, and expert collaboration.",
+      "During this time, 150 specialists have already completed training abroad and gained the knowledge and practical tools that help them work confidently and effectively. But for us, this is only the beginning."
+    ],
+    "imageAlt": "History of Protez Academy"
+  },
+  "weTrain": {
+    "items": [
+      { "image": "academyPage/practiceSessions/practice0.png", "text": "Preparatory stage" },
+      {
+        "image": "academyPage/practiceSessions/practice1.png",
+        "text": "Diagnostic (test) socket"
+      },
+      {
+        "image": "academyPage/practiceSessions/practice2.png",
+        "text": "Casting and measuring the prosthesis"
+      }
+    ],
+    "imageAlt": "picture of practice sessions in Protez Academy"
+  }
+}

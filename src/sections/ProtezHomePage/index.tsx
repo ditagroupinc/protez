@@ -58,6 +58,9 @@ export default function ProtezHomePage({
 
       <main className={style.main}>
         <SuspenseSection withSmoke>
+          <h1 className={style.srOnly}>
+            Protez Foundation — free prosthetics and rehabilitation for Ukrainians
+          </h1>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
 

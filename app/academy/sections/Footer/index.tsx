@@ -41,7 +41,7 @@ const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
       </div>
       <div className={styles.footerBottom}>
         <span>{t.footer.copyright}</span>
-        <a href="/termsConditions" className={styles.termsLink}>
+        <a href="/academy/terms-conditions" className={styles.termsLink}>
           {t.footer.terms}
         </a>
       </div>

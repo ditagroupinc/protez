@@ -1,0 +1,54 @@
+.academyGoals {
+  padding-bottom: 120px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 48px;
+  gap: 24px;
+}
+
+.right {
+  max-width: 583px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.left {
+  max-width: 700px;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 1366px) {
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column-reverse;
+  }
+
+  .left {
+    max-width: none;
+  }
+
+  .right {
+    max-width: none;
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 800px) {
+}

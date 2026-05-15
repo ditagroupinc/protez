@@ -1,0 +1,33 @@
+.footer {
+  & .divider {
+    background-color: var(--white);
+  }
+}
+
+.footerBottom {
+  background-color: var(--dark);
+  color: var(--white);
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 22px;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: var(--section-padding-horizontal);
+  padding-right: var(--section-padding-horizontal);
+}
+
+.termsLink {
+  color: var(--White, #fff);
+
+  font-size: 14px;
+  font-style: normal;
+  text-decoration-line: underline;
+  text-decoration-style: solid;
+  text-decoration-skip-ink: none;
+  text-decoration-thickness: auto;
+  text-underline-offset: auto;
+  text-underline-position: from-font;
+}

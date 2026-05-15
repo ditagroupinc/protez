@@ -8,35 +8,77 @@ import FacebookPixelEvents from '@/components/FacebookPixelEvents'
 import { nunitoSans } from './fonts'
 
 import { ReactElement } from 'react'
+import { Metadata, Viewport } from 'next'
 
 const GTM_ID = process.env.GTM_ID
 // https://www.rodyvansambeek.com/blog/easiest-ga4-integration-nextjs-13-gtm-guide
 
 // https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
-export const metadata = {
-  title: 'Prosthetics for Ukraine',
-  description: `Main page of the "Prosthetics for Ukraine" foundation`,
-  creator: 'Ditagoup',
-  publisher: 'Ditagroup',
+export const metadata: Metadata = {
+  metadataBase: new URL('https://www.protezfoundation.org'),
+  title: {
+    default: 'Protez Foundation — Free Prosthetics for Ukrainians',
+    template: '%s | Protez Foundation',
+  },
+  description:
+    'Nonprofit 501(c)(3) providing state-of-the-art prosthetics, personalized training and rehabilitation in the US for Ukrainians who have lost limbs in the war. Free of charge.',
+  applicationName: 'Protez Foundation',
+  authors: [{ name: 'Protez Foundation' }],
+  creator: 'Protez Foundation',
+  publisher: 'Protez Foundation',
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en-US': '/',
+      'uk-UA': '/uk', // якщо введете окремий маршрут для UA
+    },
+  },
   openGraph: {
-    title: 'Prosthetics for Ukraine',
-    description: `Main page of the "Prosthetics for Ukraine" foundation`,
-    url: 'http://www.protezfoundation.com/',
-    siteName: 'protezfoundation.org',
-    images: 'https://dita-group.com/ogdita5.png',
-    locale: 'en-US',
     type: 'website',
+    locale: 'en_US',
+    alternateLocale: ['uk_UA'],
+    url: 'https://www.protezfoundation.org',
+    siteName: 'Protez Foundation',
+    title: 'Protez Foundation — Free Prosthetics for Ukrainians',
+    description: 'Free prosthetics and rehabilitation in the US for Ukrainians injured in the war.',
+    images: [
+      {
+        url: '/og/protez-foundation-og.png', // покладіть у /public/og/
+        width: 1200,
+        height: 630,
+        alt: 'Protez Foundation — prosthetics for Ukrainians',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    // @ts-ignore
-    domain: 'protezfoundation.org',
-    url: 'http://www.protezfoundation.com/',
-    image: 'https://dita-group.com/ogdita5.png',
-    title: 'Prosthetics for Ukraine',
-    description: `Main page of the "Prosthetics for Ukraine" foundation`,
-    images: 'https://dita-group.com/ogdita5.png',
+    title: 'Protez Foundation — Free Prosthetics for Ukrainians',
+    description: 'Free prosthetics and rehabilitation in the US for Ukrainians injured in the war.',
+    images: ['/og/protez-foundation-og.png'],
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  verification: {
+    google: 'PASTE_GOOGLE_SEARCH_CONSOLE_TOKEN_HERE',
+  },
+}
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({ children }: { children: ReactElement }) {
