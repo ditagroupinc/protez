@@ -29,7 +29,8 @@
   position: relative;
   z-index: 3;
   padding-block: 140px;
-  padding-inline: var(--section-padding-horizontal);
+  padding-left: var(--section-padding-horizontal);
+  padding-right: var(--section-padding-horizontal);
   display: flex;
   align-items: center;
   justify-content: space-between;

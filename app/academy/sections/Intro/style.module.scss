@@ -31,7 +31,8 @@
   align-items: center;
   gap: 40px;
   z-index: 1;
-  padding-inline: var(--section-padding-horizontal);
+  padding-left: var(--section-padding-horizontal);
+  padding-right: var(--section-padding-horizontal);
   padding-bottom: 87px;
 }
 
