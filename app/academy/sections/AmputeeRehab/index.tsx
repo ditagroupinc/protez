@@ -10,6 +10,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 import { AcademyIDs } from '../../consts'
+import { ACADEMY_APPLY_FORM_URL, DONATE_URL } from '../../consts/links'
 
 const AmputeeRehab = () => {
   const t = useAcademyTexts()
@@ -39,21 +40,21 @@ const AmputeeRehab = () => {
                 as={'link'}
                 variant="primary-blue"
                 size="big"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf_4yg5XXs1eBQtnQzXGX7HagkbzW7xfim9kAuTXnhEj6CK-A/viewform"
+                href={ACADEMY_APPLY_FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.button}
               >
-                {t.amputeeRehab.cta.apply}
+                {t.cta.apply}
               </Button>
               <Button
                 as={'link'}
                 variant="secondary-white"
                 size="big"
-                href="/donate"
+                href={DONATE_URL}
                 className={styles.button}
               >
-                {t.amputeeRehab.cta.support}
+                {t.cta.support}
                 {icons.arrowUp(styles.arrowUp)}
               </Button>
             </TextAppearanceWrapper>

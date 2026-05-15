@@ -3,12 +3,12 @@
     "common": {
       "backToTop": "back to top  →"
     },
+    "cta": {
+      "apply": "Register for the program",
+      "support": "Support Academy"
+    },
     "intro": {
       "description": "Protez Academy is an educational project of the Protez Foundation in collaboration with Century College and with the participation of specialists from the University of Minnesota and Concordia University",
-      "cta": {
-        "register": "Register for the program",
-        "support": "Support Academy"
-      },
       "sponsorsTitle": "Our sponsors:",
       "partnersTitle": "Our partners:",
       "allSponsorsLink": "All sponsors and partners"
@@ -30,19 +30,15 @@
         "ourSponsors": "Our Sponsors"
       },
       "cta": {
-        "applyTop": "Register for the program",
         "foundation": "Protez Foundation",
-        "applyBottom": "Register for the program",
-        "support": "Support Academy",
         "language": "Українська"
       },
       "phone": "+1 612-772-4777"
     },
     "footer": {
-      "supportAcademy": "Support Academy",
       "nonprofit": "Nonprofit organization 501(c)(3) EIN: 88-2437069",
       "legalAddressLabel": "Legal address:",
-      "legalAddress": "7/11 Khreshchatyk Street",
+      "legalAddress": "Kyiv, 7/11 Khreshchatyk Street",
       "phone": "+38 050 984 33 56",
       "email": "info@protezfoundation.com",
       "copyright": "2026 © Made by DITA GROUP Inc.",
@@ -120,11 +116,7 @@
         { "value": 26, "label": "Specialists trained" },
         { "value": 9, "label": "Prostheses were provided" },
         { "value": 3, "label": "Summits were organized" }
-      ],
-      "cta": {
-        "apply": "Register for the program",
-        "support": "Support Academy"
-      }
+      ]
     },
     "chief": {
       "role": "CHIEF MEDICAL OFFICER, CERTIFIED PROSTHETIST AND ORTHOTIST",
@@ -157,8 +149,7 @@
         { "number": "/04", "desc": "Different levels of upper and lower limb amputations" },
         { "number": "/05", "desc": "Overview of cadaver anatomy" },
         { "number": "/06", "desc": "Physiology" }
-      ],
-      "cta": "Register for the program"
+      ]
     },
     "practiceSessions": {
       "items": [
@@ -201,10 +192,6 @@
     "amputeeRehab": {
       "imageAlt": "summit",
       "description": "This is the key annual event in Ukraine, bringing together leading Ukrainian and international experts in the field of rehabilitation. Participants include physical therapists, PRM specialists, occupational therapists, and prosthetists.\nThe Summit also features representatives of the Ukrainian government, underscoring the event's importance at the national level.",
-      "cta": {
-        "apply": "Register for the program",
-        "support": "Support Academy"
-      },
       "partners": [
         { "src": "esper_white.svg", "alt": "Esper" },
         { "src": "direct-relief_white.svg", "alt": "Direct Relief" },

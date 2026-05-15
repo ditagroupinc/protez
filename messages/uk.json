@@ -3,12 +3,12 @@
     "common": {
       "backToTop": "догори  →"
     },
+    "cta": {
+      "apply": "Зареєструватися на навчання",
+      "support": "Підтримати Academy"
+    },
     "intro": {
       "description": "Protez Academy - це освітній проєкт Фонду Протез у співпраці з Century College та за участю фахівців з Університету Міннесоти та Університету Конкордія",
-      "cta": {
-        "register": "Зареєструватися на навчання",
-        "support": "Support Academy"
-      },
       "sponsorsTitle": "Наші спонсори:",
       "partnersTitle": "Наші партнери:",
       "allSponsorsLink": "Всі спонсори та партнери"
@@ -30,19 +30,15 @@
         "ourSponsors": "Спонсори"
       },
       "cta": {
-        "applyTop": "Зареєструватися на навчання",
         "foundation": "Protez Foundation",
-        "applyBottom": "Apply to Academy",
-        "support": "Support Academy",
         "language": "English"
       },
       "phone": "+1 612-772-4777"
     },
     "footer": {
-      "supportAcademy": "Support Academy",
       "nonprofit": "Nonprofit organization 501(c)(3) EIN: 88-2437069",
       "legalAddressLabel": "Юридична адреса:",
-      "legalAddress": "вул. Хрещатик, 7/11",
+      "legalAddress": "Київ, вул. Хрещатик, 7/11",
       "phone": "+38 050 984 33 56",
       "email": "info@protezfoundation.com",
       "copyright": "2026 © Made by DITA GROUP Inc.",
@@ -120,11 +116,7 @@
         { "value": 26, "label": "Фахівців пройшли навчання" },
         { "value": 9, "label": "Протезів було надано" },
         { "value": 3, "label": "Самітів організовано" }
-      ],
-      "cta": {
-        "apply": "Зареєструватися на навчання",
-        "support": "Підтримати Academy"
-      }
+      ]
     },
     "chief": {
       "role": "ГОЛОВНИЙ ЛІКАР, СЕРТИФІКОВАНИЙ ПРОТЕЗИСТ І ОРТЕЗИСТ",
@@ -157,8 +149,7 @@
         { "number": "/04", "desc": "Різні рівні ампутацій верхніх і нижніх кінцівок" },
         { "number": "/05", "desc": "Огляд анатомії на кадаврі" },
         { "number": "/06", "desc": "Фізіологія" }
-      ],
-      "cta": "Зареєструватися на навчання"
+      ]
     },
     "practiceSessions": {
       "items": [
@@ -201,10 +192,6 @@
     "amputeeRehab": {
       "imageAlt": "саміт",
       "description": "Це щорічна ключова подія в Україні, яка об'єднує провідних українських та міжнародних експертів у галузі реабілітації. Учасники: фізичні терапевти, спеціалісти з ФРМ, ерготерапевти та протезисти.\nТакож у Саміті беруть участь представники українського уряду, що підкреслює важливість заходу на державному рівні.",
-      "cta": {
-        "apply": "Подати заявку в Academy",
-        "support": "Підтримати Academy"
-      },
       "partners": [
         { "src": "esper_white.svg", "alt": "Esper" },
         { "src": "direct-relief_white.svg", "alt": "Direct Relief" },

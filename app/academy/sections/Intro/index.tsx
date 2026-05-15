@@ -20,6 +20,7 @@ import { icons } from './icons'
 import style from './style.module.scss'
 
 import { AcademyIDs } from '../../consts'
+import { ACADEMY_APPLY_FORM_URL, DONATE_URL } from '../../consts/links'
 import Slider from 'react-slick'
 
 const sliderCards = [
@@ -147,18 +148,18 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
           <div className={style.buttonGroup}>
             <Button
               as="link"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf_4yg5XXs1eBQtnQzXGX7HagkbzW7xfim9kAuTXnhEj6CK-A/viewform"
+              href={ACADEMY_APPLY_FORM_URL}
               target={'_blank'}
               variant="primary-blue"
               // size={isMobile ? 'big' : 'small'}
               size="big"
               rel="noopener noreferrer"
             >
-              {t.intro.cta.register}
+              {t.cta.apply}
             </Button>
 
-            <Button as="link" href="/donate" variant="secondary-white" size="big">
-              {t.intro.cta.support}
+            <Button as="link" href={DONATE_URL} variant="secondary-white" size="big">
+              {t.cta.support}
               {icons.arrowUp(`${style.arrow}`)}
             </Button>
           </div>

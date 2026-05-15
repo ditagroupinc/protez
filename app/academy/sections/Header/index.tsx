@@ -19,6 +19,7 @@ import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import styles from './styles.module.scss'
 
 import { AcademyIDs } from '../../consts'
+import { ACADEMY_APPLY_FORM_URL, DONATE_URL } from '../../consts/links'
 
 import Link from 'next/link'
 
@@ -97,7 +98,7 @@ const AcademyHeader = () => {
           <div className={styles.btnGroup}>
             <Button
               as="link"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSf_4yg5XXs1eBQtnQzXGX7HagkbzW7xfim9kAuTXnhEj6CK-A/viewform"
+              href={ACADEMY_APPLY_FORM_URL}
               target={'_blank'}
               variant="primary-blue"
               size="small"
@@ -105,7 +106,7 @@ const AcademyHeader = () => {
               className={styles.applyBtn}
             >
               {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
-              {t.header.cta.applyTop}
+              {t.cta.apply}
             </Button>
             <Button as="link" href="/" variant="secondary-white" size="small">
               {/* {texts.academyHeader.buttons.foundation[lang]} */}
@@ -161,24 +162,24 @@ const AcademyHeader = () => {
             <div className={styles.lowerPartButtonsContainer}>
               <Button
                 as="link"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf_4yg5XXs1eBQtnQzXGX7HagkbzW7xfim9kAuTXnhEj6CK-A/viewform"
+                href={ACADEMY_APPLY_FORM_URL}
                 target={'_blank'}
                 variant="primary-blue"
                 size="small"
                 rel="noopener noreferrer"
                 className={styles.lowerPartButton}
               >
-                {t.header.cta.applyBottom}
+                {t.cta.apply}
                 {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
               </Button>
               <Button
                 as="link"
-                href="/donate"
+                href={DONATE_URL}
                 variant="secondary-black"
                 size="small"
                 className={styles.lowerPartButton}
               >
-                {t.header.cta.support}
+                {t.cta.support}
                 {/* {texts.academyHeader.buttons.supportAcademy[lang]} */}
                 {icons.arrowUp(`${styles.icon} ${styles.black}`)}
               </Button>

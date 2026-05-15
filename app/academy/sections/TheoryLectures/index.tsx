@@ -51,7 +51,7 @@ const TheoryLectures = () => {
       {lecture('/04')}
       <div className={styles.gridButton}>
         <Button as={'link'} variant="normal-blue" href={'/'} className={styles.applyBtn}>
-          {t.theoryLectures.cta}
+          {t.cta.apply}
           {icons.arrowUp()}
         </Button>
       </div>

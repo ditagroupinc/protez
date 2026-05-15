@@ -9,6 +9,7 @@ import AcademySection from '@academy/components/AcademySection'
 import style from './style.module.scss'
 
 import { AcademyIDs } from '../../consts'
+import { DONATE_URL } from '../../consts/links'
 import { icons } from './icons'
 import Button from '@academy/components/Button'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -46,7 +47,7 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
           </TextAppearanceWrapper>
           <Button
             as="link"
-            href="/donate"
+            href={DONATE_URL}
             variant="normal-black"
             size="big"
             className={style.button}

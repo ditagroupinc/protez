@@ -7,6 +7,7 @@ import { icons } from './icons'
 import style from './style.module.scss'
 
 import { AcademyIDs } from '../../consts'
+import { ACADEMY_APPLY_FORM_URL, DONATE_URL } from '../../consts/links'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import ProtezImage from '@/components/ProtezImage'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
@@ -15,7 +16,8 @@ import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 const OurResults = () => {
   const t = useAcademyTexts()
   const { desktop: titleDesktop } = useAcademyTitle('ourResults')
-  const { stats, datesRange, description, cta } = t.ourResults
+  const { stats, datesRange, description } = t.ourResults
+  const cta = t.cta
 
   return (
     <AcademySection id={AcademyIDs.OurResults} className={style.academyResults}>
@@ -32,7 +34,7 @@ const OurResults = () => {
             <TextAppearanceWrapper className={style.btnGroup}>
               <Button
                 as="link"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSf_4yg5XXs1eBQtnQzXGX7HagkbzW7xfim9kAuTXnhEj6CK-A/viewform"
+                href={ACADEMY_APPLY_FORM_URL}
                 target={'_blank'}
                 variant="primary-blue"
                 rel="noopener noreferrer"
@@ -40,7 +42,7 @@ const OurResults = () => {
               >
                 {cta.apply}
               </Button>
-              <Button as="link" href="/donate" variant="normal-black" size="big">
+              <Button as="link" href={DONATE_URL} variant="normal-black" size="big">
                 {cta.support}
                 {icons.arrowUp(`${style.arrowUpIcon}`)}
               </Button>
