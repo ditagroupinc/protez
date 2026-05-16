@@ -10,6 +10,9 @@ import { AcademyAboutIDs } from '../../consts'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { useAcademyAboutTexts } from '@/hooks/useAcademyAboutTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
+import Button from '@academy/components/Button'
+import { icons } from './icons'
+import { ACADEMY_CHARTER_URL } from '@academy/consts/links'
 
 interface Props {
   id: AcademyAboutIDs
@@ -34,6 +37,18 @@ const History = forwardRef<HTMLDivElement, Props>(function ({ id }, ref) {
               ))}
             </div>
           </TextAppearanceWrapper>
+
+          <Button
+            as="link"
+            href={ACADEMY_CHARTER_URL}
+            variant="normal-black"
+            size="big"
+            target="_blank"
+            className={style.button}
+          >
+            {t.history.button}
+            {icons.arrowUp(`${style.arrowUpIcon}`)}
+          </Button>
         </div>
         <div className={style.left}>
           <ProtezImage
