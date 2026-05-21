@@ -1,0 +1,23 @@
+{
+  "description1": "Усі благодійні внески не оподатковуються.",
+  "description3": "Потужна підтримка волонтерів спільноти та партнерів з усього світу дозволила нам утримати адміністративні витрати",
+  "coloredText": "менше 8%",
+  "nonprofitOrganization": "Неприбуткова організація 501(c)(3) EIN: 88-2437069",
+  "sendChecks": "Надсилайте чеки на адресу:",
+  "address": {
+    "orgName": "Protez Foundation",
+    "line1": "3510 Hopkins Pl, W130D",
+    "line2": "Oakdale, MN 55128",
+    "country": "Сполучені Штати Америки"
+  },
+  "sendDonations": "Надіслати донат ви також можете через сервіси Zells, Монобанк або ПриватБанк",
+  "zelle": "Будь ласка, вкажіть свою email-адресу в коментарях до транзакції, щоб ми могли надіслати вам квитанцію про пожертву",
+  "zelleAlt": "логотип Zelle",
+  "titleAlt": "Долучитись",
+  "privat24Alt": "Приват24",
+  "monobankAlt": "Монобанк",
+  "financeEmail": "finance@protezfoundation.com",
+  "email": "info@protezfoundation.com",
+  "phone": "+1 612-997-2005",
+  "madeBy": "2024 © Створено DITA GROUP Inc."
+}

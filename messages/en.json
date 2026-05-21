@@ -112,10 +112,10 @@
       "datesRange": "(May 2022 – May 2026)",
       "description": "Ukrainian Specialists already went through the Program and back in their home country helping restore the lives of those who lost limbs during the war",
       "stats": [
-        { "value": 92, "label": "People received prosthetics" },
-        { "value": 26, "label": "Specialists trained" },
-        { "value": 9, "label": "Prostheses were provided" },
-        { "value": 3, "label": "Summits were organized" }
+        { "value": 150, "label": "Specialists trained" },
+        { "value": 1300, "label": "Patients fitted with prosthetics" },
+        { "value": 2500, "label": "Prostheses provided" },
+        { "value": 3, "label": "Summits organized" }
       ]
     },
     "chief": {

@@ -1,0 +1,23 @@
+{
+  "description1": "All charitable contributions are tax-deductible.",
+  "description3": "Strong support from community volunteers and partners around the globe allowed us to cap our administrative expenses",
+  "coloredText": "under 8%",
+  "nonprofitOrganization": "Nonprofit organization 501(c)(3) EIN: 88-2437069",
+  "sendChecks": "Please send checks to:",
+  "address": {
+    "orgName": "Protez Foundation",
+    "line1": "3510 Hopkins Pl, W130D",
+    "line2": "Oakdale, MN 55128",
+    "country": "United States of America"
+  },
+  "sendDonations": "You can also send a donation through Zelle, Monobank or PrivatBank",
+  "zelle": "Please include your email in comments to the transaction, so we could send you donation receipt",
+  "zelleAlt": "zelle logo",
+  "titleAlt": "Donate",
+  "privat24Alt": "Privat24",
+  "monobankAlt": "Monobank",
+  "financeEmail": "finance@protezfoundation.com",
+  "email": "info@protezfoundation.com",
+  "phone": "+1 612-997-2005",
+  "madeBy": "2024 © Made by DITA GROUP Inc."
+}

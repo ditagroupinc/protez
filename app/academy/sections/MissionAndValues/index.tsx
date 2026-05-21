@@ -15,6 +15,8 @@ import Button from '@academy/components/Button'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { Languages } from '@/types'
 
 const sliderSettings = {
   dots: true,
@@ -34,6 +36,8 @@ const sliderSettings = {
 const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useAcademyTexts()
   const { desktop: titleDesktop } = useAcademyTitle('mission-and-values')
+  const { lang } = useLanguage()
+  const titleLang = lang === Languages.Ukrainian ? 'uk' : 'en'
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.MissionAndValues} className={style.academyGoals}>
@@ -82,7 +86,9 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
                     className={style.icon}
                   />
                   <div className={style.cardContent}>
-                    <p className={style.cardTitle}>{item.title}</p>
+                    <p className={style.cardTitle} lang={titleLang}>
+                      {item.title}
+                    </p>
                     {item.text}
                   </div>
                 </div>

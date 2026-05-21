@@ -31,7 +31,7 @@ const sampleProsthesesCostsText = {
         english: 'Hand or Arm',
         ukrainian: 'Кисть або Рука',
       },
-      price: '$16K',
+      price: '≈ $3,5К',
       icon: icons.handOrArm,
     },
     {
@@ -39,7 +39,7 @@ const sampleProsthesesCostsText = {
         english: 'Above the knee',
         ukrainian: 'Вище коліна',
       },
-      price: '$9k-22K',
+      price: '≈ $20К',
       icon: icons.aboveTheKnee,
     },
     {
@@ -55,7 +55,7 @@ const sampleProsthesesCostsText = {
         english: 'Liners&Socks',
         ukrainian: 'Підкладки',
       },
-      price: '$1K',
+      price: '> $600',
       icon: icons.linersAndSocks,
     },
     {
@@ -63,7 +63,7 @@ const sampleProsthesesCostsText = {
         english: 'Components',
         ukrainian: 'Компоненти',
       },
-      price: '$500',
+      price: '> $500',
       icon: icons.components,
     },
     {
@@ -71,7 +71,7 @@ const sampleProsthesesCostsText = {
         english: 'Sport foot',
         ukrainian: 'Спорт foot',
       },
-      price: '$1,5K',
+      price: '≈ $3,5К',
       icon: icons.sportFoot,
     },
   ],

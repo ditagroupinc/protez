@@ -73,6 +73,9 @@
     font-size: 20px;
     padding-bottom: 8px;
     font-weight: 700;
+    hyphens: manual;
+    -webkit-hyphens: manual;
+    overflow-wrap: break-word;
   }
 
   &:hover {
