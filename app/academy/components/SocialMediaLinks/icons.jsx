@@ -71,4 +71,5 @@ export const socialLinks = [
   // { address: 'https://www.facebook.com/prostheticsforukrainians/', icon: iconFacebook },
   { address: 'https://www.instagram.com/protezacademy?igsh=YjZsendpeHdkcXIz', icon: iconInstagram },
   // { address: 'https://www.linkedin.com/company/protez-foundation/', icon: iconLinkedin },
+  //
 ]
