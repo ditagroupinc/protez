@@ -20,8 +20,5 @@ export function useDonateTitle(): TitleSpec {
   const { lang } = useLanguage()
   const t = useDonationsTexts()
 
-  return useMemo(
-    () => ({ ...DIMENSIONS[lang], alt: t.titleAlt }),
-    [lang, t.titleAlt],
-  )
+  return useMemo(() => ({ ...DIMENSIONS[lang], alt: t.titleAlt }), [lang, t.titleAlt])
 }
