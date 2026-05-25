@@ -69,8 +69,8 @@ export const ACADEMY_TITLES: Record<AcademyTitleName, AcademyTitleEntry> = {
   'our-goals': {
     base: 'our-goals',
     alt: 'our-goals',
-    desktop: { en: { width: 313, height: 160 }, uk: { width: 356, height: 167 } },
-    mobile: { en: { width: 177, height: 89 }, uk: { width: 202, height: 99 } },
+    desktop: { en: { width: 313, height: 160 }, uk: { width: 535, height: 167 } },
+    mobile: { en: { width: 177, height: 89 }, uk: { width: 306, height: 99 } },
   },
   'our-results': {
     base: 'our-results',
@@ -81,8 +81,8 @@ export const ACADEMY_TITLES: Record<AcademyTitleName, AcademyTitleEntry> = {
   'our-sponsors': {
     base: 'our-sponsors',
     alt: 'our-sponsors',
-    desktop: { en: { width: 500, height: 142 }, uk: { width: 522, height: 147 } },
-    mobile: { en: { width: 289, height: 89 }, uk: { width: 302, height: 91 } },
+    desktop: { en: { width: 500, height: 142 }, uk: { width: 407, height: 161 } },
+    mobile: { en: { width: 289, height: 89 }, uk: { width: 235, height: 99 } },
   },
   'protez-academy': {
     base: 'protez-academy',
@@ -123,7 +123,7 @@ export const ACADEMY_TITLES: Record<AcademyTitleName, AcademyTitleEntry> = {
   'yakov-gradinar': {
     base: 'yakov-gradinar',
     alt: 'yakov-gradinar',
-    desktop: { en: { width: 607, height: 149 }, uk: { width: 598, height: 156 } },
-    mobile: { en: { width: 281, height: 92 }, uk: { width: 274, height: 96 } },
+    desktop: { en: { width: 607, height: 149 }, uk: { width: 598, height: 161 } },
+    mobile: { en: { width: 281, height: 92 }, uk: { width: 274, height: 99 } },
   },
 }

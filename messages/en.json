@@ -23,7 +23,6 @@
         "chief": "Chief",
         "pastAndUpcomingEvents": "Events",
         "academyStudents": "Students",
-        "amputeeRehab": "Amputee Rehab",
         "summitResults": "Summit",
         "weAreInNews": "We Are In News",
         "specialThanksToAllOurPartners": "Partners",
@@ -207,42 +206,42 @@
       "backgroundAlt": "Ukrainian flag",
       "items": [
         {
-          "link": "/",
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
           "photo": "academyPage/events/academyEvent0.png",
           "date": "2026-06-13",
           "title": "Therapeutic exercises: a modern approach to designing sessions",
           "location": "Kyiv"
         },
         {
-          "link": "/",
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
           "photo": "academyPage/events/academyEvent0.png",
           "date": "2026-06-13",
           "title": "Therapeutic exercises: a modern approach to designing sessions",
           "location": "Kyiv"
         },
         {
-          "link": "/",
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
           "photo": "academyPage/events/academyEvent0.png",
           "date": "2026-06-06",
           "title": "Therapeutic exercises: a modern approach to designing sessions",
           "location": "Kyiv"
         },
         {
-          "link": "/",
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
           "photo": "academyPage/events/academyEvent0.png",
           "date": "2026-05-16",
           "title": "Therapeutic exercises: a modern approach to designing sessions",
           "location": "Kyiv"
         },
         {
-          "link": "/",
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
           "photo": "academyPage/events/academyEvent0.png",
           "date": "2026-05-30",
           "title": "Therapeutic exercises: a modern approach to designing sessions",
           "location": "Kyiv"
         },
         {
-          "link": "/",
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
           "photo": "academyPage/events/academyEvent0.png",
           "date": "2026-05-30",
           "title": "Therapeutic exercises: a modern approach to designing sessions",

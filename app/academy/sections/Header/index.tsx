@@ -34,7 +34,6 @@ const AncorLinkIds = [
   AcademyIDs.Chief,
   AcademyIDs.PastAndUpcomingEvents,
   AcademyIDs.AcademyStudents,
-  AcademyIDs.AmputeeRehab,
   AcademyIDs.SummitResults,
   AcademyIDs.SpecialThanksToAllOurPartners,
   AcademyIDs.OurSponsors,
