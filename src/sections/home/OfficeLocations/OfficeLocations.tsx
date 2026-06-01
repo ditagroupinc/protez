@@ -1,5 +1,8 @@
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useHomeTexts } from '@/hooks/useHomeTexts'
+'use client'
+
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 
 import style from './style.module.scss'
 
@@ -14,6 +17,8 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useRef } from 'react'
 import ProtezImage from '@/components/ProtezImage'
 
+type OfficeLocation = { country: string; location: string; address: string }
+
 const locationImages = [
   'officeLocationsSlide1.png',
   'officeLocationsSlide2.png',
@@ -21,13 +26,15 @@ const locationImages = [
 ]
 
 const OfficeLocations = () => {
-  const { lang } = useLanguage()
-  const t = useHomeTexts().officeLocations
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.officeLocations')
+  const locationsRaw = t.raw('locations') as OfficeLocation[]
   const { width } = useScreenModeAndSize()
   const sliderRef = useRef<Slider & React.Component>(null)
   const isDesktopLayout = width > 800
 
-  const locations = t.locations.map((location, index) => ({
+  const locations = locationsRaw.map((location, index) => ({
     ...location,
     img: locationImages[index],
   }))

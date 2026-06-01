@@ -1,11 +1,9 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useTransition } from 'react'
 
-import { Languages } from '@/types'
-
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useSharedTexts } from '@/hooks/useSharedTexts'
+import { useLocale, useTranslations } from 'next-intl'
+import { usePathname, useRouter } from '@/lib/i18n'
 
 import Button, { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
 
@@ -95,15 +93,18 @@ const Header = ({
 
   const ref = useOutsideClick(() => setHeaderIsOpened(false))
 
-  const { lang, setLang } = useLanguage()
-  const t = useSharedTexts().header
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+  const [, startTransition] = useTransition()
+  const t = useTranslations('shared.header')
 
-  const handleLanguageChange = useCallback(() => {
-    const langToSet = lang === Languages.English ? Languages.Ukrainian : Languages.English
-
-    setLang(langToSet)
-    localStorage.setItem('lang', langToSet)
-  }, [lang, setLang])
+  const switchLocale = (next: 'en' | 'uk') => {
+    if (next === locale) return
+    startTransition(() => {
+      router.replace(pathname, { locale: next })
+    })
+  }
 
   const isMobile = width < 768
   const linksPrefix = ancorLinks ? '#' : '/'
@@ -111,7 +112,7 @@ const Header = ({
   const backToTopHref =
     layout === 'protezPage' ? '#' + ProtezIDs.LetsGiveHope : '#' + AcademyIDs.Intro
 
-  const navItems = t[layout].navigation.map((label, index) => ({
+  const navItems = (t.raw(`${layout}.navigation`) as string[]).map((label, index) => ({
     text: label,
     id: navigationIds[layout][index],
   }))
@@ -157,7 +158,7 @@ const Header = ({
             <div className={style.buttonsGroup}>
               {layout === 'protezPage' ? (
                 <>
-                  <MakeDonationButton lang={lang} size="small" />
+                  <MakeDonationButton size="small" />
 
                   <Button
                     as="link"
@@ -166,15 +167,15 @@ const Header = ({
                     variant="secondary-white"
                     size="small"
                   >
-                    {t.protezPage.actionButtons.needAProthesis}
+                    {t('protezPage.actionButtons.needAProthesis')}
                   </Button>
                 </>
               ) : (
                 <>
-                  <ApplyToAcademyButton lang={lang} size="small" />
+                  <ApplyToAcademyButton size="small" />
 
                   <Button as="link" href="/" variant="secondary-white" size="small">
-                    {t.academyPage.actionButtons.protezFoundation}
+                    {t('academyPage.actionButtons.protezFoundation')}
                   </Button>
                 </>
               )}
@@ -182,16 +183,16 @@ const Header = ({
             <div className={style.languageWrapper}>
               {icons.world(`${style.worldIcon}`)}
               <button
-                onClick={handleLanguageChange}
-                disabled={lang === Languages.English}
+                onClick={() => switchLocale('en')}
+                disabled={locale === 'en'}
                 className={style.localeBtn}
               >
                 EN
               </button>
               <span className={style.divider} />
               <button
-                onClick={handleLanguageChange}
-                disabled={lang === Languages.Ukrainian}
+                onClick={() => switchLocale('uk')}
+                disabled={locale === 'uk'}
                 className={style.localeBtn}
               >
                 UA
@@ -203,7 +204,7 @@ const Header = ({
         <div className={`${style.sideMenu} ${headerIsOpened ? style.opened : ''}`}>
           <div className={style.protezAcademyLinkWrapper}>
             <Link href={'/academy'} className={`${style.protezAcademyLink} ${style.blue}`}>
-              <H3>{t.protezAcademy}</H3>
+              <H3>{t('protezAcademy')}</H3>
               {icons.arrowUp(`${style.icon} ${style.blue}`)}
             </Link>
           </div>
@@ -225,12 +226,8 @@ const Header = ({
             <div className={style.lowerPartButtonsContainer}>
               {layout === 'protezPage' ? (
                 <>
-                  <MakeDonationButton lang={lang} className={style.lowerPartButton} size="normal" />
-                  <SupportWithAmazonButton
-                    lang={lang}
-                    className={style.lowerPartButton}
-                    size="normal"
-                  />
+                  <MakeDonationButton className={style.lowerPartButton} size="normal" />
+                  <SupportWithAmazonButton className={style.lowerPartButton} size="normal" />
 
                   <Button
                     as="link"
@@ -241,15 +238,15 @@ const Header = ({
                     arrow
                     className={style.lowerPartButton}
                   >
-                    {t.protezPage.actionButtons.needAProthesis}
+                    {t('protezPage.actionButtons.needAProthesis')}
                   </Button>
                 </>
               ) : (
                 <>
-                  <ApplyToAcademyButton lang={lang} size="small" />
+                  <ApplyToAcademyButton size="small" />
 
                   <Button as="link" href="/" variant="secondary-black" size="small" arrow>
-                    {t.academyPage.actionButtons.supportAcademy}
+                    {t('academyPage.actionButtons.supportAcademy')}
                   </Button>
                 </>
               )}
@@ -261,9 +258,12 @@ const Header = ({
             </a>
 
             <div className={style.languageButtonContainer}>
-              <button className={style.languageButton} onClick={handleLanguageChange}>
+              <button
+                className={style.languageButton}
+                onClick={() => switchLocale(locale === 'uk' ? 'en' : 'uk')}
+              >
                 {icons.world(style.icon)}
-                <span>{lang}</span>
+                <span>{locale === 'uk' ? 'Українська' : 'English'}</span>
               </button>
             </div>
           </div>

@@ -1,5 +1,8 @@
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useHomeTexts } from '@/hooks/useHomeTexts'
+'use client'
+
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 
 import Section from '@/components/Section'
 
@@ -62,8 +65,10 @@ const PriceCard = ({
 }
 
 const SampleProsthesesCosts = () => {
-  const { lang } = useLanguage()
-  const t = useHomeTexts().sampleProsthesesCosts
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.sampleProsthesesCosts')
+  const prosthesesText = t.raw('prostheses') as string[]
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
@@ -79,7 +84,7 @@ const SampleProsthesesCosts = () => {
     '': '',
   }
 
-  const prostheses = t.prostheses.map((text, index) => ({
+  const prostheses = prosthesesText.map((text, index) => ({
     text,
     price: prosthesesMeta[index].price,
     icon: prosthesesMeta[index].icon,
@@ -90,12 +95,12 @@ const SampleProsthesesCosts = () => {
       <div className={style.left}>
         {icons.sampleProsthesesCostsLogo.desktop[lang](style.title)}
         <Body large={isDesktopLayout} className={style.description}>
-          {t.description}
+          {t('description')}
         </Body>
         {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
-            <MakeDonationButton lang={lang} size="normal" />
-            <SupportWithAmazonButton lang={lang} color="white" size="normal" />
+            <MakeDonationButton size="normal" />
+            <SupportWithAmazonButton color="white" size="normal" />
           </TextAppearanceWrapper>
         )}
       </div>
@@ -112,7 +117,7 @@ const SampleProsthesesCosts = () => {
               />
             ))}
           </div>
-          <H3 className={style.pricesDivider}>{t.miscellaneous}</H3>
+          <H3 className={style.pricesDivider}>{t('miscellaneous')}</H3>
           <div className={`${style.pricesBlock} ${style.lowerBlock}`}>
             {prostheses.slice(3, 6).map((prosthesis, index) => (
               <PriceCard
@@ -130,8 +135,8 @@ const SampleProsthesesCosts = () => {
       </div>
       {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
-          <MakeDonationButton lang={lang} size="normal" />
-          <SupportWithAmazonButton lang={lang} color="white" size="normal" />
+          <MakeDonationButton size="normal" />
+          <SupportWithAmazonButton color="white" size="normal" />
         </TextAppearanceWrapper>
       )}
     </Section>

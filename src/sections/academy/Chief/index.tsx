@@ -1,10 +1,12 @@
+'use client'
+
 import AcademySection from '@/components/AcademySection'
 import styles from './styles.module.scss'
 import { icons } from './icons'
 import ProtezImage from '@/components/ProtezImage'
 import { forwardRef } from 'react'
 
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useTranslations } from 'next-intl'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -12,7 +14,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { AcademyIDs } from '@academy/consts'
 
 const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
-  const t = useAcademyTexts()
+  const t = useTranslations('academy.chief')
   const { desktop: titleDesktop } = useAcademyTitle('yakov-gradinar')
 
   return (
@@ -21,12 +23,8 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
         <div className={styles.left}>
           <ProtezImage {...titleDesktop} className={styles.sectionTitle} />
 
-          <TextAppearanceWrapper className={styles.profession}>
-            {t.chief.role}
-          </TextAppearanceWrapper>
-          <TextAppearanceWrapper className={styles.desc}>
-            {t.chief.description}
-          </TextAppearanceWrapper>
+          <TextAppearanceWrapper className={styles.profession}>{t('role')}</TextAppearanceWrapper>
+          <TextAppearanceWrapper className={styles.desc}>{t('description')}</TextAppearanceWrapper>
           <ul className={styles.socialLinkWrapper}>
             <li>
               <a
@@ -78,4 +76,5 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
   )
 })
 
+Chief.displayName = 'Chief'
 export default Chief

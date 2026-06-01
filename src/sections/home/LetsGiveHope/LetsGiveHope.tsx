@@ -1,8 +1,10 @@
-import { forwardRef, ForwardedRef } from 'react'
+'use client'
 
-import { useLanguage } from '@/contexts/LanguageContext'
+import { forwardRef, ForwardedRef } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-import { useHomeTexts } from '@/hooks/useHomeTexts'
 
 import VideoAndFilter from '@/components/VideoAndFilter'
 import Section from '@/components/Section'
@@ -14,9 +16,10 @@ import style from './style.module.scss'
 import { icons } from './icons'
 
 const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
-  const { lang } = useLanguage()
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
   const { width } = useScreenModeAndSize()
-  const t = useHomeTexts().letsGiveHope
+  const t = useTranslations('home.letsGiveHope')
 
   const isDesktop = width > 1180
 
@@ -27,13 +30,13 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
       <VideoAndFilter src={'flag-ukraine.mp4'} />
       <div className={style.overlay} />
       <div className={style.container}>
-        <div className={`${style.left} ${lang === 'ukrainian' ? style.ukrainianLang : ''}`}>
+        <div className={`${style.left} ${locale === 'uk' ? style.ukrainianLang : ''}`}>
           {icons.protezLogo(style.logo)}
           <Body large={isDesktop} className={style.description}>
-            {t.description}
+            {t('description')}
           </Body>
           <div className={style.buttonsContainer}>
-            <MakeDonationButton lang={lang} size="normal" />
+            <MakeDonationButton size="normal" />
             <Button
               variant="secondary-white"
               as="link"
@@ -42,7 +45,7 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
               size="normal"
               arrow
             >
-              {t.needAProthesis}
+              {t('needAProthesis')}
             </Button>
             {!isDesktop && (
               <Button
@@ -52,7 +55,7 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
                 href="https://forms.gle/WUVBvfZhYJsanGVbA"
                 size="normal"
               >
-                {t.protezAcademy}
+                {t('protezAcademy')}
               </Button>
             )}
           </div>

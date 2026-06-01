@@ -1,10 +1,12 @@
+'use client'
+
 import Section from '@/components/Section'
 
 import style from './style.module.scss'
 import { icons } from './icons'
 
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useSharedTexts } from '@/hooks/useSharedTexts'
+import { useLocale, useTranslations } from 'next-intl'
+import { localeToLanguage } from '@/lib/locale'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { ProtezIDs } from '@/consts'
@@ -33,15 +35,16 @@ const partnersIcons: string[] = [
 ]
 
 const SpecialThanksToAllOurPartners = () => {
-  const { lang } = useLanguage()
-  const t = useSharedTexts().specialThanksToAllOurPartners
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
+  const t = useTranslations('shared.specialThanksToAllOurPartners')
   const { width } = useScreenModeAndSize()
 
   return (
     <Section id={ProtezIDs.SpecialThanksToAllOurPartners} className={style.section}>
       <div className={style.buttonCell}>
         <SeeAllButton href="/partners" className={style.discoverAllButton}>
-          <span className={style.buttonText}>{t.discoverAllPartners}</span>
+          <span className={style.buttonText}>{t('discoverAllPartners')}</span>
         </SeeAllButton>
       </div>
       <div className={style.titleCell}>

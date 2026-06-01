@@ -1,6 +1,8 @@
 'use client'
 
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 
 import style from './style.module.scss'
 
@@ -9,7 +11,6 @@ import Section from '@/components/Section'
 import { Body, H3 } from '@/components/Typography'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-import { useStoriesTexts } from '@/hooks/useStoriesTexts'
 
 import Header from '@/sections/_shared/Header'
 import Footer from '@/sections/_shared/Footer'
@@ -22,9 +23,10 @@ const VETERAN_ICON: keyof typeof icons.titles = 'vadymFedorov'
 const EMAIL = 'info@protezfoundation.com'
 
 export default function VadymFedorov() {
-  const { lang } = useLanguage()
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
   const { width } = useScreenModeAndSize()
-  const t = useStoriesTexts().vadymFedorov
+  const t = useTranslations('stories.vadymFedorov')
 
   return (
     <>
@@ -47,30 +49,30 @@ export default function VadymFedorov() {
                 <div className={style.descriptionContainer}>
                   <div className={style.logoContainer}>
                     {icons.titles[VETERAN_ICON][lang](style.veteranLogo)}
-                    <Body className={style.ageRank}>{t.veteran.ageRank}</Body>
+                    <Body className={style.ageRank}>{t('veteran.ageRank')}</Body>
                   </div>
-                  <H3 className={style.cardTitle}>{t.veteran.title}</H3>
-                  <Body>{t.veteran.text}</Body>
+                  <H3 className={style.cardTitle}>{t('veteran.title')}</H3>
+                  <Body>{t('veteran.text')}</Body>
                 </div>
 
                 <div className={style.donationContainer}>
                   <div className={style.left}>
                     <div className={style.aboveDivider}>
                       <Body large={width > 1180} className={style.description}>
-                        <span className={style.block}>{t.donatePage.description1}</span>
+                        <span className={style.block}>{t('donatePage.description1')}</span>
                       </Body>
                       <Body large={width > 1180}>
-                        {t.donatePage.description3}{' '}
-                        <span className={style.redText}>{t.donatePage.coloredText}</span>
+                        {t('donatePage.description3')}{' '}
+                        <span className={style.redText}>{t('donatePage.coloredText')}</span>
                       </Body>
-                      <Body>{t.donatePage.nonprofitOrganization}</Body>
+                      <Body>{t('donatePage.nonprofitOrganization')}</Body>
                     </div>
 
                     <Divider className={style.divider} />
                     <div className={style.belowDivider}>
                       <div>
-                        <Body className={style.descTitle}>{t.donatePage.sendChecks}</Body>
-                        <Body className={style.descAddress}>{t.donatePage.address}</Body>
+                        <Body className={style.descTitle}>{t('donatePage.sendChecks')}</Body>
+                        <Body className={style.descAddress}>{t('donatePage.address')}</Body>
                       </div>
                       <Body className={style.descTitle}>{EMAIL}</Body>
                     </div>

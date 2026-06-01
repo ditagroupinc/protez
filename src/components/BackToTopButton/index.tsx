@@ -1,5 +1,7 @@
+'use client'
+
 import style from './style.module.scss'
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useTranslations } from 'next-intl'
 
 export default function BackToTopButton({
   href,
@@ -12,14 +14,14 @@ export default function BackToTopButton({
   black?: boolean
   color?: 'pink' | 'blue'
 }) {
-  const t = useAcademyTexts()
+  const t = useTranslations('academy.common')
 
   return (
     <a
       className={`${style.button} h6 ${black ? style.black : ''} ${style[color]} ${className}`}
       href={`#${href}`}
     >
-      {t.common.backToTop}
+      {t('backToTop')}
     </a>
   )
 }

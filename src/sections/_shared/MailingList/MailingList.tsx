@@ -1,7 +1,9 @@
+'use client'
+
 import style from './style.module.scss'
 import { useRef, useState } from 'react'
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useSharedTexts } from '@/hooks/useSharedTexts'
+import { useLocale, useTranslations } from 'next-intl'
+import { localeToLanguage } from '@/lib/locale'
 import { icons } from './icons'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -32,8 +34,9 @@ const veteransImages = [
 type FormStatus = 'loading' | 'error' | 'sent' | 'default'
 
 const MailingList = () => {
-  const { lang } = useLanguage()
-  const t = useSharedTexts().mailingList
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
+  const t = useTranslations('shared.mailingList')
 
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
@@ -51,6 +54,7 @@ const MailingList = () => {
     }
     const data = {
       email: target.email.value,
+      locale,
     }
 
     try {
@@ -87,7 +91,7 @@ const MailingList = () => {
         <form className={style.form} action="POST" onSubmit={handleSubmit}>
           <input
             className={style.input}
-            placeholder={t.email}
+            placeholder={t('email')}
             type="email"
             name="email"
             id="email"
@@ -95,7 +99,7 @@ const MailingList = () => {
           />
           <input
             className={style.input}
-            placeholder={t.phoneNumber}
+            placeholder={t('phoneNumber')}
             type="phoneNumber"
             name="phoneNumber"
             id="phoneNumber"
@@ -107,7 +111,7 @@ const MailingList = () => {
             type="submit"
             size="normal"
           >
-            {t.submitButton[formStatus]}
+            {t(`submitButton.${formStatus}`)}
 
             {formStatus === 'loading' && (
               <ProtezImage src={'spinner.gif'} alt="spinner" width={24} height={24} />

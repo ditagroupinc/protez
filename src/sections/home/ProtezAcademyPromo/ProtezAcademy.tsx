@@ -1,4 +1,6 @@
-import { useHomeTexts } from '@/hooks/useHomeTexts'
+'use client'
+
+import { useTranslations } from 'next-intl'
 
 import Section from '@/components/Section'
 
@@ -29,7 +31,7 @@ const Card = ({ image }: { image: string }) => {
 }
 
 const ProtezAcademy = () => {
-  const t = useHomeTexts().protezAcademyPromo
+  const t = useTranslations('home.protezAcademyPromo')
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
@@ -47,12 +49,12 @@ const ProtezAcademy = () => {
       <div className={style.right}>
         {icons.protezAcademyLogo(style.title)}
         <Body large={isDesktopLayout} className={style.description}>
-          {t.description}
+          {t('description')}
         </Body>
         {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
             <Button as="link" href="/academy" variant="primary-blue" size="normal">
-              {t.learnMore}
+              {t('learnMore')}
             </Button>
             <Button
               as="link"
@@ -62,7 +64,7 @@ const ProtezAcademy = () => {
               size="normal"
               arrow
             >
-              {t.applyToAcademy}
+              {t('applyToAcademy')}
             </Button>
           </TextAppearanceWrapper>
         )}
@@ -76,10 +78,10 @@ const ProtezAcademy = () => {
       {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
           <Button as="link" href="/academy" variant="primary-blue" size="normal">
-            {t.learnMore}
+            {t('learnMore')}
           </Button>
           <Button as="link" href="/" variant="secondary-white" arrow size="normal">
-            {t.applyToAcademy}
+            {t('applyToAcademy')}
           </Button>
         </TextAppearanceWrapper>
       )}

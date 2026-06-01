@@ -1,7 +1,9 @@
-import { useRef, useEffect } from 'react'
+'use client'
 
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useHomeTexts } from '@/hooks/useHomeTexts'
+import { useRef, useEffect } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 
 import style from './style.module.scss'
 import Slider from 'react-slick'
@@ -15,6 +17,8 @@ import { Body, H3 } from '@/components/Typography'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
+type PressRelease = { title: string; text: string }
+
 const releasesMeta = [
   { date: '12 December 2024', img: 'pressReleaseSlide2.png' },
   { date: '25 January 2025', img: 'pressReleaseSlide3.png' },
@@ -23,8 +27,10 @@ const releasesMeta = [
 ]
 
 const PressRelease = () => {
-  const { lang } = useLanguage()
-  const t = useHomeTexts().pressRelease
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.pressRelease')
+  const releases = t.raw('releases') as PressRelease[]
 
   const imageSliderRef = useRef<Slider & React.Component>(null)
   const textSliderRef = useRef<Slider & React.Component>(null)
@@ -94,7 +100,7 @@ const PressRelease = () => {
     ],
   }
 
-  const orderedPressReleaseArray = t.releases
+  const orderedPressReleaseArray = releases
     .map((release, index) => ({ ...release, ...releasesMeta[index] }))
     .sort((a, b) => {
       const dateA = new Date(a.date)

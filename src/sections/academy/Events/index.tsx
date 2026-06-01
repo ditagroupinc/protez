@@ -1,9 +1,11 @@
+'use client'
+
 import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState, useMemo } from 'react'
+import { useTranslations } from 'next-intl'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import AcademySection from '@/components/AcademySection'
@@ -56,12 +58,13 @@ const modifyAndSortEvents = (events: readonly EventInput[]): Event[] => {
 }
 
 const Events = forwardRef<HTMLDivElement>(function (_, ref) {
-  const t = useAcademyTexts()
+  const t = useTranslations('academy.events')
   const { desktop: titleDesktop } = useAcademyTitle('current-training-programs')
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
 
-  const sortedEvents = useMemo(() => modifyAndSortEvents(t.events.items), [t.events.items])
+  const items = t.raw('items') as EventInput[]
+  const sortedEvents = useMemo(() => modifyAndSortEvents(items), [items])
 
   const settings = {
     dots: false,
@@ -125,7 +128,7 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
     <AcademySection ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={styles.events}>
       <ProtezImage
         src="events-background-Ukraine.png"
-        alt={t.events.backgroundAlt}
+        alt={t('backgroundAlt')}
         width={4096}
         height={1150}
         className={styles.backgroundImage}
@@ -157,7 +160,7 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
                   <a href={card.link} target="blank" className={styles.card}>
                     <ProtezImage
                       src={`${card.photo}`}
-                      alt={t.events.imageAlt}
+                      alt={t('imageAlt')}
                       width={340}
                       height={480}
                       className={styles.cardPicture}
@@ -167,11 +170,11 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
                       <div className={styles.cardDateAndStatus}>
                         {card.upcoming ? (
                           <span className={`${styles.cardStatus} ${styles.upcoming}`}>
-                            {t.events.status.upcoming}
+                            {t('status.upcoming')}
                           </span>
                         ) : (
                           <span className={`${styles.cardStatus} ${styles.past}`}>
-                            {t.events.status.past}
+                            {t('status.past')}
                           </span>
                         )}
 
@@ -207,4 +210,5 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
   )
 })
 
+Events.displayName = 'Events'
 export default Events

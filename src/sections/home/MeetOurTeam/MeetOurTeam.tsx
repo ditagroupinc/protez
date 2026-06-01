@@ -1,7 +1,9 @@
-import React, { useRef } from 'react'
+'use client'
 
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useHomeTexts } from '@/hooks/useHomeTexts'
+import React, { useRef } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import Section from '@/components/Section'
@@ -30,6 +32,8 @@ interface MemberMeta {
   photo: string
   links: Links
 }
+
+type TeamMember = { name: string; position: string }
 
 const membersMeta: MemberMeta[] = [
   {
@@ -166,11 +170,13 @@ const MemberCard = ({
 }
 
 const MeetOurTeam = () => {
-  const { lang } = useLanguage()
-  const t = useHomeTexts().meetOurTeam
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.meetOurTeam')
+  const teamMembers = t.raw('members') as TeamMember[]
   const { width } = useScreenModeAndSize()
 
-  const members = t.members.map((member, index) => ({ ...member, ...membersMeta[index] }))
+  const members = teamMembers.map((member, index) => ({ ...member, ...membersMeta[index] }))
 
   const sliderRef = useRef(null)
   const settings = {

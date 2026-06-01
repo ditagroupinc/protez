@@ -1,4 +1,7 @@
+'use client'
+
 import { forwardRef, useRef } from 'react'
+import { useTranslations } from 'next-intl'
 
 import ProtezImage from '@/components/ProtezImage'
 
@@ -12,11 +15,13 @@ import style from './style.module.scss'
 
 import { AcademyIDs } from '@academy/consts'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
+type GoalItem = { icon: string; text: string }
+
 const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
-  const t = useAcademyTexts()
+  const t = useTranslations('academy.goals')
+  const items = t.raw('items') as GoalItem[]
   const { desktop: titleDesktop } = useAcademyTitle('our-goals')
   const sliderRef = useRef<Slider & React.Component>(null)
 
@@ -55,7 +60,7 @@ const OurGoals = forwardRef<HTMLDivElement>(function (_, ref) {
       <div className={style.sliderWrapper}>
         <div className={style.slider}>
           <Slider {...settings} ref={sliderRef}>
-            {t.goals.items.map((item, index) => (
+            {items.map((item, index) => (
               <div key={index}>
                 <div className={style.card}>
                   <ProtezImage

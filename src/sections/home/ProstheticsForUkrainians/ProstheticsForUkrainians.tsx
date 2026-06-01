@@ -1,5 +1,8 @@
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useHomeTexts } from '@/hooks/useHomeTexts'
+'use client'
+
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 
 import Section from '@/components/Section'
 
@@ -15,8 +18,10 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 const cardIcons = [icons.disabledPerson, icons.helpHeart, icons.people, icons.hand]
 
 const ProstheticsForUkrainians = () => {
-  const { lang } = useLanguage()
-  const t = useHomeTexts().prostheticsForUkrainians
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.prostheticsForUkrainians')
+  const cardsText = t.raw('cards') as string[]
   const { width } = useScreenModeAndSize()
 
   const isDesktopLayout = width > 1180
@@ -26,18 +31,18 @@ const ProstheticsForUkrainians = () => {
     ? icons.prostheticsForUkrainiansLogo.mobile
     : icons.prostheticsForUkrainiansLogo.desktop
 
-  const cards = t.cards.map((text, index) => ({ text, icon: cardIcons[index] }))
+  const cards = cardsText.map((text, index) => ({ text, icon: cardIcons[index] }))
 
   return (
     <Section id={ProtezIDs.ProstheticsForUkrainians} className={style.section}>
       <div className={style.left}>
         {title[lang](style.title)}
-        <H3 className={style.description1}>{t.description1}</H3>
-        <H3>{t.description2}</H3>
+        <H3 className={style.description1}>{t('description1')}</H3>
+        <H3>{t('description2')}</H3>
         {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
-            <MakeDonationButton lang={lang} size="normal" />
-            <SupportWithAmazonButton lang={lang} color="white" size="normal" />
+            <MakeDonationButton size="normal" />
+            <SupportWithAmazonButton color="white" size="normal" />
           </TextAppearanceWrapper>
         )}
       </div>
@@ -72,13 +77,8 @@ const ProstheticsForUkrainians = () => {
       </div>
       {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
-          <MakeDonationButton lang={lang} className={style.button} size="normal" />
-          <SupportWithAmazonButton
-            lang={lang}
-            color="white"
-            className={style.button}
-            size="normal"
-          />
+          <MakeDonationButton className={style.button} size="normal" />
+          <SupportWithAmazonButton color="white" className={style.button} size="normal" />
         </TextAppearanceWrapper>
       )}
     </Section>

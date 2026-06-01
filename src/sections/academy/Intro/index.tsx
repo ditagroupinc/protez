@@ -1,8 +1,7 @@
+'use client'
+
 import { forwardRef, useEffect, useState } from 'react'
-
-// import { useLanguage } from '@/contexts/LanguageContext'
-
-// import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import { useTranslations } from 'next-intl'
 
 import Button from '@/components/AcademyButton'
 
@@ -10,10 +9,8 @@ import AcademySection from '@/components/AcademySection'
 
 import VideoAndFilter from '@/components/VideoAndFilter'
 
-// import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import ProtezImage from '@/components/ProtezImage'
 
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import { icons } from './icons'
@@ -34,38 +31,6 @@ const sliderCards = [
   'chalice-of-mercy_white.svg',
   'concordia_white.svg',
   'cozen_white.svg',
-  // 'direct-relief_white.svg',
-  // 'dita-group_white.svg',
-  // 'donorbox_white.svg',
-  // 'esper_white.svg',
-  // 'evangelical-church_white.svg',
-  // 'exp_white.svg',
-  // 'fabtech_white.svg',
-  // 'fizychna-associasion_white.svg',
-  // 'highlight-printing_white.svg',
-  // 'humana-travel_white.svg',
-  // 'klmb_white.svg',
-  // 'kpi_white.svg',
-  // 'mhp_white.svg',
-  // 'minnesota_white.svg',
-  // 'monarch_white.svg',
-  // 'ossur_white.svg',
-  // 'ottobock._white.svg',
-  // 'paradize_white.svg',
-  // 'proteor_white.svg',
-  // 'rotary_white.svg',
-  // 'school-of-medicine_white.svg',
-  // 'shupika_white.svg',
-  // 'slumberland_white.svg',
-  // 'smak_white.svg',
-  // 'st-constantin_white.svg',
-  // 'st-maron_white.svg',
-  // 'ticket-to-america_white.svg',
-  // 'ua_white.svg',
-  // 'ukrainian-habitat-fund_white.svg',
-  // 'ukrsibbank_white.svg',
-  // 'united-help-ukraine_white.svg',
-  // 'xtremity_white.svg',
 ]
 
 const Card = ({ image, className }: { image: string; className?: string }) => {
@@ -83,9 +48,7 @@ const Card = ({ image, className }: { image: string; className?: string }) => {
 }
 
 const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
-  // const { lang } = useLanguage()
-  // const { mobile, width } = useScreenModeAndSize()
-  const t = useAcademyTexts()
+  const t = useTranslations('academy')
   const { desktop: introTitle } = useAcademyTitle('welcome')
   const [sliderReady, setSliderReady] = useState(false)
 
@@ -132,8 +95,6 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
     ],
   }
 
-  // const isMobile = width < 768 || mobile
-
   return (
     <AcademySection ref={ref} id={AcademyIDs.Intro} className={style.academyIntro}>
       <VideoAndFilter src={'academyPage/intro/introVideo.mp4'} />
@@ -143,32 +104,31 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
           <div className={style.sectionTitle}>
             <ProtezImage {...introTitle} priority />
           </div>
-          <p className={style.academyDesc}>{t.intro.description}</p>
+          <p className={style.academyDesc}>{t('intro.description')}</p>
           <div className={style.buttonGroup}>
             <Button
               as="link"
               href={ACADEMY_APPLY_FORM_URL}
               target={'_blank'}
               variant="primary-blue"
-              // size={isMobile ? 'big' : 'small'}
               size="big"
               rel="noopener noreferrer"
             >
-              {t.cta.apply}
+              {t('cta.apply')}
             </Button>
 
             <Button as="link" href={DONATE_URL} variant="secondary-white" size="big">
-              {t.cta.support}
+              {t('cta.support')}
               {icons.arrowUp(`${style.arrow}`)}
             </Button>
           </div>
         </div>
         <div className={style.rightPart}>
           <div className={style.titleContainer}>
-            <span className={style.greyTitle}>{t.intro.sponsorsTitle}</span>
+            <span className={style.greyTitle}>{t('intro.sponsorsTitle')}</span>
           </div>
           <a href={`#${AcademyIDs.SpecialThanksToAllOurPartners}`} className={style.blackButton}>
-            {t.intro.allSponsorsLink}
+            {t('intro.allSponsorsLink')}
             {icons.arrowDown(style.arrow)}
           </a>
 
@@ -178,7 +138,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
       </div>
       <div className={style.slider}>
         <div className={style.sliderTitleContainer}>
-          <span className={style.greyTitle}>{t.intro.partnersTitle}</span>
+          <span className={style.greyTitle}>{t('intro.partnersTitle')}</span>
         </div>
         {sliderReady && (
           <Slider {...settings}>

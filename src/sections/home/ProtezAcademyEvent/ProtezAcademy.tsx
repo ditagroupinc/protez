@@ -1,4 +1,6 @@
-import { useHomeTexts } from '@/hooks/useHomeTexts'
+'use client'
+
+import { useTranslations } from 'next-intl'
 
 import Section from '@/components/Section'
 
@@ -29,7 +31,7 @@ const Card = ({ image }: { image: string }) => {
 }
 
 const ProtezAcademy = () => {
-  const t = useHomeTexts().protezAcademyEvent
+  const t = useTranslations('home.protezAcademyEvent')
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
@@ -65,14 +67,14 @@ const ProtezAcademy = () => {
       <div className={style.right}>
         {icons.protezAcademyLogo(style.title)}
         <Body large={isDesktopLayout} className={style.description}>
-          <span>{t.description1}</span>
-          <span>{t.description2}</span>
-          <span>{t.description3}</span>
+          <span>{t('description1')}</span>
+          <span>{t('description2')}</span>
+          <span>{t('description3')}</span>
         </Body>
         {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
             <Button as="link" href="/" variant="primary-blue" size="normal">
-              {t.register}
+              {t('register')}
             </Button>
             <Button
               as="button"
@@ -81,7 +83,7 @@ const ProtezAcademy = () => {
               size="normal"
               arrow
             >
-              {t.documents}
+              {t('documents')}
             </Button>
             <Button
               as="link"
@@ -91,7 +93,7 @@ const ProtezAcademy = () => {
               size="normal"
               arrow
             >
-              {t.applyToAcademy}
+              {t('applyToAcademy')}
             </Button>
           </TextAppearanceWrapper>
         )}
@@ -105,7 +107,7 @@ const ProtezAcademy = () => {
       {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
           <Button as="link" href="/" variant="primary-blue" size="normal">
-            {t.register}
+            {t('register')}
           </Button>
           <Button
             as="button"
@@ -114,7 +116,7 @@ const ProtezAcademy = () => {
             size="normal"
             arrow
           >
-            {t.documents}
+            {t('documents')}
           </Button>
           <Button
             as="link"
@@ -124,7 +126,7 @@ const ProtezAcademy = () => {
             size="normal"
             arrow
           >
-            {t.applyToAcademy}
+            {t('applyToAcademy')}
           </Button>
         </TextAppearanceWrapper>
       )}

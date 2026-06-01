@@ -1,4 +1,7 @@
+'use client'
+
 import { forwardRef } from 'react'
+import { useTranslations } from 'next-intl'
 
 import ProtezImage from '@/components/ProtezImage'
 
@@ -8,11 +11,11 @@ import style from './style.module.scss'
 
 import { AcademyIDs } from '@academy/consts'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 const OurSponsors = forwardRef<HTMLDivElement>(function (_, ref) {
-  const t = useAcademyTexts()
+  const t = useTranslations('academy.ourSponsors')
+  const items = t.raw('items') as string[]
   const { desktop: titleDesktop } = useAcademyTitle('our-sponsors')
 
   return (
@@ -21,7 +24,7 @@ const OurSponsors = forwardRef<HTMLDivElement>(function (_, ref) {
         <ProtezImage {...titleDesktop} className={style.title} />
       </TextAppearanceWrapper>
       <TextAppearanceWrapper className={style.cardsContainer}>
-        {t.ourSponsors.items.map((sponsor, index) => (
+        {items.map((sponsor, index) => (
           <div key={index} className={style.card}>
             <ProtezImage
               src={`academyPage/partners/dark/${sponsor}`}

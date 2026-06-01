@@ -1,8 +1,10 @@
-import { useRef } from 'react'
+'use client'
 
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useRef } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-import { useHomeTexts } from '@/hooks/useHomeTexts'
 
 import Section from '@/components/Section'
 
@@ -21,10 +23,10 @@ import { EventsProps } from './types'
 const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref) {
   const sortedEvents = modifyAndSortEvents(events)
 
-  const { lang } = useLanguage()
-  // const [activeSlide, setActiveSlide] = useState(0)
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
   const { width } = useScreenModeAndSize()
-  const t = useHomeTexts().events
+  const t = useTranslations('home.events')
 
   const settings = {
     dots: false,
@@ -34,10 +36,9 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
     slidesToShow: 5,
     slidesToScroll: 1,
     focusOnSelect: true,
-    // centerMode: false,
-    centerMode: true, // Enable center mode for desktop too
-    centerPadding: '0px', // No padding for desktop
-    initialSlide: 0, // Start with slide 0
+    centerMode: true,
+    centerPadding: '0px',
+    initialSlide: 0,
 
     swipeToSlide: true,
     arrows: false,
@@ -54,7 +55,6 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          // centerMode: false,
         },
       },
 
@@ -62,7 +62,6 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
         breakpoint: 850,
         settings: {
           slidesToShow: 2,
-          // centerMode: false,
         },
       },
       {
@@ -75,8 +74,6 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
         },
       },
     ],
-
-    // beforeChange: (_current: number, next: number) => setActiveSlide(next),
   }
   const sliderRef = useRef<Slider & React.Component>(null)
 
@@ -91,7 +88,7 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
     <Section ref={ref} id={ProtezIDs.Events} className={style.events}>
       <ProtezImage
         src="events-background-Ukraine.png"
-        alt={t.alts.ukrainianFlag}
+        alt={t('alts.ukrainianFlag')}
         width={4096}
         height={1150}
         className={style.backgroundImage}
@@ -107,25 +104,13 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
           {sortedEvents.map((card, index) => {
             const slideClass = ''
 
-            // if (index === (activeSlide + 2) % sortedEvents.length && width > 1500) {
-            //   slideClass = style.centerSlide
-            // } else if (index === activeSlide && width > 1024 && width < 1500) {
-            //   slideClass = style.centerSlide
-            // } else if (
-            //   index === (activeSlide + 1) % sortedEvents.length &&
-            //   width > 600 &&
-            //   width < 1024
-            // ) {
-            //   slideClass = style.centerSlide
-            // } else if (index === activeSlide && width < 600) slideClass = style.centerSlide
-
             return (
               <div key={index}>
                 <div className={`${style.cardWrapper} ${slideClass}`}>
                   <a href={card.link} target="blank" className={style.card}>
                     <ProtezImage
                       src={card.photo}
-                      alt={t.alts.eventsPicture}
+                      alt={t('alts.eventsPicture')}
                       width={340}
                       height={480}
                       className={style.cardPicture}
@@ -136,11 +121,11 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
                       <div className={style.cardDateAndStatus}>
                         {card.upcoming ? (
                           <span className={`${style.cardStatus} ${style.upcoming}`}>
-                            {t.cardStatus.upcoming}
+                            {t('cardStatus.upcoming')}
                           </span>
                         ) : (
                           <span className={`${style.cardStatus} ${style.past}`}>
-                            {t.cardStatus.past}
+                            {t('cardStatus.past')}
                           </span>
                         )}
 
@@ -180,4 +165,5 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
   )
 })
 
+Events.displayName = 'Events'
 export default Events

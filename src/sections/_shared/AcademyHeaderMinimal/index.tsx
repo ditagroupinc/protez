@@ -1,12 +1,11 @@
 'use client'
 
-import { useCallback } from 'react'
+import { useTransition } from 'react'
 
 import Link from 'next/link'
 
-import { Languages } from '@/types'
-
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useLocale } from 'next-intl'
+import { usePathname, useRouter } from '@/lib/i18n'
 
 import SocialMediaLinks from '@/components/SocialMediaLinks'
 
@@ -19,14 +18,17 @@ import { icons } from './icons'
 const TermsConditionsHeader = () => {
   const { width } = useScreenModeAndSize()
 
-  const { lang, setLang } = useLanguage()
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+  const [, startTransition] = useTransition()
 
-  const handleLanguageChange = useCallback(() => {
-    const langToSet = lang === Languages.English ? Languages.Ukrainian : Languages.English
-
-    setLang(langToSet)
-    localStorage.setItem('lang', langToSet)
-  }, [lang, setLang])
+  const switchLocale = (next: 'en' | 'uk') => {
+    if (next === locale) return
+    startTransition(() => {
+      router.replace(pathname, { locale: next })
+    })
+  }
 
   const isMobile = width < 768
 
@@ -39,15 +41,15 @@ const TermsConditionsHeader = () => {
           <div className={styles.languageWrapper}>
             {icons.iconWorld(`${styles.worldIcon}`)}
             <button
-              onClick={handleLanguageChange}
-              disabled={lang === Languages.English}
+              onClick={() => switchLocale('en')}
+              disabled={locale === 'en'}
               className={styles.localeBtn}
             >
               EN
             </button>
             <button
-              onClick={handleLanguageChange}
-              disabled={lang === Languages.Ukrainian}
+              onClick={() => switchLocale('uk')}
+              disabled={locale === 'uk'}
               className={styles.localeBtn}
             >
               UA

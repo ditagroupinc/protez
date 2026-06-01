@@ -1,4 +1,7 @@
+'use client'
+
 import { forwardRef } from 'react'
+import { useTranslations } from 'next-intl'
 
 import ProtezImage from '@/components/ProtezImage'
 
@@ -8,7 +11,6 @@ import style from './style.module.scss'
 
 import { AcademyAboutIDs } from '@academy/about/consts'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import { useAcademyAboutTexts } from '@/hooks/useAcademyAboutTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 interface Props {
@@ -16,7 +18,7 @@ interface Props {
 }
 
 const AboutUs = forwardRef<HTMLDivElement, Props>(function ({ id }, ref) {
-  const t = useAcademyAboutTexts()
+  const t = useTranslations('academyAbout.mission')
   const { desktop: titleDesktop } = useAcademyTitle('about-us')
 
   return (
@@ -27,13 +29,13 @@ const AboutUs = forwardRef<HTMLDivElement, Props>(function ({ id }, ref) {
             <ProtezImage {...titleDesktop} className={style.title} priority />
           </TextAppearanceWrapper>
           <TextAppearanceWrapper>
-            <p className={style.description}>{t.mission.statement}</p>
+            <p className={style.description}>{t('statement')}</p>
           </TextAppearanceWrapper>
         </div>
         <div className={style.left}>
           <ProtezImage
             src="academyPage/mission-and-values.png"
-            alt={t.mission.imageAlt}
+            alt={t('imageAlt')}
             width={720}
             height={520}
             className={style.image}

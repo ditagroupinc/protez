@@ -1,12 +1,20 @@
 import { mailOptions, transporter } from '@/config/nodemailer'
 
 import { NextResponse } from 'next/server'
+import { getTranslations } from 'next-intl/server'
+import { routing } from '@/lib/i18n'
+
+function resolveLocale(input) {
+  return input === 'uk' || input === 'en' ? input : routing.defaultLocale
+}
 
 export async function POST(request) {
-  const data = await request.json()
+  const data = await request.json().catch(() => ({}))
+  const locale = resolveLocale(data?.locale)
+  const t = await getTranslations({ locale, namespace: 'shared.mailingList.submitButton' })
 
   if (!data || !data.email) {
-    return new NextResponse(JSON.stringify({ message: 'Bad request' }), {
+    return new NextResponse(JSON.stringify({ message: t('error') }), {
       status: 400,
       headers: {
         'Content-Type': 'application/json',
@@ -20,7 +28,7 @@ export async function POST(request) {
       text: data.email,
     })
 
-    return new NextResponse(JSON.stringify({ success: true }), {
+    return new NextResponse(JSON.stringify({ success: true, message: t('sent') }), {
       status: 200,
       headers: {
         'Content-Type': 'application/json',
@@ -29,7 +37,7 @@ export async function POST(request) {
   } catch (error) {
     console.error(error)
 
-    return new NextResponse(JSON.stringify({ message: error.message }), {
+    return new NextResponse(JSON.stringify({ message: t('error') }), {
       status: 400,
       headers: {
         'Content-Type': 'application/json',

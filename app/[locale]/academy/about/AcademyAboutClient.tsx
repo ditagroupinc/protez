@@ -23,7 +23,7 @@ const Footer = lazy(() => import('@/sections/_shared/AcademyAboutFooter'))
 
 import style from './style.module.scss'
 
-export default function AcademyAboutPage() {
+export default function AcademyAboutClient() {
   const [refMission1, inViewMission1] = useInView({ triggerOnce: false })
   const [refFooter, inViewFooter] = useInView({ triggerOnce: false })
 

@@ -1,9 +1,11 @@
+'use client'
+
 import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import AcademySection from '@/components/AcademySection'
@@ -19,9 +21,9 @@ import Slider from 'react-slick'
 import { AcademyIDs } from '@academy/consts'
 
 const AcademyStudents = () => {
-  const t = useAcademyTexts()
+  const t = useTranslations('academy.academyStudents')
   const { desktop: titleDesktop } = useAcademyTitle('academy-students')
-  const academyStudentsCards = t.academyStudents.cards
+  const academyStudentsCards = t.raw('cards') as string[]
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
 
@@ -101,7 +103,7 @@ const AcademyStudents = () => {
                   <div className={`${styles.card} `}>
                     <ProtezImage
                       src={`${card}`}
-                      alt={t.academyStudents.imageAlt}
+                      alt={t('imageAlt')}
                       width={490}
                       height={500}
                       className={styles.image}

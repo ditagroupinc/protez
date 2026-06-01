@@ -1,3 +1,7 @@
+'use client'
+
+import { useTranslations } from 'next-intl'
+
 import Button from '@/components/AcademyButton'
 
 import AcademySection from '@/components/AcademySection'
@@ -10,14 +14,14 @@ import { AcademyIDs } from '@academy/consts'
 import { ACADEMY_APPLY_FORM_URL, DONATE_URL } from '@academy/consts/links'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import ProtezImage from '@/components/ProtezImage'
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
+type Stat = { value: number; label: string }
+
 const OurResults = () => {
-  const t = useAcademyTexts()
+  const t = useTranslations('academy')
   const { desktop: titleDesktop } = useAcademyTitle('our-results')
-  const { stats, datesRange, description } = t.ourResults
-  const cta = t.cta
+  const stats = t.raw('ourResults.stats') as Stat[]
 
   return (
     <AcademySection id={AcademyIDs.OurResults} className={style.academyResults}>
@@ -28,8 +32,8 @@ const OurResults = () => {
           </TextAppearanceWrapper>
           <div className={style.resultsInfo}>
             <TextAppearanceWrapper className={style.infoWrapper}>
-              <p className={style.date}>{datesRange}</p>
-              <p className={style.desc}>{description}</p>
+              <p className={style.date}>{t('ourResults.datesRange')}</p>
+              <p className={style.desc}>{t('ourResults.description')}</p>
             </TextAppearanceWrapper>
             <TextAppearanceWrapper className={style.btnGroup}>
               <Button
@@ -40,10 +44,10 @@ const OurResults = () => {
                 rel="noopener noreferrer"
                 size="big"
               >
-                {cta.apply}
+                {t('cta.apply')}
               </Button>
               <Button as="link" href={DONATE_URL} variant="normal-black" size="big">
-                {cta.support}
+                {t('cta.support')}
                 {icons.arrowUp(`${style.arrowUpIcon}`)}
               </Button>
             </TextAppearanceWrapper>

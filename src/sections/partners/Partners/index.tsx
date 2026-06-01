@@ -4,7 +4,9 @@ import style from './style.module.scss'
 import icons from './icons'
 import Link from 'next/link'
 
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useLocale } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import Section from '@/components/Section'
 import Header from '@/sections/_shared/Header'
@@ -45,7 +47,8 @@ const partnersLogos = [
 ]
 
 export default function Partners() {
-  const { lang } = useLanguage()
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
 
   return (
     <>

@@ -1,4 +1,7 @@
+'use client'
+
 import { forwardRef } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
 
 import Slider from 'react-slick'
 
@@ -13,10 +16,9 @@ import { AcademyIDs } from '@academy/consts'
 import { icons } from './icons'
 import Button from '@/components/AcademyButton'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
-import { useLanguage } from '@/contexts/LanguageContext'
-import { Languages } from '@/types'
+
+type MissionValue = { icon: string; title: string; text: string }
 
 const sliderSettings = {
   dots: true,
@@ -34,10 +36,11 @@ const sliderSettings = {
 }
 
 const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
-  const t = useAcademyTexts()
+  const t = useTranslations('academy.mission')
+  const values = t.raw('values') as MissionValue[]
   const { desktop: titleDesktop } = useAcademyTitle('mission-and-values')
-  const { lang } = useLanguage()
-  const titleLang = lang === Languages.Ukrainian ? 'uk' : 'en'
+  const locale = useLocale()
+  const titleLang = locale === 'uk' ? 'uk' : 'en'
 
   return (
     <AcademySection ref={ref} id={AcademyIDs.MissionAndValues} className={style.academyGoals}>
@@ -47,7 +50,7 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
             <ProtezImage {...titleDesktop} className={style.title} />
           </TextAppearanceWrapper>
           <TextAppearanceWrapper>
-            <p className={style.description}>{t.mission.statement}</p>
+            <p className={style.description}>{t('statement')}</p>
           </TextAppearanceWrapper>
           <Button
             as="link"
@@ -56,7 +59,7 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
             size="big"
             className={style.button}
           >
-            {t.mission.button}
+            {t('button')}
             {icons.arrowUp(`${style.arrowUpIcon}`)}
           </Button>
         </div>
@@ -64,7 +67,7 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
         <div className={style.left}>
           <ProtezImage
             src="academyPage/mission-and-values.png"
-            alt={t.mission.imageAlt}
+            alt={t('imageAlt')}
             width={720}
             height={520}
             className={style.image}
@@ -75,7 +78,7 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
       <TextAppearanceWrapper className={style.sliderWrapper}>
         <div className={style.slider}>
           <Slider {...sliderSettings}>
-            {t.mission.values.map((item, index) => (
+            {values.map((item, index) => (
               <div key={index}>
                 <div className={style.card}>
                   <ProtezImage

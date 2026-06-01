@@ -2,8 +2,7 @@
 
 import { useEffect, useMemo, useState } from 'react'
 
-import { useLanguage } from '@/contexts/LanguageContext'
-import { Languages } from '@/types'
+import { useLocale } from 'next-intl'
 
 import { ACADEMY_TITLES, type AcademyTitleName } from './academyTitles.generated'
 
@@ -14,11 +13,6 @@ const MOBILE_BREAKPOINT_PX = 800
 
 type TitleVariant = { src: string; width: number; height: number; alt: string }
 type TitleSpec = { desktop: TitleVariant; mobile: TitleVariant }
-
-const LANG_SUFFIX = {
-  [Languages.Ukrainian]: 'uk',
-  [Languages.English]: 'en',
-} as const
 
 function useIsMobileViewport(breakpointPx: number): boolean {
   const [isMobile, setIsMobile] = useState(false)
@@ -37,8 +31,8 @@ function useIsMobileViewport(breakpointPx: number): boolean {
 }
 
 export function useAcademyTitle(name: AcademyTitleName): TitleSpec {
-  const { lang } = useLanguage()
-  const langKey = LANG_SUFFIX[lang]
+  const locale = useLocale()
+  const langKey: 'en' | 'uk' = locale === 'uk' ? 'uk' : 'en'
   const isMobile = useIsMobileViewport(MOBILE_BREAKPOINT_PX)
 
   return useMemo(() => {
@@ -58,8 +52,6 @@ export function useAcademyTitle(name: AcademyTitleName): TitleSpec {
       height: entry.mobile[langKey].height,
     }
 
-    // `desktop` carries the *active* variant so existing consumers (who read
-    // only `desktop`) automatically pick up the mobile asset on small viewports.
     return {
       desktop: isMobile ? mobileVariant : desktopVariant,
       mobile: mobileVariant,

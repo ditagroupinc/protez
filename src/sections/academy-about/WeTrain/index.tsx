@@ -1,6 +1,9 @@
+'use client'
+
 import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState } from 'react'
+import { useTranslations } from 'next-intl'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
@@ -11,20 +14,22 @@ import SliderNavigation, { SliderPrevButton, SliderNextButton } from '@/componen
 import styles from './styles.module.scss'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import { useAcademyAboutTexts } from '@/hooks/useAcademyAboutTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import Slider from 'react-slick'
 
 import { AcademyAboutIDs } from '@academy/about/consts'
 
+type WeTrainItem = { image: string; text: string }
+
 const WeTrain = () => {
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
-  const t = useAcademyAboutTexts()
+  const t = useTranslations('academyAbout.weTrain')
+  const items = t.raw('items') as WeTrainItem[]
   const { desktop: titleDesktop } = useAcademyTitle('we-train')
 
-  const cards = [...t.weTrain.items, ...t.weTrain.items]
+  const cards = [...items, ...items]
 
   const settings = {
     dots: false,
@@ -105,7 +110,7 @@ const WeTrain = () => {
                   <div className={`${styles.card} `}>
                     <ProtezImage
                       src={`${card.image}`}
-                      alt={t.weTrain.imageAlt}
+                      alt={t('imageAlt')}
                       width={490}
                       height={500}
                       className={styles.image}

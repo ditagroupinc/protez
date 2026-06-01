@@ -1,6 +1,9 @@
+'use client'
+
 import { useRef, forwardRef, ForwardedRef } from 'react'
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useHomeTexts } from '@/hooks/useHomeTexts'
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 
 import style from './style.module.scss'
 import Slider from 'react-slick'
@@ -59,8 +62,9 @@ const merchCards = [
 ]
 
 const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
-  const { lang } = useLanguage()
-  const t = useHomeTexts().merch
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.merch')
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
@@ -113,7 +117,7 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
         {merchLogo[lang](style.title)}
         {isDesktopLayout && (
           <SeeAllButton href="https://www.protezmerch.com/" className={style.viewAllButton}>
-            <span className={style.buttonText}>{t.viewAllMerch}</span>
+            <span className={style.buttonText}>{t('viewAllMerch')}</span>
           </SeeAllButton>
         )}
       </TextAppearanceWrapper>
@@ -139,7 +143,7 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
       {!isDesktopLayout && (
         <div className={style.buttonWrapper}>
           <SeeAllButton href="https://www.protezmerch.com/" className={style.viewAllButton}>
-            <span className={style.buttonText}>{t.viewAllMerch}</span>
+            <span className={style.buttonText}>{t('viewAllMerch')}</span>
           </SeeAllButton>
         </div>
       )}

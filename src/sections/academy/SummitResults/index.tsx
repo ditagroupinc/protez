@@ -1,7 +1,9 @@
+'use client'
+
 import ProtezImage from '@/components/ProtezImage'
 import { useState, useRef } from 'react'
+import { useTranslations } from 'next-intl'
 
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import AcademySection from '@/components/AcademySection'
@@ -14,8 +16,11 @@ import styles from './styles.module.scss'
 import { icons } from './icons'
 import { AcademyIDs } from '@academy/consts'
 
+type SummitStat = { count: string; label: string }
+
 const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
-  const t = useAcademyTexts()
+  const t = useTranslations('academy.summitResults')
+  const stats = t.raw('stats') as SummitStat[]
   const { desktop: titleDesktop } = useAcademyTitle('summit-results')
   const [isPlaying, setIsPlaying] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -36,7 +41,7 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
           </TextAppearanceWrapper>
         </div>
         <div className={styles.right}>
-          {t.summitResults.stats.map((stat, index) => (
+          {stats.map((stat, index) => (
             <TextAppearanceWrapper key={index} className={styles.card}>
               <span className={styles.count}>{stat.count}</span>
               <p className={styles.desc}>{stat.label}</p>
@@ -49,14 +54,14 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
         <video
           ref={videoRef}
           controls
-          src="academyPage/summitResults/summitResults.mp4"
+          src="/academyPage/summitResults/summitResults.mp4"
           className={styles.summitVideo}
         />
         {!isPlaying && (
           <>
             <ProtezImage
               src="academyPage/summitResults/summitResults.png"
-              alt={t.summitResults.imageAlt}
+              alt={t('imageAlt')}
               width={2680}
               height={2010}
               className={styles.videoOverlay}
@@ -72,4 +77,5 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
   )
 })
 
+SummitResults.displayName = 'SummitResults'
 export default SummitResults

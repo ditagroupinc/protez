@@ -1,5 +1,8 @@
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useHomeTexts } from '@/hooks/useHomeTexts'
+'use client'
+
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 
 import Section from '@/components/Section'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -15,9 +18,13 @@ import { useRef, useState } from 'react'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
+type PeopleTrustUsCard = { image: string; description: string }
+
 const PeopleTrustUs = () => {
-  const { lang } = useLanguage()
-  const t = useHomeTexts().peopleTrustUs
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.peopleTrustUs')
+  const cards = t.raw('cards') as PeopleTrustUsCard[]
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
   const showTopNavigation = width < 1180 && width > 800
@@ -95,7 +102,7 @@ const PeopleTrustUs = () => {
         {width > 1180 && (
           <div className={style.left}>
             <Slider {...settings} ref={imageSliderRef} className={style.imageSlider}>
-              {t.cards.map((card, index) => (
+              {cards.map((card, index) => (
                 <div className={style.imageWrapper} key={index}>
                   <ProtezImage
                     width={940}
@@ -126,17 +133,17 @@ const PeopleTrustUs = () => {
           </div>
           <div>
             <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
-              {t.cards.map((card, index) => {
+              {cards.map((card, index) => {
                 let slideClass = ''
 
                 switch (index) {
                   case activeSlide:
                     slideClass = style.leftSlide
                     break
-                  case (activeSlide + 1) % t.cards.length:
+                  case (activeSlide + 1) % cards.length:
                     slideClass = style.centerSlide
                     break
-                  case (activeSlide + 2) % t.cards.length:
+                  case (activeSlide + 2) % cards.length:
                     slideClass = style.rightSlide
                     break
                   default:

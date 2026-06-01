@@ -1,4 +1,7 @@
+'use client'
+
 import { forwardRef } from 'react'
+import { useTranslations } from 'next-intl'
 
 import ProtezImage from '@/components/ProtezImage'
 
@@ -8,7 +11,6 @@ import style from './style.module.scss'
 
 import { AcademyAboutIDs } from '@academy/about/consts'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
-import { useAcademyAboutTexts } from '@/hooks/useAcademyAboutTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 import Button from '@/components/AcademyButton'
 import { icons } from './icons'
@@ -19,7 +21,8 @@ interface Props {
 }
 
 const History = forwardRef<HTMLDivElement, Props>(function ({ id }, ref) {
-  const t = useAcademyAboutTexts()
+  const t = useTranslations('academyAbout.history')
+  const paragraphs = t.raw('paragraphs') as string[]
   const { desktop: titleDesktop } = useAcademyTitle('about-academy')
 
   return (
@@ -28,11 +31,11 @@ const History = forwardRef<HTMLDivElement, Props>(function ({ id }, ref) {
       <div className={style.container}>
         <div className={style.right}>
           <TextAppearanceWrapper>
-            <h2 className={style.title}>{t.history.title}</h2>
+            <h2 className={style.title}>{t('title')}</h2>
           </TextAppearanceWrapper>
           <TextAppearanceWrapper>
             <div className={style.description}>
-              {t.history.paragraphs.map((paragraph, index) => (
+              {paragraphs.map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
             </div>
@@ -46,14 +49,14 @@ const History = forwardRef<HTMLDivElement, Props>(function ({ id }, ref) {
             target="_blank"
             className={style.button}
           >
-            {t.history.button}
+            {t('button')}
             {icons.arrowUp(`${style.arrowUpIcon}`)}
           </Button>
         </div>
         <div className={style.left}>
           <ProtezImage
             src="academyPage/about-history.png"
-            alt={t.history.imageAlt}
+            alt={t('imageAlt')}
             width={762}
             height={620}
             className={style.image}

@@ -97,7 +97,7 @@ export async function getAllSections() {
   return data?.posts.edges
 }
 
-export const subscribeToMailchimp = async (data: { email: string }) => {
+export const subscribeToMailchimp = async (data: { email: string; locale?: string }) => {
   if (!data.email || !isValidEmail(data.email)) {
     throw new Error('Wrong email format at email subscription')
   }

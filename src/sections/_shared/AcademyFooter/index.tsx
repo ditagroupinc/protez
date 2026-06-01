@@ -1,7 +1,9 @@
+'use client'
+
 import styles from './style.module.scss'
 
 import ProtezImage from '@/components/ProtezImage'
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
+import { useTranslations } from 'next-intl'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import Divider from '@/components/Divider'
@@ -12,7 +14,7 @@ import { DONATE_URL } from '@academy/consts/links'
 import { forwardRef } from 'react'
 
 const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
-  const t = useAcademyTexts()
+  const t = useTranslations('academy')
   const { desktop: titleDesktop } = useAcademyTitle('footer')
 
   return (
@@ -23,30 +25,32 @@ const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
             <ProtezImage {...titleDesktop} className={styles.footerLogo} />
             <div className={styles.buttonGroup}>
               <a href={DONATE_URL} className={styles.supportAcademyButton}>
-                {t.cta.support}
+                {t('cta.support')}
               </a>
             </div>
           </div>
           <div className={styles.left}>
-            <p>{t.footer.nonprofit}</p>
+            <p>{t('footer.nonprofit')}</p>
             <Divider className={styles.divider} />
-            <p className={styles.descTitle}>{t.footer.legalAddressLabel}</p>
-            <p className={styles.descAddress}>{t.footer.legalAddress}</p>
+            <p className={styles.descTitle}>{t('footer.legalAddressLabel')}</p>
+            <p className={styles.descAddress}>{t('footer.legalAddress')}</p>
             <a href="tel:+380509843356" className={styles.descTitle}>
-              {t.footer.phone}
+              {t('footer.phone')}
             </a>
-            <p className={styles.descTitle}>{t.footer.email}</p>
+            <p className={styles.descTitle}>{t('footer.email')}</p>
           </div>
         </div>
       </div>
       <div className={styles.footerBottom}>
-        <span>{t.footer.copyright}</span>
+        <span>{t('footer.copyright')}</span>
         <a href="/academy/terms-conditions" className={styles.termsLink}>
-          {t.footer.terms}
+          {t('footer.terms')}
         </a>
       </div>
     </footer>
   )
 })
+
+Footer.displayName = 'AcademyFooter'
 
 export default Footer

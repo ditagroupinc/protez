@@ -1,7 +1,9 @@
-import { useRef, useState } from 'react'
+'use client'
 
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useHomeTexts } from '@/hooks/useHomeTexts'
+import { useRef, useState } from 'react'
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 
 import style from './style.module.scss'
 import Slider from 'react-slick'
@@ -23,6 +25,14 @@ interface VeteranMeta {
   url: string
   videoLink: string
   linkedin: string
+}
+
+type VeteranItem = {
+  ageRank: string
+  name: string
+  surname: string
+  title: string
+  text: string
 }
 
 const veteransMeta: VeteranMeta[] = [
@@ -68,13 +78,15 @@ const veteransMeta: VeteranMeta[] = [
 ]
 
 const Veterans = () => {
-  const { lang } = useLanguage()
-  const t = useHomeTexts().veterans
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.veterans')
+  const items = t.raw('items') as VeteranItem[]
   const [iframeData, setIframeData] = useState({ opened: false, url: '' })
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
-  const veterans = t.items.map((item, index) => ({ ...item, ...veteransMeta[index] }))
+  const veterans = items.map((item, index) => ({ ...item, ...veteransMeta[index] }))
 
   const imageSliderRef = useRef<Slider & React.Component>(null)
   const textSliderRef = useRef<Slider & React.Component>(null)
@@ -171,7 +183,7 @@ const Veterans = () => {
                             size="normal"
                             className={style.Button}
                           >
-                            {t.giveHope}
+                            {t('giveHope')}
                           </Button>
                         </div>
                       </div>
@@ -284,7 +296,7 @@ const Veterans = () => {
                           size="normal"
                           className={style.Button}
                         >
-                          {t.giveHope}
+                          {t('giveHope')}
                         </Button>
                       </div>
                     </div>

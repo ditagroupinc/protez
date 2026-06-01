@@ -1,18 +1,12 @@
+'use client'
+
 import { ReactElement, ReactNode } from 'react'
+import { useTranslations } from 'next-intl'
 
 import style from './style.module.scss'
 import Link, { LinkProps } from 'next/link'
 
 import { icons } from './icons'
-import { Languages } from '@/types'
-
-import sharedEn from '../../../messages/shared.en.json'
-import sharedUk from '../../../messages/shared.uk.json'
-
-const buttonTexts = {
-  [Languages.English]: sharedEn.buttons,
-  [Languages.Ukrainian]: sharedUk.buttons,
-} as const
 
 // =================================================================
 
@@ -109,50 +103,54 @@ const Button = (props: ButtonProps) => {
 export default Button
 
 export const MakeDonationButton = ({
-  lang,
   className,
   size,
 }: {
-  lang: Languages
   className?: string
   size: ButtonSize
-}) => (
-  <Button
-    as="link"
-    href="/donate"
-    target={'_blank'}
-    variant="primary-red"
-    size={size}
-    rel="noopener noreferrer"
-    className={`${className ? className : ''}`}
-  >
-    {buttonTexts[lang].makeDonation}
-  </Button>
-)
+}) => {
+  const t = useTranslations('shared.buttons')
+
+  return (
+    <Button
+      as="link"
+      href="/donate"
+      target={'_blank'}
+      variant="primary-red"
+      size={size}
+      rel="noopener noreferrer"
+      className={`${className ? className : ''}`}
+    >
+      {t('makeDonation')}
+    </Button>
+  )
+}
 
 export const SupportWithAmazonButton = ({
-  lang,
   className,
   color = 'black',
   size,
 }: {
-  lang: Languages
   className?: string
   color?: 'white' | 'black'
   size: ButtonSize
-}) => (
-  <Button
-    as="link"
-    href="https://www.amazon.com/hz/wishlist/ls/3S6RESSKHZZH7/ref=hz_ls_biz_ex"
-    size={size}
-    variant={color === 'white' ? 'secondary-white' : 'secondary-black'}
-    className={`${className ? className : ''}`}
-  >
-    {buttonTexts[lang].supportWith}
+}) => {
+  const t = useTranslations('shared.buttons')
 
-    {icons.amazon(style.icon)}
-  </Button>
-)
+  return (
+    <Button
+      as="link"
+      href="https://www.amazon.com/hz/wishlist/ls/3S6RESSKHZZH7/ref=hz_ls_biz_ex"
+      size={size}
+      variant={color === 'white' ? 'secondary-white' : 'secondary-black'}
+      className={`${className ? className : ''}`}
+    >
+      {t('supportWith')}
+
+      {icons.amazon(style.icon)}
+    </Button>
+  )
+}
 
 export const SeeAllButton = ({
   children,
@@ -180,23 +178,25 @@ export const SeeAllButton = ({
 )
 
 export const ApplyToAcademyButton = ({
-  lang,
   className,
   size,
 }: {
-  lang: Languages
   className?: string
   size: ButtonSize
-}) => (
-  <Button
-    as="link"
-    href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-    target="_blank"
-    variant="primary-blue"
-    size={size}
-    rel="noopener noreferrer"
-    className={`${className ? className : ''}`}
-  >
-    {buttonTexts[lang].applyToAcademy}
-  </Button>
-)
+}) => {
+  const t = useTranslations('shared.buttons')
+
+  return (
+    <Button
+      as="link"
+      href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+      target="_blank"
+      variant="primary-blue"
+      size={size}
+      rel="noopener noreferrer"
+      className={`${className ? className : ''}`}
+    >
+      {t('applyToAcademy')}
+    </Button>
+  )
+}

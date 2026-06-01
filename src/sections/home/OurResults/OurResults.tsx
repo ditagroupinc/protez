@@ -1,5 +1,8 @@
-import { useLanguage } from '@/contexts/LanguageContext'
-import { useHomeTexts } from '@/hooks/useHomeTexts'
+'use client'
+
+import { useLocale, useTranslations } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 
 import Section from '@/components/Section'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -39,8 +42,9 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
   { results },
   ref: ForwardedRef<HTMLDivElement>
 ) {
-  const { lang } = useLanguage()
-  const t = useHomeTexts().ourResults
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.ourResults')
   const { width } = useScreenModeAndSize()
 
   const isDesktopLayout = width > 800
@@ -58,14 +62,14 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
           </Body>
 
           <Body large={isDesktopLayout} className={style.text}>
-            {t.text}
+            {t('text')}
           </Body>
 
           {isDesktopLayout && (
             <TextAppearanceWrapper className={style.buttonsContainer}>
-              <MakeDonationButton lang={lang} size="normal" />
+              <MakeDonationButton size="normal" />
               <Button as="link" href="/" variant="secondary-white" size="normal" arrow>
-                {t.moreResults}
+                {t('moreResults')}
               </Button>
             </TextAppearanceWrapper>
           )}
@@ -93,9 +97,9 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
         </div>
         {!isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
-            <MakeDonationButton lang={lang} size="normal" />
+            <MakeDonationButton size="normal" />
             <Button as="link" href="/" variant="secondary-white" size="normal" arrow>
-              {t.moreResults}
+              {t('moreResults')}
             </Button>
           </TextAppearanceWrapper>
         )}

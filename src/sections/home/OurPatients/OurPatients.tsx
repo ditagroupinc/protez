@@ -1,6 +1,9 @@
-import { useRef } from 'react'
+'use client'
 
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useRef } from 'react'
+import { useLocale } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 
 import style from './style.module.scss'
 import Slider from 'react-slick'
@@ -22,7 +25,8 @@ const ourPatientsSection: OurPatientsSection = {
 }
 
 const OurPatients = () => {
-  const { lang } = useLanguage()
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
 
   const sliderRef = useRef<Slider & React.Component>(null)
   const gotoNext = () => {
@@ -81,7 +85,6 @@ const OurPatients = () => {
           </button>
         </div>
       </TextAppearanceWrapper>
-      {/*  */}
       <div dir={isDesktopLayout ? 'rtl' : 'ltr'}>
         <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
           {patientsArray.map((slide, index) => (

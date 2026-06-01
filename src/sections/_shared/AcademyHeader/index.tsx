@@ -1,10 +1,9 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useTransition } from 'react'
 
-import { Languages } from '@/types'
-
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useLocale, useTranslations } from 'next-intl'
+import { usePathname, useRouter } from '@/lib/i18n'
 
 import Button from '@/components/AcademyButton'
 import SocialMediaLinks from '@/components/SocialMediaLinks'
@@ -13,8 +12,6 @@ import useOutsideClick from '@/hooks/useOutsideClick'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { BurgerButton } from '@/components/BurgerButton'
-
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 
 import styles from './styles.module.scss'
 
@@ -46,16 +43,19 @@ const AcademyHeader = () => {
 
   const ref = useOutsideClick(() => setHeaderIsOpened(false))
 
-  const t = useAcademyTexts()
+  const t = useTranslations('academy')
 
-  const { lang, setLang } = useLanguage()
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+  const [, startTransition] = useTransition()
 
-  const handleLanguageChange = useCallback(() => {
-    const langToSet = lang === Languages.English ? Languages.Ukrainian : Languages.English
-
-    setLang(langToSet)
-    localStorage.setItem('lang', langToSet)
-  }, [lang, setLang])
+  const switchLocale = (next: 'en' | 'uk') => {
+    if (next === locale) return
+    startTransition(() => {
+      router.replace(pathname, { locale: next })
+    })
+  }
 
   const isMobile = width < 768
 
@@ -104,25 +104,23 @@ const AcademyHeader = () => {
               rel="noopener noreferrer"
               className={styles.applyBtn}
             >
-              {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
-              {t.cta.apply}
+              {t('cta.apply')}
             </Button>
             <Button as="link" href="/" variant="secondary-white" size="small">
-              {/* {texts.academyHeader.buttons.foundation[lang]} */}
-              {t.header.cta.foundation}
+              {t('header.cta.foundation')}
             </Button>
             <div className={styles.languageWrapper}>
               {icons.iconWorld(`${styles.worldIcon}`)}
               <button
-                onClick={handleLanguageChange}
-                disabled={lang === Languages.English}
+                onClick={() => switchLocale('en')}
+                disabled={locale === 'en'}
                 className={styles.localeBtn}
               >
                 EN
               </button>
               <button
-                onClick={handleLanguageChange}
-                disabled={lang === Languages.Ukrainian}
+                onClick={() => switchLocale('uk')}
+                disabled={locale === 'uk'}
                 className={styles.localeBtn}
               >
                 UA
@@ -139,7 +137,7 @@ const AcademyHeader = () => {
         <div className={`${styles.sideMenu} ${headerIsOpened ? styles.opened : ''}`}>
           <div className={styles.protezFoundationLinkWrapper}>
             <Link href={'/'} className={styles.protezFoundationLink}>
-              <span>{t.header.cta.foundation}</span>
+              <span>{t('header.cta.foundation')}</span>
               {icons.arrowUp(styles.icon)}
             </Link>
           </div>
@@ -149,7 +147,7 @@ const AcademyHeader = () => {
                 {AncorLinkIds.map(id => (
                   <li key={id} className={styles.ancorItem} onClick={closeHeaderOnAncorClick}>
                     <a href={`#${id}`} className={styles.ancorLink}>
-                      {t.header.nav[id]}
+                      {t(`header.nav.${id}`)}
                     </a>
                   </li>
                 ))}
@@ -168,8 +166,7 @@ const AcademyHeader = () => {
                 rel="noopener noreferrer"
                 className={styles.lowerPartButton}
               >
-                {t.cta.apply}
-                {/* {texts.academyHeader.buttons.applyToAcademy[lang]} */}
+                {t('cta.apply')}
               </Button>
               <Button
                 as="link"
@@ -178,21 +175,23 @@ const AcademyHeader = () => {
                 size="small"
                 className={styles.lowerPartButton}
               >
-                {t.cta.support}
-                {/* {texts.academyHeader.buttons.supportAcademy[lang]} */}
+                {t('cta.support')}
                 {icons.arrowUp(`${styles.icon} ${styles.black}`)}
               </Button>
             </div>
 
             <a className={styles.phoneNumber} href="tel:+16127724777">
               {icons.call(styles.icon)}
-              <span> {t.header.phone}</span>
+              <span> {t('header.phone')}</span>
             </a>
 
             <div className={styles.languageButtonContainer}>
-              <button className={styles.languageButton} onClick={handleLanguageChange}>
+              <button
+                className={styles.languageButton}
+                onClick={() => switchLocale(locale === 'uk' ? 'en' : 'uk')}
+              >
                 {icons.iconWorld(styles.icon)}
-                <span>{t.header.cta.language}</span>
+                <span>{t('header.cta.language')}</span>
               </button>
             </div>
           </div>

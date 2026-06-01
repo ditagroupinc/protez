@@ -1,9 +1,11 @@
+'use client'
+
 import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState, useEffect } from 'react'
+import { useTranslations } from 'next-intl'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import AcademySection from '@/components/AcademySection'
@@ -19,9 +21,9 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { AcademyIDs } from '@academy/consts'
 
 const Academy = () => {
-  const t = useAcademyTexts()
+  const t = useTranslations('academy.academyGallery')
   const { desktop: titleDesktop } = useAcademyTitle('protez-academy')
-  const academyCards = t.academyGallery.cards
+  const academyCards = t.raw('cards') as string[]
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
 
@@ -115,7 +117,7 @@ const Academy = () => {
       updateNavPosition()
       setTimeout(() => {
         updateNavPosition()
-      }, 100) // Delay for the first render
+      }, 100)
     }
 
     handleInitialRender()
@@ -168,7 +170,7 @@ const Academy = () => {
                     <div className={`${styles.card} `}>
                       {card.includes('.mp4') ? (
                         <video
-                          src={`${card}`}
+                          src={`/${card}`}
                           autoPlay
                           loop
                           muted
@@ -178,7 +180,7 @@ const Academy = () => {
                       ) : (
                         <ProtezImage
                           src={`${card}`}
-                          alt={t.academyGallery.imageAlt}
+                          alt={t('imageAlt')}
                           width={720}
                           height={520}
                           className={styles.image}

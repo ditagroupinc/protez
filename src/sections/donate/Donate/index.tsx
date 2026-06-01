@@ -1,5 +1,7 @@
 'use client'
 
+import { useTranslations } from 'next-intl'
+
 import Footer from '@/sections/_shared/Footer'
 
 import { Body, H2 } from '@/components/Typography'
@@ -11,12 +13,11 @@ import Section from '@/components/Section'
 import Header from '@/sections/_shared/Header'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
-import { useDonationsTexts } from '@/hooks/useDonationsTexts'
 import { useDonateTitle } from '@/hooks/useDonateTitle'
 
 export default function Donate() {
   const { width } = useScreenModeAndSize()
-  const t = useDonationsTexts()
+  const t = useTranslations('donate')
   const title = useDonateTitle()
 
   return (
@@ -28,9 +29,9 @@ export default function Donate() {
             <ProtezImage {...title} className={style.title} priority />
 
             <H2 className={style.description}>
-              <span className={style.block}>{t.description1}</span>
+              <span className={style.block}>{t('description1')}</span>
               <span>
-                {t.description3} <span className={style.redText}>{t.coloredText}</span>
+                {t('description3')} <span className={style.redText}>{t('coloredText')}</span>
               </span>
             </H2>
           </div>
@@ -38,7 +39,7 @@ export default function Donate() {
             <div className={style.left}>
               {width <= 800 && (
                 <>
-                  <p className={'h6 '}>{t.sendDonations}</p>
+                  <p className={'h6 '}>{t('sendDonations')}</p>
                   <div className={style.bankButtonContainer}>
                     <a
                       target="_blank"
@@ -49,7 +50,7 @@ export default function Donate() {
                       <button>
                         <ProtezImage
                           src="donatePage/icons/privat24.svg"
-                          alt={t.privat24Alt}
+                          alt={t('privat24Alt')}
                           width={112}
                           height={36}
                         />
@@ -64,7 +65,7 @@ export default function Donate() {
                       <button>
                         <ProtezImage
                           src="donatePage/icons/monobank.svg"
-                          alt={t.monobankAlt}
+                          alt={t('monobankAlt')}
                           width={129}
                           height={24}
                         />
@@ -78,17 +79,17 @@ export default function Donate() {
                     <div className={style.zelleContainerLeft}>
                       <ProtezImage
                         src="donatePage/icons/zelle.svg"
-                        alt={t.zelleAlt}
+                        alt={t('zelleAlt')}
                         width={58}
                         height={25}
                       />
-                      <Body className={style.zelleText}>{t.zelle}</Body>
-                      <Body className={style.emailPhone}>{t.financeEmail}</Body>
+                      <Body className={style.zelleText}>{t('zelle')}</Body>
+                      <Body className={style.emailPhone}>{t('financeEmail')}</Body>
                     </div>
                     <div className={style.zelleContainerRight}>
                       <ProtezImage
                         src={`donatePage/zelle-qr.png`}
-                        alt={t.zelleAlt}
+                        alt={t('zelleAlt')}
                         width={112}
                         height={109}
                         className={style.zelleQr}
@@ -100,30 +101,30 @@ export default function Donate() {
                 </>
               )}
               <div className={style.aboveDivider}>
-                <Body>{t.nonprofitOrganization}</Body>
+                <Body>{t('nonprofitOrganization')}</Body>
               </div>
 
               <Divider className={style.divider} />
               <div className={style.belowDivider}>
-                <Body className={style.descTitle}>{t.sendChecks}</Body>
+                <Body className={style.descTitle}>{t('sendChecks')}</Body>
                 <br />
-                {t.address.orgName}
+                {t('address.orgName')}
                 <br />
-                {t.address.line1}
+                {t('address.line1')}
                 <br />
-                {t.address.line2}
+                {t('address.line2')}
                 <br />
-                {t.address.country}
+                {t('address.country')}
                 <br />
                 <br />
-                <Body className={style.emailPhone}>{t.phone}</Body>
-                <Body className={style.emailPhone}>{t.email}</Body>
+                <Body className={style.emailPhone}>{t('phone')}</Body>
+                <Body className={style.emailPhone}>{t('email')}</Body>
               </div>
               {width > 800 && (
                 <>
                   <Divider className={style.divider} />
 
-                  <p className={'h6 '}>{t.sendDonations}</p>
+                  <p className={'h6 '}>{t('sendDonations')}</p>
 
                   <Divider className={style.divider} />
 
@@ -131,17 +132,17 @@ export default function Donate() {
                     <div className={style.zelleContainerLeft}>
                       <ProtezImage
                         src="donatePage/icons/zelle.svg"
-                        alt={t.zelleAlt}
+                        alt={t('zelleAlt')}
                         width={58}
                         height={25}
                       />
-                      <Body className={style.zelleText}>{t.zelle}</Body>
-                      <Body className={style.emailPhone}>{t.financeEmail}</Body>
+                      <Body className={style.zelleText}>{t('zelle')}</Body>
+                      <Body className={style.emailPhone}>{t('financeEmail')}</Body>
                     </div>
                     <div className={style.zelleContainerRight}>
                       <ProtezImage
                         src={`donatePage/zelle-qr.png`}
-                        alt={t.zelleAlt}
+                        alt={t('zelleAlt')}
                         width={112}
                         height={109}
                         className={style.zelleQr}
@@ -159,7 +160,7 @@ export default function Donate() {
                       <button>
                         <ProtezImage
                           src="donatePage/icons/monobank.svg"
-                          alt={t.monobankAlt}
+                          alt={t('monobankAlt')}
                           width={129}
                           height={24}
                         />
@@ -174,7 +175,7 @@ export default function Donate() {
                       <button>
                         <ProtezImage
                           src="donatePage/icons/privat24.svg"
-                          alt={t.privat24Alt}
+                          alt={t('privat24Alt')}
                           width={112}
                           height={36}
                         />

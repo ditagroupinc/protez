@@ -1,25 +1,22 @@
+'use client'
+
 import { forwardRef, ForwardedRef } from 'react'
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useLocale } from 'next-intl'
+
+import { localeToLanguage } from '@/lib/locale'
 import style from './style.module.scss'
 import { icons } from './icons'
 import Section from '@/components/Section'
 
 import { ProtezIDs } from '@/consts'
 
-// import Link from 'next/link'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
-// const inNeedText = {
-// viewStatisticsSource: {
-//   english: 'View statistics source',
-//   ukrainian: 'View statistics source',
-// },
-// }
-
 const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
-  const { lang } = useLanguage()
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
   const { width } = useScreenModeAndSize()
 
   const isDesktopLayout = width > 800
@@ -41,13 +38,7 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
 
       <TextAppearanceWrapper className={style.right}>
         {icons.ukrainianMapSmall(style.mapSmall)}
-        <div className={style.textBlock}>
-          {inNeedLogo[lang](style.title)}
-          {/* <Link as="link" href="/" className={style.link}>
-            {inNeedText.viewStatisticsSource[lang]}
-            {icons.arrowRight(style.icon)}
-          </Link> */}
-        </div>
+        <div className={style.textBlock}>{inNeedLogo[lang](style.title)}</div>
       </TextAppearanceWrapper>
     </Section>
   )
