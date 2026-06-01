@@ -1,0 +1,74 @@
+{
+  "header": {
+    "protezAcademy": "Protez Academy",
+    "protezPage": {
+      "actionButtons": {
+        "needAProthesis": "Потрібeн протез"
+      },
+      "navigation": [
+        "Home",
+        "People Trust Us",
+        "Prosthetics For Ukrainians",
+        "In Need",
+        "Our Results",
+        "Prostheses Costs",
+        "Protez Academy",
+        "Stories",
+        "Events",
+        "Press Release",
+        "Our Patients",
+        "Team",
+        "Locations",
+        "Partners",
+        "Subscribe to Updates",
+        "Protez Merch"
+      ]
+    },
+    "academyPage": {
+      "actionButtons": {
+        "protezFoundation": "Protez Foundation",
+        "supportAcademy": "Support Academy"
+      },
+      "navigation": [
+        "Home",
+        "Our Goals",
+        "Academy",
+        "Our Results",
+        "Academy Teachers",
+        "Chief",
+        "Theory Lectures",
+        "Practice Sessions",
+        "Events",
+        "Students",
+        "Amputee Rehab",
+        "Summit",
+        "We Are In News",
+        "Partners"
+      ]
+    }
+  },
+  "footer": {
+    "giveHope": "Give Hope!",
+    "protezAcademy": "Protez Academy",
+    "subscribe": "Subscribe",
+    "supportAcademy": "Support Academy",
+    "nonprofitOrganization": "Nonprofit organization 501(c)(3) EIN: 88-2437069",
+    "sendChecks": "Please send checks to:",
+    "address": "Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America",
+    "email": "info@protezfoundation.com",
+    "madeBy": "2024 © Made by DITA GROUP Inc."
+  },
+  "mailingList": {
+    "submitButton": {
+      "default": "Subscribe!",
+      "loading": "Loading...",
+      "sent": "Sent!",
+      "error": "Error!"
+    },
+    "email": "Your email*",
+    "phoneNumber": "Phone number"
+  },
+  "specialThanksToAllOurPartners": {
+    "discoverAllPartners": "Discover all partners"
+  }
+}

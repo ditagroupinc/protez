@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useHomeTexts } from '@/hooks/useHomeTexts'
 
 import Section from '@/components/Section'
 
@@ -13,69 +14,14 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useState } from 'react'
 import { playfairDisplayItalic } from '../../../../app/fonts'
 
-const sampleProsthesesCostsText = {
-  description: {
-    english:
-      'Prosthetics are expensive life-changing devices. With help of volunteers and partners we were able to reduce the cost significantly, lower the overhead down to barebone minimum. Our program overhead is only 8%.',
-    ukrainian:
-      'Протези - це дорогі життєво необхідні пристрої. Завдяки допомозі волонтерів та партнерів нам вдалося суттєво знизити їхню вартість і скоротити адміністративні витрати до мінімально можливого рівня. Адміністративні витрати нашої програми становлять лише 8%.',
-  },
-  miscellaneous: {
-    english: 'Miscellaneous',
-    ukrainian: 'Інші',
-  },
-
-  prostheses: [
-    {
-      text: {
-        english: 'Hand or Arm',
-        ukrainian: 'Кисть або Рука',
-      },
-      price: '≈ $3,5К',
-      icon: icons.handOrArm,
-    },
-    {
-      text: {
-        english: 'Above the knee',
-        ukrainian: 'Вище коліна',
-      },
-      price: '≈ $20К',
-      icon: icons.aboveTheKnee,
-    },
-    {
-      text: {
-        english: 'Below Knee',
-        ukrainian: 'Нижче коліна',
-      },
-      price: '$6K',
-      icon: icons.belowKnee,
-    },
-    {
-      text: {
-        english: 'Liners&Socks',
-        ukrainian: 'Підкладки',
-      },
-      price: '> $600',
-      icon: icons.linersAndSocks,
-    },
-    {
-      text: {
-        english: 'Components',
-        ukrainian: 'Компоненти',
-      },
-      price: '> $500',
-      icon: icons.components,
-    },
-    {
-      text: {
-        english: 'Sport foot',
-        ukrainian: 'Спорт foot',
-      },
-      price: '≈ $3,5К',
-      icon: icons.sportFoot,
-    },
-  ],
-}
+const prosthesesMeta = [
+  { price: '≈ $3,5К', icon: icons.handOrArm },
+  { price: '≈ $20К', icon: icons.aboveTheKnee },
+  { price: '$6K', icon: icons.belowKnee },
+  { price: '> $600', icon: icons.linersAndSocks },
+  { price: '> $500', icon: icons.components },
+  { price: '≈ $3,5К', icon: icons.sportFoot },
+]
 
 const elementsToHover = ['Hand or Arm', 'Sport foot', 'Below Knee', 'Above the knee']
 
@@ -117,6 +63,7 @@ const PriceCard = ({
 
 const SampleProsthesesCosts = () => {
   const { lang } = useLanguage()
+  const t = useHomeTexts().sampleProsthesesCosts
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
@@ -132,12 +79,18 @@ const SampleProsthesesCosts = () => {
     '': '',
   }
 
+  const prostheses = t.prostheses.map((text, index) => ({
+    text,
+    price: prosthesesMeta[index].price,
+    icon: prosthesesMeta[index].icon,
+  }))
+
   return (
     <Section id={ProtezIDs.SampleProsthesesCosts} className={style.section}>
       <div className={style.left}>
         {icons.sampleProsthesesCostsLogo.desktop[lang](style.title)}
         <Body large={isDesktopLayout} className={style.description}>
-          {sampleProsthesesCostsText.description[lang]}
+          {t.description}
         </Body>
         {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
@@ -149,22 +102,22 @@ const SampleProsthesesCosts = () => {
       <div className={style.right}>
         <div className={style.prices}>
           <div className={`${style.pricesBlock} ${style.upperBlock}`}>
-            {sampleProsthesesCostsText.prostheses.slice(0, 3).map((prosthesis, index) => (
+            {prostheses.slice(0, 3).map((prosthesis, index) => (
               <PriceCard
                 key={index}
-                text={prosthesis.text[lang]}
+                text={prosthesis.text}
                 price={prosthesis.price}
                 icon={prosthesis.icon}
                 setHovered={setHovered}
               />
             ))}
           </div>
-          <H3 className={style.pricesDivider}>{sampleProsthesesCostsText.miscellaneous[lang]}</H3>
+          <H3 className={style.pricesDivider}>{t.miscellaneous}</H3>
           <div className={`${style.pricesBlock} ${style.lowerBlock}`}>
-            {sampleProsthesesCostsText.prostheses.slice(3, 6).map((prosthesis, index) => (
+            {prostheses.slice(3, 6).map((prosthesis, index) => (
               <PriceCard
                 key={index}
-                text={prosthesis.text[lang]}
+                text={prosthesis.text}
                 price={prosthesis.price}
                 icon={prosthesis.icon}
                 setHovered={setHovered}

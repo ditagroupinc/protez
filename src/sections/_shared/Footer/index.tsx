@@ -2,6 +2,7 @@ import style from './style.module.scss'
 import React from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useSharedTexts } from '@/hooks/useSharedTexts'
 
 import { icons } from './icons'
 import Divider from '@/components/Divider'
@@ -13,47 +14,12 @@ import { Body } from '@/components/Typography'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { forwardRef } from 'react'
 
-const footerSection = {
-  giveHope: {
-    english: 'Give Hope!',
-    ukrainian: 'Дати надію!',
-  },
-  protezAcademy: {
-    english: 'Protez Academy',
-    ukrainian: 'Protez Academy',
-  },
-  subscribe: {
-    english: 'Subscribe',
-    ukrainian: 'Підписатись',
-  },
-  supportAcademy: {
-    english: 'Support Academy',
-    ukrainian: 'Support Academy',
-  },
-
-  nonprofitOrganization: {
-    english: 'Nonprofit organization 501(c)(3) EIN: 88-2437069',
-    ukrainian: 'Nonprofit organization 501(c)(3) EIN: 88-2437069',
-  },
-  sendChecks: {
-    english: 'Please send checks to:',
-    ukrainian: 'Надсилайте чеки на адресу:',
-  },
-  address: {
-    english:
-      'Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America',
-    ukrainian:
-      'Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America',
-  },
-
-  email: 'info@protezfoundation.com',
-  madeBy: '2024 © Made by DITA GROUP Inc.',
-}
 const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage' }>(function (
   { layout },
   ref
 ) {
   const { lang } = useLanguage()
+  const t = useSharedTexts().footer
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
   const accentColor = layout === 'protezPage' ? 'red' : 'blue'
@@ -71,7 +37,7 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
               {layout === 'protezPage' ? (
                 <>
                   <Button as="link" href="/donate" variant="primary-black" size="normal">
-                    {footerSection.giveHope[lang]}
+                    {t.giveHope}
                   </Button>
                   <Button
                     as="link"
@@ -80,29 +46,29 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
                     variant="secondary-white"
                     size="normal"
                   >
-                    {footerSection.protezAcademy[lang]}
+                    {t.protezAcademy}
                   </Button>
                 </>
               ) : (
                 <>
                   <Button as="link" href="/" variant="primary-white" size="normal">
-                    {footerSection.subscribe[lang]}
+                    {t.subscribe}
                   </Button>
                   <Button as="link" href="/" variant="primary-black" size="normal">
-                    {footerSection.supportAcademy[lang]}
+                    {t.supportAcademy}
                   </Button>
                 </>
               )}
             </div>
           </div>
           <div className={style.right}>
-            <Body>{footerSection.nonprofitOrganization[lang]}</Body>
+            <Body>{t.nonprofitOrganization}</Body>
             <Divider className={style.divider} />
             <div>
-              <Body className={style.descTitle}>{footerSection.sendChecks[lang]}</Body>
-              <Body className={style.descAddress}>{footerSection.address[lang]}</Body>
+              <Body className={style.descTitle}>{t.sendChecks}</Body>
+              <Body className={style.descAddress}>{t.address}</Body>
             </div>
-            <Body className={style.descTitle}>{footerSection.email}</Body>
+            <Body className={style.descTitle}>{t.email}</Body>
             <a
               aria-label="Protez Foundation"
               href="https://app.candid.org/profile/14058903/protez-foundation-88-2437069/?pkId=5383b219-0323-4c41-a06c-73d362f764a7"
@@ -121,7 +87,7 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
           </div>
         </div>
       </div>
-      <div className={style.footerBottom}>{footerSection.madeBy}</div>
+      <div className={style.footerBottom}>{t.madeBy}</div>
     </footer>
   )
 })

@@ -1,0 +1,136 @@
+{
+  "letsGiveHope": {
+    "description": "We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.",
+    "needAProthesis": "Потрібeн протез",
+    "protezAcademy": "Protez Academy"
+  },
+  "peopleTrustUs": {
+    "cards": [
+      {
+        "image": "peopleTrustUsSlide5.png",
+        "description": "Dr. Yakov Gradinar receives an award from the President of Ukraine, Volodymyr Zelenskyy."
+      },
+      {
+        "image": "peopleTrustUsSlide1.png",
+        "description": "A memorandum on the continuation of cooperation between the Protez Foundation and the Ministry of Health of Ukraine has been signed. Our goal is unity in support and assistance to our heroes who deserve the best. Together we can achieve significant changes in the field of rehabilitation and provision of quality prosthetics."
+      },
+      {
+        "image": "peopleTrustUsSlide2.png",
+        "description": "Collaboration and unity are the key to success in our common desire to provide prosthetics and rehabilitation of our heroes at a high level. We have extended the memorandum of cooperation with the Ministry of Internal Affairs of Ukraine and successfully implement joint projects for training specialists and prosthetics for military personnel."
+      },
+      {
+        "image": "peopleTrustUsSlide3.png",
+        "description": "A huge thank you to the legendary General Valerii Zaluzhnyi for his heroism and courage in the first years of the war."
+      },
+      {
+        "image": "peopleTrustUsSlide4.png",
+        "description": "Direct Relief – our reliable partner who inspires us with their mission to help people around the world. Their support in achieving the goals of the Prosthetics Foundation in Ukraine is invaluable."
+      }
+    ]
+  },
+  "prostheticsForUkrainians": {
+    "description1": "We provide care for Ukrainians who have lost limbs and need prosthetics: from submitting an application through full rehabilitation.",
+    "description2": "The goal of our work is to help ukrainian children, civilians and soldiers who have lost limbs as a result of the war receive high quality prosthetics in the US free of charge.",
+    "cards": [
+      "Our goal is to help people who have lost limbs to restore their quality of life",
+      "We provide mental health and emotional support during recovery.",
+      "We bring people together to help support victims of war.",
+      "We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine."
+    ]
+  },
+  "ourResults": {
+    "text": "Over the past two years, we have been dedicated to restoring hope and mobility to Ukrainians affected by the war. Through our prosthetics assistance programs, we've empowered countless individuals to reclaim their independence and rebuild their lives. Join us in reflecting on our journey and see the impact we've made together.",
+    "moreResults": "More results"
+  },
+  "sampleProsthesesCosts": {
+    "description": "Prosthetics are expensive life-changing devices. With help of volunteers and partners we were able to reduce the cost significantly, lower the overhead down to barebone minimum. Our program overhead is only 8%.",
+    "miscellaneous": "Miscellaneous",
+    "prostheses": ["Hand or Arm", "Above the knee", "Below Knee", "Liners&Socks", "Components", "Sport foot"]
+  },
+  "protezAcademyPromo": {
+    "description": "Protez Academy is an educational project by the Protez Foundation in collaboration with Century College and contributions from specialists from University of Minnesota and Concordia University",
+    "learnMore": "Learn more",
+    "applyToAcademy": "Apply to Academy"
+  },
+  "veterans": {
+    "share": "Share me",
+    "giveHope": "Give Hope!",
+    "videoButton": "get better known",
+    "items": [
+      {
+        "ageRank": "30 years old, sergeant.",
+        "name": "Vadym",
+        "surname": "Fedorov",
+        "title": "Vadym has dedicated 10 years to the Ukrainian Army. ",
+        "text": "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations"
+      },
+      {
+        "ageRank": "16 years old, Mariupol.",
+        "name": "Artem",
+        "surname": "Svergun",
+        "title": "Artem played for the Mariupol youth soccer club, and he wanted to be a professional soccer player.",
+        "text": "Artem’s dream was to dedicate his life to soccer.  On March 2nd, 2022, he went to the local field to play a scrimmage match with his friends. While they were warming up, a Russian drone dropped a grenade on the field. Artem’s best friend Ilya, a boy of 15, was killed. Artem and another boy were severely injured. As a result of the injuries, Artem’s left leg was amputated above the knee, and his right leg is paralyzed. Artem’s dream is now to be able to walk again."
+      },
+      {
+        "ageRank": "10 years old",
+        "name": "Volodymyr",
+        "surname": "Kostyria",
+        "title": "His dream is to run, jump and play football...",
+        "text": "Volodya, a 10-year-old boy from the Dnipropetrovsk region, was born with atrophied lower limbs and spent years moving on his hands and knees. After the amputation of both lower limbs, he traveled to Minneapolis with the support of the Protez Foundation and took his first steps on training prosthetics. His determination and joy were incredible, as he was able to walk proudly for the first time in his life."
+      }
+    ]
+  },
+  "pressRelease": {
+    "releases": [
+      {
+        "title": "Prosthetic and Rehabilitation Center based on the Ministry of Internal Affairs: an important initiative for military personnel",
+        "text": "On December 12, a meeting was held at the Ministry of Internal Affairs of Ukraine with the Minister of Internal Affairs Ihor Klymenko, the General Director of the Protez Foundation Yura Aroshidze, and the President of Direct Relief Thomas Tighe. The meeting was also attended by Deputy Minister of Internal Affairs of Ukraine Kateryna Pavlichenko. The main topic of negotiations was the creation of a prosthetic and rehabilitation center based on one of the medical institutions of the Ministry of Internal Affairs."
+      },
+      {
+        "title": "Training of the Protez Foundation team in the USA",
+        "text": "The Ukrainian team of the Protez Foundation has successfully completed its two-week stay in the USA! 🇺🇸"
+      },
+      {
+        "title": "Laying of the Time Capsule for the Ministry of Internal Affairs Center",
+        "text": "Minister of Internal Affairs Ihor Klymenko, together with Protez Foundation President Yura Aroshidze, laid a time capsule in the foundation of Ukraine’s first Ministry of Internal Affairs Prosthetics and Orthotics Center.\n        The facility is currently under reconstruction. Once completed, it will be equipped with state-of-the-art technology. The Center will become a space of support, recovery, and dignity for defenders with amputations."
+      },
+      {
+        "title": "“L.P.S: Ukraine–USA”: 10 lyceum students of the Ministry of Internal Affairs went to the USA",
+        "text": "10 lyceum students of the Ministry of Internal Affairs went to the USA as part of the educational trip “L.P.S: Ukraine-USA”.\n        This is a unique opportunity for young Ukrainians to get acquainted with American culture, values, the security system and the work of the police, rescuers and military. And at the same time - to adequately present Ukrainian culture, strength of spirit and patriotism.\n        The trip is organized in cooperation with the Prosthesis Foundation and the Ministry of Internal Affairs of Ukraine. We have been working on this project for more than four months to create a rich and valuable program for lyceum students."
+      }
+    ]
+  },
+  "meetOurTeam": {
+    "members": [
+      { "name": "Yura Aroshidze", "position": "Co-Founder, CEO “Protez Foundation”" },
+      { "name": "Yakov Gradinar", "position": "Co-Founder, Certified Prosthetist and Orthotist & Chief Medical Officer" },
+      { "name": "Valentyna Pavsyukova", "position": "Strategic Advisor" },
+      { "name": "Andrey Madan", "position": "Executive Program Director" },
+      { "name": "Ivanna Gradinar", "position": "Financial Director" },
+      { "name": "Mykola Sarazhynskyy", "position": "Director of Community Events" },
+      { "name": "Toly Dzyuba", "position": "Director of Events and Property Management" },
+      { "name": "Ruslan Sychov", "position": "Digital/IT Advisor" },
+      { "name": "Zhanna Dzyuba", "position": "Director of Events and Property Management" },
+      { "name": "Nelia Serianikova ", "position": "Food Services Manager" },
+      { "name": "Pavlo Kurynytskyi", "position": "Church Relations Manager" }
+    ]
+  },
+  "officeLocations": {
+    "locations": [
+      { "country": "USA", "location": "Oakdale", "address": "3510 Hopkins Pl" },
+      { "country": "Ukraine", "location": "Svalyava", "address": "Naberezhna St, 14, 61" },
+      { "country": "Ukraine", "location": "Kyiv", "address": "Khreshchatyk St, 7/11" }
+    ]
+  },
+  "merch": {
+    "viewAllMerch": "View all merch"
+  },
+  "protezAcademyEvent": {
+    "description1": "Protez Academy is an educational project by the Protez Foundation in collaboration with Century College and contributions from specialists from University of Minnesota and Concordia University",
+    "description2": "Реєстрація на тренінг з оволодіння практичними навичками\n“Особливості взаємодії з військовими з втратою зору”.",
+    "description3": "Тут ви можете ознайомитися з офіційними документами, що\nрегламентують проведення тренінгу з оволодіння практичними навичками “Особливості взаємодії з військовими з втратою зору”. Вони містять ключові методології, положення та стандарти, які забезпечують якість, прозорість та академічну доброчесність заходу.",
+    "register": "Реєстрація на тренінг з оволодіння практичними навичками",
+    "documents": "Документи й регламенти",
+    "applyToAcademy": "Apply to Academy"
+  }
+}

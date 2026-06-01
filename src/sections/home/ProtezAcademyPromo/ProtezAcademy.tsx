@@ -1,4 +1,4 @@
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useHomeTexts } from '@/hooks/useHomeTexts'
 
 import Section from '@/components/Section'
 
@@ -11,23 +11,6 @@ import { ProtezIDs } from '@/consts'
 import Button from '@/components/Button'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
-
-const protezAcademyText = {
-  description: {
-    english:
-      'Protez Academy is an educational project by the Protez Foundation in collaboration with Century College and contributions from specialists from University of Minnesota and Concordia University',
-    ukrainian:
-      'Protez Academy — це освітній проєкт Фонду Protez у співпраці з Century College та за участі спеціалістів з Університету Міннесоти та Університету Конкордія.',
-  },
-  learnMore: {
-    english: 'Learn more',
-    ukrainian: 'Дізнатися більше',
-  },
-  applyToAcademy: {
-    english: 'Apply to Academy',
-    ukrainian: 'Доєднатися до Academy',
-  },
-}
 
 const cards = ['ottobock.svg', 'minnesotaUniversity.svg', 'extremity.svg']
 
@@ -46,7 +29,7 @@ const Card = ({ image }: { image: string }) => {
 }
 
 const ProtezAcademy = () => {
-  const { lang } = useLanguage()
+  const t = useHomeTexts().protezAcademyPromo
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
@@ -64,12 +47,12 @@ const ProtezAcademy = () => {
       <div className={style.right}>
         {icons.protezAcademyLogo(style.title)}
         <Body large={isDesktopLayout} className={style.description}>
-          {protezAcademyText.description[lang]}
+          {t.description}
         </Body>
         {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
             <Button as="link" href="/academy" variant="primary-blue" size="normal">
-              {protezAcademyText.learnMore[lang]}
+              {t.learnMore}
             </Button>
             <Button
               as="link"
@@ -79,7 +62,7 @@ const ProtezAcademy = () => {
               size="normal"
               arrow
             >
-              {protezAcademyText.applyToAcademy[lang]}
+              {t.applyToAcademy}
             </Button>
           </TextAppearanceWrapper>
         )}
@@ -93,10 +76,10 @@ const ProtezAcademy = () => {
       {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
           <Button as="link" href="/academy" variant="primary-blue" size="normal">
-            {protezAcademyText.learnMore[lang]}
+            {t.learnMore}
           </Button>
           <Button as="link" href="/" variant="secondary-white" arrow size="normal">
-            {protezAcademyText.applyToAcademy[lang]}
+            {t.applyToAcademy}
           </Button>
         </TextAppearanceWrapper>
       )}

@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useHomeTexts } from '@/hooks/useHomeTexts'
 
 import style from './style.module.scss'
 
@@ -13,61 +14,23 @@ import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useRef } from 'react'
 import ProtezImage from '@/components/ProtezImage'
 
-const officeLocationsSection = {
-  locations: [
-    {
-      country: {
-        english: 'USA',
-        ukrainian: 'USA',
-      },
-      location: {
-        english: 'Oakdale',
-        ukrainian: 'Oakdale',
-      },
-      address: {
-        english: '3510 Hopkins Pl',
-        ukrainian: '3510 Hopkins Pl',
-      },
-      img: 'officeLocationsSlide1.png',
-    },
-    {
-      country: {
-        english: 'Ukraine',
-        ukrainian: 'Ukraine',
-      },
-      location: {
-        english: 'Svalyava',
-        ukrainian: 'Svalyava',
-      },
-      address: {
-        english: 'Naberezhna St, 14, 61',
-        ukrainian: 'вул. Набережна 14, 61',
-      },
-      img: 'officeLocationsSlide2.png',
-    },
-    {
-      country: {
-        english: 'Ukraine',
-        ukrainian: 'Ukraine',
-      },
-      location: {
-        english: 'Kyiv',
-        ukrainian: 'Kyiv',
-      },
-      address: {
-        english: 'Khreshchatyk St, 7/11',
-        ukrainian: 'вул. Хрещатик 7/11',
-      },
-      img: 'officeLocationsSlide3.png',
-    },
-  ],
-}
+const locationImages = [
+  'officeLocationsSlide1.png',
+  'officeLocationsSlide2.png',
+  'officeLocationsSlide3.png',
+]
 
 const OfficeLocations = () => {
   const { lang } = useLanguage()
+  const t = useHomeTexts().officeLocations
   const { width } = useScreenModeAndSize()
   const sliderRef = useRef<Slider & React.Component>(null)
   const isDesktopLayout = width > 800
+
+  const locations = t.locations.map((location, index) => ({
+    ...location,
+    img: locationImages[index],
+  }))
 
   const settings = {
     infinite: true,
@@ -101,17 +64,11 @@ const OfficeLocations = () => {
       </TextAppearanceWrapper>
       {isDesktopLayout ? (
         <div className={style.cardsContainer}>
-          {officeLocationsSection.locations.map((location, index) => (
+          {locations.map((location, index) => (
             <div className={style.card} key={index}>
               <ProtezImage
                 src={`protezPage/officeLocations/${location.img}`}
-                alt={
-                  location.country[lang] +
-                  ', ' +
-                  location.location[lang] +
-                  ', ' +
-                  location.address[lang]
-                }
+                alt={location.country + ', ' + location.location + ', ' + location.address}
                 className={style.image}
                 width={488}
                 height={520}
@@ -119,30 +76,24 @@ const OfficeLocations = () => {
 
               <Body large={isDesktopLayout} className={style.cardCountry}>
                 {icons.locationIcon(style.locationIcon)}
-                {location.country[lang]}
+                {location.country}
               </Body>
               <div className={style.text}>
-                <H3 className={style.cardDate}>{location.location[lang]}</H3>
-                <Body className={style.cardText}>{location.address[lang]}</Body>
+                <H3 className={style.cardDate}>{location.location}</H3>
+                <Body className={style.cardText}>{location.address}</Body>
               </div>
             </div>
           ))}
         </div>
       ) : (
         <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
-          {officeLocationsSection.locations.map((location, index) => (
+          {locations.map((location, index) => (
             <div key={index}>
               <div className={style.cardWrapper}>
                 <div className={style.card}>
                   <ProtezImage
                     src={`protezPage/officeLocations/${location.img}`}
-                    alt={
-                      location.country[lang] +
-                      ', ' +
-                      location.location[lang] +
-                      ', ' +
-                      location.address[lang]
-                    }
+                    alt={location.country + ', ' + location.location + ', ' + location.address}
                     className={style.image}
                     width={488}
                     height={520}
@@ -150,11 +101,11 @@ const OfficeLocations = () => {
 
                   <Body large={isDesktopLayout} className={style.cardCountry}>
                     {icons.locationIcon(style.locationIcon)}
-                    {location.country[lang]}
+                    {location.country}
                   </Body>
                   <div className={style.text}>
-                    <H3 className={style.cardDate}>{location.location[lang]}</H3>
-                    <Body className={style.cardText}>{location.address[lang]}</Body>
+                    <H3 className={style.cardDate}>{location.location}</H3>
+                    <Body className={style.cardText}>{location.address}</Body>
                   </div>
                 </div>
               </div>

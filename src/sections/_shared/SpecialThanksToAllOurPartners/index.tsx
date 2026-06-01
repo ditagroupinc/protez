@@ -4,6 +4,7 @@ import style from './style.module.scss'
 import { icons } from './icons'
 
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useSharedTexts } from '@/hooks/useSharedTexts'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { ProtezIDs } from '@/consts'
@@ -12,13 +13,6 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { SeeAllButton } from '@/components/Button'
 import ProtezImage from '@/components/ProtezImage'
-
-const specialThanksToAllOurPartnersSection = {
-  discoverAllPartners: {
-    english: 'Discover all partners',
-    ukrainian: 'Дізнатися про всіх партнерів',
-  },
-}
 
 const partnersIcons: string[] = [
   'directRelief',
@@ -40,15 +34,14 @@ const partnersIcons: string[] = [
 
 const SpecialThanksToAllOurPartners = () => {
   const { lang } = useLanguage()
+  const t = useSharedTexts().specialThanksToAllOurPartners
   const { width } = useScreenModeAndSize()
 
   return (
     <Section id={ProtezIDs.SpecialThanksToAllOurPartners} className={style.section}>
       <div className={style.buttonCell}>
         <SeeAllButton href="/partners" className={style.discoverAllButton}>
-          <span className={style.buttonText}>
-            {specialThanksToAllOurPartnersSection.discoverAllPartners[lang]}
-          </span>
+          <span className={style.buttonText}>{t.discoverAllPartners}</span>
         </SeeAllButton>
       </div>
       <div className={style.titleCell}>

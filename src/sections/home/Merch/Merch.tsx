@@ -1,5 +1,6 @@
 import { useRef, forwardRef, ForwardedRef } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useHomeTexts } from '@/hooks/useHomeTexts'
 
 import style from './style.module.scss'
 import Slider from 'react-slick'
@@ -14,61 +15,52 @@ import { ProtezIDs } from '@/consts'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
-const merchSection = {
-  viewAllMerch: {
-    english: 'View all merch',
-    ukrainian: 'View all merch',
+const merchCards = [
+  {
+    link: 'https://www.protezmerch.com/product/t-shirt-next-level-apparel-/6?cs=true&cst=custom',
+    title: 'T-shirt Next Level Apparel®',
+    image: 't-shirt.png',
   },
-  currency: {
-    value: 'USD',
-    symbol: '$',
+  {
+    link: 'https://www.protezmerch.com/product/hooded-sweatshirt-port-company-/5?cs=true&cst=custom',
+    title: 'Hooded Sweatshirt Port & Company®',
+    image: 'hoodie.png',
   },
-  cards: [
-    {
-      link: 'https://www.protezmerch.com/product/t-shirt-next-level-apparel-/6?cs=true&cst=custom',
-      title: 'T-shirt Next Level Apparel®',
-      image: 't-shirt.png',
-    },
-    {
-      link: 'https://www.protezmerch.com/product/hooded-sweatshirt-port-company-/5?cs=true&cst=custom',
-      title: 'Hooded Sweatshirt Port & Company®',
-      image: 'hoodie.png',
-    },
-    {
-      link: 'https://www.protezmerch.com/product/new-era-original-fit-snapback-trucker-cap/4?cs=true&cst=custom',
-      title: 'New Era® Original Fit Snapback Trucker Cap',
-      image: 'truckerCap.png',
-    },
-    {
-      link: 'https://www.protezmerch.com/product/boat-tote-bag/3?cs=true&cst=custom',
-      title: 'Boat Tote Bag',
-      image: 'boatToteBag.png',
-    },
-    {
-      link: 'https://www.protezmerch.com/product/rambler-18-oz-water-bottle/2?cs=true&cst=custom',
-      title: 'RAMBLER® 18 OZ WATER BOTTLE',
-      image: '18ozWaterBottle.png',
-    },
-    {
-      link: 'https://www.protezmerch.com/product/rambler-20-oz-tumbler/1?cs=true&cst=custom',
-      title: 'RAMBLER® 20 OZ TUMBLER',
-      image: '20ozTumbler.png',
-    },
-    {
-      link: 'https://www.protezmerch.com/product/bracelet-w-b/10?cs=true&cst=custom',
-      title: 'Bracelet W+B',
-      image: 'braceletWB.png',
-    },
-    {
-      link: 'https://www.protezmerch.com/product/notepad-pen/7?cs=true&cst=custom',
-      title: 'Notepad + Pen',
-      image: 'notepadAndPen.png',
-    },
-  ],
-}
+  {
+    link: 'https://www.protezmerch.com/product/new-era-original-fit-snapback-trucker-cap/4?cs=true&cst=custom',
+    title: 'New Era® Original Fit Snapback Trucker Cap',
+    image: 'truckerCap.png',
+  },
+  {
+    link: 'https://www.protezmerch.com/product/boat-tote-bag/3?cs=true&cst=custom',
+    title: 'Boat Tote Bag',
+    image: 'boatToteBag.png',
+  },
+  {
+    link: 'https://www.protezmerch.com/product/rambler-18-oz-water-bottle/2?cs=true&cst=custom',
+    title: 'RAMBLER® 18 OZ WATER BOTTLE',
+    image: '18ozWaterBottle.png',
+  },
+  {
+    link: 'https://www.protezmerch.com/product/rambler-20-oz-tumbler/1?cs=true&cst=custom',
+    title: 'RAMBLER® 20 OZ TUMBLER',
+    image: '20ozTumbler.png',
+  },
+  {
+    link: 'https://www.protezmerch.com/product/bracelet-w-b/10?cs=true&cst=custom',
+    title: 'Bracelet W+B',
+    image: 'braceletWB.png',
+  },
+  {
+    link: 'https://www.protezmerch.com/product/notepad-pen/7?cs=true&cst=custom',
+    title: 'Notepad + Pen',
+    image: 'notepadAndPen.png',
+  },
+]
 
 const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const { lang } = useLanguage()
+  const t = useHomeTexts().merch
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
@@ -121,13 +113,13 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
         {merchLogo[lang](style.title)}
         {isDesktopLayout && (
           <SeeAllButton href="https://www.protezmerch.com/" className={style.viewAllButton}>
-            <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>
+            <span className={style.buttonText}>{t.viewAllMerch}</span>
           </SeeAllButton>
         )}
       </TextAppearanceWrapper>
 
       <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
-        {merchSection.cards.map((element, index) => (
+        {merchCards.map((element, index) => (
           <div key={index}>
             <div className={style.cardWrapper}>
               <a href={element.link} className={style.card} target="blank">
@@ -147,7 +139,7 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
       {!isDesktopLayout && (
         <div className={style.buttonWrapper}>
           <SeeAllButton href="https://www.protezmerch.com/" className={style.viewAllButton}>
-            <span className={style.buttonText}>{merchSection.viewAllMerch[lang]}</span>
+            <span className={style.buttonText}>{t.viewAllMerch}</span>
           </SeeAllButton>
         </div>
       )}

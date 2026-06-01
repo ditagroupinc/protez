@@ -1,4 +1,5 @@
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useHomeTexts } from '@/hooks/useHomeTexts'
 
 import Section from '@/components/Section'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -14,58 +15,9 @@ import { useRef, useState } from 'react'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
-const peopleTrustUsText = {
-  cards: [
-    {
-      image: 'peopleTrustUsSlide5.png',
-      description: {
-        ukrainian:
-          'Доктор Яків Градінар отримує нагороду від Президента України Володимира Зеленського.',
-        english:
-          'Dr. Yakov Gradinar receives an award from the President of Ukraine, Volodymyr Zelenskyy.',
-      },
-    },
-    {
-      image: 'peopleTrustUsSlide1.png',
-      description: {
-        ukrainian:
-          'Підписано меморандум про продовження співпраці між Protez Foundation та Міністерством охорони здоров’я України. Наша мета — єдність задля підтримки та допомоги нашим героям, які заслуговують на найкраще. Разом ми зможемо досягти значних змін у сфері реабілітації та забезпечення якісними протезами.',
-        english:
-          'A memorandum on the continuation of cooperation between the Protez Foundation and the Ministry of Health of Ukraine has been signed. Our goal is unity in support and assistance to our heroes who deserve the best. Together we can achieve significant changes in the field of rehabilitation and provision of quality prosthetics.',
-      },
-    },
-    {
-      image: 'peopleTrustUsSlide2.png',
-      description: {
-        ukrainian:
-          'Співпраця та єдність – це ключ до успіху в нашому спільному бажанні забезпечити протезування та реабілітацію наших героїв на високому рівні. Ми продовжили меморандум про співпрацю з Міністерством внутрішніх справ України та успішно реалізуємо спільні проєкти з навчання фахівців і протезування військових.',
-        english:
-          'Collaboration and unity are the key to success in our common desire to provide prosthetics and rehabilitation of our heroes at a high level. We have extended the memorandum of cooperation with the Ministry of Internal Affairs of Ukraine and successfully implement joint projects for training specialists and prosthetics for military personnel.',
-      },
-    },
-    {
-      image: 'peopleTrustUsSlide3.png',
-      description: {
-        ukrainian:
-          'Величезна подяка легендарному генералу Валерію Залужному за героїзм і мужність у перші роки війни.',
-        english:
-          'A huge thank you to the legendary General Valerii Zaluzhnyi for his heroism and courage in the first years of the war.',
-      },
-    },
-    {
-      image: 'peopleTrustUsSlide4.png',
-      description: {
-        ukrainian:
-          'Direct Relief – наш надійний партнер, який надихає нас своєю місією допомагати людям у всьому світі. Їхня підтримка в досягненні цілей Фонду Протез в Україні є неоціненною.',
-        english:
-          'Direct Relief – our reliable partner who inspires us with their mission to help people around the world. Their support in achieving the goals of the Prosthetics Foundation in Ukraine is invaluable.',
-      },
-    },
-  ],
-}
-
 const PeopleTrustUs = () => {
   const { lang } = useLanguage()
+  const t = useHomeTexts().peopleTrustUs
   const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
   const showTopNavigation = width < 1180 && width > 800
@@ -143,13 +95,13 @@ const PeopleTrustUs = () => {
         {width > 1180 && (
           <div className={style.left}>
             <Slider {...settings} ref={imageSliderRef} className={style.imageSlider}>
-              {peopleTrustUsText.cards.map((card, index) => (
+              {t.cards.map((card, index) => (
                 <div className={style.imageWrapper} key={index}>
                   <ProtezImage
                     width={940}
                     height={540}
                     src={`protezPage/peopleTrustUs/${card.image}`}
-                    alt={card.description[lang]}
+                    alt={card.description}
                     className={style.image}
                   />
                 </div>
@@ -174,17 +126,17 @@ const PeopleTrustUs = () => {
           </div>
           <div>
             <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
-              {peopleTrustUsText.cards.map((card, index) => {
+              {t.cards.map((card, index) => {
                 let slideClass = ''
 
                 switch (index) {
                   case activeSlide:
                     slideClass = style.leftSlide
                     break
-                  case (activeSlide + 1) % peopleTrustUsText.cards.length:
+                  case (activeSlide + 1) % t.cards.length:
                     slideClass = style.centerSlide
                     break
-                  case (activeSlide + 2) % peopleTrustUsText.cards.length:
+                  case (activeSlide + 2) % t.cards.length:
                     slideClass = style.rightSlide
                     break
                   default:
@@ -194,7 +146,7 @@ const PeopleTrustUs = () => {
                 return (
                   <div key={index}>
                     <Body large className={style.textSlide}>
-                      {card.description[lang]}
+                      {card.description}
                     </Body>
                     <div className={`${style.cardWrapper} ${slideClass}`}>
                       <div className={`${style.card} `}>
@@ -202,11 +154,11 @@ const PeopleTrustUs = () => {
                           width={940}
                           height={540}
                           src={`protezPage/peopleTrustUs/${card.image}`}
-                          alt={card.description[lang]}
+                          alt={card.description}
                           className={style.image}
                         />
                         <Body large={isDesktopLayout} className={style.text}>
-                          {card.description[lang]}
+                          {card.description}
                         </Body>
                       </div>
                     </div>
@@ -226,17 +178,6 @@ const PeopleTrustUs = () => {
                 </button>
               </div>
             )}
-
-            {/* <Button
-              as="link"
-              href="/"
-              variant="secondary-white"
-              size="normal"
-              arrow
-              className={style.latestNewsButton}
-            >
-              {peopleTrustUsText.latestNews[lang]}
-            </Button> */}
           </TextAppearanceWrapper>
         </div>
       </div>

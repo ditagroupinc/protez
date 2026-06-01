@@ -1,61 +1,18 @@
 import style from './style.module.scss'
 import { useRef, useState } from 'react'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useSharedTexts } from '@/hooks/useSharedTexts'
 import { icons } from './icons'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { subscribeToMailchimp } from '@/lib/api'
 import { ProtezIDs } from '@/consts'
-// import { mailOptions } from '../../../config/nodemailer'
 import Button from '@/components/Button'
-// import { Body } from '@/components/Typography'
 import Section from '@/components/Section'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useInView } from 'framer-motion'
 import ProtezImage from '@/components/ProtezImage'
-
-const mailingListSection = {
-  submitButton: {
-    default: {
-      english: 'Subscribe!',
-      ukrainian: 'Підписатись!',
-    },
-    loading: {
-      english: 'Loading...',
-      ukrainian: 'Завантаження...',
-    },
-    sent: {
-      english: 'Sent!',
-      ukrainian: 'Відправлено!',
-    },
-    error: {
-      english: 'Error!',
-      ukrainian: 'Помилка!',
-    },
-  },
-
-  email: {
-    english: 'Your email*',
-    ukrainian: 'Твій імейл*',
-  },
-  phoneNumber: {
-    english: 'Phone number',
-    ukrainian: 'Номер телефону',
-  },
-  address: {
-    english: 'Address',
-    ukrainian: 'Адреса',
-  },
-  addYourAddress: {
-    english: 'Add your address',
-    ukrainian: 'Додати вашу адресу',
-  },
-  addYourAddressTo: {
-    english: 'Add your address to receive ...',
-    ukrainian: 'Add your address to receive ...',
-  },
-}
 
 const veteransImages = [
   'soldiers1.png',
@@ -76,12 +33,12 @@ type FormStatus = 'loading' | 'error' | 'sent' | 'default'
 
 const MailingList = () => {
   const { lang } = useLanguage()
+  const t = useSharedTexts().mailingList
 
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true })
 
   const [formStatus, setFormStatus] = useState<FormStatus>('default')
-  // const [showAddress, setShowAddress] = useState(true)
 
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
@@ -100,7 +57,6 @@ const MailingList = () => {
       await subscribeToMailchimp(data)
 
       setFormStatus('sent')
-      // await sendContactForm(data);
     } catch (error) {
       setFormStatus('error')
     }
@@ -131,7 +87,7 @@ const MailingList = () => {
         <form className={style.form} action="POST" onSubmit={handleSubmit}>
           <input
             className={style.input}
-            placeholder={mailingListSection.email[lang]}
+            placeholder={t.email}
             type="email"
             name="email"
             id="email"
@@ -139,29 +95,11 @@ const MailingList = () => {
           />
           <input
             className={style.input}
-            placeholder={mailingListSection.phoneNumber[lang]}
+            placeholder={t.phoneNumber}
             type="phoneNumber"
             name="phoneNumber"
             id="phoneNumber"
           />
-          {/* {showAddress && (
-            <input
-              className={style.input}
-              placeholder={mailingListSection.address[lang]}
-              type="address"
-              name="address"
-              id="address"
-            />
-          )} */}
-          {/* <Body large>{mailingListSection.addYourAddressTo[lang]}</Body> */}
-          {/* <Button
-            variant="secondary-white"
-            as="button"
-            className={style.addAdressButton}
-            type="button"
-          >
-            {icons.plus()} {mailingListSection.addYourAddress[lang]}
-          </Button> */}
           <Button
             variant="primary-red"
             as="button"
@@ -169,7 +107,7 @@ const MailingList = () => {
             type="submit"
             size="normal"
           >
-            {mailingListSection.submitButton[formStatus][lang]}
+            {t.submitButton[formStatus]}
 
             {formStatus === 'loading' && (
               <ProtezImage src={'spinner.gif'} alt="spinner" width={24} height={24} />

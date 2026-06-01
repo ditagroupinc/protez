@@ -1,0 +1,74 @@
+{
+  "header": {
+    "protezAcademy": "Protez Academy",
+    "protezPage": {
+      "actionButtons": {
+        "needAProthesis": "Потрібeн протез"
+      },
+      "navigation": [
+        "Головна",
+        "Люди довіряють нам",
+        "Протезування для українців",
+        "У потребі",
+        "Наші результати",
+        "Витрати на протези",
+        "Protez Academy",
+        "Історії",
+        "Події",
+        "Прес-реліз",
+        "Наші пацієнти",
+        "Команда",
+        "Клініки",
+        "Партнери",
+        "Підписатися на оновлення",
+        "Protez Мерч"
+      ]
+    },
+    "academyPage": {
+      "actionButtons": {
+        "protezFoundation": "Protez Foundation",
+        "supportAcademy": "Support Academy"
+      },
+      "navigation": [
+        "Home",
+        "Our Goals",
+        "Academy",
+        "Our Results",
+        "Academy Teachers",
+        "Chief",
+        "Theory Lectures",
+        "Practice Sessions",
+        "Events",
+        "Students",
+        "Amputee Rehab",
+        "Summit",
+        "We Are In News",
+        "Partners"
+      ]
+    }
+  },
+  "footer": {
+    "giveHope": "Дати надію!",
+    "protezAcademy": "Protez Academy",
+    "subscribe": "Підписатись",
+    "supportAcademy": "Support Academy",
+    "nonprofitOrganization": "Nonprofit organization 501(c)(3) EIN: 88-2437069",
+    "sendChecks": "Надсилайте чеки на адресу:",
+    "address": "Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America",
+    "email": "info@protezfoundation.com",
+    "madeBy": "2024 © Made by DITA GROUP Inc."
+  },
+  "mailingList": {
+    "submitButton": {
+      "default": "Підписатись!",
+      "loading": "Завантаження...",
+      "sent": "Відправлено!",
+      "error": "Помилка!"
+    },
+    "email": "Твій імейл*",
+    "phoneNumber": "Номер телефону"
+  },
+  "specialThanksToAllOurPartners": {
+    "discoverAllPartners": "Дізнатися про всіх партнерів"
+  }
+}

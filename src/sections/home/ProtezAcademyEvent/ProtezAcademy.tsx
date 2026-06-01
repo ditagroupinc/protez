@@ -1,4 +1,4 @@
-import { useLanguage } from '@/contexts/LanguageContext'
+import { useHomeTexts } from '@/hooks/useHomeTexts'
 
 import Section from '@/components/Section'
 
@@ -11,39 +11,6 @@ import { ProtezIDs } from '@/consts'
 import Button from '@/components/Button'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
-
-const protezAcademyText = {
-  description1: {
-    english:
-      'Protez Academy is an educational project by the Protez Foundation in collaboration with Century College and contributions from specialists from University of Minnesota and Concordia University',
-    ukrainian:
-      'Protez Academy — це освітній проєкт Фонду Protez у співпраці з Century College та за участі спеціалістів з Університету Міннесоти та Університету Конкордія.',
-  },
-  description2: {
-    english: `Реєстрація на тренінг з оволодіння практичними навичками
-“Особливості взаємодії з військовими з втратою зору”.`,
-    ukrainian: `Реєстрація на тренінг з оволодіння практичними навичками
-“Особливості взаємодії з військовими з втратою зору”.`,
-  },
-  description3: {
-    english: `Тут ви можете ознайомитися з офіційними документами, що
-регламентують проведення тренінгу з оволодіння практичними навичками “Особливості взаємодії з військовими з втратою зору”. Вони містять ключові методології, положення та стандарти, які забезпечують якість, прозорість та академічну доброчесність заходу.`,
-    ukrainian: `Тут ви можете ознайомитися з офіційними документами, що
-регламентують проведення тренінгу з оволодіння практичними навичками “Особливості взаємодії з військовими з втратою зору”. Вони містять ключові методології, положення та стандарти, які забезпечують якість, прозорість та академічну доброчесність заходу.`,
-  },
-  register: {
-    english: 'Реєстрація на тренінг з оволодіння практичними навичками',
-    ukrainian: 'Реєстрація на тренінг з оволодіння практичними навичками',
-  },
-  documents: {
-    english: 'Документи й регламенти',
-    ukrainian: 'Документи й регламенти',
-  },
-  applyToAcademy: {
-    english: 'Apply to Academy',
-    ukrainian: 'Доєднатися до Academy',
-  },
-}
 
 const cards = ['ottobock.svg', 'minnesotaUniversity.svg', 'extremity.svg']
 
@@ -62,7 +29,7 @@ const Card = ({ image }: { image: string }) => {
 }
 
 const ProtezAcademy = () => {
-  const { lang } = useLanguage()
+  const t = useHomeTexts().protezAcademyEvent
   const { width } = useScreenModeAndSize()
   const isDesktopLayout = width > 800
 
@@ -98,14 +65,14 @@ const ProtezAcademy = () => {
       <div className={style.right}>
         {icons.protezAcademyLogo(style.title)}
         <Body large={isDesktopLayout} className={style.description}>
-          <span>{protezAcademyText.description1[lang]}</span>
-          <span>{protezAcademyText.description2[lang]}</span>
-          <span>{protezAcademyText.description3[lang]}</span>
+          <span>{t.description1}</span>
+          <span>{t.description2}</span>
+          <span>{t.description3}</span>
         </Body>
         {isDesktopLayout && (
           <TextAppearanceWrapper className={style.buttonsContainer}>
             <Button as="link" href="/" variant="primary-blue" size="normal">
-              {protezAcademyText.register[lang]}
+              {t.register}
             </Button>
             <Button
               as="button"
@@ -114,7 +81,7 @@ const ProtezAcademy = () => {
               size="normal"
               arrow
             >
-              {protezAcademyText.documents[lang]}
+              {t.documents}
             </Button>
             <Button
               as="link"
@@ -124,7 +91,7 @@ const ProtezAcademy = () => {
               size="normal"
               arrow
             >
-              {protezAcademyText.applyToAcademy[lang]}
+              {t.applyToAcademy}
             </Button>
           </TextAppearanceWrapper>
         )}
@@ -138,7 +105,7 @@ const ProtezAcademy = () => {
       {!isDesktopLayout && (
         <TextAppearanceWrapper className={style.buttonsContainer}>
           <Button as="link" href="/" variant="primary-blue" size="normal">
-            {protezAcademyText.register[lang]}
+            {t.register}
           </Button>
           <Button
             as="button"
@@ -147,7 +114,7 @@ const ProtezAcademy = () => {
             size="normal"
             arrow
           >
-            {protezAcademyText.documents[lang]}
+            {t.documents}
           </Button>
           <Button
             as="link"
@@ -157,7 +124,7 @@ const ProtezAcademy = () => {
             size="normal"
             arrow
           >
-            {protezAcademyText.applyToAcademy[lang]}
+            {t.applyToAcademy}
           </Button>
         </TextAppearanceWrapper>
       )}
