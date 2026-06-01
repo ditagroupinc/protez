@@ -5,24 +5,11 @@ import { useLanguage } from '@/contexts/LanguageContext'
 import style from './style.module.scss'
 import { icons } from './icons'
 import { H2 } from '@/components/Typography'
-
-const texts = {
-  description: {
-    english: 'You have offered someone a new shot at life, and',
-    ukrainian: 'You have offered someone a new shot at life, and',
-  },
-  colorText: {
-    english: 'your gift has been successful.',
-    ukrainian: 'your gift has been successful.',
-  },
-  backToWebsite: {
-    english: 'Back to website',
-    ukrainian: 'Back to website',
-  },
-}
+import { useThankYouTexts } from '@/hooks/useThankYouTexts'
 
 export default function ThankYou() {
   const { lang } = useLanguage()
+  const t = useThankYouTexts()
 
   return (
     <>
@@ -32,7 +19,7 @@ export default function ThankYou() {
           {icons.thankYouLogo.desktop[lang](style.title)}
 
           <H2 className={style.description}>
-            {texts.description[lang]} <span className={style.redText}>{texts.colorText[lang]}</span>
+            {t.description} <span className={style.redText}>{t.colorText}</span>
           </H2>
 
           <Button
@@ -42,7 +29,7 @@ export default function ThankYou() {
             variant="secondary-black"
             size="normal"
           >
-            {texts.backToWebsite[lang]}
+            {t.backToWebsite}
           </Button>
         </div>
       </Section>

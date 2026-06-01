@@ -122,6 +122,22 @@
       { "country": "Ukraine", "location": "Kyiv", "address": "вул. Хрещатик 7/11" }
     ]
   },
+  "events": {
+    "cardStatus": {
+      "upcoming": "Майбутня подія",
+      "past": "Минула подія"
+    },
+    "alts": {
+      "ukrainianFlag": "Прапор України",
+      "eventsPicture": "фото події"
+    }
+  },
+  "root": {
+    "heroH1": "Protez Foundation — безкоштовне протезування та реабілітація для українців",
+    "alts": {
+      "americanFlag": "Прапор США"
+    }
+  },
   "merch": {
     "viewAllMerch": "View all merch"
   },

@@ -1,11 +1,7 @@
 import style from './style.module.scss'
-import { useLanguage } from '@/contexts/LanguageContext'
 import Link from 'next/link'
 
-const text = {
-  english: 'Back to top   →',
-  ukrainian: 'Нагору   →',
-}
+import { useSharedTexts } from '@/hooks/useSharedTexts'
 
 export default function BackToTopButton({
   href,
@@ -18,14 +14,14 @@ export default function BackToTopButton({
   black?: boolean
   color: 'red' | 'blue'
 }) {
-  const { lang } = useLanguage()
+  const t = useSharedTexts()
 
   return (
     <Link
       className={`${style.button} ${black ? style.black : ''} ${style[color]} ${className}`}
       href={`#${href}`}
     >
-      {text[lang]}
+      {t.backToTop}
     </Link>
   )
 }

@@ -6,6 +6,14 @@ import Link, { LinkProps } from 'next/link'
 import { icons } from './icons'
 import { Languages } from '@/types'
 
+import sharedEn from '../../../messages/shared.en.json'
+import sharedUk from '../../../messages/shared.uk.json'
+
+const buttonTexts = {
+  [Languages.English]: sharedEn.buttons,
+  [Languages.Ukrainian]: sharedUk.buttons,
+} as const
+
 // =================================================================
 
 type ButtonVariant =
@@ -100,22 +108,6 @@ const Button = (props: ButtonProps) => {
 
 export default Button
 
-const text = {
-  makeDonation: {
-    english: 'Make Donation',
-    ukrainian: 'Зробити внесок!',
-  },
-
-  supportWith: {
-    english: 'Support with',
-    ukrainian: 'Підтримати з',
-  },
-  applyToAcademy: {
-    english: 'Apply to Academy',
-    ukrainian: 'Apply to Academy',
-  },
-}
-
 export const MakeDonationButton = ({
   lang,
   className,
@@ -134,7 +126,7 @@ export const MakeDonationButton = ({
     rel="noopener noreferrer"
     className={`${className ? className : ''}`}
   >
-    {text.makeDonation[lang]}
+    {buttonTexts[lang].makeDonation}
   </Button>
 )
 
@@ -156,7 +148,7 @@ export const SupportWithAmazonButton = ({
     variant={color === 'white' ? 'secondary-white' : 'secondary-black'}
     className={`${className ? className : ''}`}
   >
-    {text.supportWith[lang]}
+    {buttonTexts[lang].supportWith}
 
     {icons.amazon(style.icon)}
   </Button>
@@ -205,6 +197,6 @@ export const ApplyToAcademyButton = ({
     rel="noopener noreferrer"
     className={`${className ? className : ''}`}
   >
-    {text.applyToAcademy[lang]}
+    {buttonTexts[lang].applyToAcademy}
   </Button>
 )

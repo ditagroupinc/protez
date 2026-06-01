@@ -70,5 +70,11 @@
   },
   "specialThanksToAllOurPartners": {
     "discoverAllPartners": "Дізнатися про всіх партнерів"
-  }
+  },
+  "buttons": {
+    "makeDonation": "Зробити внесок!",
+    "supportWith": "Підтримати з",
+    "applyToAcademy": "Apply to Academy"
+  },
+  "backToTop": "Нагору   →"
 }

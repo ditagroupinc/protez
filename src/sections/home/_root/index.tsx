@@ -16,6 +16,8 @@ import SuspenseSection from '@/components/SuspenseSection'
 import Header from '@/sections/_shared/Header'
 import VideoBlock from './VideoBlock'
 
+import { useHomeTexts } from '@/hooks/useHomeTexts'
+
 import LetsGiveHope from '@/sections/home/LetsGiveHope/LetsGiveHope'
 const ProstheticsForUkrainians = lazy(
   () => import('@/sections/home/ProstheticsForUkrainians/ProstheticsForUkrainians')
@@ -51,21 +53,21 @@ export default function ProtezHomePage({
   events: SingleEvent[] | null
   pressReleases: SinglePressRelease[] | null
 }) {
+  const t = useHomeTexts().root
+
   return (
     <>
       <Header layout="protezPage" />
 
       <main className={style.main}>
         <SuspenseSection withSmoke>
-          <h1 className={style.srOnly}>
-            Protez Foundation — free prosthetics and rehabilitation for Ukrainians
-          </h1>
+          <h1 className={style.srOnly}>{t.heroH1}</h1>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
 
             <ProtezImage
               src={`flag-usa.png`}
-              alt="American flag"
+              alt={t.alts.americanFlag}
               priority
               width={1306}
               height={1890}

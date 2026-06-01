@@ -70,5 +70,11 @@
   },
   "specialThanksToAllOurPartners": {
     "discoverAllPartners": "Discover all partners"
-  }
+  },
+  "buttons": {
+    "makeDonation": "Make Donation",
+    "supportWith": "Support with",
+    "applyToAcademy": "Apply to Academy"
+  },
+  "backToTop": "Back to top   →"
 }

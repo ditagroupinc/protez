@@ -2,6 +2,7 @@ import { useRef } from 'react'
 
 import { useLanguage } from '@/contexts/LanguageContext'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
+import { useHomeTexts } from '@/hooks/useHomeTexts'
 
 import Section from '@/components/Section'
 
@@ -23,6 +24,7 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
   const { lang } = useLanguage()
   // const [activeSlide, setActiveSlide] = useState(0)
   const { width } = useScreenModeAndSize()
+  const t = useHomeTexts().events
 
   const settings = {
     dots: false,
@@ -89,7 +91,7 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
     <Section ref={ref} id={ProtezIDs.Events} className={style.events}>
       <ProtezImage
         src="events-background-Ukraine.png"
-        alt="Ukrainian flag"
+        alt={t.alts.ukrainianFlag}
         width={4096}
         height={1150}
         className={style.backgroundImage}
@@ -123,7 +125,7 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
                   <a href={card.link} target="blank" className={style.card}>
                     <ProtezImage
                       src={card.photo}
-                      alt="events picture"
+                      alt={t.alts.eventsPicture}
                       width={340}
                       height={480}
                       className={style.cardPicture}
@@ -134,10 +136,12 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
                       <div className={style.cardDateAndStatus}>
                         {card.upcoming ? (
                           <span className={`${style.cardStatus} ${style.upcoming}`}>
-                            Upcoming event
+                            {t.cardStatus.upcoming}
                           </span>
                         ) : (
-                          <span className={`${style.cardStatus} ${style.past}`}>Past event</span>
+                          <span className={`${style.cardStatus} ${style.past}`}>
+                            {t.cardStatus.past}
+                          </span>
                         )}
 
                         <span className={style.cardDate}>{card.date}</span>

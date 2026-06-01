@@ -122,6 +122,22 @@
       { "country": "Ukraine", "location": "Kyiv", "address": "Khreshchatyk St, 7/11" }
     ]
   },
+  "events": {
+    "cardStatus": {
+      "upcoming": "Upcoming event",
+      "past": "Past event"
+    },
+    "alts": {
+      "ukrainianFlag": "Ukrainian flag",
+      "eventsPicture": "events picture"
+    }
+  },
+  "root": {
+    "heroH1": "Protez Foundation — free prosthetics and rehabilitation for Ukrainians",
+    "alts": {
+      "americanFlag": "American flag"
+    }
+  },
   "merch": {
     "viewAllMerch": "View all merch"
   },
