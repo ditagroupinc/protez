@@ -24,7 +24,7 @@ const AboutUs = forwardRef<HTMLDivElement, Props>(function ({ id }, ref) {
       <div className={style.container}>
         <div className={style.right}>
           <TextAppearanceWrapper>
-            <ProtezImage {...titleDesktop} className={style.title} />
+            <ProtezImage {...titleDesktop} className={style.title} priority />
           </TextAppearanceWrapper>
           <TextAppearanceWrapper>
             <p className={style.description}>{t.mission.statement}</p>

@@ -126,8 +126,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
       <ProtezImage
         src="events-background-Ukraine.png"
         alt={t.events.backgroundAlt}
-        width={1920}
-        height={1080}
+        width={4096}
+        height={1150}
         className={styles.backgroundImage}
       />
       <TextAppearanceWrapper className={styles.titleWrapper}>

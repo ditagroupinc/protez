@@ -90,8 +90,8 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
       <ProtezImage
         src="events-background-Ukraine.png"
         alt="Ukrainian flag"
-        width={1920}
-        height={1080}
+        width={4096}
+        height={1150}
         className={style.backgroundImage}
       />
       <div className={style.titleWrapper}>

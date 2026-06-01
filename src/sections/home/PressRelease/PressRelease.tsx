@@ -183,8 +183,8 @@ const PressRelease = () => {
                       src={`protezPage/pressRelease/${slide.img}`}
                       alt={slide.date + ' ' + slide.title[lang]}
                       className={style.image}
-                      width={984}
-                      height={640}
+                      width={940}
+                      height={660}
                     />
                   </div>
                 </div>
@@ -234,8 +234,8 @@ const PressRelease = () => {
                           src={`protezPage/pressRelease/${slide.img}`}
                           alt={slide.date + ' ' + slide.title[lang]}
                           className={style.image}
-                          width={984}
-                          height={640}
+                          width={940}
+                          height={660}
                         />
                       </div>
                     </TextAppearanceWrapper>

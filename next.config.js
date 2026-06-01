@@ -10,6 +10,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'protez.wpengine.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'widgets.guidestar.org',
+      },
     ],
   },
   reactStrictMode: false,

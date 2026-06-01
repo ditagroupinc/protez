@@ -89,8 +89,8 @@ export default function Donate() {
                       <ProtezImage
                         src={`donatePage/zelle-qr.png`}
                         alt={t.zelleAlt}
-                        width={110}
-                        height={110}
+                        width={112}
+                        height={109}
                         className={style.zelleQr}
                       />
                     </div>
@@ -142,8 +142,8 @@ export default function Donate() {
                       <ProtezImage
                         src={`donatePage/zelle-qr.png`}
                         alt={t.zelleAlt}
-                        width={110}
-                        height={110}
+                        width={112}
+                        height={109}
                         className={style.zelleQr}
                       />
                     </div>

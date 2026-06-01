@@ -326,7 +326,6 @@ const MemberCard = ({
     >
       <ProtezImage
         src={`protezPage/meetOurTeam/${photo}`}
-        object-fit="contain"
         alt={photo}
         width={360}
         height={360}

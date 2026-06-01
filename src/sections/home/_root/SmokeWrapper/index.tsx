@@ -11,8 +11,8 @@ const SmokeWrapper = ({ children }: { children: ReactNode }) => {
           <ProtezImage
             src="smokeBackground/smoke-bg-2.png"
             alt="smoke"
-            width={1920}
-            height={1080}
+            width={1370}
+            height={1501}
             className={style.image}
           />
         </div>
@@ -20,8 +20,8 @@ const SmokeWrapper = ({ children }: { children: ReactNode }) => {
           <ProtezImage
             src="smokeBackground/smoke-bg-2.png"
             alt="smoke"
-            width={1920}
-            height={1080}
+            width={1370}
+            height={1501}
             className={style.image}
           />
         </div>

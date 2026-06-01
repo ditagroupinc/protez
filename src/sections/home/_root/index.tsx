@@ -62,11 +62,10 @@ export default function ProtezHomePage({
 
             <ProtezImage
               src={`flag-usa.png`}
-              object-fit="contain"
-              alt="Picture of the author"
+              alt="American flag"
               priority
-              width={620}
-              height={927}
+              width={1306}
+              height={1890}
               className={style.americanFlag}
             />
             {/* Independent Suspense so LetsGiveHope and the flag render immediately

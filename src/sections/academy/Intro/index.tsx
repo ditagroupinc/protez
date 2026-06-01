@@ -73,7 +73,6 @@ const Card = ({ image, className }: { image: string; className?: string }) => {
     <div className={className}>
       <ProtezImage
         src={`${image}`}
-        object-fit="contain"
         alt={image as string}
         width={200}
         height={120}

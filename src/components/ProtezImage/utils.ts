@@ -1,10 +1,6 @@
-export const getPath = (src: string, external: boolean, environment: string): string => {
+export const getPath = (src: string, external: boolean): string => {
   if (external) {
     return src
-  }
-
-  if (environment === 'pages') {
-    return `/protez/${src}`
   }
 
   return `/${src}`

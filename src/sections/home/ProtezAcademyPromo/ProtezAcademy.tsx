@@ -36,7 +36,6 @@ const Card = ({ image }: { image: string }) => {
     <TextAppearanceWrapper className={style.card}>
       <ProtezImage
         src={`protezPage/protezAcademy/${image}`}
-        object-fit="contain"
         alt={image as string}
         width={150}
         height={50}
@@ -56,7 +55,6 @@ const ProtezAcademy = () => {
       <div className={style.left}>
         <ProtezImage
           src={`protezPage/protezAcademy/protezAcademy.png`}
-          object-fit="contain"
           alt="protezAcademy"
           width={760}
           height={748}

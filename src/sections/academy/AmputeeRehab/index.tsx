@@ -21,8 +21,8 @@ const AmputeeRehab = () => {
       <ProtezImage
         src="academyPage/amputeeRehab/summit.png"
         alt={t.amputeeRehab.imageAlt}
-        width={1920}
-        height={880}
+        width={1280}
+        height={960}
         className={styles.amputeeRehabImage}
       />
 

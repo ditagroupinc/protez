@@ -57,8 +57,8 @@ const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
             <ProtezImage
               src="academyPage/summitResults/summitResults.png"
               alt={t.summitResults.imageAlt}
-              width={1584}
-              height={800}
+              width={2680}
+              height={2010}
               className={styles.videoOverlay}
             />
 

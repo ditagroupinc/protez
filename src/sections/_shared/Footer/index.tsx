@@ -5,6 +5,7 @@ import { useLanguage } from '@/contexts/LanguageContext'
 
 import { icons } from './icons'
 import Divider from '@/components/Divider'
+import ProtezImage from '@/components/ProtezImage'
 
 import { ProtezIDs } from '@/consts'
 import Button from '@/components/Button'
@@ -108,9 +109,13 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
               target="_blank"
               rel="noreferrer"
             >
-              <img
-                alt=""
+              <ProtezImage
                 src="https://widgets.guidestar.org/prod/v1/pdp/transparency-seal/14058903/svg"
+                alt="Candid Platinum Transparency seal"
+                width={138}
+                height={46}
+                external
+                unoptimized
               />
             </a>
           </div>

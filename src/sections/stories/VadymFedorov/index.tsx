@@ -142,8 +142,9 @@ export default function VadymFedorov() {
                   src={`vadymFedorovPage/vadymFedorov.png`}
                   alt={'vadymFedorov'}
                   className={style.image}
-                  width={1306}
-                  height={1890}
+                  width={3146}
+                  height={4086}
+                  priority
                 />
               </div>
               <div className={style.contentContainer}>

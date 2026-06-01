@@ -62,7 +62,7 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
             src="academyPage/chief/yakov-gradinar.png"
             alt="yakov-gradinar"
             width={672}
-            height={880}
+            height={959}
             className={styles.image}
           />
 

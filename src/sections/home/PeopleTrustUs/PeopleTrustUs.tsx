@@ -146,7 +146,7 @@ const PeopleTrustUs = () => {
               {peopleTrustUsText.cards.map((card, index) => (
                 <div className={style.imageWrapper} key={index}>
                   <ProtezImage
-                    width={984}
+                    width={940}
                     height={540}
                     src={`protezPage/peopleTrustUs/${card.image}`}
                     alt={card.description[lang]}
@@ -199,7 +199,7 @@ const PeopleTrustUs = () => {
                     <div className={`${style.cardWrapper} ${slideClass}`}>
                       <div className={`${style.card} `}>
                         <ProtezImage
-                          width={984}
+                          width={940}
                           height={540}
                           src={`protezPage/peopleTrustUs/${card.image}`}
                           alt={card.description[lang]}
