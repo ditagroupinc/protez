@@ -47,7 +47,7 @@ async function fetchAPI(query = '', { variables }: FetchAPIOptions = {}) {
         query,
         variables,
       }),
-      next: { revalidate: 120 },
+      next: { revalidate: 3600, tags: ['wp'] },
     })
 
     if (!response.ok) {
@@ -95,28 +95,6 @@ export async function getAllSections() {
   )
 
   return data?.posts.edges
-}
-
-export async function getCountry() {
-  try {
-    const response = await fetch('https://api.bigdatacloud.net/data/reverse-geocode-client', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-    })
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch country data: ${response.status}`)
-    }
-
-    return await response.json()
-  } catch (error) {
-    console.error('Country fetch error:', error)
-
-    return null
-  }
 }
 
 export const subscribeToMailchimp = async (data: { email: string }) => {

@@ -10,8 +10,6 @@ import FullScreenFallback from '@/components/FullScreenFallback'
 import ProtezImage from '@/components/ProtezImage'
 import SuspenseSection from '@/components/SuspenseSection'
 
-import { useCountryLanguage } from '@/hooks/useCountryLanguage'
-
 import Header from '../Header'
 import VideoBlock from './VideoBlock'
 
@@ -41,17 +39,13 @@ export default function ProtezHomePage({
   // news,
   statistics,
   events,
-  // pressReleases,
-  country,
-}: {
+}: // pressReleases,
+{
   news: SingleNews[] | null
   statistics: Statistics
   events: SingleEvent[] | null
   pressReleases: SinglePressRelease[] | null
-  country: string
 }) {
-  useCountryLanguage(country)
-
   return (
     <>
       <Header layout="protezPage" />

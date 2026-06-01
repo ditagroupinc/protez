@@ -1,5 +1,4 @@
 import ProtezHomePage from '@/sections/ProtezHomePage'
-import { getCurrentCountry } from '@/utils/getCurrentCountry'
 import { getPosts } from '@/utils/getPosts'
 
 import type { Metadata } from 'next'
@@ -22,7 +21,6 @@ export const metadata: Metadata = {
 
 export default async function Home() {
   const { news, statistics, events, pressReleases } = await getPosts()
-  const country = await getCurrentCountry()
 
   return (
     <ProtezHomePage
@@ -30,7 +28,6 @@ export default async function Home() {
       statistics={statistics}
       events={events}
       pressReleases={pressReleases}
-      country={country}
     />
   )
 }
