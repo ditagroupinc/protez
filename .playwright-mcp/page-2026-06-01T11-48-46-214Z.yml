@@ -1,0 +1,203 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: /
+      - img [ref=e4]
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Make Donation" [ref=e8] [cursor=pointer]:
+          - /url: /donate
+        - link "Потрібeн протез" [ref=e9] [cursor=pointer]:
+          - /url: https://forms.gle/WUVBvfZhYJsanGVbA
+      - generic [ref=e10]:
+        - img [ref=e11]
+        - button "EN" [disabled]
+        - button "UA" [ref=e14] [cursor=pointer]
+      - button [ref=e15] [cursor=pointer]
+    - generic [ref=e19]:
+      - link "Protez Academy" [ref=e21] [cursor=pointer]:
+        - /url: /academy
+        - heading "Protez Academy" [level=3] [ref=e22]
+        - img [ref=e23]
+      - navigation [ref=e26]:
+        - list [ref=e27]:
+          - listitem [ref=e28]:
+            - link "Home" [ref=e29] [cursor=pointer]:
+              - /url: /letsGiveHope
+              - heading "Home" [level=3] [ref=e30]
+          - listitem [ref=e31]:
+            - link "People Trust Us" [ref=e32] [cursor=pointer]:
+              - /url: /peopleTrustUs
+              - heading "People Trust Us" [level=3] [ref=e33]
+          - listitem [ref=e34]:
+            - link "Prosthetics For Ukrainians" [ref=e35] [cursor=pointer]:
+              - /url: /prostheticsForUkrainians
+              - heading "Prosthetics For Ukrainians" [level=3] [ref=e36]
+          - listitem [ref=e37]:
+            - link "In Need" [ref=e38] [cursor=pointer]:
+              - /url: /inNeed
+              - heading "In Need" [level=3] [ref=e39]
+          - listitem [ref=e40]:
+            - link "Our Results" [ref=e41] [cursor=pointer]:
+              - /url: /ourResults
+              - heading "Our Results" [level=3] [ref=e42]
+          - listitem [ref=e43]:
+            - link "Prostheses Costs" [ref=e44] [cursor=pointer]:
+              - /url: /sampleProsthesesCosts
+              - heading "Prostheses Costs" [level=3] [ref=e45]
+          - listitem [ref=e46]:
+            - link "Protez Academy" [ref=e47] [cursor=pointer]:
+              - /url: /protezAcademy
+              - heading "Protez Academy" [level=3] [ref=e48]
+          - listitem [ref=e49]:
+            - link "Stories" [ref=e50] [cursor=pointer]:
+              - /url: /veterans
+              - heading "Stories" [level=3] [ref=e51]
+          - listitem [ref=e52]:
+            - link "Events" [ref=e53] [cursor=pointer]:
+              - /url: /events
+              - heading "Events" [level=3] [ref=e54]
+          - listitem [ref=e55]:
+            - link "Press Release" [ref=e56] [cursor=pointer]:
+              - /url: /pressRelease
+              - heading "Press Release" [level=3] [ref=e57]
+          - listitem [ref=e58]:
+            - link "Our Patients" [ref=e59] [cursor=pointer]:
+              - /url: /ourPatients
+              - heading "Our Patients" [level=3] [ref=e60]
+          - listitem [ref=e61]:
+            - link "Team" [ref=e62] [cursor=pointer]:
+              - /url: /meetOurTeam
+              - heading "Team" [level=3] [ref=e63]
+          - listitem [ref=e64]:
+            - link "Locations" [ref=e65] [cursor=pointer]:
+              - /url: /officeLocations
+              - heading "Locations" [level=3] [ref=e66]
+          - listitem [ref=e67]:
+            - link "Partners" [ref=e68] [cursor=pointer]:
+              - /url: /specialThanksToAllOurPartners
+              - heading "Partners" [level=3] [ref=e69]
+          - listitem [ref=e70]:
+            - link "Subscribe to Updates" [ref=e71] [cursor=pointer]:
+              - /url: /mailingList
+              - heading "Subscribe to Updates" [level=3] [ref=e72]
+          - listitem [ref=e73]:
+            - link "Protez Merch" [ref=e74] [cursor=pointer]:
+              - /url: /merch
+              - heading "Protez Merch" [level=3] [ref=e75]
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - link "Make Donation" [ref=e78] [cursor=pointer]:
+            - /url: /donate
+          - link "Support with" [ref=e79] [cursor=pointer]:
+            - /url: https://www.amazon.com/hz/wishlist/ls/3S6RESSKHZZH7/ref=hz_ls_biz_ex
+            - text: Support with
+            - img [ref=e80]
+          - link "Потрібeн протез" [ref=e83] [cursor=pointer]:
+            - /url: https://forms.gle/WUVBvfZhYJsanGVbA
+            - text: Потрібeн протез
+            - img [ref=e84]
+        - link "+1 612-997-2005" [ref=e86] [cursor=pointer]:
+          - /url: tel:+16129972005
+          - img [ref=e87]
+          - generic [ref=e89]: +1 612-997-2005
+        - button "english" [ref=e91] [cursor=pointer]:
+          - img [ref=e92]
+          - generic [ref=e94]: english
+  - generic [ref=e95]:
+    - link [ref=e96] [cursor=pointer]:
+      - /url: https://www.youtube.com/@Protezfoundation
+      - img [ref=e97]
+    - link [ref=e99] [cursor=pointer]:
+      - /url: https://www.facebook.com/prostheticsforukrainians/
+      - img [ref=e100]
+    - link [ref=e102] [cursor=pointer]:
+      - /url: https://www.instagram.com/protezfoundation/
+      - img [ref=e103]
+    - link [ref=e105] [cursor=pointer]:
+      - /url: https://www.linkedin.com/company/protez-foundation/
+      - img [ref=e106]
+  - main [ref=e108]:
+    - iframe [ref=e110]:
+      - feed [ref=f64e5]:
+        - link:
+          - /url: /prostheticsforukrainians/posts/235647055896625?ref=embed_post
+        - generic [ref=f64e9]:
+          - generic [ref=f64e11]:
+            - generic [ref=f64e12]:
+              - link "Play unseen stories" [ref=f64e14] [cursor=pointer]:
+                - /url: /stories/101193886008610/?source=EMBED_POST&ref=embed_post
+                - img "Protez Foundation" [ref=f64e17]
+              - link [ref=f64e20] [cursor=pointer]:
+                - /url: /prostheticsforukrainians/posts/235647055896625?ref=embed_post
+              - generic [ref=f64e24]:
+                - link "Protez Foundation" [ref=f64e25] [cursor=pointer]:
+                  - /url: https://www.facebook.com/prostheticsforukrainians?ref=embed_post
+                  - generic [ref=f64e26]: Protez Foundation
+                - link "about 3 years ago" [ref=f64e27] [cursor=pointer]:
+                  - /url: /prostheticsforukrainians/posts/235647055896625?ref=embed_post
+                  - generic [ref=f64e28]: about 3 years ago
+            - generic [ref=f64e30]:
+              - paragraph [ref=f64e31]:
+                - text: Our young hero Artem, 16 years old,
+                - text: Was born and lived in Mariupol.
+                - text: He was engaged in professional football as part of the youth national team of Mariupol.
+                - text: He dreamed of dedicating his life to football. On 02/03/2022, during preparation for a football game, a grenade was thrown at the boys from a drone. Artem's best friend, Ilya, 15 years old, died, and another friend was injured. After the injury, his left leg had to be amputated above the knee, and his right leg is paralyze
+                - generic [ref=f64e32]: ...
+              - link "See more" [ref=f64e35] [cursor=pointer]:
+                - /url: /prostheticsforukrainians/posts/235647055896625?ref=embed_post
+            - generic [ref=f64e39]:
+              - link "Protez Foundation's photo." [ref=f64e41] [cursor=pointer]:
+                - /url: https://www.facebook.com/donate/652289290279156/235647055896625/?fundraiser_source=feed&source_data%5Bpost_id%5D=235647055896625&ref=embed_post
+                - img "Protez Foundation's photo." [ref=f64e43]
+              - generic [ref=f64e44]:
+                - link [ref=f64e45] [cursor=pointer]:
+                  - /url: https://www.facebook.com/donate/652289290279156/235647055896625/?fundraiser_source=feed&source_data%5Bpost_id%5D=235647055896625&ref=embed_post
+                  - img [ref=f64e46]
+                - link "Fundraiser by the Protez Foundation to get prosthetics for Artem (16 y/o) Fundraiser for Protez Foundation by Protez Foundation" [ref=f64e52] [cursor=pointer]:
+                  - /url: https://www.facebook.com/donate/652289290279156/235647055896625/?fundraiser_source=feed&source_data%5Bpost_id%5D=235647055896625&ref=embed_post
+                  - text: Fundraiser by the Protez Foundation to get prosthetics for Artem (16 y/o)
+                  - text: Fundraiser for Protez Foundation by Protez Foundation
+              - generic [ref=f64e55]:
+                - text: Наш юний герой Артем, 16 років,
+                - text: Народився і жив у Маріуполі.
+                - text: Займався професійним футболом у складі юнацької збі
+                - generic [ref=f64e56]: ...
+                - link "Continue reading" [ref=f64e59] [cursor=pointer]:
+                  - /url: https://www.facebook.com/donate/652289290279156/235647055896625/?fundraiser_source=feed&source_data%5Bpost_id%5D=235647055896625
+              - generic [ref=f64e61]:
+                - generic [ref=f64e62]: $19,855 USD of $58,350 USD raised
+                - generic [ref=f64e63]: Ended
+          - table [ref=f64e67]:
+            - rowgroup [ref=f64e68]:
+              - row "103 8 94" [ref=f64e69]:
+                - cell "103" [ref=f64e70]:
+                  - button "103" [ref=f64e71]:
+                    - generic "Like" [ref=f64e72] [cursor=pointer]: "103"
+                - cell "8" [ref=f64e74]:
+                  - link "8" [ref=f64e75] [cursor=pointer]:
+                    - /url: https://www.facebook.com/prostheticsforukrainians/posts/235647055896625?ref=embed_post
+                    - generic "Comment" [ref=f64e76]: "8"
+                - cell "94" [ref=f64e78]:
+                  - link "94" [ref=f64e79] [cursor=pointer]:
+                    - /url: /sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fposts%2F235647055896625&display=popup&ref=embed_post&src=post
+                    - generic "Share" [ref=f64e80]: "94"
+  - contentinfo [ref=e111]:
+    - generic [ref=e113]:
+      - generic [ref=e114]:
+        - img [ref=e115]
+        - generic [ref=e117]:
+          - link "Give Hope!" [ref=e118] [cursor=pointer]:
+            - /url: /donate
+          - link "Protez Academy" [ref=e119] [cursor=pointer]:
+            - /url: https://forms.gle/WUVBvfZhYJsanGVbA
+      - generic [ref=e120]:
+        - paragraph [ref=e121]: "Nonprofit organization 501(c)(3) EIN: 88-2437069"
+        - generic [ref=e123]:
+          - paragraph [ref=e124]: "Please send checks to:"
+          - paragraph [ref=e125]: Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America
+        - paragraph [ref=e126]: info@protezfoundation.com
+        - link "Protez Foundation" [ref=e127] [cursor=pointer]:
+          - /url: https://app.candid.org/profile/14058903/protez-foundation-88-2437069/?pkId=5383b219-0323-4c41-a06c-73d362f764a7
+    - generic [ref=e128]: 2024 © Made by DITA GROUP Inc.
+  - alert [ref=e129]

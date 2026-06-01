@@ -1,0 +1,114 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: "#academyIntro"
+      - img [ref=e4]
+    - generic [ref=e20]:
+      - link "Register for the program" [ref=e21] [cursor=pointer]:
+        - /url: https://docs.google.com/forms/d/e/1FAIpQLSehTZ_AMk8eNDymp87acvmuPW98imuUzhtHaIbols0PZDhg2A/viewform
+      - link "Protez Foundation" [ref=e22] [cursor=pointer]:
+        - /url: /
+      - generic [ref=e23]:
+        - img [ref=e24]
+        - button "EN" [disabled] [ref=e26]
+        - button "UA" [ref=e27]
+      - button [ref=e28]
+    - generic [ref=e29]:
+      - link "Protez Foundation" [ref=e31] [cursor=pointer]:
+        - /url: /
+        - text: Protez Foundation
+        - img [ref=e32]
+      - navigation [ref=e35]:
+        - list [ref=e36]:
+          - listitem [ref=e37]:
+            - link "Home" [ref=e38] [cursor=pointer]:
+              - /url: "#academyIntro"
+          - listitem [ref=e39]:
+            - link "Mission and Values" [ref=e40] [cursor=pointer]:
+              - /url: "#missionAndValues"
+          - listitem [ref=e41]:
+            - link "Our Goals" [ref=e42] [cursor=pointer]:
+              - /url: "#ourGoals"
+          - listitem [ref=e43]:
+            - link "Academy" [ref=e44] [cursor=pointer]:
+              - /url: "#academy"
+          - listitem [ref=e45]:
+            - link "Our Results" [ref=e46] [cursor=pointer]:
+              - /url: "#ourResults"
+          - listitem [ref=e47]:
+            - link "Chief" [ref=e48] [cursor=pointer]:
+              - /url: "#chief"
+          - listitem [ref=e49]:
+            - link "Events" [ref=e50] [cursor=pointer]:
+              - /url: "#pastAndUpcomingEvents"
+          - listitem [ref=e51]:
+            - link "Students" [ref=e52] [cursor=pointer]:
+              - /url: "#academyStudents"
+          - listitem [ref=e53]:
+            - link "Summit" [ref=e54] [cursor=pointer]:
+              - /url: "#summitResults"
+          - listitem [ref=e55]:
+            - link "Partners" [ref=e56] [cursor=pointer]:
+              - /url: "#specialThanksToAllOurPartners"
+          - listitem [ref=e57]:
+            - link "Our Sponsors" [ref=e58] [cursor=pointer]:
+              - /url: "#ourSponsors"
+      - generic [ref=e59]:
+        - generic [ref=e60]:
+          - link "Register for the program" [ref=e61] [cursor=pointer]:
+            - /url: https://docs.google.com/forms/d/e/1FAIpQLSehTZ_AMk8eNDymp87acvmuPW98imuUzhtHaIbols0PZDhg2A/viewform
+          - link "Support Academy" [ref=e62] [cursor=pointer]:
+            - /url: /donate
+            - text: Support Academy
+            - img [ref=e63]
+        - link "+1 612-772-4777" [ref=e65] [cursor=pointer]:
+          - /url: tel:+16127724777
+          - img [ref=e66]
+          - generic [ref=e68]: +1 612-772-4777
+        - button "Українська" [ref=e70]:
+          - img [ref=e71]
+          - text: Українська
+  - generic [ref=e73]:
+    - link [ref=e74] [cursor=pointer]:
+      - /url: https://www.youtube.com/@ProtezAcademy
+      - img [ref=e75]
+    - link [ref=e78] [cursor=pointer]:
+      - /url: https://www.instagram.com/protezacademy?igsh=YjZsendpeHdkcXIz
+      - img [ref=e79]
+  - main [ref=e82]:
+    - heading "Protez Academy — Education in Prosthetics and Rehabilitation" [level=1] [ref=e83]
+    - generic [ref=e84]:
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - img "welcome" [ref=e89]
+          - paragraph [ref=e90]: Protez Academy is an educational project of the Protez Foundation in collaboration with Century College and with the participation of specialists from the University of Minnesota and Concordia University
+          - generic [ref=e91]:
+            - link "Register for the program" [ref=e92] [cursor=pointer]:
+              - /url: https://docs.google.com/forms/d/e/1FAIpQLSehTZ_AMk8eNDymp87acvmuPW98imuUzhtHaIbols0PZDhg2A/viewform
+            - link "Support Academy" [ref=e93] [cursor=pointer]:
+              - /url: /donate
+              - text: Support Academy
+              - img [ref=e94]
+        - generic [ref=e96]:
+          - generic [ref=e97]: "Our donors:"
+          - link "All sponsors and partners" [ref=e98] [cursor=pointer]:
+            - /url: "#specialThanksToAllOurPartners"
+            - text: All sponsors and partners
+            - img [ref=e99]
+          - img "academyPage/partners/white/rotary_white.svg" [ref=e102]
+          - img "academyPage/partners/white/direct-relief_white.svg" [ref=e104]
+      - generic [ref=e106]: "Our partners:"
+    - generic [ref=e107]: Loading...
+    - generic [ref=e108]: Loading...
+    - generic [ref=e109]: Loading...
+    - generic [ref=e110]: Loading...
+    - generic [ref=e111]: Loading...
+    - generic [ref=e112]: Loading...
+    - generic [ref=e113]: Loading...
+    - generic [ref=e114]: Loading...
+    - generic [ref=e115]: Loading...
+    - generic [ref=e116]: Loading...
+    - generic [ref=e117]: Loading...
+    - link "back to top →" [ref=e118] [cursor=pointer]:
+      - /url: "#academyIntro"
+  - generic [ref=e119]: Loading...

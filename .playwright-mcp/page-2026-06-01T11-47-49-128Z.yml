@@ -1,0 +1,141 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: /
+      - img [ref=e4]
+    - generic [ref=e20]:
+      - generic [ref=e21]:
+        - link "Apply to Academy" [ref=e22] [cursor=pointer]:
+          - /url: https://forms.gle/Wr3Tf9UJCLCq4sAQ6
+        - link "Protez Foundation" [ref=e23] [cursor=pointer]:
+          - /url: /
+      - generic [ref=e24]:
+        - img [ref=e25]
+        - button "EN" [disabled]
+        - button "UA" [ref=e28] [cursor=pointer]
+      - button [ref=e29] [cursor=pointer]
+    - generic [ref=e33]:
+      - link "Protez Academy" [ref=e35] [cursor=pointer]:
+        - /url: /academy
+        - heading "Protez Academy" [level=3] [ref=e36]
+        - img [ref=e37]
+      - navigation [ref=e40]:
+        - list [ref=e41]:
+          - listitem [ref=e42]:
+            - link "Home" [ref=e43] [cursor=pointer]:
+              - /url: /academyIntro
+              - heading "Home" [level=3] [ref=e44]
+          - listitem [ref=e45]:
+            - link "Our Goals" [ref=e46] [cursor=pointer]:
+              - /url: /ourGoals
+              - heading "Our Goals" [level=3] [ref=e47]
+          - listitem [ref=e48]:
+            - link "Academy" [ref=e49] [cursor=pointer]:
+              - /url: /academy
+              - heading "Academy" [level=3] [ref=e50]
+          - listitem [ref=e51]:
+            - link "Our Results" [ref=e52] [cursor=pointer]:
+              - /url: /ourResults
+              - heading "Our Results" [level=3] [ref=e53]
+          - listitem [ref=e54]:
+            - link "Academy Teachers" [ref=e55] [cursor=pointer]:
+              - /url: /ourTeachers
+              - heading "Academy Teachers" [level=3] [ref=e56]
+          - listitem [ref=e57]:
+            - link "Chief" [ref=e58] [cursor=pointer]:
+              - /url: /chief
+              - heading "Chief" [level=3] [ref=e59]
+          - listitem [ref=e60]:
+            - link "Theory Lectures" [ref=e61] [cursor=pointer]:
+              - /url: /theoryLectures
+              - heading "Theory Lectures" [level=3] [ref=e62]
+          - listitem [ref=e63]:
+            - link "Practice Sessions" [ref=e64] [cursor=pointer]:
+              - /url: /practiceSessions
+              - heading "Practice Sessions" [level=3] [ref=e65]
+          - listitem [ref=e66]:
+            - link "Events" [ref=e67] [cursor=pointer]:
+              - /url: /pastAndUpcomingEvents
+              - heading "Events" [level=3] [ref=e68]
+          - listitem [ref=e69]:
+            - link "Students" [ref=e70] [cursor=pointer]:
+              - /url: /academyStudents
+              - heading "Students" [level=3] [ref=e71]
+          - listitem [ref=e72]:
+            - link "Amputee Rehab" [ref=e73] [cursor=pointer]:
+              - /url: /amputeeRehab
+              - heading "Amputee Rehab" [level=3] [ref=e74]
+          - listitem [ref=e75]:
+            - link "Summit" [ref=e76] [cursor=pointer]:
+              - /url: /summitResults
+              - heading "Summit" [level=3] [ref=e77]
+          - listitem [ref=e78]:
+            - link "We Are In News" [ref=e79] [cursor=pointer]:
+              - /url: /weAreInNews
+              - heading "We Are In News" [level=3] [ref=e80]
+          - listitem [ref=e81]:
+            - link "Partners" [ref=e82] [cursor=pointer]:
+              - /url: /specialThanksToAllOurPartners
+              - heading "Partners" [level=3] [ref=e83]
+      - generic [ref=e84]:
+        - generic [ref=e85]:
+          - link "Apply to Academy" [ref=e86] [cursor=pointer]:
+            - /url: https://forms.gle/Wr3Tf9UJCLCq4sAQ6
+          - link "Support Academy" [ref=e87] [cursor=pointer]:
+            - /url: /
+            - text: Support Academy
+            - img [ref=e88]
+        - link "+1 612-997-2005" [ref=e90] [cursor=pointer]:
+          - /url: tel:+16129972005
+          - img [ref=e91]
+          - generic [ref=e93]: +1 612-997-2005
+        - button "english" [ref=e95] [cursor=pointer]:
+          - img [ref=e96]
+          - generic [ref=e98]: english
+  - generic [ref=e99]:
+    - link [ref=e100] [cursor=pointer]:
+      - /url: https://www.youtube.com/@Protezfoundation
+      - img [ref=e101]
+    - link [ref=e103] [cursor=pointer]:
+      - /url: https://www.facebook.com/prostheticsforukrainians/
+      - img [ref=e104]
+    - link [ref=e106] [cursor=pointer]:
+      - /url: https://www.instagram.com/protezfoundation/
+      - img [ref=e107]
+    - link [ref=e109] [cursor=pointer]:
+      - /url: https://www.linkedin.com/company/protez-foundation/
+      - img [ref=e110]
+  - main [ref=e112]:
+    - article [ref=e113]:
+      - heading "Privacy Policy" [level=1] [ref=e114]
+      - paragraph [ref=e115]: "Effective Date: May 15, 2026"
+      - paragraph [ref=e116]: This Privacy Policy describes how Protez Foundation ("we," "us," or "our") collects, uses, and shares your personal information when you visit the Protez Academy website https://www.protezfoundation.org/academy or interact with our educational services.
+      - generic [ref=e117]:
+        - heading "1. Information We Collect" [level=2] [ref=e118]
+        - paragraph [ref=e119]: "We collect information that you provide directly to us when you apply for the Academy, register for courses, or contact us. This may include:"
+        - list [ref=e120]:
+          - listitem [ref=e121]: Full name, email address (e.g., via info@protezacademy.org), and phone number (+38 050 984 33 56).
+          - listitem [ref=e122]: Professional background, educational history, and certification details (for applicants).
+          - listitem [ref=e123]: Technical data such as IP address and browser type collected via cookies.
+      - generic [ref=e124]:
+        - heading "2. How We Use Your Information" [level=2] [ref=e125]
+        - list [ref=e126]:
+          - listitem [ref=e127]: To process and evaluate applications for the Protez Academy programs.
+          - listitem [ref=e128]: To provide educational materials, training, and certification.
+          - listitem [ref=e129]: To communicate updates regarding the Academy's schedule and events.
+          - listitem [ref=e130]: To improve our educational services and website functionality.
+      - generic [ref=e131]:
+        - heading "3. Data Protection and Sharing" [level=2] [ref=e132]
+        - paragraph [ref=e133]: We implement security measures to protect your data. We do not sell your personal information. We may share it with partner educational institutions (e.g., Century College, University of Minnesota) only to the extent necessary for your training and certification.
+      - generic [ref=e134]:
+        - heading "4. Your Rights" [level=2] [ref=e135]
+        - paragraph [ref=e136]: You have the right to request access to, correction of, or deletion of your personal data. Please contact us at info@protezacademy.org for any such requests.
+      - generic [ref=e137]:
+        - heading "5. Contact Information" [level=2] [ref=e138]
+        - paragraph [ref=e139]: Protez Foundation / Protez Academy
+        - paragraph [ref=e140]: "Address: вул. Хрещатик, 7/11, Київ, Україна"
+        - paragraph [ref=e141]: "Email: info@protezacademy.org"
+        - paragraph [ref=e142]: "Phone: +38 050 984 33 56"
+        - paragraph [ref=e143]: "Nonprofit 501(c)(3) EIN: 88-2437069"
+      - paragraph [ref=e144]: © 2026 Protez Foundation Academy. All rights reserved.
+  - alert [ref=e145]

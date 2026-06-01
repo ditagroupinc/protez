@@ -1,4 +1,4 @@
-import ProtezHomePage from '@/sections/ProtezHomePage'
+import ProtezHomePage from '@/sections/home/_root'
 import { getPosts } from '@/utils/getPosts'
 
 import type { Metadata } from 'next'

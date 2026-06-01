@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import AcademyHomePage from './sections'
+import AcademyHomePage from '@/sections/academy/_root'
 
 export const metadata: Metadata = {
   title: 'Protez Academy — Education in Prosthetics and Rehabilitation',

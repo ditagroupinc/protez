@@ -1,0 +1,1135 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: "#letsGiveHope"
+      - img [ref=e4]
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Make Donation" [ref=e8] [cursor=pointer]:
+          - /url: /donate
+        - link "Потрібeн протез" [ref=e9] [cursor=pointer]:
+          - /url: https://forms.gle/WUVBvfZhYJsanGVbA
+      - generic [ref=e10]:
+        - img [ref=e11]
+        - button "EN" [disabled]
+        - button "UA" [ref=e14] [cursor=pointer]
+      - button [ref=e15] [cursor=pointer]
+    - generic [ref=e19]:
+      - link "Protez Academy" [ref=e21] [cursor=pointer]:
+        - /url: /academy
+        - heading "Protez Academy" [level=3] [ref=e22]
+        - img [ref=e23]
+      - navigation [ref=e26]:
+        - list [ref=e27]:
+          - listitem [ref=e28]:
+            - link "Home" [ref=e29] [cursor=pointer]:
+              - /url: "#letsGiveHope"
+              - heading "Home" [level=3] [ref=e30]
+          - listitem [ref=e31]:
+            - link "People Trust Us" [ref=e32] [cursor=pointer]:
+              - /url: "#peopleTrustUs"
+              - heading "People Trust Us" [level=3] [ref=e33]
+          - listitem [ref=e34]:
+            - link "Prosthetics For Ukrainians" [ref=e35] [cursor=pointer]:
+              - /url: "#prostheticsForUkrainians"
+              - heading "Prosthetics For Ukrainians" [level=3] [ref=e36]
+          - listitem [ref=e37]:
+            - link "In Need" [ref=e38] [cursor=pointer]:
+              - /url: "#inNeed"
+              - heading "In Need" [level=3] [ref=e39]
+          - listitem [ref=e40]:
+            - link "Our Results" [ref=e41] [cursor=pointer]:
+              - /url: "#ourResults"
+              - heading "Our Results" [level=3] [ref=e42]
+          - listitem [ref=e43]:
+            - link "Prostheses Costs" [ref=e44] [cursor=pointer]:
+              - /url: "#sampleProsthesesCosts"
+              - heading "Prostheses Costs" [level=3] [ref=e45]
+          - listitem [ref=e46]:
+            - link "Protez Academy" [ref=e47] [cursor=pointer]:
+              - /url: "#protezAcademy"
+              - heading "Protez Academy" [level=3] [ref=e48]
+          - listitem [ref=e49]:
+            - link "Stories" [ref=e50] [cursor=pointer]:
+              - /url: "#veterans"
+              - heading "Stories" [level=3] [ref=e51]
+          - listitem [ref=e52]:
+            - link "Events" [ref=e53] [cursor=pointer]:
+              - /url: "#events"
+              - heading "Events" [level=3] [ref=e54]
+          - listitem [ref=e55]:
+            - link "Press Release" [ref=e56] [cursor=pointer]:
+              - /url: "#pressRelease"
+              - heading "Press Release" [level=3] [ref=e57]
+          - listitem [ref=e58]:
+            - link "Our Patients" [ref=e59] [cursor=pointer]:
+              - /url: "#ourPatients"
+              - heading "Our Patients" [level=3] [ref=e60]
+          - listitem [ref=e61]:
+            - link "Team" [ref=e62] [cursor=pointer]:
+              - /url: "#meetOurTeam"
+              - heading "Team" [level=3] [ref=e63]
+          - listitem [ref=e64]:
+            - link "Locations" [ref=e65] [cursor=pointer]:
+              - /url: "#officeLocations"
+              - heading "Locations" [level=3] [ref=e66]
+          - listitem [ref=e67]:
+            - link "Partners" [ref=e68] [cursor=pointer]:
+              - /url: "#specialThanksToAllOurPartners"
+              - heading "Partners" [level=3] [ref=e69]
+          - listitem [ref=e70]:
+            - link "Subscribe to Updates" [ref=e71] [cursor=pointer]:
+              - /url: "#mailingList"
+              - heading "Subscribe to Updates" [level=3] [ref=e72]
+          - listitem [ref=e73]:
+            - link "Protez Merch" [ref=e74] [cursor=pointer]:
+              - /url: "#merch"
+              - heading "Protez Merch" [level=3] [ref=e75]
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - link "Make Donation" [ref=e78] [cursor=pointer]:
+            - /url: /donate
+          - link "Support with" [ref=e79] [cursor=pointer]:
+            - /url: https://www.amazon.com/hz/wishlist/ls/3S6RESSKHZZH7/ref=hz_ls_biz_ex
+            - text: Support with
+            - img [ref=e80]
+          - link "Потрібeн протез" [ref=e83] [cursor=pointer]:
+            - /url: https://forms.gle/WUVBvfZhYJsanGVbA
+            - text: Потрібeн протез
+            - img [ref=e84]
+        - link "+1 612-997-2005" [ref=e86] [cursor=pointer]:
+          - /url: tel:+16129972005
+          - img [ref=e87]
+          - generic [ref=e89]: +1 612-997-2005
+        - button "english" [ref=e91] [cursor=pointer]:
+          - img [ref=e92]
+          - generic [ref=e94]: english
+  - generic [ref=e95]:
+    - link [ref=e96] [cursor=pointer]:
+      - /url: https://www.youtube.com/@Protezfoundation
+      - img [ref=e97]
+    - link [ref=e99] [cursor=pointer]:
+      - /url: https://www.facebook.com/prostheticsforukrainians/
+      - img [ref=e100]
+    - link [ref=e102] [cursor=pointer]:
+      - /url: https://www.instagram.com/protezfoundation/
+      - img [ref=e103]
+    - link [ref=e105] [cursor=pointer]:
+      - /url: https://www.linkedin.com/company/protez-foundation/
+      - img [ref=e106]
+  - link "Back to top →" [ref=e108] [cursor=pointer]:
+    - /url: "##letsGiveHope"
+  - main [ref=e109]:
+    - generic [ref=e110]:
+      - generic:
+        - generic:
+          - img "smoke"
+        - generic:
+          - img "smoke"
+      - heading "Protez Foundation — free prosthetics and rehabilitation for Ukrainians" [level=1] [ref=e111]
+      - generic [ref=e112]:
+        - generic [ref=e114]:
+          - generic [ref=e115]:
+            - img [ref=e116]
+            - paragraph [ref=e118]: We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.
+            - generic [ref=e119]:
+              - link "Make Donation" [ref=e120] [cursor=pointer]:
+                - /url: /donate
+              - link "Потрібeн протез" [ref=e121] [cursor=pointer]:
+                - /url: https://forms.gle/WUVBvfZhYJsanGVbA
+                - text: Потрібeн протез
+                - img [ref=e122]
+          - img [ref=e125]
+        - img "Picture of the author"
+        - generic [ref=e130]:
+          - generic [ref=e134]:
+            - img [ref=e138]
+            - img "Dr. Yakov Gradinar receives an award from the President of Ukraine, Volodymyr Zelenskyy." [ref=e142]
+            - img [ref=e146]
+            - img [ref=e150]
+            - img [ref=e154]
+            - img [ref=e158]
+            - img [ref=e162]
+            - img [ref=e166]
+            - img [ref=e170]
+            - img [ref=e174]
+            - img [ref=e178]
+          - generic [ref=e179]:
+            - img [ref=e181]
+            - generic [ref=e186]:
+              - paragraph [ref=e190]: Direct Relief – our reliable partner who inspires us with their mission to help people around the world. Their support in achieving the goals of the Prosthetics Foundation in Ukraine is invaluable.
+              - paragraph [ref=e194]: Dr. Yakov Gradinar receives an award from the President of Ukraine, Volodymyr Zelenskyy.
+              - paragraph [ref=e198]: A memorandum on the continuation of cooperation between the Protez Foundation and the Ministry of Health of Ukraine has been signed. Our goal is unity in support and assistance to our heroes who deserve the best. Together we can achieve significant changes in the field of rehabilitation and provision of quality prosthetics.
+              - paragraph [ref=e202]: Collaboration and unity are the key to success in our common desire to provide prosthetics and rehabilitation of our heroes at a high level. We have extended the memorandum of cooperation with the Ministry of Internal Affairs of Ukraine and successfully implement joint projects for training specialists and prosthetics for military personnel.
+              - paragraph [ref=e206]: A huge thank you to the legendary General Valerii Zaluzhnyi for his heroism and courage in the first years of the war.
+              - paragraph [ref=e210]: Direct Relief – our reliable partner who inspires us with their mission to help people around the world. Their support in achieving the goals of the Prosthetics Foundation in Ukraine is invaluable.
+              - paragraph [ref=e214]: Dr. Yakov Gradinar receives an award from the President of Ukraine, Volodymyr Zelenskyy.
+              - paragraph [ref=e218]: A memorandum on the continuation of cooperation between the Protez Foundation and the Ministry of Health of Ukraine has been signed. Our goal is unity in support and assistance to our heroes who deserve the best. Together we can achieve significant changes in the field of rehabilitation and provision of quality prosthetics.
+              - paragraph [ref=e222]: Collaboration and unity are the key to success in our common desire to provide prosthetics and rehabilitation of our heroes at a high level. We have extended the memorandum of cooperation with the Ministry of Internal Affairs of Ukraine and successfully implement joint projects for training specialists and prosthetics for military personnel.
+              - paragraph [ref=e226]: A huge thank you to the legendary General Valerii Zaluzhnyi for his heroism and courage in the first years of the war.
+              - paragraph [ref=e230]: Direct Relief – our reliable partner who inspires us with their mission to help people around the world. Their support in achieving the goals of the Prosthetics Foundation in Ukraine is invaluable.
+            - generic [ref=e232]:
+              - button [ref=e233] [cursor=pointer]:
+                - img [ref=e234]
+              - button [ref=e236] [cursor=pointer]:
+                - img [ref=e237]
+    - generic [ref=e239]:
+      - generic:
+        - generic:
+          - img "smoke"
+        - generic:
+          - img "smoke"
+      - generic [ref=e240]:
+        - generic [ref=e241]:
+          - img [ref=e242]
+          - 'heading "We provide care for Ukrainians who have lost limbs and need prosthetics: from submitting an application through full rehabilitation." [level=3] [ref=e245]'
+          - heading "The goal of our work is to help ukrainian children, civilians and soldiers who have lost limbs as a result of the war receive high quality prosthetics in the US free of charge." [level=3] [ref=e246]
+          - generic [ref=e247]:
+            - link "Make Donation" [ref=e248] [cursor=pointer]:
+              - /url: /donate
+            - link "Support with" [ref=e249] [cursor=pointer]:
+              - /url: https://www.amazon.com/hz/wishlist/ls/3S6RESSKHZZH7/ref=hz_ls_biz_ex
+              - text: Support with
+              - img [ref=e250]
+        - generic [ref=e253]:
+          - generic [ref=e254]:
+            - generic [ref=e255]:
+              - img [ref=e256]
+              - paragraph [ref=e258]: Our goal is to help people who have lost limbs to restore their quality of life
+            - generic [ref=e259]:
+              - img [ref=e260]
+              - paragraph [ref=e262]: We provide mental health and emotional support during recovery.
+          - generic [ref=e263]:
+            - generic [ref=e264]:
+              - img [ref=e265]
+              - paragraph [ref=e267]: We bring people together to help support victims of war.
+            - generic [ref=e268]:
+              - img [ref=e269]
+              - paragraph [ref=e271]: We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine.
+    - generic [ref=e272]:
+      - generic [ref=e274]:
+        - generic:
+          - generic:
+            - img "smoke"
+          - generic:
+            - img "smoke"
+        - generic [ref=e275]:
+          - img
+          - img "veterans" [ref=e277]
+          - img [ref=e280]
+      - generic [ref=e283]:
+        - generic [ref=e284]:
+          - img [ref=e285]
+          - paragraph [ref=e287]: (May 2022 – May 2026)
+          - paragraph [ref=e288]: Over the past two years, we have been dedicated to restoring hope and mobility to Ukrainians affected by the war. Through our prosthetics assistance programs, we've empowered countless individuals to reclaim their independence and rebuild their lives. Join us in reflecting on our journey and see the impact we've made together.
+          - generic [ref=e289]:
+            - link "Make Donation" [ref=e290] [cursor=pointer]:
+              - /url: /donate
+            - link "More results" [ref=e291] [cursor=pointer]:
+              - /url: /
+              - text: More results
+              - img [ref=e292]
+        - generic [ref=e294]:
+          - generic [ref=e295]:
+            - generic [ref=e296]: 64+
+            - heading "Patients" [level=2] [ref=e297]
+          - generic [ref=e298]:
+            - generic [ref=e299]: 143+
+            - heading "Prostheses" [level=2] [ref=e300]
+          - generic [ref=e301]:
+            - generic [ref=e302]: "1"
+            - heading "Prosthetic centers" [level=2] [ref=e303]
+          - generic [ref=e304]:
+            - generic [ref=e305]: 31+
+            - heading "Specialists trained" [level=2] [ref=e306]
+          - generic [ref=e307]:
+            - generic [ref=e308]: $815,898
+            - heading "Money spent" [level=2] [ref=e309]
+    - generic [ref=e310]:
+      - generic:
+        - generic:
+          - img "smoke"
+        - generic:
+          - img "smoke"
+      - generic [ref=e311]:
+        - generic [ref=e312]:
+          - img [ref=e313]
+          - paragraph [ref=e315]: Prosthetics are expensive life-changing devices. With help of volunteers and partners we were able to reduce the cost significantly, lower the overhead down to barebone minimum. Our program overhead is only 8%.
+          - generic [ref=e316]:
+            - link "Make Donation" [ref=e317] [cursor=pointer]:
+              - /url: /donate
+            - link "Support with" [ref=e318] [cursor=pointer]:
+              - /url: https://www.amazon.com/hz/wishlist/ls/3S6RESSKHZZH7/ref=hz_ls_biz_ex
+              - text: Support with
+              - img [ref=e319]
+        - generic [ref=e322]:
+          - generic [ref=e323]:
+            - generic [ref=e324]:
+              - generic [ref=e325]:
+                - generic [ref=e326]:
+                  - generic [ref=e327]: Hand or Arm
+                  - generic [ref=e328]: ≈ $3,5К
+                - generic [ref=e329]:
+                  - img
+              - generic [ref=e330]:
+                - generic [ref=e331]:
+                  - generic [ref=e332]: Above the knee
+                  - generic [ref=e333]: ≈ $20К
+                - generic [ref=e334]:
+                  - img
+              - generic [ref=e335]:
+                - generic [ref=e336]:
+                  - generic [ref=e337]: Below Knee
+                  - generic [ref=e338]: $6K
+                - generic [ref=e339]:
+                  - img
+            - heading "Miscellaneous" [level=3] [ref=e340]
+            - generic [ref=e341]:
+              - generic [ref=e342]:
+                - generic [ref=e343]:
+                  - generic [ref=e344]: Liners&Socks
+                  - generic [ref=e345]: "> $600"
+                - generic [ref=e346]:
+                  - img
+              - generic [ref=e347]:
+                - generic [ref=e348]:
+                  - generic [ref=e349]: Components
+                  - generic [ref=e350]: "> $500"
+                - generic [ref=e351]:
+                  - img
+              - generic [ref=e352]:
+                - generic [ref=e353]:
+                  - generic [ref=e354]: Sport foot
+                  - generic [ref=e355]: ≈ $3,5К
+                - generic [ref=e356]:
+                  - img
+          - img
+          - img [ref=e357]
+    - generic [ref=e365]:
+      - generic:
+        - generic:
+          - img "smoke"
+        - generic:
+          - img "smoke"
+      - generic [ref=e366]:
+        - img "protezAcademy" [ref=e368]
+        - generic [ref=e369]:
+          - img [ref=e370]
+          - paragraph [ref=e386]: Protez Academy is an educational project by the Protez Foundation in collaboration with Century College and contributions from specialists from University of Minnesota and Concordia University
+          - generic [ref=e387]:
+            - link "Learn more" [ref=e388] [cursor=pointer]:
+              - /url: /academy
+            - link "Apply to Academy" [ref=e389] [cursor=pointer]:
+              - /url: https://forms.gle/Wr3Tf9UJCLCq4sAQ6
+              - text: Apply to Academy
+              - img [ref=e390]
+          - generic [ref=e392]:
+            - img "ottobock.svg" [ref=e394]
+            - img "minnesotaUniversity.svg" [ref=e396]
+            - img "extremity.svg" [ref=e398]
+    - generic [ref=e399]:
+      - generic:
+        - generic:
+          - img "smoke"
+        - generic:
+          - img "smoke"
+      - generic [ref=e401]:
+        - generic [ref=e402]:
+          - generic [ref=e405]:
+            - generic [ref=e408]:
+              - generic [ref=e409]:
+                - img [ref=e410]
+                - paragraph [ref=e412]: 10 years old
+              - heading [level=3] [ref=e413]: His dream is to run, jump and play football...
+              - paragraph [ref=e414]: Volodya, a 10-year-old boy from the Dnipropetrovsk region, was born with atrophied lower limbs and spent years moving on his hands and knees. After the amputation of both lower limbs, he traveled to Minneapolis with the support of the Protez Foundation and took his first steps on training prosthetics. His determination and joy were incredible, as he was able to walk proudly for the first time in his life.
+            - generic [ref=e417]:
+              - generic [ref=e418]:
+                - img [ref=e419]
+                - paragraph [ref=e421]: 30 years old, sergeant.
+              - heading "Vadym has dedicated 10 years to the Ukrainian Army." [level=3] [ref=e422]
+              - paragraph [ref=e423]: Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation. Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations
+            - generic [ref=e426]:
+              - generic [ref=e427]:
+                - img [ref=e428]
+                - paragraph [ref=e430]: 16 years old, Mariupol.
+              - heading [level=3] [ref=e431]: Artem played for the Mariupol youth soccer club, and he wanted to be a professional soccer player.
+              - paragraph [ref=e432]: Artem’s dream was to dedicate his life to soccer. On March 2nd, 2022, he went to the local field to play a scrimmage match with his friends. While they were warming up, a Russian drone dropped a grenade on the field. Artem’s best friend Ilya, a boy of 15, was killed. Artem and another boy were severely injured. As a result of the injuries, Artem’s left leg was amputated above the knee, and his right leg is paralyzed. Artem’s dream is now to be able to walk again.
+            - generic [ref=e435]:
+              - generic [ref=e436]:
+                - img [ref=e437]
+                - paragraph [ref=e439]: 10 years old
+              - heading [level=3] [ref=e440]: His dream is to run, jump and play football...
+              - paragraph [ref=e441]: Volodya, a 10-year-old boy from the Dnipropetrovsk region, was born with atrophied lower limbs and spent years moving on his hands and knees. After the amputation of both lower limbs, he traveled to Minneapolis with the support of the Protez Foundation and took his first steps on training prosthetics. His determination and joy were incredible, as he was able to walk proudly for the first time in his life.
+            - generic [ref=e444]:
+              - generic [ref=e445]:
+                - img [ref=e446]
+                - paragraph [ref=e448]: 30 years old, sergeant.
+              - heading [level=3] [ref=e449]: Vadym has dedicated 10 years to the Ukrainian Army.
+              - paragraph [ref=e450]: Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation. Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations
+            - generic [ref=e453]:
+              - generic [ref=e454]:
+                - img [ref=e455]
+                - paragraph [ref=e457]: 16 years old, Mariupol.
+              - heading [level=3] [ref=e458]: Artem played for the Mariupol youth soccer club, and he wanted to be a professional soccer player.
+              - paragraph [ref=e459]: Artem’s dream was to dedicate his life to soccer. On March 2nd, 2022, he went to the local field to play a scrimmage match with his friends. While they were warming up, a Russian drone dropped a grenade on the field. Artem’s best friend Ilya, a boy of 15, was killed. Artem and another boy were severely injured. As a result of the injuries, Artem’s left leg was amputated above the knee, and his right leg is paralyzed. Artem’s dream is now to be able to walk again.
+            - generic [ref=e462]:
+              - generic [ref=e463]:
+                - img [ref=e464]
+                - paragraph [ref=e466]: 10 years old
+              - heading [level=3] [ref=e467]: His dream is to run, jump and play football...
+              - paragraph [ref=e468]: Volodya, a 10-year-old boy from the Dnipropetrovsk region, was born with atrophied lower limbs and spent years moving on his hands and knees. After the amputation of both lower limbs, he traveled to Minneapolis with the support of the Protez Foundation and took his first steps on training prosthetics. His determination and joy were incredible, as he was able to walk proudly for the first time in his life.
+          - generic [ref=e469]:
+            - generic [ref=e473]:
+              - generic [ref=e477]:
+                - generic [ref=e478]:
+                  - link [ref=e479] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/posts/protez-foundation_our-young-hero-artem-16-years-old-activity-7086077525998583808-kZBW/?utm_source=share&utm_medium=member_ios
+                    - img [ref=e480]
+                  - link [ref=e482] [cursor=pointer]:
+                    - /url: https://www.facebook.com/prostheticsforukrainians/posts/pfbid02ABFsNzJ81L8tBotVsVVbDwhuoeGWLsrzjbq8WRhXBYS327eFWUskaHVGXHxe9KLtl
+                    - img [ref=e483]
+                  - link [ref=e485] [cursor=pointer]:
+                    - /url: https://www.instagram.com/p/CuGu1bEuIaf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA%3D%3D=
+                    - img [ref=e486]
+                - link [ref=e488] [cursor=pointer]:
+                  - /url: volodymyrKostyria
+                  - text: Give Hope!
+              - generic [ref=e492]:
+                - generic [ref=e493]:
+                  - link [ref=e494] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/posts/protez-foundation_vadym-fedorov-30-years-old-sergeant-vadym-activity-7045965954194784256-D_hH?utm_source=share&utm_medium=member_desktop
+                    - img [ref=e495]
+                  - link [ref=e497] [cursor=pointer]:
+                    - /url: https://www.facebook.com/donate/238890858497931/199310116131457/
+                    - img [ref=e498]
+                  - link [ref=e500] [cursor=pointer]:
+                    - /url: https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==
+                    - img [ref=e501]
+                - link "Give Hope!" [ref=e503] [cursor=pointer]:
+                  - /url: VadymFedorov
+              - generic [ref=e507]:
+                - generic [ref=e508]:
+                  - link [ref=e509] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/posts/protez-foundation_our-young-hero-artem-16-years-old-activity-7086077525998583808-kZBW/?utm_source=share&utm_medium=member_ios
+                    - img [ref=e510]
+                  - link [ref=e512] [cursor=pointer]:
+                    - /url: https://www.facebook.com/prostheticsforukrainians/posts/pfbid02ABFsNzJ81L8tBotVsVVbDwhuoeGWLsrzjbq8WRhXBYS327eFWUskaHVGXHxe9KLtl
+                    - img [ref=e513]
+                  - link [ref=e515] [cursor=pointer]:
+                    - /url: https://www.instagram.com/p/CuGu1bEuIaf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA%3D%3D=
+                    - img [ref=e516]
+                - link [ref=e518] [cursor=pointer]:
+                  - /url: ArtemSvergun
+                  - text: Give Hope!
+              - generic [ref=e522]:
+                - generic [ref=e523]:
+                  - link [ref=e524] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/posts/protez-foundation_our-young-hero-artem-16-years-old-activity-7086077525998583808-kZBW/?utm_source=share&utm_medium=member_ios
+                    - img [ref=e525]
+                  - link [ref=e527] [cursor=pointer]:
+                    - /url: https://www.facebook.com/prostheticsforukrainians/posts/pfbid02ABFsNzJ81L8tBotVsVVbDwhuoeGWLsrzjbq8WRhXBYS327eFWUskaHVGXHxe9KLtl
+                    - img [ref=e528]
+                  - link [ref=e530] [cursor=pointer]:
+                    - /url: https://www.instagram.com/p/CuGu1bEuIaf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA%3D%3D=
+                    - img [ref=e531]
+                - link [ref=e533] [cursor=pointer]:
+                  - /url: volodymyrKostyria
+                  - text: Give Hope!
+              - generic [ref=e537]:
+                - generic [ref=e538]:
+                  - link [ref=e539] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/posts/protez-foundation_vadym-fedorov-30-years-old-sergeant-vadym-activity-7045965954194784256-D_hH?utm_source=share&utm_medium=member_desktop
+                    - img [ref=e540]
+                  - link [ref=e542] [cursor=pointer]:
+                    - /url: https://www.facebook.com/donate/238890858497931/199310116131457/
+                    - img [ref=e543]
+                  - link [ref=e545] [cursor=pointer]:
+                    - /url: https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==
+                    - img [ref=e546]
+                - link [ref=e548] [cursor=pointer]:
+                  - /url: VadymFedorov
+                  - text: Give Hope!
+              - generic [ref=e552]:
+                - generic [ref=e553]:
+                  - link [ref=e554] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/posts/protez-foundation_our-young-hero-artem-16-years-old-activity-7086077525998583808-kZBW/?utm_source=share&utm_medium=member_ios
+                    - img [ref=e555]
+                  - link [ref=e557] [cursor=pointer]:
+                    - /url: https://www.facebook.com/prostheticsforukrainians/posts/pfbid02ABFsNzJ81L8tBotVsVVbDwhuoeGWLsrzjbq8WRhXBYS327eFWUskaHVGXHxe9KLtl
+                    - img [ref=e558]
+                  - link [ref=e560] [cursor=pointer]:
+                    - /url: https://www.instagram.com/p/CuGu1bEuIaf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA%3D%3D=
+                    - img [ref=e561]
+                - link [ref=e563] [cursor=pointer]:
+                  - /url: ArtemSvergun
+                  - text: Give Hope!
+              - generic [ref=e567]:
+                - generic [ref=e568]:
+                  - link [ref=e569] [cursor=pointer]:
+                    - /url: https://www.linkedin.com/posts/protez-foundation_our-young-hero-artem-16-years-old-activity-7086077525998583808-kZBW/?utm_source=share&utm_medium=member_ios
+                    - img [ref=e570]
+                  - link [ref=e572] [cursor=pointer]:
+                    - /url: https://www.facebook.com/prostheticsforukrainians/posts/pfbid02ABFsNzJ81L8tBotVsVVbDwhuoeGWLsrzjbq8WRhXBYS327eFWUskaHVGXHxe9KLtl
+                    - img [ref=e573]
+                  - link [ref=e575] [cursor=pointer]:
+                    - /url: https://www.instagram.com/p/CuGu1bEuIaf/?utm_source=ig_web_copy_link&igshid=MzRlODBiNWFlZA%3D%3D=
+                    - img [ref=e576]
+                - link [ref=e578] [cursor=pointer]:
+                  - /url: volodymyrKostyria
+                  - text: Give Hope!
+            - generic [ref=e579]:
+              - button [ref=e580] [cursor=pointer]:
+                - img [ref=e581]
+              - button [ref=e583] [cursor=pointer]:
+                - img [ref=e584]
+        - generic [ref=e589]:
+          - img [ref=e594]
+          - generic [ref=e598]:
+            - img "Vadym Fedorov" [ref=e599]
+            - button [ref=e600] [cursor=pointer]:
+              - img [ref=e601]
+              - img [ref=e624]
+          - generic [ref=e629]:
+            - img [ref=e630]
+            - button [ref=e631] [cursor=pointer]:
+              - img [ref=e632]
+              - img [ref=e656]
+          - img [ref=e662]
+          - generic [ref=e666]:
+            - img [ref=e667]
+            - button [ref=e668] [cursor=pointer]:
+              - img [ref=e669]
+              - img [ref=e692]
+          - generic [ref=e697]:
+            - img [ref=e698]
+            - button [ref=e699] [cursor=pointer]:
+              - img [ref=e700]
+              - img [ref=e724]
+          - img [ref=e730]
+    - generic [ref=e731]:
+      - generic:
+        - generic:
+          - img "smoke"
+        - generic:
+          - img "smoke"
+      - generic [ref=e732]:
+        - img "Ukrainian flag"
+        - img [ref=e734]
+        - generic [ref=e736]:
+          - generic [ref=e739]:
+            - link [ref=e744] [cursor=pointer]:
+              - /url: https://www.betterunite.com/protezfoundation-give-them-a-new-beginning-fundraiser-2024
+              - img [ref=e745]
+              - generic [ref=e746]:
+                - generic [ref=e747]:
+                  - generic [ref=e748]: Past event
+                  - generic [ref=e749]: 23/11
+                - heading [level=3] [ref=e750]: Protez Foundation Annual Fundraiser 2024!
+                - generic [ref=e751]:
+                  - img [ref=e752]
+                  - generic [ref=e754]: Oakdale, MN
+            - link [ref=e759] [cursor=pointer]:
+              - /url: https://amputeerehabsummit.org
+              - img [ref=e760]
+              - generic [ref=e761]:
+                - generic [ref=e762]:
+                  - generic [ref=e763]: Past event
+                  - generic [ref=e764]: 04/10
+                - heading [level=3] [ref=e765]: Amputee Rehab Summit 2025
+                - generic [ref=e766]:
+                  - img [ref=e767]
+                  - generic [ref=e769]: Kyiv
+            - link [ref=e774] [cursor=pointer]:
+              - /url: https://app.betterunite.com/protezfoundation-volunteerappreciationdinner-chicago2025
+              - img [ref=e775]
+              - generic [ref=e776]:
+                - generic [ref=e777]:
+                  - generic [ref=e778]: Past event
+                  - generic [ref=e779]: 02/11
+                - heading [level=3] [ref=e780]: Protez Foundation Appreciation Dinner 2025
+                - generic [ref=e781]:
+                  - img [ref=e782]
+                  - generic [ref=e784]: Chicago
+            - link "events picture Past event 09/11 Protez Foundation Annual Fundraiser Gala 2025 Oakdale, MN" [ref=e789] [cursor=pointer]:
+              - /url: https://app.betterunite.com/protezfoundation-protezfoundationannualfundraiser2025
+              - img "events picture" [ref=e790]
+              - generic [ref=e791]:
+                - generic [ref=e792]:
+                  - generic [ref=e793]: Past event
+                  - generic [ref=e794]: 09/11
+                - heading "Protez Foundation Annual Fundraiser Gala 2025" [level=3] [ref=e795]
+                - generic [ref=e796]:
+                  - img [ref=e797]
+                  - generic [ref=e799]: Oakdale, MN
+            - link "events picture Past event 24/08 Golf Tournament Benefiting the Protez Foundation Oakdale, MN" [ref=e804] [cursor=pointer]:
+              - /url: "#"
+              - img "events picture" [ref=e805]
+              - generic [ref=e806]:
+                - generic [ref=e807]:
+                  - generic [ref=e808]: Past event
+                  - generic [ref=e809]: 24/08
+                - heading "Golf Tournament Benefiting the Protez Foundation" [level=3] [ref=e810]
+                - generic [ref=e811]:
+                  - img [ref=e812]
+                  - generic [ref=e814]: Oakdale, MN
+            - link "events picture Past event 18/11 Amputee Rehab Summit 2023 Kyiv" [ref=e819] [cursor=pointer]:
+              - /url: https://amputeerehabsummit.org/
+              - img "events picture" [ref=e820]
+              - generic [ref=e821]:
+                - generic [ref=e822]:
+                  - generic [ref=e823]: Past event
+                  - generic [ref=e824]: 18/11
+                - heading "Amputee Rehab Summit 2023" [level=3] [ref=e825]
+                - generic [ref=e826]:
+                  - img [ref=e827]
+                  - generic [ref=e829]: Kyiv
+            - link [ref=e834] [cursor=pointer]:
+              - /url: https://amputeerehabsummit.org/
+              - img [ref=e835]
+              - generic [ref=e836]:
+                - generic [ref=e837]:
+                  - generic [ref=e838]: Past event
+                  - generic [ref=e839]: 31/10
+                - heading [level=3] [ref=e840]: Meet and Greet 22-th Group
+                - generic [ref=e841]:
+                  - img [ref=e842]
+                  - generic [ref=e844]: Minneapolis Airport
+            - link [ref=e849] [cursor=pointer]:
+              - /url: https://amputeerehabsummit.org/
+              - img [ref=e850]
+              - generic [ref=e851]:
+                - generic [ref=e852]:
+                  - generic [ref=e853]: Past event
+                  - generic [ref=e854]: 31/10
+                - heading [level=3] [ref=e855]: Meet and Greet 22-th Group
+                - generic [ref=e856]:
+                  - img [ref=e857]
+                  - generic [ref=e859]: Minneapolis Airport
+            - link [ref=e864] [cursor=pointer]:
+              - /url: https://www.betterunite.com/protezfoundation-give-them-a-new-beginning-fundraiser-2024
+              - img [ref=e865]
+              - generic [ref=e866]:
+                - generic [ref=e867]:
+                  - generic [ref=e868]: Past event
+                  - generic [ref=e869]: 23/11
+                - heading [level=3] [ref=e870]: Protez Foundation Annual Fundraiser 2024!
+                - generic [ref=e871]:
+                  - img [ref=e872]
+                  - generic [ref=e874]: Oakdale, MN
+            - link [ref=e879] [cursor=pointer]:
+              - /url: https://www.betterunite.com/protezfoundation-give-them-a-new-beginning-fundraiser-2024
+              - img [ref=e880]
+              - generic [ref=e881]:
+                - generic [ref=e882]:
+                  - generic [ref=e883]: Past event
+                  - generic [ref=e884]: 23/11
+                - heading [level=3] [ref=e885]: Protez Foundation Annual Fundraiser 2024!
+                - generic [ref=e886]:
+                  - img [ref=e887]
+                  - generic [ref=e889]: Oakdale, MN
+            - link [ref=e894] [cursor=pointer]:
+              - /url: https://amputeerehabsummit.org
+              - img [ref=e895]
+              - generic [ref=e896]:
+                - generic [ref=e897]:
+                  - generic [ref=e898]: Past event
+                  - generic [ref=e899]: 04/10
+                - heading [level=3] [ref=e900]: Amputee Rehab Summit 2025
+                - generic [ref=e901]:
+                  - img [ref=e902]
+                  - generic [ref=e904]: Kyiv
+            - link [ref=e909] [cursor=pointer]:
+              - /url: https://app.betterunite.com/protezfoundation-volunteerappreciationdinner-chicago2025
+              - img [ref=e910]
+              - generic [ref=e911]:
+                - generic [ref=e912]:
+                  - generic [ref=e913]: Past event
+                  - generic [ref=e914]: 02/11
+                - heading [level=3] [ref=e915]: Protez Foundation Appreciation Dinner 2025
+                - generic [ref=e916]:
+                  - img [ref=e917]
+                  - generic [ref=e919]: Chicago
+            - link [ref=e924] [cursor=pointer]:
+              - /url: https://app.betterunite.com/protezfoundation-protezfoundationannualfundraiser2025
+              - img [ref=e925]
+              - generic [ref=e926]:
+                - generic [ref=e927]:
+                  - generic [ref=e928]: Past event
+                  - generic [ref=e929]: 09/11
+                - heading [level=3] [ref=e930]: Protez Foundation Annual Fundraiser Gala 2025
+                - generic [ref=e931]:
+                  - img [ref=e932]
+                  - generic [ref=e934]: Oakdale, MN
+            - link [ref=e939] [cursor=pointer]:
+              - /url: "#"
+              - img [ref=e940]
+              - generic [ref=e941]:
+                - generic [ref=e942]:
+                  - generic [ref=e943]: Past event
+                  - generic [ref=e944]: 24/08
+                - heading [level=3] [ref=e945]: Golf Tournament Benefiting the Protez Foundation
+                - generic [ref=e946]:
+                  - img [ref=e947]
+                  - generic [ref=e949]: Oakdale, MN
+            - link [ref=e954] [cursor=pointer]:
+              - /url: https://amputeerehabsummit.org/
+              - img [ref=e955]
+              - generic [ref=e956]:
+                - generic [ref=e957]:
+                  - generic [ref=e958]: Past event
+                  - generic [ref=e959]: 18/11
+                - heading [level=3] [ref=e960]: Amputee Rehab Summit 2023
+                - generic [ref=e961]:
+                  - img [ref=e962]
+                  - generic [ref=e964]: Kyiv
+            - link [ref=e969] [cursor=pointer]:
+              - /url: https://amputeerehabsummit.org/
+              - img [ref=e970]
+              - generic [ref=e971]:
+                - generic [ref=e972]:
+                  - generic [ref=e973]: Past event
+                  - generic [ref=e974]: 31/10
+                - heading [level=3] [ref=e975]: Meet and Greet 22-th Group
+                - generic [ref=e976]:
+                  - img [ref=e977]
+                  - generic [ref=e979]: Minneapolis Airport
+            - link [ref=e984] [cursor=pointer]:
+              - /url: https://amputeerehabsummit.org/
+              - img [ref=e985]
+              - generic [ref=e986]:
+                - generic [ref=e987]:
+                  - generic [ref=e988]: Past event
+                  - generic [ref=e989]: 31/10
+                - heading [level=3] [ref=e990]: Meet and Greet 22-th Group
+                - generic [ref=e991]:
+                  - img [ref=e992]
+                  - generic [ref=e994]: Minneapolis Airport
+            - link [ref=e999] [cursor=pointer]:
+              - /url: https://www.betterunite.com/protezfoundation-give-them-a-new-beginning-fundraiser-2024
+              - img [ref=e1000]
+              - generic [ref=e1001]:
+                - generic [ref=e1002]:
+                  - generic [ref=e1003]: Past event
+                  - generic [ref=e1004]: 23/11
+                - heading [level=3] [ref=e1005]: Protez Foundation Annual Fundraiser 2024!
+                - generic [ref=e1006]:
+                  - img [ref=e1007]
+                  - generic [ref=e1009]: Oakdale, MN
+            - link [ref=e1014] [cursor=pointer]:
+              - /url: https://www.betterunite.com/protezfoundation-give-them-a-new-beginning-fundraiser-2024
+              - img [ref=e1015]
+              - generic [ref=e1016]:
+                - generic [ref=e1017]:
+                  - generic [ref=e1018]: Past event
+                  - generic [ref=e1019]: 23/11
+                - heading [level=3] [ref=e1020]: Protez Foundation Annual Fundraiser 2024!
+                - generic [ref=e1021]:
+                  - img [ref=e1022]
+                  - generic [ref=e1024]: Oakdale, MN
+            - link [ref=e1029] [cursor=pointer]:
+              - /url: https://amputeerehabsummit.org
+              - img [ref=e1030]
+              - generic [ref=e1031]:
+                - generic [ref=e1032]:
+                  - generic [ref=e1033]: Past event
+                  - generic [ref=e1034]: 04/10
+                - heading [level=3] [ref=e1035]: Amputee Rehab Summit 2025
+                - generic [ref=e1036]:
+                  - img [ref=e1037]
+                  - generic [ref=e1039]: Kyiv
+            - link [ref=e1044] [cursor=pointer]:
+              - /url: https://app.betterunite.com/protezfoundation-volunteerappreciationdinner-chicago2025
+              - img [ref=e1045]
+              - generic [ref=e1046]:
+                - generic [ref=e1047]:
+                  - generic [ref=e1048]: Past event
+                  - generic [ref=e1049]: 02/11
+                - heading [level=3] [ref=e1050]: Protez Foundation Appreciation Dinner 2025
+                - generic [ref=e1051]:
+                  - img [ref=e1052]
+                  - generic [ref=e1054]: Chicago
+            - link [ref=e1059] [cursor=pointer]:
+              - /url: https://app.betterunite.com/protezfoundation-protezfoundationannualfundraiser2025
+              - img [ref=e1060]
+              - generic [ref=e1061]:
+                - generic [ref=e1062]:
+                  - generic [ref=e1063]: Past event
+                  - generic [ref=e1064]: 09/11
+                - heading [level=3] [ref=e1065]: Protez Foundation Annual Fundraiser Gala 2025
+                - generic [ref=e1066]:
+                  - img [ref=e1067]
+                  - generic [ref=e1069]: Oakdale, MN
+          - button [ref=e1070] [cursor=pointer]:
+            - img [ref=e1071]
+          - button [ref=e1073] [cursor=pointer]:
+            - img [ref=e1074]
+    - generic [ref=e1077]:
+      - generic [ref=e1081]:
+        - img [ref=e1086]
+        - 'img "04 Aug 2025 “L.P.S: Ukraine–USA”: 10 lyceum students of the Ministry of Internal Affairs went to the USA" [ref=e1091]'
+        - img [ref=e1096]
+        - img [ref=e1101]
+        - img [ref=e1106]
+        - img [ref=e1111]
+        - img [ref=e1116]
+        - img [ref=e1121]
+        - img [ref=e1126]
+      - generic [ref=e1127]:
+        - img [ref=e1128]
+        - generic [ref=e1132]:
+          - generic [ref=e1135]:
+            - paragraph [ref=e1137]: 12 December 2024
+            - heading [level=3] [ref=e1138]: "Prosthetic and Rehabilitation Center based on the Ministry of Internal Affairs: an important initiative for military personnel"
+            - paragraph [ref=e1139]: On December 12, a meeting was held at the Ministry of Internal Affairs of Ukraine with the Minister of Internal Affairs Ihor Klymenko, the General Director of the Protez Foundation Yura Aroshidze, and the President of Direct Relief Thomas Tighe. The meeting was also attended by Deputy Minister of Internal Affairs of Ukraine Kateryna Pavlichenko. The main topic of negotiations was the creation of a prosthetic and rehabilitation center based on one of the medical institutions of the Ministry of Internal Affairs.
+          - generic [ref=e1142]:
+            - paragraph [ref=e1144]: 04 Aug 2025
+            - 'heading "“L.P.S: Ukraine–USA”: 10 lyceum students of the Ministry of Internal Affairs went to the USA" [level=3] [ref=e1145]'
+            - paragraph [ref=e1146]: "10 lyceum students of the Ministry of Internal Affairs went to the USA as part of the educational trip “L.P.S: Ukraine-USA”. This is a unique opportunity for young Ukrainians to get acquainted with American culture, values, the security system and the work of the police, rescuers and military. And at the same time - to adequately present Ukrainian culture, strength of spirit and patriotism. The trip is organized in cooperation with the Prosthesis Foundation and the Ministry of Internal Affairs of Ukraine. We have been working on this project for more than four months to create a rich and valuable program for lyceum students."
+          - generic [ref=e1149]:
+            - paragraph [ref=e1151]: 2 July 2025
+            - heading [level=3] [ref=e1152]: Laying of the Time Capsule for the Ministry of Internal Affairs Center
+            - paragraph [ref=e1153]: Minister of Internal Affairs Ihor Klymenko, together with Protez Foundation President Yura Aroshidze, laid a time capsule in the foundation of Ukraine’s first Ministry of Internal Affairs Prosthetics and Orthotics Center. The facility is currently under reconstruction. Once completed, it will be equipped with state-of-the-art technology. The Center will become a space of support, recovery, and dignity for defenders with amputations.
+          - generic [ref=e1156]:
+            - paragraph [ref=e1158]: 25 January 2025
+            - heading [level=3] [ref=e1159]: Training of the Protez Foundation team in the USA
+            - paragraph [ref=e1160]: The Ukrainian team of the Protez Foundation has successfully completed its two-week stay in the USA! 🇺🇸
+          - generic [ref=e1163]:
+            - paragraph [ref=e1165]: 12 December 2024
+            - heading [level=3] [ref=e1166]: "Prosthetic and Rehabilitation Center based on the Ministry of Internal Affairs: an important initiative for military personnel"
+            - paragraph [ref=e1167]: On December 12, a meeting was held at the Ministry of Internal Affairs of Ukraine with the Minister of Internal Affairs Ihor Klymenko, the General Director of the Protez Foundation Yura Aroshidze, and the President of Direct Relief Thomas Tighe. The meeting was also attended by Deputy Minister of Internal Affairs of Ukraine Kateryna Pavlichenko. The main topic of negotiations was the creation of a prosthetic and rehabilitation center based on one of the medical institutions of the Ministry of Internal Affairs.
+          - generic [ref=e1170]:
+            - paragraph [ref=e1172]: 04 Aug 2025
+            - heading [level=3] [ref=e1173]: "“L.P.S: Ukraine–USA”: 10 lyceum students of the Ministry of Internal Affairs went to the USA"
+            - paragraph [ref=e1174]: "10 lyceum students of the Ministry of Internal Affairs went to the USA as part of the educational trip “L.P.S: Ukraine-USA”. This is a unique opportunity for young Ukrainians to get acquainted with American culture, values, the security system and the work of the police, rescuers and military. And at the same time - to adequately present Ukrainian culture, strength of spirit and patriotism. The trip is organized in cooperation with the Prosthesis Foundation and the Ministry of Internal Affairs of Ukraine. We have been working on this project for more than four months to create a rich and valuable program for lyceum students."
+          - generic [ref=e1177]:
+            - paragraph [ref=e1179]: 2 July 2025
+            - heading [level=3] [ref=e1180]: Laying of the Time Capsule for the Ministry of Internal Affairs Center
+            - paragraph [ref=e1181]: Minister of Internal Affairs Ihor Klymenko, together with Protez Foundation President Yura Aroshidze, laid a time capsule in the foundation of Ukraine’s first Ministry of Internal Affairs Prosthetics and Orthotics Center. The facility is currently under reconstruction. Once completed, it will be equipped with state-of-the-art technology. The Center will become a space of support, recovery, and dignity for defenders with amputations.
+          - generic [ref=e1184]:
+            - paragraph [ref=e1186]: 25 January 2025
+            - heading [level=3] [ref=e1187]: Training of the Protez Foundation team in the USA
+            - paragraph [ref=e1188]: The Ukrainian team of the Protez Foundation has successfully completed its two-week stay in the USA! 🇺🇸
+          - generic [ref=e1191]:
+            - paragraph [ref=e1193]: 12 December 2024
+            - heading [level=3] [ref=e1194]: "Prosthetic and Rehabilitation Center based on the Ministry of Internal Affairs: an important initiative for military personnel"
+            - paragraph [ref=e1195]: On December 12, a meeting was held at the Ministry of Internal Affairs of Ukraine with the Minister of Internal Affairs Ihor Klymenko, the General Director of the Protez Foundation Yura Aroshidze, and the President of Direct Relief Thomas Tighe. The meeting was also attended by Deputy Minister of Internal Affairs of Ukraine Kateryna Pavlichenko. The main topic of negotiations was the creation of a prosthetic and rehabilitation center based on one of the medical institutions of the Ministry of Internal Affairs.
+        - generic [ref=e1196]:
+          - button [ref=e1197] [cursor=pointer]:
+            - img [ref=e1198]
+          - button [ref=e1200] [cursor=pointer]:
+            - img [ref=e1201]
+    - generic [ref=e1203]:
+      - generic [ref=e1204]:
+        - img [ref=e1205]
+        - generic [ref=e1207]:
+          - button [ref=e1208] [cursor=pointer]:
+            - img [ref=e1209]
+          - button [ref=e1211] [cursor=pointer]:
+            - img [ref=e1212]
+      - generic [ref=e1217]:
+        - img [ref=e1223]
+        - img [ref=e1229]
+        - img [ref=e1235]
+        - img [ref=e1241]
+        - img [ref=e1247]
+        - img [ref=e1253]
+        - img [ref=e1259]
+        - img [ref=e1265]
+        - img [ref=e1271]
+        - img [ref=e1277]
+        - img [ref=e1283]
+        - img "image of patients" [ref=e1289]
+        - img "image of patients" [ref=e1295]
+        - img "image of patients" [ref=e1301]
+    - generic [ref=e1302]:
+      - generic [ref=e1303]:
+        - img [ref=e1305]
+        - generic [ref=e1307]:
+          - img "yuryAroshidze.png" [ref=e1308]
+          - heading "Yura Aroshidze" [level=3] [ref=e1309]
+          - paragraph [ref=e1310]: Co-Founder, CEO “Protez Foundation”
+          - generic [ref=e1311]:
+            - link [ref=e1312] [cursor=pointer]:
+              - /url: https://www.facebook.com/yra.aroshidze
+              - img [ref=e1313]
+            - link [ref=e1315] [cursor=pointer]:
+              - /url: https://www.instagram.com/u.aroshidze/
+              - img [ref=e1316]
+        - generic [ref=e1318]:
+          - img "yakovGradinar.png" [ref=e1319]
+          - heading "Yakov Gradinar" [level=3] [ref=e1320]
+          - paragraph [ref=e1321]: Co-Founder, Certified Prosthetist and Orthotist & Chief Medical Officer
+          - generic [ref=e1322]:
+            - link [ref=e1323] [cursor=pointer]:
+              - /url: https://www.facebook.com/yakovjacob.gradinar
+              - img [ref=e1324]
+            - link [ref=e1326] [cursor=pointer]:
+              - /url: https://www.i,nstagram.com/yakovgradinar/
+              - img [ref=e1327]
+      - generic [ref=e1329]:
+        - generic [ref=e1330]:
+          - img "valentynaPavsyukova.png" [ref=e1331]
+          - heading "Valentyna Pavsyukova" [level=3] [ref=e1332]
+          - paragraph [ref=e1333]: Strategic Advisor
+          - generic [ref=e1334]:
+            - link [ref=e1335] [cursor=pointer]:
+              - /url: https://www.facebook.com/valentyna.pavsyukova/
+              - img [ref=e1336]
+            - link [ref=e1338] [cursor=pointer]:
+              - /url: https://www.instagram.com/valentyna_pavsyukova/
+              - img [ref=e1339]
+            - link [ref=e1341] [cursor=pointer]:
+              - /url: mailto:valentyna@protezfoundation.com
+              - img [ref=e1342]
+        - generic [ref=e1346]:
+          - img "andreyMadan.png" [ref=e1347]
+          - heading "Andrey Madan" [level=3] [ref=e1348]
+          - paragraph [ref=e1349]: Executive Program Director
+          - generic [ref=e1350]:
+            - link [ref=e1351] [cursor=pointer]:
+              - /url: https://www.facebook.com/profile.php?id=13740119
+              - img [ref=e1352]
+            - link [ref=e1354] [cursor=pointer]:
+              - /url: https://www.instagram.com/andrey.madan.mn/
+              - img [ref=e1355]
+            - link [ref=e1357] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/andreymadan/
+              - img [ref=e1358]
+            - link [ref=e1360] [cursor=pointer]:
+              - /url: mailto:andrey@protezfoundation.com
+              - img [ref=e1361]
+        - generic [ref=e1365]:
+          - img "ivannaGradniar.png" [ref=e1366]
+          - heading "Ivanna Gradinar" [level=3] [ref=e1367]
+          - paragraph [ref=e1368]: Financial Director
+          - link [ref=e1370] [cursor=pointer]:
+            - /url: mailto:aivanna@protezfoundation.com
+            - img [ref=e1371]
+        - generic [ref=e1375]:
+          - img "mykolaSarazhynskyy.png" [ref=e1376]
+          - heading "Mykola Sarazhynskyy" [level=3] [ref=e1377]
+          - paragraph [ref=e1378]: Director of Community Events
+          - generic [ref=e1379]:
+            - link [ref=e1380] [cursor=pointer]:
+              - /url: https://www.facebook.com/mykola.sarazhynskyy
+              - img [ref=e1381]
+            - link [ref=e1383] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/mykolasarazhynskyy/
+              - img [ref=e1384]
+            - link [ref=e1386] [cursor=pointer]:
+              - /url: mailto:mykola@protezfoundation.com
+              - img [ref=e1387]
+        - generic [ref=e1391]:
+          - img "tolyDzyuba.png" [ref=e1392]
+          - heading "Toly Dzyuba" [level=3] [ref=e1393]
+          - paragraph [ref=e1394]: Director of Events and Property Management
+          - generic [ref=e1395]:
+            - link [ref=e1396] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/anatoliy-dzyuba-71880789/
+              - img [ref=e1397]
+            - link [ref=e1399] [cursor=pointer]:
+              - /url: https://www.instagram.com/tolydzyuba/?hl=en
+              - img [ref=e1400]
+            - link [ref=e1402] [cursor=pointer]:
+              - /url: mailto:toly@protezfoundation.com
+              - img [ref=e1403]
+        - generic [ref=e1407]:
+          - img "ruslanSychov.png" [ref=e1408]
+          - heading "Ruslan Sychov" [level=3] [ref=e1409]
+          - paragraph [ref=e1410]: Digital/IT Advisor
+          - generic [ref=e1411]:
+            - link [ref=e1412] [cursor=pointer]:
+              - /url: https://www.facebook.com/ruslan.sychov
+              - img [ref=e1413]
+            - link [ref=e1415] [cursor=pointer]:
+              - /url: https://www.instagram.com/ruslan.sychov/
+              - img [ref=e1416]
+            - link [ref=e1418] [cursor=pointer]:
+              - /url: https://www.linkedin.com/in/ruslan-sychov/
+              - img [ref=e1419]
+            - link [ref=e1421] [cursor=pointer]:
+              - /url: mailto:ruslan@protezfoundation.com
+              - img [ref=e1422]
+        - generic [ref=e1426]:
+          - img "zhannaDzyuba.png" [ref=e1427]
+          - heading "Zhanna Dzyuba" [level=3] [ref=e1428]
+          - paragraph [ref=e1429]: Director of Events and Property Management
+        - generic [ref=e1431]:
+          - img "neliaSerianikova.png" [ref=e1432]
+          - heading "Nelia Serianikova" [level=3] [ref=e1433]
+          - paragraph [ref=e1434]: Food Services Manager
+          - link [ref=e1436] [cursor=pointer]:
+            - /url: mailto:nelia@protezfoundation.com
+            - img [ref=e1437]
+        - generic [ref=e1441]:
+          - img "pavloKurynytskyi.png" [ref=e1442]
+          - heading "Pavlo Kurynytskyi" [level=3] [ref=e1443]
+          - paragraph [ref=e1444]: Church Relations Manager
+          - generic [ref=e1445]:
+            - link [ref=e1446] [cursor=pointer]:
+              - /url: https://www.facebook.com/profile.php?id=100001740999825
+              - img [ref=e1447]
+            - link [ref=e1449] [cursor=pointer]:
+              - /url: https://www.instagram.com/kurinitskii
+              - img [ref=e1450]
+            - link [ref=e1452] [cursor=pointer]:
+              - /url: mailto:pavlo.kurynytskyi@protezfoundation.com
+              - img [ref=e1453]
+    - generic [ref=e1457]:
+      - img [ref=e1459]
+      - generic [ref=e1461]:
+        - generic [ref=e1462]:
+          - img "USA, Oakdale, 3510 Hopkins Pl" [ref=e1463]
+          - paragraph [ref=e1464]:
+            - img [ref=e1465]
+            - text: USA
+          - generic [ref=e1467]:
+            - heading "Oakdale" [level=3] [ref=e1468]
+            - paragraph [ref=e1469]: 3510 Hopkins Pl
+        - generic [ref=e1470]:
+          - img "Ukraine, Svalyava, Naberezhna St, 14, 61" [ref=e1471]
+          - paragraph [ref=e1472]:
+            - img [ref=e1473]
+            - text: Ukraine
+          - generic [ref=e1475]:
+            - heading "Svalyava" [level=3] [ref=e1476]
+            - paragraph [ref=e1477]: Naberezhna St, 14, 61
+        - generic [ref=e1478]:
+          - img "Ukraine, Kyiv, Khreshchatyk St, 7/11" [ref=e1479]
+          - paragraph [ref=e1480]:
+            - img [ref=e1481]
+            - text: Ukraine
+          - generic [ref=e1483]:
+            - heading "Kyiv" [level=3] [ref=e1484]
+            - paragraph [ref=e1485]: Khreshchatyk St, 7/11
+    - generic [ref=e1486]:
+      - link "Discover all partners" [ref=e1488] [cursor=pointer]:
+        - /url: /partners
+        - generic [ref=e1489]: Discover all partners
+        - img [ref=e1490]
+      - img [ref=e1493]
+      - img "directRelief" [ref=e1496]
+      - img "brainRobotics" [ref=e1498]
+      - img "ottobock" [ref=e1500]
+      - img "paradize" [ref=e1502]
+      - img "klmb" [ref=e1504]
+      - img "monarch" [ref=e1506]
+      - img "chaliceOfMercy" [ref=e1508]
+      - img "exp" [ref=e1510]
+      - img "cozen" [ref=e1512]
+      - img "blatchfold" [ref=e1514]
+      - img "fabtech" [ref=e1516]
+      - img "xtremity" [ref=e1518]
+      - img "stconstantin" [ref=e1520]
+      - img "unitedhelpukraine" [ref=e1522]
+      - img "mhp" [ref=e1524]
+    - generic [ref=e1525]:
+      - generic:
+        - generic:
+          - img "smoke"
+        - generic:
+          - img "smoke"
+      - generic [ref=e1526]:
+        - generic [ref=e1527]:
+          - img "troops" [ref=e1529]
+          - img "troops" [ref=e1531]
+          - img "troops" [ref=e1533]
+          - img "troops" [ref=e1535]
+          - img "troops" [ref=e1537]
+          - img "troops" [ref=e1539]
+          - img "troops" [ref=e1541]
+          - img "troops" [ref=e1543]
+          - img "troops" [ref=e1545]
+          - img "troops" [ref=e1547]
+          - img "troops" [ref=e1549]
+          - img "troops" [ref=e1551]
+        - generic [ref=e1552]:
+          - img [ref=e1553]
+          - generic [ref=e1555]:
+            - textbox "Your email*" [ref=e1556]
+            - textbox "Phone number" [ref=e1557]
+            - button "Subscribe!" [ref=e1558] [cursor=pointer]
+    - generic [ref=e1559]:
+      - generic [ref=e1560]:
+        - img [ref=e1561]
+        - link "View all merch" [ref=e1563] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/
+          - generic [ref=e1564]: View all merch
+          - img [ref=e1565]
+      - generic [ref=e1569]:
+        - link [ref=e1574] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/rambler-20-oz-tumbler/1?cs=true&cst=custom
+          - img [ref=e1575]
+        - link [ref=e1580] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/bracelet-w-b/10?cs=true&cst=custom
+          - img [ref=e1581]
+        - link [ref=e1586] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/notepad-pen/7?cs=true&cst=custom
+          - img [ref=e1587]
+        - link "T-shirt Next Level Apparel®" [ref=e1592] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/t-shirt-next-level-apparel-/6?cs=true&cst=custom
+          - img "T-shirt Next Level Apparel®" [ref=e1593]
+        - link "Hooded Sweatshirt Port & Company®" [ref=e1598] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/hooded-sweatshirt-port-company-/5?cs=true&cst=custom
+          - img "Hooded Sweatshirt Port & Company®" [ref=e1599]
+        - link "New Era® Original Fit Snapback Trucker Cap" [ref=e1604] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/new-era-original-fit-snapback-trucker-cap/4?cs=true&cst=custom
+          - img "New Era® Original Fit Snapback Trucker Cap" [ref=e1605]
+        - link [ref=e1610] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/boat-tote-bag/3?cs=true&cst=custom
+          - img [ref=e1611]
+        - link [ref=e1616] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/rambler-18-oz-water-bottle/2?cs=true&cst=custom
+          - img [ref=e1617]
+        - link [ref=e1622] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/rambler-20-oz-tumbler/1?cs=true&cst=custom
+          - img [ref=e1623]
+        - link [ref=e1628] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/bracelet-w-b/10?cs=true&cst=custom
+          - img [ref=e1629]
+        - link [ref=e1634] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/notepad-pen/7?cs=true&cst=custom
+          - img [ref=e1635]
+        - link [ref=e1640] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/t-shirt-next-level-apparel-/6?cs=true&cst=custom
+          - img [ref=e1641]
+        - link [ref=e1646] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/hooded-sweatshirt-port-company-/5?cs=true&cst=custom
+          - img [ref=e1647]
+        - link [ref=e1652] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/new-era-original-fit-snapback-trucker-cap/4?cs=true&cst=custom
+          - img [ref=e1653]
+        - link [ref=e1658] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/boat-tote-bag/3?cs=true&cst=custom
+          - img [ref=e1659]
+        - link [ref=e1664] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/rambler-18-oz-water-bottle/2?cs=true&cst=custom
+          - img [ref=e1665]
+        - link [ref=e1670] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/rambler-20-oz-tumbler/1?cs=true&cst=custom
+          - img [ref=e1671]
+        - link [ref=e1676] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/bracelet-w-b/10?cs=true&cst=custom
+          - img [ref=e1677]
+        - link [ref=e1682] [cursor=pointer]:
+          - /url: https://www.protezmerch.com/product/notepad-pen/7?cs=true&cst=custom
+          - img [ref=e1683]
+    - generic [ref=e1684]:
+      - generic [ref=e1686]:
+        - generic [ref=e1687]:
+          - img [ref=e1688]
+          - generic [ref=e1690]:
+            - link "Give Hope!" [ref=e1691] [cursor=pointer]:
+              - /url: /donate
+            - link "Protez Academy" [ref=e1692] [cursor=pointer]:
+              - /url: https://forms.gle/WUVBvfZhYJsanGVbA
+        - generic [ref=e1693]:
+          - paragraph [ref=e1694]: "Nonprofit organization 501(c)(3) EIN: 88-2437069"
+          - generic [ref=e1696]:
+            - paragraph [ref=e1697]: "Please send checks to:"
+            - paragraph [ref=e1698]: Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America
+          - paragraph [ref=e1699]: info@protezfoundation.com
+          - link "Protez Foundation" [ref=e1700] [cursor=pointer]:
+            - /url: https://app.candid.org/profile/14058903/protez-foundation-88-2437069/?pkId=5383b219-0323-4c41-a06c-73d362f764a7
+      - generic [ref=e1701]: 2024 © Made by DITA GROUP Inc.
+  - alert [ref=e1702]

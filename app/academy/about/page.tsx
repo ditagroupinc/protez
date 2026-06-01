@@ -3,20 +3,20 @@
 import { Suspense, lazy } from 'react'
 import { useInView } from 'react-intersection-observer'
 
-import BackToTopButton from './components/BackToTopButton'
+import BackToTopButton from '@/components/BackToTopButton'
 
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
-import AcademyHeader from './sections/Header'
+import Header from '@/sections/_shared/AcademyHeaderMinimal'
 
-import FullScreenFallback from '@academy/components/fallback'
+import FullScreenFallback from '@/components/FullScreenFallback'
 
 import { AcademyAboutIDs } from './consts'
 
-const AboutUs = lazy(() => import('./sections/AboutUs'))
-const History = lazy(() => import('./sections/History'))
-const WeTrain = lazy(() => import('./sections/WeTrain'))
-const Footer = lazy(() => import('./sections/Footer'))
+const AboutUs = lazy(() => import('@/sections/academy-about/AboutUs'))
+const History = lazy(() => import('@/sections/academy-about/History'))
+const WeTrain = lazy(() => import('@/sections/academy-about/WeTrain'))
+const Footer = lazy(() => import('@/sections/_shared/AcademyAboutFooter'))
 
 import style from './style.module.scss'
 
@@ -31,7 +31,7 @@ export default function AcademyAboutPage() {
 
   return (
     <>
-      <AcademyHeader />
+      <Header />
       <main className={style.main}>
         <Suspense fallback={<FullScreenFallback />}>
           <History id={AcademyAboutIDs.History} />

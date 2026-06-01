@@ -2,7 +2,7 @@
 
 import { useTermsConditionsTexts } from '@/hooks/useTermsConditionsTexts'
 
-import TermsConditionsHeader from './sections/Header'
+import Header from '@/sections/_shared/AcademyHeaderMinimal'
 
 import style from './style.module.scss'
 
@@ -11,7 +11,7 @@ export default function AcademyTermsConditionsPage() {
 
   return (
     <>
-      <TermsConditionsHeader />
+      <Header />
       <main className={style.main}>
         <article className={style.article}>
           <h1 className={style.title}>{t.title}</h1>

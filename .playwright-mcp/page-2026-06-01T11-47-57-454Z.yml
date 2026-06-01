@@ -1,0 +1,232 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: /
+      - img [ref=e4]
+    - generic [ref=e6]:
+      - generic [ref=e7]:
+        - link "Make Donation" [ref=e8] [cursor=pointer]:
+          - /url: /donate
+        - link "Потрібeн протез" [ref=e9] [cursor=pointer]:
+          - /url: https://forms.gle/WUVBvfZhYJsanGVbA
+      - generic [ref=e10]:
+        - img [ref=e11]
+        - button "EN" [disabled]
+        - button "UA" [ref=e14] [cursor=pointer]
+      - button [ref=e15] [cursor=pointer]
+    - generic [ref=e19]:
+      - link "Protez Academy" [ref=e21] [cursor=pointer]:
+        - /url: /academy
+        - heading "Protez Academy" [level=3] [ref=e22]
+        - img [ref=e23]
+      - navigation [ref=e26]:
+        - list [ref=e27]:
+          - listitem [ref=e28]:
+            - link "Home" [ref=e29] [cursor=pointer]:
+              - /url: /letsGiveHope
+              - heading "Home" [level=3] [ref=e30]
+          - listitem [ref=e31]:
+            - link "People Trust Us" [ref=e32] [cursor=pointer]:
+              - /url: /peopleTrustUs
+              - heading "People Trust Us" [level=3] [ref=e33]
+          - listitem [ref=e34]:
+            - link "Prosthetics For Ukrainians" [ref=e35] [cursor=pointer]:
+              - /url: /prostheticsForUkrainians
+              - heading "Prosthetics For Ukrainians" [level=3] [ref=e36]
+          - listitem [ref=e37]:
+            - link "In Need" [ref=e38] [cursor=pointer]:
+              - /url: /inNeed
+              - heading "In Need" [level=3] [ref=e39]
+          - listitem [ref=e40]:
+            - link "Our Results" [ref=e41] [cursor=pointer]:
+              - /url: /ourResults
+              - heading "Our Results" [level=3] [ref=e42]
+          - listitem [ref=e43]:
+            - link "Prostheses Costs" [ref=e44] [cursor=pointer]:
+              - /url: /sampleProsthesesCosts
+              - heading "Prostheses Costs" [level=3] [ref=e45]
+          - listitem [ref=e46]:
+            - link "Protez Academy" [ref=e47] [cursor=pointer]:
+              - /url: /protezAcademy
+              - heading "Protez Academy" [level=3] [ref=e48]
+          - listitem [ref=e49]:
+            - link "Stories" [ref=e50] [cursor=pointer]:
+              - /url: /veterans
+              - heading "Stories" [level=3] [ref=e51]
+          - listitem [ref=e52]:
+            - link "Events" [ref=e53] [cursor=pointer]:
+              - /url: /events
+              - heading "Events" [level=3] [ref=e54]
+          - listitem [ref=e55]:
+            - link "Press Release" [ref=e56] [cursor=pointer]:
+              - /url: /pressRelease
+              - heading "Press Release" [level=3] [ref=e57]
+          - listitem [ref=e58]:
+            - link "Our Patients" [ref=e59] [cursor=pointer]:
+              - /url: /ourPatients
+              - heading "Our Patients" [level=3] [ref=e60]
+          - listitem [ref=e61]:
+            - link "Team" [ref=e62] [cursor=pointer]:
+              - /url: /meetOurTeam
+              - heading "Team" [level=3] [ref=e63]
+          - listitem [ref=e64]:
+            - link "Locations" [ref=e65] [cursor=pointer]:
+              - /url: /officeLocations
+              - heading "Locations" [level=3] [ref=e66]
+          - listitem [ref=e67]:
+            - link "Partners" [ref=e68] [cursor=pointer]:
+              - /url: /specialThanksToAllOurPartners
+              - heading "Partners" [level=3] [ref=e69]
+          - listitem [ref=e70]:
+            - link "Subscribe to Updates" [ref=e71] [cursor=pointer]:
+              - /url: /mailingList
+              - heading "Subscribe to Updates" [level=3] [ref=e72]
+          - listitem [ref=e73]:
+            - link "Protez Merch" [ref=e74] [cursor=pointer]:
+              - /url: /merch
+              - heading "Protez Merch" [level=3] [ref=e75]
+      - generic [ref=e76]:
+        - generic [ref=e77]:
+          - link "Make Donation" [ref=e78] [cursor=pointer]:
+            - /url: /donate
+          - link "Support with" [ref=e79] [cursor=pointer]:
+            - /url: https://www.amazon.com/hz/wishlist/ls/3S6RESSKHZZH7/ref=hz_ls_biz_ex
+            - text: Support with
+            - img [ref=e80]
+          - link "Потрібeн протез" [ref=e83] [cursor=pointer]:
+            - /url: https://forms.gle/WUVBvfZhYJsanGVbA
+            - text: Потрібeн протез
+            - img [ref=e84]
+        - link "+1 612-997-2005" [ref=e86] [cursor=pointer]:
+          - /url: tel:+16129972005
+          - img [ref=e87]
+          - generic [ref=e89]: +1 612-997-2005
+        - button "english" [ref=e91] [cursor=pointer]:
+          - img [ref=e92]
+          - generic [ref=e94]: english
+  - generic [ref=e95]:
+    - link [ref=e96] [cursor=pointer]:
+      - /url: https://www.youtube.com/@Protezfoundation
+      - img [ref=e97]
+    - link [ref=e99] [cursor=pointer]:
+      - /url: https://www.facebook.com/prostheticsforukrainians/
+      - img [ref=e100]
+    - link [ref=e102] [cursor=pointer]:
+      - /url: https://www.instagram.com/protezfoundation/
+      - img [ref=e103]
+    - link [ref=e105] [cursor=pointer]:
+      - /url: https://www.linkedin.com/company/protez-foundation/
+      - img [ref=e106]
+  - main [ref=e108]:
+    - generic [ref=e109]:
+      - generic:
+        - generic:
+          - img "smoke"
+        - generic:
+          - img "smoke"
+      - generic [ref=e111]:
+        - img "vadymFedorov" [ref=e113]
+        - generic [ref=e114]:
+          - generic [ref=e115]:
+            - generic [ref=e116]:
+              - img [ref=e117]
+              - paragraph [ref=e119]: 30 years old, sergeant.
+            - heading "Vadym has dedicated 10 years to the Ukrainian Army." [level=3] [ref=e120]
+            - paragraph [ref=e121]: Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation. Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations
+          - generic [ref=e122]:
+            - generic [ref=e123]:
+              - generic [ref=e124]:
+                - paragraph [ref=e125]:
+                  - generic [ref=e126]: All charitable contributions are tax-deductible.
+                - paragraph [ref=e127]: Strong support from community volunteers and partners around the globe allowed us to cap our administrative expenses under 8%
+                - paragraph [ref=e128]: "Nonprofit organization 501(c)(3) EIN: 88-2437069"
+              - generic [ref=e130]:
+                - generic [ref=e131]:
+                  - paragraph [ref=e132]: "Please send checks to:"
+                  - paragraph [ref=e133]: Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America
+                - paragraph [ref=e134]: info@protezfoundation.com
+            - iframe [ref=e136]:
+              - article [ref=f33e4]:
+                - generic [ref=f33e6]:
+                  - generic [ref=f33e7]:
+                    - generic [ref=f33e8]:
+                      - generic [ref=f33e9]: 
+                      - generic [ref=f33e10]: 
+                    - generic [ref=f33e12]: 
+                    - generic [ref=f33e14]: 
+                    - generic [ref=f33e16]: 
+                  - button "Next Step" [ref=f33e17] [cursor=pointer]:
+                    - generic [ref=f33e18]: 
+                - generic [ref=f33e20]:
+                  - generic [ref=f33e21]:
+                    - generic [ref=f33e22]:
+                      - generic [ref=f33e23]:
+                        - generic [ref=f33e24]: Standard Donation
+                        - generic [ref=f33e25]: Crypto or Stock
+                      - generic [ref=f33e26]:
+                        - group [ref=f33e30]:
+                          - radio "One-time" [checked] [ref=f33e31]
+                          - generic [ref=f33e32] [cursor=pointer]: One-time
+                          - radio "Monthly" [ref=f33e33]
+                          - generic [ref=f33e34] [cursor=pointer]:
+                            - img [ref=f33e35]
+                            - text: Monthly
+                        - text: "?"
+                        - generic [ref=f33e39]:
+                          - generic [ref=f33e40] [cursor=pointer]: Currency
+                          - generic [ref=f33e42]:
+                            - generic [ref=f33e43]:
+                              - status
+                              - status
+                            - combobox "Currency" [ref=f33e44] [cursor=pointer]: US Dollar (USD)
+                          - text: keyboard_arrow_down
+                        - group [ref=f33e46]:
+                          - generic [ref=f33e47]:
+                            - radio "$ 50"
+                            - button "$ 50" [ref=f33e49] [cursor=pointer]:
+                              - generic [ref=f33e50]: $
+                              - generic [ref=f33e51]: "50"
+                          - generic [ref=f33e52]:
+                            - radio "$ 100"
+                            - button "$ 100" [ref=f33e54] [cursor=pointer]:
+                              - generic [ref=f33e55]: $
+                              - generic [ref=f33e56]: "100"
+                          - generic [ref=f33e57]:
+                            - radio "$ 150"
+                            - button "$ 150" [ref=f33e59] [cursor=pointer]:
+                              - generic [ref=f33e60]: $
+                              - generic [ref=f33e61]: "150"
+                          - generic [ref=f33e62]:
+                            - generic [ref=f33e63] [cursor=pointer]: $
+                            - textbox "Custom Amount" [ref=f33e64]
+                        - generic [ref=f33e67] [cursor=pointer]:
+                          - checkbox "Write us a comment"
+                          - button "Write us a comment" [ref=f33e68]
+                    - text: keyboard_arrow_down ? ?
+                  - generic [ref=f33e73]:
+                    - button "Next Button" [ref=f33e74] [cursor=pointer]:
+                      - generic "Next Button" [ref=f33e75]:
+                        - text: Next
+                        - generic [ref=f33e76]: 
+                    - link "Powered by Donorbox (new window)" [ref=f33e78] [cursor=pointer]:
+                      - /url: https://donorbox.org/explore?utm_source=Poweredby&utm_campaign=Protez Website Donation&utm_content=393243&utm_medium=Protez Foundation&utm_org=Protez Foundation
+                      - text: Powered by Donorbox
+  - contentinfo [ref=e137]:
+    - generic [ref=e139]:
+      - generic [ref=e140]:
+        - img [ref=e141]
+        - generic [ref=e143]:
+          - link "Give Hope!" [ref=e144] [cursor=pointer]:
+            - /url: /donate
+          - link "Protez Academy" [ref=e145] [cursor=pointer]:
+            - /url: https://forms.gle/WUVBvfZhYJsanGVbA
+      - generic [ref=e146]:
+        - paragraph [ref=e147]: "Nonprofit organization 501(c)(3) EIN: 88-2437069"
+        - generic [ref=e149]:
+          - paragraph [ref=e150]: "Please send checks to:"
+          - paragraph [ref=e151]: Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America
+        - paragraph [ref=e152]: info@protezfoundation.com
+        - link "Protez Foundation" [ref=e153] [cursor=pointer]:
+          - /url: https://app.candid.org/profile/14058903/protez-foundation-88-2437069/?pkId=5383b219-0323-4c41-a06c-73d362f764a7
+    - generic [ref=e154]: 2024 © Made by DITA GROUP Inc.
+  - alert [ref=e155]

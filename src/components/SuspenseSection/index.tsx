@@ -1,5 +1,5 @@
 import { Suspense, ReactNode } from 'react'
-import SmokeWrapper from '@/sections/ProtezHomePage/SmokeWrapper'
+import SmokeWrapper from '@/sections/home/_root/SmokeWrapper'
 
 interface SuspenseSectionProps {
   children: ReactNode

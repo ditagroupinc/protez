@@ -1,0 +1,28 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link [ref=e3] [cursor=pointer]:
+      - /url: /academy
+      - img [ref=e4]
+    - generic [ref=e21]:
+      - img [ref=e22]
+      - button "EN" [disabled]
+      - button "UA" [ref=e24] [cursor=pointer]
+  - generic [ref=e25]:
+    - link [ref=e26] [cursor=pointer]:
+      - /url: https://www.youtube.com/@ProtezAcademy
+      - img [ref=e27]
+    - link [ref=e30] [cursor=pointer]:
+      - /url: https://www.instagram.com/protezacademy?igsh=YjZsendpeHdkcXIz
+      - img [ref=e31]
+  - main [ref=e34]:
+    - generic [ref=e35]: Loading...
+    - generic [ref=e36]: Loading...
+    - generic [ref=e37]: Loading...
+    - link "back to top →" [ref=e38] [cursor=pointer]:
+      - /url: "#aboutUs"
+  - contentinfo [ref=e39]:
+    - generic [ref=e40]:
+      - generic [ref=e41]: 2026 © Made by DITA GROUP Inc.
+      - link "Terms and conditions" [ref=e42] [cursor=pointer]:
+        - /url: /about/terms-conditions
+  - alert [ref=e43]
