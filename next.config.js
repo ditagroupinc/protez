@@ -1,3 +1,5 @@
+const path = require('path')
+
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
@@ -15,6 +17,10 @@ const nextConfig = {
         hostname: 'widgets.guidestar.org',
       },
     ],
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'src/styles')],
+    additionalData: `@use 'variables' as *; @use 'mixins' as *;`,
   },
   reactStrictMode: false,
 }

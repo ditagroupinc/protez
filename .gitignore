@@ -35,6 +35,9 @@ yarn-error.log*
 # playwright MCP captures
 /.playwright-mcp/
 
+# block-5 baseline screenshots
+/tmp/
+
 .claude
 
 # typescript

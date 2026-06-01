@@ -5,10 +5,6 @@
 * Browsers: last 4 version
 */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --pink: #b40a54;
   --blue: #00a3ff;
