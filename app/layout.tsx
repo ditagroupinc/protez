@@ -3,6 +3,8 @@ import 'slick-carousel/slick/slick-theme.css'
 import '@/styles/resetCSS.css'
 import './globals.css'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import LanguageContextProvider from '@/contexts/LanguageContext'
 import FacebookPixelEvents from '@/components/FacebookPixelEvents'
 import { nunitoSans } from './fonts'
@@ -107,6 +109,8 @@ export default function RootLayout({ children }: { children: ReactElement }) {
               ></iframe>
             </noscript>
             <FacebookPixelEvents />
+            <Analytics />
+            <SpeedInsights />
           </body>
         </html>
       </LanguageContextProvider>

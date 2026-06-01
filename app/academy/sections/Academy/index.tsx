@@ -2,8 +2,6 @@ import ProtezImage from '@/components/ProtezImage'
 
 import { useRef, useState, useEffect } from 'react'
 
-import _ from 'lodash'
-
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useAcademyTexts } from '@/hooks/useAcademyTexts'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
@@ -124,11 +122,19 @@ const Academy = () => {
     }
 
     handleInitialRender()
-    const debouncedUpdateNavPosition = _.debounce(updateNavPosition, 500)
+
+    let resizeTimer: ReturnType<typeof setTimeout> | null = null
+    const debouncedUpdateNavPosition = () => {
+      if (resizeTimer) clearTimeout(resizeTimer)
+      resizeTimer = setTimeout(updateNavPosition, 500)
+    }
 
     window.addEventListener('resize', debouncedUpdateNavPosition)
 
-    return () => window.removeEventListener('resize', debouncedUpdateNavPosition)
+    return () => {
+      if (resizeTimer) clearTimeout(resizeTimer)
+      window.removeEventListener('resize', debouncedUpdateNavPosition)
+    }
   }, [])
 
   return (
