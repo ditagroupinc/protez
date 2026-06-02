@@ -26,6 +26,25 @@ const nextConfig = {
     additionalData: `@use 'variables' as *; @use 'mixins' as *;`,
   },
   reactStrictMode: false,
+  async redirects() {
+    return [
+      {
+        source: '/VadymFedorov',
+        destination: '/stories/vadym-fedorov',
+        permanent: true,
+      },
+      {
+        source: '/ArtemSvergun',
+        destination: '/stories/artem-svergun',
+        permanent: true,
+      },
+      {
+        source: '/thankYou',
+        destination: '/thank-you',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = withNextIntl(nextConfig)
