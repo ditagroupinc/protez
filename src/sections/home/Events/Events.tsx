@@ -11,7 +11,7 @@ import Section from '@/components/Section'
 import style from './style.module.scss'
 import { icons } from './icons'
 
-import Slider from 'react-slick'
+import Slider from '@/islands/SlickCarousel'
 import { forwardRef } from 'react'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 

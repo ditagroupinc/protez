@@ -6,7 +6,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { localeToLanguage } from '@/lib/locale'
 
 import style from './style.module.scss'
-import Slider from 'react-slick'
+import Slider from '@/islands/SlickCarousel'
 
 import { icons } from './icons'
 import Section from '@/components/Section'

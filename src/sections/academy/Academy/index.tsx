@@ -14,7 +14,7 @@ import SliderNavigation, { SliderPrevButton, SliderNextButton } from '@/componen
 
 import styles from './styles.module.scss'
 
-import Slider from 'react-slick'
+import Slider from '@/islands/SlickCarousel'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 

@@ -16,3 +16,25 @@ background: linear-gradient(180deg, rgba(19, 19, 19, 0) 84.03%, #131313 98.09%);
 
  Тепер у коді може використовуватись ключ amputeeRehab.description або summitResults.description — варто перевірити та видалити їх    
   рендеринг також, інакше next-intl кине помилку про відсутній ключ. Якщо хочете — підкажу де шукати в app/academy/sections/. 
+
+
+
+  Питання поза скоупом (для окремої дискусії)
+
+ 1. useScreenModeAndSize — головний блокер для RSC у 35+ секціях.
+ Варіанти: SCSS @media-only де можливо, container queries,
+ server-side viewport hints. Дасть найбільший виграш у бандлі, але
+  масштабна робота.
+ 2. framer-motion — TextAppearanceWrapper + MailingList useInView.
+  Можливі шляхи: повне видалення (CSS @keyframes +
+ IntersectionObserver), LazyMotion+m+domAnimation, або зміна
+ tradeoff'ів.
+ 3. React.lazy() → next/dynamic — змістовно лише якщо треба ssr:
+ false десь (зараз потреби нема).
+ 4. BackToTopButton → RSC — мікро-приз ~1 KB, fast-follow після
+ блоку.
+ 5. Header розпил на shell + LangSwitcher/BurgerMenu islands — має
+  сенс після рефактору useScreenModeAndSize; зараз shell все одно
+ client.
+ 6. Інтеграція з goofy-pondering-wozniak-plan.md — мовна модалка
+ як next/dynamic({ssr:false}) island у layout.

@@ -13,7 +13,7 @@ import style from './style.module.scss'
 import { ProtezIDs } from '@/consts'
 import { Body } from '@/components/Typography'
 
-import Slider from 'react-slick'
+import Slider from '@/islands/SlickCarousel'
 import { useRef, useState } from 'react'
 import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'

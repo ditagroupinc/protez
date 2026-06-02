@@ -18,7 +18,7 @@ import style from './style.module.scss'
 
 import { AcademyIDs } from '@academy/consts'
 import { ACADEMY_APPLY_FORM_URL, DONATE_URL } from '@academy/consts/links'
-import Slider from 'react-slick'
+import Slider from '@/islands/SlickCarousel'
 
 const sliderCards = [
   '4-front_white.svg',

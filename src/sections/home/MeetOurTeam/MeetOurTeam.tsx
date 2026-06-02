@@ -14,7 +14,7 @@ import style from './style.module.scss'
 
 import { icons } from './icons'
 
-import Slider from 'react-slick'
+import Slider from '@/islands/SlickCarousel'
 
 import { ProtezIDs } from '@/consts'
 

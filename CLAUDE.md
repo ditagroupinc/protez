@@ -57,13 +57,3 @@
 Ukrainian. When changing UI copy or form messages, update **both locales (en + uk)** at once.
 
 ## NEVER MAKE COMITS UNLESS ASKED EXPLICITLY
-
-## Planning mode — custom rule
-
-**Do not keep plans in hidden state.** In planning mode, **create or update a `<feature-name>-plan.md` at repo root** before calling `ExitPlanMode`. Matches the project pattern (`protez-refactor-plan.md`).
-
-Steps:
-
-1. While planning, write/update `<feature-name>-plan.md` at repo root.
-2. If a plan file for this task already exists, modify it — don't create a parallel one.
-3. Only after the file is saved, call `ExitPlanMode` with a short summary and a pointer to the file.

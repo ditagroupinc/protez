@@ -3,7 +3,7 @@
 import { forwardRef } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 
-import Slider from 'react-slick'
+import Slider from '@/islands/SlickCarousel'
 
 import ProtezImage from '@/components/ProtezImage'
 

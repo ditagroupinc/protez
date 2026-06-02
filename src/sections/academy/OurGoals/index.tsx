@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl'
 
 import ProtezImage from '@/components/ProtezImage'
 
-import Slider from 'react-slick'
+import Slider from '@/islands/SlickCarousel'
 
 import AcademySection from '@/components/AcademySection'
 

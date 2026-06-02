@@ -16,7 +16,7 @@ import styles from './styles.module.scss'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
-import Slider from 'react-slick'
+import Slider from '@/islands/SlickCarousel'
 
 import { AcademyIDs } from '@academy/consts'
 

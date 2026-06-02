@@ -15,7 +15,7 @@ import { SliderPrevButton, SliderNextButton } from '@/components/SliderNavigatio
 import styles from './styles.module.scss'
 import { icons } from './icons'
 
-import Slider from 'react-slick'
+import Slider from '@/islands/SlickCarousel'
 import { forwardRef } from 'react'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
