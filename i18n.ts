@@ -8,7 +8,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   const [base, home, shared, donations, academyAbout, termsConditions, stories, thankYou] =
     await Promise.all([
-      import(`./messages/${locale}.json`),
+      import(`./messages/academy.${locale}.json`),
       import(`./messages/home.${locale}.json`),
       import(`./messages/shared.${locale}.json`),
       import(`./messages/donations.${locale}.json`),
