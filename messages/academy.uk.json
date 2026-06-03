@@ -24,7 +24,6 @@
         "pastAndUpcomingEvents": "Актуальні навчання",
         "academyStudents": "Наші студенти",
         "summitResults": "Amputee Rehab Summit",
-        "weAreInNews": "Ми у новинах",
         "specialThanksToAllOurPartners": "Партнери",
         "ourSponsors": "Донори"
       },
@@ -111,58 +110,27 @@
       "datesRange": "(Травень 2022 – Травень 2026)",
       "description": "Українські фахівці пройшли навчальну програму за кордоном та повернулися до України, де впроваджують отримані знання і допомагають відновлювати життя",
       "stats": [
-        { "value": 150, "label": "Фахівців пройшли навчання" },
-        { "value": 1300, "label": "Пацієнтів запротезовано" },
-        { "value": 2500, "label": "Протезів встановлено" },
-        { "value": 3, "label": "Самітів організовано" }
+        {
+          "value": 150,
+          "label": "Фахівців пройшли навчання"
+        },
+        {
+          "value": 1300,
+          "label": "Пацієнтів запротезовано"
+        },
+        {
+          "value": 2500,
+          "label": "Протезів встановлено"
+        },
+        {
+          "value": 3,
+          "label": "Самітів організовано"
+        }
       ]
     },
     "chief": {
       "role": "ГОЛОВНИЙ МЕДИЧНИЙ ДИРЕКТОР PROTEZ FOUNDATION, СЕРТИФІКОВАНИЙ ПРОТЕЗИСТ І ОРТЕЗИСТ",
       "description": "Протягом програми учасники ознайомляться з перевіреними методиками, які американські медичні фахівці вдосконалювали протягом багатьох років роботи з ветеранами, а також з особистими технічними напрацюваннями доктора Якова Градінара, здобутими за 15 років практики. Програма також передбачає можливість стажування у США, де українські фахівці можуть не лише удосконалити теоретичні знання та вдосконалити практичні навички, а й отримати простір для професійного та емоційного відновлення."
-    },
-    "ourTeachers": {
-      "members": [
-        { "name": "Kierstin Nelson", "position": "Викладач", "photo": "kierstinNelson.png" },
-        { "name": "Michael Le Buhn Jr.", "position": "Викладач", "photo": "michaelLeBuhnJr.png" },
-        { "name": "Jeanne Lojovich", "position": "Викладач", "photo": "jeanneLojovich.png" },
-        { "name": "Adam Warden", "position": "Викладач", "photo": "adamWarden.png" },
-        { "name": "Troy Decker", "position": "Викладач", "photo": "troyDecker.png" },
-        { "name": "Lisa King", "position": "Викладач", "photo": "lisaKing.png" },
-        { "name": "Yakov Gradinar", "position": "Викладач", "photo": "yakovGradinar.png" },
-        {
-          "name": "Gallegos Sebastian Guadalupe",
-          "position": "Викладач",
-          "photo": "gallegosSebastianGuadalupe.png"
-        }
-      ]
-    },
-    "theoryLectures": {
-      "items": [
-        {
-          "number": "/01",
-          "desc": "Етіологія політравми та подальше ведення пацієнтів із політравмою"
-        },
-        { "number": "/02", "desc": "Приклади післяопераційного догляду" },
-        { "number": "/03", "desc": "Завдання консультації перед ампутацією" },
-        { "number": "/04", "desc": "Різні рівні ампутацій верхніх і нижніх кінцівок" },
-        { "number": "/05", "desc": "Огляд анатомії на кадаврі" },
-        { "number": "/06", "desc": "Фізіологія" }
-      ]
-    },
-    "practiceSessions": {
-      "items": [
-        { "image": "academyPage/practiceSessions/practice0.png", "text": "Підготовчий етап" },
-        {
-          "image": "academyPage/practiceSessions/practice1.png",
-          "text": "Діагностична (тестова) гільза"
-        },
-        {
-          "image": "academyPage/practiceSessions/practice2.png",
-          "text": "Зняття мірок і виготовлення протеза"
-        }
-      ],
-      "imageAlt": "фото практичних занять у Protez Academy"
     },
     "academyGallery": {
       "imageAlt": "фото студентів і викладачів Protez Academy",
@@ -192,9 +160,18 @@
       "imageAlt": "саміт",
       "description": "Це щорічна ключова подія в Україні, яка об'єднує провідних українських та міжнародних експертів у галузі реабілітації. Учасники: фізичні терапевти, спеціалісти з ФРМ, ерготерапевти та протезисти.\nТакож у Саміті беруть участь представники українського уряду, що підкреслює важливість заходу на державному рівні.",
       "partners": [
-        { "src": "esper_white.svg", "alt": "Esper" },
-        { "src": "direct-relief_white.svg", "alt": "Direct Relief" },
-        { "src": "brain-robotics_white.png", "alt": "Brain Robotics" }
+        {
+          "src": "esper_white.svg",
+          "alt": "Esper"
+        },
+        {
+          "src": "direct-relief_white.svg",
+          "alt": "Direct Relief"
+        },
+        {
+          "src": "brain-robotics_white.png",
+          "alt": "Brain Robotics"
+        }
       ]
     },
     "events": {
@@ -252,67 +229,17 @@
     "summitResults": {
       "imageAlt": "саміт",
       "stats": [
-        { "count": 2000, "label": "Відвідувачів" },
-        { "count": 50, "label": "Запрошених гостей" },
-        { "count": 20, "label": "Протезистів" }
-      ]
-    },
-    "weAreInNews": {
-      "imageAlt": "фото з новини",
-      "items": [
         {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
-          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
+          "count": 2000,
+          "label": "Відвідувачів"
         },
         {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
-          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
+          "count": 50,
+          "label": "Запрошених гостей"
         },
         {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
-          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
-        },
-        {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
-          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
-        },
-        {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
-          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
-        },
-        {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Фонд Оукдейл допомагає пораненим українським військовим знову ходити",
-          "text": "Дехто планує повернутися й воювати: «Захищати нашу країну, захищати мою сім'ю та прожити життя сповна»."
+          "count": 20,
+          "label": "Протезистів"
         }
       ]
     },

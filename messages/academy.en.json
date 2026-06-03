@@ -24,7 +24,6 @@
         "pastAndUpcomingEvents": "Events",
         "academyStudents": "Students",
         "summitResults": "Summit",
-        "weAreInNews": "We Are In News",
         "specialThanksToAllOurPartners": "Partners",
         "ourSponsors": "Our Sponsors"
       },
@@ -111,58 +110,27 @@
       "datesRange": "(May 2022 – May 2026)",
       "description": "Ukrainian Specialists already went through the Program and back in their home country helping restore the lives of those who lost limbs during the war",
       "stats": [
-        { "value": 150, "label": "Specialists trained" },
-        { "value": 1300, "label": "Patients fitted with prosthetics" },
-        { "value": 2500, "label": "Prostheses provided" },
-        { "value": 3, "label": "Summits organized" }
+        {
+          "value": 150,
+          "label": "Specialists trained"
+        },
+        {
+          "value": 1300,
+          "label": "Patients fitted with prosthetics"
+        },
+        {
+          "value": 2500,
+          "label": "Prostheses provided"
+        },
+        {
+          "value": 3,
+          "label": "Summits organized"
+        }
       ]
     },
     "chief": {
       "role": "CHIEF MEDICAL OFFICER, CERTIFIED PROSTHETIST AND ORTHOTIST",
       "description": "During the course of the program they will learn proven methods developed by the US healthcare practitioners over many years of treating veterans and also Dr. Yakov Gradinar’s personal technical know-how’s employed in his 15 years of practice. More importantly, the program is a way for overworked and underpaid Ukrainian doctors to come to the US where they will take a break from hearing sirens and rockets while learning practical skills to help many more Ukrainians in the future."
-    },
-    "ourTeachers": {
-      "members": [
-        { "name": "Kierstin Nelson", "position": "Teacher", "photo": "kierstinNelson.png" },
-        { "name": "Michael Le Buhn Jr.", "position": "Teacher", "photo": "michaelLeBuhnJr.png" },
-        { "name": "Jeanne Lojovich", "position": "Teacher", "photo": "jeanneLojovich.png" },
-        { "name": "Adam Warden", "position": "Teacher", "photo": "adamWarden.png" },
-        { "name": "Troy Decker", "position": "Teacher", "photo": "troyDecker.png" },
-        { "name": "Lisa King", "position": "Teacher", "photo": "lisaKing.png" },
-        { "name": "Yakov Gradinar", "position": "Teacher", "photo": "yakovGradinar.png" },
-        {
-          "name": "Gallegos Sebastian Guadalupe",
-          "position": "Teacher",
-          "photo": "gallegosSebastianGuadalupe.png"
-        }
-      ]
-    },
-    "theoryLectures": {
-      "items": [
-        {
-          "number": "/01",
-          "desc": "Etiology of polytrauma and subsequent management of polytrauma patients"
-        },
-        { "number": "/02", "desc": "Examples of post-operative care" },
-        { "number": "/03", "desc": "Objectives of pre-amputation consultation" },
-        { "number": "/04", "desc": "Different levels of upper and lower limb amputations" },
-        { "number": "/05", "desc": "Overview of cadaver anatomy" },
-        { "number": "/06", "desc": "Physiology" }
-      ]
-    },
-    "practiceSessions": {
-      "items": [
-        { "image": "academyPage/practiceSessions/practice0.png", "text": "Preparatory stage" },
-        {
-          "image": "academyPage/practiceSessions/practice1.png",
-          "text": "Diagnostic (test) socket"
-        },
-        {
-          "image": "academyPage/practiceSessions/practice2.png",
-          "text": "Casting and measuring the prosthesis"
-        }
-      ],
-      "imageAlt": "picture of practice sessions in Protez Academy"
     },
     "academyGallery": {
       "imageAlt": "picture of Protez Academy students and teachers",
@@ -192,9 +160,18 @@
       "imageAlt": "summit",
       "description": "This is the key annual event in Ukraine, bringing together leading Ukrainian and international experts in the field of rehabilitation. Participants include physical therapists, PRM specialists, occupational therapists, and prosthetists.\nThe Summit also features representatives of the Ukrainian government, underscoring the event's importance at the national level.",
       "partners": [
-        { "src": "esper_white.svg", "alt": "Esper" },
-        { "src": "direct-relief_white.svg", "alt": "Direct Relief" },
-        { "src": "brain-robotics_white.png", "alt": "Brain Robotics" }
+        {
+          "src": "esper_white.svg",
+          "alt": "Esper"
+        },
+        {
+          "src": "direct-relief_white.svg",
+          "alt": "Direct Relief"
+        },
+        {
+          "src": "brain-robotics_white.png",
+          "alt": "Brain Robotics"
+        }
       ]
     },
     "events": {
@@ -252,67 +229,17 @@
     "summitResults": {
       "imageAlt": "summit",
       "stats": [
-        { "count": 2000, "label": "Visitors" },
-        { "count": 50, "label": "Invited guests" },
-        { "count": 20, "label": "Prosthetists" }
-      ]
-    },
-    "weAreInNews": {
-      "imageAlt": "news picture",
-      "items": [
         {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+          "count": 2000,
+          "label": "Visitors"
         },
         {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+          "count": 50,
+          "label": "Invited guests"
         },
         {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
-        },
-        {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
-        },
-        {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
-        },
-        {
-          "link": "/",
-          "photo": "academyPage/news/academyNews0.png",
-          "date": "19.03.2023",
-          "address": "1plus1.ua",
-          "logo": "academyPage/news/1plus1.svg",
-          "title": "Oakdale foundation helps hurt Ukrainian soldiers walk again",
-          "text": "Some plan to return and fight: “To protect our country and protect my family and live my life to its fullest.”"
+          "count": 20,
+          "label": "Prosthetists"
         }
       ]
     },
