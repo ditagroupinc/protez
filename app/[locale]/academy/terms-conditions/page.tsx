@@ -5,6 +5,8 @@ import Header from '@/sections/_shared/AcademyHeaderMinimal'
 
 import style from './style.module.scss'
 
+export const dynamic = 'force-static'
+
 type Params = { locale: string }
 
 const SITE_URL = 'https://www.protezfoundation.org'

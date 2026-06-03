@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Partners from '@/sections/partners/Partners'
 import { setRequestLocale } from 'next-intl/server'
 
+export const dynamic = 'force-static'
+
 type Params = { locale: string }
 
 const SITE_URL = 'https://www.protezfoundation.org'

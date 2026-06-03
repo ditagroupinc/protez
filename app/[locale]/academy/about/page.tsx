@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import AcademyAboutClient from './AcademyAboutClient'
 
+export const dynamic = 'force-static'
+
 type Params = { locale: string }
 
 const SITE_URL = 'https://www.protezfoundation.org'
