@@ -12,7 +12,6 @@ import { subscribeToMailchimp } from '@/lib/api'
 import { ProtezIDs } from '@/consts'
 import Button from '@/components/Button'
 import Section from '@/components/Section'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useInView } from 'framer-motion'
 import ProtezImage from '@/components/ProtezImage'
 
@@ -42,9 +41,6 @@ const MailingList = () => {
   const isInView = useInView(ref, { once: true })
 
   const [formStatus, setFormStatus] = useState<FormStatus>('default')
-
-  const { width } = useScreenModeAndSize()
-  const isDesktopLayout = width > 800
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
@@ -84,9 +80,8 @@ const MailingList = () => {
         })}
       </div>
       <TextAppearanceWrapper className={style.container}>
-        {isDesktopLayout
-          ? icons.mailingListLogo.desktop[lang](style.title)
-          : icons.mailingListLogo.mobile[lang](style.title)}
+        {icons.mailingListLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
+        {icons.mailingListLogo.mobile[lang](`${style.title} ${style.titleMobile}`)}
 
         <form className={style.form} action="POST" onSubmit={handleSubmit}>
           <input

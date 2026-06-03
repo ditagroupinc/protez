@@ -15,7 +15,6 @@ import { ProtezIDs } from '@/consts'
 import { Body, H2 } from '@/components/Typography'
 import Button, { MakeDonationButton } from '@/components/Button'
 import { ForwardedRef, forwardRef } from 'react'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { extractNumber, extractPrefixSuffix } from './utils'
 
 interface StatisticsDataItem {
@@ -45,9 +44,6 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
   const locale = useLocale()
   const lang = localeToLanguage(locale)
   const t = useTranslations('home.ourResults')
-  const { width } = useScreenModeAndSize()
-
-  const isDesktopLayout = width > 800
 
   const dateText = results.statisticsDate
   const cardsData = results.statisticsData
@@ -57,22 +53,22 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
       <Section id={ProtezIDs.OurResults} className={style.section} ref={ref}>
         <div className={style.left}>
           {icons.ourResultsLogo.desktop[lang](style.title)}
-          <Body large={isDesktopLayout} className={style.date}>
+          <Body large className={style.date}>
             {dateText[lang]}
           </Body>
 
-          <Body large={isDesktopLayout} className={style.text}>
+          <Body large className={style.text}>
             {t('text')}
           </Body>
 
-          {isDesktopLayout && (
-            <TextAppearanceWrapper className={style.buttonsContainer}>
-              <MakeDonationButton size="normal" />
-              <Button as="link" href="/" variant="secondary-white" size="normal" arrow>
-                {t('moreResults')}
-              </Button>
-            </TextAppearanceWrapper>
-          )}
+          <TextAppearanceWrapper
+            className={`${style.buttonsContainer} ${style.buttonsContainerDesktop}`}
+          >
+            <MakeDonationButton size="normal" />
+            <Button as="link" href="/" variant="secondary-white" size="normal" arrow>
+              {t('moreResults')}
+            </Button>
+          </TextAppearanceWrapper>
         </div>
         <div className={style.right}>
           {cardsData.map((card, index) => {
@@ -95,14 +91,14 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
             )
           })}
         </div>
-        {!isDesktopLayout && (
-          <TextAppearanceWrapper className={style.buttonsContainer}>
-            <MakeDonationButton size="normal" />
-            <Button as="link" href="/" variant="secondary-white" size="normal" arrow>
-              {t('moreResults')}
-            </Button>
-          </TextAppearanceWrapper>
-        )}
+        <TextAppearanceWrapper
+          className={`${style.buttonsContainer} ${style.buttonsContainerMobile}`}
+        >
+          <MakeDonationButton size="normal" />
+          <Button as="link" href="/" variant="secondary-white" size="normal" arrow>
+            {t('moreResults')}
+          </Button>
+        </TextAppearanceWrapper>
       </Section>
     </>
   )

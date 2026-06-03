@@ -17,6 +17,16 @@
   align-items: center;
 }
 
+.desktopSocialMedia {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .desktopSocialMedia {
+    display: none;
+  }
+}
+
 .languageWrapper {
   display: flex;
   align-items: center;

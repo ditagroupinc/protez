@@ -8,7 +8,6 @@ import { usePathname, useRouter } from '@/lib/i18n'
 import Button, { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
 
 import useOutsideClick from '@/hooks/useOutsideClick'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { BurgerButton } from './BurgerButton'
 
@@ -89,8 +88,6 @@ const Header = ({
 }) => {
   const [headerIsOpened, setHeaderIsOpened] = useState(false)
 
-  const { width } = useScreenModeAndSize()
-
   const ref = useOutsideClick(() => setHeaderIsOpened(false))
 
   const locale = useLocale()
@@ -106,7 +103,6 @@ const Header = ({
     })
   }
 
-  const isMobile = width < 768
   const linksPrefix = ancorLinks ? '#' : '/'
   const accentColor = layout === 'protezPage' ? 'red' : 'blue'
   const backToTopHref =
@@ -118,7 +114,7 @@ const Header = ({
   }))
 
   useEffect(() => {
-    if (headerIsOpened && isMobile) {
+    if (headerIsOpened) {
       document.body.classList.add('no-scroll')
       document.documentElement.classList.add('no-scroll')
     } else {
@@ -137,7 +133,7 @@ const Header = ({
   }
 
   const closeHeaderOnAncorClick = () => {
-    if (isMobile) setHeaderIsOpened(false)
+    setHeaderIsOpened(false)
   }
 
   return (
@@ -149,58 +145,55 @@ const Header = ({
         >
           {icons[layout].logo(style.protezLogo)}
         </Link>
-        {width < 992 ? (
-          <div className={style.burgerButtonContainer}>
-            <BurgerButton color="red" onClick={toggleHeader} close={headerIsOpened} />
-          </div>
-        ) : (
-          <div className={style.topMenu}>
-            <div className={style.buttonsGroup}>
-              {layout === 'protezPage' ? (
-                <>
-                  <MakeDonationButton size="small" />
+        <div className={style.burgerButtonContainer}>
+          <BurgerButton color="red" onClick={toggleHeader} close={headerIsOpened} />
+        </div>
+        <div className={style.topMenu}>
+          <div className={style.buttonsGroup}>
+            {layout === 'protezPage' ? (
+              <>
+                <MakeDonationButton size="small" />
 
-                  <Button
-                    as="link"
-                    href="https://forms.gle/WUVBvfZhYJsanGVbA"
-                    target="_blank"
-                    variant="secondary-white"
-                    size="small"
-                  >
-                    {t('protezPage.actionButtons.needAProthesis')}
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <ApplyToAcademyButton size="small" />
+                <Button
+                  as="link"
+                  href="https://forms.gle/WUVBvfZhYJsanGVbA"
+                  target="_blank"
+                  variant="secondary-white"
+                  size="small"
+                >
+                  {t('protezPage.actionButtons.needAProthesis')}
+                </Button>
+              </>
+            ) : (
+              <>
+                <ApplyToAcademyButton size="small" />
 
-                  <Button as="link" href="/" variant="secondary-white" size="small">
-                    {t('academyPage.actionButtons.protezFoundation')}
-                  </Button>
-                </>
-              )}
-            </div>
-            <div className={style.languageWrapper}>
-              {icons.world(`${style.worldIcon}`)}
-              <button
-                onClick={() => switchLocale('en')}
-                disabled={locale === 'en'}
-                className={style.localeBtn}
-              >
-                EN
-              </button>
-              <span className={style.divider} />
-              <button
-                onClick={() => switchLocale('uk')}
-                disabled={locale === 'uk'}
-                className={style.localeBtn}
-              >
-                UA
-              </button>
-            </div>
-            <BurgerButton color="red" onClick={toggleHeader} close={headerIsOpened} />
+                <Button as="link" href="/" variant="secondary-white" size="small">
+                  {t('academyPage.actionButtons.protezFoundation')}
+                </Button>
+              </>
+            )}
           </div>
-        )}
+          <div className={style.languageWrapper}>
+            {icons.world(`${style.worldIcon}`)}
+            <button
+              onClick={() => switchLocale('en')}
+              disabled={locale === 'en'}
+              className={style.localeBtn}
+            >
+              EN
+            </button>
+            <span className={style.divider} />
+            <button
+              onClick={() => switchLocale('uk')}
+              disabled={locale === 'uk'}
+              className={style.localeBtn}
+            >
+              UA
+            </button>
+          </div>
+          <BurgerButton color="red" onClick={toggleHeader} close={headerIsOpened} />
+        </div>
         <div className={`${style.sideMenu} ${headerIsOpened ? style.opened : ''}`}>
           <div className={style.protezAcademyLinkWrapper}>
             <Link href={'/academy'} className={`${style.protezAcademyLink} ${style.blue}`}>
@@ -271,8 +264,11 @@ const Header = ({
       </header>
       {!headerIsOpened && (
         <div className={style.socialMediaLinksContainer}>
-          {isMobile && arrowUp && (
-            <Link href={backToTopHref} className={style.socialMediaLink}>
+          {arrowUp && (
+            <Link
+              href={backToTopHref}
+              className={`${style.socialMediaLink} ${style.mobileArrowUp}`}
+            >
               {icons.up(style.socialMediaLinkIcon)}
             </Link>
           )}
@@ -283,7 +279,11 @@ const Header = ({
           ))}
         </div>
       )}
-      {!isMobile && ancorLinks && <BackToTopButton href={backToTopHref} color={accentColor} />}
+      {ancorLinks && (
+        <div className={style.desktopBackToTop}>
+          <BackToTopButton href={backToTopHref} color={accentColor} />
+        </div>
+      )}
     </>
   )
 }

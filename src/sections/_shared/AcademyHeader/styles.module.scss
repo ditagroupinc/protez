@@ -21,6 +21,29 @@
   display: flex;
   align-items: center;
 }
+
+.burgerStandalone {
+  display: none;
+}
+
+.desktopSocialMedia {
+  display: flex;
+}
+
+@media (max-width: 991px) {
+  .btnGroup {
+    display: none;
+  }
+  .burgerStandalone {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .desktopSocialMedia {
+    display: none;
+  }
+}
 .applyBtn {
   margin-right: 16px;
 }

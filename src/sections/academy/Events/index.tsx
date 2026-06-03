@@ -2,10 +2,9 @@
 
 import ProtezImage from '@/components/ProtezImage'
 
-import { useRef, useState, useMemo } from 'react'
+import { useRef, useMemo } from 'react'
 import { useTranslations } from 'next-intl'
 
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import AcademySection from '@/components/AcademySection'
@@ -60,8 +59,6 @@ const modifyAndSortEvents = (events: readonly EventInput[]): Event[] => {
 const Events = forwardRef<HTMLDivElement>(function (_, ref) {
   const t = useTranslations('academy.events')
   const { desktop: titleDesktop } = useAcademyTitle('current-training-programs')
-  const [activeSlide, setActiveSlide] = useState(0)
-  const { width } = useScreenModeAndSize()
 
   const items = t.raw('items') as EventInput[]
   const sortedEvents = useMemo(() => modifyAndSortEvents(items), [items])
@@ -74,7 +71,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
     slidesToShow: 5,
     slidesToScroll: 1,
     focusOnSelect: true,
-    centerMode: false,
+    centerMode: true,
+    centerPadding: '0px',
 
     swipeToSlide: true,
     arrows: false,
@@ -91,7 +89,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          centerMode: false,
+          centerMode: true,
+          centerPadding: '0px',
         },
       },
 
@@ -99,7 +98,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
         breakpoint: 850,
         settings: {
           slidesToShow: 2,
-          centerMode: false,
+          centerMode: true,
+          centerPadding: '0px',
         },
       },
       {
@@ -112,8 +112,6 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
         },
       },
     ],
-
-    beforeChange: (_current: number, next: number) => setActiveSlide(next),
   }
   const sliderRef = useRef<Slider & React.Component>(null)
 
@@ -140,23 +138,9 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
       <TextAppearanceWrapper className={styles.sliderWrapper}>
         <Slider {...settings} ref={sliderRef} className={styles.slickSlider}>
           {sortedEvents.map((card, index) => {
-            let slideClass = ''
-
-            if (index === (activeSlide + 2) % sortedEvents.length && width > 1500) {
-              slideClass = styles.centerSlide
-            } else if (index === activeSlide && width > 1024 && width < 1500) {
-              slideClass = styles.centerSlide
-            } else if (
-              index === (activeSlide + 1) % sortedEvents.length &&
-              width > 600 &&
-              width < 1024
-            ) {
-              slideClass = styles.centerSlide
-            } else if (index === activeSlide && width < 600) slideClass = styles.centerSlide
-
             return (
               <div key={index}>
-                <div className={`${styles.cardWrapper} ${slideClass}`}>
+                <div className={styles.cardWrapper}>
                   <a href={card.link} target="blank" className={styles.card}>
                     <ProtezImage
                       src={`${card.photo}`}
@@ -186,11 +170,9 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
                       <div className={styles.locationWrapper}>
                         {icons.location(styles.locationIcon)}
                         <span className={styles.locationText}>{card.location}</span>
-                        {width < 600 && (
-                          <span className={styles.locationButton}>
-                            {icons.arrowTop(styles.iconArrow)}
-                          </span>
-                        )}
+                        <span className={styles.locationButton}>
+                          {icons.arrowTop(styles.iconArrow)}
+                        </span>
                       </div>
                     </div>
                   </a>
@@ -199,12 +181,8 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
             )
           })}
         </Slider>
-        {width > 600 && (
-          <>
-            <SliderPrevButton onClick={gotoPrev} className={styles.prevButton} />
-            <SliderNextButton onClick={gotoNext} className={styles.nextButton} />
-          </>
-        )}
+        <SliderPrevButton onClick={gotoPrev} className={styles.prevButton} />
+        <SliderNextButton onClick={gotoNext} className={styles.nextButton} />
       </TextAppearanceWrapper>
     </AcademySection>
   )

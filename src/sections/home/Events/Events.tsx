@@ -4,7 +4,6 @@ import { useRef } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { localeToLanguage } from '@/lib/locale'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import Section from '@/components/Section'
 
@@ -25,7 +24,6 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
 
   const locale = useLocale()
   const lang = localeToLanguage(locale)
-  const { width } = useScreenModeAndSize()
   const t = useTranslations('home.events')
 
   const settings = {
@@ -94,9 +92,8 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
         className={style.backgroundImage}
       />
       <div className={style.titleWrapper}>
-        {width < 1024
-          ? icons.eventsLogo.mobile[lang](style.title)
-          : icons.eventsLogo.desktop[lang](style.title)}
+        {icons.eventsLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
+        {icons.eventsLogo.mobile[lang](`${style.title} ${style.titleMobile}`)}
       </div>
 
       <TextAppearanceWrapper className={style.sliderWrapper}>
@@ -137,11 +134,9 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
                       <div className={style.locationWrapper}>
                         {icons.location(style.locationIcon)}
                         <span className={style.locationText}>{card.location}</span>
-                        {width < 600 && (
-                          <span className={style.locationButton}>
-                            {icons.arrowTop(style.iconArrow)}
-                          </span>
-                        )}
+                        <span className={style.locationButton}>
+                          {icons.arrowTop(style.iconArrow)}
+                        </span>
                       </div>
                     </div>
                   </a>
@@ -150,16 +145,12 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
             )
           })}
         </Slider>
-        {width > 600 && (
-          <>
-            <button className={style.sliderButton} onClick={gotoPrev}>
-              {icons.arrowLeft(style.arrowLeft)}
-            </button>
-            <button className={style.sliderButton} onClick={gotoNext}>
-              {icons.arrowRight(style.arrowRight)}
-            </button>
-          </>
-        )}
+        <button className={style.sliderButton} onClick={gotoPrev}>
+          {icons.arrowLeft(style.arrowLeft)}
+        </button>
+        <button className={style.sliderButton} onClick={gotoNext}>
+          {icons.arrowRight(style.arrowRight)}
+        </button>
       </TextAppearanceWrapper>
     </Section>
   )

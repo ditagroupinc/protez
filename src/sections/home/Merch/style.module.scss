@@ -15,11 +15,27 @@
   height: auto;
 }
 
+.title.titleDesktop {
+  display: block;
+}
+
+.title.titleMobile {
+  display: none;
+}
+
 .viewAllButton {
   width: 240px;
   & .buttonText {
     max-width: 77px;
   }
+}
+
+.viewAllButtonTop {
+  display: block;
+}
+
+.buttonWrapper {
+  display: none;
 }
 
 .slickSlider {
@@ -62,6 +78,22 @@
 }
 
 @media screen and (max-width: 800px) {
+  .title.titleDesktop {
+    display: none;
+  }
+
+  .title.titleMobile {
+    display: block;
+  }
+
+  .viewAllButtonTop {
+    display: none;
+  }
+
+  .buttonWrapper {
+    display: block;
+  }
+
   .viewAllButton {
     margin-top: 60px;
     width: 100%;

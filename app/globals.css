@@ -140,8 +140,11 @@ body::-webkit-scrollbar {
   }
 }
 
-.no-scroll {
-  overflow: hidden;
+@media (max-width: 767px) {
+  html.no-scroll,
+  body.no-scroll {
+    overflow: hidden;
+  }
 }
 
 .svgTextBlock {

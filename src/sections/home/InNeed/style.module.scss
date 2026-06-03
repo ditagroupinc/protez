@@ -50,6 +50,14 @@
   height: auto;
 }
 
+.title.titleDesktop {
+  display: block;
+}
+
+.title.titleMobile {
+  display: none;
+}
+
 .link {
   margin-top: 48px;
   width: fit-content;
@@ -89,6 +97,14 @@
 }
 
 @media screen and (max-width: 800px) {
+  .title.titleDesktop {
+    display: none;
+  }
+
+  .title.titleMobile {
+    display: block;
+  }
+
   .section {
     padding-left: 0 !important;
     padding-right: 0 !important;

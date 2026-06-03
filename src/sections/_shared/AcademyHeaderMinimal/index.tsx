@@ -9,15 +9,11 @@ import { usePathname, useRouter } from '@/lib/i18n'
 
 import SocialMediaLinks from '@/components/SocialMediaLinks'
 
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-
 import styles from './styles.module.scss'
 
 import { icons } from './icons'
 
 const TermsConditionsHeader = () => {
-  const { width } = useScreenModeAndSize()
-
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
@@ -29,8 +25,6 @@ const TermsConditionsHeader = () => {
       router.replace(pathname, { locale: next })
     })
   }
-
-  const isMobile = width < 768
 
   return (
     <>
@@ -57,7 +51,7 @@ const TermsConditionsHeader = () => {
           </div>
         </div>
       </header>
-      {!isMobile && <SocialMediaLinks color="blue" />}
+      <SocialMediaLinks color="blue" className={styles.desktopSocialMedia} />
     </>
   )
 }

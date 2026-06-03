@@ -15,7 +15,6 @@ import { Body } from '@/components/Typography'
 
 import Slider from '@/islands/SlickCarousel'
 import { useRef, useState } from 'react'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
 type PeopleTrustUsCard = { image: string; description: string }
@@ -26,9 +25,6 @@ const PeopleTrustUs = () => {
   const t = useTranslations('home.peopleTrustUs')
   const cards = t.raw('cards') as PeopleTrustUsCard[]
   const [activeSlide, setActiveSlide] = useState(0)
-  const { width } = useScreenModeAndSize()
-  const showTopNavigation = width < 1180 && width > 800
-  const isDesktopLayout = width > 800
 
   const settings = {
     dots: false,
@@ -99,37 +95,33 @@ const PeopleTrustUs = () => {
   return (
     <Section id={ProtezIDs.PeopleTrustUs} className={style.section}>
       <div className={style.container}>
-        {width > 1180 && (
-          <div className={style.left}>
-            <Slider {...settings} ref={imageSliderRef} className={style.imageSlider}>
-              {cards.map((card, index) => (
-                <div className={style.imageWrapper} key={index}>
-                  <ProtezImage
-                    width={940}
-                    height={540}
-                    src={`protezPage/peopleTrustUs/${card.image}`}
-                    alt={card.description}
-                    className={style.image}
-                  />
-                </div>
-              ))}
-            </Slider>
-          </div>
-        )}
+        <div className={style.left}>
+          <Slider {...settings} ref={imageSliderRef} className={style.imageSlider}>
+            {cards.map((card, index) => (
+              <div className={style.imageWrapper} key={index}>
+                <ProtezImage
+                  width={940}
+                  height={540}
+                  src={`protezPage/peopleTrustUs/${card.image}`}
+                  alt={card.description}
+                  className={style.image}
+                />
+              </div>
+            ))}
+          </Slider>
+        </div>
 
         <div className={style.right}>
           <div className={style.titleContainer}>
             {icons.peopleTrustUsLogo.desktop[lang](style.title)}
-            {showTopNavigation && (
-              <div className={style.sliderNavigation}>
-                <button className={style.sliderButton} onClick={gotoPrev}>
-                  {icons.arrowLeft(style.arrow)}
-                </button>
-                <button className={style.sliderButton} onClick={gotoNext}>
-                  {icons.arrowRight(style.arrow)}
-                </button>
-              </div>
-            )}
+            <div className={`${style.sliderNavigation} ${style.sliderNavigationTop}`}>
+              <button className={style.sliderButton} onClick={gotoPrev}>
+                {icons.arrowLeft(style.arrow)}
+              </button>
+              <button className={style.sliderButton} onClick={gotoNext}>
+                {icons.arrowRight(style.arrow)}
+              </button>
+            </div>
           </div>
           <div>
             <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
@@ -164,7 +156,7 @@ const PeopleTrustUs = () => {
                           alt={card.description}
                           className={style.image}
                         />
-                        <Body large={isDesktopLayout} className={style.text}>
+                        <Body large className={style.text}>
                           {card.description}
                         </Body>
                       </div>
@@ -175,16 +167,14 @@ const PeopleTrustUs = () => {
             </Slider>
           </div>
           <TextAppearanceWrapper className={style.buttonsContainer}>
-            {!showTopNavigation && (
-              <div className={style.sliderNavigation}>
-                <button className={style.sliderButton} onClick={gotoPrev}>
-                  {icons.arrowLeft(style.arrow)}
-                </button>
-                <button className={style.sliderButton} onClick={gotoNext}>
-                  {icons.arrowRight(style.arrow)}
-                </button>
-              </div>
-            )}
+            <div className={`${style.sliderNavigation} ${style.sliderNavigationBottom}`}>
+              <button className={style.sliderButton} onClick={gotoPrev}>
+                {icons.arrowLeft(style.arrow)}
+              </button>
+              <button className={style.sliderButton} onClick={gotoNext}>
+                {icons.arrowRight(style.arrow)}
+              </button>
+            </div>
           </TextAppearanceWrapper>
         </div>
       </div>

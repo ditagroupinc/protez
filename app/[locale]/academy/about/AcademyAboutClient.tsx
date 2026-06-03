@@ -5,8 +5,6 @@ import { useInView } from 'react-intersection-observer'
 
 import BackToTopButton from '@/components/BackToTopButton'
 
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-
 import Header from '@/sections/_shared/AcademyHeaderMinimal'
 
 import FullScreenFallback from '@/components/FullScreenFallback'
@@ -26,9 +24,6 @@ export default function AcademyAboutClient() {
 
   const showBlackBackToTopButton = !inViewMission1 && !inViewFooter
 
-  const { mobile, width } = useScreenModeAndSize()
-  const isMobile = mobile || width < 768
-
   return (
     <>
       <Header />
@@ -45,13 +40,13 @@ export default function AcademyAboutClient() {
           <WeTrain />
         </Suspense>
 
-        {!isMobile && (
+        <div className={style.backToTopWrapper}>
           <BackToTopButton
             href={AcademyAboutIDs.AboutUs}
             color="blue"
             black={showBlackBackToTopButton}
           />
-        )}
+        </div>
       </main>
 
       <Suspense fallback={<FullScreenFallback />}>

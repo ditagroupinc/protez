@@ -57,6 +57,14 @@
 
     flex: 1 2 400px;
 
+    .mobileOnly {
+      display: none;
+    }
+
+    .desktopOnly {
+      display: contents;
+    }
+
     .aboveDivider,
     .belowDivider {
       max-width: 350px;
@@ -155,6 +163,15 @@
     max-width: 425px;
     .left {
       flex-basis: auto;
+
+      .mobileOnly {
+        display: contents;
+      }
+
+      .desktopOnly {
+        display: none;
+      }
+
       .aboveDivider,
       .belowDivider {
         max-width: 100%;

@@ -10,8 +10,6 @@ import { icons } from './icons'
 import Section from '@/components/Section'
 import { Body, H3 } from '@/components/Typography'
 
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-
 import Header from '@/sections/_shared/Header'
 import Footer from '@/sections/_shared/Footer'
 import Divider from '@/components/Divider'
@@ -25,7 +23,6 @@ const EMAIL = 'info@protezfoundation.com'
 export default function VadymFedorov() {
   const locale = useLocale()
   const lang = localeToLanguage(locale)
-  const { width } = useScreenModeAndSize()
   const t = useTranslations('stories.vadymFedorov')
 
   return (
@@ -58,10 +55,10 @@ export default function VadymFedorov() {
                 <div className={style.donationContainer}>
                   <div className={style.left}>
                     <div className={style.aboveDivider}>
-                      <Body large={width > 1180} className={style.description}>
+                      <Body className={`${style.description} ${style.largeOnDesktop}`}>
                         <span className={style.block}>{t('donatePage.description1')}</span>
                       </Body>
-                      <Body large={width > 1180}>
+                      <Body className={style.largeOnDesktop}>
                         {t('donatePage.description3')}{' '}
                         <span className={style.redText}>{t('donatePage.coloredText')}</span>
                       </Body>

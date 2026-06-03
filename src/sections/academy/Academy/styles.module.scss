@@ -164,6 +164,10 @@
 }
 
 @media (max-width: 600px) {
+  .sliderNavigation {
+    display: none;
+  }
+
   .academy {
     padding-top: 60px;
     padding-bottom: 20px;

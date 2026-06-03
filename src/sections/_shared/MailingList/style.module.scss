@@ -17,6 +17,14 @@
   height: auto;
 }
 
+.title.titleDesktop {
+  display: block;
+}
+
+.title.titleMobile {
+  display: none;
+}
+
 .form {
   margin-top: 24px;
 
@@ -218,6 +226,14 @@
 }
 
 @media screen and (max-width: 800px) {
+  .title.titleDesktop {
+    display: none;
+  }
+
+  .title.titleMobile {
+    display: block;
+  }
+
   .section {
     padding-top: 60px;
     padding-bottom: 60px;

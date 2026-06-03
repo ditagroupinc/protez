@@ -2,8 +2,6 @@
 
 import { motion, HTMLMotionProps, Variants } from 'framer-motion'
 
-// import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-
 interface TextAppearanceWrapperProps extends HTMLMotionProps<'div'> {
   reverse?: boolean
   isDisabled?: boolean
@@ -15,8 +13,6 @@ export const TextAppearanceWrapper = ({
   isDisabled = false,
   ...props
 }: TextAppearanceWrapperProps) => {
-  // const { width } = useScreenModeAndSize()
-
   const variants: Variants = {
     offscreen: { y: reverse ? -100 : 100, opacity: 0 },
     onscreen: {
@@ -33,7 +29,6 @@ export const TextAppearanceWrapper = ({
   return (
     <motion.div
       initial="offscreen"
-      // animate={width < 630 ? 'onscreen' : 'offscreen'}
       animate={isDisabled ? 'onscreen' : 'offscreen'}
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}

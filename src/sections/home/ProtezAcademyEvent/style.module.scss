@@ -13,6 +13,12 @@
   max-width: 760px;
 }
 
+.image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
 .right {
   display: flex;
   flex-direction: column;
@@ -49,6 +55,22 @@
   & > *:not(:first-child) {
     width: 40%;
     flex-grow: 1;
+  }
+}
+
+.buttonsContainer.buttonsContainerTop {
+  display: flex;
+}
+
+.buttonsContainer.buttonsContainerBottom {
+  display: none;
+}
+
+@media (min-width: 801px) {
+  .right .description {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
   }
 }
 
@@ -153,6 +175,14 @@
 }
 
 @media screen and (max-width: 800px) {
+  .buttonsContainer.buttonsContainerTop {
+    display: none;
+  }
+
+  .buttonsContainer.buttonsContainerBottom {
+    display: flex;
+  }
+
   .buttonsContainer {
     width: 100%;
     margin-bottom: 0;

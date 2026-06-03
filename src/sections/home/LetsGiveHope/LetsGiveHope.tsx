@@ -4,7 +4,6 @@ import { forwardRef, ForwardedRef } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { localeToLanguage } from '@/lib/locale'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import VideoAndFilter from '@/components/VideoAndFilter'
 import Section from '@/components/Section'
@@ -18,12 +17,7 @@ import { icons } from './icons'
 const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const locale = useLocale()
   const lang = localeToLanguage(locale)
-  const { width } = useScreenModeAndSize()
   const t = useTranslations('home.letsGiveHope')
-
-  const isDesktop = width > 1180
-
-  const title = width > 800 ? icons.letsGiveHopeLogo.desktop : icons.letsGiveHopeLogo.mobile
 
   return (
     <Section id={ProtezIDs.LetsGiveHope} className={style.section} ref={ref}>
@@ -32,9 +26,7 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
       <div className={style.container}>
         <div className={`${style.left} ${locale === 'uk' ? style.ukrainianLang : ''}`}>
           {icons.protezLogo(style.logo)}
-          <Body large={isDesktop} className={style.description}>
-            {t('description')}
-          </Body>
+          <Body className={style.description}>{t('description')}</Body>
           <div className={style.buttonsContainer}>
             <MakeDonationButton size="normal" />
             <Button
@@ -47,20 +39,22 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
             >
               {t('needAProthesis')}
             </Button>
-            {!isDesktop && (
-              <Button
-                variant="secondary-white"
-                as="link"
-                target="_blank"
-                href="https://forms.gle/WUVBvfZhYJsanGVbA"
-                size="normal"
-              >
-                {t('protezAcademy')}
-              </Button>
-            )}
+            <Button
+              variant="secondary-white"
+              as="link"
+              target="_blank"
+              href="https://forms.gle/WUVBvfZhYJsanGVbA"
+              size="normal"
+              className={style.academyButton}
+            >
+              {t('protezAcademy')}
+            </Button>
           </div>
         </div>
-        <div className={style.right}>{title[lang](style.title)}</div>
+        <div className={style.right}>
+          {icons.letsGiveHopeLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
+          {icons.letsGiveHopeLogo.mobile[lang](`${style.title} ${style.titleMobile}`)}
+        </div>
       </div>
     </Section>
   )

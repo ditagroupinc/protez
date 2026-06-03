@@ -26,6 +26,14 @@
   margin-bottom: 32px;
 }
 
+.title.titleDesktop {
+  display: block;
+}
+
+.title.titleMobile {
+  display: none;
+}
+
 .sliderWrapper {
   position: relative;
 }
@@ -256,7 +264,7 @@
   transition: all var(--transitionProps);
   background-color: var(--red);
   border-radius: 50%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 
@@ -280,6 +288,14 @@
 }
 
 @media (max-width: 1024px) {
+  .title.titleDesktop {
+    display: none;
+  }
+
+  .title.titleMobile {
+    display: block;
+  }
+
   .events {
     padding-top: 100px;
     padding-bottom: 120px;
@@ -300,6 +316,14 @@
 }
 
 @media (max-width: 600px) {
+  .sliderButton {
+    display: none;
+  }
+
+  .locationButton {
+    display: flex;
+  }
+
   .events {
     padding-top: 40px;
     padding-bottom: 60px;

@@ -13,7 +13,6 @@ import Section from '@/components/Section'
 import { ProtezIDs } from '@/consts'
 import { Body, H3 } from '@/components/Typography'
 import Button from '@/components/Button'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
 interface VeteranMeta {
@@ -83,8 +82,6 @@ const Veterans = () => {
   const t = useTranslations('home.veterans')
   const items = t.raw('items') as VeteranItem[]
   const [iframeData, setIframeData] = useState({ opened: false, url: '' })
-  const { width } = useScreenModeAndSize()
-  const isDesktopLayout = width > 800
 
   const veterans = items.map((item, index) => ({ ...item, ...veteransMeta[index] }))
 
@@ -139,143 +136,29 @@ const Veterans = () => {
   return (
     <>
       <Section id={ProtezIDs.Veterans} className={style.section}>
-        {isDesktopLayout ? (
-          <div className={style.card}>
-            <div className={style.left}>
-              <Slider ref={textSliderRef} {...settings}>
-                {veterans.map((slide, index) => (
-                  <div key={index}>
-                    <div className={style.logoContainer}>
-                      {icons.titles[slide.icon][lang](style.veteranLogo)}
-                      <Body large={isDesktopLayout} className={style.ageRank}>
-                        {slide.ageRank}
-                      </Body>
-                    </div>
-                    <H3 className={style.cardTitle}>{slide.title}</H3>
-                    <Body className={style.cardText} large={isDesktopLayout}>
-                      {slide.text}
-                    </Body>
-                  </div>
-                ))}
-              </Slider>
-              <div className={style.buttonsContainer}>
-                <div className={style.linksSliderWrapper}>
-                  <Slider ref={linksSliderRef} {...settings}>
-                    {veterans.map((slide, index) => (
-                      <div key={index}>
-                        <div className={style.linksSlide}>
-                          <div className={style.iconsContainer}>
-                            <a target="blank" href={slide.linkedin as string}>
-                              {icons.iconLinkedin(style.icon)}
-                            </a>
-                            <a target="blank" href={slide.facebook as string}>
-                              {icons.iconFacebook(style.icon)}
-                            </a>
-                            <a target="blank" href={slide.instagram as string}>
-                              {icons.iconInstagram(style.icon)}
-                            </a>
-                          </div>
-                          <Button
-                            as="link"
-                            target="_blank"
-                            href={slide.url}
-                            variant="secondary-white"
-                            size="normal"
-                            className={style.Button}
-                          >
-                            {t('giveHope')}
-                          </Button>
-                        </div>
-                      </div>
-                    ))}
-                  </Slider>
-                </div>
-                <div className={style.sliderNavigation}>
-                  <button className={style.sliderButton} onClick={gotoPrev}>
-                    {icons.arrowLeft(style.arrow)}
-                  </button>
-                  <button className={style.sliderButton} onClick={gotoNext}>
-                    {icons.arrowRight(style.arrow)}
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div className={style.right}>
-              <Slider ref={imageSliderRef} {...settings} className={style.imagesSlider}>
-                {veterans.map((slide, index) => (
-                  <div key={index}>
-                    <div className={style.imageSlideWrapper}>
-                      <ProtezImage
-                        src={`protezPage/veterans/${slide.img}`}
-                        alt={slide.name + ' ' + slide.surname}
-                        className={style.image}
-                        width={1306}
-                        height={1890}
-                      />
-                      {slide.spinIcon ? (
-                        <button
-                          className={style.roundButton}
-                          onClick={() => {
-                            setIframeData({ opened: true, url: slide.videoLink })
-                          }}
-                        >
-                          {icons.spinIcons[slide.spinIcon](style.spinningName)}
-                          {icons.triangle(style.triangle)}
-                        </button>
-                      ) : (
-                        ''
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </Slider>
-            </div>
-          </div>
-        ) : (
-          <>
-            <Slider ref={wholeCardSliderRef} {...settings} className={style.wholeCardSlider}>
+        <div className={`${style.card} ${style.desktopCard}`}>
+          <div className={style.left}>
+            <Slider ref={textSliderRef} {...settings}>
               {veterans.map((slide, index) => (
                 <div key={index}>
-                  <div className={style.card}>
-                    <div className={style.right}>
-                      <div className={style.imageSlideWrapper}>
-                        <ProtezImage
-                          src={`protezPage/veterans/${slide.img}`}
-                          alt={slide.name + ' ' + slide.surname}
-                          className={style.image}
-                          width={1306}
-                          height={1890}
-                        />
-
-                        {slide.spinIcon ? (
-                          <button
-                            className={style.roundButton}
-                            onClick={() => {
-                              setIframeData({ opened: true, url: slide.videoLink })
-                            }}
-                          >
-                            {icons.spinIcons[slide.spinIcon](style.spinningName)}
-                            {icons.triangle(style.triangle)}
-                          </button>
-                        ) : (
-                          ''
-                        )}
-                      </div>
-                    </div>
-                    <div className={style.left}>
-                      <div>
-                        <div className={style.logoContainer}>
-                          {icons.titles[slide.icon][lang](style.veteranLogo)}
-                          <Body large={isDesktopLayout} className={style.ageRank}>
-                            {slide.ageRank}
-                          </Body>
-                        </div>
-                        <H3 className={style.cardTitle}>{slide.title}</H3>
-                        <Body className={style.cardText} large={isDesktopLayout}>
-                          {slide.text}
-                        </Body>
-                      </div>
-
+                  <div className={style.logoContainer}>
+                    {icons.titles[slide.icon][lang](style.veteranLogo)}
+                    <Body large className={style.ageRank}>
+                      {slide.ageRank}
+                    </Body>
+                  </div>
+                  <H3 className={style.cardTitle}>{slide.title}</H3>
+                  <Body className={style.cardText} large>
+                    {slide.text}
+                  </Body>
+                </div>
+              ))}
+            </Slider>
+            <div className={style.buttonsContainer}>
+              <div className={style.linksSliderWrapper}>
+                <Slider ref={linksSliderRef} {...settings}>
+                  {veterans.map((slide, index) => (
+                    <div key={index}>
                       <div className={style.linksSlide}>
                         <div className={style.iconsContainer}>
                           <a target="blank" href={slide.linkedin as string}>
@@ -300,20 +183,127 @@ const Veterans = () => {
                         </Button>
                       </div>
                     </div>
+                  ))}
+                </Slider>
+              </div>
+              <div className={style.sliderNavigation}>
+                <button className={style.sliderButton} onClick={gotoPrev}>
+                  {icons.arrowLeft(style.arrow)}
+                </button>
+                <button className={style.sliderButton} onClick={gotoNext}>
+                  {icons.arrowRight(style.arrow)}
+                </button>
+              </div>
+            </div>
+          </div>
+          <div className={style.right}>
+            <Slider ref={imageSliderRef} {...settings} className={style.imagesSlider}>
+              {veterans.map((slide, index) => (
+                <div key={index}>
+                  <div className={style.imageSlideWrapper}>
+                    <ProtezImage
+                      src={`protezPage/veterans/${slide.img}`}
+                      alt={slide.name + ' ' + slide.surname}
+                      className={style.image}
+                      width={1306}
+                      height={1890}
+                    />
+                    {slide.spinIcon ? (
+                      <button
+                        className={style.roundButton}
+                        onClick={() => {
+                          setIframeData({ opened: true, url: slide.videoLink })
+                        }}
+                      >
+                        {icons.spinIcons[slide.spinIcon](style.spinningName)}
+                        {icons.triangle(style.triangle)}
+                      </button>
+                    ) : (
+                      ''
+                    )}
                   </div>
                 </div>
               ))}
             </Slider>
-            <div className={style.sliderNavigation}>
-              <button className={style.sliderButton} onClick={gotoPrev}>
-                {icons.arrowLeft(style.arrow)}
-              </button>
-              <button className={style.sliderButton} onClick={gotoNext}>
-                {icons.arrowRight(style.arrow)}
-              </button>
-            </div>
-          </>
-        )}
+          </div>
+        </div>
+        <div className={style.mobileWrapper}>
+          <Slider ref={wholeCardSliderRef} {...settings} className={style.wholeCardSlider}>
+            {veterans.map((slide, index) => (
+              <div key={index}>
+                <div className={style.card}>
+                  <div className={style.right}>
+                    <div className={style.imageSlideWrapper}>
+                      <ProtezImage
+                        src={`protezPage/veterans/${slide.img}`}
+                        alt={slide.name + ' ' + slide.surname}
+                        className={style.image}
+                        width={1306}
+                        height={1890}
+                      />
+
+                      {slide.spinIcon ? (
+                        <button
+                          className={style.roundButton}
+                          onClick={() => {
+                            setIframeData({ opened: true, url: slide.videoLink })
+                          }}
+                        >
+                          {icons.spinIcons[slide.spinIcon](style.spinningName)}
+                          {icons.triangle(style.triangle)}
+                        </button>
+                      ) : (
+                        ''
+                      )}
+                    </div>
+                  </div>
+                  <div className={style.left}>
+                    <div>
+                      <div className={style.logoContainer}>
+                        {icons.titles[slide.icon][lang](style.veteranLogo)}
+                        <Body className={style.ageRank}>{slide.ageRank}</Body>
+                      </div>
+                      <H3 className={style.cardTitle}>{slide.title}</H3>
+                      <Body className={style.cardText}>{slide.text}</Body>
+                    </div>
+
+                    <div className={style.linksSlide}>
+                      <div className={style.iconsContainer}>
+                        <a target="blank" href={slide.linkedin as string}>
+                          {icons.iconLinkedin(style.icon)}
+                        </a>
+                        <a target="blank" href={slide.facebook as string}>
+                          {icons.iconFacebook(style.icon)}
+                        </a>
+                        <a target="blank" href={slide.instagram as string}>
+                          {icons.iconInstagram(style.icon)}
+                        </a>
+                      </div>
+                      <Button
+                        as="link"
+                        target="_blank"
+                        href={slide.url}
+                        variant="secondary-white"
+                        size="normal"
+                        className={style.Button}
+                      >
+                        {t('giveHope')}
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </Slider>
+          <div className={style.sliderNavigation}>
+            <button className={style.sliderButton} onClick={gotoPrev}>
+              {icons.arrowLeft(style.arrow)}
+            </button>
+            <button className={style.sliderButton} onClick={gotoNext}>
+              {icons.arrowRight(style.arrow)}
+            </button>
+          </div>
+        </div>
       </Section>
       {iframeData.opened && (
         <>

@@ -63,7 +63,31 @@
   max-width: 100%;
 }
 
+.title.titleDesktop {
+  display: block;
+}
+
+.title.titleMobile {
+  display: none;
+}
+
+.academyButton {
+  display: none;
+}
+
+@media (min-width: 1181px) {
+  .left .description {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+}
+
 @media screen and (max-width: 1180px) {
+  .academyButton {
+    display: inline-flex;
+  }
+
   .section {
     padding-bottom: 40px;
     align-items: flex-end;
@@ -105,6 +129,14 @@
 }
 
 @media screen and (max-width: 800px) {
+  .title.titleDesktop {
+    display: none;
+  }
+
+  .title.titleMobile {
+    display: block;
+  }
+
   .container {
     max-width: 100%;
   }

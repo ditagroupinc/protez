@@ -14,7 +14,6 @@ import { icons } from './icons'
 import Section from '@/components/Section'
 import { ProtezIDs } from '@/consts'
 import { Body, H3 } from '@/components/Typography'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
 type PressRelease = { title: string; text: string }
@@ -36,16 +35,13 @@ const PressRelease = () => {
   const textSliderRef = useRef<Slider & React.Component>(null)
   const wholeCardSliderRef = useRef<Slider & React.Component>(null)
 
-  const { width } = useScreenModeAndSize()
-  const isDesktopLayout = width > 800
-
   useEffect(() => {
     const autoplayInterval = setInterval(() => {
       gotoNext()
     }, 5000)
 
     return () => clearInterval(autoplayInterval)
-  }, [isDesktopLayout])
+  }, [])
 
   const gotoNext = () => {
     imageSliderRef.current?.slickNext()
@@ -111,90 +107,83 @@ const PressRelease = () => {
 
   return (
     <Section id={ProtezIDs.PressRelease} className={style.section}>
-      {isDesktopLayout ? (
-        <div className={style.card}>
-          <TextAppearanceWrapper className={style.left}>
-            <Slider ref={imageSliderRef} {...settings} className={style.imageSlider}>
-              {orderedPressReleaseArray.map((slide, index) => (
-                <div className={style.imageSlideWrapper} key={index}>
-                  <div className={style.imageSlide}>
-                    <ProtezImage
-                      src={`protezPage/pressRelease/${slide.img}`}
-                      alt={slide.date + ' ' + slide.title}
-                      className={style.image}
-                      width={940}
-                      height={660}
-                    />
-                  </div>
-                </div>
-              ))}
-            </Slider>
-          </TextAppearanceWrapper>
-
-          <TextAppearanceWrapper className={style.right}>
-            {icons.pressReleaseLogo.desktop[lang](style.pageTitle)}
-            <Slider ref={textSliderRef} {...settings} className={style.textSlider}>
-              {orderedPressReleaseArray.map((slide, index) => (
-                <div className={style.textSlideWrapper} key={index}>
-                  <div className={style.textSlide}>
-                    <Body large={isDesktopLayout} className={style.cardDate}>
-                      {slide.date}
-                    </Body>
-                  </div>
-                  <H3 className={style.cardTitle}>{slide.title}</H3>
-                  <Body className={style.cardText} large={isDesktopLayout}>
-                    {slide.text}
-                  </Body>
-                </div>
-              ))}
-            </Slider>
-            <div className={style.sliderNavigation}>
-              <button className={style.sliderButton} onClick={gotoPrev}>
-                {icons.arrowLeft(style.arrow)}
-              </button>
-              <button className={style.sliderButton} onClick={gotoNext}>
-                {icons.arrowRight(style.arrow)}
-              </button>
-            </div>
-          </TextAppearanceWrapper>
-        </div>
-      ) : (
-        <>
-          {icons.pressReleaseLogo.desktop[lang](style.pageTitle)}
-
-          <Slider ref={wholeCardSliderRef} {...settings} className={style.wholeCardSlider}>
+      <div className={`${style.card} ${style.desktopCard}`}>
+        <TextAppearanceWrapper className={style.left}>
+          <Slider ref={imageSliderRef} {...settings} className={style.imageSlider}>
             {orderedPressReleaseArray.map((slide, index) => (
-              <div key={index}>
-                <div className={style.cardWrapper}>
-                  <div className={style.card}>
-                    <TextAppearanceWrapper className={style.left}>
-                      <div className={style.imageSlide}>
-                        <ProtezImage
-                          src={`protezPage/pressRelease/${slide.img}`}
-                          alt={slide.date + ' ' + slide.title}
-                          className={style.image}
-                          width={940}
-                          height={660}
-                        />
-                      </div>
-                    </TextAppearanceWrapper>
-
-                    <div className={style.right}>
-                      <Body large={isDesktopLayout} className={style.cardDate}>
-                        {slide.date}
-                      </Body>
-                      <H3 className={style.cardTitle}>{slide.title}</H3>
-                      <Body className={style.cardText} large={isDesktopLayout}>
-                        {slide.text}
-                      </Body>
-                    </div>
-                  </div>
+              <div className={style.imageSlideWrapper} key={index}>
+                <div className={style.imageSlide}>
+                  <ProtezImage
+                    src={`protezPage/pressRelease/${slide.img}`}
+                    alt={slide.date + ' ' + slide.title}
+                    className={style.image}
+                    width={940}
+                    height={660}
+                  />
                 </div>
               </div>
             ))}
           </Slider>
-        </>
-      )}
+        </TextAppearanceWrapper>
+
+        <TextAppearanceWrapper className={style.right}>
+          {icons.pressReleaseLogo.desktop[lang](style.pageTitle)}
+          <Slider ref={textSliderRef} {...settings} className={style.textSlider}>
+            {orderedPressReleaseArray.map((slide, index) => (
+              <div className={style.textSlideWrapper} key={index}>
+                <div className={style.textSlide}>
+                  <Body large className={style.cardDate}>
+                    {slide.date}
+                  </Body>
+                </div>
+                <H3 className={style.cardTitle}>{slide.title}</H3>
+                <Body className={style.cardText} large>
+                  {slide.text}
+                </Body>
+              </div>
+            ))}
+          </Slider>
+          <div className={style.sliderNavigation}>
+            <button className={style.sliderButton} onClick={gotoPrev}>
+              {icons.arrowLeft(style.arrow)}
+            </button>
+            <button className={style.sliderButton} onClick={gotoNext}>
+              {icons.arrowRight(style.arrow)}
+            </button>
+          </div>
+        </TextAppearanceWrapper>
+      </div>
+      <div className={style.mobileWrapper}>
+        {icons.pressReleaseLogo.desktop[lang](style.pageTitle)}
+
+        <Slider ref={wholeCardSliderRef} {...settings} className={style.wholeCardSlider}>
+          {orderedPressReleaseArray.map((slide, index) => (
+            <div key={index}>
+              <div className={style.cardWrapper}>
+                <div className={style.card}>
+                  <TextAppearanceWrapper className={style.left}>
+                    <div className={style.imageSlide}>
+                      <ProtezImage
+                        src={`protezPage/pressRelease/${slide.img}`}
+                        alt={slide.date + ' ' + slide.title}
+                        className={style.image}
+                        width={940}
+                        height={660}
+                      />
+                    </div>
+                  </TextAppearanceWrapper>
+
+                  <div className={style.right}>
+                    <Body className={style.cardDate}>{slide.date}</Body>
+                    <H3 className={style.cardTitle}>{slide.title}</H3>
+                    <Body className={style.cardText}>{slide.text}</Body>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+      </div>
     </Section>
   )
 }

@@ -57,6 +57,14 @@
   height: auto;
 }
 
+.title.titleDesktop {
+  display: block;
+}
+
+.title.titleMobile {
+  display: none;
+}
+
 .buttonCell {
   grid-area: button;
   display: flex;
@@ -263,6 +271,14 @@
 
 /* phone */
 @media screen and (max-width: 600px) {
+  .title.titleDesktop {
+    display: none;
+  }
+
+  .title.titleMobile {
+    display: block;
+  }
+
   .section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

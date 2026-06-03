@@ -4,7 +4,6 @@ import React, { useRef } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { localeToLanguage } from '@/lib/locale'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import Section from '@/components/Section'
 
@@ -134,13 +133,8 @@ const MemberCard = ({
   position: string
   className?: string
 }) => {
-  const { width } = useScreenModeAndSize()
-
   return (
-    <TextAppearanceWrapper
-      isDisabled={width < 600}
-      className={`${style.memberCard} ${className && className}`}
-    >
+    <TextAppearanceWrapper className={`${style.memberCard} ${className && className}`}>
       <ProtezImage
         src={`protezPage/meetOurTeam/${photo}`}
         alt={photo}
@@ -174,7 +168,6 @@ const MeetOurTeam = () => {
   const lang = localeToLanguage(locale)
   const t = useTranslations('home.meetOurTeam')
   const teamMembers = t.raw('members') as TeamMember[]
-  const { width } = useScreenModeAndSize()
 
   const members = teamMembers.map((member, index) => ({ ...member, ...membersMeta[index] }))
 
@@ -197,59 +190,54 @@ const MeetOurTeam = () => {
 
   return (
     <Section id={ProtezIDs.MeetOurTeam} className={style.section}>
-      {width < 600 ? (
-        <>
-          {icons.meetOurTeamLogo.desktop[lang](style.teachersLogo)}
+      <div className={style.mobileTeam}>
+        {icons.meetOurTeamLogo.desktop[lang](style.teachersLogo)}
 
-          <TextAppearanceWrapper>
-            <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
-              {members.map((card, index) => (
-                <div key={index}>
-                  <div className={style.cardWrapper}>
-                    <MemberCard
-                      className={style.teamCard}
-                      photo={card.photo}
-                      links={card.links}
-                      name={card.name}
-                      position={card.position}
-                    />
-                  </div>
+        <TextAppearanceWrapper>
+          <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
+            {members.map((card, index) => (
+              <div key={index}>
+                <div className={style.cardWrapper}>
+                  <MemberCard
+                    className={style.teamCard}
+                    photo={card.photo}
+                    links={card.links}
+                    name={card.name}
+                    position={card.position}
+                  />
                 </div>
-              ))}
-            </Slider>
-          </TextAppearanceWrapper>
-        </>
-      ) : (
-        <>
-          <div className={style.row}>
-            <div className={style.titleCell}>
-              {icons.meetOurTeamLogo.desktop[lang](style.teachersLogo)}
-            </div>
-            {members.slice(0, 2).map((card, index) => (
-              <MemberCard
-                key={index}
-                className={style.teamCard}
-                photo={card.photo}
-                links={card.links}
-                name={card.name}
-                position={card.position}
-              />
+              </div>
             ))}
-          </div>
-          <div className={style.row}>
-            {members.slice(2, 11).map((card, index) => (
-              <MemberCard
-                key={index}
-                className={style.teamCard}
-                photo={card.photo}
-                links={card.links}
-                name={card.name}
-                position={card.position}
-              />
-            ))}
-          </div>
-        </>
-      )}
+          </Slider>
+        </TextAppearanceWrapper>
+      </div>
+      <div className={`${style.row} ${style.firstRow}`}>
+        <div className={style.titleCell}>
+          {icons.meetOurTeamLogo.desktop[lang](style.teachersLogo)}
+        </div>
+        {members.slice(0, 2).map((card, index) => (
+          <MemberCard
+            key={index}
+            className={style.teamCard}
+            photo={card.photo}
+            links={card.links}
+            name={card.name}
+            position={card.position}
+          />
+        ))}
+      </div>
+      <div className={`${style.row} ${style.secondRow}`}>
+        {members.slice(2, 11).map((card, index) => (
+          <MemberCard
+            key={index}
+            className={style.teamCard}
+            photo={card.photo}
+            links={card.links}
+            name={card.name}
+            position={card.position}
+          />
+        ))}
+      </div>
     </Section>
   )
 }

@@ -108,6 +108,10 @@
 }
 
 @media (max-width: 600px) {
+  .sliderNavigation {
+    display: none;
+  }
+
   .academyStudents {
     padding: 60px 0;
   }

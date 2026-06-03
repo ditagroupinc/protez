@@ -9,7 +9,6 @@ import Button from '@/components/AcademyButton'
 import SocialMediaLinks from '@/components/SocialMediaLinks'
 
 import useOutsideClick from '@/hooks/useOutsideClick'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 
 import { BurgerButton } from '@/components/BurgerButton'
 
@@ -39,8 +38,6 @@ const AncorLinkIds = [
 const AcademyHeader = () => {
   const [headerIsOpened, setHeaderIsOpened] = useState(false)
 
-  const { width } = useScreenModeAndSize()
-
   const ref = useOutsideClick(() => setHeaderIsOpened(false))
 
   const t = useTranslations('academy')
@@ -57,10 +54,8 @@ const AcademyHeader = () => {
     })
   }
 
-  const isMobile = width < 768
-
   useEffect(() => {
-    if (headerIsOpened && isMobile) {
+    if (headerIsOpened) {
       document.body.classList.add('no-scroll')
       document.documentElement.classList.add('no-scroll')
     } else {
@@ -79,61 +74,60 @@ const AcademyHeader = () => {
   }
 
   const closeHeaderOnAncorClick = () => {
-    if (isMobile) setHeaderIsOpened(false)
+    setHeaderIsOpened(false)
   }
 
   return (
     <>
       <header className={styles.academyHeader}>
         <a href="#academyIntro">{icons.protezAcademyLogo()}</a>
-        {width < 992 ? (
+        <div className={styles.burgerStandalone}>
           <BurgerButton
             isBlack={false}
             color="blue"
             onClick={toggleHeader}
             close={headerIsOpened}
           />
-        ) : (
-          <div className={styles.btnGroup}>
-            <Button
-              as="link"
-              href={ACADEMY_APPLY_FORM_URL}
-              target={'_blank'}
-              variant="primary-blue"
-              size="small"
-              rel="noopener noreferrer"
-              className={styles.applyBtn}
+        </div>
+        <div className={styles.btnGroup}>
+          <Button
+            as="link"
+            href={ACADEMY_APPLY_FORM_URL}
+            target={'_blank'}
+            variant="primary-blue"
+            size="small"
+            rel="noopener noreferrer"
+            className={styles.applyBtn}
+          >
+            {t('cta.apply')}
+          </Button>
+          <Button as="link" href="/" variant="secondary-white" size="small">
+            {t('header.cta.foundation')}
+          </Button>
+          <div className={styles.languageWrapper}>
+            {icons.iconWorld(`${styles.worldIcon}`)}
+            <button
+              onClick={() => switchLocale('en')}
+              disabled={locale === 'en'}
+              className={styles.localeBtn}
             >
-              {t('cta.apply')}
-            </Button>
-            <Button as="link" href="/" variant="secondary-white" size="small">
-              {t('header.cta.foundation')}
-            </Button>
-            <div className={styles.languageWrapper}>
-              {icons.iconWorld(`${styles.worldIcon}`)}
-              <button
-                onClick={() => switchLocale('en')}
-                disabled={locale === 'en'}
-                className={styles.localeBtn}
-              >
-                EN
-              </button>
-              <button
-                onClick={() => switchLocale('uk')}
-                disabled={locale === 'uk'}
-                className={styles.localeBtn}
-              >
-                UA
-              </button>
-            </div>
-            <BurgerButton
-              isBlack={false}
-              color="blue"
-              onClick={toggleHeader}
-              close={headerIsOpened}
-            />
+              EN
+            </button>
+            <button
+              onClick={() => switchLocale('uk')}
+              disabled={locale === 'uk'}
+              className={styles.localeBtn}
+            >
+              UA
+            </button>
           </div>
-        )}
+          <BurgerButton
+            isBlack={false}
+            color="blue"
+            onClick={toggleHeader}
+            close={headerIsOpened}
+          />
+        </div>
         <div className={`${styles.sideMenu} ${headerIsOpened ? styles.opened : ''}`}>
           <div className={styles.protezFoundationLinkWrapper}>
             <Link href={'/'} className={styles.protezFoundationLink}>
@@ -197,7 +191,10 @@ const AcademyHeader = () => {
           </div>
         </div>
       </header>
-      {!isMobile && <SocialMediaLinks color="blue" className={headerIsOpened ? ' hidden' : ''} />}
+      <SocialMediaLinks
+        color="blue"
+        className={`${styles.desktopSocialMedia} ${headerIsOpened ? ' hidden' : ''}`}
+      />
     </>
   )
 }

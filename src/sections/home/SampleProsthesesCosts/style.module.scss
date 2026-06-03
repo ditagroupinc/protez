@@ -27,6 +27,22 @@
   gap: 16px;
 }
 
+.buttonsContainer.buttonsContainerTop {
+  display: flex;
+}
+
+.buttonsContainer.buttonsContainerBottom {
+  display: none;
+}
+
+@media (min-width: 801px) {
+  .left .description {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+}
+
 .right {
   display: flex;
   flex-shrink: 0;
@@ -199,6 +215,14 @@
 }
 
 @media screen and (max-width: 800px) {
+  .buttonsContainer.buttonsContainerTop {
+    display: none;
+  }
+
+  .buttonsContainer.buttonsContainerBottom {
+    display: flex;
+  }
+
   .section {
     flex-direction: column;
     justify-content: flex-end;

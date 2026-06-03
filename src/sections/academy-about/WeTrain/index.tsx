@@ -5,8 +5,6 @@ import ProtezImage from '@/components/ProtezImage'
 import { useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-
 import AcademySection from '@/components/AcademySection'
 
 import SliderNavigation, { SliderPrevButton, SliderNextButton } from '@/components/SliderNavigation'
@@ -24,7 +22,6 @@ type WeTrainItem = { image: string; text: string }
 
 const WeTrain = () => {
   const [activeSlide, setActiveSlide] = useState(0)
-  const { width } = useScreenModeAndSize()
   const t = useTranslations('academyAbout.weTrain')
   const items = t.raw('items') as WeTrainItem[]
   const { desktop: titleDesktop } = useAcademyTitle('we-train')
@@ -122,12 +119,10 @@ const WeTrain = () => {
             )
           })}
         </Slider>
-        {width > 600 && (
-          <SliderNavigation className={styles.sliderNavigation}>
-            <SliderPrevButton onClick={gotoPrev} />
-            <SliderNextButton onClick={gotoNext} />
-          </SliderNavigation>
-        )}
+        <SliderNavigation className={styles.sliderNavigation}>
+          <SliderPrevButton onClick={gotoPrev} />
+          <SliderNextButton onClick={gotoNext} />
+        </SliderNavigation>
       </TextAppearanceWrapper>
     </AcademySection>
   )

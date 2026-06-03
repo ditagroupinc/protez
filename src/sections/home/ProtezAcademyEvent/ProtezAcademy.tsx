@@ -11,7 +11,6 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { Body } from '@/components/Typography'
 import { ProtezIDs } from '@/consts'
 import Button from '@/components/Button'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
 const cards = ['ottobock.svg', 'minnesotaUniversity.svg', 'extremity.svg']
@@ -32,8 +31,6 @@ const Card = ({ image }: { image: string }) => {
 
 const ProtezAcademy = () => {
   const t = useTranslations('home.protezAcademyEvent')
-  const { width } = useScreenModeAndSize()
-  const isDesktopLayout = width > 800
 
   const downloadDocuments = () => {
     const documents = [
@@ -66,46 +63,12 @@ const ProtezAcademy = () => {
       </div>
       <div className={style.right}>
         {icons.protezAcademyLogo(style.title)}
-        <Body large={isDesktopLayout} className={style.description}>
+        <Body className={style.description}>
           <span>{t('description1')}</span>
           <span>{t('description2')}</span>
           <span>{t('description3')}</span>
         </Body>
-        {isDesktopLayout && (
-          <TextAppearanceWrapper className={style.buttonsContainer}>
-            <Button as="link" href="/" variant="primary-blue" size="normal">
-              {t('register')}
-            </Button>
-            <Button
-              as="button"
-              onClick={downloadDocuments}
-              variant="secondary-white"
-              size="normal"
-              arrow
-            >
-              {t('documents')}
-            </Button>
-            <Button
-              as="link"
-              target="_blank"
-              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-              variant="secondary-white"
-              size="normal"
-              arrow
-            >
-              {t('applyToAcademy')}
-            </Button>
-          </TextAppearanceWrapper>
-        )}
-
-        <TextAppearanceWrapper className={style.cardsWrapper}>
-          {cards.map((card, index) => (
-            <Card key={index} image={card} />
-          ))}
-        </TextAppearanceWrapper>
-      </div>
-      {!isDesktopLayout && (
-        <TextAppearanceWrapper className={style.buttonsContainer}>
+        <TextAppearanceWrapper className={`${style.buttonsContainer} ${style.buttonsContainerTop}`}>
           <Button as="link" href="/" variant="primary-blue" size="normal">
             {t('register')}
           </Button>
@@ -129,7 +92,39 @@ const ProtezAcademy = () => {
             {t('applyToAcademy')}
           </Button>
         </TextAppearanceWrapper>
-      )}
+
+        <TextAppearanceWrapper className={style.cardsWrapper}>
+          {cards.map((card, index) => (
+            <Card key={index} image={card} />
+          ))}
+        </TextAppearanceWrapper>
+      </div>
+      <TextAppearanceWrapper
+        className={`${style.buttonsContainer} ${style.buttonsContainerBottom}`}
+      >
+        <Button as="link" href="/" variant="primary-blue" size="normal">
+          {t('register')}
+        </Button>
+        <Button
+          as="button"
+          onClick={downloadDocuments}
+          variant="secondary-white"
+          size="normal"
+          arrow
+        >
+          {t('documents')}
+        </Button>
+        <Button
+          as="link"
+          target="_blank"
+          href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+          variant="secondary-white"
+          size="normal"
+          arrow
+        >
+          {t('applyToAcademy')}
+        </Button>
+      </TextAppearanceWrapper>
     </Section>
   )
 }

@@ -4,6 +4,10 @@
   background-color: var(--light-grey);
 }
 
+.mobileWrapper {
+  display: none;
+}
+
 .card {
   display: flex;
   justify-content: space-between;
@@ -141,6 +145,14 @@
 }
 
 @media screen and (max-width: 800px) {
+  .card.desktopCard {
+    display: none;
+  }
+
+  .mobileWrapper {
+    display: block;
+  }
+
   .section {
     padding-top: 60px;
     padding-bottom: 40px;

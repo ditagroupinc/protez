@@ -29,6 +29,14 @@
   height: auto;
 }
 
+.footerLogo.footerLogoDesktop {
+  display: block;
+}
+
+.footerLogo.footerLogoMobile {
+  display: none;
+}
+
 .left {
   display: flex;
   flex-direction: column;
@@ -75,6 +83,14 @@
 }
 
 @media screen and (max-width: 800px) {
+  .footerLogo.footerLogoDesktop {
+    display: none;
+  }
+
+  .footerLogo.footerLogoMobile {
+    display: block;
+  }
+
   .footerTop {
     padding-top: 60px;
     padding-bottom: 60px;

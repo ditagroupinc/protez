@@ -156,6 +156,10 @@
 }
 
 @media (max-width: 600px) {
+  .sliderNavigation {
+    display: none;
+  }
+
   .practiceSessions {
     padding-bottom: 60px;
     padding-left: 0;

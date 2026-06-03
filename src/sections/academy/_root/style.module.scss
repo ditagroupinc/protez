@@ -14,3 +14,13 @@
   white-space: nowrap;
   border: 0;
 }
+
+.backToTopWrapper {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .backToTopWrapper {
+    display: none;
+  }
+}

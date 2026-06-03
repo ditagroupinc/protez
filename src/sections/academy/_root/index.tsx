@@ -5,8 +5,6 @@ import { useInView } from 'react-intersection-observer'
 
 import BackToTopButton from '@/components/BackToTopButton'
 
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
-
 import AcademyHeader from '@/sections/_shared/AcademyHeader'
 import AcademyIntro from '../Intro'
 
@@ -60,9 +58,6 @@ export default function AcademyHomePage() {
   const showBlackBackToTopButton =
     !inViewIntro && !inViewChief && !inViewEvents && !inViewSummit && !inViewThankYou
 
-  const { mobile, width } = useScreenModeAndSize()
-  const isMobile = mobile || width < 768
-
   return (
     <>
       <AcademyHeader />
@@ -112,31 +107,17 @@ export default function AcademyHomePage() {
           <SummitResults ref={refSummit} />
         </Suspense>
 
-        {width > 600 ? (
-          <>
-            <Suspense fallback={<FullScreenFallback />}>
-              <SpecialThanksToAllOurPartners />
-            </Suspense>
+        <Suspense fallback={<FullScreenFallback />}>
+          <SpecialThanksToAllOurPartners />
+        </Suspense>
 
-            <Suspense fallback={<FullScreenFallback />}>
-              <OurSponsors />
-            </Suspense>
-          </>
-        ) : (
-          <>
-            <Suspense fallback={<FullScreenFallback />}>
-              <SpecialThanksToAllOurPartners />
-            </Suspense>
+        <Suspense fallback={<FullScreenFallback />}>
+          <OurSponsors />
+        </Suspense>
 
-            <Suspense fallback={<FullScreenFallback />}>
-              <OurSponsors />
-            </Suspense>
-          </>
-        )}
-
-        {!isMobile && (
+        <div className={style.backToTopWrapper}>
           <BackToTopButton href={'academyIntro'} color="blue" black={showBlackBackToTopButton} />
-        )}
+        </div>
       </main>
 
       <Suspense fallback={<FullScreenFallback />}>

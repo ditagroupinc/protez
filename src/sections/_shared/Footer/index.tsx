@@ -13,7 +13,6 @@ import ProtezImage from '@/components/ProtezImage'
 import { ProtezIDs } from '@/consts'
 import Button from '@/components/Button'
 import { Body } from '@/components/Typography'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { forwardRef } from 'react'
 
 const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage' }>(function (
@@ -23,8 +22,6 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
   const locale = useLocale()
   const lang = localeToLanguage(locale)
   const t = useTranslations('shared.footer')
-  const { width } = useScreenModeAndSize()
-  const isDesktopLayout = width > 800
   const accentColor = layout === 'protezPage' ? 'red' : 'blue'
 
   return (
@@ -32,9 +29,10 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
       <div className={`${style.footerTop} ${style[accentColor]}`}>
         <div className={style.footerTopContent}>
           <div className={style.left}>
-            {isDesktopLayout
-              ? icons.footerLogo.desktop[lang](style.footerLogo)
-              : icons.footerLogo.mobile[lang](`${style.footerLogo} ${style.ukrainian}`)}
+            {icons.footerLogo.desktop[lang](`${style.footerLogo} ${style.footerLogoDesktop}`)}
+            {icons.footerLogo.mobile[lang](
+              `${style.footerLogo} ${style.ukrainian} ${style.footerLogoMobile}`
+            )}
 
             <div className={style.buttonGroup}>
               {layout === 'protezPage' ? (

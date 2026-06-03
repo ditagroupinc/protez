@@ -200,7 +200,7 @@
   line-height: 22px;
 }
 
-.centerSlide .card {
+.slickSlider :global(.slick-slide.slick-center) .card {
   max-height: 100%;
   & .cardPicture {
     max-height: 480px;
@@ -216,7 +216,7 @@
   transition: all var(--transitionProps);
   background-color: var(--blue);
   border-radius: 50%;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 
@@ -241,6 +241,15 @@
 }
 
 @media (max-width: 600px) {
+  .prevButton,
+  .nextButton {
+    display: none;
+  }
+
+  .locationButton {
+    display: flex;
+  }
+
   .events {
     padding-top: 60px;
     padding-bottom: 60px;

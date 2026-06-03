@@ -5,6 +5,10 @@
   background-color: var(--light-grey);
 }
 
+.directionWrapper {
+  direction: rtl;
+}
+
 .heading {
   display: flex;
   justify-content: space-between;
@@ -87,6 +91,10 @@
 }
 
 @media (max-width: 800px) {
+  .directionWrapper {
+    direction: ltr;
+  }
+
   .section {
     padding-left: 0;
   }

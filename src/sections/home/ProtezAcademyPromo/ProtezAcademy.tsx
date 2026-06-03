@@ -11,7 +11,6 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { Body } from '@/components/Typography'
 import { ProtezIDs } from '@/consts'
 import Button from '@/components/Button'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
 const cards = ['ottobock.svg', 'minnesotaUniversity.svg', 'extremity.svg']
@@ -32,8 +31,6 @@ const Card = ({ image }: { image: string }) => {
 
 const ProtezAcademy = () => {
   const t = useTranslations('home.protezAcademyPromo')
-  const { width } = useScreenModeAndSize()
-  const isDesktopLayout = width > 800
 
   return (
     <Section id={ProtezIDs.ProtezAcademy} className={style.section}>
@@ -48,26 +45,22 @@ const ProtezAcademy = () => {
       </div>
       <div className={style.right}>
         {icons.protezAcademyLogo(style.title)}
-        <Body large={isDesktopLayout} className={style.description}>
-          {t('description')}
-        </Body>
-        {isDesktopLayout && (
-          <TextAppearanceWrapper className={style.buttonsContainer}>
-            <Button as="link" href="/academy" variant="primary-blue" size="normal">
-              {t('learnMore')}
-            </Button>
-            <Button
-              as="link"
-              target="_blank"
-              href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-              variant="secondary-white"
-              size="normal"
-              arrow
-            >
-              {t('applyToAcademy')}
-            </Button>
-          </TextAppearanceWrapper>
-        )}
+        <Body className={style.description}>{t('description')}</Body>
+        <TextAppearanceWrapper className={`${style.buttonsContainer} ${style.buttonsContainerTop}`}>
+          <Button as="link" href="/academy" variant="primary-blue" size="normal">
+            {t('learnMore')}
+          </Button>
+          <Button
+            as="link"
+            target="_blank"
+            href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
+            variant="secondary-white"
+            size="normal"
+            arrow
+          >
+            {t('applyToAcademy')}
+          </Button>
+        </TextAppearanceWrapper>
 
         <TextAppearanceWrapper className={style.cardsWrapper}>
           {cards.map((card, index) => (
@@ -75,16 +68,16 @@ const ProtezAcademy = () => {
           ))}
         </TextAppearanceWrapper>
       </div>
-      {!isDesktopLayout && (
-        <TextAppearanceWrapper className={style.buttonsContainer}>
-          <Button as="link" href="/academy" variant="primary-blue" size="normal">
-            {t('learnMore')}
-          </Button>
-          <Button as="link" href="/" variant="secondary-white" arrow size="normal">
-            {t('applyToAcademy')}
-          </Button>
-        </TextAppearanceWrapper>
-      )}
+      <TextAppearanceWrapper
+        className={`${style.buttonsContainer} ${style.buttonsContainerBottom}`}
+      >
+        <Button as="link" href="/academy" variant="primary-blue" size="normal">
+          {t('learnMore')}
+        </Button>
+        <Button as="link" href="/" variant="secondary-white" arrow size="normal">
+          {t('applyToAcademy')}
+        </Button>
+      </TextAppearanceWrapper>
     </Section>
   )
 }

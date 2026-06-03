@@ -33,6 +33,36 @@
   gap: 32px;
 }
 
+.burgerButtonContainer {
+  display: none;
+}
+
+.mobileArrowUp {
+  display: none;
+}
+
+.desktopBackToTop {
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .topMenu {
+    display: none;
+  }
+  .burgerButtonContainer {
+    display: block;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobileArrowUp {
+    display: flex;
+  }
+  .desktopBackToTop {
+    display: none;
+  }
+}
+
 .buttonsGroup {
   display: flex;
   align-items: center;

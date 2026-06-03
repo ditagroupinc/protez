@@ -9,6 +9,10 @@
   gap: 60px;
 }
 
+.mobileTeam {
+  display: none;
+}
+
 .row {
   column-gap: 20px;
   row-gap: 60px;
@@ -16,7 +20,7 @@
   min-height: 100%;
   display: grid;
 
-  &:nth-child(1) {
+  &.firstRow {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr repeat(2, 360px);
     grid-template-areas: 'title  YuryAroshidze  YakovGradinar';
@@ -32,7 +36,7 @@
       grid-area: title;
     }
   }
-  &:nth-child(2) {
+  &.secondRow {
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas:
@@ -158,7 +162,7 @@
 
 @media screen and (max-width: 1550px) {
   .row {
-    &:nth-child(2) {
+    &.secondRow {
       grid-template-rows: repeat(3, 1fr);
       grid-template-columns: repeat(4, 1fr);
       grid-template-areas:
@@ -172,7 +176,7 @@
 @media screen and (max-width: 1180px) {
   .row {
     row-gap: 40px;
-    &:nth-child(1) {
+    &.firstRow {
       grid-template-rows: auto 1fr;
       grid-template-columns: repeat(5, 1fr);
       grid-template-areas: 'title title title . .' 'YuryAroshidze YuryAroshidze YakovGradinar YakovGradinar .';
@@ -182,7 +186,7 @@
 
 @media screen and (max-width: 1024px) {
   .row {
-    &:nth-child(2) {
+    &.secondRow {
       grid-template-rows: repeat(3, 1fr);
       grid-template-columns: repeat(3, 1fr);
       grid-template-areas:
@@ -197,11 +201,11 @@
 @media screen and (max-width: 800px) {
   .row {
     row-gap: 20px;
-    &:nth-child(1) {
+    &.firstRow {
       grid-template-columns: repeat(4, 1fr);
       grid-template-areas: 'title title title .' 'YuryAroshidze YuryAroshidze YakovGradinar YakovGradinar';
     }
-    &:nth-child(2) {
+    &.secondRow {
       grid-template-rows: repeat(5, 1fr);
       grid-template-columns: repeat(2, 1fr);
       grid-template-areas:
@@ -213,6 +217,14 @@
 }
 
 @media screen and (max-width: 600px) {
+  .mobileTeam {
+    display: contents;
+  }
+
+  .row {
+    display: none;
+  }
+
   .section {
     padding-top: 40px;
     padding-bottom: 60px;

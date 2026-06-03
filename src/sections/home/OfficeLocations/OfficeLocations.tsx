@@ -13,7 +13,6 @@ import Section from '@/components/Section'
 import { ProtezIDs } from '@/consts'
 import { Body, H3 } from '@/components/Typography'
 import Slider from '@/islands/SlickCarousel'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useRef } from 'react'
 import ProtezImage from '@/components/ProtezImage'
 
@@ -30,9 +29,7 @@ const OfficeLocations = () => {
   const lang = localeToLanguage(locale)
   const t = useTranslations('home.officeLocations')
   const locationsRaw = t.raw('locations') as OfficeLocation[]
-  const { width } = useScreenModeAndSize()
   const sliderRef = useRef<Slider & React.Component>(null)
-  const isDesktopLayout = width > 800
 
   const locations = locationsRaw.map((location, index) => ({
     ...location,
@@ -69,57 +66,54 @@ const OfficeLocations = () => {
       <TextAppearanceWrapper className={style.heading}>
         {icons.officeLocationsLogo.desktop[lang](style.pageTitle)}
       </TextAppearanceWrapper>
-      {isDesktopLayout ? (
-        <div className={style.cardsContainer}>
-          {locations.map((location, index) => (
-            <div className={style.card} key={index}>
-              <ProtezImage
-                src={`protezPage/officeLocations/${location.img}`}
-                alt={location.country + ', ' + location.location + ', ' + location.address}
-                className={style.image}
-                width={488}
-                height={520}
-              />
+      <div className={style.cardsContainer}>
+        {locations.map((location, index) => (
+          <div className={style.card} key={index}>
+            <ProtezImage
+              src={`protezPage/officeLocations/${location.img}`}
+              alt={location.country + ', ' + location.location + ', ' + location.address}
+              className={style.image}
+              width={488}
+              height={520}
+            />
 
-              <Body large={isDesktopLayout} className={style.cardCountry}>
-                {icons.locationIcon(style.locationIcon)}
-                {location.country}
-              </Body>
-              <div className={style.text}>
-                <H3 className={style.cardDate}>{location.location}</H3>
-                <Body className={style.cardText}>{location.address}</Body>
-              </div>
+            <Body large className={style.cardCountry}>
+              {icons.locationIcon(style.locationIcon)}
+              {location.country}
+            </Body>
+            <div className={style.text}>
+              <H3 className={style.cardDate}>{location.location}</H3>
+              <Body className={style.cardText}>{location.address}</Body>
             </div>
-          ))}
-        </div>
-      ) : (
-        <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
-          {locations.map((location, index) => (
-            <div key={index}>
-              <div className={style.cardWrapper}>
-                <div className={style.card}>
-                  <ProtezImage
-                    src={`protezPage/officeLocations/${location.img}`}
-                    alt={location.country + ', ' + location.location + ', ' + location.address}
-                    className={style.image}
-                    width={488}
-                    height={520}
-                  />
+          </div>
+        ))}
+      </div>
+      <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
+        {locations.map((location, index) => (
+          <div key={index}>
+            <div className={style.cardWrapper}>
+              <div className={style.card}>
+                <ProtezImage
+                  src={`protezPage/officeLocations/${location.img}`}
+                  alt={location.country + ', ' + location.location + ', ' + location.address}
+                  className={style.image}
+                  width={488}
+                  height={520}
+                />
 
-                  <Body large={isDesktopLayout} className={style.cardCountry}>
-                    {icons.locationIcon(style.locationIcon)}
-                    {location.country}
-                  </Body>
-                  <div className={style.text}>
-                    <H3 className={style.cardDate}>{location.location}</H3>
-                    <Body className={style.cardText}>{location.address}</Body>
-                  </div>
+                <Body className={style.cardCountry}>
+                  {icons.locationIcon(style.locationIcon)}
+                  {location.country}
+                </Body>
+                <div className={style.text}>
+                  <H3 className={style.cardDate}>{location.location}</H3>
+                  <Body className={style.cardText}>{location.address}</Body>
                 </div>
               </div>
             </div>
-          ))}
-        </Slider>
-      )}
+          </div>
+        ))}
+      </Slider>
     </Section>
   )
 }

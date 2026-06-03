@@ -90,6 +90,14 @@
   flex-direction: column;
   gap: 40px;
 }
+
+@media (min-width: 1181px) {
+  .largeOnDesktop {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+}
 .block {
   display: block;
 }

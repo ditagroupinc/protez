@@ -13,7 +13,6 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { Body, H3 } from '@/components/Typography'
 import { ProtezIDs } from '@/consts'
 import { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useState } from 'react'
 import { playfairDisplayItalic } from '../../../../app/fonts'
 
@@ -69,8 +68,6 @@ const SampleProsthesesCosts = () => {
   const lang = localeToLanguage(locale)
   const t = useTranslations('home.sampleProsthesesCosts')
   const prosthesesText = t.raw('prostheses') as string[]
-  const { width } = useScreenModeAndSize()
-  const isDesktopLayout = width > 800
 
   const [hovered, setHovered] = useState<HoverClasses>('')
 
@@ -94,15 +91,11 @@ const SampleProsthesesCosts = () => {
     <Section id={ProtezIDs.SampleProsthesesCosts} className={style.section}>
       <div className={style.left}>
         {icons.sampleProsthesesCostsLogo.desktop[lang](style.title)}
-        <Body large={isDesktopLayout} className={style.description}>
-          {t('description')}
-        </Body>
-        {isDesktopLayout && (
-          <TextAppearanceWrapper className={style.buttonsContainer}>
-            <MakeDonationButton size="normal" />
-            <SupportWithAmazonButton color="white" size="normal" />
-          </TextAppearanceWrapper>
-        )}
+        <Body className={style.description}>{t('description')}</Body>
+        <TextAppearanceWrapper className={`${style.buttonsContainer} ${style.buttonsContainerTop}`}>
+          <MakeDonationButton size="normal" />
+          <SupportWithAmazonButton color="white" size="normal" />
+        </TextAppearanceWrapper>
       </div>
       <div className={style.right}>
         <div className={style.prices}>
@@ -133,12 +126,12 @@ const SampleProsthesesCosts = () => {
         {icons.line(style.line)}
         {icons.body(`${style.body} ${hoverClasses[hovered]}`)}
       </div>
-      {!isDesktopLayout && (
-        <TextAppearanceWrapper className={style.buttonsContainer}>
-          <MakeDonationButton size="normal" />
-          <SupportWithAmazonButton color="white" size="normal" />
-        </TextAppearanceWrapper>
-      )}
+      <TextAppearanceWrapper
+        className={`${style.buttonsContainer} ${style.buttonsContainerBottom}`}
+      >
+        <MakeDonationButton size="normal" />
+        <SupportWithAmazonButton color="white" size="normal" />
+      </TextAppearanceWrapper>
     </Section>
   )
 }

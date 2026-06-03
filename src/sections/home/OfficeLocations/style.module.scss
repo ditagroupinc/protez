@@ -34,6 +34,10 @@
   height: 520px;
 }
 
+.section .slickSlider {
+  display: none;
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -118,6 +122,14 @@
 }
 
 @media (max-width: 800px) {
+  .cardsContainer {
+    display: none;
+  }
+
+  .section .slickSlider {
+    display: block;
+  }
+
   .section {
     padding-left: 0;
     padding-right: 0;

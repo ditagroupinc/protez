@@ -15,7 +15,6 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { SeeAllButton } from '@/components/Button'
 import Section from '@/components/Section'
 import { ProtezIDs } from '@/consts'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
 const merchCards = [
@@ -65,10 +64,6 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const locale = useLocale()
   const lang = localeToLanguage(locale)
   const t = useTranslations('home.merch')
-  const { width } = useScreenModeAndSize()
-  const isDesktopLayout = width > 800
-
-  const merchLogo = isDesktopLayout ? icons.protezMERCHlogo.desktop : icons.protezMERCHlogo.mobile
 
   const sliderRef = useRef(null)
 
@@ -114,12 +109,14 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   return (
     <Section className={style.section} id={ProtezIDs.Merch} ref={ref}>
       <TextAppearanceWrapper className={style.titleWrapper}>
-        {merchLogo[lang](style.title)}
-        {isDesktopLayout && (
-          <SeeAllButton href="https://www.protezmerch.com/" className={style.viewAllButton}>
-            <span className={style.buttonText}>{t('viewAllMerch')}</span>
-          </SeeAllButton>
-        )}
+        {icons.protezMERCHlogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
+        {icons.protezMERCHlogo.mobile[lang](`${style.title} ${style.titleMobile}`)}
+        <SeeAllButton
+          href="https://www.protezmerch.com/"
+          className={`${style.viewAllButton} ${style.viewAllButtonTop}`}
+        >
+          <span className={style.buttonText}>{t('viewAllMerch')}</span>
+        </SeeAllButton>
       </TextAppearanceWrapper>
 
       <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
@@ -140,13 +137,11 @@ const Merch = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
         ))}
       </Slider>
 
-      {!isDesktopLayout && (
-        <div className={style.buttonWrapper}>
-          <SeeAllButton href="https://www.protezmerch.com/" className={style.viewAllButton}>
-            <span className={style.buttonText}>{t('viewAllMerch')}</span>
-          </SeeAllButton>
-        </div>
-      )}
+      <div className={style.buttonWrapper}>
+        <SeeAllButton href="https://www.protezmerch.com/" className={style.viewAllButton}>
+          <span className={style.buttonText}>{t('viewAllMerch')}</span>
+        </SeeAllButton>
+      </div>
     </Section>
   )
 })

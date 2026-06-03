@@ -2,3 +2,13 @@
   color: var(--dark);
   font-family: 'Nunito Sans', sans-serif;
 }
+
+.backToTopWrapper {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .backToTopWrapper {
+    display: none;
+  }
+}

@@ -13,7 +13,6 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { icons } from './icons'
 import Section from '@/components/Section'
 import { ProtezIDs } from '@/consts'
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import ProtezImage from '@/components/ProtezImage'
 
 interface OurPatientsSection {
@@ -35,9 +34,6 @@ const OurPatients = () => {
   const gotoPrev = () => {
     sliderRef.current?.slickPrev()
   }
-
-  const { width } = useScreenModeAndSize()
-  const isDesktopLayout = width > 800
 
   const settings = {
     infinite: true,
@@ -85,7 +81,7 @@ const OurPatients = () => {
           </button>
         </div>
       </TextAppearanceWrapper>
-      <div dir={isDesktopLayout ? 'rtl' : 'ltr'}>
+      <div className={style.directionWrapper}>
         <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
           {patientsArray.map((slide, index) => (
             <div key={index}>

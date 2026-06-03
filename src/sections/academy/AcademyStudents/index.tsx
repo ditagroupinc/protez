@@ -5,7 +5,6 @@ import ProtezImage from '@/components/ProtezImage'
 import { useRef, useState } from 'react'
 import { useTranslations } from 'next-intl'
 
-import useScreenModeAndSize from '@/hooks/useScreenModeAndSize'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import AcademySection from '@/components/AcademySection'
@@ -25,7 +24,6 @@ const AcademyStudents = () => {
   const { desktop: titleDesktop } = useAcademyTitle('academy-students')
   const academyStudentsCards = t.raw('cards') as string[]
   const [activeSlide, setActiveSlide] = useState(0)
-  const { width } = useScreenModeAndSize()
 
   const settings = {
     dots: false,
@@ -114,12 +112,10 @@ const AcademyStudents = () => {
             )
           })}
         </Slider>
-        {width > 600 && (
-          <SliderNavigation className={styles.sliderNavigation}>
-            <SliderPrevButton onClick={gotoPrev} />
-            <SliderNextButton onClick={gotoNext} />
-          </SliderNavigation>
-        )}
+        <SliderNavigation className={styles.sliderNavigation}>
+          <SliderPrevButton onClick={gotoPrev} />
+          <SliderNextButton onClick={gotoNext} />
+        </SliderNavigation>
       </TextAppearanceWrapper>
     </AcademySection>
   )
