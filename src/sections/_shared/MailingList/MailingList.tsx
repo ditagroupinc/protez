@@ -1,7 +1,7 @@
 'use client'
 
 import style from './style.module.scss'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 import { localeToLanguage } from '@/lib/locale'
 import { icons } from './icons'
@@ -12,7 +12,7 @@ import { subscribeToMailchimp } from '@/lib/api'
 import { ProtezIDs } from '@/consts'
 import Button from '@/components/Button'
 import Section from '@/components/Section'
-import { useInView } from 'framer-motion'
+import { useInView } from 'react-intersection-observer'
 import ProtezImage from '@/components/ProtezImage'
 
 const veteransImages = [
@@ -37,8 +37,7 @@ const MailingList = () => {
   const lang = localeToLanguage(locale)
   const t = useTranslations('shared.mailingList')
 
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true })
+  const { ref, inView } = useInView({ triggerOnce: true })
 
   const [formStatus, setFormStatus] = useState<FormStatus>('default')
 
@@ -64,7 +63,7 @@ const MailingList = () => {
 
   return (
     <Section className={style.section} id={ProtezIDs.MailingList} ref={ref}>
-      <div className={`${style.images} ${isInView ? style.show : ''}`}>
+      <div className={`${style.images} ${inView ? style.show : ''}`}>
         {veteransImages.map((slide, index) => {
           return (
             <div key={index} className={style.imageWrapper}>

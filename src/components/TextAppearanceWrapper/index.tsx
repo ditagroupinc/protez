@@ -1,41 +1,31 @@
 'use client'
 
-import { motion, HTMLMotionProps, Variants } from 'framer-motion'
+import type { HTMLAttributes, ReactNode } from 'react'
+import { useInView } from 'react-intersection-observer'
+import style from './style.module.scss'
 
-interface TextAppearanceWrapperProps extends HTMLMotionProps<'div'> {
+interface TextAppearanceWrapperProps extends HTMLAttributes<HTMLDivElement> {
   reverse?: boolean
   isDisabled?: boolean
+  children?: ReactNode
 }
 
 export const TextAppearanceWrapper = ({
   children,
   reverse = false,
   isDisabled = false,
-  ...props
+  className,
+  ...rest
 }: TextAppearanceWrapperProps) => {
-  const variants: Variants = {
-    offscreen: { y: reverse ? -100 : 100, opacity: 0 },
-    onscreen: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        type: 'spring',
-        stiffness: 100,
-        duration: 0.5,
-      },
-    },
-  }
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.8 })
+  const visible = isDisabled || inView
+  const classes = [style.wrapper, reverse && style.reverse, visible && style.visible, className]
+    .filter(Boolean)
+    .join(' ')
 
   return (
-    <motion.div
-      initial="offscreen"
-      animate={isDisabled ? 'onscreen' : 'offscreen'}
-      whileInView="onscreen"
-      viewport={{ once: true, amount: 0.8 }}
-      variants={variants}
-      {...props}
-    >
+    <div ref={ref} className={classes} {...rest}>
       {children}
-    </motion.div>
+    </div>
   )
 }

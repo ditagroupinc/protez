@@ -20,7 +20,6 @@
     "cheerio": "^1.2.0",
     "countup.js": "^2.10.0",
     "eslint": "8.39.0",
-    "framer-motion": "^11.18.2",
     "next": "^14.2.35",
     "next-intl": "^4.13.0",
     "nodemailer": "^6.10.1",
