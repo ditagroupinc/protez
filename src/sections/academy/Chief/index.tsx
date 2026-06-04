@@ -1,0 +1,80 @@
+'use client'
+
+import AcademySection from '@/components/AcademySection'
+import styles from './styles.module.scss'
+import { icons } from './icons'
+import ProtezImage from '@/components/ProtezImage'
+import { forwardRef } from 'react'
+
+import { useTranslations } from 'next-intl'
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
+
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+
+import { AcademyIDs } from '@academy/consts'
+
+const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
+  const t = useTranslations('academy.chief')
+  const { desktop: titleDesktop } = useAcademyTitle('yakov-gradinar')
+
+  return (
+    <AcademySection ref={ref} id={AcademyIDs.Chief} className={styles.chief}>
+      <div className={styles.chiefContent}>
+        <div className={styles.left}>
+          <ProtezImage {...titleDesktop} className={styles.title} />
+
+          <TextAppearanceWrapper className={styles.profession}>{t('role')}</TextAppearanceWrapper>
+          <TextAppearanceWrapper className={styles.desc}>{t('description')}</TextAppearanceWrapper>
+          <ul className={styles.socialLinkWrapper}>
+            <li>
+              <a
+                href="https://www.instagram.com/yakovgradinar"
+                target="blank"
+                className={styles.socialLink}
+              >
+                {icons.iconInstagram()}
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/yakov-gradinar-6aba10147"
+                target="blank"
+                className={styles.socialLink}
+              >
+                {icons.iconLinkedin()}
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.facebook.com/yakovjacob.gradinar"
+                target="blank"
+                className={styles.socialLink}
+              >
+                {icons.iconFacebook()}
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className={styles.right}>
+          <ProtezImage
+            src="academyPage/chief/yakov-gradinar.png"
+            alt="yakov-gradinar"
+            width={672}
+            height={959}
+            className={styles.image}
+          />
+
+          <div className={styles.playBtnWrapper}>
+            <button className={styles.playBtn}>
+              {icons.playText(styles.spin)}
+              {icons.play(styles.playIcon)}
+            </button>
+          </div>
+        </div>
+      </div>
+    </AcademySection>
+  )
+})
+
+Chief.displayName = 'Chief'
+export default Chief

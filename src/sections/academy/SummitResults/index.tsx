@@ -1,0 +1,81 @@
+'use client'
+
+import ProtezImage from '@/components/ProtezImage'
+import { useState, useRef } from 'react'
+import { useTranslations } from 'next-intl'
+
+import { useAcademyTitle } from '@/hooks/useAcademyTitle'
+
+import AcademySection from '@/components/AcademySection'
+
+import { forwardRef } from 'react'
+
+import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
+
+import styles from './styles.module.scss'
+import { icons } from './icons'
+import { AcademyIDs } from '@academy/consts'
+
+type SummitStat = { count: string; label: string }
+
+const SummitResults = forwardRef<HTMLDivElement>(function (_, ref) {
+  const t = useTranslations('academy.summitResults')
+  const stats = t.raw('stats') as SummitStat[]
+  const { desktop: titleDesktop } = useAcademyTitle('summit-results')
+  const [isPlaying, setIsPlaying] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  const handlePlayButtonClick = () => {
+    if (videoRef.current) {
+      videoRef.current.play()
+      setIsPlaying(true)
+    }
+  }
+
+  return (
+    <AcademySection ref={ref} id={AcademyIDs.SummitResults} className={styles.summitResults}>
+      <div className={styles.resultInfo}>
+        <div className={styles.left}>
+          <TextAppearanceWrapper>
+            <ProtezImage {...titleDesktop} className={styles.title} />
+          </TextAppearanceWrapper>
+        </div>
+        <div className={styles.right}>
+          {stats.map((stat, index) => (
+            <TextAppearanceWrapper key={index} className={styles.card}>
+              <span className={styles.count}>{stat.count}</span>
+              <p className={styles.desc}>{stat.label}</p>
+            </TextAppearanceWrapper>
+          ))}
+        </div>
+      </div>
+
+      <div className={styles.playerContent}>
+        <video
+          ref={videoRef}
+          controls
+          src="/academyPage/summitResults/summitResults.mp4"
+          className={styles.summitVideo}
+        />
+        {!isPlaying && (
+          <>
+            <ProtezImage
+              src="academyPage/summitResults/summitResults.png"
+              alt={t('imageAlt')}
+              width={2680}
+              height={2010}
+              className={styles.videoOverlay}
+            />
+
+            <button className={styles.playerButton} onClick={handlePlayButtonClick}>
+              {icons.play(styles.playIcon)}
+            </button>
+          </>
+        )}
+      </div>
+    </AcademySection>
+  )
+})
+
+SummitResults.displayName = 'SummitResults'
+export default SummitResults

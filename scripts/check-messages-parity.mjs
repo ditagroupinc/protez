@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import process from 'node:process'
-import a from '../messages/uk.json' with { type: 'json' }
-import b from '../messages/en.json' with { type: 'json' }
+import a from '../messages/academy.uk.json' with { type: 'json' }
+import b from '../messages/academy.en.json' with { type: 'json' }
 
 let mismatches = 0
 
@@ -27,7 +27,7 @@ const diff = (x, y, p = '') => {
 diff(a, b)
 
 if (mismatches === 0) {
-  console.log('OK: messages/uk.json and messages/en.json keys are in parity.')
+  console.log('OK: messages/academy.uk.json and messages/academy.en.json keys are in parity.')
   process.exit(0)
 } else {
   console.error(`FAIL: ${mismatches} mismatch(es) found.`)

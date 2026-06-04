@@ -57,8 +57,8 @@ export const ACADEMY_TITLES: Record<AcademyTitleName, AcademyTitleEntry> = {
   footer: {
     base: 'footer',
     alt: 'footer',
-    desktop: { en: { width: 635, height: 165 }, uk: { width: 635, height: 165 } },
-    mobile: { en: { width: 325, height: 92 }, uk: { width: 325, height: 92 } },
+    desktop: { en: { width: 635, height: 165 }, uk: { width: 750, height: 156 } },
+    mobile: { en: { width: 325, height: 92 }, uk: { width: 339, height: 96 } },
   },
   'mission-and-values': {
     base: 'mission-and-values',

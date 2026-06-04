@@ -1,0 +1,360 @@
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.left {
+  width: 100%;
+  max-width: 560px;
+}
+.title {
+  width: 100%;
+  max-width: 416px;
+  margin-bottom: 40px;
+}
+
+.description {
+  margin-bottom: 60px;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.buttonsContainer.buttonsContainerTop {
+  display: flex;
+}
+
+.buttonsContainer.buttonsContainerBottom {
+  display: none;
+}
+
+@media (min-width: 801px) {
+  .left .description {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+}
+
+.right {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  min-width: 629px;
+}
+
+.body {
+  flex-shrink: 0;
+  width: 274px;
+}
+
+.line {
+  flex-shrink: 0;
+  width: 135px;
+  height: 608px;
+
+  margin-right: -40px;
+  pointer-events: none;
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 22.5px 0;
+  margin-right: -72px;
+}
+.pricesBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+
+  &.upperBlock {
+    & .priceCard {
+      &:nth-of-type(1) {
+        grid-area: handOrArm;
+      }
+      &:nth-of-type(2) {
+        grid-area: aboveTheKnee;
+        padding-right: 56px;
+      }
+      &:nth-of-type(3) {
+        grid-area: belowKnee;
+        padding-right: 87px;
+      }
+    }
+  }
+  &.lowerBlock {
+    & .priceCard {
+      &:nth-of-type(1) {
+        grid-area: linersAndSocks;
+        padding-right: 87px;
+      }
+      &:nth-of-type(2) {
+        grid-area: components;
+        padding-right: 56px;
+      }
+      &:nth-of-type(3) {
+        grid-area: sportFoot;
+      }
+    }
+  }
+}
+.pricesDivider {
+  padding-right: 195px;
+}
+
+.priceCard {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: fit-content;
+  cursor: default;
+  &:hover .priceCardCircle {
+    border: 2px solid var(--white);
+    background-color: var(--red);
+  }
+
+  .priceCardTextBlock {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .priceCardText {
+    color: var(--white);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .priceCardPrice {
+    color: var(--red);
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  .priceCardCircle {
+    border-radius: 280px;
+    border: 2px solid rgba(255, 255, 255, 0.24);
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: var(--transition);
+  }
+
+  .priceCardIcon {
+    width: 100%;
+    pointer-events: none;
+  }
+}
+
+.spcTigh {
+  path[class*='spcTigh'] {
+    fill: var(--red);
+    transition: fill 0.3s ease;
+  }
+}
+
+.spcLeg {
+  path[class*='spcLeg'] {
+    fill: var(--red);
+    transition: fill 0.3s ease;
+  }
+}
+
+.spcForearm {
+  path[class*='spcForearm'] {
+    fill: var(--red);
+    transition: fill 0.3s ease;
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .section {
+    padding-right: 0;
+  }
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .title {
+    margin-bottom: 0;
+    min-width: 241px;
+    height: auto;
+  }
+
+  .description {
+    margin-bottom: 0px;
+  }
+
+  .buttonsContainer {
+    flex-direction: column;
+  }
+
+  .right {
+    margin-right: -137px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .buttonsContainer.buttonsContainerTop {
+    display: none;
+  }
+
+  .buttonsContainer.buttonsContainerBottom {
+    display: flex;
+  }
+
+  .section {
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    gap: 40px;
+  }
+
+  .left {
+    padding-right: var(--section-padding-horizontal);
+    max-width: 100%;
+  }
+
+  .buttonsContainer {
+    padding-right: var(--section-padding-horizontal);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .title {
+    max-width: 241px;
+  }
+
+  .right {
+    justify-content: flex-end;
+    margin-right: 0;
+    min-width: auto;
+  }
+
+  .body {
+    height: 485px;
+    width: auto;
+  }
+
+  .line {
+    height: 434px;
+    width: auto;
+    margin-right: -40px;
+  }
+
+  .prices {
+    margin-right: -45px;
+  }
+  .pricesBlock {
+    gap: 4px;
+
+    &.upperBlock {
+      & .priceCard {
+        &:nth-of-type(1) {
+          // grid-area: handOrArm;
+          & .priceCardIcon {
+            height: 39.5px;
+          }
+        }
+        &:nth-of-type(2) {
+          // grid-area: aboveTheKnee;
+          padding-right: 40px;
+          & .priceCardIcon {
+            height: 52px;
+          }
+        }
+        &:nth-of-type(3) {
+          // grid-area: belowKnee;
+          padding-right: 62px;
+          & .priceCardIcon {
+            height: 43.4px;
+          }
+        }
+      }
+    }
+    &.lowerBlock {
+      & .priceCard {
+        &:nth-of-type(1) {
+          // grid-area: linersAndSocks;
+          padding-right: 62px;
+          & .priceCardIcon {
+            height: 31.2px;
+          }
+        }
+        &:nth-of-type(2) {
+          // grid-area: components;
+          padding-right: 40px;
+          & .priceCardIcon {
+            height: 32px;
+          }
+        }
+        &:nth-of-type(3) {
+          // grid-area: sportFoot;
+          & .priceCardIcon {
+            height: 46.5px;
+          }
+        }
+      }
+    }
+  }
+
+  .pricesDivider {
+    padding-right: 0;
+  }
+
+  .priceCard {
+    .priceCardText {
+      font-size: 14.283px;
+    }
+
+    .priceCardPrice {
+      font-size: 22.853px;
+    }
+
+    .priceCardCircle {
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      width: 64px;
+      height: 64px;
+      position: relative;
+    }
+
+    .priceCardIcon {
+      width: auto;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .right {
+    margin-right: -98px;
+  }
+}

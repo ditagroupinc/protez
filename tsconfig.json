@@ -30,7 +30,7 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "@academy/*": ["./app/academy/*"]
+      "@academy/*": ["./app/[locale]/academy/*"]
     }
   },
   "include": [
@@ -38,11 +38,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src",
-    ".next/types/**/*.ts",
-    "app/academy/sections",
-    "app/partners/page.tsx",
-    "app/consts",
-    "app/academy/BackToTopButton"
+    ".next/types/**/*.ts"
   ],
   "exclude": ["node_modules"]
 }

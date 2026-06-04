@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import { getPath } from './utils'
+import type { CSSProperties } from 'react'
 
-const environment = process.env.ENVIRONMENT
+import { getPath } from './utils'
 
 export interface ProtezImageProps {
   src: string
@@ -9,9 +9,11 @@ export interface ProtezImageProps {
   width: number
   height: number
   className?: string
-  layout?: string
+  style?: CSSProperties
   priority?: boolean
   external?: boolean
+  unoptimized?: boolean
+  sizes?: string
 }
 
 export default function ProtezImage({
@@ -20,21 +22,23 @@ export default function ProtezImage({
   width,
   height,
   className,
-  layout,
+  style,
   priority = false,
   external = false,
+  unoptimized = false,
+  sizes,
 }: ProtezImageProps) {
-  const path = getPath(src, external, environment || '')
-
   return (
     <Image
-      src={path}
+      src={getPath(src, external)}
       alt={alt}
       width={width}
       height={height}
       className={className}
-      layout={layout}
+      style={style}
       priority={priority}
+      unoptimized={unoptimized}
+      sizes={sizes}
     />
   )
 }

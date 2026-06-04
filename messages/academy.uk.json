@@ -1,0 +1,264 @@
+{
+  "academy": {
+    "common": {
+      "backToTop": "догори  →"
+    },
+    "cta": {
+      "apply": "Зареєструватися на навчання",
+      "support": "Підтримати Protez Academy"
+    },
+    "intro": {
+      "description": "Protez Academy – це освітній проєкт Protez Foundation у співпраці з Century College та за участю фахівців з Університету Міннесоти та Університету Конкордія. Protez Academy як проєкт Protez Foundation у своїй діяльності залучає ресурси для підтримки та протезування військових та ветеранів, цивільних постраждалих внаслідок війни",
+      "sponsorsTitle": "Наші донори:",
+      "partnersTitle": "Наші партнери:",
+      "allSponsorsLink": "Всі донори та партнери"
+    },
+    "header": {
+      "nav": {
+        "academyIntro": "Головна",
+        "missionAndValues": "Місія та цінності",
+        "ourGoals": "Наші задачі",
+        "academy": "Про Academy",
+        "ourResults": "Наші результати",
+        "chief": "Наша команда",
+        "pastAndUpcomingEvents": "Актуальні навчання",
+        "academyStudents": "Наші студенти",
+        "summitResults": "Amputee Rehab Summit",
+        "specialThanksToAllOurPartners": "Партнери",
+        "ourSponsors": "Донори"
+      },
+      "cta": {
+        "foundation": "Protez Foundation",
+        "language": "English"
+      },
+      "phone": "+380 50 984 33 56"
+    },
+    "footer": {
+      "nonprofit": "Nonprofit organization 501(c)(3) EIN: 88-2437069",
+      "legalAddressLabel": "Юридична адреса:",
+      "legalAddress": "Київ, вул. Хрещатик, 7/11",
+      "phone": "+38 050 984 33 56",
+      "email": "info@protezfoundation.com",
+      "copyright": "2026 © Made by DITA GROUP Inc.",
+      "terms": "Умови та правила сайту"
+    },
+    "mission": {
+      "statement": "Місія: розвивати систему протезування та реабілітації в Україні через сучасну освіту, інтеграцію міжнародного досвіду та практичних рішень, щоб кожна людина після ампутації мала доступ до якісного, функціонального та людиноцентричного відновлення.",
+      "button": "Про Protez Academy",
+      "imageAlt": "Mission and values",
+      "values": [
+        {
+          "icon": "support-ukraine.svg",
+          "title": "Людино­центричність",
+          "text": "На першому місці — людина. Ми працюємо не з діагнозом, а з людиною, її цілями, функцією та якістю життя."
+        },
+        {
+          "icon": "professional-excellence.svg",
+          "title": "Якість і професійність",
+          "text": "Ми навчаємо сучасним, доказовим і клінічно релевантним підходам, які дають реальний результат у практиці."
+        },
+        {
+          "icon": "practical-experience.svg",
+          "title": "Практичність",
+          "text": "Освіта має формувати навички. Ми фокусуємось на тому, що можна застосувати одразу в роботі з пацієнтом."
+        },
+        {
+          "icon": "global-development.svg",
+          "title": "Постійний розвиток",
+          "text": "Ми постійно розвиваємося, впроваджуючи нові підходи та технології у свою практику."
+        },
+        {
+          "icon": "innovation.svg",
+          "title": "Інноваційність",
+          "text": "Ми шукаємо, тестуємо та впроваджуємо нові технології, рішення і формати навчання у протезуванні та реабілітації."
+        }
+      ]
+    },
+    "goals": {
+      "items": [
+        {
+          "icon": "feedback-message.svg",
+          "text": "Розвиток сучасної системи освіти для фахівців у сфері протезування, ортезування та реабілітації."
+        },
+        {
+          "icon": "feedback-message.svg",
+          "text": "Впровадження міжнародних стандартів (ICF, ISPO, доказова практика) в українську клінічну роботу."
+        },
+        {
+          "icon": "document-bookmark.svg",
+          "text": "Підвищення кваліфікації мультидисциплінарних команд через практичне навчання."
+        },
+        {
+          "icon": "caring-hands.svg",
+          "text": "Підтримка пацієнтів через покращення якості протезування та реабілітаційного супроводу."
+        },
+        {
+          "icon": "graduation-cap.svg",
+          "text": "Розвиток інновацій, технологій та науково-практичних рішень у сфері."
+        },
+        {
+          "icon": "mentorship.svg",
+          "text": "Побудова партнерств з українськими та міжнародними організаціями."
+        },
+        {
+          "icon": "team-circle.svg",
+          "text": "Формування професійної спільноти та обміну досвідом між фахівцями."
+        }
+      ]
+    },
+    "ourResults": {
+      "datesRange": "(Травень 2022 – Травень 2026)",
+      "description": "Українські фахівці пройшли навчальну програму за кордоном та повернулися до України, де впроваджують отримані знання і допомагають відновлювати життя",
+      "stats": [
+        {
+          "value": 150,
+          "label": "Фахівців пройшли навчання"
+        },
+        {
+          "value": 1300,
+          "label": "Пацієнтів запротезовано"
+        },
+        {
+          "value": 2500,
+          "label": "Протезів встановлено"
+        },
+        {
+          "value": 3,
+          "label": "Самітів організовано"
+        }
+      ]
+    },
+    "chief": {
+      "role": "ГОЛОВНИЙ МЕДИЧНИЙ ДИРЕКТОР PROTEZ FOUNDATION, СЕРТИФІКОВАНИЙ ПРОТЕЗИСТ І ОРТЕЗИСТ",
+      "description": "Протягом програми учасники ознайомляться з перевіреними методиками, які американські медичні фахівці вдосконалювали протягом багатьох років роботи з ветеранами, а також з особистими технічними напрацюваннями доктора Якова Градінара, здобутими за 15 років практики. Програма також передбачає можливість стажування у США, де українські фахівці можуть не лише удосконалити теоретичні знання та вдосконалити практичні навички, а й отримати простір для професійного та емоційного відновлення."
+    },
+    "academyGallery": {
+      "imageAlt": "фото студентів і викладачів Protez Academy",
+      "cards": [
+        "academyPage/academy/academyCard0.png",
+        "academyPage/academy/academyCard1.png",
+        "academyPage/academy/academyCard2video.mp4",
+        "academyPage/academy/academyCard3.png",
+        "academyPage/academy/academyCard4video.mp4",
+        "academyPage/academy/academyCard5.png",
+        "academyPage/academy/academyCard6.png"
+      ]
+    },
+    "academyStudents": {
+      "imageAlt": "фото студентів Protez Academy",
+      "cards": [
+        "academyPage/students/studentCard0.png",
+        "academyPage/students/studentCard1.png",
+        "academyPage/students/studentCard2.png",
+        "academyPage/students/studentCard3.png",
+        "academyPage/students/studentCard4.png",
+        "academyPage/students/studentCard5.png",
+        "academyPage/students/studentCard6.png"
+      ]
+    },
+    "amputeeRehab": {
+      "imageAlt": "саміт",
+      "description": "Це щорічна ключова подія в Україні, яка об'єднує провідних українських та міжнародних експертів у галузі реабілітації. Учасники: фізичні терапевти, спеціалісти з ФРМ, ерготерапевти та протезисти.\nТакож у Саміті беруть участь представники українського уряду, що підкреслює важливість заходу на державному рівні.",
+      "partners": [
+        {
+          "src": "esper_white.svg",
+          "alt": "Esper"
+        },
+        {
+          "src": "direct-relief_white.svg",
+          "alt": "Direct Relief"
+        },
+        {
+          "src": "brain-robotics_white.png",
+          "alt": "Brain Robotics"
+        }
+      ]
+    },
+    "events": {
+      "status": {
+        "upcoming": "Майбутня подія",
+        "past": "Минула подія"
+      },
+      "imageAlt": "фото події",
+      "backgroundAlt": "Прапор України",
+      "items": [
+        {
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2026-06-13",
+          "title": "Терапевтичні вправи: сучасний підхід до побудови занять",
+          "location": "Київ"
+        },
+        {
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2026-06-13",
+          "title": "Терапевтичні вправи: сучасний підхід до побудови занять",
+          "location": "Київ"
+        },
+        {
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2026-06-06",
+          "title": "Терапевтичні вправи: сучасний підхід до побудови занять",
+          "location": "Київ"
+        },
+        {
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2026-05-16",
+          "title": "Терапевтичні вправи: сучасний підхід до побудови занять",
+          "location": "Київ"
+        },
+        {
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2026-05-30",
+          "title": "Терапевтичні вправи: сучасний підхід до побудови занять",
+          "location": "Київ"
+        },
+        {
+          "link": "https://forms.gle/7mvF3ramTzeKoJSB6",
+          "photo": "academyPage/events/academyEvent0.png",
+          "date": "2026-05-30",
+          "title": "Терапевтичні вправи: сучасний підхід до побудови занять",
+          "location": "Київ"
+        }
+      ]
+    },
+    "summitResults": {
+      "imageAlt": "саміт",
+      "stats": [
+        {
+          "count": 2000,
+          "label": "Відвідувачів"
+        },
+        {
+          "count": 50,
+          "label": "Запрошених гостей"
+        },
+        {
+          "count": 20,
+          "label": "Протезистів"
+        }
+      ]
+    },
+    "ourSponsors": {
+      "items": ["direct-relief_dark.svg", "rotary_dark.svg"]
+    },
+    "specialThanksToAllOurPartners": {
+      "items": [
+        "concordia_dark.svg",
+        "minnesota_dark.svg",
+        "century-collage_dark.svg",
+        "school-of-medicine_dark.svg",
+        "esper_dark.svg",
+        "rotary_dark.svg",
+        "kpi_dark.svg",
+        "shupika_dark.svg",
+        "beetroot_dark.svg",
+        "fizychna-associasion_dark.svg"
+      ]
+    }
+  }
+}

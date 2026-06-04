@@ -1,0 +1,373 @@
+.section {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 368px 300px 300px 300px;
+
+  grid-template-areas:
+    'button title title title directRelief'
+    '. chaliceOfMercy ottobock paradise klmb '
+    'monarch dita antonovGroup cozen blatchfold'
+    'fabtech xtremity stconstantin unitedhelpukraine mhp';
+
+  padding-top: 32px;
+  padding-bottom: 80px;
+
+  background-color: var(--light-grey);
+}
+
+.partnerCard {
+  border-left: var(--greyBorder);
+  border-bottom: var(--greyBorder);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  &:hover .partnerLogo {
+    display: none;
+  }
+  &:hover .partnerLogoColor {
+    display: block;
+  }
+}
+.partnerLogo,
+.partnerLogoColor {
+  width: 100%;
+  height: auto;
+  transition: opacity var(--transitionProps);
+  max-width: 100%;
+  max-height: 150px;
+}
+.partnerLogoColor {
+  display: none;
+}
+
+.titleCell {
+  grid-area: title;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-bottom: 16px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.title {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+}
+
+.title.titleDesktop {
+  display: block;
+}
+
+.title.titleMobile {
+  display: none;
+}
+
+.buttonCell {
+  grid-area: button;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 0;
+}
+
+.discoverAllButton {
+  width: 240px;
+  & .buttonText {
+    max-width: 104px;
+  }
+}
+
+.partnerCard:nth-child(3) {
+  grid-area: directRelief;
+  border-right: var(--greyBorder);
+  border-top: var(--greyBorder);
+  border-bottom: none;
+}
+
+.partnerCard:nth-child(4) {
+  grid-area: chaliceOfMercy;
+  border-top: var(--greyBorder);
+}
+
+.partnerCard:nth-child(5) {
+  grid-area: ottobock;
+  border-top: var(--greyBorder);
+}
+
+.partnerCard:nth-child(6) {
+  grid-area: paradise;
+  border-top: var(--greyBorder);
+}
+
+.partnerCard:nth-child(7) {
+  grid-area: klmb;
+  border-top: var(--greyBorder);
+  border-right: var(--greyBorder);
+}
+
+.partnerCard:nth-child(8) {
+  grid-area: monarch;
+  border-top: var(--greyBorder);
+}
+
+.partnerCard:nth-child(9) {
+  grid-area: antonovGroup;
+}
+
+.partnerCard:nth-child(10) {
+  grid-area: cozen;
+}
+
+.partnerCard:nth-child(11) {
+  grid-area: blatchfold;
+  border-right: var(--greyBorder);
+}
+
+.partnerCard:nth-child(12) {
+  grid-area: dita;
+}
+
+.partnerCard:nth-child(13) {
+  grid-area: fabtech;
+}
+
+.partnerCard:nth-child(14) {
+  grid-area: xtremity;
+}
+.partnerCard:nth-child(15) {
+  grid-area: stconstantin;
+}
+.partnerCard:nth-child(16) {
+  grid-area: unitedhelpukraine;
+}
+.partnerCard:nth-child(17) {
+  grid-area: mhp;
+  border-right: var(--greyBorder);
+}
+
+@media screen and (max-width: 1366px) {
+  .section {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 230px 280px 270px 300px 300px 300px;
+
+    grid-template-areas:
+      'button button button . . title title title title title title title'
+      '. . directRelief directRelief directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy chaliceOfMercy'
+      'ottobock ottobock ottobock paradise paradise paradise klmb klmb klmb monarch monarch monarch'
+      'dita dita dita antonovGroup antonovGroup antonovGroup cozen cozen cozen blatchfold blatchfold blatchfold'
+      'fabtech fabtech fabtech xtremity xtremity xtremity stconstantin stconstantin stconstantin unitedhelpukraine unitedhelpukraine unitedhelpukraine'
+      'mhp mhp mhp . . . . . . . . . ';
+
+    padding-top: 120px;
+    padding-bottom: 120px;
+  }
+
+  .titleCell {
+    padding-right: 0;
+  }
+
+  .partnerCard:nth-child(3) {
+    // grid-area: directRelief;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .partnerCard:nth-child(4) {
+    // grid-area: chaliceOfMercy;
+    border-right: var(--greyBorder);
+    border-bottom: none;
+  }
+
+  .partnerCard:nth-child(7) {
+    // grid-area: klmb;
+    border-right: none;
+    border-top: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(8) {
+    // grid-area: monarch;
+    border-right: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(16) {
+    // grid-area: unitedhelpukraine;
+    border-right: var(--greyBorder);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 230px 280px 280px 280px 280px 280px;
+
+    grid-template-areas:
+      '. title title title title title'
+      'directRelief directRelief directRelief chaliceOfMercy chaliceOfMercy chaliceOfMercy'
+      'ottobock ottobock paradise paradise klmb klmb'
+      'monarch monarch dita dita button button'
+      'fabtech fabtech xtremity xtremity stconstantin stconstantin'
+      'unitedhelpukraine unitedhelpukraine mhp mhp . . ';
+
+    padding-top: 120px;
+    padding-bottom: 60px;
+  }
+
+  .buttonCell {
+    grid-area: button;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .partnerCard:nth-child(3) {
+    // grid-area: directRelief;
+    border-right: none;
+  }
+
+  .partnerCard:nth-child(7) {
+    // grid-area: klmb;
+    border-right: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(8) {
+    // grid-area: monarch;
+    border-top: none;
+    border-right: none;
+  }
+
+  .partnerCard:nth-child(9) {
+    // grid-area: antonovGroup;
+    display: none;
+  }
+
+  .partnerCard:nth-child(10) {
+    // grid-area: cozen;
+    display: none;
+  }
+
+  .partnerCard:nth-child(11) {
+    // grid-area: blatchfold;
+    display: none;
+  }
+
+  .partnerCard:nth-child(12) {
+    // grid-area: dita;
+    border-right: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(15) {
+    // grid-area: stconstantin;
+    border-right: var(--greyBorder);
+    border-top: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(16) {
+    // grid-area: unitedhelpukraine;
+    border-right: none;
+  }
+}
+
+/* phone */
+@media screen and (max-width: 600px) {
+  .title.titleDesktop {
+    display: none;
+  }
+
+  .title.titleMobile {
+    display: block;
+  }
+
+  .section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 200px 160px 140px 140px 160px 160px 160px 160px 72px;
+
+    grid-template-areas:
+      'title title'
+      'directRelief directRelief'
+      'chaliceOfMercy ottobock'
+      'paradise klmb'
+      'dita dita'
+      'fabtech xtremity'
+      'stconstantin stconstantin'
+      'unitedhelpukraine mhp'
+      'button button';
+
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .partnerCard:nth-child(4) {
+    // grid-area: chaliceOfMercy;
+    border-right: none;
+  }
+
+  .partnerCard:nth-child(5) {
+    // grid-area: ottobock;
+    border-bottom: none;
+    border-right: var(--greyBorder);
+  }
+
+  .partnerCard:nth-child(8) {
+    // grid-area: monarch;
+    // border-right: var(--greyBorder);
+    display: none;
+  }
+
+  .partnerCard:nth-child(6) {
+    & .partnerLogo {
+      height: 100%;
+      width: auto;
+    }
+    // grid-area: paradise;
+  }
+
+  .partnerCard:nth-child(7) {
+    // grid-area: klmb;
+    & .partnerLogo {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .partnerCard:nth-child(9) {
+    // grid-area: antonovGroup;
+    display: none;
+  }
+
+  .partnerCard:nth-child(10) {
+    // grid-area: cozen;
+    display: none;
+  }
+
+  .partnerCard:nth-child(11) {
+    // grid-area: blatchfold;
+    display: none;
+  }
+
+  .partnerCard:nth-child(12) {
+    // grid-area: dita;
+    & .partnerLogo {
+      height: 100%;
+      width: auto;
+    }
+  }
+
+  .partnerCard:nth-child(14) {
+    // grid-area: xtremity;
+    border-right: var(--greyBorder);
+  }
+  .partnerCard:nth-child(15) {
+    // grid-area: stconstantin;
+    border-top: none;
+  }
+
+  .discoverAllButton {
+    width: 100%;
+    & .buttonText {
+      max-width: 100%;
+    }
+  }
+}

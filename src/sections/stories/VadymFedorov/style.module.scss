@@ -1,0 +1,193 @@
+.section {
+  padding-top: 160px;
+  padding-bottom: 160px;
+  padding-right: 0;
+  position: relative;
+  background-color: #00000099;
+}
+
+.card {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.imageContainer {
+  flex: 1 1 50%;
+  max-width: 50%;
+}
+
+.contentContainer {
+  flex: 1 1 50%;
+  max-width: 50%;
+  position: relative;
+}
+
+.logoContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  max-width: 475px;
+}
+
+.veteranLogo {
+  width: 100%;
+  height: auto;
+}
+.ageRank {
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.56);
+  margin-left: auto;
+}
+
+.cardTitle {
+  margin-top: 40px;
+  margin-bottom: 30px;
+  padding-left: 13px;
+  border-left: 3px solid var(--red);
+}
+
+.donationContainer {
+  margin-top: 40px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  flex: 1 2 475px;
+  max-width: 475px;
+}
+.aboveDivider,
+.belowDivider {
+  max-width: 425px;
+  margin-right: 50px;
+}
+
+.aboveDivider {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.descAddress {
+  margin-top: 12px;
+}
+
+.descTitle {
+  font-weight: 700;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media (min-width: 1181px) {
+  .largeOnDesktop {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+  }
+}
+.block {
+  display: block;
+}
+
+.redText {
+  color: var(--red);
+}
+
+.right {
+  flex: 1 1 425px;
+  min-width: 300px;
+  max-width: 425px;
+}
+.donationForm {
+  width: 100%;
+}
+
+@media screen and (max-width: 1180px) {
+  .card {
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    max-width: 100%;
+  }
+
+  .contentContainer {
+    max-width: 100%;
+    margin-top: -450px;
+  }
+
+  .donationContainer {
+    justify-content: space-between;
+  }
+
+  .left {
+    flex-grow: 2;
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .section {
+    padding-bottom: 40px;
+  }
+
+  .contentContainer {
+    margin-top: -300px;
+  }
+
+  .cardTitle {
+    margin-top: 32px;
+    margin-bottom: 24px;
+  }
+
+  .donationContainer {
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .left {
+    flex-grow: 2;
+    max-width: 100%;
+    flex-basis: 100%;
+    margin-top: 40px;
+  }
+  .aboveDivider,
+  .belowDivider {
+    max-width: 100%;
+  }
+
+  .right {
+    width: 100%;
+    max-width: 100%;
+  }
+  .donationForm {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contentContainer {
+    margin-top: -250px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contentContainer {
+    margin-top: -150px;
+  }
+}

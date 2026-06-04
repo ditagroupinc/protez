@@ -2,5 +2,6 @@
   "typescript.tsdk": "node_modules/typescript/lib",
   "typescript.enablePromptUseWorkspaceTsdk": true,
   "vue.features.codeActions.enable": false,
-  "svg.preview.background": "dark-transparent"
+  "svg.preview.background": "dark-transparent",
+  "i18n-ally.localesPaths": ["messages"]
 }

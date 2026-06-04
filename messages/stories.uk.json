@@ -1,0 +1,22 @@
+{
+  "vadymFedorov": {
+    "veteran": {
+      "ageRank": "30 років, сержант.",
+      "name": "Вадим",
+      "surname": "Федоров",
+      "title": "Вадим присвятив 10 років Збройним Силам України.",
+      "text": "Захищаючи Україну, Вадим став обтяженним високими ампутаціями обох ніг. Але він продемонстрував мотивацію і відмову від здачі, ставши натхненням для всіх навколо своїм прикладом. Зараз Вадим перебуває в США, де проходить протезування та реабілітацію. Лише завдяки вашій підтримці ми зможемо оснастити Вадима сучасними біонічними протезами та повернути його до активного життя. Разом ми становимо сильну і єдину силу. Дякуємо вам за поширення цього повідомлення та ваші пожертви."
+    },
+    "share": "Поділитися",
+    "giveHope": "Дати Надію!",
+    "videoButton": " get better known ",
+    "donatePage": {
+      "description1": "All charitable contributions are tax-deductible.",
+      "description3": "Strong support from community volunteers and partners around the globe allowed us to cap our administrative expenses",
+      "coloredText": "under 8%",
+      "nonprofitOrganization": "Nonprofit organization 501(c)(3) EIN: 88-2437069",
+      "sendChecks": "Please send checks to:",
+      "address": "Protez Foundation 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America"
+    }
+  }
+}

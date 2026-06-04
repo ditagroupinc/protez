@@ -1,0 +1,15 @@
+export enum AcademyIDs {
+  Intro = 'academyIntro',
+  MissionAndValues = 'missionAndValues',
+  OurGoals = 'ourGoals',
+  Academy = 'academy',
+  OurResults = 'ourResults',
+  OurSponsors = 'ourSponsors',
+  Chief = 'chief',
+  PastAndUpcomingEvents = 'pastAndUpcomingEvents',
+  AcademyStudents = 'academyStudents',
+  AmputeeRehab = 'amputeeRehab',
+  SummitResults = 'summitResults',
+  SpecialThanksToAllOurPartners = 'specialThanksToAllOurPartners',
+  Footer = 'footer',
+}

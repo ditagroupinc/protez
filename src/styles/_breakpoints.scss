@@ -1,0 +1,11 @@
+// Breakpoints — based on actual media queries used across SCSS modules.
+// Most-used values: 1024, 800, 1366, 600, 1180, 500/480.
+$bp-phone: 480px;
+$bp-mobile: 600px;
+$bp-mobile-lg: 800px;
+$bp-tablet: 1024px;
+$bp-tablet-lg: 1180px;
+$bp-desktop: 1366px;
+$bp-desktop-lg: 1440px;
+$bp-desktop-xl: 1600px;
+$bp-desktop-2xl: 1920px;

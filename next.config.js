@@ -1,6 +1,9 @@
-/** @type {import('next').NextConfig} */
+const path = require('path')
+const createNextIntlPlugin = require('next-intl/plugin')
 
-const environment = process.env.ENVIRONMENT
+const withNextIntl = createNextIntlPlugin('./i18n.ts')
+
+/** @type {import('next').NextConfig} */
 
 const nextConfig = {
   experimental: {
@@ -12,12 +15,36 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'protez.wpengine.com',
       },
+      {
+        protocol: 'https',
+        hostname: 'widgets.guidestar.org',
+      },
     ],
-    unoptimized: environment === 'pages' ? true : false,
+  },
+  sassOptions: {
+    includePaths: [path.join(__dirname, 'src/styles')],
+    additionalData: `@use 'variables' as *; @use 'mixins' as *;`,
   },
   reactStrictMode: false,
-  output: environment === 'pages' ? 'export' : undefined,
-  basePath: environment === 'pages' ? '/protez' : undefined,
+  async redirects() {
+    return [
+      {
+        source: '/VadymFedorov',
+        destination: '/stories/vadym-fedorov',
+        permanent: true,
+      },
+      {
+        source: '/ArtemSvergun',
+        destination: '/stories/artem-svergun',
+        permanent: true,
+      },
+      {
+        source: '/thankYou',
+        destination: '/thank-you',
+        permanent: true,
+      },
+    ]
+  },
 }
 
-module.exports = nextConfig
+module.exports = withNextIntl(nextConfig)

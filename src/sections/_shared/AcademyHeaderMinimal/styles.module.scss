@@ -1,0 +1,78 @@
+.academyHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 46px;
+  background-image: linear-gradient(rgba(16, 16, 16, 1), rgba(16, 16, 16, 0));
+  z-index: 20;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.btnGroup {
+  display: flex;
+  align-items: center;
+}
+
+.desktopSocialMedia {
+  display: flex;
+}
+
+@media (max-width: 767px) {
+  .desktopSocialMedia {
+    display: none;
+  }
+}
+
+.languageWrapper {
+  display: flex;
+  align-items: center;
+  margin: 0 32px;
+}
+.worldIcon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+
+.localeBtn {
+  cursor: pointer;
+  transition: color var(--transitionProps);
+
+  &:last-child {
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1px solid var(--white);
+  }
+
+  &:hover {
+    color: var(--blue);
+  }
+
+  &:disabled,
+  &[disabled] {
+    pointer-events: none;
+    opacity: 24%;
+  }
+}
+
+@media (max-width: 1366px) {
+  .academyHeader {
+    padding: 24px 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .academyHeader {
+    padding: 32px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .academyHeader {
+    padding: 32px 40px;
+  }
+}
