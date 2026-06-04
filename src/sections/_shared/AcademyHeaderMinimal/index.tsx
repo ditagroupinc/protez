@@ -5,7 +5,7 @@ import { useTransition } from 'react'
 import Link from 'next/link'
 
 import { useLocale } from 'next-intl'
-import { usePathname, useRouter } from '@/lib/i18n'
+import { persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
 import SocialMediaLinks from '@/components/SocialMediaLinks'
 
@@ -21,6 +21,7 @@ const TermsConditionsHeader = () => {
 
   const switchLocale = (next: 'en' | 'uk') => {
     if (next === locale) return
+    persistLocaleChoice(next)
     startTransition(() => {
       router.replace(pathname, { locale: next })
     })

@@ -1,21 +1,20 @@
 import createIntlMiddleware from 'next-intl/middleware'
 import { NextRequest, NextResponse } from 'next/server'
-import { routing } from '@/lib/i18n'
+
+import { LOCALE_COOKIE_NAME, routing } from '@/lib/i18n'
 
 const intlMiddleware = createIntlMiddleware(routing)
 
 export default function middleware(request: NextRequest) {
+  const saved = request.cookies.get(LOCALE_COOKIE_NAME)?.value
   const { pathname } = request.nextUrl
 
-  if (pathname === '/' && !request.cookies.get('NEXT_LOCALE')) {
-    const country = request.headers.get('x-vercel-ip-country')
+  if (saved === 'uk' && !pathname.startsWith('/ua')) {
+    const url = request.nextUrl.clone()
 
-    if (country === 'UA') {
-      const url = request.nextUrl.clone()
-      url.pathname = '/ua'
+    url.pathname = pathname === '/' ? '/ua' : `/ua${pathname}`
 
-      return NextResponse.redirect(url, 307)
-    }
+    return NextResponse.redirect(url, 307)
   }
 
   return intlMiddleware(request)

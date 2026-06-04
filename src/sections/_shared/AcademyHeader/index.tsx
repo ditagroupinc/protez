@@ -3,7 +3,7 @@
 import { useState, useEffect, useTransition } from 'react'
 
 import { useLocale, useTranslations } from 'next-intl'
-import { usePathname, useRouter } from '@/lib/i18n'
+import { persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
 import Button from '@/components/AcademyButton'
 import SocialMediaLinks from '@/components/SocialMediaLinks'
@@ -49,6 +49,7 @@ const AcademyHeader = () => {
 
   const switchLocale = (next: 'en' | 'uk') => {
     if (next === locale) return
+    persistLocaleChoice(next)
     startTransition(() => {
       router.replace(pathname, { locale: next })
     })

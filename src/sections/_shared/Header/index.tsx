@@ -3,7 +3,7 @@
 import { useState, useEffect, useTransition } from 'react'
 
 import { useLocale, useTranslations } from 'next-intl'
-import { usePathname, useRouter } from '@/lib/i18n'
+import { persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
 import Button, { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
 
@@ -94,6 +94,7 @@ const Header = ({
 
   const switchLocale = (next: 'en' | 'uk') => {
     if (next === locale) return
+    persistLocaleChoice(next)
     startTransition(() => {
       router.replace(pathname, { locale: next })
     })
