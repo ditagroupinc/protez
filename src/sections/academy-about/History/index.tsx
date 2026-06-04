@@ -9,7 +9,7 @@ import AcademySection from '@/components/AcademySection'
 
 import style from './style.module.scss'
 
-import { AcademyAboutIDs } from '@academy/about/consts'
+import { AcademyAboutIDs } from '@academy/consts/about'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 import Button from '@/components/AcademyButton'

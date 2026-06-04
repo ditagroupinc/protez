@@ -11,13 +11,13 @@ const menuClose = (className?: string) => (
       width="28"
       height="3"
       transform="matrix(0.707107 -0.707107 -0.707107 -0.707107 11.1211 30.9199)"
-      fill="#C31822"
+      fill="currentColor"
     />
     <rect
       width="28"
       height="3"
       transform="matrix(0.707107 0.707107 0.707107 -0.707107 9 11.1211)"
-      fill="#C31822"
+      fill="currentColor"
     />
   </svg>
 )

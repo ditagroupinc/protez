@@ -5,11 +5,9 @@ import { useInView } from 'react-intersection-observer'
 
 import BackToTopButton from '@/components/BackToTopButton'
 
-import Header from '@/sections/_shared/AcademyHeaderMinimal'
-
 import FullScreenFallback from '@/components/FullScreenFallback'
 
-import { AcademyAboutIDs } from './consts'
+import { AcademyAboutIDs } from '@academy/consts/about'
 
 const AboutUs = lazy(() => import('@/sections/academy-about/AboutUs'))
 const History = lazy(() => import('@/sections/academy-about/History'))
@@ -26,7 +24,6 @@ export default function AcademyAboutClient() {
 
   return (
     <>
-      <Header />
       <main className={style.main}>
         <Suspense fallback={<FullScreenFallback />}>
           <History id={AcademyAboutIDs.History} />

@@ -8,6 +8,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 
 import FacebookPixelEvents from '@/components/FacebookPixelEvents'
+import LanguageSelectionModal from '@/components/LanguageSelectionModal'
 import { nunitoSans } from '../fonts'
 import { routing } from '@/lib/i18n'
 
@@ -137,6 +138,7 @@ export default async function LocaleLayout({
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
+          <LanguageSelectionModal />
         </NextIntlClientProvider>
         <noscript>
           <iframe

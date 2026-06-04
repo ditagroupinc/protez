@@ -10,7 +10,6 @@ import FullScreenFallback from '@/components/FullScreenFallback'
 import ProtezImage from '@/components/ProtezImage'
 import SuspenseSection from '@/components/SuspenseSection'
 
-import Header from '@/sections/_shared/Header'
 import VideoBlock from './VideoBlock'
 
 import { useTranslations } from 'next-intl'
@@ -54,8 +53,6 @@ export default function ProtezHomePage({
 
   return (
     <>
-      <Header layout="protezPage" />
-
       <main className={style.main}>
         <SuspenseSection withSmoke>
           <h1 className={style.srOnly}>{t('heroH1')}</h1>

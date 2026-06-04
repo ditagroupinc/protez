@@ -10,7 +10,6 @@ import Divider from '@/components/Divider'
 import style from './style.module.scss'
 import Script from 'next/script'
 import Section from '@/components/Section'
-import Header from '@/sections/_shared/Header'
 import ProtezImage from '@/components/ProtezImage'
 import { useDonateTitle } from '@/hooks/useDonateTitle'
 
@@ -20,7 +19,6 @@ export default function Donate() {
 
   return (
     <>
-      <Header layout="protezPage" ancorLinks={false} arrowUp={false} />
       <main>
         <Section className={style.section} id="donorBox">
           <div className={style.topContainer}>
