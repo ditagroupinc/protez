@@ -16,7 +16,7 @@ import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 
 import Slider from '@/islands/SlickCarousel'
 
-import { AcademyAboutIDs } from '@academy/about/consts'
+import { AcademyAboutIDs } from '@academy/consts/about'
 
 type WeTrainItem = { image: string; text: string }
 

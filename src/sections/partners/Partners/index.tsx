@@ -9,7 +9,6 @@ import { useLocale } from 'next-intl'
 import { localeToLanguage } from '@/lib/locale'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import Section from '@/components/Section'
-import Header from '@/sections/_shared/Header'
 import Footer from '@/sections/_shared/Footer'
 import ProtezImage from '@/components/ProtezImage'
 
@@ -52,7 +51,6 @@ export default function Partners() {
 
   return (
     <>
-      <Header layout="protezPage" ancorLinks={false} arrowUp={false} />
       <main>
         <Section className={style.section} id="allOurPartners">
           {icons.partnersLogo.desktop[lang](style.title)}

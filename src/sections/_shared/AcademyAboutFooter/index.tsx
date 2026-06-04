@@ -4,7 +4,7 @@ import styles from './style.module.scss'
 
 import { useTranslations } from 'next-intl'
 
-import { AcademyAboutIDs } from '@academy/about/consts'
+import { AcademyAboutIDs } from '@academy/consts/about'
 
 import { forwardRef } from 'react'
 

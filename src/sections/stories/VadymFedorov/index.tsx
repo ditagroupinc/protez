@@ -10,7 +10,6 @@ import { icons } from './icons'
 import Section from '@/components/Section'
 import { Body, H3 } from '@/components/Typography'
 
-import Header from '@/sections/_shared/Header'
 import Footer from '@/sections/_shared/Footer'
 import Divider from '@/components/Divider'
 import Script from 'next/script'
@@ -27,7 +26,6 @@ export default function VadymFedorov() {
 
   return (
     <>
-      <Header layout="protezPage" ancorLinks={false} arrowUp={false} />
       <main>
         <SmokeWrapper>
           <Section className={style.section}>

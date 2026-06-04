@@ -5,7 +5,6 @@ import { useInView } from 'react-intersection-observer'
 
 import BackToTopButton from '@/components/BackToTopButton'
 
-import AcademyHeader from '@/sections/_shared/AcademyHeader'
 import AcademyIntro from '../Intro'
 
 import FullScreenFallback from '@/components/FullScreenFallback'
@@ -60,7 +59,6 @@ export default function AcademyHomePage() {
 
   return (
     <>
-      <AcademyHeader />
       <main className={style.main}>
         <script
           type="application/ld+json"

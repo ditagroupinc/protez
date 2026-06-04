@@ -1,8 +1,6 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 
-import Header from '@/sections/_shared/AcademyHeaderMinimal'
-
 import style from './style.module.scss'
 
 export const dynamic = 'force-static'
@@ -47,7 +45,6 @@ export default async function AcademyTermsConditionsPage({ params }: { params: P
 
   return (
     <>
-      <Header />
       <main className={style.main}>
         <article className={style.article}>
           <h1 className={style.title}>{t('title')}</h1>
