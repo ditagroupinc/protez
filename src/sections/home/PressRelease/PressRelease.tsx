@@ -127,7 +127,7 @@ const PressRelease = () => {
         </TextAppearanceWrapper>
 
         <TextAppearanceWrapper className={style.right}>
-          {icons.pressReleaseLogo.desktop[lang](style.pageTitle)}
+          {icons.pressReleaseLogo.desktop[lang](style.title)}
           <Slider ref={textSliderRef} {...settings} className={style.textSlider}>
             {orderedPressReleaseArray.map((slide, index) => (
               <div className={style.textSlideWrapper} key={index}>
@@ -154,7 +154,7 @@ const PressRelease = () => {
         </TextAppearanceWrapper>
       </div>
       <div className={style.mobileWrapper}>
-        {icons.pressReleaseLogo.desktop[lang](style.pageTitle)}
+        {icons.pressReleaseLogo.desktop[lang](style.title)}
 
         <Slider ref={wholeCardSliderRef} {...settings} className={style.wholeCardSlider}>
           {orderedPressReleaseArray.map((slide, index) => (

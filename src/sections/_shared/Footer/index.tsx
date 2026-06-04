@@ -29,9 +29,9 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
       <div className={`${style.footerTop} ${style[accentColor]}`}>
         <div className={style.footerTopContent}>
           <div className={style.left}>
-            {icons.footerLogo.desktop[lang](`${style.footerLogo} ${style.footerLogoDesktop}`)}
+            {icons.footerLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
             {icons.footerLogo.mobile[lang](
-              `${style.footerLogo} ${style.ukrainian} ${style.footerLogoMobile}`
+              `${style.title} ${style.ukrainian} ${style.titleMobile}`
             )}
 
             <div className={style.buttonGroup}>

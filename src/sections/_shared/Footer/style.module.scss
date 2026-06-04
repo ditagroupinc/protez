@@ -23,17 +23,16 @@
   width: 100%;
 }
 
-.footerLogo {
-  width: 100%;
+.title {
   max-width: 100%;
   height: auto;
 }
 
-.footerLogo.footerLogoDesktop {
+.title.titleDesktop {
   display: block;
 }
 
-.footerLogo.footerLogoMobile {
+.title.titleMobile {
   display: none;
 }
 
@@ -83,11 +82,11 @@
 }
 
 @media screen and (max-width: 800px) {
-  .footerLogo.footerLogoDesktop {
+  .title.titleDesktop {
     display: none;
   }
 
-  .footerLogo.footerLogoMobile {
+  .title.titleMobile {
     display: block;
   }
 
@@ -105,7 +104,7 @@
   .left {
     gap: 32px;
   }
-  .footerLogo {
+  .title {
     margin: 0 auto;
     max-width: 265px;
     &.ukrainian {

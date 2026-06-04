@@ -27,7 +27,7 @@ const OurResults = () => {
     <AcademySection id={AcademyIDs.OurResults} className={style.academyResults}>
       <div className={style.resultsContent}>
         <div className={style.leftPart}>
-          <TextAppearanceWrapper className={style.sectionTitle}>
+          <TextAppearanceWrapper className={style.title}>
             <ProtezImage {...titleDesktop} />
           </TextAppearanceWrapper>
           <div className={style.resultsInfo}>

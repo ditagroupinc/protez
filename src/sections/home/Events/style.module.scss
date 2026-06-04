@@ -19,11 +19,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-left: var(--section-padding-horizontal);
+  padding-right: var(--section-padding-horizontal);
+  margin-bottom: 32px;
 }
 
 .title {
   max-width: 100%;
-  margin-bottom: 32px;
 }
 
 .title.titleDesktop {
@@ -288,14 +290,6 @@
 }
 
 @media (max-width: 1024px) {
-  .title.titleDesktop {
-    display: none;
-  }
-
-  .title.titleMobile {
-    display: block;
-  }
-
   .events {
     padding-top: 100px;
     padding-bottom: 120px;
@@ -316,6 +310,14 @@
 }
 
 @media (max-width: 600px) {
+  .title.titleDesktop {
+    display: none;
+  }
+
+  .title.titleMobile {
+    display: block;
+  }
+
   .sliderButton {
     display: none;
   }
@@ -367,10 +369,6 @@
   }
 
   .titleWrapper {
-    padding: 0 24px;
-  }
-
-  .title {
     margin-bottom: 32px;
   }
 

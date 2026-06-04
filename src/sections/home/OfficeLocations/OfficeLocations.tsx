@@ -64,7 +64,7 @@ const OfficeLocations = () => {
     <Section id={ProtezIDs.OfficeLocations} className={style.section}>
       {icons.ukraineMap(style.ukraineMap)}
       <TextAppearanceWrapper className={style.heading}>
-        {icons.officeLocationsLogo.desktop[lang](style.pageTitle)}
+        {icons.officeLocationsLogo.desktop[lang](style.title)}
       </TextAppearanceWrapper>
       <div className={style.cardsContainer}>
         {locations.map((location, index) => (

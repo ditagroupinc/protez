@@ -71,7 +71,7 @@ const OurPatients = () => {
   return (
     <Section id={ProtezIDs.OurPatients} className={style.section}>
       <TextAppearanceWrapper className={style.heading}>
-        {icons.ourPatientsLogo.desktop[lang](style.pageTitle)}
+        {icons.ourPatientsLogo.desktop[lang](style.title)}
         <div className={style.sliderNavigation}>
           <button className={style.sliderButton} onClick={gotoPrev}>
             {icons.arrowLeft(style.arrow)}

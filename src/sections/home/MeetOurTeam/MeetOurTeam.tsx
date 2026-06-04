@@ -191,7 +191,7 @@ const MeetOurTeam = () => {
   return (
     <Section id={ProtezIDs.MeetOurTeam} className={style.section}>
       <div className={style.mobileTeam}>
-        {icons.meetOurTeamLogo.desktop[lang](style.teachersLogo)}
+        {icons.meetOurTeamLogo.desktop[lang](style.title)}
 
         <TextAppearanceWrapper>
           <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
@@ -212,9 +212,7 @@ const MeetOurTeam = () => {
         </TextAppearanceWrapper>
       </div>
       <div className={`${style.row} ${style.firstRow}`}>
-        <div className={style.titleCell}>
-          {icons.meetOurTeamLogo.desktop[lang](style.teachersLogo)}
-        </div>
+        <div className={style.titleCell}>{icons.meetOurTeamLogo.desktop[lang](style.title)}</div>
         {members.slice(0, 2).map((card, index) => (
           <MemberCard
             key={index}

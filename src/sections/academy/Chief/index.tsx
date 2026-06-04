@@ -21,7 +21,7 @@ const Chief = forwardRef<HTMLDivElement>(function (_, ref) {
     <AcademySection ref={ref} id={AcademyIDs.Chief} className={styles.chief}>
       <div className={styles.chiefContent}>
         <div className={styles.left}>
-          <ProtezImage {...titleDesktop} className={styles.sectionTitle} />
+          <ProtezImage {...titleDesktop} className={styles.title} />
 
           <TextAppearanceWrapper className={styles.profession}>{t('role')}</TextAppearanceWrapper>
           <TextAppearanceWrapper className={styles.desc}>{t('description')}</TextAppearanceWrapper>

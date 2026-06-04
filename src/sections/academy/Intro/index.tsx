@@ -101,7 +101,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
       <div className={style.overlay}></div>
       <div className={style.content}>
         <div className={style.leftPart}>
-          <div className={style.sectionTitle}>
+          <div className={style.title}>
             <ProtezImage {...introTitle} priority />
           </div>
           <p className={style.academyDesc}>{t('intro.description')}</p>

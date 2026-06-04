@@ -142,7 +142,7 @@ const Veterans = () => {
               {veterans.map((slide, index) => (
                 <div key={index}>
                   <div className={style.logoContainer}>
-                    {icons.titles[slide.icon][lang](style.veteranLogo)}
+                    {icons.titles[slide.icon][lang](style.title)}
                     <Body large className={style.ageRank}>
                       {slide.ageRank}
                     </Body>
@@ -260,7 +260,7 @@ const Veterans = () => {
                   <div className={style.left}>
                     <div>
                       <div className={style.logoContainer}>
-                        {icons.titles[slide.icon][lang](style.veteranLogo)}
+                        {icons.titles[slide.icon][lang](style.title)}
                         <Body className={style.ageRank}>{slide.ageRank}</Body>
                       </div>
                       <H3 className={style.cardTitle}>{slide.title}</H3>
