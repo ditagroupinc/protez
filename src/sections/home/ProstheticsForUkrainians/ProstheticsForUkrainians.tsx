@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { localeToLanguage } from '@/lib/locale'
 
 import Section from '@/components/Section'
+import ProtezImage from '@/components/ProtezImage'
 
 import { icons } from './icons'
 import style from './style.module.scss'
@@ -14,7 +15,7 @@ import { Body, H3 } from '@/components/Typography'
 import { ProtezIDs } from '@/consts'
 import { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
 
-const cardIcons = [icons.disabledPerson, icons.helpHeart, icons.people, icons.hand]
+const cardIcons = ['accessibility.svg', 'caring-hands.svg', 'community.svg', 'support-ukraine.svg']
 
 const ProstheticsForUkrainians = () => {
   const locale = useLocale()
@@ -40,7 +41,13 @@ const ProstheticsForUkrainians = () => {
         <div className={style.mobileCardLayout}>
           {cards.map((card, index) => (
             <TextAppearanceWrapper className={style.card} key={index}>
-              {card.icon(style.icon)}
+              <ProtezImage
+                src={`icons/${card.icon}`}
+                alt={card.icon}
+                width={48}
+                height={48}
+                className={style.icon}
+              />
               <Body className={style.largeOnDesktop}>{card.text}</Body>
             </TextAppearanceWrapper>
           ))}
@@ -48,7 +55,13 @@ const ProstheticsForUkrainians = () => {
         <div className={style.leftCol}>
           {cards.slice(0, 2).map((card, index) => (
             <TextAppearanceWrapper className={style.card} key={index}>
-              {card.icon(style.icon)}
+              <ProtezImage
+                src={`icons/${card.icon}`}
+                alt={card.icon}
+                width={48}
+                height={48}
+                className={style.icon}
+              />
               <Body className={style.largeOnDesktop}>{card.text}</Body>
             </TextAppearanceWrapper>
           ))}
@@ -56,7 +69,13 @@ const ProstheticsForUkrainians = () => {
         <div className={style.rightCol}>
           {cards.slice(2, 4).map((card, index) => (
             <TextAppearanceWrapper className={style.card} key={index}>
-              {card.icon(style.icon)}
+              <ProtezImage
+                src={`icons/${card.icon}`}
+                alt={card.icon}
+                width={48}
+                height={48}
+                className={style.icon}
+              />
               <Body className={style.largeOnDesktop}>{card.text}</Body>
             </TextAppearanceWrapper>
           ))}

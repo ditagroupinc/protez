@@ -82,7 +82,7 @@ const MissionAndValues = forwardRef<HTMLDivElement>(function (_, ref) {
               <div key={index}>
                 <div className={style.card}>
                   <ProtezImage
-                    src={`academyPage/icons/${item.icon}`}
+                    src={`icons/${item.icon}`}
                     alt={item.icon}
                     width={48}
                     height={48}
