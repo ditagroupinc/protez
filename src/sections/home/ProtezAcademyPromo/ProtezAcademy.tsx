@@ -13,13 +13,13 @@ import { ProtezIDs } from '@/consts'
 import Button from '@/components/Button'
 import ProtezImage from '@/components/ProtezImage'
 
-const cards = ['ottobock.svg', 'minnesotaUniversity.svg', 'extremity.svg']
+const cards = ['ottobock_white.svg', 'minnesota_white.svg', 'xtremity_white.svg']
 
 const Card = ({ image }: { image: string }) => {
   return (
     <TextAppearanceWrapper className={style.card}>
       <ProtezImage
-        src={`protezPage/protezAcademy/${image}`}
+        src={`partners/white/${image}`}
         alt={image as string}
         width={150}
         height={50}

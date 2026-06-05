@@ -16,20 +16,20 @@ import { SeeAllButton } from '@/components/Button'
 import ProtezImage from '@/components/ProtezImage'
 
 const partnersIcons: string[] = [
-  'directRelief',
-  'brainRobotics',
+  'direct-relief',
+  'brain-robotics',
   'ottobock',
   'paradize',
   'klmb',
   'monarch',
-  'chaliceOfMercy',
+  'chalice-of-mercy',
   'exp',
   'cozen',
   'blatchfold',
   'fabtech',
   'xtremity',
-  'stconstantin',
-  'unitedhelpukraine',
+  'st-constantin',
+  'united-help-ukraine',
   'mhp',
 ]
 
@@ -56,14 +56,14 @@ const SpecialThanksToAllOurPartners = () => {
       {partnersIcons.map((icon, index) => (
         <TextAppearanceWrapper key={index} className={style.partnerCard}>
           <ProtezImage
-            src={`partnersLogos/${icon}.svg`}
+            src={`partners/dark/${icon}_dark.svg`}
             alt={icon}
             width={300}
             height={230}
             className={style.partnerLogo}
           />
           <ProtezImage
-            src={`partnersLogos/${icon}-color.svg`}
+            src={`partners/colored/${icon}_colored.svg`}
             alt={icon}
             width={300}
             height={230}

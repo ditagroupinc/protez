@@ -140,13 +140,5 @@
   },
   "merch": {
     "viewAllMerch": "View all merch"
-  },
-  "protezAcademyEvent": {
-    "description1": "Protez Academy is an educational project by the Protez Foundation in collaboration with Century College and contributions from specialists from University of Minnesota and Concordia University",
-    "description2": "Реєстрація на тренінг з оволодіння практичними навичками\n“Особливості взаємодії з військовими з втратою зору”.",
-    "description3": "Тут ви можете ознайомитися з офіційними документами, що\nрегламентують проведення тренінгу з оволодіння практичними навичками “Особливості взаємодії з військовими з втратою зору”. Вони містять ключові методології, положення та стандарти, які забезпечують якість, прозорість та академічну доброчесність заходу.",
-    "register": "Реєстрація на тренінг з оволодіння практичними навичками",
-    "documents": "Документи й регламенти",
-    "applyToAcademy": "Apply to Academy"
   }
 }

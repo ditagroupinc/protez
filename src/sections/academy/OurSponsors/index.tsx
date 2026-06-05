@@ -27,7 +27,7 @@ const OurSponsors = forwardRef<HTMLDivElement>(function (_, ref) {
         {items.map((sponsor, index) => (
           <div key={index} className={style.card}>
             <ProtezImage
-              src={`academyPage/partners/dark/${sponsor}`}
+              src={`partners/dark/${sponsor}`}
               alt={sponsor}
               width={356}
               height={212}

@@ -69,7 +69,7 @@ const AmputeeRehab = () => {
             {partners.map(({ src, alt }, index) => (
               <TextAppearanceWrapper key={index} className={styles.card}>
                 <ProtezImage
-                  src={`academyPage/partners/white/${src}`}
+                  src={`partners/white/${src}`}
                   alt={alt}
                   width={300}
                   height={150}

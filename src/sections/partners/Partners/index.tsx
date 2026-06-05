@@ -13,35 +13,35 @@ import Footer from '@/sections/_shared/Footer'
 import ProtezImage from '@/components/ProtezImage'
 
 const partnersLogos = [
-  'directRelief',
-  'brainRobotics',
+  'direct-relief',
+  'brain-robotics',
   'ottobock',
   'exp',
   'blatchfold',
-  'chaliceOfMercy',
+  'chalice-of-mercy',
   'xtremity',
   'cozen',
-  'stconstantin',
+  'st-constantin',
   'paradize',
   'klmb',
-  'unitedhelpukraine',
+  'united-help-ukraine',
   'mhp',
   'ua',
   'cerebral',
   'slumberland',
   'biznes',
-  'stMaron',
-  'humanaTravel',
+  'st-maron',
+  'humana-travel',
   'smak',
-  'ukrainianhabitatFund',
-  'ticketToAmerica',
-  'evangelicalchurch',
-  'highlightPrinting',
-  '4front',
+  'ukrainian-habitat-fund',
+  'ticket-to-america',
+  'evangelical-church',
+  'highlight-printing',
+  '4-front',
   'proteor',
   'monarch',
   'ukrsibbank',
-  'ditagroup',
+  'dita-group',
   'ossur',
 ]
 
@@ -58,14 +58,14 @@ export default function Partners() {
             {partnersLogos.slice(0, -2).map((icon, index) => (
               <TextAppearanceWrapper key={index} className={style.partnerCard}>
                 <ProtezImage
-                  src={`partnersLogos/${icon}.svg`}
+                  src={`partners/dark/${icon}_dark.svg`}
                   alt={icon}
                   width={300}
                   height={150}
                   className={style.partnerLogo}
                 />
                 <ProtezImage
-                  src={`partnersLogos/${icon}-color.svg`}
+                  src={`partners/colored/${icon}_colored.svg`}
                   alt={icon}
                   width={300}
                   height={150}
@@ -75,15 +75,15 @@ export default function Partners() {
             ))}
             <Link href="https://dita-group.com/" target="blank" className={style.partnerCard}>
               <ProtezImage
-                src={`partnersLogos/${partnersLogos[28]}.svg`}
-                alt={'Dita Group'}
+                src={`partners/dark/${partnersLogos[28]}_dark.svg`}
+                alt="Dita Group"
                 width={300}
                 height={150}
                 className={style.partnerLogo}
               />
               <ProtezImage
-                src={`partnersLogos/${partnersLogos[28]}-color.svg`}
-                alt={'Dita Group'}
+                src={`partners/colored/${partnersLogos[28]}_colored.svg`}
+                alt="Dita Group"
                 width={300}
                 height={150}
                 className={style.partnerLogoColor}
@@ -91,14 +91,14 @@ export default function Partners() {
             </Link>
             <TextAppearanceWrapper className={style.partnerCard}>
               <ProtezImage
-                src={`partnersLogos/${partnersLogos[29]}.svg`}
+                src={`partners/dark/${partnersLogos[29]}_dark.svg`}
                 alt={partnersLogos[29]}
                 width={300}
                 height={150}
                 className={style.partnerLogo}
               />
               <ProtezImage
-                src={`partnersLogos/${partnersLogos[29]}-color.svg`}
+                src={`partners/colored/${partnersLogos[29]}_colored.svg`}
                 alt={partnersLogos[29]}
                 width={300}
                 height={150}

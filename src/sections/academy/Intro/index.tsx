@@ -132,8 +132,8 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
             {icons.arrowDown(style.arrow)}
           </a>
 
-          <Card image="academyPage/partners/white/direct-relief_white.svg" className={style.card} />
-          <Card image="academyPage/partners/white/rotary_white.svg" className={style.card} />
+          <Card image="partners/white/direct-relief_white.svg" className={style.card} />
+          <Card image="partners/white/rotary_white.svg" className={style.card} />
         </div>
       </div>
       <div className={style.slider}>
@@ -145,7 +145,7 @@ const AcademyIntro = forwardRef<HTMLDivElement>(function (_, ref) {
             {sliderCards.map((card, index) => {
               return (
                 <div key={index}>
-                  <Card image={`academyPage/partners/white/${card}`} className={style.wideCard} />
+                  <Card image={`partners/white/${card}`} className={style.wideCard} />
                 </div>
               )
             })}
