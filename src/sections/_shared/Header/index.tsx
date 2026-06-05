@@ -1,11 +1,14 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useTransition } from 'react'
+
+import { useLocale } from 'next-intl'
 
 import Link from 'next/link'
 
 import useOutsideClick from '@/hooks/useOutsideClick'
 import SocialMediaLinks from '@/components/SocialMediaLinks'
+import { persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
 import { BurgerButton } from './BurgerButton'
 import BackToTopButton from './BackToTopButton'
@@ -39,6 +42,19 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
 
   const [headerIsOpened, setHeaderIsOpened] = useState(false)
   const ref = useOutsideClick(() => setHeaderIsOpened(false))
+
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+  const [, startTransition] = useTransition()
+
+  const switchLocale = (next: 'en' | 'uk') => {
+    if (next === locale) return
+    persistLocaleChoice(next)
+    startTransition(() => {
+      router.replace(pathname, { locale: next })
+    })
+  }
 
   useEffect(() => {
     if (!hasSideMenu) return
@@ -90,6 +106,26 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
         <div className={style.topMenu}>
           <div className={style.buttonsGroup}>
             <TopBarCtas variant={variant} />
+          </div>
+          <div className={style.languageWrapper}>
+            {icons.world(style.worldIcon)}
+            <button
+              type="button"
+              onClick={() => switchLocale('en')}
+              disabled={locale === 'en'}
+              className={style.localeBtn}
+            >
+              EN
+            </button>
+            <span className={style.divider} />
+            <button
+              type="button"
+              onClick={() => switchLocale('uk')}
+              disabled={locale === 'uk'}
+              className={style.localeBtn}
+            >
+              UA
+            </button>
           </div>
           {hasSideMenu && (
             <BurgerButton color={cfg.accent} onClick={toggleHeader} close={headerIsOpened} />

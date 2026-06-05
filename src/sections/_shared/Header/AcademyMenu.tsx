@@ -1,12 +1,13 @@
 'use client'
 
-import { Ref } from 'react'
+import { Ref, useTransition } from 'react'
 
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import Link from 'next/link'
 
 import AcademyButton from '@/components/AcademyButton'
+import { persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
 import { ACADEMY_APPLY_FORM_URL, DONATE_URL } from '@academy/consts/links'
 
@@ -22,6 +23,20 @@ type Props = {
 
 const AcademyMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
   const t = useTranslations('academy')
+
+  const locale = useLocale()
+  const router = useRouter()
+  const pathname = usePathname()
+  const [, startTransition] = useTransition()
+
+  const switchLocale = (next: 'en' | 'uk') => {
+    if (next === locale) return
+    persistLocaleChoice(next)
+    startTransition(() => {
+      router.replace(pathname, { locale: next })
+    })
+  }
+
   const linksPrefix = ancorLinks ? '#' : '/'
 
   return (
@@ -73,6 +88,16 @@ const AcademyMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
           {icons.call(style.icon)}
           <span> {t('header.phone')}</span>
         </a>
+        <div className={style.languageButtonContainer}>
+          <button
+            type="button"
+            className={style.languageButton}
+            onClick={() => switchLocale(locale === 'uk' ? 'en' : 'uk')}
+          >
+            {icons.world(style.icon)}
+            <span>{t('header.cta.language')}</span>
+          </button>
+        </div>
       </div>
     </>
   )
