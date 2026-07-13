@@ -42,6 +42,26 @@
     "text": "Over the past two years, we have been dedicated to restoring hope and mobility to Ukrainians affected by the war. Through our prosthetics assistance programs, we've empowered countless individuals to reclaim their independence and rebuild their lives. Join us in reflecting on our journey and see the impact we've made together.",
     "moreResults": "More results"
   },
+  "childrensProstheticsPromo": {
+    "statNumber": 24,
+    "statLabel": "Children fitted with prostheses",
+    "statRange": "May 2022 – July 2026",
+    "quote": "Caring for them is part of our mission. Protez Foundation is one of Ukraine's leading organizations providing pediatric prosthetic care.",
+    "cta": {
+      "learnMore": "Learn more",
+      "need": "Need a prosthesis"
+    },
+    "slides": [
+      { "image": "hero-2.jpg", "alt": "A boy with an arm prosthesis at an event with his family and a soldier" },
+      { "image": "hero-3.jpg", "alt": "Mother and son with an arm prosthesis wearing embroidered shirts" },
+      { "image": "hero-4.jpg", "alt": "A boy in a vyshyvanka with leg prostheses and his favorite toy" },
+      { "image": "hero-1.jpg", "alt": "A boy with a leg prosthesis together with a specialist at the Protez Center" },
+      { "image": "hero-5.jpg", "alt": "A specialist adjusting a child's leg prosthesis" },
+      { "image": "hero-6.jpg", "alt": "A boy smiling on the stairs" },
+      { "image": "hero-7.jpg", "alt": "A girl with a leg prosthesis navigating rehab obstacles" },
+      { "image": "hero-8.jpg", "alt": "A boy with a leg prosthesis playing with a ball in rehab" }
+    ]
+  },
   "sampleProsthesesCosts": {
     "description": "Prosthetics are expensive life-changing devices. With help of volunteers and partners we were able to reduce the cost significantly, lower the overhead down to barebone minimum. Our program overhead is only 8%.",
     "miscellaneous": "Miscellaneous",

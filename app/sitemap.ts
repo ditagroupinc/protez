@@ -14,6 +14,7 @@ const routes: RouteConfig[] = [
   { path: '/academy/about', changeFrequency: 'yearly', priority: 0.4 },
   { path: '/academy/terms-conditions', changeFrequency: 'yearly', priority: 0.2 },
   { path: '/donate', changeFrequency: 'monthly', priority: 0.7 },
+  { path: '/dytyache-protezuvannya', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/partners', changeFrequency: 'monthly', priority: 0.5 },
   { path: '/stories/vadym-fedorov', changeFrequency: 'yearly', priority: 0.5 },
   { path: '/stories/artem-svergun', changeFrequency: 'yearly', priority: 0.5 },

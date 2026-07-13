@@ -30,6 +30,7 @@ export const HOME_NAV_IDS = [
   ProtezIDs.ProstheticsForUkrainians,
   ProtezIDs.InNeed,
   ProtezIDs.OurResults,
+  ProtezIDs.ChildrensProstheticsPromo,
   ProtezIDs.SampleProsthesesCosts,
   ProtezIDs.ProtezAcademy,
   ProtezIDs.Veterans,

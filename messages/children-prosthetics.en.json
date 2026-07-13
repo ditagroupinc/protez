@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": "Children's Prosthetics — Protez Foundation",
+    "description": "Protez Foundation helps children receive prosthetics, rehabilitation, and adaptation with support from a specialist team."
+  },
+  "hero": {
+    "statNumber": 24,
+    "statLabel": "Children fitted with prostheses",
+    "statRange": "May 2022 – July 2026",
+    "quote": "Caring for them is part of our mission. Protez Foundation is one of Ukraine's leading organizations providing pediatric prosthetic care.",
+    "cta": {
+      "support": "Support",
+      "need": "Need a prosthesis",
+      "learnMore": "Learn more"
+    },
+    "slides": [
+      { "image": "hero-2.jpg", "alt": "A boy with an arm prosthesis at an event with his family and a soldier" },
+      { "image": "hero-3.jpg", "alt": "Mother and son with an arm prosthesis wearing embroidered shirts" },
+      { "image": "hero-4.jpg", "alt": "A boy in a vyshyvanka with leg prostheses and his favorite toy" },
+      { "image": "hero-1.jpg", "alt": "A boy with a leg prosthesis together with a specialist at the Protez Center" },
+      { "image": "hero-5.jpg", "alt": "A specialist adjusting a child's leg prosthesis" },
+      { "image": "hero-6.jpg", "alt": "A boy smiling on the stairs" },
+      { "image": "hero-7.jpg", "alt": "A girl with a leg prosthesis navigating rehab obstacles" },
+      { "image": "hero-8.jpg", "alt": "A boy with a leg prosthesis playing with a ball in rehab" }
+    ]
+  },
+  "approach": {
+    "title": "Our Approach",
+    "missionLabel": "Our mission",
+    "missionBig": "We work so that every child feels safe, cared for, and respected — and every family has expert support at every stage.",
+    "p1": "Protez Foundation is one of Ukraine's leading organizations in children's prosthetics. Our team works with every child individually — their age, needs, and activity level.",
+    "p2": "Our specialists provide end-to-end care: fitting, training in use, adaptation, and ongoing servicing.",
+    "callout": "Most children are fitted in the U.S. — with access to the most advanced technology.",
+    "photoAlt": "Teenager with a leg prosthesis wearing a vyshyvanka"
+  },
+  "stories": {
+    "intro": "Behind every story is a child and a path to an active future. We share a few stories of young patients on their journey with Protez Foundation.",
+    "supportCta": "Support",
+    "badgeText": "STORY OF OVERCOMING · STORY OF OVERCOMING ·",
+    "instaCta": "More stories on our Instagram →",
+    "instaHref": "https://www.instagram.com/protezfoundation/",
+    "items": [
+      {
+        "id": "marijka",
+        "photo": "marijka.jpg",
+        "photoAlt": "Mariia in rehabilitation",
+        "meta": "5 years old · Dnipropetrovsk region",
+        "paragraphs": [
+          "At four, she was diagnosed with autism spectrum disorder. She worked consistently with a physical therapist, and recent sessions had shown real progress.",
+          "In November 2025, Mariia and her grandmother were caught in the epicenter of a missile strike during a Russian attack. She was hospitalized in critical condition, and complications put the survival of her knee joint in question.",
+          "From the first days, the Protez Foundation team, led by chief medical director Yakov Gradinar, stayed in close contact with Mariia's family and doctors. Thanks to the joint work of the medical teams, her knee was saved — a critical outcome for fitting and walking on a prosthesis.",
+          "In February 2026, Mariia was fitted with a prosthesis at Protez Foundation in Kyiv and took her first steps on it."
+        ]
+      },
+      {
+        "id": "oskar",
+        "photo": "oskar.jpg",
+        "photoAlt": "Oskar in rehabilitation",
+        "meta": "8 years old · Odesa",
+        "paragraphs": [
+          "He lost a leg in an accident, caught under the wheels of a trolleybus while playing with his older brother. He suffered severe, multiple injuries, including a pelvic fracture and serious damage to internal organs.",
+          "He was hospitalized, and doctors fought for his life. Oskar underwent many surgeries, spent a month in intensive care, and was in a medically induced coma for over two weeks, connected to ventilators.",
+          "Doctors had to amputate one leg to save his life; the other leg was saved. Once his condition stabilized, Oskar was transferred from Odesa to Kyiv for further treatment.",
+          "Since the accident, Oskar's mother has stayed by his side, supporting him and fighting for his recovery every day.",
+          "Oskar has now been fitted with a prosthesis at Protez Foundation and, under the guidance of our team, is learning to walk with it."
+        ],
+        "quote": "\"I believe we'll get through this, and I'm doing everything I can to help Oskar recover.\"",
+        "cite": "— Natalia, Oskar's mother"
+      },
+      {
+        "id": "taya",
+        "photo": "taya.jpg",
+        "photoAlt": "Taya in rehabilitation",
+        "meta": "6 years old",
+        "paragraphs": [
+          "In May 2024, she came to Protez Foundation for her first consultation, referred from Okhmatdyt Children's Hospital. Our team fitted her first liner and began the prosthetic process.",
+          "The biggest challenge was never the prosthesis itself, but the physical therapy and recovery. Teaching a four-year-old new movement skills takes enormous shared effort. Our physical therapists walked that long road with Taya, step by step, helping her build confidence in her first movements. As she continues to grow, we keep monitoring her closely.",
+          "Today, Taya is active, creative, and full of life. She goes to kindergarten, plays with friends, loves to draw, and moves confidently on her prosthesis."
+        ]
+      }
+    ]
+  },
+  "apply": {
+    "title": "Application for Prosthetics",
+    "text": "If your child needs a prosthesis, submit an application and the Protez Foundation team will contact you to clarify the details and explain the next steps.",
+    "fillForm": "Submit an Application",
+    "formHref": "https://docs.google.com/forms/d/e/1FAIpQLSf_ESrB0vY6973GQSYfDY-WtWYE8UXnaeHJzxIQrEWPaQ_UXw/viewform"
+  },
+  "support": {
+    "title": "Support Children's Prosthetics",
+    "text": "Every donation helps a child receive quality prosthetics and professional support on the way to an active future.",
+    "zelleText": "Please include your email in the transaction comment so we can send you a donation receipt.",
+    "zelleEmail": "finance@protezfoundation.com"
+  }
+}

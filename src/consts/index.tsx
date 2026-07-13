@@ -18,6 +18,7 @@ export enum ProtezIDs {
   ProstheticsForUkrainians = 'prostheticsForUkrainians',
   InNeed = 'inNeed',
   OurResults = 'ourResults',
+  ChildrensProstheticsPromo = 'childrensProstheticsPromo',
   SampleProsthesesCosts = 'sampleProsthesesCosts',
   ProtezAcademy = 'protezAcademy',
   Veterans = 'veterans',
@@ -30,4 +31,11 @@ export enum ProtezIDs {
   MailingList = 'mailingList',
   Merch = 'merch',
   Footer = 'footer',
+}
+
+export enum ChildrenProstheticsIDs {
+  Hero = 'childrenProstheticsHero',
+  Approach = 'childrenProstheticsApproach',
+  Stories = 'childrenProstheticsStories',
+  Apply = 'childrenProstheticsApply',
 }

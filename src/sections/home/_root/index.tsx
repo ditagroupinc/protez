@@ -18,6 +18,7 @@ import LetsGiveHope from '@/sections/home/LetsGiveHope/LetsGiveHope'
 const ProstheticsForUkrainians = lazy(
   () => import('@/sections/home/ProstheticsForUkrainians/ProstheticsForUkrainians')
 )
+const ChildrensProstheticsPromo = lazy(() => import('@/sections/home/ChildrensProstheticsPromo'))
 const SampleProsthesesCosts = lazy(
   () => import('@/sections/home/SampleProsthesesCosts/SampleProsthesesCosts')
 )
@@ -84,6 +85,10 @@ export default function ProtezHomePage({
             inNeedSection={<InNeed />}
             ourResultsSection={<OurResults results={statistics} />}
           />
+        </SuspenseSection>
+
+        <SuspenseSection>
+          <ChildrensProstheticsPromo />
         </SuspenseSection>
 
         <SuspenseSection withSmoke>
