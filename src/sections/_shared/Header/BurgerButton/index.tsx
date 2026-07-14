@@ -1,7 +1,7 @@
 import style from './style.module.scss'
 import { icons } from './icons'
 
-type ButtonColor = 'blue' | 'red'
+type ButtonColor = 'blue' | 'red' | 'teal'
 
 export const BurgerButton = ({
   close,

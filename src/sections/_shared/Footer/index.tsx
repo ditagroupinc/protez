@@ -15,14 +15,19 @@ import Button from '@/components/Button'
 import { Body } from '@/components/Typography'
 import { forwardRef } from 'react'
 
-const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage' }>(function (
-  { layout },
-  ref
-) {
+type FooterLayout = 'protezPage' | 'academyPage' | 'childrenProstheticsPage'
+
+const accentByLayout: Record<FooterLayout, 'red' | 'blue' | 'teal'> = {
+  protezPage: 'red',
+  academyPage: 'blue',
+  childrenProstheticsPage: 'teal',
+}
+
+const Footer = forwardRef<HTMLDivElement, { layout: FooterLayout }>(function ({ layout }, ref) {
   const locale = useLocale()
   const lang = localeToLanguage(locale)
   const t = useTranslations('shared.footer')
-  const accentColor = layout === 'protezPage' ? 'red' : 'blue'
+  const accentColor = accentByLayout[layout]
 
   return (
     <footer ref={ref} id={ProtezIDs.Footer} className={style.footer}>
@@ -35,7 +40,28 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
             )}
 
             <div className={style.buttonGroup}>
-              {layout === 'protezPage' ? (
+              {layout === 'academyPage' ? (
+                <>
+                  <Button as="link" href="/" variant="primary-white" size="normal">
+                    {t('subscribe')}
+                  </Button>
+                  <Button as="link" href="/" variant="primary-black" size="normal">
+                    {t('supportAcademy')}
+                  </Button>
+                </>
+              ) : layout === 'childrenProstheticsPage' ? (
+                <>
+                  <Button
+                    as="link"
+                    href="/donate"
+                    variant="primary-black"
+                    size="normal"
+                    className={style.fullWidth}
+                  >
+                    {t('giveHope')}
+                  </Button>
+                </>
+              ) : (
                 <>
                   <Button as="link" href="/donate" variant="primary-black" size="normal">
                     {t('giveHope')}
@@ -48,15 +74,6 @@ const Footer = forwardRef<HTMLDivElement, { layout: 'protezPage' | 'academyPage'
                     size="normal"
                   >
                     {t('protezAcademy')}
-                  </Button>
-                </>
-              ) : (
-                <>
-                  <Button as="link" href="/" variant="primary-white" size="normal">
-                    {t('subscribe')}
-                  </Button>
-                  <Button as="link" href="/" variant="primary-black" size="normal">
-                    {t('supportAcademy')}
                   </Button>
                 </>
               )}

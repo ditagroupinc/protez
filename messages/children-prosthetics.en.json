@@ -4,7 +4,7 @@
     "description": "Protez Foundation helps children receive prosthetics, rehabilitation, and adaptation with support from a specialist team."
   },
   "hero": {
-    "statNumber": 24,
+    "statNumber": 25,
     "statLabel": "Children fitted with prostheses",
     "statRange": "May 2022 – July 2026",
     "quote": "Caring for them is part of our mission. Protez Foundation is one of Ukraine's leading organizations providing pediatric prosthetic care.",
@@ -14,10 +14,22 @@
       "learnMore": "Learn more"
     },
     "slides": [
-      { "image": "hero-2.jpg", "alt": "A boy with an arm prosthesis at an event with his family and a soldier" },
-      { "image": "hero-3.jpg", "alt": "Mother and son with an arm prosthesis wearing embroidered shirts" },
-      { "image": "hero-4.jpg", "alt": "A boy in a vyshyvanka with leg prostheses and his favorite toy" },
-      { "image": "hero-1.jpg", "alt": "A boy with a leg prosthesis together with a specialist at the Protez Center" },
+      {
+        "image": "hero-2.jpg",
+        "alt": "A boy with an arm prosthesis at an event with his family and a soldier"
+      },
+      {
+        "image": "hero-3.jpg",
+        "alt": "Mother and son with an arm prosthesis wearing embroidered shirts"
+      },
+      {
+        "image": "hero-4.jpg",
+        "alt": "A boy in a vyshyvanka with leg prostheses and his favorite toy"
+      },
+      {
+        "image": "hero-1.jpg",
+        "alt": "A boy with a leg prosthesis together with a specialist at the Protez Center"
+      },
       { "image": "hero-5.jpg", "alt": "A specialist adjusting a child's leg prosthesis" },
       { "image": "hero-6.jpg", "alt": "A boy smiling on the stairs" },
       { "image": "hero-7.jpg", "alt": "A girl with a leg prosthesis navigating rehab obstacles" },

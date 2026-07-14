@@ -14,7 +14,7 @@ export default function BackToTopButton({
   href: string
   className?: string
   black?: boolean
-  color: 'red' | 'blue'
+  color: 'red' | 'blue' | 'teal'
 }) {
   const t = useTranslations('shared')
 

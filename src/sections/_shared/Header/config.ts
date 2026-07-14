@@ -1,12 +1,12 @@
 import { icons } from './icons'
-import { ProtezIDs } from '@/consts'
+import { ProtezIDs, ChildrenProstheticsIDs } from '@/consts'
 import { AcademyIDs } from '@academy/consts'
 
-export type HeaderVariant = 'home' | 'academy'
-export type HeaderSideMenu = HeaderVariant | 'none'
+export type HeaderVariant = 'home' | 'academy' | 'childrenProsthetics' | 'general'
+export type HeaderSideMenu = 'home' | 'academy' | 'general' | 'none'
 
 type VariantConfig = {
-  accent: 'red' | 'blue'
+  accent: 'red' | 'blue' | 'teal'
   logoRender: (className?: string) => JSX.Element
   homeAnchor: string
 }
@@ -21,6 +21,16 @@ export const headerConfig: Record<HeaderVariant, VariantConfig> = {
     accent: 'blue',
     logoRender: icons.academyPage.logo,
     homeAnchor: AcademyIDs.Intro,
+  },
+  childrenProsthetics: {
+    accent: 'teal',
+    logoRender: icons.protezPage.logo,
+    homeAnchor: ChildrenProstheticsIDs.Hero,
+  },
+  general: {
+    accent: 'red',
+    logoRender: icons.protezPage.logo,
+    homeAnchor: ProtezIDs.LetsGiveHope,
   },
 }
 

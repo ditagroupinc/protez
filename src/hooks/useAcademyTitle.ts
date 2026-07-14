@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 
 import { useLocale } from 'next-intl'
 
+import { useIsMobileViewport } from './useIsMobileViewport'
 import { ACADEMY_TITLES, type AcademyTitleName } from './academyTitles.generated'
 
 export type { AcademyTitleName } from './academyTitles.generated'
@@ -13,22 +14,6 @@ const MOBILE_BREAKPOINT_PX = 800
 
 type TitleVariant = { src: string; width: number; height: number; alt: string }
 type TitleSpec = { desktop: TitleVariant; mobile: TitleVariant }
-
-function useIsMobileViewport(breakpointPx: number): boolean {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${breakpointPx}px)`)
-    const sync = () => setIsMobile(mql.matches)
-
-    sync()
-    mql.addEventListener('change', sync)
-
-    return () => mql.removeEventListener('change', sync)
-  }, [breakpointPx])
-
-  return isMobile
-}
 
 export function useAcademyTitle(name: AcademyTitleName): TitleSpec {
   const locale = useLocale()

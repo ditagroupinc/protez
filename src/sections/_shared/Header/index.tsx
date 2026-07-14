@@ -15,6 +15,7 @@ import BackToTopButton from './BackToTopButton'
 import TopBarCtas from './TopBarCtas'
 import HomeMenu from './HomeMenu'
 import AcademyMenu from './AcademyMenu'
+import GeneralMenu from './GeneralMenu'
 
 import { icons } from './icons'
 import { headerConfig, HeaderVariant, HeaderSideMenu } from './config'
@@ -37,7 +38,8 @@ const socialMediaLinks = [
 
 const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props) => {
   const cfg = headerConfig[variant]
-  const resolvedSideMenu: HeaderSideMenu = sideMenu ?? variant
+  const resolvedSideMenu: HeaderSideMenu =
+    sideMenu ?? (variant === 'home' || variant === 'academy' ? variant : 'general')
   const hasSideMenu = resolvedSideMenu !== 'none'
 
   const [headerIsOpened, setHeaderIsOpened] = useState(false)
@@ -76,7 +78,7 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
   const toggleHeader = () => setHeaderIsOpened(prev => !prev)
   const closeMenu = () => setHeaderIsOpened(false)
 
-  const logoHref = ancorLinks ? `#${cfg.homeAnchor}` : variant === 'home' ? '/' : '/academy'
+  const logoHref = ancorLinks ? `#${cfg.homeAnchor}` : variant === 'academy' ? '/academy' : '/'
 
   const renderSideMenu = () => {
     if (resolvedSideMenu === 'home') {
@@ -85,6 +87,10 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
 
     if (resolvedSideMenu === 'academy') {
       return <AcademyMenu ancorLinks={ancorLinks} closeMenu={closeMenu} navRef={ref} />
+    }
+
+    if (resolvedSideMenu === 'general') {
+      return <GeneralMenu accent={cfg.accent} closeMenu={closeMenu} navRef={ref} />
     }
 
     return null
@@ -96,12 +102,6 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
         <Link scroll={true} href={logoHref}>
           {cfg.logoRender(style.protezLogo)}
         </Link>
-
-        {hasSideMenu && (
-          <div className={style.burgerButtonContainer}>
-            <BurgerButton color={cfg.accent} onClick={toggleHeader} close={headerIsOpened} />
-          </div>
-        )}
 
         <div className={style.topMenu}>
           <div className={style.buttonsGroup}>
@@ -128,9 +128,17 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
             </button>
           </div>
           {hasSideMenu && (
-            <BurgerButton color={cfg.accent} onClick={toggleHeader} close={headerIsOpened} />
+            <div className={style.desktopBurger}>
+              <BurgerButton color={cfg.accent} onClick={toggleHeader} close={headerIsOpened} />
+            </div>
           )}
         </div>
+
+        {hasSideMenu && (
+          <div className={style.burgerButtonContainer}>
+            <BurgerButton color={cfg.accent} onClick={toggleHeader} close={headerIsOpened} />
+          </div>
+        )}
 
         {hasSideMenu && (
           <div

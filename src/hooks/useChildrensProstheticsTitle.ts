@@ -1,8 +1,10 @@
 'use client'
 
-import { useEffect, useMemo, useState } from 'react'
+import { useMemo } from 'react'
 
 import { useLocale } from 'next-intl'
+
+import { useIsMobileViewport } from './useIsMobileViewport'
 
 const BASE = 'dytyacheProtezuvannyaPage/titles'
 const MOBILE_BREAKPOINT_PX = 800
@@ -55,22 +57,6 @@ const TITLES: Record<ChildrensProstheticsTitleName, Entry> = {
     desktop: { width: 360, height: 70 },
     mobile: { width: 260, height: 52 },
   },
-}
-
-function useIsMobileViewport(breakpointPx: number): boolean {
-  const [isMobile, setIsMobile] = useState(false)
-
-  useEffect(() => {
-    const mql = window.matchMedia(`(max-width: ${breakpointPx}px)`)
-    const sync = () => setIsMobile(mql.matches)
-
-    sync()
-    mql.addEventListener('change', sync)
-
-    return () => mql.removeEventListener('change', sync)
-  }, [breakpointPx])
-
-  return isMobile
 }
 
 export function useChildrensProstheticsTitle(name: ChildrensProstheticsTitleName): TitleSpec {

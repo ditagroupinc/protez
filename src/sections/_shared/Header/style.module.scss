@@ -14,6 +14,22 @@
   background-image: linear-gradient(rgba(16, 16, 16, 1), rgba(16, 16, 16, 0));
   z-index: 20;
   padding: 24px 46px;
+
+  &.childrenProsthetics {
+    background-image: none;
+    background-color: var(--white);
+    color: var(--forest);
+    border-bottom: 1px solid var(--mint-grey);
+
+    .protezLogo,
+    .worldIcon {
+      filter: invert(1);
+    }
+
+    .divider {
+      background-color: var(--forest);
+    }
+  }
 }
 
 .protezLogo {
@@ -41,15 +57,6 @@
 
 .desktopSocialMedia {
   display: flex;
-}
-
-@media (max-width: 991px) {
-  .topMenu {
-    display: none;
-  }
-  .burgerButtonContainer {
-    display: block;
-  }
 }
 
 @media (max-width: 767px) {
@@ -108,6 +115,20 @@
   color: var(--blue);
 }
 
+.header.childrenProsthetics .localeBtn {
+  color: var(--teal);
+
+  &:hover {
+    color: var(--teal-dark);
+  }
+
+  &:disabled,
+  &[disabled] {
+    color: var(--black);
+    opacity: 1;
+  }
+}
+
 .sideMenu {
   position: fixed;
   right: 0;
@@ -115,6 +136,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  border-left: var(--greyBorder);
 
   padding-top: 28px;
   padding-bottom: 0;
@@ -164,6 +186,23 @@
   &.blue {
     color: var(--blue);
   }
+
+  &.teal {
+    color: var(--teal);
+  }
+}
+
+.closeMenuBtn {
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .protezFoundationLinkWrapper {
@@ -209,6 +248,11 @@
   &.blue {
     & path {
       fill: var(--blue);
+    }
+  }
+  &.teal {
+    & path {
+      fill: var(--teal);
     }
   }
 }
@@ -373,6 +417,29 @@
 @media (max-width: 1024px) {
   .header {
     padding: 32px 40px;
+  }
+}
+
+@media (max-width: 900px) {
+  .header {
+    justify-content: flex-end;
+    gap: 18px;
+    & a {
+      margin-right: auto;
+    }
+  }
+  .burgerButtonContainer {
+    display: block;
+  }
+  .buttonsGroup,
+  .worldIcon,
+  .divider,
+  .desktopBurger {
+    display: none;
+  }
+  .languageWrapper {
+    gap: 16px;
+    // margin-left: auto;
   }
 }
 

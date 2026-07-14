@@ -1,0 +1,102 @@
+.section {
+  padding: 64px 40px;
+  border-top: 1px solid var(--mint-grey);
+  color: var(--forest);
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.head {
+  margin-bottom: 36px;
+  text-align: center;
+}
+
+.head h2 {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin: 0;
+  font-size: 60px;
+  line-height: 1.1;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 0.85fr 1fr 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.missionLabel {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 18px;
+}
+
+.missionBig {
+  font-family: 'Playfair Display', 'Nunito Sans', serif;
+  font-style: italic;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--forest);
+  margin: 0;
+}
+
+.body p {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--forest-dim);
+  margin: 0 0 16px;
+}
+
+.callout {
+  margin-top: 22px;
+  padding: 18px 22px;
+  border-left: 3px solid var(--teal);
+  background: var(--mint-pale);
+  border-radius: 0 8px 8px 0;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 44px 20px;
+  }
+  .head h2 {
+    font-size: 40px;
+  }
+  .split {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .photo {
+    max-width: 400px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

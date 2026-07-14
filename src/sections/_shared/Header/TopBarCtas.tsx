@@ -50,7 +50,57 @@ const AcademyCtas = () => {
   )
 }
 
-const TopBarCtas = ({ variant }: { variant: 'home' | 'academy' }) =>
-  variant === 'home' ? <HomeCtas /> : <AcademyCtas />
+const ChildrenProstheticsCtas = () => {
+  const t = useTranslations('shared.header')
+
+  return (
+    <>
+      <MakeDonationButton size="small" variant="primary-teal" />
+      <Button
+        as="link"
+        href={NEED_A_PROTHESIS_URL}
+        target="_blank"
+        variant="secondary-black"
+        size="small"
+      >
+        {t('protezPage.actionButtons.needAProthesis')}
+      </Button>
+    </>
+  )
+}
+
+const GeneralCtas = () => {
+  const t = useTranslations('shared.header')
+
+  return (
+    <>
+      <Button as="link" href="/" variant="secondary-white" size="small">
+        {t('academyPage.actionButtons.protezFoundation')}
+      </Button>
+      <MakeDonationButton size="small" />
+      <Button
+        as="link"
+        href={NEED_A_PROTHESIS_URL}
+        target="_blank"
+        variant="secondary-white"
+        size="small"
+      >
+        {t('protezPage.actionButtons.needAProthesis')}
+      </Button>
+    </>
+  )
+}
+
+const TopBarCtas = ({
+  variant,
+}: {
+  variant: 'home' | 'academy' | 'childrenProsthetics' | 'general'
+}) => {
+  if (variant === 'academy') return <AcademyCtas />
+  if (variant === 'childrenProsthetics') return <ChildrenProstheticsCtas />
+  if (variant === 'general') return <GeneralCtas />
+
+  return <HomeCtas />
+}
 
 export default TopBarCtas

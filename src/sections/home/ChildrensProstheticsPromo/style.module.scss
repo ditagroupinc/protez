@@ -1,0 +1,258 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 700px 400px at 15% 0%, rgba(74, 192, 176, 0.14), transparent 60%),
+    radial-gradient(ellipse 600px 500px at 100% 30%, rgba(74, 192, 176, 0.06), transparent 60%),
+    var(--jet);
+  color: var(--cream);
+  padding: 72px 40px;
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.15fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.title {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.titleDesktop {
+  display: block;
+}
+.titleMobile {
+  display: none;
+}
+
+.stat {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  padding-left: 20px;
+  border-left: 3px solid var(--teal-light);
+  width: fit-content;
+}
+
+.statNum {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 900;
+  font-size: 52px;
+  line-height: 1;
+  color: var(--teal-light);
+}
+
+.statMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.statLabel {
+  font-size: 14px;
+  color: var(--cream);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.statRange {
+  font-size: 12px;
+  color: var(--stone);
+}
+
+.quote {
+  max-width: 520px;
+  margin-top: 28px;
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--cream);
+  font-weight: 700;
+  font-style: italic;
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.ctaNeed {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sliderFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  box-shadow: 0 20px 44px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--charcoal);
+
+  .slickSlider,
+  :global(.slick-list),
+  :global(.slick-track),
+  :global(.slick-slide),
+  :global(.slick-slide > div) {
+    height: 100%;
+  }
+
+  :global(.slick-list) {
+    overflow: hidden;
+  }
+
+  :global(.slick-slide) img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+.slickSlider {
+  & :global(.slick-dots) {
+    border-radius: 4px;
+    display: flex !important;
+    padding-top: 16px;
+    position: static;
+    margin: 0;
+    list-style: none;
+  }
+
+  & :global(.slick-dots li) {
+    margin: 0;
+    flex: 1 1 2%;
+    height: 3px;
+    background-color: var(--charcoal);
+  }
+
+  & :global(.slick-dots li.slick-active) {
+    border-radius: 4px;
+    background-color: var(--teal-light);
+    opacity: 1;
+  }
+
+  & :global(.slick-dots li button:before) {
+    display: none;
+  }
+
+  & :global(.slick-dots li button) {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+  }
+}
+
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.nav {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.navBtn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1.5px solid var(--cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+  color: var(--cream);
+}
+
+.navBtn:hover {
+  background: var(--teal-light);
+  border-color: var(--teal-light);
+  color: var(--white);
+}
+
+.arrow {
+  width: 17px;
+  height: 17px;
+}
+
+@media (max-width: 900px) {
+  .section {
+    padding: 48px 20px;
+  }
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .copy {
+    text-align: center;
+    align-items: center;
+  }
+  .titleDesktop {
+    display: none;
+  }
+  .titleMobile {
+    display: block;
+  }
+  .stat {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+  }
+  .quote {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .ctas {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+  .slider {
+    margin: 0 auto;
+  }
+  .nav {
+    display: none;
+  }
+}

@@ -68,6 +68,10 @@
     }
   }
 
+  &.teal > span {
+    background-color: var(--teal);
+  }
+
   .pink {
     color: var(--pink);
   }
@@ -78,5 +82,9 @@
 
   .red {
     color: var(--red);
+  }
+
+  .teal {
+    color: var(--teal);
   }
 }

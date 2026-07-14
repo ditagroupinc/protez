@@ -369,6 +369,57 @@
       }
     }
   }
+
+  &.primaryTeal {
+    color: var(--white);
+    background-color: var(--teal);
+    & .icon path:not(:global(.noChangeColor)) {
+      fill: var(--white);
+    }
+    &:hover,
+    &:active {
+      background-color: var(--teal-light);
+      color: var(--forest);
+      & .icon path:not(:global(.noChangeColor)) {
+        fill: var(--forest);
+      }
+    }
+    &:focus {
+      border: 2px solid var(--white);
+      padding: 15px 30px 17px 30px;
+      &.hasArrow {
+        padding-right: 22px;
+      }
+    }
+    &.small &:focus {
+      padding: 10px 22px 12px 22px;
+      &.hasArrow {
+        padding-right: 14px;
+      }
+    }
+  }
+
+  &.secondaryTeal {
+    color: var(--teal);
+    background-color: transparent;
+    border: 1.5px solid var(--teal);
+    padding: 15.5px 30.5px 17.5px 30.5px;
+    & .icon path:not(:global(.noChangeColor)) {
+      fill: var(--teal);
+    }
+    &.hasArrow {
+      padding-right: 22.5px;
+    }
+    &:hover {
+      background-color: rgba(15, 158, 139, 0.1);
+    }
+    &.small {
+      padding: 10.5px 22.5px 12.5px 22.5px;
+      &.hasArrow {
+        padding-right: 14.5px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 600px) {

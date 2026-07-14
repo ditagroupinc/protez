@@ -18,6 +18,8 @@ type ButtonVariant =
   | 'primary-blue'
   | 'primary-black'
   | 'secondary-blue'
+  | 'primary-teal'
+  | 'secondary-teal'
 
 type ButtonSize = 'small' | 'normal'
 
@@ -52,6 +54,9 @@ const variantStyles: Record<ButtonVariant, string> = {
   'primary-blue': 'primaryBlue',
 
   'secondary-blue': 'secondaryBlue',
+
+  'primary-teal': 'primaryTeal',
+  'secondary-teal': 'secondaryTeal',
 }
 
 // =================================================================
@@ -105,9 +110,11 @@ export default Button
 export const MakeDonationButton = ({
   className,
   size,
+  variant = 'primary-red',
 }: {
   className?: string
   size: ButtonSize
+  variant?: ButtonVariant
 }) => {
   const t = useTranslations('shared.buttons')
 
@@ -116,7 +123,7 @@ export const MakeDonationButton = ({
       as="link"
       href="/donate"
       target={'_blank'}
-      variant="primary-red"
+      variant={variant}
       size={size}
       rel="noopener noreferrer"
       className={`${className ? className : ''}`}

@@ -1,3 +1,7 @@
+.fullWidth {
+  width: 100%;
+}
+
 .footer {
   & .divider {
     background-color: var(--white);
@@ -12,6 +16,16 @@
   }
   &.blue {
     background-color: var(--blue);
+  }
+  &.teal {
+    background-color: var(--teal-dark);
+    padding-left: 40px;
+    padding-right: 40px;
+
+    .footerTopContent {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
   }
 }
 
@@ -93,6 +107,11 @@
   .footerTop {
     padding-top: 60px;
     padding-bottom: 60px;
+
+    &.teal {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
   .footerTopContent {
