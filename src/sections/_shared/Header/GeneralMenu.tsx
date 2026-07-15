@@ -46,17 +46,9 @@ const GeneralMenu = ({ accent, closeMenu, navRef }: Props) => {
           <H3>{t('protezPage.navigation.0')}</H3>
           {icons.arrowUp(`${style.icon} ${accentClass}`)}
         </Link>
-        <button
-          type="button"
-          onClick={closeMenu}
-          aria-label="Close menu"
-          className={style.closeMenuBtn}
-        >
-          {icons.menuClose(`${style.icon} ${accentClass}`)}
-        </button>
       </div>
       <div className={style.lowerPart}>
-        <div className={style.lowerPartButtonsContainer}>
+        <div className={`${style.lowerPartButtonsContainer} ${style.noNav}`}>
           <MakeDonationButton
             className={style.lowerPartButton}
             size="normal"

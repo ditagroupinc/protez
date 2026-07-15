@@ -150,9 +150,12 @@
   },
   "officeLocations": {
     "locations": [
-      { "country": "USA", "location": "Oakdale", "address": "3510 Hopkins Pl" },
-      { "country": "Ukraine", "location": "Svalyava", "address": "вул. Набережна 14, 61" },
-      { "country": "Ukraine", "location": "Kyiv", "address": "вул. Хрещатик 7/11" }
+      { "country": "США", "location": "Оакдейл", "address": "3510 Hopkins Pl" },
+      { "country": "Україна", "location": "Свалява", "address": "вул. Набережна, 14, 61" },
+      { "country": "Україна", "location": "Київ", "address": "вул. Хрещатик, 7/11" },
+      { "country": "Україна", "location": "Золотоноша", "address": "вул. Степова, 32" },
+      { "country": "Україна", "location": "Виноградів", "address": "вул. Комунальна, 8а" },
+      { "country": "Україна", "location": "Київ", "address": "Незабаром" }
     ]
   },
   "events": {

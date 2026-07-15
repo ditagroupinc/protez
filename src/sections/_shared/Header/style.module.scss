@@ -192,19 +192,6 @@
   }
 }
 
-.closeMenuBtn {
-  margin-left: auto;
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .protezFoundationLinkWrapper {
   height: 46px;
   flex-shrink: 0;
@@ -269,7 +256,7 @@
 
 .navigation {
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
   &.red {
     &::-webkit-scrollbar-thumb {
       background: var(--red);
@@ -329,6 +316,10 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  &.noNav {
+    margin-top: 24px;
+  }
 }
 .lowerPartButton {
   width: 100%;
