@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 import { setRequestLocale, getTranslations } from 'next-intl/server'
 
 import ChildrenProstheticsPage from '@/sections/childrenProsthetics/_root'
+import type { Locale } from '@/lib/i18n'
+import { buildAlternates, localeUrl } from '@/lib/seo'
 
 export const dynamic = 'force-static'
 
-type Params = { locale: string }
-
-const SITE_URL = 'https://www.protezfoundation.org'
+type Params = { locale: Locale }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale } = await Promise.resolve(params)
@@ -16,23 +16,15 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   const t = await getTranslations({ locale, namespace: 'childrenProsthetics.meta' })
 
   const isUk = locale === 'uk'
-  const canonicalPath = isUk ? '/ua/dytyache-protezuvannya' : '/dytyache-protezuvannya'
 
   return {
     title: t('title'),
     description: t('description'),
-    alternates: {
-      canonical: canonicalPath,
-      languages: {
-        en: `${SITE_URL}/dytyache-protezuvannya`,
-        'uk-UA': `${SITE_URL}/ua/dytyache-protezuvannya`,
-        'x-default': `${SITE_URL}/dytyache-protezuvannya`,
-      },
-    },
+    alternates: buildAlternates(locale, '/dytyache-protezuvannya'),
     openGraph: {
       type: 'article',
       locale: isUk ? 'uk_UA' : 'en_US',
-      url: isUk ? `${SITE_URL}/ua/dytyache-protezuvannya` : `${SITE_URL}/dytyache-protezuvannya`,
+      url: localeUrl(locale, '/dytyache-protezuvannya'),
       title: t('title'),
       description: t('description'),
     },

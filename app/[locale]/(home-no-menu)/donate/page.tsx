@@ -2,11 +2,12 @@ import type { Metadata } from 'next'
 import Donate from '@/sections/donate/Donate'
 import { setRequestLocale } from 'next-intl/server'
 
+import type { Locale } from '@/lib/i18n'
+import { buildAlternates } from '@/lib/seo'
+
 export const dynamic = 'force-static'
 
-type Params = { locale: string }
-
-const SITE_URL = 'https://www.protezfoundation.org'
+type Params = { locale: Locale }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale } = await Promise.resolve(params)
@@ -18,19 +19,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     ? 'Підтримайте Protez Foundation: ваші пожертви оплачують протези, навчання та реабілітацію для українців, які втратили кінцівки на війні.'
     : 'Support Protez Foundation: your donations cover prostheses, training, and rehabilitation for Ukrainians who lost limbs in the war.'
 
-  const canonicalPath = isUk ? '/ua/donate' : '/donate'
-
   return {
     title,
     description,
-    alternates: {
-      canonical: canonicalPath,
-      languages: {
-        en: `${SITE_URL}/donate`,
-        'uk-UA': `${SITE_URL}/ua/donate`,
-        'x-default': `${SITE_URL}/donate`,
-      },
-    },
+    alternates: buildAlternates(locale, '/donate'),
   }
 }
 

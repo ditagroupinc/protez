@@ -10,13 +10,13 @@ import { notFound } from 'next/navigation'
 import FacebookPixelEvents from '@/components/FacebookPixelEvents'
 import LanguageSelectionModal from '@/components/LanguageSelectionModal'
 import { nunitoSans } from '../fonts'
-import { routing } from '@/lib/i18n'
+import { routing, type Locale } from '@/lib/i18n'
+import { SITE_URL, buildAlternates, localeUrl } from '@/lib/seo'
 
 import { ReactNode } from 'react'
 import { Metadata, Viewport } from 'next'
 
 const GTM_ID = process.env.GTM_ID
-const SITE_URL = 'https://www.protezfoundation.org'
 
 export function generateStaticParams() {
   return routing.locales.map(locale => ({ locale }))
@@ -25,7 +25,7 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: { locale: string }
+  params: { locale: Locale }
 }): Promise<Metadata> {
   const { locale } = await Promise.resolve(params)
   const isUk = locale === 'uk'
@@ -49,19 +49,12 @@ export async function generateMetadata({
     authors: [{ name: 'Protez Foundation' }],
     creator: 'Protez Foundation',
     publisher: 'Protez Foundation',
-    alternates: {
-      canonical: isUk ? '/ua' : '/',
-      languages: {
-        en: `${SITE_URL}/`,
-        'uk-UA': `${SITE_URL}/ua`,
-        'x-default': `${SITE_URL}/`,
-      },
-    },
+    alternates: buildAlternates(locale, '/'),
     openGraph: {
       type: 'website',
       locale: isUk ? 'uk_UA' : 'en_US',
       alternateLocale: isUk ? ['en_US'] : ['uk_UA'],
-      url: isUk ? `${SITE_URL}/ua` : SITE_URL,
+      url: localeUrl(locale, '/'),
       siteName: 'Protez Foundation',
       title,
       description,
@@ -111,7 +104,7 @@ export default async function LocaleLayout({
   params,
 }: {
   children: ReactNode
-  params: { locale: string }
+  params: { locale: Locale }
 }) {
   const { locale } = await Promise.resolve(params)
 
@@ -122,9 +115,33 @@ export default async function LocaleLayout({
   setRequestLocale(locale)
   const messages = await getMessages()
 
+  const isUk = locale === 'uk'
+  const orgDescription = isUk
+    ? 'Неприбуткова організація 501(c)(3), яка надає сучасні протези, індивідуальне навчання та реабілітацію в США для українців, які втратили кінцівки на війні.'
+    : 'Nonprofit 501(c)(3) providing state-of-the-art prosthetics, personalized training, and rehabilitation in the US for Ukrainians who have lost limbs in the war.'
+
+  const orgJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'NonprofitOrganization',
+    name: 'Protez Foundation',
+    url: SITE_URL,
+    logo: `${SITE_URL}/apple-touch-icon.png`,
+    description: orgDescription,
+    inLanguage: isUk ? 'uk-UA' : 'en-US',
+    // TODO: fill in real values
+    // taxID: 'XX-XXXXXXX', // 501(c)(3) EIN
+    // sameAs: [ 'https://www.facebook.com/…', 'https://www.instagram.com/…', 'https://www.linkedin.com/company/…' ],
+  }
+
   return (
     <html lang={locale === 'uk' ? 'uk' : 'en'} className={nunitoSans.className}>
       <head>
+        <Script
+          id="ld-org"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
         <Script id="google-tag-manager" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

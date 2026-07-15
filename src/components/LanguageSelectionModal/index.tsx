@@ -19,15 +19,26 @@ const LanguageSelectionModal = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [, startTransition] = useTransition()
 
-  const locale = useLocale()
+  const locale = useLocale() as Locale
   const router = useRouter()
   const pathname = usePathname()
 
   useEffect(() => {
-    if (!document.cookie.includes(`${LOCALE_COOKIE_NAME}=`)) {
+    const savedMatch = document.cookie.match(new RegExp(`(?:^|; )${LOCALE_COOKIE_NAME}=(en|uk)`))
+    const saved = savedMatch?.[1] as Locale | undefined
+
+    if (!saved) {
       setIsOpen(true)
+
+      return
     }
-  }, [])
+
+    if (saved !== locale) {
+      startTransition(() => {
+        router.replace(pathname, { locale: saved })
+      })
+    }
+  }, [locale, pathname, router])
 
   useEffect(() => {
     if (!isOpen) return

@@ -2,11 +2,12 @@ import type { Metadata } from 'next'
 import ArtemSvergun from '@/sections/stories/ArtemSvergun'
 import { setRequestLocale } from 'next-intl/server'
 
+import type { Locale } from '@/lib/i18n'
+import { buildAlternates } from '@/lib/seo'
+
 export const dynamic = 'force-static'
 
-type Params = { locale: string }
-
-const SITE_URL = 'https://www.protezfoundation.org'
+type Params = { locale: Locale }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale } = await Promise.resolve(params)
@@ -16,18 +17,14 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     ? 'Історія Артема Свергуна — Protez Foundation'
     : "Artem Svergun's Story — Protez Foundation"
 
-  const canonicalPath = isUk ? '/ua/stories/artem-svergun' : '/stories/artem-svergun'
+  const description = isUk
+    ? 'Історія Артема Свергуна — українського захисника, шлях якого до нового життя з протезом розпочався за підтримки Protez Foundation.'
+    : "The story of Artem Svergun — a Ukrainian defender whose journey to a new life with a prosthesis began with Protez Foundation's support."
 
   return {
     title,
-    alternates: {
-      canonical: canonicalPath,
-      languages: {
-        en: `${SITE_URL}/stories/artem-svergun`,
-        'uk-UA': `${SITE_URL}/ua/stories/artem-svergun`,
-        'x-default': `${SITE_URL}/stories/artem-svergun`,
-      },
-    },
+    description,
+    alternates: buildAlternates(locale, '/stories/artem-svergun'),
   }
 }
 

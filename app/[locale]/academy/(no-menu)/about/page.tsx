@@ -2,11 +2,12 @@ import type { Metadata } from 'next'
 import { setRequestLocale } from 'next-intl/server'
 import AcademyAboutClient from './AcademyAboutClient'
 
+import type { Locale } from '@/lib/i18n'
+import { buildAlternates } from '@/lib/seo'
+
 export const dynamic = 'force-static'
 
-type Params = { locale: string }
-
-const SITE_URL = 'https://www.protezfoundation.org'
+type Params = { locale: Locale }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale } = await Promise.resolve(params)
@@ -16,18 +17,14 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     ? 'Про Protez Academy — Освіта та реабілітація'
     : 'About Protez Academy — Education and Rehabilitation'
 
-  const canonicalPath = isUk ? '/ua/academy/about' : '/academy/about'
+  const description = isUk
+    ? 'Дізнайтеся про місію Protez Academy: підготовку українських протезистів, ортезистів та фахівців з реабілітації через партнерство з провідними університетами США.'
+    : 'Learn about the mission of Protez Academy: training Ukrainian prosthetists, orthotists, and rehabilitation specialists through partnerships with leading US universities.'
 
   return {
     title,
-    alternates: {
-      canonical: canonicalPath,
-      languages: {
-        en: `${SITE_URL}/academy/about`,
-        'uk-UA': `${SITE_URL}/ua/academy/about`,
-        'x-default': `${SITE_URL}/academy/about`,
-      },
-    },
+    description,
+    alternates: buildAlternates(locale, '/academy/about'),
   }
 }
 

@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { getTranslations, setRequestLocale } from 'next-intl/server'
 
+import type { Locale } from '@/lib/i18n'
+import { buildAlternates } from '@/lib/seo'
+
 import style from './style.module.scss'
 
 export const dynamic = 'force-static'
 
-type Params = { locale: string }
-
-const SITE_URL = 'https://www.protezfoundation.org'
+type Params = { locale: Locale }
 
 type TermsSection = {
   heading: string
@@ -21,18 +22,14 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
 
   const title = isUk ? 'Правила та умови — Protez Academy' : 'Terms and Conditions — Protez Academy'
 
-  const canonicalPath = isUk ? '/ua/academy/terms-conditions' : '/academy/terms-conditions'
+  const description = isUk
+    ? 'Правила та умови використання ресурсів Protez Academy: політика курсів, конфіденційність, права та обовʼязки учасників.'
+    : 'Terms and conditions for using Protez Academy resources: course policies, privacy, and participant rights and responsibilities.'
 
   return {
     title,
-    alternates: {
-      canonical: canonicalPath,
-      languages: {
-        en: `${SITE_URL}/academy/terms-conditions`,
-        'uk-UA': `${SITE_URL}/ua/academy/terms-conditions`,
-        'x-default': `${SITE_URL}/academy/terms-conditions`,
-      },
-    },
+    description,
+    alternates: buildAlternates(locale, '/academy/terms-conditions'),
   }
 }
 

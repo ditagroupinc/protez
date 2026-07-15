@@ -7,10 +7,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/_next/'],
+        disallow: ['/api/', '/_next/', '/thank-you', '/ua/thank-you'],
       },
     ],
     sitemap: 'https://www.protezfoundation.org/sitemap.xml',
-    host: 'https://www.protezfoundation.org',
   }
 }

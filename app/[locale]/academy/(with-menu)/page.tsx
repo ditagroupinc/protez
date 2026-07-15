@@ -2,11 +2,12 @@ import type { Metadata } from 'next'
 import AcademyHomePage from '@/sections/academy/_root'
 import { setRequestLocale } from 'next-intl/server'
 
+import type { Locale } from '@/lib/i18n'
+import { buildAlternates, localeUrl } from '@/lib/seo'
+
 export const dynamic = 'force-static'
 
-type Params = { locale: string }
-
-const SITE_URL = 'https://www.protezfoundation.org'
+type Params = { locale: Locale }
 
 export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
   const { locale } = await Promise.resolve(params)
@@ -20,8 +21,6 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
     ? 'Protez Academy — освітній проєкт Protez Foundation у співпраці з Century College, University of Minnesota та Concordia University. Ми навчаємо українських протезистів, ортезистів та фахівців з реабілітації доказовій клінічній практиці.'
     : 'Protez Academy is an educational project by Protez Foundation in collaboration with Century College, University of Minnesota, and Concordia University. We train Ukrainian prosthetists, orthotists, and rehabilitation specialists in evidence-based clinical practice.'
 
-  const canonicalPath = isUk ? '/ua/academy' : '/academy'
-
   return {
     title,
     description,
@@ -33,17 +32,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
       'amputee rehab',
       'orthotics training',
     ],
-    alternates: {
-      canonical: canonicalPath,
-      languages: {
-        en: `${SITE_URL}/academy`,
-        'uk-UA': `${SITE_URL}/ua/academy`,
-        'x-default': `${SITE_URL}/academy`,
-      },
-    },
+    alternates: buildAlternates(locale, '/academy'),
     openGraph: {
       type: 'website',
-      url: `${SITE_URL}${canonicalPath}`,
+      url: localeUrl(locale, '/academy'),
       title,
       description,
       images: [

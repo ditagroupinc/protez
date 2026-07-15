@@ -18,7 +18,6 @@ const routes: RouteConfig[] = [
   { path: '/partners', changeFrequency: 'monthly', priority: 0.5 },
   { path: '/stories/vadym-fedorov', changeFrequency: 'yearly', priority: 0.5 },
   { path: '/stories/artem-svergun', changeFrequency: 'yearly', priority: 0.5 },
-  { path: '/thank-you', changeFrequency: 'yearly', priority: 0.1 },
 ]
 
 const enUrl = (path: string) => `${BASE}${path}`
