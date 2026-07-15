@@ -23,6 +23,7 @@ const SummitResults = lazy(() => import('../SummitResults'))
 const Academy = lazy(() => import('../Academy'))
 const AcademyStudents = lazy(() => import('../AcademyStudents'))
 const Events = lazy(() => import('../Events'))
+const FoundingDocuments = lazy(() => import('../FoundingDocuments'))
 
 import style from './style.module.scss'
 
@@ -103,6 +104,10 @@ export default function AcademyHomePage() {
 
         <Suspense fallback={<FullScreenFallback />}>
           <SummitResults ref={refSummit} />
+        </Suspense>
+
+        <Suspense fallback={<FullScreenFallback />}>
+          <FoundingDocuments />
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>

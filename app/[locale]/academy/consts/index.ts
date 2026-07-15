@@ -10,6 +10,7 @@ export enum AcademyIDs {
   AcademyStudents = 'academyStudents',
   AmputeeRehab = 'amputeeRehab',
   SummitResults = 'summitResults',
+  FoundingDocuments = 'foundingDocuments',
   SpecialThanksToAllOurPartners = 'specialThanksToAllOurPartners',
   Footer = 'footer',
 }

@@ -64,6 +64,7 @@ export const ACADEMY_NAV_IDS = [
   AcademyIDs.PastAndUpcomingEvents,
   AcademyIDs.AcademyStudents,
   AcademyIDs.SummitResults,
+  AcademyIDs.FoundingDocuments,
   AcademyIDs.SpecialThanksToAllOurPartners,
   AcademyIDs.OurSponsors,
 ] as const

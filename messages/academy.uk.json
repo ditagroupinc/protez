@@ -24,6 +24,7 @@
         "pastAndUpcomingEvents": "Актуальні навчання",
         "academyStudents": "Наші студенти",
         "summitResults": "Amputee Rehab Summit",
+        "foundingDocuments": "Установчі документи",
         "specialThanksToAllOurPartners": "Партнери",
         "ourSponsors": "Донори"
       },
@@ -103,6 +104,43 @@
         {
           "icon": "team-circle.svg",
           "text": "Формування професійної спільноти та обміну досвідом між фахівцями."
+        }
+      ]
+    },
+    "foundingDocuments": {
+      "title": "Установчі документи",
+      "description": "Офіційні документи, що підтверджують діяльність та методологію Protez Academy.",
+      "cta": "Переглянути",
+      "documents": [
+        {
+          "id": "edr-extract",
+          "title": "Виписка з ЄДР",
+          "description": "Витяг з Єдиного державного реєстру юридичних осіб.",
+          "file": "/documents/foundingDocuments/edr-extract.pdf"
+        },
+        {
+          "id": "conflict-of-interest",
+          "title": "Заява про відсутність конфлікту інтересів",
+          "description": "Заява ГО «ПРОТЕЗ АКАДЕМІЯ» про відсутність конфлікту інтересів.",
+          "file": "/documents/foundingDocuments/conflict-of-interest.pdf"
+        },
+        {
+          "id": "intent-statement",
+          "title": "Заява про намір",
+          "description": "Офіційна заява про наміри діяльності організації.",
+          "file": "/documents/foundingDocuments/intent-statement.pdf"
+        },
+        {
+          "id": "methodology",
+          "title": "Методологія ГО «ПРОТЕЗ АКАДЕМІЯ»",
+          "description": "Методологічні засади освітньої та практичної діяльності.",
+          "file": "/documents/foundingDocuments/methodology.pdf"
+        },
+        {
+          "id": "assessment-regulations",
+          "title": "Положення про оцінку",
+          "description": "Регламент оцінювання результатів навчання та компетенцій.",
+          "file": "/documents/foundingDocuments/assessment-regulations.pdf"
         }
       ]
     },

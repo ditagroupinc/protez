@@ -24,6 +24,7 @@
         "pastAndUpcomingEvents": "Events",
         "academyStudents": "Students",
         "summitResults": "Summit",
+        "foundingDocuments": "Founding Documents",
         "specialThanksToAllOurPartners": "Partners",
         "ourSponsors": "Our Sponsors"
       },
@@ -103,6 +104,43 @@
         {
           "icon": "team-circle.svg",
           "text": "Building a professional community and fostering experience sharing among specialists"
+        }
+      ]
+    },
+    "foundingDocuments": {
+      "title": "Founding Documents",
+      "description": "Official documents that confirm the activities and methodology of Protez Academy.",
+      "cta": "View",
+      "documents": [
+        {
+          "id": "edr-extract",
+          "title": "Extract from the State Register",
+          "description": "Extract from the Unified State Register of Legal Entities of Ukraine.",
+          "file": "/documents/foundingDocuments/edr-extract.pdf"
+        },
+        {
+          "id": "conflict-of-interest",
+          "title": "Conflict of Interest Declaration",
+          "description": "Declaration of NGO «PROTEZ ACADEMY» on the absence of conflict of interest.",
+          "file": "/documents/foundingDocuments/conflict-of-interest.pdf"
+        },
+        {
+          "id": "intent-statement",
+          "title": "Statement of Intent",
+          "description": "Official statement on the intended activities of the organization.",
+          "file": "/documents/foundingDocuments/intent-statement.pdf"
+        },
+        {
+          "id": "methodology",
+          "title": "Methodology of NGO «PROTEZ ACADEMY»",
+          "description": "Methodological foundations of educational and practical activities.",
+          "file": "/documents/foundingDocuments/methodology.pdf"
+        },
+        {
+          "id": "assessment-regulations",
+          "title": "Assessment Regulations",
+          "description": "Regulations for evaluating learning outcomes and competencies.",
+          "file": "/documents/foundingDocuments/assessment-regulations.pdf"
         }
       ]
     },
