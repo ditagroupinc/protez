@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Незалежний фінансовий аудит — Protez Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@1,700;1,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-soft:#F3F3F3;
+    --panel:#F3F3F3;
+    --panel-2:#C7C8CF;
+    --line:#E2E3E7;
+    --accent:#4AC0B0;
+    --accent-dark:#2E8B7E;
+    --accent-soft:#7FDCCB;
+    --text:#1A1A1B;
+    --text-dim:#55565C;
+    --text-faint:#86878E;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'Nunito Sans',Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4,.display{
+    font-family:'Nunito Sans',Arial,sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:.4px;
+    margin:0;
+  }
+  /* ===================== TYPE SCALE (desktop) ===================== */
+  h1{font-size:72px;line-height:78px;}
+  h2{font-size:60px;line-height:76px;}
+  h3{font-size:24px;line-height:32px;}
+  h4{font-size:20px;line-height:28px;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 40px;}
+  img{max-width:100%;display:block;}
+
+  /* background smoke effect — single accent hue, layered for depth */
+  .smoke-bg{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(ellipse 700px 400px at 15% 0%, rgba(74,192,176,0.14), transparent 60%),
+      radial-gradient(ellipse 600px 500px at 100% 30%, rgba(74,192,176,0.06), transparent 60%),
+      var(--bg);
+  }
+  /* fade the ambient glow out to flat bg so it hands off to the next section with no visible seam */
+  .smoke-bg::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:200px;z-index:0;
+    background:linear-gradient(to bottom, transparent, var(--bg));
+    pointer-events:none;
+  }
+
+  /* ===================== HERO AMBIENT FX ===================== */
+  .hero-fx{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;}
+  .hero-fx .glow{position:absolute;border-radius:50%;}
+  .hero-fx .g1{width:780px;height:780px;left:-180px;top:-220px;background:radial-gradient(circle,rgba(74,192,176,.26) 0%,rgba(74,192,176,.08) 42%,transparent 70%);animation:heroDrift1 26s ease-in-out infinite;}
+  .hero-fx .g2{width:640px;height:640px;right:6%;top:14%;background:radial-gradient(circle,rgba(46,139,126,.28) 0%,transparent 68%);animation:heroDrift2 30s ease-in-out infinite;}
+  .hero-fx .g3{width:440px;height:440px;left:38%;bottom:-260px;background:radial-gradient(circle,rgba(127,220,203,.14) 0%,transparent 60%);animation:heroDrift3 34s ease-in-out infinite;}
+  .hero-fx .spark{
+    position:absolute;bottom:-10px;width:4px;height:4px;border-radius:50%;
+    background:var(--accent-soft);opacity:0;box-shadow:0 0 8px 2px rgba(127,220,203,.55);
+    animation:rise linear infinite;
+  }
+  @keyframes heroDrift1{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(72px,52px) scale(1.12);}}
+  @keyframes heroDrift2{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(-64px,42px) scale(1.1);}}
+  @keyframes heroDrift3{0%,100%{transform:translate(0,0) scale(1);}50%{transform:translate(42px,-42px) scale(1.14);}}
+  @keyframes rise{0%{transform:translateY(0);opacity:0;}12%{opacity:.85;}80%{opacity:.85;}100%{transform:translateY(-360px);opacity:0;}}
+
+  /* ===================== HEADER ===================== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .header-inner{
+    max-width:1180px;margin:0 auto;padding:14px 40px;
+    display:flex;align-items:center;justify-content:space-between;
+    gap:20px;
+  }
+  .logo{display:flex;align-items:center;}
+  .logo-img{height:32px;width:auto;display:block;}
+  .header-right{display:flex;align-items:center;gap:18px;}
+  .lang-switch{
+    display:flex;align-items:center;gap:6px;
+    font-size:12px;font-weight:600;color:var(--text-dim);
+  }
+  .lang-switch button{
+    background:none;border:none;color:var(--text-dim);
+    font:inherit;cursor:pointer;padding:2px 4px;
+  }
+  .lang-switch .active{color:var(--accent);}
+  .lang-switch .sep{color:var(--line);}
+  .academy-link{
+    font-size:13px;font-weight:600;color:var(--text-dim);
+    white-space:nowrap;
+  }
+  .academy-link:hover{color:var(--accent);}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:12px 22px;border-radius:4px;
+    font-size:13px;font-weight:700;white-space:nowrap;
+    border:1.5px solid var(--accent);color:var(--accent);
+    cursor:pointer;transition:all .15s ease;
+    font-family:'Nunito Sans',sans-serif;
+  }
+  .btn:hover{background:rgba(74,192,176,.1);}
+  .btn.solid{background:var(--accent);color:#fff;border-color:var(--accent);transition:all .18s ease;}
+  .btn.solid:hover{background:var(--accent-soft);border-color:var(--accent-soft);color:#0d1211;}
+  .btn[aria-disabled="true"]{opacity:.45;cursor:not-allowed;pointer-events:none;}
+  .header-ctas{display:flex;gap:10px;}
+  .burger{
+    width:38px;height:38px;border-radius:8px;border:1px solid var(--line);
+    background:transparent;display:flex;flex-direction:column;justify-content:center;
+    align-items:center;gap:4px;cursor:pointer;flex-shrink:0;
+  }
+  .burger span{width:16px;height:2px;background:var(--text);display:block;}
+
+  /* drawer */
+  .drawer-overlay{
+    position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:99;
+    display:none;
+  }
+  .drawer-overlay.open{display:block;}
+  .drawer{
+    position:fixed;top:0;right:0;bottom:0;width:300px;
+    background:var(--panel);border-left:1px solid var(--line);
+    z-index:100;padding:24px;
+    transform:translateX(100%);transition:transform .25s ease;
+    display:flex;flex-direction:column;
+  }
+  .drawer.open{transform:translateX(0);}
+  .drawer-close{align-self:flex-end;background:none;border:none;color:var(--text-dim);font-size:22px;cursor:pointer;margin-bottom:10px;}
+  .drawer nav{display:flex;flex-direction:column;gap:2px;overflow-y:auto;}
+  .drawer nav a{
+    padding:11px 4px;font-size:14px;color:var(--text-dim);
+    border-bottom:1px solid var(--line);cursor:pointer;
+  }
+  .drawer nav a:hover{color:var(--accent);}
+  .drawer nav a.current{color:var(--accent);font-weight:600;}
+  .drawer-ctas{display:none;flex-direction:column;gap:10px;padding-top:16px;flex-shrink:0;}
+  .drawer-ctas .btn{width:100%;white-space:normal;}
+  .drawer-footer{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);flex-shrink:0;}
+  .drawer-phone{font-size:14px;font-weight:700;color:var(--text);margin-bottom:10px;display:block;}
+  .drawer-social{display:flex;gap:12px;}
+  .drawer-social a{
+    width:30px;height:30px;border-radius:50%;border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--text-dim);
+  }
+
+  /* ===================== HERO ===================== */
+  .hero{
+    position:relative;z-index:1;
+    padding-top:64px;padding-bottom:30px;
+    text-align:center;
+  }
+  .hero h1{
+    color:var(--text);margin:0 0 20px;
+  }
+  .hero h1 .sh-serif{margin-bottom:2px;}
+  .hero p{
+    max-width:560px;margin:0 auto;color:var(--text-dim);font-size:16px;line-height:1.6;
+  }
+
+  /* year tabs */
+  .year-tabs{
+    display:flex;justify-content:center;gap:10px;margin:34px 0 0;
+    flex-wrap:wrap;
+  }
+  .year-tab{
+    padding:12px 30px;border-radius:4px;border:1.5px solid var(--line);
+    background:rgba(0,0,0,.03);color:var(--text-dim);
+    font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:16px;
+    cursor:pointer;transition:all .15s ease;
+  }
+  .year-tab:hover{border-color:var(--text-faint);color:var(--text);background:rgba(0,0,0,.05);}
+  .year-tab.active{
+    border-color:var(--accent);color:var(--accent);
+    background:rgba(74,192,176,.16);
+  }
+  .year-note{
+    text-align:center;color:var(--text-faint);font-size:12px;margin-top:14px;
+  }
+  .year-note.pending{
+    display:inline-flex;align-items:center;gap:8px;
+    margin-top:16px;padding:9px 20px;border-radius:100px;
+    background:rgba(74,192,176,.16);border:1.5px solid var(--accent);
+    color:#0d1211;font-weight:700;font-size:13px;
+  }
+  .year-note.pending::before{
+    content:"";width:6px;height:6px;border-radius:50%;background:var(--accent-dark);flex-shrink:0;
+    animation:pulseDot 1.6s ease-in-out infinite;
+  }
+  @keyframes pulseDot{0%,100%{opacity:.4;transform:scale(.85);}50%{opacity:1;transform:scale(1.15);}}
+
+  /* ===================== STAT CARDS ===================== */
+  .section{padding:56px 0;}
+  .section-head{margin-bottom:30px;text-align:center;}
+  .section-head h2{color:var(--text);}
+  .section-head p{color:var(--text-dim);font-size:14px;margin-top:14px;max-width:520px;margin-left:auto;margin-right:auto;}
+
+  /* subheading split serif/bold treatment (shared type signature) — stacked lines */
+  .sh-serif{
+    display:block;
+    font-family:'Playfair Display',serif;font-style:italic;font-weight:700;
+    text-transform:none;letter-spacing:0;color:var(--accent);
+  }
+  .sh-bold{display:block;font-weight:900;margin-top:2px;}
+
+  .stat-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:20px;max-width:640px;margin:0 auto;
+  }
+  .stat-card{
+    background:var(--panel);border:1px solid var(--line);border-radius:0;
+    padding:32px 24px;text-align:center;position:relative;overflow:hidden;
+    transition:opacity .7s cubic-bezier(.22,.9,.3,1), transform .35s ease, border-color .25s ease;
+  }
+  .stat-card:hover{transform:translateY(-4px);border-color:var(--accent);}
+  .stat-card::before{
+    content:"";position:absolute;top:-30px;right:-30px;width:110px;height:110px;
+    background:radial-gradient(circle,rgba(74,192,176,.18),transparent 70%);
+  }
+  .stat-num{
+    font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:40px;color:var(--accent);
+    display:flex;align-items:center;justify-content:center;gap:4px;
+  }
+  .stat-num .plus{font-size:26px;}
+  .stat-label{
+    margin-top:10px;font-size:13px;color:var(--text-dim);
+    text-transform:uppercase;letter-spacing:.8px;font-weight:600;
+  }
+
+  /* ===================== BREAKDOWN ===================== */
+  .breakdown{
+    display:grid;grid-template-columns:290px 1fr;gap:48px;align-items:center;
+  }
+  .donut-wrap{display:flex;flex-direction:column;align-items:center;}
+  .donut{
+    width:260px;height:260px;position:relative;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .donut svg{width:100%;height:100%;transform:rotate(-90deg);overflow:visible;}
+  .donut-seg{
+    transition:stroke-width .2s ease, opacity .2s ease, filter .2s ease;
+    cursor:pointer;
+  }
+  .donut-seg.active{filter:drop-shadow(0 0 6px rgba(74,192,176,.6));}
+  .donut-seg.dim{opacity:.28;}
+  .donut-track{transition:stroke-dasharray .7s ease, stroke-dashoffset .7s ease;}
+  .donut-center{
+    width:150px;height:150px;border-radius:50%;background:var(--bg);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    border:1px solid var(--line);
+    position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+    transition:transform .2s ease;
+  }
+  .donut-center .amt{font-family:'Nunito Sans',sans-serif;font-weight:800;font-size:22px;color:var(--text);transition:opacity .15s ease;}
+  .donut-center .yr{font-size:12px;color:var(--text-dim);margin-top:2px;}
+
+  .cat-list{display:flex;flex-direction:column;gap:10px;}
+  .cat-row{
+    display:flex;align-items:center;gap:14px;cursor:pointer;
+    padding:12px 16px;border-radius:0;background:var(--panel);border:1px solid var(--line);
+    transition:background .2s ease, border-color .2s ease, transform .2s ease;
+  }
+  .cat-row.active{
+    background:rgba(74,192,176,.08);border-color:var(--accent);transform:translateX(6px);
+  }
+  .cat-row.dim{opacity:.5;}
+  .cat-dot{width:12px;height:12px;border-radius:3px;flex-shrink:0;transition:transform .2s ease;}
+  .cat-row.active .cat-dot{transform:scale(1.3);}
+  .cat-name{flex:1;font-size:14px;color:var(--text);}
+  .cat-amount{font-size:13px;color:var(--text-dim);width:80px;text-align:right;}
+  .cat-pct{font-size:14px;color:var(--accent);font-weight:700;width:44px;text-align:right;}
+
+  /* ===================== SUMMARY BARS ===================== */
+  .bars{display:flex;flex-direction:column;gap:20px;max-width:720px;margin:0 auto;}
+  .bar-row{display:flex;align-items:center;gap:18px;}
+  .bar-label{width:220px;font-size:13px;color:var(--text-dim);font-weight:600;}
+  .bar-track{flex:1;height:10px;border-radius:0;background:#F3F3F3;overflow:hidden;}
+  .bar-fill{height:100%;border-radius:0;background:var(--accent);transition:width 1s cubic-bezier(.22,.9,.3,1);}
+  .bar-pct{width:48px;text-align:right;font-weight:800;color:var(--text);font-size:14px;}
+
+  /* ===================== COMPARISON TABLE ===================== */
+  .table-wrap{overflow-x:auto;border-radius:0;border:1px solid var(--line);}
+  table.cmp{width:100%;border-collapse:collapse;background:#fff;}
+  table.cmp th,table.cmp td{padding:16px 20px;font-size:14px;text-align:center;border-bottom:1px solid var(--line);color:var(--text);}
+  table.cmp th{
+    background:#F3F3F3;color:var(--text-dim);font-family:'Nunito Sans',sans-serif;font-weight:700;font-size:13px;
+    text-transform:uppercase;letter-spacing:.5px;
+  }
+  table.cmp td:first-child, table.cmp th:first-child{text-align:left;color:var(--text-dim);}
+  table.cmp tr:last-child td{border-bottom:none;}
+  table.cmp td.highlight{color:var(--accent);font-weight:700;}
+
+  /* ===================== DOWNLOAD ===================== */
+  .download-card{
+    display:flex;align-items:center;justify-content:space-between;gap:24px;
+    background:#fff;
+    border:1px solid var(--line);border-radius:0;padding:34px 40px;
+    transition:opacity .7s cubic-bezier(.22,.9,.3,1), transform .35s ease;
+  }
+  .download-card .icon{
+    width:54px;height:54px;border-radius:0;background:rgba(74,192,176,.15);
+    display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:22px;flex-shrink:0;
+  }
+  .download-text h4{display:block;color:var(--text);margin-bottom:6px;}
+  .download-text span{color:var(--text-dim);font-size:13px;}
+  .download-row{display:flex;align-items:center;gap:18px;}
+
+
+  /* ===================== FOOTER ===================== */
+  footer{border-top:none;}
+  .footer-top{background:var(--accent-dark);padding:64px 0 56px;}
+  .footer-top-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
+  .footer-heading{margin:0 0 28px;}
+  .footer-heading .fh-serif{
+    display:block;font-family:'Playfair Display',serif;font-style:italic;font-weight:700;
+    text-transform:none;letter-spacing:0;font-size:44px;line-height:1.15;color:#fff;
+  }
+  .footer-heading .fh-bold{
+    display:block;font-family:'Nunito Sans',sans-serif;font-weight:900;
+    text-transform:uppercase;letter-spacing:.4px;font-size:44px;line-height:1.15;
+    color:#fff;margin-top:2px;
+  }
+  .footer-btns{display:flex;flex-direction:column;gap:14px;max-width:340px;}
+  .footer-btns .btn{width:100%;padding:17px 24px;font-size:14px;}
+  .footer-btn-solid{background:#0d1211;color:#fff;border-color:#0d1211;}
+  .footer-btn-solid:hover{background:var(--accent);border-color:var(--accent);color:#fff;}
+  .footer-right{
+    color:rgba(255,255,255,.88);font-size:14px;line-height:1.65;
+    display:flex;flex-direction:column;gap:18px;padding-top:6px;
+  }
+  .footer-right p{margin:0;}
+  .footer-right .fr-title{font-weight:700;color:#fff;margin-bottom:6px;}
+  .footer-divider{height:1px;background:rgba(255,255,255,.28);width:100%;}
+  .footer-contact{font-weight:700;color:#fff;}
+  .footer-bottom{
+    background:#0d1211;color:rgba(255,255,255,.7);text-align:center;
+    font-size:13px;padding:16px 20px;
+  }
+
+  /* icon font fallback (simple unicode glyphs, no external icon lib to keep file standalone) */
+  .ic{display:inline-block;}
+
+  /* ===================== SCROLL REVEAL ===================== */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s cubic-bezier(.22,.9,.3,1), transform .7s cubic-bezier(.22,.9,.3,1);}
+  .reveal.in-view{opacity:1;transform:translateY(0);}
+
+  /* hero entrance (plays immediately on load) */
+  .hero h1,.hero p,.hero .year-tabs,.hero .year-note{
+    opacity:0;transform:translateY(16px);
+    animation:heroIn .7s cubic-bezier(.22,.9,.3,1) forwards;
+  }
+  .hero h1{animation-delay:.05s;}
+  .hero p{animation-delay:.15s;}
+  .hero .year-tabs{animation-delay:.25s;}
+  .hero .year-note{animation-delay:.35s;}
+  @keyframes heroIn{to{opacity:1;transform:translateY(0);}}
+
+  /* table row hover */
+  table.cmp tbody tr,table.cmp tr{transition:background .15s ease;}
+  table.cmp tr:hover td{background:rgba(0,0,0,.025);}
+
+  /* button micro-interactions */
+  .btn{transform:scale(1);}
+  .btn:active{transform:scale(.96);}
+  .year-tab{transform:scale(1);}
+  .year-tab:active{transform:scale(.95);}
+  .download-card:hover{transform:translateY(-3px);}
+
+  /* fade wrapper used during year-switch / language-switch crossfade */
+  .fade-swap{transition:opacity .2s ease;}
+
+  /* ===================== RESPONSIVE ===================== */
+  @media (max-width:900px){
+    .wrap,.header-inner{padding-left:20px;padding-right:20px;}
+    /* ===== TYPE SCALE (mobile) ===== */
+    h1{font-size:44px;line-height:48px;}
+    h2{font-size:40px;line-height:normal;}
+    h3{font-size:20px;line-height:24px;}
+    h4{font-size:16px;line-height:20px;}
+    .stat-grid{grid-template-columns:1fr;}
+    .breakdown{grid-template-columns:1fr;}
+    .donut-wrap{margin:0 auto;}
+    .academy-link{display:none;}
+    .header-ctas .btn:not(.solid){display:none;}
+    .lang-switch{display:flex;}
+    .download-card{flex-direction:column;text-align:center;}
+    .download-card .btn{align-self:center;}
+    .download-row{flex-direction:column;}
+    .bar-label{width:130px;font-size:12px;}
+    .footer-top-inner{grid-template-columns:1fr;gap:36px;text-align:left;}
+    .footer-heading .fh-serif,.footer-heading .fh-bold{font-size:34px;}
+    .footer-btns{max-width:100%;}
+  }
+  @media (max-width:520px){
+    .header-inner{padding:12px 16px;}
+    .logo-img{height:26px;}
+    h1{font-size:30px;line-height:34px;}
+    h2{font-size:26px;line-height:32px;}
+    .header-ctas{display:none;}
+    .drawer-ctas{display:flex;}
+    .hero{padding-top:40px;padding-bottom:20px;}
+    .hero p{font-size:13px;}
+    .year-tab{padding:10px 20px;font-size:14px;}
+    .section{padding:40px 0;}
+    .stat-num{font-size:32px;}
+    table.cmp th,table.cmp td{padding:10px 8px;font-size:12px;}
+    .donut{width:220px;height:220px;}
+    .donut-center{width:130px;height:130px;}
+    .donut-center .amt{font-size:19px;}
+    .cat-row{padding:10px 12px;gap:10px;}
+    .cat-name{font-size:13px;}
+    .cat-amount{width:62px;font-size:12px;}
+    .cat-pct{width:34px;font-size:13px;}
+    .bar-row{gap:10px;}
+    .bar-label{width:94px;font-size:11px;}
+    .footer-top{padding:48px 0 40px;}
+    .footer-heading .fh-serif,.footer-heading .fh-bold{font-size:26px;}
+    .footer-btns .btn{padding:14px 18px;font-size:13px;}
+    .footer-right{font-size:13px;gap:14px;}
+  }
+
+  /* respect reduced motion preference */
+  @media (prefers-reduced-motion: reduce){
+    .reveal,.hero h1,.hero p,.hero .year-tabs,.hero .year-note,.stat-card,.download-card,.bar-fill,.donut-seg,.donut-track,.cat-row{
+      animation:none !important;transition:none !important;
+    }
+    .reveal{opacity:1;transform:none;}
+    .hero-fx .glow{animation:none !important;}
+    .hero-fx .spark{display:none;}
+  }
+
+  /* visible keyboard focus */
+  a:focus-visible,button:focus-visible{
+    outline:2px solid var(--accent);outline-offset:2px;border-radius:4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<div class="drawer" id="drawer">
+  <button class="drawer-close" id="drawerClose" aria-label="Close menu">&times;</button>
+  <nav id="drawerNav"></nav>
+  <div class="drawer-ctas">
+    <a class="btn" href="#" id="needBtnDrawer">Потрібен протез</a>
+    <a class="btn solid" href="#" id="donateBtnDrawer">Зробити внесок</a>
+  </div>
+  <div class="drawer-footer">
+    <span class="drawer-phone">+1 612-997-2005</span>
+    <div class="drawer-social">
+      <a href="#">yt</a><a href="#">fb</a><a href="#">ig</a><a href="#">in</a>
+    </div>
+  </div>
+</div>
+
+<header>
+  <div class="header-inner">
+    <a class="logo" href="https://www.protezfoundation.org/ua"><img class="logo-img" src="logo-protez-dark.svg" alt="Protez Foundation"></a>
+    <div class="header-right">
+      <a class="academy-link" href="#">Protez Academy</a>
+      <div class="lang-switch"><button class="active" id="langUA">UA</button><span class="sep">|</span><button id="langEN">EN</button></div>
+      <div class="header-ctas">
+        <a class="btn" href="#" id="needBtn">Потрібен протез</a>
+        <a class="btn solid" href="#" id="donateBtn">Зробити внесок</a>
+      </div>
+      <button class="burger" id="burgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="smoke-bg">
+  <div class="hero-fx" aria-hidden="true">
+    <span class="glow g1"></span>
+    <span class="glow g2"></span>
+    <span class="glow g3"></span>
+    <span class="spark" style="left:16%;animation-duration:10s;animation-delay:0s;"></span>
+    <span class="spark" style="left:34%;animation-duration:12s;animation-delay:3s;"></span>
+    <span class="spark" style="left:52%;animation-duration:9s;animation-delay:1.5s;"></span>
+    <span class="spark" style="left:64%;animation-duration:13s;animation-delay:5s;"></span>
+    <span class="spark" style="left:80%;animation-duration:11s;animation-delay:2.5s;"></span>
+  </div>
+  <div class="wrap hero">
+    <h1 id="heroTitle"><span class="sh-serif" id="heroTitleSerif">Незалежний</span> <span class="sh-bold" id="heroTitleBold">фінансовий аудит</span></h1>
+    <p id="heroDesc">Скільки людей ми підтримали й куди спрямовано кошти фонду — прозора статистика за кожен рік роботи.</p>
+
+    <div class="year-tabs" id="yearTabs">
+      <button class="year-tab" data-year="2022">2022</button>
+      <button class="year-tab" data-year="2023">2023</button>
+      <button class="year-tab active" data-year="2024">2024</button>
+      <button class="year-tab" data-year="2025">2025</button>
+    </div>
+    <div class="year-note" id="yearNote">Дані оновлюються щоквартально фінансовим відділом фонду</div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="sh-serif" id="statsYearSerif">Повний звіт</span> <span class="sh-bold" id="statsYearBold">за 2024 рік</span></h2>
+    </div>
+    <div class="stat-grid">
+      <div class="stat-card reveal" style="transition-delay:0s">
+        <div class="stat-num"><span class="plus">+</span><span id="statPatients">0</span></div>
+        <div class="stat-label" id="statLabelPatients">Пацієнтів отримали допомогу</div>
+      </div>
+      <div class="stat-card reveal" style="transition-delay:.1s">
+        <div class="stat-num">$<span id="statBudget">0</span></div>
+        <div class="stat-label" id="statLabelBudget">Загальний бюджет року</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="sh-serif" id="s2TitleSerif">Розподіл</span> <span class="sh-bold" id="s2TitleBold">витрат за категоріями</span></h2>
+      <p id="s2Desc">Повна прозорість використання коштів — кожен долар обліковано за категорією витрат.</p>
+    </div>
+    <div class="breakdown">
+      <div class="donut-wrap reveal">
+        <div class="donut" id="donut">
+          <svg viewBox="0 0 200 200" id="donutSvg">
+            <circle class="donut-track" cx="100" cy="100" r="80" fill="none" stroke="#E2E3E7" stroke-width="30"></circle>
+            <g id="donutSegs"></g>
+          </svg>
+          <div class="donut-center">
+            <div class="amt" id="donutTotal">$4,0M</div>
+            <div class="yr" id="donutYear">2024 рік</div>
+          </div>
+        </div>
+      </div>
+      <div class="cat-list reveal" id="catList" style="transition-delay:.1s"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="sh-serif" id="s3TitleSerif">Куди</span> <span class="sh-bold" id="s3TitleBold">спрямовано бюджет</span></h2>
+    </div>
+    <div class="bars">
+      <div class="bar-row reveal" style="transition-delay:0s">
+        <div class="bar-label" id="barProgram">Програмна діяльність</div>
+        <div class="bar-track"><div class="bar-fill" id="barFillProgram" data-target="93" style="width:0%;background:#4AC0B0;"></div></div>
+        <div class="bar-pct" id="barPctProgram">93%</div>
+      </div>
+      <div class="bar-row reveal" style="transition-delay:.1s">
+        <div class="bar-label" id="barAdmin">Адміністративні витрати</div>
+        <div class="bar-track"><div class="bar-fill" id="barFillAdmin" data-target="2" style="width:0%;background:#F2B84B;"></div></div>
+        <div class="bar-pct" id="barPctAdmin">2%</div>
+      </div>
+      <div class="bar-row reveal" style="transition-delay:.2s">
+        <div class="bar-label" id="barFundraising">Фандрайзинг</div>
+        <div class="bar-track"><div class="bar-fill" id="barFillFund" data-target="5" style="width:0%;background:#B98BDB;"></div></div>
+        <div class="bar-pct" id="barPctFund">5%</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="sh-serif" id="s4TitleSerif">Порівняння</span> <span class="sh-bold" id="s4TitleBold">по роках</span></h2>
+    </div>
+    <div class="table-wrap reveal">
+      <table class="cmp">
+        <tr><th id="thMetric">Показник</th><th>2022</th><th>2023</th><th>2024</th><th>2025</th></tr>
+        <tr><td id="rowPatients">Пацієнтів</td><td id="tblP2022">31</td><td id="tblP2023">83</td><td class="highlight" id="tblP2024">273</td><td>—</td></tr>
+        <tr><td id="rowBudget">Бюджет, $</td><td id="tblB2022">955K</td><td id="tblB2023">3,73M</td><td class="highlight" id="tblB2024">5,16M</td><td>—</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-light">
+  <div class="wrap">
+    <div class="download-card reveal">
+      <div class="download-row">
+        <div class="icon">&#8595;</div>
+        <div class="download-text">
+          <h4 id="dlTitle">Аудит за 2024 рік</h4>
+          <span id="dlDesc">PDF-версія статистики та інфографіки для друку й розсилки</span>
+        </div>
+      </div>
+      <a class="btn solid" href="#" id="dlBtn">Завантажити PDF</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="wrap footer-top-inner">
+      <div>
+        <h2 class="footer-heading">
+          <span class="fh-serif" id="footerThanksSerif">Дякуємо за</span>
+          <span class="fh-bold" id="footerThanksBold">підтримку</span>
+        </h2>
+        <div class="footer-btns">
+          <a class="btn footer-btn-solid" href="https://www.protezfoundation.org/ua/donate" id="footerDonateBtn">Зробити внесок</a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p id="footerEin">Некомерційна організація 501(c)(3) &middot; EIN: 88-2437069</p>
+        <div class="footer-divider"></div>
+        <div>
+          <p class="fr-title" id="footerChecksTitle">Надсилайте чеки на адресу:</p>
+          <p id="footerAddress">Protez Foundation, 3510 Hopkins Pl, W130D, Oakdale, MN 55128, США</p>
+        </div>
+        <p class="footer-contact">info@protezfoundation.com<br>+1 612-997-2005</p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 Protez Foundation</div>
+</footer>
+
+<script>
+  /* ===================== NAV / DRAWER ===================== */
+  const NAV = [
+    {ua:'Головна', en:'Home'},
+    {ua:'Люди довіряють нам', en:'People Trust Us'},
+    {ua:'Протезування для українців', en:'Prosthetics for Ukrainians'},
+    {ua:'У потребі', en:'In Need'},
+    {ua:'Наші результати', en:'Our Results'},
+    {ua:'Статистика по роках', en:'Statistics by Year', current:true},
+    {ua:'Витрати на протези', en:'Prosthetics Costs'},
+    {ua:'Protez Academy', en:'Protez Academy'},
+    {ua:'Історії', en:'Stories'},
+    {ua:'Події', en:'Events'},
+    {ua:'Прес-реліз', en:'Press Release'},
+    {ua:'Наші пацієнти', en:'Our Patients'},
+    {ua:'Команда', en:'Team'},
+    {ua:'Клініки', en:'Locations'},
+    {ua:'Партнери', en:'Partners'},
+    {ua:'Підписатися на оновлення', en:'Subscribe to Updates'},
+    {ua:'Protez Мерч', en:'Protez Merch'},
+  ];
+  const drawerNav = document.getElementById('drawerNav');
+  NAV.forEach(item=>{
+    const a = document.createElement('a');
+    if(item.current) a.classList.add('current');
+    a.href = '#';
+    a.dataset.ua = item.ua;
+    a.dataset.en = item.en;
+    a.textContent = item.ua;
+    drawerNav.appendChild(a);
+  });
+
+  const burgerBtn = document.getElementById('burgerBtn');
+  const drawer = document.getElementById('drawer');
+  const drawerOverlay = document.getElementById('drawerOverlay');
+  const drawerClose = document.getElementById('drawerClose');
+  function openDrawer(){drawer.classList.add('open');drawerOverlay.classList.add('open');}
+  function closeDrawer(){drawer.classList.remove('open');drawerOverlay.classList.remove('open');}
+  burgerBtn.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  drawerOverlay.addEventListener('click', closeDrawer);
+
+  /* ===================== CATEGORIES (shared across years) ===================== */
+  const CATEGORIES = [
+    {ua:'Протезування та лікування', en:'Prosthetics & Treatment', color:'#4AC0B0'},
+    {ua:'Оплата праці та податки', en:'Payroll & Payroll Taxes', color:'#F2B84B'},
+    {ua:'Перельоти та транспорт', en:'Flights & Transportation', color:'#B98BDB'},
+    {ua:'Оренда та обслуговування протезних центрів', en:'Prosthetic Centers Rent & Maintenance', color:'#6C8CD5'},
+    {ua:'Харчування та проживання пацієнтів', en:'Patient Meals & Housing', color:'#EF7B6D'},
+    {ua:'Освіта та Protez Academy', en:'Education & Protez Academy', color:'#8FD46B'},
+    {ua:'Фандрейзинг', en:'Fundraising', color:'#4FA8D8'},
+    {ua:'Адміністративні витрати', en:'Administrative Costs', color:'#9A9A9A'},
+  ];
+
+  /* ===================== YEAR DATA (source: audited financial statements) ===================== */
+  const DATA = {
+    2022: {
+      patients:'31', budgetUa:'610K', budgetEn:'610K',
+      split:{program:97, admin:2, fund:1},
+      report:'reports/protez-foundation-audit-2022.pdf',
+      cats:[
+        {pct:74, amtUa:'$452K', amtEn:'$452K'},
+        {pct:6,  amtUa:'$36K',  amtEn:'$36K'},
+        {pct:12, amtUa:'$72K',  amtEn:'$72K'},
+        {pct:2,  amtUa:'$13K',  amtEn:'$13K'},
+        {pct:3,  amtUa:'$17K',  amtEn:'$17K'},
+        {pct:0,  amtUa:'$0',    amtEn:'$0'},
+        {pct:1,  amtUa:'$5K',   amtEn:'$5K'},
+        {pct:2,  amtUa:'$14K',  amtEn:'$14K'},
+      ]
+    },
+    2023: {
+      patients:'83', budgetUa:'3,76M', budgetEn:'3.76M',
+      split:{program:96, admin:1, fund:3},
+      report:'reports/protez-foundation-audit-2023.pdf',
+      cats:[
+        {pct:60, amtUa:'$2,28M', amtEn:'$2.28M'},
+        {pct:12, amtUa:'$443K', amtEn:'$443K'},
+        {pct:11, amtUa:'$428K', amtEn:'$428K'},
+        {pct:4,  amtUa:'$135K', amtEn:'$135K'},
+        {pct:5,  amtUa:'$175K', amtEn:'$175K'},
+        {pct:4,  amtUa:'$142K', amtEn:'$142K'},
+        {pct:3,  amtUa:'$127K', amtEn:'$127K'},
+        {pct:1,  amtUa:'$37K',  amtEn:'$37K'},
+      ]
+    },
+    2024: {
+      patients:'273', budgetUa:'3,99M', budgetEn:'3.99M',
+      split:{program:96, admin:2, fund:2},
+      report:'reports/protez-foundation-audit-2024.pdf',
+      cats:[
+        {pct:53, amtUa:'$2,10M', amtEn:'$2.10M'},
+        {pct:19, amtUa:'$748K', amtEn:'$748K'},
+        {pct:10, amtUa:'$409K', amtEn:'$409K'},
+        {pct:8,  amtUa:'$308K', amtEn:'$308K'},
+        {pct:4,  amtUa:'$171K', amtEn:'$171K'},
+        {pct:3,  amtUa:'$115K', amtEn:'$115K'},
+        {pct:2,  amtUa:'$69K',  amtEn:'$69K'},
+        {pct:1,  amtUa:'$66K',  amtEn:'$66K'},
+      ]
+    },
+    2025: {
+      patients:'—', budgetUa:'—', budgetEn:'—',
+      split:{program:0, admin:0, fund:0},
+      report:null,
+      cats:[
+        {pct:0, amtUa:'—', amtEn:'—'},
+        {pct:0, amtUa:'—', amtEn:'—'},
+        {pct:0, amtUa:'—', amtEn:'—'},
+        {pct:0, amtUa:'—', amtEn:'—'},
+        {pct:0, amtUa:'—', amtEn:'—'},
+        {pct:0, amtUa:'—', amtEn:'—'},
+        {pct:0, amtUa:'—', amtEn:'—'},
+        {pct:0, amtUa:'—', amtEn:'—'},
+      ],
+      pending:true
+    }
+  };
+
+  /* table cells that need per-language reformatting (thousands / decimal separators) */
+  const TABLE = {
+    tblP2022:{ua:'31', en:'31'},
+    tblP2023:{ua:'83', en:'83'},
+    tblP2024:{ua:'273', en:'273'},
+    tblB2022:{ua:'610K', en:'610K'},
+    tblB2023:{ua:'3,76M', en:'3.76M'},
+    tblB2024:{ua:'3,99M', en:'3.99M'},
+  };
+
+  /* ===================== FIXED UI STRINGS ===================== */
+  const STR = {
+    heroTitleSerif: {ua:'Незалежний', en:'Independent'},
+    heroTitleBold:  {ua:'фінансовий аудит', en:'Financial Audit'},
+    yearNote:     {ua:'Дані оновлюються щоквартально фінансовим відділом фонду', en:"Data updated quarterly by the fund's finance department"},
+    needBtn:      {ua:'Потрібен протез', en:'Need a Prosthesis'},
+    donateBtn:    {ua:'Зробити внесок', en:'Make a Donation'},
+    s2Desc:       {ua:'Повна прозорість використання коштів — кожен долар обліковано за категорією витрат.', en:'Full transparency in how funds are used — every dollar is accounted for by expense category.'},
+    barProgram:   {ua:'Програмна діяльність', en:'Program Activities'},
+    barAdmin:     {ua:'Адміністративні витрати', en:'Administrative Costs'},
+    barFundraising:{ua:'Фандрайзинг', en:'Fundraising'},
+    thMetric:     {ua:'Показник', en:'Metric'},
+    rowPatients:  {ua:'Пацієнтів', en:'Patients'},
+    rowBudget:    {ua:'Бюджет, $', en:'Budget, $'},
+    dlDesc:       {ua:'PDF-версія статистики та інфографіки для друку й розсилки', en:'PDF version of statistics and infographics for print and distribution'},
+    statLabelPatients:  {ua:'Пацієнтів отримали допомогу', en:'Patients Helped'},
+    statLabelBudget:    {ua:'Загальний бюджет року', en:'Total Annual Budget'},
+    s2TitleSerif: {ua:'Розподіл', en:'Breakdown'},
+    s2TitleBold:  {ua:'витрат за категоріями', en:'by category'},
+    s3TitleSerif: {ua:'Куди', en:'Where'},
+    s3TitleBold:  {ua:'спрямовано бюджет', en:'the budget goes'},
+    s4TitleSerif: {ua:'Порівняння', en:'Comparison'},
+    s4TitleBold:  {ua:'по роках', en:'across years'},
+    footerThanksSerif:{ua:'Дякуємо за', en:'Thank you for'},
+    footerThanksBold: {ua:'підтримку', en:'your support'},
+    footerDonateBtn:  {ua:'Зробити внесок', en:'Make a Donation'},
+    footerEin:        {ua:'Некомерційна організація 501(c)(3) · EIN: 88-2437069', en:'Nonprofit organization 501(c)(3) · EIN: 88-2437069'},
+    footerChecksTitle:{ua:'Надсилайте чеки на адресу:', en:'Send checks to:'},
+    footerAddress:    {ua:'Protez Foundation, 3510 Hopkins Pl, W130D, Oakdale, MN 55128, США', en:'Protez Foundation, 3510 Hopkins Pl, W130D, Oakdale, MN 55128, United States of America'},
+  };
+
+  const AUDIT_NOTE = {
+    ua:"Наразі триває незалежний аудит фінансової звітності за 2025 рік у США. Повний звіт буде оприлюднено одразу після його завершення.",
+    en:"An independent U.S. audit of the 2025 financial statements is currently underway. The full report will be published as soon as it is complete."
+  };
+
+  const heroDescText = {
+    ua:'Скільки людей ми підтримали й куди спрямовано кошти фонду — прозора статистика за кожен рік роботи.',
+    en:"How many people we've supported and where the fund's money went — transparent statistics for every year of operation."
+  };
+
+  let currentLang = 'ua';
+  let currentYear = '2024';
+
+  const tabs = document.querySelectorAll('.year-tab');
+  const statsYearSerif = document.getElementById('statsYearSerif');
+  const statsYearBold = document.getElementById('statsYearBold');
+  const statPatients = document.getElementById('statPatients');
+  const statBudget = document.getElementById('statBudget');
+  const donutTotal = document.getElementById('donutTotal');
+  const donutYear = document.getElementById('donutYear');
+  const donutSegs = document.getElementById('donutSegs');
+  const catList = document.getElementById('catList');
+  const dlTitle = document.getElementById('dlTitle');
+  const dlBtn = document.getElementById('dlBtn');
+  const heroDesc = document.getElementById('heroDesc');
+  const yearNoteEl = document.getElementById('yearNote');
+
+  const R = 80;
+  const CIRC = 2 * Math.PI * R;
+
+  function fmtInt(n, lang){
+    return new Intl.NumberFormat(lang === 'ua' ? 'uk-UA' : 'en-US').format(Math.round(n));
+  }
+
+  // animated count-up for integer stats ("1 240"/"1,240", "980"); leaves non-numeric ("—") as-is
+  function animateStat(el, rawValue, lang){
+    const clean = String(rawValue).replace(/\s/g,'').replace(/[^\d]/g,'');
+    if(!clean){ el.textContent = rawValue; return; }
+    const target = parseInt(clean,10);
+    const start = 0;
+    const dur = 900;
+    const t0 = performance.now();
+    function tick(now){
+      const p = Math.min(1,(now-t0)/dur);
+      const eased = 1 - Math.pow(1-p,3);
+      el.textContent = fmtInt(start + (target-start)*eased, lang);
+      if(p<1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+
+  function buildDonut(cats, pending){
+    donutSegs.innerHTML = '';
+    if(pending){
+      const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      c.setAttribute('cx',100);c.setAttribute('cy',100);c.setAttribute('r',R);
+      c.setAttribute('fill','none');c.setAttribute('stroke','#E2E3E7');
+      c.setAttribute('stroke-width',30);
+      donutSegs.appendChild(c);
+      return;
+    }
+    let acc = 0;
+    cats.forEach((c,i)=>{
+      const pct = c.pct;
+      const color = CATEGORIES[i].color;
+      const seg = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      const len = (pct/100)*CIRC;
+      seg.setAttribute('cx',100);seg.setAttribute('cy',100);seg.setAttribute('r',R);
+      seg.setAttribute('fill','none');
+      seg.setAttribute('stroke',color);
+      seg.setAttribute('stroke-width',30);
+      seg.setAttribute('stroke-dashoffset', -((acc/100)*CIRC));
+      seg.classList.add('donut-seg');
+      seg.dataset.idx = i;
+      // start collapsed for draw-in animation, then expand next frame
+      seg.style.strokeDasharray = '0 ' + CIRC;
+      donutSegs.appendChild(seg);
+      requestAnimationFrame(()=>{
+        requestAnimationFrame(()=>{
+          seg.style.strokeDasharray = len + ' ' + (CIRC-len);
+        });
+      });
+      seg.addEventListener('mouseenter', ()=> setActive(i));
+      seg.addEventListener('mouseleave', ()=> setActive(null));
+      acc += pct;
+    });
+  }
+
+  function setActive(idx){
+    const segs = donutSegs.querySelectorAll('.donut-seg');
+    const rows = catList.querySelectorAll('.cat-row');
+    segs.forEach(s=>{
+      const match = String(idx)===s.dataset.idx;
+      s.classList.toggle('active', idx!==null && match);
+      s.classList.toggle('dim', idx!==null && !match);
+    });
+    rows.forEach(r=>{
+      const match = String(idx)===r.dataset.idx;
+      r.classList.toggle('active', idx!==null && match);
+      r.classList.toggle('dim', idx!==null && !match);
+    });
+  }
+
+  function buildCatList(cats, pending, lang){
+    catList.innerHTML = '';
+    cats.forEach((c,i)=>{
+      const name = CATEGORIES[i][lang];
+      const color = CATEGORIES[i].color;
+      const amount = lang === 'ua' ? c.amtUa : c.amtEn;
+      const row = document.createElement('div');
+      row.className = 'cat-row';
+      row.dataset.idx = i;
+      row.innerHTML =
+        '<span class="cat-dot" style="background:'+color+'"></span>'+
+        '<span class="cat-name">'+name+'</span>'+
+        '<span class="cat-amount">'+amount+'</span>'+
+        '<span class="cat-pct">'+(pending ? '—' : c.pct+'%')+'</span>';
+      row.addEventListener('mouseenter', ()=> setActive(i));
+      row.addEventListener('mouseleave', ()=> setActive(null));
+      catList.appendChild(row);
+    });
+  }
+
+  const FADE_TARGETS = ['.stat-grid','.breakdown','.bars','.table-wrap','.download-card'];
+
+  const barFillProgram = document.getElementById('barFillProgram');
+  const barFillAdmin = document.getElementById('barFillAdmin');
+  const barFillFund = document.getElementById('barFillFund');
+  const barPctProgram = document.getElementById('barPctProgram');
+  const barPctAdmin = document.getElementById('barPctAdmin');
+  const barPctFund = document.getElementById('barPctFund');
+
+  function updateBars(split, pending){
+    const rows = [
+      [barFillProgram, barPctProgram, split.program],
+      [barFillAdmin, barPctAdmin, split.admin],
+      [barFillFund, barPctFund, split.fund],
+    ];
+    rows.forEach(([fill, pctEl, val])=>{
+      fill.dataset.target = val;
+      // animate the fill directly (draw-in), same technique as the donut segments —
+      // no longer dependent on a scroll IntersectionObserver, so it always renders
+      fill.style.width = '0%';
+      requestAnimationFrame(()=>{
+        requestAnimationFrame(()=>{
+          fill.style.width = val + '%';
+        });
+      });
+      pctEl.textContent = pending ? '—' : val + '%';
+    });
+  }
+
+  function render(year, animateNums){
+    const d = DATA[year];
+    const lang = currentLang;
+    statsYearSerif.textContent = lang==='ua' ? 'Повний звіт' : 'Full report';
+    statsYearBold.textContent = lang==='ua' ? ('за ' + year + ' рік') : String(year);
+    if(animateNums){
+      animateStat(statPatients, d.patients, lang);
+    } else {
+      statPatients.textContent = d.patients;
+    }
+    const budget = lang === 'ua' ? d.budgetUa : d.budgetEn;
+    statBudget.textContent = budget;
+    donutTotal.textContent = d.pending ? (lang==='ua' ? 'скоро' : 'soon') : ('$' + budget);
+    donutYear.textContent = lang==='ua' ? year + ' рік' : String(year);
+
+    if(d.pending){
+      yearNoteEl.textContent = AUDIT_NOTE[lang];
+      yearNoteEl.classList.add('pending');
+    } else {
+      yearNoteEl.textContent = STR.yearNote[lang];
+      yearNoteEl.classList.remove('pending');
+    }
+
+    buildCatList(d.cats, d.pending, lang);
+    buildDonut(d.cats, d.pending);
+    updateBars(d.split, d.pending);
+
+    dlTitle.textContent = lang==='ua' ? 'Аудит за ' + year + ' рік' : year + ' Audit';
+    dlBtn.textContent = d.pending ? (lang==='ua' ? 'Звіт готується' : 'Report in progress') : (lang==='ua' ? 'Завантажити PDF' : 'Download PDF');
+    if(d.report){ dlBtn.href = d.report; dlBtn.removeAttribute('aria-disabled'); dlBtn.setAttribute('download',''); }
+    else { dlBtn.href = '#'; dlBtn.setAttribute('aria-disabled','true'); dlBtn.removeAttribute('download'); }
+
+    // reformat the static comparison table for the active language
+    Object.keys(TABLE).forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.textContent = TABLE[id][lang];
+    });
+  }
+
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      if(tab.classList.contains('active')) return;
+      tabs.forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      currentYear = tab.dataset.year;
+      const nodes = FADE_TARGETS.map(sel=>document.querySelector(sel));
+      nodes.forEach(n=>{ n.classList.add('fade-swap'); n.style.opacity=0; });
+      setTimeout(()=>{
+        render(currentYear, true);
+        nodes.forEach(n=>{ n.style.opacity=1; });
+      }, 200);
+    });
+  });
+
+  /* ===================== LANGUAGE TOGGLE ===================== */
+  const langUA = document.getElementById('langUA');
+  const langEN = document.getElementById('langEN');
+
+  function applyStaticStrings(lang){
+    Object.keys(STR).forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.textContent = STR[id][lang];
+    });
+    heroDesc.innerHTML = heroDescText[lang];
+    document.getElementById('needBtn').textContent = STR.needBtn[lang];
+    document.getElementById('donateBtn').textContent = STR.donateBtn[lang];
+    document.getElementById('needBtnDrawer').textContent = STR.needBtn[lang];
+    document.getElementById('donateBtnDrawer').textContent = STR.donateBtn[lang];
+    drawerNav.querySelectorAll('a').forEach(a=>{
+      a.textContent = lang==='ua' ? a.dataset.ua : a.dataset.en;
+    });
+    document.documentElement.lang = lang==='ua' ? 'uk' : 'en';
+    document.title = lang==='ua' ? 'Незалежний фінансовий аудит — Protez Foundation' : 'Independent Financial Audit — Protez Foundation';
+  }
+
+  function setLang(lang){
+    if(lang === currentLang) return;
+    currentLang = lang;
+    langUA.classList.toggle('active', lang==='ua');
+    langEN.classList.toggle('active', lang==='en');
+    applyStaticStrings(lang);
+    render(currentYear, false);
+  }
+
+  langUA.addEventListener('click', ()=> setLang('ua'));
+  langEN.addEventListener('click', ()=> setLang('en'));
+
+  render('2024', false);
+
+  // scroll reveal
+  const revealObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  },{threshold:0.15});
+  document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+
+  // stat number count-up + bar fill, first time they enter view
+  const statSection = document.querySelector('.stat-grid');
+  let statsAnimated = false;
+  const statsObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting && !statsAnimated){
+        statsAnimated = true;
+        const d = DATA[document.querySelector('.year-tab.active').dataset.year];
+        animateStat(statPatients, d.patients, currentLang);
+        statsObserver.disconnect();
+      }
+    });
+  },{threshold:0.4});
+  if(statSection) statsObserver.observe(statSection);
+
+</script>
+
+</body>
+</html>

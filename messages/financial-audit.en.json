@@ -1,0 +1,56 @@
+{
+  "meta": {
+    "title": "Independent Financial Audit — Protez Foundation",
+    "description": "How many people we've supported and where the fund's money went — transparent statistics for every year of Protez Foundation's operation."
+  },
+  "hero": {
+    "titleSerif": "Independent",
+    "titleBold": "Financial Audit",
+    "description": "How many people we've supported and where the fund's money went — transparent statistics for every year of operation.",
+    "yearNote": "Data updated quarterly by the fund's finance department",
+    "pendingNote": "An independent U.S. audit of the 2025 financial statements is currently underway. The full report will be published as soon as it is complete."
+  },
+  "stats": {
+    "titleSerif": "Full report",
+    "titleBold": "{year}",
+    "patientsLabel": "Patients Helped",
+    "budgetLabel": "Total Annual Budget"
+  },
+  "breakdown": {
+    "titleSerif": "Breakdown",
+    "titleBold": "by category",
+    "description": "Full transparency in how funds are used — every dollar is accounted for by expense category.",
+    "centerPending": "soon",
+    "centerYear": "{year}",
+    "categories": [
+      "Prosthetics & Treatment",
+      "Payroll & Payroll Taxes",
+      "Flights & Transportation",
+      "Prosthetic Centers Rent & Maintenance",
+      "Patient Meals & Housing",
+      "Education & Protez Academy",
+      "Fundraising",
+      "Administrative Costs"
+    ]
+  },
+  "allocation": {
+    "titleSerif": "Where",
+    "titleBold": "the budget goes",
+    "program": "Program Activities",
+    "admin": "Administrative Costs",
+    "fundraising": "Fundraising"
+  },
+  "comparison": {
+    "titleSerif": "Comparison",
+    "titleBold": "across years",
+    "metric": "Metric",
+    "patients": "Patients",
+    "budget": "Budget, $"
+  },
+  "download": {
+    "title": "{year} Audit",
+    "description": "PDF version of statistics and infographics for print and distribution",
+    "cta": "Download PDF",
+    "pendingCta": "Report in progress"
+  }
+}

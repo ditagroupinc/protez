@@ -1,0 +1,88 @@
+.section {
+  padding: 56px 0;
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.head {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.barRow {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.barLabel {
+  width: 220px;
+  font-size: 13px;
+  color: var(--forest-dim);
+  font-weight: 600;
+}
+
+.barTrack {
+  flex: 1;
+  height: 10px;
+  background: var(--light-grey);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  background: var(--teal);
+  transition: width 1s cubic-bezier(0.22, 0.9, 0.3, 1);
+}
+
+.barPct {
+  width: 48px;
+  text-align: right;
+  font-weight: 800;
+  color: var(--forest);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 0 20px;
+  }
+
+  .barLabel {
+    width: 130px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 520px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .barRow {
+    gap: 10px;
+  }
+
+  .barLabel {
+    width: 94px;
+    font-size: 11px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .barFill {
+    transition: none;
+  }
+}
