@@ -12,12 +12,7 @@ import { persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
 import { icons } from './icons'
 import style from './style.module.scss'
-import {
-  FINANCIAL_AUDIT_NAV_IDS,
-  HOME_PHONE,
-  HOME_PHONE_TEL,
-  NEED_A_PROTHESIS_URL,
-} from './config'
+import { FINANCIAL_AUDIT_NAV_IDS, HOME_PHONE, HOME_PHONE_TEL, NEED_A_PROTHESIS_URL } from './config'
 
 type Props = {
   accent: 'red' | 'blue' | 'teal'

@@ -95,8 +95,8 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
           className={`${style.buttonsContainer} ${style.buttonsContainerMobile}`}
         >
           <MakeDonationButton size="normal" />
-          <Button as="link" href="/" variant="secondary-white" size="normal" arrow>
-            {t('moreResults')}
+          <Button as="link" href="/financial-audit" variant="secondary-white" size="normal" arrow>
+            {t('financialAudit')}
           </Button>
         </TextAppearanceWrapper>
       </Section>

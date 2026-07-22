@@ -4,12 +4,7 @@ import { AcademyIDs } from '@academy/consts'
 
 export type HeaderVariant = 'home' | 'academy' | 'childrenProsthetics' | 'general'
 export type HeaderSideMenu =
-  | 'home'
-  | 'academy'
-  | 'general'
-  | 'financialAudit'
-  | 'childrenProsthetics'
-  | 'none'
+  'home' | 'academy' | 'general' | 'financialAudit' | 'childrenProsthetics' | 'none'
 
 type VariantConfig = {
   accent: 'red' | 'blue' | 'teal'
