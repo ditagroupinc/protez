@@ -56,7 +56,7 @@ const MailingList = () => {
       await subscribeToMailchimp(data)
 
       setFormStatus('sent')
-    } catch (error) {
+    } catch {
       setFormStatus('error')
     }
   }
