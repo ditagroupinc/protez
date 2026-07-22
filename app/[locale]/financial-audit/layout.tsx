@@ -6,7 +6,12 @@ import Footer from '@/sections/_shared/Footer'
 export default function FinancialAuditLayout({ children }: { children: ReactNode }) {
   return (
     <>
-      <Header variant="childrenProsthetics" sideMenu="home" ancorLinks={false} arrowUp={false} />
+      <Header
+        variant="childrenProsthetics"
+        sideMenu="financialAudit"
+        ancorLinks={false}
+        arrowUp={false}
+      />
       {children}
       <Footer layout="childrenProstheticsPage" />
     </>

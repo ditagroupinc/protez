@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 
+import { FinancialAuditIDs } from '@/consts'
+
 import { CATEGORY_COLORS, DONUT_CIRC, DONUT_R, getYearData } from '../data'
 import { useDrawIn } from '../_shared/useDrawIn'
 import Reveal from '../_shared/Reveal'
@@ -46,7 +48,7 @@ const ExpenseBreakdown = ({ year, swapping }: Props) => {
     activeIdx === null ? '' : activeIdx === i ? style.active : style.dim
 
   return (
-    <section className={style.section}>
+    <section id={FinancialAuditIDs.Breakdown} className={style.section}>
       <div className={style.inner}>
         <div className={style.head}>
           <SplitHeading as="h2" serif={t('titleSerif')} bold={t('titleBold')} />

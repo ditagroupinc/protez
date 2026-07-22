@@ -3,7 +3,7 @@ import { NextResponse, NextRequest } from 'next/server'
 import { getTranslations } from 'next-intl/server'
 import { routing } from '@/lib/i18n'
 
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+// eslint-disable-next-line @typescript-eslint/no-require-imports
 const client = require('@mailchimp/mailchimp_marketing')
 
 const mailchimpAPIkey = process.env.MAILCHIMP_API_KEY

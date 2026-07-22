@@ -1,9 +1,9 @@
 import { icons } from './icons'
-import { ProtezIDs, ChildrenProstheticsIDs } from '@/consts'
+import { ProtezIDs, ChildrenProstheticsIDs, FinancialAuditIDs } from '@/consts'
 import { AcademyIDs } from '@academy/consts'
 
 export type HeaderVariant = 'home' | 'academy' | 'childrenProsthetics' | 'general'
-export type HeaderSideMenu = 'home' | 'academy' | 'general' | 'none'
+export type HeaderSideMenu = 'home' | 'academy' | 'general' | 'financialAudit' | 'none'
 
 type VariantConfig = {
   accent: 'red' | 'blue' | 'teal'
@@ -67,6 +67,15 @@ export const ACADEMY_NAV_IDS = [
   AcademyIDs.FoundingDocuments,
   AcademyIDs.SpecialThanksToAllOurPartners,
   AcademyIDs.OurSponsors,
+] as const
+
+export const FINANCIAL_AUDIT_NAV_IDS = [
+  FinancialAuditIDs.Hero,
+  FinancialAuditIDs.Stats,
+  FinancialAuditIDs.Breakdown,
+  FinancialAuditIDs.Allocation,
+  FinancialAuditIDs.Comparison,
+  FinancialAuditIDs.Download,
 ] as const
 
 export const NEED_A_PROTHESIS_URL = 'https://forms.gle/WUVBvfZhYJsanGVbA'

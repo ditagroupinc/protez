@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 
 import Button from '@/components/Button'
+import { FinancialAuditIDs } from '@/consts'
 
 import { getYearData } from '../data'
 import Reveal from '../_shared/Reveal'
@@ -21,7 +22,7 @@ const DownloadReport = ({ year, swapping }: Props) => {
   const reportPdf = data.pending ? null : data.reportPdf
 
   return (
-    <section className={style.section}>
+    <section id={FinancialAuditIDs.Download} className={style.section}>
       <div className={style.inner}>
         <FadeSwap swapping={swapping}>
           <Reveal className={style.card}>

@@ -4,6 +4,8 @@ import CountUp from 'react-countup'
 import { useInView } from 'react-intersection-observer'
 import { useLocale, useTranslations } from 'next-intl'
 
+import { FinancialAuditIDs } from '@/consts'
+
 import { getYearData } from '../data'
 import Reveal from '../_shared/Reveal'
 import FadeSwap from '../_shared/FadeSwap'
@@ -25,7 +27,7 @@ const YearStats = ({ year, swapping }: Props) => {
   const separator = locale === 'uk' ? ' ' : ','
 
   return (
-    <section className={style.section}>
+    <section id={FinancialAuditIDs.Stats} className={style.section}>
       <div className={style.inner}>
         <div className={style.head}>
           <SplitHeading

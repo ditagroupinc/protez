@@ -2,6 +2,8 @@
 
 import { useTranslations } from 'next-intl'
 
+import { FinancialAuditIDs } from '@/consts'
+
 import { AUDIT_YEARS, getYearData } from '../data'
 import SplitHeading from '../_shared/SplitHeading'
 import style from './style.module.scss'
@@ -17,7 +19,7 @@ const HeroSection = ({ year, onYearChange }: Props) => {
   const pending = getYearData(year).pending === true
 
   return (
-    <section className={style.smokeBg}>
+    <section id={FinancialAuditIDs.Hero} className={style.smokeBg}>
       <div className={style.heroFx} aria-hidden="true">
         <span className={`${style.glow} ${style.g1}`} />
         <span className={`${style.glow} ${style.g2}`} />

@@ -59,10 +59,12 @@
   border-bottom: none;
 }
 
-.table tbody tr {
+.table tbody th,
+.table tbody td {
   transition: background 0.15s ease;
 }
 
+.table tbody tr:hover th,
 .table tbody tr:hover td {
   background: rgba(0, 0, 0, 0.025);
 }

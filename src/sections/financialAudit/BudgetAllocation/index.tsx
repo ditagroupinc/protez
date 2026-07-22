@@ -2,6 +2,8 @@
 
 import { useTranslations } from 'next-intl'
 
+import { FinancialAuditIDs } from '@/consts'
+
 import { BAR_COLORS, getYearData } from '../data'
 import { useDrawIn } from '../_shared/useDrawIn'
 import Reveal from '../_shared/Reveal'
@@ -29,7 +31,7 @@ const BudgetAllocation = ({ year, swapping }: Props) => {
   ]
 
   return (
-    <section className={style.section}>
+    <section id={FinancialAuditIDs.Allocation} className={style.section}>
       <div className={style.inner}>
         <div className={style.head}>
           <SplitHeading as="h2" serif={t('titleSerif')} bold={t('titleBold')} />
