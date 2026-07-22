@@ -128,7 +128,7 @@
   z-index: 1;
   max-width: 1180px;
   margin: 0 auto;
-  padding: 64px 40px 30px;
+  padding: 111px 40px 30px;
   text-align: center;
 }
 
@@ -163,8 +163,9 @@
 }
 
 .yearTabs {
-  display: flex;
-  justify-content: center;
+  display: inline-flex;
+  justify-content: flex-start;
+  vertical-align: top;
   gap: 10px;
   margin: 34px 0 0;
   flex-wrap: wrap;
@@ -254,7 +255,7 @@
 
 @media (max-width: 520px) {
   .hero {
-    padding-top: 40px;
+    padding-top: 108px;
     padding-bottom: 20px;
   }
 

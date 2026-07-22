@@ -3,6 +3,14 @@
     "title": "Незалежний фінансовий аудит — Protez Foundation",
     "description": "Скільки людей ми підтримали й куди спрямовано кошти фонду — прозора статистика за кожен рік роботи Protez Foundation."
   },
+  "nav": {
+    "financialAuditHero": "Фінансовий аудит",
+    "financialAuditStats": "Повний звіт",
+    "financialAuditBreakdown": "Розподіл витрат",
+    "financialAuditAllocation": "Куди спрямовано бюджет",
+    "financialAuditComparison": "Порівняння по роках",
+    "financialAuditDownload": "Завантажити звіт"
+  },
   "hero": {
     "titleSerif": "Незалежний",
     "titleBold": "фінансовий аудит",

@@ -3,6 +3,14 @@
     "title": "Independent Financial Audit — Protez Foundation",
     "description": "How many people we've supported and where the fund's money went — transparent statistics for every year of Protez Foundation's operation."
   },
+  "nav": {
+    "financialAuditHero": "Financial Audit",
+    "financialAuditStats": "Full Report",
+    "financialAuditBreakdown": "Breakdown by Category",
+    "financialAuditAllocation": "Where the Budget Goes",
+    "financialAuditComparison": "Comparison Across Years",
+    "financialAuditDownload": "Download Report"
+  },
   "hero": {
     "titleSerif": "Independent",
     "titleBold": "Financial Audit",

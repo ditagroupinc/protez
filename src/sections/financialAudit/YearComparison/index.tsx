@@ -2,6 +2,8 @@
 
 import { useLocale, useTranslations } from 'next-intl'
 
+import { FinancialAuditIDs } from '@/consts'
+
 import { AUDIT_YEARS, DEFAULT_YEAR, getYearData } from '../data'
 import Reveal from '../_shared/Reveal'
 import FadeSwap from '../_shared/FadeSwap'
@@ -29,7 +31,7 @@ const YearComparison = ({ swapping }: Props) => {
   }
 
   return (
-    <section className={style.section}>
+    <section id={FinancialAuditIDs.Comparison} className={style.section}>
       <div className={style.inner}>
         <div className={style.head}>
           <SplitHeading as="h2" serif={t('titleSerif')} bold={t('titleBold')} />

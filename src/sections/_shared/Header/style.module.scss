@@ -267,6 +267,11 @@
       background: var(--blue);
     }
   }
+  &.teal {
+    &::-webkit-scrollbar-thumb {
+      background: var(--teal);
+    }
+  }
 
   &::-webkit-scrollbar {
     width: 4px;
