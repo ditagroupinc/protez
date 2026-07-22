@@ -8,20 +8,21 @@ import Link from 'next/link'
 
 import Button, { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
 import { H3 } from '@/components/Typography'
-import { Link as LocaleLink, persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
+import { persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
 import { icons } from './icons'
 import style from './style.module.scss'
-import { HOME_NAV_IDS, HOME_PHONE, HOME_PHONE_TEL, NEED_A_PROTHESIS_URL } from './config'
+import { FINANCIAL_AUDIT_NAV_IDS, HOME_PHONE, HOME_PHONE_TEL, NEED_A_PROTHESIS_URL } from './config'
 
 type Props = {
-  ancorLinks: boolean
+  accent: 'red' | 'blue' | 'teal'
   closeMenu: () => void
   navRef: Ref<HTMLElement>
 }
 
-const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
-  const t = useTranslations('shared.header')
+const FinancialAuditMenu = ({ accent, closeMenu, navRef }: Props) => {
+  const t = useTranslations('financialAudit')
+  const tShared = useTranslations('shared.header')
 
   const locale = useLocale()
   const router = useRouter()
@@ -36,40 +37,37 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
     })
   }
 
-  const labels = t.raw('protezPage.navigation') as string[]
+  const accentClass = style[accent]
+  const donateVariant = accent === 'teal' ? 'primary-teal' : 'primary-red'
 
   return (
     <>
       <div className={style.protezAcademyLinkWrapper}>
-        <Link href="/academy" className={`${style.protezAcademyLink} ${style.blue}`}>
-          <H3>{t('protezAcademy')}</H3>
-          {icons.arrowUp(`${style.icon} ${style.blue}`)}
+        <Link href="/" onClick={closeMenu} className={`${style.protezAcademyLink} ${accentClass}`}>
+          <H3>{tShared('protezPage.navigation.0')}</H3>
+          {icons.arrowUp(`${style.icon} ${accentClass}`)}
         </Link>
       </div>
       <div className={style.navigationWrapper}>
-        <nav ref={navRef} className={`${style.navigation} ${style.red}`}>
+        <nav ref={navRef} className={`${style.navigation} ${accentClass}`}>
           <ul className={style.ancorList}>
-            {HOME_NAV_IDS.map((id, index) =>
-              ancorLinks ? (
-                <li key={id} className={style.ancorItem} onClick={closeMenu}>
-                  <Link href={`#${id}`} className={style.ancorLink}>
-                    <H3>{labels[index]}</H3>
-                  </Link>
-                </li>
-              ) : (
-                <li key={id} className={style.ancorItem} onClick={closeMenu}>
-                  <LocaleLink href={`/#${id}`} className={style.ancorLink}>
-                    <H3>{labels[index]}</H3>
-                  </LocaleLink>
-                </li>
-              )
-            )}
+            {FINANCIAL_AUDIT_NAV_IDS.map(id => (
+              <li key={id} className={style.ancorItem} onClick={closeMenu}>
+                <Link href={`#${id}`} className={style.ancorLink}>
+                  <H3>{t(`nav.${id}`)}</H3>
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
       <div className={style.lowerPart}>
         <div className={style.lowerPartButtonsContainer}>
-          <MakeDonationButton className={style.lowerPartButton} size="normal" />
+          <MakeDonationButton
+            className={style.lowerPartButton}
+            size="normal"
+            variant={donateVariant}
+          />
           <SupportWithAmazonButton className={style.lowerPartButton} size="normal" />
           <Button
             as="link"
@@ -80,7 +78,7 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
             arrow
             className={style.lowerPartButton}
           >
-            {t('protezPage.actionButtons.needAProthesis')}
+            {tShared('protezPage.actionButtons.needAProthesis')}
           </Button>
         </div>
         <a className={style.phoneNumber} href={HOME_PHONE_TEL}>
@@ -102,4 +100,4 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
   )
 }
 
-export default HomeMenu
+export default FinancialAuditMenu

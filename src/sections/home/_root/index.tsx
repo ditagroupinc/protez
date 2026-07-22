@@ -36,7 +36,7 @@ const SpecialThanksToAllOurPartners = lazy(
   () => import('@/sections/_shared/SpecialThanksToAllOurPartners')
 )
 const MailingList = lazy(() => import('@/sections/_shared/MailingList/MailingList'))
-const Merch = lazy(() => import('@/sections/home/Merch/Merch'))
+// const Merch = lazy(() => import('@/sections/home/Merch/Merch'))
 const Footer = lazy(() => import('@/sections/_shared/Footer'))
 
 export default function ProtezHomePage({
@@ -133,9 +133,9 @@ export default function ProtezHomePage({
           <MailingList />
         </SuspenseSection>
 
-        <SuspenseSection>
+        {/* <SuspenseSection>
           <Merch />
-        </SuspenseSection>
+        </SuspenseSection> */}
 
         <SuspenseSection>
           <Footer layout="protezPage" />

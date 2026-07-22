@@ -39,3 +39,12 @@ export enum ChildrenProstheticsIDs {
   Stories = 'childrenProstheticsStories',
   Apply = 'childrenProstheticsApply',
 }
+
+export enum FinancialAuditIDs {
+  Hero = 'financialAuditHero',
+  Stats = 'financialAuditStats',
+  Breakdown = 'financialAuditBreakdown',
+  Allocation = 'financialAuditAllocation',
+  Comparison = 'financialAuditComparison',
+  Download = 'financialAuditDownload',
+}

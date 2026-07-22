@@ -1,0 +1,13 @@
+.fadeSwap {
+  transition: opacity 0.2s ease;
+}
+
+.swapping {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fadeSwap {
+    transition: none;
+  }
+}

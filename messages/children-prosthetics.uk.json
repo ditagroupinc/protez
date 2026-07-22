@@ -3,6 +3,12 @@
     "title": "Дитяче протезування — Protez Foundation",
     "description": "Protez Foundation допомагає дітям отримати протезування, пройти відновлення та адаптацію з підтримкою команди фахівців."
   },
+  "nav": {
+    "childrenProstheticsHero": "Дитяче протезування",
+    "childrenProstheticsApproach": "Наш підхід",
+    "childrenProstheticsStories": "Історії дітей",
+    "childrenProstheticsApply": "Заявка та підтримка"
+  },
   "hero": {
     "statNumber": 25,
     "statLabel": "Дитини отримали протези",

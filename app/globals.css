@@ -44,6 +44,14 @@
   --charcoal: #2a2a2a;
   --cream: #f2f0ec;
   --stone: #cbc9c4;
+
+  --chart-amber: #f2b84b;
+  --chart-purple: #b98bdb;
+  --chart-blue: #6c8cd5;
+  --chart-coral: #ef7b6d;
+  --chart-green: #8fd46b;
+  --chart-sky: #4fa8d8;
+  --chart-grey: #9a9a9a;
 }
 
 @media (max-width: 1600px) {

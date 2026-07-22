@@ -1,0 +1,93 @@
+.section {
+  padding: 56px 0;
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.head {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.tableWrap {
+  overflow-x: auto;
+  border: 1px solid var(--mint-grey);
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--white);
+}
+
+.table th,
+.table td {
+  padding: 16px 20px;
+  font-size: 14px;
+  text-align: center;
+  border-bottom: 1px solid var(--mint-grey);
+  color: var(--forest);
+}
+
+.table thead th {
+  background: var(--light-grey);
+  color: var(--forest-dim);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.table thead th:first-child,
+.table tbody th {
+  text-align: left;
+  color: var(--forest-dim);
+}
+
+.table tbody th {
+  font-weight: 600;
+  background: var(--white);
+}
+
+.table tbody tr:last-child th,
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.table tbody th,
+.table tbody td {
+  transition: background 0.15s ease;
+}
+
+.table tbody tr:hover th,
+.table tbody tr:hover td {
+  background: rgba(0, 0, 0, 0.025);
+}
+
+.table tbody td.highlight {
+  color: var(--teal-dark);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .table th,
+  .table td {
+    padding: 10px 8px;
+    font-size: 12px;
+  }
+}

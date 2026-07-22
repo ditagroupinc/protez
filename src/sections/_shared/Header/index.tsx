@@ -16,6 +16,8 @@ import TopBarCtas from './TopBarCtas'
 import HomeMenu from './HomeMenu'
 import AcademyMenu from './AcademyMenu'
 import GeneralMenu from './GeneralMenu'
+import FinancialAuditMenu from './FinancialAuditMenu'
+import ChildrenProstheticsMenu from './ChildrenProstheticsMenu'
 
 import { icons } from './icons'
 import { headerConfig, HeaderVariant, HeaderSideMenu } from './config'
@@ -87,6 +89,14 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
 
     if (resolvedSideMenu === 'academy') {
       return <AcademyMenu ancorLinks={ancorLinks} closeMenu={closeMenu} navRef={ref} />
+    }
+
+    if (resolvedSideMenu === 'financialAudit') {
+      return <FinancialAuditMenu accent={cfg.accent} closeMenu={closeMenu} navRef={ref} />
+    }
+
+    if (resolvedSideMenu === 'childrenProsthetics') {
+      return <ChildrenProstheticsMenu accent={cfg.accent} closeMenu={closeMenu} navRef={ref} />
     }
 
     if (resolvedSideMenu === 'general') {
