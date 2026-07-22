@@ -3,7 +3,13 @@ import { ProtezIDs, ChildrenProstheticsIDs, FinancialAuditIDs } from '@/consts'
 import { AcademyIDs } from '@academy/consts'
 
 export type HeaderVariant = 'home' | 'academy' | 'childrenProsthetics' | 'general'
-export type HeaderSideMenu = 'home' | 'academy' | 'general' | 'financialAudit' | 'none'
+export type HeaderSideMenu =
+  | 'home'
+  | 'academy'
+  | 'general'
+  | 'financialAudit'
+  | 'childrenProsthetics'
+  | 'none'
 
 type VariantConfig = {
   accent: 'red' | 'blue' | 'teal'
@@ -51,7 +57,7 @@ export const HOME_NAV_IDS = [
   ProtezIDs.OfficeLocations,
   ProtezIDs.SpecialThanksToAllOurPartners,
   ProtezIDs.MailingList,
-  ProtezIDs.Merch,
+  // ProtezIDs.Merch,
 ] as const
 
 export const ACADEMY_NAV_IDS = [
@@ -67,6 +73,13 @@ export const ACADEMY_NAV_IDS = [
   AcademyIDs.FoundingDocuments,
   AcademyIDs.SpecialThanksToAllOurPartners,
   AcademyIDs.OurSponsors,
+] as const
+
+export const CHILDREN_PROSTHETICS_NAV_IDS = [
+  ChildrenProstheticsIDs.Hero,
+  ChildrenProstheticsIDs.Approach,
+  ChildrenProstheticsIDs.Stories,
+  ChildrenProstheticsIDs.Apply,
 ] as const
 
 export const FINANCIAL_AUDIT_NAV_IDS = [

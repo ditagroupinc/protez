@@ -69,8 +69,8 @@
   background: rgba(0, 0, 0, 0.025);
 }
 
-.highlight {
-  color: var(--teal);
+.table tbody td.highlight {
+  color: var(--teal-dark);
   font-weight: 700;
 }
 
