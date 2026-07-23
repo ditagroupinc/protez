@@ -3,6 +3,12 @@
     "title": "Children's Prosthetics — Protez Foundation",
     "description": "Protez Foundation helps children receive prosthetics, rehabilitation, and adaptation with support from a specialist team."
   },
+  "nav": {
+    "childrenProstheticsHero": "Children's Prosthetics",
+    "childrenProstheticsApproach": "Our Approach",
+    "childrenProstheticsStories": "Children's Stories",
+    "childrenProstheticsApply": "Apply & Support"
+  },
   "hero": {
     "statNumber": 25,
     "statLabel": "Children fitted with prostheses",

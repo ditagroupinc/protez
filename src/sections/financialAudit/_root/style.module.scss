@@ -1,0 +1,9 @@
+.main {
+  background: var(--white);
+  color: var(--forest);
+  min-height: 100vh;
+
+  section[id] {
+    scroll-margin-top: 100px;
+  }
+}

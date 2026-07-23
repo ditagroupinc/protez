@@ -16,6 +16,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     stories,
     thankYou,
     childrenProsthetics,
+    financialAudit,
   ] = await Promise.all([
     import(`./messages/academy.${locale}.json`),
     import(`./messages/home.${locale}.json`),
@@ -26,6 +27,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     import(`./messages/stories.${locale}.json`),
     import(`./messages/thank-you.${locale}.json`),
     import(`./messages/children-prosthetics.${locale}.json`),
+    import(`./messages/financial-audit.${locale}.json`),
   ])
 
   return {
@@ -40,6 +42,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       stories: stories.default,
       thankYou: thankYou.default,
       childrenProsthetics: childrenProsthetics.default,
+      financialAudit: financialAudit.default,
     },
   }
 })

@@ -8,7 +8,7 @@ import Link from 'next/link'
 
 import Button, { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
 import { H3 } from '@/components/Typography'
-import { persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
+import { Link as LocaleLink, persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
 import { icons } from './icons'
 import style from './style.module.scss'
@@ -36,7 +36,6 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
     })
   }
 
-  const linksPrefix = ancorLinks ? '#' : '/'
   const labels = t.raw('protezPage.navigation') as string[]
 
   return (
@@ -50,13 +49,21 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
       <div className={style.navigationWrapper}>
         <nav ref={navRef} className={`${style.navigation} ${style.red}`}>
           <ul className={style.ancorList}>
-            {HOME_NAV_IDS.map((id, index) => (
-              <li key={id} className={style.ancorItem} onClick={closeMenu}>
-                <Link href={`${linksPrefix}${id}`} className={style.ancorLink}>
-                  <H3>{labels[index]}</H3>
-                </Link>
-              </li>
-            ))}
+            {HOME_NAV_IDS.map((id, index) =>
+              ancorLinks ? (
+                <li key={id} className={style.ancorItem} onClick={closeMenu}>
+                  <Link href={`#${id}`} className={style.ancorLink}>
+                    <H3>{labels[index]}</H3>
+                  </Link>
+                </li>
+              ) : (
+                <li key={id} className={style.ancorItem} onClick={closeMenu}>
+                  <LocaleLink href={`/#${id}`} className={style.ancorLink}>
+                    <H3>{labels[index]}</H3>
+                  </LocaleLink>
+                </li>
+              )
+            )}
           </ul>
         </nav>
       </div>

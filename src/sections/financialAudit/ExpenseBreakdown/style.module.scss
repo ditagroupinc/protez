@@ -1,0 +1,220 @@
+.section {
+  padding: 56px 0;
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.head {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.desc {
+  max-width: 520px;
+  margin: 14px auto 0;
+  color: var(--forest-dim);
+  font-size: 14px;
+}
+
+.breakdown {
+  display: grid;
+  grid-template-columns: 290px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.donutWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.donut {
+  width: 260px;
+  height: 260px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.donutSvg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.seg {
+  cursor: pointer;
+  transition:
+    stroke-dasharray 0.7s ease,
+    stroke-width 0.2s ease,
+    opacity 0.2s ease,
+    filter 0.2s ease;
+}
+
+.seg.active {
+  filter: drop-shadow(0 0 6px rgba(15, 158, 139, 0.6));
+}
+
+.seg.dim {
+  opacity: 0.28;
+}
+
+.donutCenter {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--mint-grey);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.donutAmt {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--forest);
+}
+
+.donutYear {
+  font-size: 12px;
+  color: var(--forest-dim);
+  margin-top: 2px;
+}
+
+.catList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.catRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  padding: 12px 16px;
+  background: var(--light-grey);
+  border: 1px solid var(--mint-grey);
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.catRow.active {
+  background: rgba(15, 158, 139, 0.08);
+  border-color: var(--teal);
+  transform: translateX(6px);
+}
+
+.catRow.dim {
+  opacity: 0.5;
+}
+
+.catDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.catRow.active .catDot {
+  transform: scale(1.3);
+}
+
+.catName {
+  flex: 1;
+  font-size: 14px;
+  color: var(--forest);
+}
+
+.catAmount {
+  font-size: 13px;
+  color: var(--forest-dim);
+  width: 80px;
+  text-align: right;
+}
+
+.catPct {
+  font-size: 14px;
+  color: var(--teal);
+  font-weight: 700;
+  width: 44px;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    padding: 0 20px;
+  }
+
+  .breakdown {
+    grid-template-columns: 1fr;
+  }
+
+  .donutWrap {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 520px) {
+  .section {
+    padding: 40px 0;
+  }
+
+  .donut {
+    width: 220px;
+    height: 220px;
+  }
+
+  .donutCenter {
+    width: 130px;
+    height: 130px;
+  }
+
+  .donutAmt {
+    font-size: 19px;
+  }
+
+  .catRow {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .catName {
+    font-size: 13px;
+  }
+
+  .catAmount {
+    width: 62px;
+    font-size: 12px;
+  }
+
+  .catPct {
+    width: 34px;
+    font-size: 13px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .seg,
+  .catRow,
+  .catDot {
+    transition: none;
+  }
+}
