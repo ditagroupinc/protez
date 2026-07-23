@@ -4,7 +4,7 @@ import { Suspense, lazy } from 'react'
 
 import style from './style.module.scss'
 
-import { SingleNews, Statistics, SingleEvent, SinglePressRelease } from '@/utils/parsers'
+import { Statistics, SingleEvent } from '@/utils/parsers'
 
 import FullScreenFallback from '@/components/FullScreenFallback'
 import ProtezImage from '@/components/ProtezImage'
@@ -40,15 +40,11 @@ const MailingList = lazy(() => import('@/sections/_shared/MailingList/MailingLis
 const Footer = lazy(() => import('@/sections/_shared/Footer'))
 
 export default function ProtezHomePage({
-  // news,
   statistics,
   events,
-}: // pressReleases,
-{
-  news: SingleNews[] | null
+}: {
   statistics: Statistics
   events: SingleEvent[] | null
-  pressReleases: SinglePressRelease[] | null
 }) {
   const t = useTranslations('home.root')
 

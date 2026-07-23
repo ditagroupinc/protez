@@ -72,29 +72,47 @@ async function fetchAPI(query = '', { variables }: FetchAPIOptions = {}) {
   }
 }
 
-export async function getAllSections() {
-  const data = await fetchAPI(
-    `
-    query AllPosts {
-      posts {
-        edges {
-          node {
-            id
-            content
-            title
-          }
+// Posts are keyed by title, not slug: the WP slugs are leftovers from duplicated
+// drafts ("news-copy-copy" is Events), while the titles are what editors maintain.
+//
+// Previous query — fetched every post in full. Kept in case News / PressRelease
+// come back; those sections are still parsed for in `@/utils/parsers`, they are
+// just not requested or rendered right now.
+//
+//   query AllPosts {
+//     posts {
+//       edges {
+//         node {
+//           id
+//           content
+//           title
+//         }
+//       }
+//     }
+//   }
+//
+// It returned `data.posts.edges`, which the caller mapped by `node.title` onto
+// News / Statistics / Events / PressRelease.
+export async function getHomeSections() {
+  const data = await fetchAPI(`
+    query HomeSections {
+      statistics: posts(first: 1, where: { title: "Statistics" }) {
+        nodes {
+          content
+        }
+      }
+      events: posts(first: 1, where: { title: "Events" }) {
+        nodes {
+          content
         }
       }
     }
-  `,
-    {
-      variables: {
-        onlyEnabled: true,
-      },
-    }
-  )
+  `)
 
-  return data?.posts.edges
+  return {
+    statistics: data?.statistics?.nodes?.[0]?.content ?? '',
+    events: data?.events?.nodes?.[0]?.content ?? '',
+  }
 }
 
 export const subscribeToMailchimp = async (data: { email: string; locale?: string }) => {

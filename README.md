@@ -52,8 +52,7 @@ You must be a member of the Vercel project to pull env vars. Without them, the W
 
 | Var | Purpose |
 | --- | --- |
-| `WORDPRESS_API_URL` | GraphQL endpoint for news / events / press / statistics |
-| `REVALIDATE_SECRET` | shared secret used by `/api/revalidate` (called from a WP webhook) |
+| `WORDPRESS_API_URL` | GraphQL endpoint for events / statistics |
 | `GTM_ID` | Google Tag Manager container ID |
 | `MAILCHIMP_API_KEY` | Mailchimp API key (newsletter) |
 | `MAILCHIMP_LIST_ID` | Mailchimp audience / list ID |
@@ -62,7 +61,7 @@ You must be a member of the Vercel project to pull env vars. Without them, the W
 
 ## Repo layout
 
-- `app/` — App Router routes. All page routes live under `app/[locale]/`. Layout sets locale, fonts, GTM, analytics. Three API routes: `/api/contact`, `/api/mailchimp`, `/api/revalidate`.
+- `app/` — App Router routes. All page routes live under `app/[locale]/`. Layout sets locale, fonts, GTM, analytics. Two API routes: `/api/contact`, `/api/mailchimp`.
 - `src/sections/` — page sections grouped by route (`home/`, `academy/`, `academy-about/`, `donate/`, `partners/`, `stories/`, `_shared/`). Each section is a folder with `index.tsx`, `style.module.scss`, optional `icons.tsx`.
 - `src/components/` — shared atomic components (`Button`, `Typography`, `ProtezImage`, `ProtezVideo`, `Section`, `Divider`, `TextAppearanceWrapper`, `SuspenseSection`, `FullScreenFallback`, `FacebookPixelEvents`, `VideoAndFilter`, `ResponsiveImage`)
 - `src/islands/` — client-only wrappers that isolate heavy/runtime deps (e.g. `SlickCarousel` bundles `react-slick` and slick CSS so they don't ship to pages without a slider)
