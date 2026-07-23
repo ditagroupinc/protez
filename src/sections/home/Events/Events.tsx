@@ -1,6 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
+import { useMemo, useRef } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { localeToLanguage } from '@/lib/locale'
@@ -16,11 +16,11 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { ProtezIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
-import { modifyAndSortEvents } from './utils'
+import { modifyAndSortEvents, padEventsToMinimum } from './utils'
 import { EventsProps } from './types'
 
 const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref) {
-  const sortedEvents = modifyAndSortEvents(events)
+  const sortedEvents = useMemo(() => padEventsToMinimum(modifyAndSortEvents(events)), [events])
 
   const locale = useLocale()
   const lang = localeToLanguage(locale)
@@ -81,6 +81,8 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
   const gotoPrev = () => {
     sliderRef.current?.slickPrev()
   }
+
+  if (sortedEvents.length === 0) return null
 
   return (
     <Section ref={ref} id={ProtezIDs.Events} className={style.events}>
