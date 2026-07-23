@@ -31,8 +31,12 @@ export const AUDIT_YEARS = [2022, 2023, 2024, 2025] as const
 
 export const DEFAULT_YEAR = 2024
 
-// Placeholder document — the real per-year audit PDFs replace this later.
-const REPORT_PDF = '/documents/foundingDocuments/assessment-regulations.pdf'
+// Audited statements live in public/documents/financialAudit; 2025 is not out yet.
+const REPORT_PDF: Record<number, string> = {
+  2022: '/documents/financialAudit/2022-audited-fs.pdf',
+  2023: '/documents/financialAudit/2023-audited-fs.pdf',
+  2024: '/documents/financialAudit/2024-audited-fs.pdf',
+}
 
 const EMPTY_CATS: CategoryDatum[] = Array.from({ length: 8 }, () => ({
   pct: 0,
@@ -44,7 +48,7 @@ export const AUDIT_DATA: Record<number, YearData> = {
     patients: 31,
     budget: { en: '610K', uk: '610K' },
     split: { program: 97, admin: 2, fund: 1 },
-    reportPdf: REPORT_PDF,
+    reportPdf: REPORT_PDF[2022],
     cats: [
       { pct: 74, amount: { en: '$452K', uk: '$452K' } },
       { pct: 6, amount: { en: '$36K', uk: '$36K' } },
@@ -60,7 +64,7 @@ export const AUDIT_DATA: Record<number, YearData> = {
     patients: 83,
     budget: { en: '3.76M', uk: '3,76M' },
     split: { program: 96, admin: 1, fund: 3 },
-    reportPdf: REPORT_PDF,
+    reportPdf: REPORT_PDF[2023],
     cats: [
       { pct: 60, amount: { en: '$2.28M', uk: '$2,28M' } },
       { pct: 12, amount: { en: '$443K', uk: '$443K' } },
@@ -76,7 +80,7 @@ export const AUDIT_DATA: Record<number, YearData> = {
     patients: 273,
     budget: { en: '3.99M', uk: '3,99M' },
     split: { program: 96, admin: 2, fund: 2 },
-    reportPdf: REPORT_PDF,
+    reportPdf: REPORT_PDF[2024],
     cats: [
       { pct: 53, amount: { en: '$2.10M', uk: '$2,10M' } },
       { pct: 19, amount: { en: '$748K', uk: '$748K' } },
