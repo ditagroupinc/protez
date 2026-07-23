@@ -40,11 +40,23 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
 
   return (
     <>
-      <div className={style.protezAcademyLinkWrapper}>
-        <Link href="/academy" className={`${style.protezAcademyLink} ${style.blue}`}>
-          <H3>{t('protezAcademy')}</H3>
-          {icons.arrowUp(`${style.icon} ${style.blue}`)}
-        </Link>
+      <div className={style.topLinks}>
+        <div className={style.protezAcademyLinkWrapper}>
+          <Link href="/academy" className={`${style.protezAcademyLink} ${style.blue}`}>
+            <H3>{t('protezAcademy')}</H3>
+            {icons.arrowUp(`${style.icon} ${style.blue}`)}
+          </Link>
+        </div>
+        <div className={style.protezAcademyLinkWrapper}>
+          <LocaleLink
+            href="/financial-audit"
+            onClick={closeMenu}
+            className={`${style.protezAcademyLink} ${style.teal}`}
+          >
+            <H3>{t('financialAudit')}</H3>
+            {icons.arrowUp(`${style.icon} ${style.teal}`)}
+          </LocaleLink>
+        </div>
       </div>
       <div className={style.navigationWrapper}>
         <nav ref={navRef} className={`${style.navigation} ${style.red}`}>

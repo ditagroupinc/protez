@@ -13,7 +13,7 @@ import style from './style.module.scss'
 
 import { ProtezIDs } from '@/consts'
 import { Body, H2 } from '@/components/Typography'
-import Button, { MakeDonationButton } from '@/components/Button'
+import { MakeDonationButton } from '@/components/Button'
 import { ForwardedRef, forwardRef } from 'react'
 import { extractNumber, extractPrefixSuffix } from './utils'
 
@@ -65,9 +65,9 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
             className={`${style.buttonsContainer} ${style.buttonsContainerDesktop}`}
           >
             <MakeDonationButton size="normal" />
-            <Button as="link" href="/financial-audit" variant="secondary-white" size="normal" arrow>
+            {/* <Button as="link" href="/financial-audit" variant="secondary-white" size="normal" arrow>
               {t('financialAudit')}
-            </Button>
+            </Button> */}
           </TextAppearanceWrapper>
         </div>
         <div className={style.right}>
@@ -95,9 +95,9 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
           className={`${style.buttonsContainer} ${style.buttonsContainerMobile}`}
         >
           <MakeDonationButton size="normal" />
-          <Button as="link" href="/financial-audit" variant="secondary-white" size="normal" arrow>
+          {/* <Button as="link" href="/financial-audit" variant="secondary-white" size="normal" arrow>
             {t('financialAudit')}
-          </Button>
+          </Button> */}
         </TextAppearanceWrapper>
       </Section>
     </>

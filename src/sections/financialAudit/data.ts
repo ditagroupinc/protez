@@ -79,7 +79,7 @@ export const AUDIT_DATA: Record<number, YearData> = {
   2024: {
     patients: 273,
     budget: { en: '3.99M', uk: '3,99M' },
-    split: { program: 96, admin: 2, fund: 2 },
+    split: { program: 97, admin: 1, fund: 2 },
     reportPdf: REPORT_PDF[2024],
     cats: [
       { pct: 53, amount: { en: '$2.10M', uk: '$2,10M' } },
