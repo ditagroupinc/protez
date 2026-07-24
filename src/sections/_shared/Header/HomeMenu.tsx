@@ -47,7 +47,7 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
             {icons.arrowUp(`${style.icon} ${style.blue}`)}
           </Link>
         </div>
-        <div className={style.protezAcademyLinkWrapper}>
+        {/* <div className={style.protezAcademyLinkWrapper}>
           <LocaleLink
             href="/financial-audit"
             onClick={closeMenu}
@@ -56,7 +56,7 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
             <H3>{t('financialAudit')}</H3>
             {icons.arrowUp(`${style.icon} ${style.teal}`)}
           </LocaleLink>
-        </div>
+        </div> */}
       </div>
       <div className={style.navigationWrapper}>
         <nav ref={navRef} className={`${style.navigation} ${style.red}`}>
