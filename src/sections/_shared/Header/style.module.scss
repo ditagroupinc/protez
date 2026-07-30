@@ -160,6 +160,13 @@
   }
 }
 
+.topLinks {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .protezAcademyLinkWrapper {
   height: 40px;
   flex-shrink: 0;
@@ -248,8 +255,8 @@
   flex-grow: 1;
 
   overflow: hidden;
+  border-top: var(--greyBorder);
 
-  padding-top: 24px;
   @include padding-side-mixin;
   max-height: calc(100% - 46px - 266px);
 }
@@ -291,6 +298,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  padding-top: 24px;
   padding-bottom: 24px;
 }
 

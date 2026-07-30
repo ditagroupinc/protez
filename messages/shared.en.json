@@ -1,6 +1,7 @@
 {
   "header": {
     "protezAcademy": "Protez Academy",
+    "financialAudit": "Financial Audit",
     "protezPage": {
       "actionButtons": {
         "needAProthesis": "Потрібeн протез"
@@ -19,7 +20,7 @@
         "Press Release",
         "Our Patients",
         "Team",
-        "Locations",
+        "Prosthetic Centers",
         "Partners",
         "Subscribe to Updates",
         "Protez Merch"

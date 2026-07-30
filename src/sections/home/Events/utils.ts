@@ -1,5 +1,14 @@
 import { Event, EventData } from './types'
 
+// slider requires min 6 elements
+export const MIN_EVENTS = 6
+
+export const padEventsToMinimum = (events: Event[], minCount = MIN_EVENTS): Event[] => {
+  if (events.length === 0 || events.length >= minCount) return events
+
+  return Array.from({ length: minCount }, (_, index) => ({ ...events[index % events.length] }))
+}
+
 export const modifyAndSortEvents = (events: EventData[]): Event[] => {
   const now = new Date()
 

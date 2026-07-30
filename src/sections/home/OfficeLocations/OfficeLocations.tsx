@@ -1,9 +1,7 @@
 'use client'
 
 import { useRef } from 'react'
-import { useLocale, useTranslations } from 'next-intl'
-
-import { localeToLanguage } from '@/lib/locale'
+import { useTranslations } from 'next-intl'
 
 import style from './style.module.scss'
 
@@ -15,6 +13,7 @@ import { ProtezIDs } from '@/consts'
 import { Body, H3 } from '@/components/Typography'
 import Slider from '@/islands/SlickCarousel'
 import ProtezImage from '@/components/ProtezImage'
+import { useProtezTitle } from '@/hooks/useProtezTitle'
 
 type OfficeLocation = { country: string; location: string; address: string }
 
@@ -28,9 +27,8 @@ const locationImages = [
 ]
 
 const OfficeLocations = () => {
-  const locale = useLocale()
-  const lang = localeToLanguage(locale)
   const t = useTranslations('home.officeLocations')
+  const { desktop: title } = useProtezTitle('prosthetic-centers')
   const locationsRaw = t.raw('locations') as OfficeLocation[]
   const sliderRef = useRef<Slider & React.Component>(null)
 
@@ -73,7 +71,7 @@ const OfficeLocations = () => {
         height={873}
       />
       <TextAppearanceWrapper className={style.heading}>
-        {icons.officeLocationsLogo.desktop[lang](style.title)}
+        <ProtezImage {...title} className={style.title} />
       </TextAppearanceWrapper>
 
       <Slider ref={sliderRef} {...settings} className={style.slickSlider}>
