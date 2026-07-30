@@ -5,7 +5,7 @@ import { useLocale, useTranslations } from 'next-intl'
 
 import { FinancialAuditIDs } from '@/consts'
 
-import { CATEGORY_COLORS, DONUT_CIRC, DONUT_R, getYearData } from '../data'
+import { CATEGORY_COLORS, DONUT_CIRC, DONUT_R, formatPct, getYearData } from '../data'
 import { useDrawIn } from '../_shared/useDrawIn'
 import Reveal from '../_shared/Reveal'
 import FadeSwap from '../_shared/FadeSwap'
@@ -109,7 +109,9 @@ const ExpenseBreakdown = ({ year, swapping }: Props) => {
                 <span className={style.catAmount}>
                   {locale === 'uk' ? c.amount.uk : c.amount.en}
                 </span>
-                <span className={style.catPct}>{pending ? '—' : `${c.pct}%`}</span>
+                <span className={style.catPct}>
+                  {pending ? '—' : `${formatPct(c.pct, locale)}%`}
+                </span>
               </div>
             ))}
           </Reveal>
