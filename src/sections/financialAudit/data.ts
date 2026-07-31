@@ -41,14 +41,18 @@ const REPORT_PDF: Record<number, string> = {
 }
 
 // Expense categories in the same order as `financialAudit.breakdown.categories`
-// in both locale files — sorted by 2024 spend, descending. Position 4 is patient
-// meals and housing and position 6 is transport: they read straight off the
-// `Patient expenses` and `Travel` rows of each statement of functional expenses,
-// which is the opposite order from what their 2022-2023 sizes would suggest.
+// in both locale files — sorted by 2024 spend, descending.
+//
+// Transport and patient meals (positions 4 and 5) are the one pair that does not
+// read off a single audited line. A new firm audited 2024 and folded patient
+// travel into `Patient expenses`, where the previous firm had kept it in
+// `Travel`: 424,187 + 223,789 in 2023 against 183,744 + 462,019 in 2024, so the
+// pair total barely moved while the split flipped. The numbers below keep the
+// 2022-2023 methodology, which is also what the two category names describe.
 const CATEGORY_USD: Record<number, number[]> = {
-  2022: [504_532, 34_675, 33_794, 29_628, 20_826, 71_891, 13_166, 0, 25_000],
-  2023: [2_042_230, 358_715, 306_372, 223_789, 84_718, 424_187, 96_945, 66_308, 57_478],
-  2024: [1_755_173, 542_415, 521_184, 462_019, 218_809, 183_744, 179_072, 96_237, 13_599],
+  2022: [504_532, 34_675, 33_794, 71_891, 29_628, 20_826, 13_166, 0, 25_000],
+  2023: [2_042_230, 358_715, 306_372, 424_187, 223_789, 84_718, 96_945, 66_308, 57_478],
+  2024: [1_755_173, 542_415, 521_184, 408_695, 237_068, 218_809, 179_072, 96_237, 13_599],
 }
 
 const CATEGORY_COUNT = 9
