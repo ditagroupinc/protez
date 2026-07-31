@@ -4,11 +4,9 @@ import { useState, useEffect, useTransition } from 'react'
 
 import { useLocale } from 'next-intl'
 
-import Link from 'next/link'
-
 import useOutsideClick from '@/hooks/useOutsideClick'
 import SocialMediaLinks from '@/components/SocialMediaLinks'
-import { persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
+import { Link, persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
 import { BurgerButton } from './BurgerButton'
 import BackToTopButton from './BackToTopButton'

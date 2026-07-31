@@ -4,8 +4,6 @@ import { Ref, useTransition } from 'react'
 
 import { useLocale, useTranslations } from 'next-intl'
 
-import Link from 'next/link'
-
 import Button, { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
 import { H3 } from '@/components/Typography'
 import { Link as LocaleLink, persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
@@ -42,12 +40,12 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
     <>
       <div className={style.topLinks}>
         <div className={style.protezAcademyLinkWrapper}>
-          <Link href="/academy" className={`${style.protezAcademyLink} ${style.blue}`}>
+          <LocaleLink href="/academy" className={`${style.protezAcademyLink} ${style.blue}`}>
             <H3>{t('protezAcademy')}</H3>
             {icons.arrowUp(`${style.icon} ${style.blue}`)}
-          </Link>
+          </LocaleLink>
         </div>
-        {/* <div className={style.protezAcademyLinkWrapper}>
+        <div className={style.protezAcademyLinkWrapper}>
           <LocaleLink
             href="/financial-audit"
             onClick={closeMenu}
@@ -56,7 +54,7 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
             <H3>{t('financialAudit')}</H3>
             {icons.arrowUp(`${style.icon} ${style.teal}`)}
           </LocaleLink>
-        </div> */}
+        </div>
       </div>
       <div className={style.navigationWrapper}>
         <nav ref={navRef} className={`${style.navigation} ${style.red}`}>
@@ -64,9 +62,9 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
             {HOME_NAV_IDS.map((id, index) =>
               ancorLinks ? (
                 <li key={id} className={style.ancorItem} onClick={closeMenu}>
-                  <Link href={`#${id}`} className={style.ancorLink}>
+                  <LocaleLink href={`#${id}`} className={style.ancorLink}>
                     <H3>{labels[index]}</H3>
-                  </Link>
+                  </LocaleLink>
                 </li>
               ) : (
                 <li key={id} className={style.ancorItem} onClick={closeMenu}>

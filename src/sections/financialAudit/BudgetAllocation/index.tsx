@@ -1,10 +1,10 @@
 'use client'
 
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import { FinancialAuditIDs } from '@/consts'
 
-import { BAR_COLORS, getYearData } from '../data'
+import { BAR_COLORS, formatPct, getYearData } from '../data'
 import { useDrawIn } from '../_shared/useDrawIn'
 import Reveal from '../_shared/Reveal'
 import FadeSwap from '../_shared/FadeSwap'
@@ -18,6 +18,7 @@ type Props = {
 
 const BudgetAllocation = ({ year, swapping }: Props) => {
   const t = useTranslations('financialAudit.allocation')
+  const locale = useLocale()
 
   const data = getYearData(year)
   const pending = data.pending === true
@@ -50,7 +51,9 @@ const BudgetAllocation = ({ year, swapping }: Props) => {
                   }}
                 />
               </div>
-              <div className={style.barPct}>{pending ? '—' : `${row.value}%`}</div>
+              <div className={style.barPct}>
+                {pending ? '—' : `${formatPct(row.value, locale, 2)}%`}
+              </div>
             </Reveal>
           ))}
         </FadeSwap>

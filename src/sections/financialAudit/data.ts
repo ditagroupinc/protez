@@ -1,6 +1,6 @@
-// Single source of truth for the /financial-audit page. Values are ported from
-// the audited-figures object in the design mockup; the comparison table derives
-// its cells from here so stale numbers can never drift back in.
+// Single source of truth for the /financial-audit page. The USD figures below are
+// the audited ones; every percentage on the page is derived from them, so the
+// donut, the allocation bars and the comparison table can never drift apart.
 
 export type LocalizedText = {
   en: string
@@ -38,60 +38,86 @@ const REPORT_PDF: Record<number, string> = {
   2024: '/documents/financialAudit/2024-audited-fs.pdf',
 }
 
-const EMPTY_CATS: CategoryDatum[] = Array.from({ length: 8 }, () => ({
+// Expense categories in the same order as `financialAudit.breakdown.categories`
+// in both locale files — sorted by 2024 spend, descending.
+const CATEGORY_USD: Record<number, number[]> = {
+  2022: [504_532, 34_675, 33_794, 71_891, 29_628, 20_826, 13_166, 0, 25_000],
+  2023: [2_042_230, 358_715, 306_372, 424_187, 223_789, 84_718, 96_945, 66_308, 57_478],
+  2024: [1_755_173, 542_415, 521_184, 408_695, 237_068, 218_809, 179_072, 96_237, 13_599],
+}
+
+const CATEGORY_COUNT = 9
+
+// Totals as reported. The category rows above sum to exactly these numbers;
+// keeping them explicit means a typo shows up as a broken total, not a silent one.
+const TOTAL_EXPENSES: Record<number, number> = {
+  2022: 733_512,
+  2023: 3_660_742,
+  2024: 3_972_252,
+}
+
+// Functional expense split, in percent, straight from the audited statements.
+const FUNCTIONAL_SPLIT: Record<number, YearSplit> = {
+  2022: { program: 95.38, admin: 2.83, fund: 1.79 },
+  2023: { program: 95.04, admin: 2.31, fund: 2.65 },
+  2024: { program: 89.98, admin: 5.51, fund: 4.51 },
+}
+
+const PATIENTS: Record<number, number> = {
+  2022: 31,
+  2023: 83,
+  2024: 273,
+}
+
+// "3.97M" / "542K" / "0" — uk writes the decimal separator as a comma.
+function compactUsd(value: number): LocalizedText {
+  if (value >= 1_000_000) {
+    const millions = (value / 1_000_000).toFixed(2)
+
+    return { en: `${millions}M`, uk: `${millions.replace('.', ',')}M` }
+  }
+
+  if (value >= 1_000) {
+    const thousands = `${Math.round(value / 1_000)}K`
+
+    return { en: thousands, uk: thousands }
+  }
+
+  return { en: String(value), uk: String(value) }
+}
+
+function withDollar(text: LocalizedText): LocalizedText {
+  return { en: `$${text.en}`, uk: `$${text.uk}` }
+}
+
+function buildCats(year: number): CategoryDatum[] {
+  const total = TOTAL_EXPENSES[year]
+
+  return CATEGORY_USD[year].map(usd => ({
+    pct: Math.round((usd / total) * 1000) / 10,
+    amount: withDollar(compactUsd(usd)),
+  }))
+}
+
+function buildYear(year: number): YearData {
+  return {
+    patients: PATIENTS[year],
+    budget: compactUsd(TOTAL_EXPENSES[year]),
+    split: FUNCTIONAL_SPLIT[year],
+    reportPdf: REPORT_PDF[year],
+    cats: buildCats(year),
+  }
+}
+
+const EMPTY_CATS: CategoryDatum[] = Array.from({ length: CATEGORY_COUNT }, () => ({
   pct: 0,
   amount: { en: '—', uk: '—' },
 }))
 
 export const AUDIT_DATA: Record<number, YearData> = {
-  2022: {
-    patients: 31,
-    budget: { en: '610K', uk: '610K' },
-    split: { program: 97, admin: 2, fund: 1 },
-    reportPdf: REPORT_PDF[2022],
-    cats: [
-      { pct: 74, amount: { en: '$452K', uk: '$452K' } },
-      { pct: 6, amount: { en: '$36K', uk: '$36K' } },
-      { pct: 12, amount: { en: '$72K', uk: '$72K' } },
-      { pct: 2, amount: { en: '$13K', uk: '$13K' } },
-      { pct: 3, amount: { en: '$17K', uk: '$17K' } },
-      { pct: 0, amount: { en: '$0', uk: '$0' } },
-      { pct: 1, amount: { en: '$5K', uk: '$5K' } },
-      { pct: 2, amount: { en: '$14K', uk: '$14K' } },
-    ],
-  },
-  2023: {
-    patients: 83,
-    budget: { en: '3.76M', uk: '3,76M' },
-    split: { program: 96, admin: 1, fund: 3 },
-    reportPdf: REPORT_PDF[2023],
-    cats: [
-      { pct: 60, amount: { en: '$2.28M', uk: '$2,28M' } },
-      { pct: 12, amount: { en: '$443K', uk: '$443K' } },
-      { pct: 11, amount: { en: '$428K', uk: '$428K' } },
-      { pct: 4, amount: { en: '$135K', uk: '$135K' } },
-      { pct: 5, amount: { en: '$175K', uk: '$175K' } },
-      { pct: 4, amount: { en: '$142K', uk: '$142K' } },
-      { pct: 3, amount: { en: '$127K', uk: '$127K' } },
-      { pct: 1, amount: { en: '$37K', uk: '$37K' } },
-    ],
-  },
-  2024: {
-    patients: 273,
-    budget: { en: '3.99M', uk: '3,99M' },
-    split: { program: 97, admin: 1, fund: 2 },
-    reportPdf: REPORT_PDF[2024],
-    cats: [
-      { pct: 53, amount: { en: '$2.10M', uk: '$2,10M' } },
-      { pct: 19, amount: { en: '$748K', uk: '$748K' } },
-      { pct: 10, amount: { en: '$409K', uk: '$409K' } },
-      { pct: 8, amount: { en: '$308K', uk: '$308K' } },
-      { pct: 4, amount: { en: '$171K', uk: '$171K' } },
-      { pct: 3, amount: { en: '$115K', uk: '$115K' } },
-      { pct: 2, amount: { en: '$69K', uk: '$69K' } },
-      { pct: 1, amount: { en: '$66K', uk: '$66K' } },
-    ],
-  },
+  2022: buildYear(2022),
+  2023: buildYear(2023),
+  2024: buildYear(2024),
   2025: {
     patients: null,
     budget: null,
@@ -106,6 +132,14 @@ export function getYearData(year: number): YearData {
   return AUDIT_DATA[year] ?? AUDIT_DATA[DEFAULT_YEAR]
 }
 
+// Percentages carry decimals here — rounding to whole numbers would print the
+// smallest categories (e.g. 2024 charitable aid at 0.34%) as a flat "0%".
+export function formatPct(value: number, locale: string, digits = 1): string {
+  const text = value.toFixed(digits)
+
+  return locale === 'uk' ? text.replace('.', ',') : text
+}
+
 export const CATEGORY_COLORS = [
   'var(--teal)',
   'var(--chart-amber)',
@@ -114,6 +148,7 @@ export const CATEGORY_COLORS = [
   'var(--chart-coral)',
   'var(--chart-green)',
   'var(--chart-sky)',
+  'var(--chart-rose)',
   'var(--chart-grey)',
 ] as const
 

@@ -31,14 +31,15 @@
     "centerPending": "soon",
     "centerYear": "{year}",
     "categories": [
-      "Prosthetics & Treatment",
-      "Payroll & Payroll Taxes",
-      "Flights & Transportation",
-      "Prosthetic Centers Rent & Maintenance",
+      "Prosthetics",
+      "Team",
+      "Clinics & Offices",
+      "Transportation & Patient Travel",
       "Patient Meals & Housing",
-      "Education & Protez Academy",
+      "Administrative Costs",
       "Fundraising",
-      "Administrative Costs"
+      "Education & Protez Academy",
+      "Charitable Aid"
     ]
   },
   "allocation": {
