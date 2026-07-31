@@ -1,6 +1,7 @@
 // Single source of truth for the /financial-audit page. The USD figures below are
-// the audited ones; every percentage on the page is derived from them, so the
-// donut, the allocation bars and the comparison table can never drift apart.
+// the audited ones; every percentage on the page is derived from TOTAL_EXPENSES,
+// so the donut, the allocation bars and the comparison table can never drift
+// apart. Revenue is tracked separately and never feeds a percentage.
 
 export type LocalizedText = {
   en: string
@@ -20,7 +21,8 @@ export type YearSplit = {
 
 export type YearData = {
   patients: number | null
-  budget: LocalizedText | null
+  revenue: LocalizedText | null
+  expenses: LocalizedText | null
   split: YearSplit | null
   reportPdf: string | null
   pending?: boolean
@@ -39,11 +41,14 @@ const REPORT_PDF: Record<number, string> = {
 }
 
 // Expense categories in the same order as `financialAudit.breakdown.categories`
-// in both locale files — sorted by 2024 spend, descending.
+// in both locale files — sorted by 2024 spend, descending. Position 4 is patient
+// meals and housing and position 6 is transport: they read straight off the
+// `Patient expenses` and `Travel` rows of each statement of functional expenses,
+// which is the opposite order from what their 2022-2023 sizes would suggest.
 const CATEGORY_USD: Record<number, number[]> = {
-  2022: [504_532, 34_675, 33_794, 71_891, 29_628, 20_826, 13_166, 0, 25_000],
-  2023: [2_042_230, 358_715, 306_372, 424_187, 223_789, 84_718, 96_945, 66_308, 57_478],
-  2024: [1_755_173, 542_415, 521_184, 408_695, 237_068, 218_809, 179_072, 96_237, 13_599],
+  2022: [504_532, 34_675, 33_794, 29_628, 20_826, 71_891, 13_166, 0, 25_000],
+  2023: [2_042_230, 358_715, 306_372, 223_789, 84_718, 424_187, 96_945, 66_308, 57_478],
+  2024: [1_755_173, 542_415, 521_184, 462_019, 218_809, 183_744, 179_072, 96_237, 13_599],
 }
 
 const CATEGORY_COUNT = 9
@@ -54,6 +59,14 @@ const TOTAL_EXPENSES: Record<number, number> = {
   2022: 733_512,
   2023: 3_660_742,
   2024: 3_972_252,
+}
+
+// "Total revenue and support" from each statement of activities. 2024 excludes
+// the separate other income (loss) section, exactly as the statement presents it.
+const TOTAL_REVENUE: Record<number, number> = {
+  2022: 1_078_386,
+  2023: 3_625_592,
+  2024: 5_146_314,
 }
 
 // Functional expense split, in percent, straight from the audited statements.
@@ -102,7 +115,8 @@ function buildCats(year: number): CategoryDatum[] {
 function buildYear(year: number): YearData {
   return {
     patients: PATIENTS[year],
-    budget: compactUsd(TOTAL_EXPENSES[year]),
+    revenue: compactUsd(TOTAL_REVENUE[year]),
+    expenses: compactUsd(TOTAL_EXPENSES[year]),
     split: FUNCTIONAL_SPLIT[year],
     reportPdf: REPORT_PDF[year],
     cats: buildCats(year),
@@ -120,7 +134,8 @@ export const AUDIT_DATA: Record<number, YearData> = {
   2024: buildYear(2024),
   2025: {
     patients: null,
-    budget: null,
+    revenue: null,
+    expenses: null,
     split: null,
     reportPdf: null,
     pending: true,

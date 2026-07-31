@@ -23,7 +23,7 @@ const YearStats = ({ year, swapping }: Props) => {
 
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.4 })
   const data = getYearData(year)
-  const budgetText = data.budget ? `$${locale === 'uk' ? data.budget.uk : data.budget.en}` : '—'
+  const budgetText = data.revenue ? `$${locale === 'uk' ? data.revenue.uk : data.revenue.en}` : '—'
   const separator = locale === 'uk' ? ' ' : ','
 
   return (

@@ -34,9 +34,9 @@
       "Prosthetics",
       "Team",
       "Clinics & Offices",
-      "Transportation & Patient Travel",
       "Patient Meals & Housing",
       "Administrative Costs",
+      "Transportation & Patient Travel",
       "Fundraising",
       "Education & Protez Academy",
       "Charitable Aid"
@@ -54,7 +54,8 @@
     "titleBold": "across years",
     "metric": "Metric",
     "patients": "Patients",
-    "budget": "Budget, $"
+    "revenue": "Revenue, $",
+    "expenses": "Expenses, $"
   },
   "download": {
     "title": "{year} Audit",

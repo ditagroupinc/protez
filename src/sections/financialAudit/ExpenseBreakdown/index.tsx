@@ -31,8 +31,8 @@ const ExpenseBreakdown = ({ year, swapping }: Props) => {
   }, [year])
 
   const categories = t.raw('categories') as string[]
-  const budget = data.budget ? (locale === 'uk' ? data.budget.uk : data.budget.en) : ''
-  const centerAmount = pending ? t('centerPending') : `$${budget}`
+  const total = data.expenses ? (locale === 'uk' ? data.expenses.uk : data.expenses.en) : ''
+  const centerAmount = pending ? t('centerPending') : `$${total}`
 
   let acc = 0
   const segments = data.cats.map((c, i) => {
