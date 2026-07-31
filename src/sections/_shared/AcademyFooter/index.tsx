@@ -9,6 +9,7 @@ import { useAcademyTitle } from '@/hooks/useAcademyTitle'
 import Divider from '@/components/Divider'
 
 import { AcademyIDs } from '@academy/consts'
+import { Link } from '@/lib/i18n'
 import { DONATE_URL } from '@academy/consts/links'
 
 import { forwardRef } from 'react'
@@ -24,9 +25,9 @@ const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
           <div className={styles.right}>
             <ProtezImage {...titleDesktop} className={styles.title} />
             <div className={styles.buttonGroup}>
-              <a href={DONATE_URL} className={styles.supportAcademyButton}>
+              <Link href={DONATE_URL} className={styles.supportAcademyButton}>
                 {t('cta.support')}
-              </a>
+              </Link>
             </div>
           </div>
           <div className={styles.left}>
@@ -43,9 +44,9 @@ const Footer = forwardRef<HTMLDivElement>(function (_, ref) {
       </div>
       <div className={styles.footerBottom}>
         <span>{t('footer.copyright')}</span>
-        <a href="/academy/terms-conditions" className={styles.termsLink}>
+        <Link href="/academy/terms-conditions" className={styles.termsLink}>
           {t('footer.terms')}
-        </a>
+        </Link>
       </div>
     </footer>
   )

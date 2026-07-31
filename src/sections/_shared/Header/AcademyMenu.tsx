@@ -4,10 +4,8 @@ import { Ref, useTransition } from 'react'
 
 import { useLocale, useTranslations } from 'next-intl'
 
-import Link from 'next/link'
-
 import AcademyButton from '@/components/AcademyButton'
-import { persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
+import { Link, persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
 import { ACADEMY_APPLY_FORM_URL, DONATE_URL } from '@academy/consts/links'
 

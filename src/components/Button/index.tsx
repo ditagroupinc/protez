@@ -1,10 +1,14 @@
 'use client'
 
-import { ReactElement, ReactNode } from 'react'
+import { ComponentProps, ReactElement, ReactNode } from 'react'
 import { useTranslations } from 'next-intl'
 
 import style from './style.module.scss'
-import Link, { LinkProps } from 'next/link'
+// Locale-aware Link: internal hrefs get the /ua prefix, external URLs and
+// #anchors pass through untouched.
+import { Link } from '@/lib/i18n'
+
+type LinkProps = ComponentProps<typeof Link>
 
 import { icons } from './icons'
 
