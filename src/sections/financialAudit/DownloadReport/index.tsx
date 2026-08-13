@@ -39,6 +39,7 @@ const DownloadReport = ({ year, swapping }: Props) => {
             {reportPdf ? (
               <Button
                 as="link"
+                external
                 href={reportPdf}
                 target="_blank"
                 rel="noopener noreferrer"
