@@ -78,5 +78,23 @@
     "supportWith": "Support with",
     "applyToAcademy": "Apply to Academy"
   },
-  "backToTop": "Back to top   →"
+  "backToTop": "Back to top   →",
+  "stats": {
+    "months": [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December"
+    ],
+    "range": "May 2022 – {month} {year}",
+    "rangeNote": "(May 2022 – {month} {year})"
+  }
 }

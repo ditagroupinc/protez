@@ -3,6 +3,8 @@
 import { useLocale, useTranslations } from 'next-intl'
 
 import { localeToLanguage } from '@/lib/locale'
+import type { CurrentMonth } from '@/lib/date'
+import { useStatsRange } from '@/hooks/useStatsRange'
 
 import Section from '@/components/Section'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -15,38 +17,31 @@ import { ProtezIDs } from '@/consts'
 import { Body, H2 } from '@/components/Typography'
 import { MakeDonationButton } from '@/components/Button'
 import { ForwardedRef, forwardRef } from 'react'
-import { extractNumber, extractPrefixSuffix } from './utils'
 
-interface StatisticsDataItem {
-  statisticsDataLabel: {
-    english: string
-    ukrainian: string
-  }
-  statisticsDataValue: string
-}
-
-interface Results {
-  statisticsDate: {
-    english: string
-    ukrainian: string
-  }
-  statisticsData: StatisticsDataItem[]
+type ResultCard = {
+  prefix?: string
+  value: number
+  decimals?: number
+  suffix?: string
+  label: string
 }
 
 interface OurResultsProps {
-  results: Results
+  currentMonth: CurrentMonth
 }
 
 const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResults(
-  { results },
+  { currentMonth },
   ref: ForwardedRef<HTMLDivElement>
 ) {
   const locale = useLocale()
   const lang = localeToLanguage(locale)
   const t = useTranslations('home.ourResults')
 
-  const dateText = results.statisticsDate
-  const cardsData = results.statisticsData
+  const dateText = useStatsRange(currentMonth, 'rangeNote')
+  const cardsData = t.raw('cards') as ResultCard[]
+  const separator = locale === 'uk' ? ' ' : ','
+  const decimal = locale === 'uk' ? ',' : '.'
 
   return (
     <>
@@ -54,7 +49,7 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
         <div className={style.left}>
           {icons.ourResultsLogo.desktop[lang](style.title)}
           <Body large className={style.date}>
-            {dateText[lang]}
+            {dateText}
           </Body>
 
           <Body large className={style.text}>
@@ -65,39 +60,30 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
             className={`${style.buttonsContainer} ${style.buttonsContainerDesktop}`}
           >
             <MakeDonationButton size="normal" />
-            {/* <Button as="link" href="/financial-audit" variant="secondary-white" size="normal" arrow>
-              {t('financialAudit')}
-            </Button> */}
           </TextAppearanceWrapper>
         </div>
         <div className={style.right}>
-          {cardsData.map((card, index) => {
-            const { prefix, suffix } = extractPrefixSuffix(card.statisticsDataValue)
-            const number = extractNumber(card.statisticsDataValue)
-
-            return (
-              <TextAppearanceWrapper key={index} className={style.card}>
-                <div className={style.count}>
-                  {prefix && <span>{prefix}</span>}
-                  {number > 0 ? (
-                    <CountUp end={number} duration={2} className={style.count} />
-                  ) : (
-                    <span>{card.statisticsDataValue}</span>
-                  )}
-                  {suffix && <span>{suffix}</span>}
-                </div>
-                <H2 className={style.description}>{card.statisticsDataLabel[lang]}</H2>
-              </TextAppearanceWrapper>
-            )
-          })}
+          {cardsData.map((card, index) => (
+            <TextAppearanceWrapper key={index} className={style.card}>
+              <div className={style.count}>
+                <CountUp
+                  end={card.value}
+                  decimals={card.decimals ?? 0}
+                  decimal={decimal}
+                  separator={separator}
+                  prefix={card.prefix}
+                  suffix={card.suffix}
+                  duration={2}
+                />
+              </div>
+              <H2 className={style.description}>{card.label}</H2>
+            </TextAppearanceWrapper>
+          ))}
         </div>
         <TextAppearanceWrapper
           className={`${style.buttonsContainer} ${style.buttonsContainerMobile}`}
         >
           <MakeDonationButton size="normal" />
-          {/* <Button as="link" href="/financial-audit" variant="secondary-white" size="normal" arrow>
-            {t('financialAudit')}
-          </Button> */}
         </TextAppearanceWrapper>
       </Section>
     </>

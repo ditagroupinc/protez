@@ -8,6 +8,7 @@ import BackToTopButton from '@/components/BackToTopButton'
 import AcademyIntro from '../Intro'
 
 import FullScreenFallback from '@/components/FullScreenFallback'
+import type { CurrentMonth } from '@/lib/date'
 
 const MissionAndValues = lazy(() => import('../MissionAndValues'))
 const OurGoals = lazy(() => import('../OurGoals'))
@@ -48,7 +49,7 @@ const academyJsonLd = {
   ],
 }
 
-export default function AcademyHomePage() {
+export default function AcademyHomePage({ currentMonth }: { currentMonth: CurrentMonth }) {
   const [refIntro, inViewIntro] = useInView({ triggerOnce: false })
   const [refChief, inViewChief] = useInView({ triggerOnce: false })
   const [refEvents, inViewEvents] = useInView({ triggerOnce: false })
@@ -83,7 +84,7 @@ export default function AcademyHomePage() {
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>
-          <OurResults />
+          <OurResults currentMonth={currentMonth} />
         </Suspense>
 
         <Suspense fallback={<FullScreenFallback />}>

@@ -11,6 +11,8 @@ import ProtezImage from '@/components/ProtezImage'
 import Button from '@/components/Button'
 import { ProtezIDs } from '@/consts'
 import { useChildrensProstheticsTitle } from '@/hooks/useChildrensProstheticsTitle'
+import { useStatsRange } from '@/hooks/useStatsRange'
+import type { CurrentMonth } from '@/lib/date'
 import SlickCarousel, { type Settings } from '@/islands/SlickCarousel'
 import { NEED_A_PROTHESIS_URL } from '@/sections/_shared/Header/config'
 
@@ -19,11 +21,12 @@ import style from './style.module.scss'
 
 type Slide = { image: string; alt: string }
 
-const ChildrensProstheticsPromo = () => {
+const ChildrensProstheticsPromo = ({ currentMonth }: { currentMonth: CurrentMonth }) => {
   const t = useTranslations('home.childrensProstheticsPromo')
 
   const slides = t.raw('slides') as Slide[]
   const statNumber = Number(t.raw('statNumber'))
+  const statRange = useStatsRange(currentMonth)
 
   const title = useChildrensProstheticsTitle('childrens-prosthetics-dark')
 
@@ -83,7 +86,7 @@ const ChildrensProstheticsPromo = () => {
             </div>
             <div className={style.statMeta}>
               <div className={style.statLabel}>{t('statLabel')}</div>
-              <div className={style.statRange}>{t('statRange')}</div>
+              <div className={style.statRange}>{statRange}</div>
             </div>
           </div>
 

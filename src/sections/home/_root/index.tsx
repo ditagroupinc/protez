@@ -4,7 +4,8 @@ import { Suspense, lazy } from 'react'
 
 import style from './style.module.scss'
 
-import { Statistics, SingleEvent } from '@/utils/parsers'
+import { SingleEvent } from '@/utils/parsers'
+import type { CurrentMonth } from '@/lib/date'
 
 import FullScreenFallback from '@/components/FullScreenFallback'
 import ProtezImage from '@/components/ProtezImage'
@@ -40,10 +41,10 @@ const MailingList = lazy(() => import('@/sections/_shared/MailingList/MailingLis
 const Footer = lazy(() => import('@/sections/_shared/Footer'))
 
 export default function ProtezHomePage({
-  statistics,
+  currentMonth,
   events,
 }: {
-  statistics: Statistics
+  currentMonth: CurrentMonth
   events: SingleEvent[] | null
 }) {
   const t = useTranslations('home.root')
@@ -79,12 +80,12 @@ export default function ProtezHomePage({
         <SuspenseSection>
           <VideoBlock
             inNeedSection={<InNeed />}
-            ourResultsSection={<OurResults results={statistics} />}
+            ourResultsSection={<OurResults currentMonth={currentMonth} />}
           />
         </SuspenseSection>
 
         <SuspenseSection>
-          <ChildrensProstheticsPromo />
+          <ChildrensProstheticsPromo currentMonth={currentMonth} />
         </SuspenseSection>
 
         <SuspenseSection withSmoke>
@@ -140,15 +141,3 @@ export default function ProtezHomePage({
     </>
   )
 }
-
-// {
-//    {statistics && <OurResults results={statistics} />}
-
-//    {pressReleases && pressReleases.length > 0 && (
-//               <PressRelease pressReleases={pressReleases} />
-//             )}
-
-//    {events && events.length > 0 && <Events events={events} />}
-
-//    {news && news.length > 0 && <News news={news} />}
-// }

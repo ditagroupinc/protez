@@ -108,6 +108,7 @@
 
   &:nth-child(3) {
     grid-area: patients;
+    background-color: var(--red);
   }
 
   &:nth-child(4) {
@@ -116,7 +117,6 @@
 
   &:nth-child(5) {
     grid-area: spentOnMission;
-    background-color: var(--red);
   }
 }
 
@@ -223,12 +223,5 @@
       'clinicsOpened clinicsOpened clinicsOpened clinicsOpened patients patients patients patients'
       'specialistsTrained specialistsTrained specialistsTrained specialistsTrained specialistsTrained specialistsTrained specialistsTrained specialistsTrained'
       'spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission spentOnMission';
-  }
-
-  .card {
-    &:nth-child(5) {
-      background-color: var(--red);
-      color: var(--white);
-    }
   }
 }

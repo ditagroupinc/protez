@@ -1,5 +1,6 @@
 import { memo } from 'react'
 import CountUp from 'react-countup'
+import { useLocale } from 'next-intl'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
@@ -13,10 +14,12 @@ interface AcademyResultCardProps {
 
 const AcademyResultCard = memo((props: AcademyResultCardProps) => {
   const { count, title, className } = props
+  const locale = useLocale()
+  const separator = locale === 'uk' ? ' ' : ','
 
   return (
     <TextAppearanceWrapper className={`${style.academyResultCard} ${className}`}>
-      <CountUp end={count} duration={2} className={style.count} />
+      <CountUp end={count} duration={2} separator={separator} className={style.count} />
       <p className={style.desc}>{title}</p>
     </TextAppearanceWrapper>
   )

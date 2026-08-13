@@ -15,13 +15,16 @@ import { ACADEMY_APPLY_FORM_URL, DONATE_URL } from '@academy/consts/links'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import ProtezImage from '@/components/ProtezImage'
 import { useAcademyTitle } from '@/hooks/useAcademyTitle'
+import { useStatsRange } from '@/hooks/useStatsRange'
+import type { CurrentMonth } from '@/lib/date'
 
 type Stat = { value: number; label: string }
 
-const OurResults = () => {
+const OurResults = ({ currentMonth }: { currentMonth: CurrentMonth }) => {
   const t = useTranslations('academy')
   const { desktop: titleDesktop } = useAcademyTitle('our-results')
   const stats = t.raw('ourResults.stats') as Stat[]
+  const datesRange = useStatsRange(currentMonth, 'rangeNote')
 
   return (
     <AcademySection id={AcademyIDs.OurResults} className={style.academyResults}>
@@ -32,7 +35,7 @@ const OurResults = () => {
           </TextAppearanceWrapper>
           <div className={style.resultsInfo}>
             <TextAppearanceWrapper className={style.infoWrapper}>
-              <p className={style.date}>{t('ourResults.datesRange')}</p>
+              <p className={style.date}>{datesRange}</p>
               <p className={style.desc}>{t('ourResults.description')}</p>
             </TextAppearanceWrapper>
             <TextAppearanceWrapper className={style.btnGroup}>
