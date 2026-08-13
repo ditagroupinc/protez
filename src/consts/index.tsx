@@ -46,5 +46,6 @@ export enum FinancialAuditIDs {
   Breakdown = 'financialAuditBreakdown',
   Allocation = 'financialAuditAllocation',
   Comparison = 'financialAuditComparison',
+  Video = 'financialAuditVideo',
   Download = 'financialAuditDownload',
 }

@@ -83,6 +83,7 @@ export const FINANCIAL_AUDIT_NAV_IDS = [
   FinancialAuditIDs.Breakdown,
   FinancialAuditIDs.Allocation,
   FinancialAuditIDs.Comparison,
+  FinancialAuditIDs.Video,
   FinancialAuditIDs.Download,
 ] as const
 

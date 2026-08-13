@@ -12,6 +12,7 @@ import style from './style.module.scss'
 const ExpenseBreakdown = lazy(() => import('../ExpenseBreakdown'))
 const BudgetAllocation = lazy(() => import('../BudgetAllocation'))
 const YearComparison = lazy(() => import('../YearComparison'))
+const AuditVideo = lazy(() => import('../AuditVideo'))
 const DownloadReport = lazy(() => import('../DownloadReport'))
 
 // Crossfade window: fade the swappable content out, swap the data, fade back in.
@@ -48,6 +49,10 @@ export default function FinancialAuditPage() {
 
       <SuspenseSection>
         <YearComparison swapping={swapping} />
+      </SuspenseSection>
+
+      <SuspenseSection>
+        <AuditVideo />
       </SuspenseSection>
 
       <SuspenseSection>

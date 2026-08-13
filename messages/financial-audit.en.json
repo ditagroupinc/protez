@@ -9,6 +9,7 @@
     "financialAuditBreakdown": "Breakdown by Category",
     "financialAuditAllocation": "Where the Budget Goes",
     "financialAuditComparison": "Comparison Across Years",
+    "financialAuditVideo": "Video",
     "financialAuditDownload": "Download Report"
   },
   "hero": {
@@ -56,6 +57,14 @@
     "patients": "Patients",
     "revenue": "Revenue, $",
     "expenses": "Expenses, $"
+  },
+  "video": {
+    "titleSerif": "Our updated",
+    "titleBold": "foundation structure",
+    "description": "Our co-founder and CEO explain how the updated structure of Protez Foundation lets us scale our mission systematically. The video is in Ukrainian.",
+    "posterAlt": "Video preview: the updated structure of Protez Foundation",
+    "playAria": "Play the video",
+    "iframeTitle": "The updated structure of Protez Foundation"
   },
   "download": {
     "title": "{year} Audit",

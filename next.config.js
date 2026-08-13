@@ -19,6 +19,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'widgets.guidestar.org',
       },
+      {
+        protocol: 'https',
+        hostname: 'i.ytimg.com',
+      },
     ],
   },
   sassOptions: {

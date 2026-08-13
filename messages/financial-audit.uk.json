@@ -9,6 +9,7 @@
     "financialAuditBreakdown": "Розподіл витрат",
     "financialAuditAllocation": "Куди спрямовано бюджет",
     "financialAuditComparison": "Порівняння по роках",
+    "financialAuditVideo": "Відеозвіт",
     "financialAuditDownload": "Завантажити звіт"
   },
   "hero": {
@@ -56,6 +57,14 @@
     "patients": "Пацієнтів",
     "revenue": "Надходження, $",
     "expenses": "Витрати, $"
+  },
+  "video": {
+    "titleSerif": "Оновлена",
+    "titleBold": "структура фонду",
+    "description": "Співзасновник і CEO розповідають, як оновлена структура Protez Foundation дозволяє системно масштабувати нашу місію.",
+    "posterAlt": "Прев'ю відео про оновлену структуру Protez Foundation",
+    "playAria": "Відтворити відео",
+    "iframeTitle": "Оновлена структура Protez Foundation"
   },
   "download": {
     "title": "Аудит за {year} рік",
