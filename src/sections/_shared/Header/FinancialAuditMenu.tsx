@@ -4,11 +4,9 @@ import { Ref, useTransition } from 'react'
 
 import { useLocale, useTranslations } from 'next-intl'
 
-import Link from 'next/link'
-
 import Button, { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
 import { H3 } from '@/components/Typography'
-import { persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
+import { Link, persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
 import { icons } from './icons'
 import style from './style.module.scss'

@@ -1,10 +1,14 @@
 'use client'
 
-import { ReactElement, ReactNode } from 'react'
+import { ComponentProps, ReactElement, ReactNode } from 'react'
 import { useTranslations } from 'next-intl'
 
 import style from './style.module.scss'
-import Link, { LinkProps } from 'next/link'
+// Locale-aware Link: internal hrefs get the /ua prefix, external URLs and
+// #anchors pass through untouched.
+import { Link } from '@/lib/i18n'
+
+type LinkProps = ComponentProps<typeof Link>
 
 import { icons } from './icons'
 
@@ -35,10 +39,17 @@ type ButtonProps = BaseButtonProps &
     | (React.ComponentProps<'button'> & { as: 'button' })
     | (LinkProps & {
         as: 'link'
+        external?: false
         className?: string
         children: ReactNode
         target?: '_blank' | '_self' | '_parent' | '_top'
         rel?: string
+      })
+    | (React.ComponentProps<'a'> & {
+        as: 'link'
+        external: true
+        className?: string
+        children: ReactNode
       })
   )
 
@@ -87,15 +98,25 @@ const Button = (props: ButtonProps) => {
   }
 
   if (props.as === 'link') {
+    const classNames = `${style.button} ${props.arrow ? style.hasArrow : ''} ${style[variantStyles[props.variant]]} ${style[props.size]} ${props.squared ? style.squared : ''} ${props.className}`
+
+    if (props.external) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { as, external, variant, size, squared, className, children, arrow, ...rest } = props
+
+      return (
+        <a className={classNames} {...rest}>
+          {children}
+          {arrow && icons.arrow(style.icon)}
+        </a>
+      )
+    }
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { as, variant, size = 'big', squared, className, children, arrow, ...rest } = props
+    const { as, external, variant, size, squared, className, children, arrow, ...rest } = props
 
     return (
-      <Link
-        prefetch={false}
-        className={`${style.button} ${arrow ? style.hasArrow : ''} ${style[variantStyles[variant]]} ${style[size]} ${squared ? style.squared : ''} ${className}`}
-        {...rest}
-      >
+      <Link prefetch={false} className={classNames} {...rest}>
         {children}
         {arrow && icons.arrow(style.icon)}
       </Link>

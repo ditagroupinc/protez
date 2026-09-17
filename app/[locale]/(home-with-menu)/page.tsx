@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import ProtezHomePage from '@/sections/home/_root'
 import { getPosts } from '@/utils/getPosts'
+import { getCurrentMonth } from '@/lib/date'
 import { setRequestLocale } from 'next-intl/server'
 
 import type { Locale } from '@/lib/i18n'
@@ -49,7 +50,7 @@ export default async function Home({ params }: { params: Params }) {
   const { locale } = await Promise.resolve(params)
 
   setRequestLocale(locale)
-  const { statistics, events } = await getPosts()
+  const { events } = await getPosts()
 
-  return <ProtezHomePage statistics={statistics} events={events} />
+  return <ProtezHomePage currentMonth={getCurrentMonth()} events={events} />
 }

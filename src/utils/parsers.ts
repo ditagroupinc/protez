@@ -1,4 +1,3 @@
-import { BilingualText } from '../types'
 import * as cheerio from 'cheerio'
 
 export interface SingleNews {
@@ -9,13 +8,6 @@ export interface SingleNews {
   logo: string
   title: string
   text: string
-}
-export interface Statistics {
-  statisticsDate: BilingualText
-  statisticsData: {
-    statisticsDataLabel: BilingualText
-    statisticsDataValue: string
-  }[]
 }
 export interface SingleEvent {
   image: string
@@ -64,55 +56,6 @@ export function parseNews(postContent: string) {
   })
 
   return news as SingleNews[]
-}
-
-export function parseStatistics(statisticsContent: string) {
-  const $ = cheerio.load(statisticsContent)
-
-  const statistics: Statistics = {
-    statisticsDate: {
-      english: '',
-      ukrainian: '',
-    },
-    statisticsData: [
-      {
-        statisticsDataLabel: {
-          english: '',
-          ukrainian: '',
-        },
-        statisticsDataValue: '',
-      },
-    ],
-  }
-
-  // Parse statisticsDate
-  const statisticsDate = {
-    english: $('.statisticsDateEnglish p').text().trim(),
-    ukrainian: $('.statisticsDateUkrainian p').text().trim(),
-  }
-
-  statistics.statisticsDate = statisticsDate
-
-  // Parse statisticsData
-  statistics.statisticsData = []
-
-  $('.wp-block-columns.statisticsDataItem').each((index, element) => {
-    const $element = $(element)
-
-    const statisticsDataLabel = {
-      english: $element.find('.statisticsDataLabelEnglish p').text().trim(),
-      ukrainian: $element.find('.statisticsDataLabelUkrainian p').text().trim(),
-    }
-
-    const statisticsDataValue = $element.find('.statisticsDataValue p').text().trim()
-
-    statistics.statisticsData.push({
-      statisticsDataLabel,
-      statisticsDataValue,
-    })
-  })
-
-  return statistics as Statistics
 }
 
 export function parseEvents(upcomingEventsContent: string) {

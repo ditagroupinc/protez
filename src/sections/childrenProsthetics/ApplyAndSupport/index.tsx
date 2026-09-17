@@ -7,6 +7,7 @@ import ProtezImage from '@/components/ProtezImage'
 import Button, { MakeDonationButton } from '@/components/Button'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import { ChildrenProstheticsIDs } from '@/consts'
+import { Link } from '@/lib/i18n'
 
 import style from './style.module.scss'
 
@@ -55,7 +56,7 @@ const ApplyAndSupport = () => {
                 <span className={style.zelleEmail}>{t('support.zelleEmail')}</span>
               </div>
               <div className={style.payRow}>
-                <a
+                <Link
                   className={style.payBox}
                   href="/donate"
                   target="_blank"
@@ -69,8 +70,8 @@ const ApplyAndSupport = () => {
                     className={style.payIcon}
                   />
                   monobank
-                </a>
-                <a
+                </Link>
+                <Link
                   className={style.payBox}
                   href="/donate"
                   target="_blank"
@@ -84,7 +85,7 @@ const ApplyAndSupport = () => {
                     className={style.payIcon}
                   />
                   Privat24
-                </a>
+                </Link>
               </div>
             </div>
           </div>

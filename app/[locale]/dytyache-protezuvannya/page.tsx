@@ -4,8 +4,9 @@ import { setRequestLocale, getTranslations } from 'next-intl/server'
 import ChildrenProstheticsPage from '@/sections/childrenProsthetics/_root'
 import type { Locale } from '@/lib/i18n'
 import { buildAlternates, localeUrl } from '@/lib/seo'
+import { getCurrentMonth } from '@/lib/date'
 
-export const dynamic = 'force-static'
+export const revalidate = 86400
 
 type Params = { locale: Locale }
 
@@ -36,5 +37,5 @@ export default async function DytyacheProtezuvannyaPage({ params }: { params: Pa
 
   setRequestLocale(locale)
 
-  return <ChildrenProstheticsPage />
+  return <ChildrenProstheticsPage currentMonth={getCurrentMonth()} />
 }

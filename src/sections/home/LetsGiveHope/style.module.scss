@@ -70,23 +70,18 @@
   display: none;
 }
 
-.academyButton {
-  display: none;
-}
-
 @media (min-width: 1181px) {
   .left .description {
     font-size: 18px;
     font-weight: 600;
     line-height: 26px;
   }
+  .buttonsContainer .academyButton {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1180px) {
-  .academyButton {
-    display: inline-flex;
-  }
-
   .section {
     padding-bottom: 40px;
     align-items: flex-end;

@@ -48,7 +48,7 @@
 }
 
 .barPct {
-  width: 48px;
+  width: 62px;
   text-align: right;
   font-weight: 800;
   color: var(--forest);
@@ -78,6 +78,11 @@
   .barLabel {
     width: 94px;
     font-size: 11px;
+  }
+
+  .barPct {
+    width: 54px;
+    font-size: 13px;
   }
 }
 

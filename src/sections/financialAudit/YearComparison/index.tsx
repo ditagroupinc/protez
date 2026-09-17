@@ -24,11 +24,16 @@ const YearComparison = ({ swapping }: Props) => {
     return p === null ? '—' : String(p)
   }
 
-  const budgetCell = (year: number) => {
-    const b = getYearData(year).budget
+  const moneyCell = (year: number, field: 'revenue' | 'expenses') => {
+    const v = getYearData(year)[field]
 
-    return b ? (locale === 'uk' ? b.uk : b.en) : '—'
+    return v ? (locale === 'uk' ? v.uk : v.en) : '—'
   }
+
+  const moneyRows = [
+    { key: 'revenue', field: 'revenue' },
+    { key: 'expenses', field: 'expenses' },
+  ] as const
 
   return (
     <section id={FinancialAuditIDs.Comparison} className={style.section}>
@@ -59,14 +64,16 @@ const YearComparison = ({ swapping }: Props) => {
                     </td>
                   ))}
                 </tr>
-                <tr>
-                  <th scope="row">{t('budget')}</th>
-                  {AUDIT_YEARS.map(y => (
-                    <td key={y} className={y === DEFAULT_YEAR ? style.highlight : ''}>
-                      {budgetCell(y)}
-                    </td>
-                  ))}
-                </tr>
+                {moneyRows.map(row => (
+                  <tr key={row.key}>
+                    <th scope="row">{t(row.key)}</th>
+                    {AUDIT_YEARS.map(y => (
+                      <td key={y} className={y === DEFAULT_YEAR ? style.highlight : ''}>
+                        {moneyCell(y, row.field)}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
           </Reveal>

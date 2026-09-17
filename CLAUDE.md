@@ -1,9 +1,17 @@
-## Known quirks
+Відповідай стисло. Відповідай на поставлене запитання — і зупиняйся. Не вигадуй терміновості
 
-- `useAcademyTitle` (`src/hooks/`) auto-swaps the mobile asset into the `desktop` field when viewport ≤ 800px — 14 consumer sections need no changes.
+Рекомендацію давай лише коли питання про це («чи варто», «що краще»).
+Не перелічуй варіанти, які сам же відкидаєш.
+Якщо є сенс копнути глибше — запропонуй одним рядком, а не розписуй.
 
-## Working language
+# Не змінюй TODO, якщо не мав прямої вказівки
 
-Ukrainian. When changing UI copy or form messages, update **both locales (en + uk)** at once.
+Делегуй сабагентам. Твоя роль — координатор: сформулювати задачу, прочитати результат, синтезувати відповідь.
 
-## NEVER MAKE COMITS UNLESS ASKED EXPLICITLY
+Не дублюй факт у кількох файлах
+
+Знайшов щось, що суперечить плану — виправ в документації і файлах
+
+Вся документація пишеться для Claude Code. Пиши її максимально коротко і стисло, only essentials
+
+Не пиши коментарі в коді, стилях, верстці.

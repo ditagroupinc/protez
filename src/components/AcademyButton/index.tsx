@@ -1,7 +1,11 @@
-import { ReactNode } from 'react'
+import { ComponentProps, ReactNode } from 'react'
 
 import style from './style.module.scss'
-import Link, { LinkProps } from 'next/link'
+// Locale-aware Link: internal hrefs get the /ua prefix, external URLs and
+// #anchors pass through untouched.
+import { Link } from '@/lib/i18n'
+
+type LinkProps = ComponentProps<typeof Link>
 
 // =================================================================
 
@@ -26,10 +30,17 @@ type ButtonProps = BaseButtonProps &
     | (React.ComponentProps<'button'> & { as: 'button' })
     | (LinkProps & {
         as: 'link'
+        external?: false
         className?: string
         children: ReactNode
         target?: '_blank' | '_self' | '_parent' | '_top'
         rel?: string
+      })
+    | (React.ComponentProps<'a'> & {
+        as: 'link'
+        external: true
+        className?: string
+        children: ReactNode
       })
   )
 
@@ -61,15 +72,24 @@ const Button = (props: ButtonProps) => {
   }
 
   if (props.as === 'link') {
+    const classNames = `${style.btn} ${style[variantStyles[props.variant]]} ${style[props.size ?? 'big']} ${props.className}`
+
+    if (props.external) {
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { as, external, variant, size, className, children, ...rest } = props
+
+      return (
+        <a className={classNames} {...rest}>
+          {children}
+        </a>
+      )
+    }
+
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    const { as, variant, size = 'big', className, children, ...rest } = props
+    const { as, external, variant, size, className, children, ...rest } = props
 
     return (
-      <Link
-        prefetch={false}
-        className={`${style.btn} ${style[variantStyles[variant]]} ${style[size]} ${className}`}
-        {...rest}
-      >
+      <Link prefetch={false} className={classNames} {...rest}>
         {children}
       </Link>
     )
