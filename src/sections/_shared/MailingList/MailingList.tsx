@@ -99,7 +99,7 @@ const MailingList = () => {
             id="phoneNumber"
           />
           <Button
-            variant="primary-red"
+            variant="primary-teal"
             as="button"
             className={`${style.submitButton} ${style[formStatus]}`}
             type="submit"

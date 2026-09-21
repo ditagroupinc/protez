@@ -101,7 +101,7 @@
   transition: color var(--transitionProps);
 
   &:hover {
-    color: var(--red);
+    color: var(--teal);
   }
 
   &:disabled,
@@ -212,7 +212,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--red);
+  color: var(--teal);
 
   font-size: 20px;
   font-style: normal;
@@ -221,7 +221,7 @@
 
   .icon {
     & path {
-      fill: var(--red);
+      fill: var(--teal);
     }
   }
 }
@@ -407,8 +407,8 @@
   }
 
   &:hover {
-    background: var(--red);
-    border-color: var(--red);
+    background: var(--teal);
+    border-color: var(--teal);
   }
 }
 
@@ -471,8 +471,8 @@
     }
     &:first-of-type {
       & svg rect {
-        fill: var(--red);
-        stroke: var(--red);
+        fill: var(--teal);
+        stroke: var(--teal);
       }
     }
   }

@@ -57,7 +57,7 @@ const HomeMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
         </div>
       </div>
       <div className={style.navigationWrapper}>
-        <nav ref={navRef} className={`${style.navigation} ${style.red}`}>
+        <nav ref={navRef} className={`${style.navigation} ${style.teal}`}>
           <ul className={style.ancorList}>
             {HOME_NAV_IDS.map((id, index) =>
               ancorLinks ? (

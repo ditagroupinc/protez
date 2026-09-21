@@ -131,7 +131,7 @@ export default Button
 export const MakeDonationButton = ({
   className,
   size,
-  variant = 'primary-red',
+  variant = 'primary-teal',
 }: {
   className?: string
   size: ButtonSize

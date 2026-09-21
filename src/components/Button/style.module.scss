@@ -140,7 +140,7 @@
       }
     }
     &:focus {
-      border: 2px solid var(--red);
+      border: 2px solid var(--teal);
       padding: 15px 30px 17px 30px;
       &.hasArrow {
         padding-right: 22px;
@@ -170,15 +170,15 @@
       align-items: flex-end;
       &:hover {
         padding: 23px 15px 23px 23px;
-        background-color: var(--red);
+        background-color: var(--teal);
         color: var(--white);
         & .icon path:not(:global(.noChangeColor)) {
           fill: var(--white);
         }
-        border-color: var(--red);
+        border-color: var(--teal);
       }
       &:focus {
-        border: 2px solid var(--red);
+        border: 2px solid var(--teal);
         padding: 22px 14px 22px 22px;
       }
     }
@@ -332,7 +332,7 @@
       }
     }
     &:focus {
-      border: 2px solid var(--red);
+      border: 2px solid var(--teal);
       padding: 15px 30px 17px 30px;
       &.hasArrow {
         padding-right: 22px;
@@ -364,7 +364,7 @@
         padding: 23px 15px 23px 23px;
       }
       &:focus {
-        border: 2px solid var(--red);
+        border: 2px solid var(--teal);
         padding: 22px 14px 22px 22px;
       }
     }
@@ -391,7 +391,7 @@
         padding-right: 22px;
       }
     }
-    &.small &:focus {
+    &.small:focus {
       padding: 10px 22px 12px 22px;
       &.hasArrow {
         padding-right: 14px;

@@ -49,10 +49,10 @@
       & path {
         fill: var(--white);
       }
-      background-color: var(--red);
-      border-color: var(--red);
+      background-color: var(--teal);
+      border-color: var(--teal);
       &:hover {
-        background-color: var(--red-hover);
+        background-color: var(--teal-dark);
       }
     }
   }

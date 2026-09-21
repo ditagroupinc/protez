@@ -35,7 +35,6 @@ const GeneralMenu = ({ accent, closeMenu, navRef }: Props) => {
   }
 
   const accentClass = style[accent]
-  const donateVariant = accent === 'teal' ? 'primary-teal' : 'primary-red'
 
   return (
     <>
@@ -50,7 +49,7 @@ const GeneralMenu = ({ accent, closeMenu, navRef }: Props) => {
           <MakeDonationButton
             className={style.lowerPartButton}
             size="normal"
-            variant={donateVariant}
+            variant="primary-teal"
           />
           <SupportWithAmazonButton className={style.lowerPartButton} size="normal" />
           <Button

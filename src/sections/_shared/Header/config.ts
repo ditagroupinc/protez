@@ -14,7 +14,7 @@ type VariantConfig = {
 
 export const headerConfig: Record<HeaderVariant, VariantConfig> = {
   home: {
-    accent: 'red',
+    accent: 'teal',
     logoRender: icons.protezPage.logo,
     homeAnchor: ProtezIDs.LetsGiveHope,
   },
@@ -29,7 +29,7 @@ export const headerConfig: Record<HeaderVariant, VariantConfig> = {
     homeAnchor: ChildrenProstheticsIDs.Hero,
   },
   general: {
-    accent: 'red',
+    accent: 'teal',
     logoRender: icons.protezPage.logo,
     homeAnchor: ProtezIDs.LetsGiveHope,
   },

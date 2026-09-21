@@ -19,6 +19,9 @@
   }
   &.teal {
     background-color: var(--teal-dark);
+  }
+
+  &.childrenProstheticsPage {
     padding-left: 40px;
     padding-right: 40px;
 
@@ -108,7 +111,7 @@
     padding-top: 60px;
     padding-bottom: 60px;
 
-    &.teal {
+    &.childrenProstheticsPage {
       padding-left: 20px;
       padding-right: 20px;
     }

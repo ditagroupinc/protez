@@ -18,7 +18,7 @@ import { forwardRef } from 'react'
 type FooterLayout = 'protezPage' | 'academyPage' | 'childrenProstheticsPage'
 
 const accentByLayout: Record<FooterLayout, 'red' | 'blue' | 'teal'> = {
-  protezPage: 'red',
+  protezPage: 'teal',
   academyPage: 'blue',
   childrenProstheticsPage: 'teal',
 }
@@ -31,7 +31,9 @@ const Footer = forwardRef<HTMLDivElement, { layout: FooterLayout }>(function ({ 
 
   return (
     <footer ref={ref} id={ProtezIDs.Footer} className={style.footer}>
-      <div className={`${style.footerTop} ${style[accentColor]}`}>
+      <div
+        className={`${style.footerTop} ${style[accentColor]} ${layout === 'childrenProstheticsPage' ? style.childrenProstheticsPage : ''}`}
+      >
         <div className={style.footerTopContent}>
           <div className={style.left}>
             {icons.footerLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}

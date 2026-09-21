@@ -95,7 +95,7 @@
   }
 
   &:hover {
-    background-color: var(--red);
+    background-color: var(--teal);
   }
 
   &:nth-child(1) {
@@ -108,7 +108,7 @@
 
   &:nth-child(3) {
     grid-area: patients;
-    background-color: var(--red);
+    background-color: var(--teal);
   }
 
   &:nth-child(4) {

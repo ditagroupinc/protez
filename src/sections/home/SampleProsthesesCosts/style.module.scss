@@ -120,7 +120,7 @@
   cursor: default;
   &:hover .priceCardCircle {
     border: 2px solid var(--white);
-    background-color: var(--red);
+    background-color: var(--teal);
   }
 
   .priceCardTextBlock {
@@ -137,7 +137,7 @@
   }
 
   .priceCardPrice {
-    color: var(--red);
+    color: var(--teal);
     font-size: 32px;
     font-style: normal;
     font-weight: 800;
@@ -166,21 +166,21 @@
 
 .spcTigh {
   path[class*='spcTigh'] {
-    fill: var(--red);
+    fill: var(--teal);
     transition: fill 0.3s ease;
   }
 }
 
 .spcLeg {
   path[class*='spcLeg'] {
-    fill: var(--red);
+    fill: var(--teal);
     transition: fill 0.3s ease;
   }
 }
 
 .spcForearm {
   path[class*='spcForearm'] {
-    fill: var(--red);
+    fill: var(--teal);
     transition: fill 0.3s ease;
   }
 }

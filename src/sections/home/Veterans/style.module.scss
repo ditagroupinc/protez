@@ -41,7 +41,7 @@
 .cardTitle {
   margin-top: 40px;
   padding-left: 13px;
-  border-left: 3px solid var(--red);
+  border-left: 3px solid var(--teal);
 }
 
 .cardText {
@@ -79,7 +79,7 @@
     height: 32px;
     &:hover {
       & path {
-        fill: var(--red);
+        fill: var(--teal);
         transition: all var(--transitionProps);
       }
     }
@@ -114,10 +114,10 @@
   }
 
   &:last-child {
-    background-color: var(--red);
-    border-color: var(--red);
+    background-color: var(--teal);
+    border-color: var(--teal);
     &:hover {
-      background-color: var(--red-hover);
+      background-color: var(--teal-dark);
     }
   }
 }

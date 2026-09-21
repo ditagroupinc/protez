@@ -314,7 +314,10 @@ const triangle = (className?: string) => (
     xmlns="http://www.w3.org/2000/svg"
     className={className}
   >
-    <path d="M61.7402 35.8885L0.898221 71.0156L0.898224 0.761335L61.7402 35.8885Z" fill="#c31822" />
+    <path
+      d="M61.7402 35.8885L0.898221 71.0156L0.898224 0.761335L61.7402 35.8885Z"
+      fill="var(--teal)"
+    />
   </svg>
 )
 
