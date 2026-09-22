@@ -39,12 +39,13 @@
 
 .description {
   color: var(--white);
+  margin-bottom: 10px;
 }
 
 .buttonsContainer {
   display: flex;
   gap: 16px;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .right {
@@ -137,9 +138,7 @@
   .container {
     max-width: 100%;
   }
-}
 
-@media screen and (min-width: 500px) and (max-width: 800px) {
   .title {
     font-size: 96px;
   }
@@ -150,6 +149,8 @@
 
   .titleAccent {
     font-size: 96px;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -165,5 +166,16 @@
 
   .ukrainianTitle .titleAccent {
     font-size: min(70px, 22cqw);
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .title:not(.ukrainianTitle) {
+    container-type: inline-size;
+
+    .titleLine,
+    .titleAccent {
+      font-size: min(96px, 26.4cqw);
+    }
   }
 }
