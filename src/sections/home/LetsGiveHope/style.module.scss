@@ -27,7 +27,7 @@
 .left {
   display: flex;
   width: 100%;
-  max-width: 415px;
+  max-width: 550px;
   flex-direction: column;
   gap: 40px;
   position: relative;
@@ -170,6 +170,9 @@
 }
 
 @media screen and (max-width: 375px) {
+  .section {
+    padding-top:105px;
+  }
   .title:not(.ukrainianTitle) {
     container-type: inline-size;
 
