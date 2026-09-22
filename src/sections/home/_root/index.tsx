@@ -53,7 +53,6 @@ export default function ProtezHomePage({
     <>
       <main className={style.main}>
         <SuspenseSection withSmoke>
-          <h1 className={style.srOnly}>{t('heroH1')}</h1>
           <div className={style.flagsBlock}>
             <LetsGiveHope />
 

@@ -37,12 +37,6 @@
   }
 }
 
-.logo {
-  width: 100%;
-  max-width: 330px;
-  height: auto;
-}
-
 .description {
   color: var(--white);
 }
@@ -59,18 +53,31 @@
   z-index: 1;
 }
 .title {
+  width: min(46.354167vw, 890px);
   max-width: 100%;
+  margin: 0;
+  color: var(--white);
+  font-size: min(5.833333vw, 112px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  text-align: center;
 }
 
-.title.titleDesktop {
+.titleLine,
+.titleAccent {
   display: block;
+  white-space: nowrap;
 }
 
-.title.titleMobile {
-  display: none;
+.titleAccent {
+  color: var(--teal);
+  font-size: min(6.25vw, 120px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
 }
 
-@media (min-width: 1181px) {
+@media (min-width: 1081px) {
   .left .description {
     font-size: 18px;
     font-weight: 600;
@@ -81,7 +88,7 @@
   }
 }
 
-@media screen and (max-width: 1180px) {
+@media screen and (max-width: 1080px) {
   .section {
     padding-bottom: 40px;
     align-items: flex-end;
@@ -91,10 +98,6 @@
     flex-direction: column-reverse;
     max-width: 80%;
     gap: 24px;
-  }
-
-  .logo {
-    display: none;
   }
 
   .left {
@@ -118,20 +121,49 @@
 
   .title {
     width: 100%;
-    height: auto;
+    font-size: clamp(56px, calc(2.77778vw + 42.66667px), 64px);
+  }
+
+  .ukrainianTitle {
+    font-size: clamp(32px, calc(11.11111vw - 21.33333px), 64px);
+  }
+
+  .titleAccent {
+    font-size: clamp(56px, calc(13.88889vw - 10.66667px), 96px);
   }
 }
 
 @media screen and (max-width: 800px) {
-  .title.titleDesktop {
-    display: none;
-  }
-
-  .title.titleMobile {
-    display: block;
-  }
-
   .container {
     max-width: 100%;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .title {
+    font-size: 96px;
+  }
+
+  .ukrainianTitle {
+    font-size: 56px;
+  }
+
+  .titleAccent {
+    font-size: 96px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .ukrainianTitle {
+    container-type: inline-size;
+  }
+
+  .ukrainianTitle .titleLine {
+    font-size: min(42px, 13.2cqw);
+    letter-spacing: -0.04em;
+  }
+
+  .ukrainianTitle .titleAccent {
+    font-size: min(70px, 22cqw);
   }
 }

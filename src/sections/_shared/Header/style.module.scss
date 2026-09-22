@@ -47,7 +47,7 @@
   display: none;
 }
 
-.mobileArrowUp {
+.socialMediaLink.mobileArrowUp {
   display: none;
 }
 
@@ -60,7 +60,7 @@
 }
 
 @media (max-width: 767px) {
-  .mobileArrowUp {
+  .socialMediaLink.mobileArrowUp {
     display: flex;
   }
   .desktopBackToTop {

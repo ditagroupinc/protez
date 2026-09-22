@@ -3,8 +3,6 @@
 import { forwardRef, ForwardedRef } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 
-import { localeToLanguage } from '@/lib/locale'
-
 import VideoAndFilter from '@/components/VideoAndFilter'
 import Section from '@/components/Section'
 import { Body } from '@/components/Typography'
@@ -12,11 +10,9 @@ import Button, { MakeDonationButton } from '@/components/Button'
 
 import { ProtezIDs } from '@/consts'
 import style from './style.module.scss'
-import { icons } from './icons'
 
 const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const locale = useLocale()
-  const lang = localeToLanguage(locale)
   const t = useTranslations('home.letsGiveHope')
 
   return (
@@ -25,8 +21,11 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
       <div className={style.overlay} />
       <div className={style.container}>
         <div className={`${style.left} ${locale === 'uk' ? style.ukrainianLang : ''}`}>
-          {icons.protezLogo(style.logo)}
-          <Body className={style.description}>{t('description')}</Body>
+          <div>
+            <Body className={style.description}>{t('description.prosthetics')}</Body>
+            <Body className={style.description}>{t('description.rehabilitation')}</Body>
+            <Body className={style.description}>{t('description.expertise')}</Body>
+          </div>
           <div className={style.buttonsContainer}>
             <MakeDonationButton size="normal" />
             <Button
@@ -52,8 +51,19 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
           </div>
         </div>
         <div className={style.right}>
-          {icons.letsGiveHopeLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
-          {icons.letsGiveHopeLogo.mobile[lang](`${style.title} ${style.titleMobile}`)}
+          <h1 className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
+            {locale === 'uk' ? (
+              <>
+                <span className={style.titleLine}>{t('title.plain')}</span>{' '}
+                <span className={style.titleAccent}>[{t('title.accent')}]</span>
+              </>
+            ) : (
+              <>
+                <span className={style.titleAccent}>[{t('title.accent')}]</span>{' '}
+                <span className={style.titleLine}>{t('title.plain')}</span>
+              </>
+            )}
+          </h1>
         </div>
       </div>
     </Section>
