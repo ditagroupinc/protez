@@ -1,0 +1,41 @@
+# Перевірки
+
+Обери перевірки за наслідками зміни. Команди запускай із кореня репозиторію після встановлення залежностей; наявні scripts дивись у [package.json](../package.json), середовище — у [README](../README.md).
+
+## Команди
+
+| Перевірка | Команда |
+| --- | --- |
+| ESLint | `npm run lint` |
+| TypeScript | `./node_modules/.bin/tsc --noEmit --incremental false` |
+| Ключі Academy EN/UK | `node scripts/check-messages-parity.mjs` |
+| Генерація Academy titles | `npm run generate:academy-titles` |
+| Production build | `npm run build` |
+| Локальний UI | `npm run dev` |
+
+`dev` і `build` запускають генератор через npm lifecycle. Для збірки використовуй `npm run build`, щоб виконати `prebuild`. Після генерації перевір diff generated-файлу.
+
+## Вибір за зміною
+
+| Зміна | Необхідні перевірки |
+| --- | --- |
+| TS/JS, логіка компонента | Lint, typecheck; поведінка зміненого сценарію та крайові стани. |
+| UI, стилі, motion | Змінені сторінки в обох локалях на desktop/mobile; layout, overflow, Header/Footer, anchors, keyboard focus, hover/pressed, reduced motion. Для змін TS/JS також lint і typecheck. |
+| Тексти, локалізація | Обидва файли зміненої пари: ключі, типи, форма масивів, placeholders/rich-text tags та фактичний текст. Перевір рендер і переноси рядків. Для Academy додатково виконай parity script. |
+| Маршрут, SEO, локалі | Переходи й зміна мови, пряме відкриття URL з чистими та збереженими locale cookies, anchors, canonical/alternates, sitemap або noindex, потрібні redirects; build. |
+| CMS, парсер, API | Валідні, відсутні, порожні та некоректні дані; success/failure до кінцевого UI. Для форм використовуй mocks/стаби зовнішнього сервісу без реальної відправки. |
+| Фінансові дані | Відповідність джерелу, суми та похідні значення, порядок категорій/labels/кольорів, missing/pending, перемикання років і PDF. Контракт дивись у [data-map](data-map.md). |
+| SVG-заголовки Academy | Генерація; typecheck при зміні generated map чи hook; EN/UK desktop/mobile, розміри та обрізання у UI. |
+| Залежності, конфігурація збірки, межі server/client | Lint, typecheck, build і змінені маршрути/споживачі у браузері. |
+| Лише документація | Посилання, anchors, згадані шляхи/команди та diff. Build і перевірки застосунку не потрібні. |
+
+Перевіряючи секцію в браузері, дочекайся lazy/Suspense та scroll-triggered появи. Для донатів і зовнішніх заявок перевіряй переходи й відображення embed, без реальних платежів чи submit.
+
+## Межі покриття
+
+- [Parity script](../scripts/check-messages-parity.mjs) охоплює лише Academy та наявність ключів; не перевіряє інші namespace, масиви, типи, placeholders або якість перекладу.
+- У репозиторії немає налаштованої команди `test` чи E2E suite. Для нового контракту або регресії додавай доречну поведінкову перевірку; успіх lint/typecheck не є доказом UI-поведінки.
+- [ESLint config](../.eslintrc.json) не підключає Next plugin: успішний `next lint` не означає перевірку Next-specific правил. Наявність `.lintstagedrc.json` не підтверджує запуск hook.
+- Відсутні env чи недоступний CMS можуть дати порожню Events-секцію. Успішна збірка сама по собі не підтверджує роботу інтеграції.
+
+У результаті вкажи запущені команди, перевірені UI-сценарії й неперевірені вимоги. Повторюй лише перевірки, яких стосується нова зміна або виявлена помилка.

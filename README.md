@@ -6,9 +6,9 @@ Marketing site for [protezfoundation.org](https://www.protezfoundation.org) — 
 
 - **Next.js 14** (App Router) + **TypeScript** (`strict: true`)
 - **next-intl** for i18n — English at `/`, Ukrainian at `/ua`
-- **WordPress GraphQL** (server-only, fetched via `src/lib/api.ts`) for news / events / press / statistics
+- **WordPress GraphQL** for homepage Events. See the [data map](.agent-guidance/data-map.md) for the other content sources and their consumers.
 - **SCSS modules** for styles, **react-slick** for carousels, **react-countup** + **react-intersection-observer** for scroll-driven UI
-- **Mailchimp** for newsletter signup, **Nodemailer** (SMTP) for contact form
+- **Mailchimp** for newsletter signup, **Nodemailer** (Gmail) for `/api/contact`
 - **GTM** + **Facebook Pixel** analytics, **Vercel Analytics** + **Speed Insights**
 - Hosted on **Vercel**
 
@@ -16,74 +16,54 @@ Marketing site for [protezfoundation.org](https://www.protezfoundation.org) — 
 
 ```sh
 npm install
-vercel link                  # link to the Vercel project (one-time)
-vercel env pull .env.local   # pull environment variables from Vercel
+cp .env.example .env.local
 npm run dev
 ```
 
-Open <http://localhost:3000>.
+Fill in `.env.local` for the integrations you need, then open <http://localhost:3000>.
 
-You must be a member of the Vercel project to pull env vars. Without them, the WP-backed sections and forms won't work locally, but the static parts will still render.
+With Vercel project access, use `vercel link` and `vercel env pull .env.local` to obtain the configured environment instead. Missing WordPress configuration omits homepage Events; Mailchimp and email delivery require their own credentials. Localized content and static assets are stored in the repository.
 
 ## Scripts
 
-- `npm run dev` — dev server (port 3000); `predev` regenerates `src/hooks/academyTitles.generated.ts` from SVGs in `public/academyPage/titles/`
-- `npm run build` — production build; check the logs for `○ (Static)` / `● (SSG/ISR)` per route
-- `npm start` — serve the production build
-- `npm run lint` — ESLint
-- `npm run format` — Prettier (no `;`, single quotes, `printWidth: 100`)
-- `npm run generate:academy-titles` — manually regenerate academy titles from SVGs
-
-`npx tsc --noEmit` for type checking (not in `scripts`).
+See [package.json](package.json) for commands and lifecycle hooks. Use the [testing guide](.agent-guidance/testing.md) to select checks for a change.
 
 ## URL structure
 
 - `/` → English homepage
 - `/ua` → Ukrainian homepage
 - `/<page>` → English, `/ua/<page>` → Ukrainian (e.g. `/academy`, `/ua/academy`)
-- Legacy camelCase URLs issue 308 redirects to the kebab-case routes — see `middleware.ts`
+- Legacy camelCase redirects are defined in [next.config.js](next.config.js); [middleware.ts](middleware.ts) handles locale routing.
 
-## Render modes (per `app/[locale]/<route>/page.tsx`)
-
-- `/[locale]` — ISR, `revalidate = 3600` (matches the WordPress fetch cache)
-- All other routes — `dynamic = 'force-static'`
+Rendering and revalidation are configured per page under `app/[locale]/`; inspect the affected route's exports when changing its data or caching.
 
 ## Environment variables
 
 | Var | Purpose |
 | --- | --- |
-| `WORDPRESS_API_URL` | GraphQL endpoint for events / statistics |
+| `WORDPRESS_API_URL` | WordPress GraphQL endpoint |
+| `WORDPRESS_AUTH_REFRESH_TOKEN` | Optional value sent directly as a Bearer token to WordPress |
 | `GTM_ID` | Google Tag Manager container ID |
+| `FACEBOOK_PIXEL_ID` | Facebook Pixel ID read by `src/lib/fpixel.ts` |
 | `MAILCHIMP_API_KEY` | Mailchimp API key (newsletter) |
-| `MAILCHIMP_LIST_ID` | Mailchimp audience / list ID |
-| `MAILCHIMP_SERVER_PREFIX` | Mailchimp DC prefix (e.g. `us8`) |
-| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM` | Nodemailer credentials used by `/api/contact` |
+| `MAILCHIMP_AUDIENCE_ID` | Mailchimp audience ID; the API route currently fixes the datacenter to `us8` |
+| `EMAIL`, `PASS` | Gmail sender account and password used by Nodemailer |
+| `ENVIRONMENT` | `pages` selects the `/protez/` video-path prefix in `ProtezVideo` |
+
+[.env.example](.env.example) lists these names. `FACEBOOK_PIXEL_ID` and `ENVIRONMENT` are also read through client imports; their availability in browser code needs verification before relying on those settings.
 
 ## Repo layout
 
 - `app/` — App Router routes. All page routes live under `app/[locale]/`. Layout sets locale, fonts, GTM, analytics. Two API routes: `/api/contact`, `/api/mailchimp`.
-- `src/sections/` — page sections grouped by route (`home/`, `academy/`, `academy-about/`, `donate/`, `partners/`, `stories/`, `_shared/`). Each section is a folder with `index.tsx`, `style.module.scss`, optional `icons.tsx`.
-- `src/components/` — shared atomic components (`Button`, `Typography`, `ProtezImage`, `ProtezVideo`, `Section`, `Divider`, `TextAppearanceWrapper`, `SuspenseSection`, `FullScreenFallback`, `FacebookPixelEvents`, `VideoAndFilter`, `ResponsiveImage`)
-- `src/islands/` — client-only wrappers that isolate heavy/runtime deps (e.g. `SlickCarousel` bundles `react-slick` and slick CSS so they don't ship to pages without a slider)
-- `src/hooks/` — shared hooks. `academyTitles.generated.ts` is auto-generated by `scripts/generate-academy-titles.mjs` — do not edit by hand.
-- `src/lib/` — server-only utilities (i18n routing config, WP API client)
-- `src/utils/` — pure helpers (WP parsers, date helpers, etc.)
-- `messages/` — `next-intl` translations split by surface area (`home`, `academy`, `academy-about`, `donations`, `shared`, `stories`, `termsConditions`, `thank-you`), one file per locale
+- `src/sections/` — page sections and shared header/footer/form sections.
+- `src/components/` — shared UI components.
+- `src/islands/` — client wrappers for runtime dependencies such as carousels.
+- `src/hooks/` — shared hooks and generated title lookups; see the data map for asset generation.
+- `src/lib/` — mixed server and browser utilities, including WordPress fetching, subscription helpers, locale navigation and analytics. Determine the boundary from the function and its imports.
+- `src/utils/` — CMS loading/parsing and shared helpers.
+- `messages/` — localized content and translations grouped by surface area.
 - `public/` — static assets
 
-## Path aliases
+## Development guidance
 
-- `@/*` → `./src/*`
-- `@academy/*` → `./app/[locale]/academy/*`
-
-## Conventions
-
-- **Prettier:** no semicolons, single quotes, `printWidth: 100`, `trailingComma: 'es5'`, `arrowParens: 'avoid'`. Run `npm run format`.
-- **ESLint:** `no-console: error` (`console.warn` / `console.error` allowed); `@typescript-eslint/no-unused-vars` strict (`_`-prefixed args ignored); blank line before every `return` and after `const/let/var` blocks.
-- **TypeScript:** strict. Avoid `any` (warns).
-- **`'use client'`:** only where actually needed (state, effects, refs, browser-only deps). Prefer Server Components.
-- **i18n:** when changing UI copy or form messages, update **both locales** at once.
-
-## Working language
-
-Ukrainian.
+Start with [AGENTS.md](AGENTS.md) for shared working rules. Use the [context map](.agent-guidance/context-map.md) to find entry points for a task, the data map for content contracts, and the testing guide for verification. Path aliases and formatting/lint rules live in the repository configuration files.
