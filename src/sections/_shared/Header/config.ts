@@ -16,7 +16,7 @@ export const headerConfig: Record<HeaderVariant, VariantConfig> = {
   home: {
     accent: 'teal',
     logoRender: icons.protezPage.logo,
-    homeAnchor: ProtezIDs.LetsGiveHope,
+    homeAnchor: ProtezIDs.Hero,
   },
   academy: {
     accent: 'blue',
@@ -31,12 +31,12 @@ export const headerConfig: Record<HeaderVariant, VariantConfig> = {
   general: {
     accent: 'teal',
     logoRender: icons.protezPage.logo,
-    homeAnchor: ProtezIDs.LetsGiveHope,
+    homeAnchor: ProtezIDs.Hero,
   },
 }
 
 export const HOME_NAV_IDS = [
-  ProtezIDs.LetsGiveHope,
+  ProtezIDs.Hero,
   ProtezIDs.PeopleTrustUs,
   ProtezIDs.ProstheticsForUkrainians,
   ProtezIDs.InNeed,

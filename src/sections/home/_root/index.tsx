@@ -15,7 +15,7 @@ import VideoBlock from './VideoBlock'
 
 import { useTranslations } from 'next-intl'
 
-import LetsGiveHope from '@/sections/home/LetsGiveHope/LetsGiveHope'
+import Hero from '@/sections/home/Hero/Hero'
 const ProstheticsForUkrainians = lazy(
   () => import('@/sections/home/ProstheticsForUkrainians/ProstheticsForUkrainians')
 )
@@ -54,7 +54,7 @@ export default function ProtezHomePage({
       <main className={style.main}>
         <SuspenseSection withSmoke>
           <div className={style.flagsBlock}>
-            <LetsGiveHope />
+            <Hero />
 
             <ProtezImage
               src={`flag-usa.png`}
@@ -64,7 +64,7 @@ export default function ProtezHomePage({
               height={1890}
               className={style.americanFlag}
             />
-            {/* Independent Suspense so LetsGiveHope and the flag render immediately
+            {/* Independent Suspense so Hero and the flag render immediately
                 while PeopleTrustUs hydrates above the fold. */}
             <Suspense fallback={<FullScreenFallback />}>
               <PeopleTrustUs />

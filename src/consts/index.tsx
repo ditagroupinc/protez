@@ -13,7 +13,7 @@ export enum AcademyIDs {
 }
 
 export enum ProtezIDs {
-  LetsGiveHope = 'letsGiveHope',
+  Hero = 'hero',
   PeopleTrustUs = 'peopleTrustUs',
   ProstheticsForUkrainians = 'prostheticsForUkrainians',
   InNeed = 'inNeed',

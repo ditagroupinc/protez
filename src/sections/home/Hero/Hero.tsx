@@ -11,12 +11,12 @@ import Button, { MakeDonationButton } from '@/components/Button'
 import { ProtezIDs } from '@/consts'
 import style from './style.module.scss'
 
-const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
+const Hero = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const locale = useLocale()
-  const t = useTranslations('home.letsGiveHope')
+  const t = useTranslations('home.hero')
 
   return (
-    <Section id={ProtezIDs.LetsGiveHope} className={style.section} ref={ref}>
+    <Section id={ProtezIDs.Hero} className={style.section} ref={ref}>
       <VideoAndFilter src={'flag-ukraine.mp4'} />
       <div className={style.overlay} />
       <div className={style.container}>
@@ -70,5 +70,5 @@ const LetsGiveHope = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) 
   )
 })
 
-LetsGiveHope.displayName = 'LetsGiveHope'
-export default LetsGiveHope
+Hero.displayName = 'Hero'
+export default Hero
