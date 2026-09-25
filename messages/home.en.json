@@ -13,26 +13,69 @@
     "protezAcademy": "Protez Academy"
   },
   "peopleTrustUs": {
+    "title": "Partnerships & Government Support",
+    "previousSlide": "Previous slide",
+    "nextSlide": "Next slide",
     "cards": [
       {
-        "image": "peopleTrustUsSlide5.png",
-        "description": "Dr. Yakov Gradinar receives an award from the President of Ukraine, Volodymyr Zelenskyy."
+        "image": "direct-relief-partnership.png",
+        "description": "Direct Relief has been our key and trusted partner for many years. Working side by side with us, the organization helps carry out our most critical initiatives and supports our projects at every stage. Thank you for your unwavering faith in our mission, your steadfast support, and our shared work to improve the lives of Ukrainians!",
+        "width": 940,
+        "height": 540
       },
       {
-        "image": "peopleTrustUsSlide1.png",
-        "description": "A memorandum on the continuation of cooperation between the Protez Foundation and the Ministry of Health of Ukraine has been signed. Our goal is unity in support and assistance to our heroes who deserve the best. Together we can achieve significant changes in the field of rehabilitation and provision of quality prosthetics."
+        "image": "keith-kellogg-washington-meeting.png",
+        "description": "Protez Foundation CEO and co-founder Yura Aroshidze with Keith Kellogg, the U.S. Special Envoy for Ukraine and former National Security Advisor to the U.S. Vice President, during a meeting in Washington. We expressed our gratitude for the consistent and unwavering support for Ukraine.",
+        "width": 551,
+        "height": 540
       },
       {
-        "image": "peopleTrustUsSlide2.png",
-        "description": "Collaboration and unity are the key to success in our common desire to provide prosthetics and rehabilitation of our heroes at a high level. We have extended the memorandum of cooperation with the Ministry of Internal Affairs of Ukraine and successfully implement joint projects for training specialists and prosthetics for military personnel."
+        "image": "ukraine-interior-ministry-cooperation.png",
+        "description": "Since 2022, we have had the honor of working side by side with the Ministry of Internal Affairs of Ukraine on vital projects: providing prosthetic care, training specialists, organizing specialized educational programs in the United States for lyceum students whose parents were killed or went missing while defending Ukraine, and supporting and equipping State Emergency Service units responding to the aftermath of enemy attacks. We are grateful to our partners for our shared values, which place people and work that delivers results at the heart of everything we do.",
+        "width": 940,
+        "height": 540
       },
       {
-        "image": "peopleTrustUsSlide3.png",
-        "description": "A huge thank you to the legendary General Valerii Zaluzhnyi for his heroism and courage in the first years of the war."
+        "image": "johann-saathoff-government-delegation.png",
+        "description": "A meeting with a German government delegation led by Parliamentary State Secretary Johann Saathoff to discuss strengthening Ukraine’s healthcare system. In appreciation of Germany’s sustained support for Ukraine, Protez Foundation co-founder Yura Aroshidze presented Mr. Saathoff with a commemorative coin.",
+        "width": 940,
+        "height": 540
       },
       {
-        "image": "peopleTrustUsSlide4.png",
-        "description": "Direct Relief – our reliable partner who inspires us with their mission to help people around the world. Their support in achieving the goals of the Prosthetics Foundation in Ukraine is invaluable."
+        "image": "khartiia-veteran-support-memorandum.png",
+        "description": "Protez Foundation and the patronage service of the Khartiia 2nd Corps of the National Guard of Ukraine signed a memorandum of cooperation to provide comprehensive readjustment support and ongoing assistance to wounded service members and veterans. We are already carrying out joint initiatives, including a major conference for 250 support service specialists from different regions.",
+        "width": 551,
+        "height": 540
+      },
+      {
+        "image": "yakov-gradinar-presidential-award.png",
+        "description": "Protez Foundation Chief Medical Director and co-founder Yakov Gradinar receives an award from Ukrainian President Volodymyr Zelenskyy.",
+        "width": 940,
+        "height": 540
+      },
+      {
+        "image": "ukraine-health-ministry-memorandum.png",
+        "description": "A memorandum on the continuation of cooperation between the Protez Foundation and the Ministry of Health of Ukraine has been signed. Our goal is unity in support and assistance to our heroes who deserve the best. Together we can achieve significant changes in the field of rehabilitation and provision of quality prosthetics.",
+        "width": 940,
+        "height": 540
+      },
+      {
+        "image": "ukraine-interior-ministry-memorandum.png",
+        "description": "Collaboration and unity are the key to success in our common desire to provide prosthetics and rehabilitation of our heroes at a high level. We have extended the memorandum of cooperation with the Ministry of Internal Affairs of Ukraine and successfully implement joint projects for training specialists and prosthetics for military personnel.",
+        "width": 940,
+        "height": 540
+      },
+      {
+        "image": "valerii-zaluzhnyi-appreciation.png",
+        "description": "A huge thank you to the legendary General Valerii Zaluzhnyi for his heroism and courage in the first years of the war.",
+        "width": 940,
+        "height": 540
+      },
+      {
+        "image": "direct-relief-support.png",
+        "description": "Direct Relief – our reliable partner who inspires us with their mission to help people around the world. Their support in achieving the goals of the Prosthetics Foundation in Ukraine is invaluable.",
+        "width": 940,
+        "height": 540
       }
     ]
   },

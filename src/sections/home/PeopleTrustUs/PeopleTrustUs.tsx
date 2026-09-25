@@ -1,8 +1,6 @@
 'use client'
 
-import { useLocale, useTranslations } from 'next-intl'
-
-import { localeToLanguage } from '@/lib/locale'
+import { useTranslations } from 'next-intl'
 
 import Section from '@/components/Section'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
@@ -17,23 +15,24 @@ import Slider from '@/islands/SlickCarousel'
 import { useRef, useState } from 'react'
 import ProtezImage from '@/components/ProtezImage'
 
-type PeopleTrustUsCard = { image: string; description: string }
+type PeopleTrustUsCard = { image: string; description: string; width: number; height: number }
 
 const PeopleTrustUs = () => {
-  const locale = useLocale()
-  const lang = localeToLanguage(locale)
   const t = useTranslations('home.peopleTrustUs')
   const cards = t.raw('cards') as PeopleTrustUsCard[]
   const [activeSlide, setActiveSlide] = useState(0)
+  const imageSliderRef = useRef<Slider & React.Component>(null)
+  const sliderRef = useRef<Slider & React.Component>(null)
 
   const settings = {
     dots: false,
     infinite: true,
     speed: 500,
+    adaptiveHeight: false,
 
     slidesToShow: 1,
     slidesToScroll: 1,
-    focusOnSelect: true,
+    focusOnSelect: false,
     centerMode: false,
 
     arrows: false,
@@ -42,7 +41,7 @@ const PeopleTrustUs = () => {
     swipeToSlide: false,
     touchMove: false,
     draggable: false,
-    accessibility: false,
+    accessibility: true,
 
     responsive: [
       {
@@ -77,18 +76,16 @@ const PeopleTrustUs = () => {
       },
     ],
 
-    beforeChange: (_current: number, next: number) => setActiveSlide(next),
+    beforeChange: (_current: number, next: number) => {
+      setActiveSlide(next)
+      imageSliderRef.current?.slickGoTo(next)
+    },
   }
 
-  const imageSliderRef = useRef<Slider & React.Component>(null)
-  const sliderRef = useRef<Slider & React.Component>(null)
-
   const gotoNext = () => {
-    imageSliderRef.current?.slickNext()
     sliderRef.current?.slickNext()
   }
   const gotoPrev = () => {
-    imageSliderRef.current?.slickPrev()
     sliderRef.current?.slickPrev()
   }
 
@@ -96,12 +93,19 @@ const PeopleTrustUs = () => {
     <Section id={ProtezIDs.PeopleTrustUs} className={style.section}>
       <div className={style.container}>
         <div className={style.left}>
-          <Slider {...settings} ref={imageSliderRef} className={style.imageSlider}>
+          <Slider
+            {...settings}
+            beforeChange={undefined}
+            responsive={undefined}
+            accessibility={false}
+            ref={imageSliderRef}
+            className={style.imageSlider}
+          >
             {cards.map((card, index) => (
               <div className={style.imageWrapper} key={index}>
                 <ProtezImage
-                  width={940}
-                  height={540}
+                  width={card.width}
+                  height={card.height}
                   src={`protezPage/peopleTrustUs/${card.image}`}
                   alt={card.description}
                   className={style.image}
@@ -113,12 +117,22 @@ const PeopleTrustUs = () => {
 
         <div className={style.right}>
           <div className={style.titleContainer}>
-            {icons.peopleTrustUsLogo.desktop[lang](style.title)}
+            <h2 className={style.title}>{t('title')}</h2>
             <div className={`${style.sliderNavigation} ${style.sliderNavigationTop}`}>
-              <button className={style.sliderButton} onClick={gotoPrev}>
+              <button
+                type="button"
+                aria-label={t('previousSlide')}
+                className={style.sliderButton}
+                onClick={gotoPrev}
+              >
                 {icons.arrowLeft(style.arrow)}
               </button>
-              <button className={style.sliderButton} onClick={gotoNext}>
+              <button
+                type="button"
+                aria-label={t('nextSlide')}
+                className={style.sliderButton}
+                onClick={gotoNext}
+              >
                 {icons.arrowRight(style.arrow)}
               </button>
             </div>
@@ -144,21 +158,25 @@ const PeopleTrustUs = () => {
 
                 return (
                   <div key={index}>
-                    <Body large className={style.textSlide}>
-                      {card.description}
-                    </Body>
+                    <div className={style.description}>
+                      <Body large className={style.textSlide}>
+                        {card.description}
+                      </Body>
+                    </div>
                     <div className={`${style.cardWrapper} ${slideClass}`}>
                       <div className={`${style.card} `}>
                         <ProtezImage
-                          width={940}
-                          height={540}
+                          width={card.width}
+                          height={card.height}
                           src={`protezPage/peopleTrustUs/${card.image}`}
                           alt={card.description}
                           className={style.image}
                         />
-                        <Body large className={style.text}>
-                          {card.description}
-                        </Body>
+                        <div className={style.description}>
+                          <Body large className={style.text}>
+                            {card.description}
+                          </Body>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -168,10 +186,20 @@ const PeopleTrustUs = () => {
           </div>
           <TextAppearanceWrapper className={style.buttonsContainer}>
             <div className={`${style.sliderNavigation} ${style.sliderNavigationBottom}`}>
-              <button className={style.sliderButton} onClick={gotoPrev}>
+              <button
+                type="button"
+                aria-label={t('previousSlide')}
+                className={style.sliderButton}
+                onClick={gotoPrev}
+              >
                 {icons.arrowLeft(style.arrow)}
               </button>
-              <button className={style.sliderButton} onClick={gotoNext}>
+              <button
+                type="button"
+                aria-label={t('nextSlide')}
+                className={style.sliderButton}
+                onClick={gotoNext}
+              >
                 {icons.arrowRight(style.arrow)}
               </button>
             </div>

@@ -12,6 +12,7 @@
 }
 
 .left {
+  align-self: start;
   flex: 1 1 984px;
   flex-grow: 0;
   max-width: 62%;
@@ -24,16 +25,14 @@
 .imageWrapper {
   height: 540px;
 }
-
 .image {
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;
+  object-position: center top;
   width: 100%;
   height: 100%;
 }
 
 .right {
-  padding-top: 80px;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -52,11 +51,26 @@
 
 .title {
   max-width: 100%;
-  height: auto;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(28px, 2.92vw, 56px);
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: left;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.description {
+  flex-shrink: 0;
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
 }
 
 .buttonsContainer {
   margin-top: auto;
+  padding-top: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,6 +104,11 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--white);
+    outline-offset: 4px;
+  }
 
   &:first-child {
     background-color: transparent;
@@ -147,6 +166,12 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+    gap: 24px;
+  }
+
+  .title {
+    max-width: 560px;
+    font-size: clamp(28px, 4vw, 44px);
   }
 
   .cardWrapper {
@@ -177,6 +202,7 @@
     object-fit: cover;
     width: 100%;
     height: 100%;
+    min-height: 0;
     max-height: 360px;
     flex-shrink: 1;
   }
@@ -203,6 +229,7 @@
 
   .buttonsContainer {
     margin-top: 40px;
+    padding-top: 0;
     justify-content: flex-end;
   }
 }
@@ -229,7 +256,7 @@
   }
 
   .title {
-    max-width: 80%;
+    max-width: 560px;
   }
 
   .buttonsContainer {
@@ -308,13 +335,19 @@
       width: 100%;
       height: 100%;
       padding: 0;
+
+      &:focus-visible {
+        outline: 2px solid var(--white);
+        outline-offset: 4px;
+      }
     }
   }
 }
 
 @media (max-width: 600px) {
   .title {
-    max-width: 260px;
+    max-width: 100%;
+    font-size: clamp(26px, 7.2vw, 36px);
   }
 
   .text {
