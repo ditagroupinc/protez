@@ -15,11 +15,16 @@ import Slider from '@/islands/SlickCarousel'
 import { useRef, useState } from 'react'
 import ProtezImage from '@/components/ProtezImage'
 
-type PeopleTrustUsCard = { image: string; description: string; width: number; height: number }
+type PartnershipsGovernmentSupportCard = {
+  image: string
+  description: string
+  width: number
+  height: number
+}
 
-const PeopleTrustUs = () => {
-  const t = useTranslations('home.peopleTrustUs')
-  const cards = t.raw('cards') as PeopleTrustUsCard[]
+const PartnershipsGovernmentSupport = () => {
+  const t = useTranslations('home.partnershipsGovernmentSupport')
+  const cards = t.raw('cards') as PartnershipsGovernmentSupportCard[]
   const [activeSlide, setActiveSlide] = useState(0)
   const imageSliderRef = useRef<Slider & React.Component>(null)
   const sliderRef = useRef<Slider & React.Component>(null)
@@ -90,7 +95,7 @@ const PeopleTrustUs = () => {
   }
 
   return (
-    <Section id={ProtezIDs.PeopleTrustUs} className={style.section}>
+    <Section id={ProtezIDs.PartnershipsGovernmentSupport} className={style.section}>
       <div className={style.container}>
         <div className={style.left}>
           <Slider
@@ -106,7 +111,7 @@ const PeopleTrustUs = () => {
                 <ProtezImage
                   width={card.width}
                   height={card.height}
-                  src={`protezPage/peopleTrustUs/${card.image}`}
+                  src={`protezPage/partnershipsGovernmentSupport/${card.image}`}
                   alt={card.description}
                   className={style.image}
                 />
@@ -168,7 +173,7 @@ const PeopleTrustUs = () => {
                         <ProtezImage
                           width={card.width}
                           height={card.height}
-                          src={`protezPage/peopleTrustUs/${card.image}`}
+                          src={`protezPage/partnershipsGovernmentSupport/${card.image}`}
                           alt={card.description}
                           className={style.image}
                         />
@@ -210,4 +215,4 @@ const PeopleTrustUs = () => {
   )
 }
 
-export default PeopleTrustUs
+export default PartnershipsGovernmentSupport

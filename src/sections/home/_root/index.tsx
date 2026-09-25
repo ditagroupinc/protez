@@ -24,7 +24,9 @@ const SampleProsthesesCosts = lazy(
   () => import('@/sections/home/SampleProsthesesCosts/SampleProsthesesCosts')
 )
 const ProtezAcademy = lazy(() => import('@/sections/home/ProtezAcademyPromo/ProtezAcademy'))
-const PeopleTrustUs = lazy(() => import('@/sections/home/PeopleTrustUs/PeopleTrustUs'))
+const PartnershipsGovernmentSupport = lazy(
+  () => import('@/sections/home/PartnershipsGovernmentSupport/PartnershipsGovernmentSupport')
+)
 const InNeed = lazy(() => import('@/sections/home/InNeed/InNeed'))
 const OurResults = lazy(() => import('@/sections/home/OurResults/OurResults'))
 const OurPatients = lazy(() => import('@/sections/home/OurPatients/OurPatients'))
@@ -65,9 +67,9 @@ export default function ProtezHomePage({
               className={style.americanFlag}
             />
             {/* Independent Suspense so Hero and the flag render immediately
-                while PeopleTrustUs hydrates above the fold. */}
+                while PartnershipsGovernmentSupport hydrates above the fold. */}
             <Suspense fallback={<FullScreenFallback />}>
-              <PeopleTrustUs />
+              <PartnershipsGovernmentSupport />
             </Suspense>
           </div>
         </SuspenseSection>

@@ -17,6 +17,7 @@
 ID секції → [Header config](../src/sections/_shared/Header/config.ts) → menu component + labels із [shared messages](../messages).
 
 - Home використовує [ProtezIDs](../src/consts/index.tsx); Academy — [IDs за alias `@academy/consts`](<../app/[locale]/academy/consts/index.ts>). У `src/consts` є ще одна, неповна декларація AcademyIDs; орієнтуйся на фактичний імпорт споживача.
+- Home-секція `PartnershipsGovernmentSupport` використовує ключ messages і каталог assets `partnershipsGovernmentSupport`; публічний anchor — `#PartnershipsGovernmentSupport`.
 - [HomeMenu](../src/sections/_shared/Header/HomeMenu.tsx) зіставляє IDs і labels за індексом. Зміна порядку/кількості потребує узгоджених labels обох локалей та відповідних section IDs.
 - [Header](../src/sections/_shared/Header/index.tsx) розділяє `variant`, `sideMenu`, `ancorLinks` і `arrowUp`. Вибір задають route-group layouts; секція, menu anchor і режим layout мають відповідати одне одному.
 

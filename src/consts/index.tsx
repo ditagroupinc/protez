@@ -14,7 +14,7 @@ export enum AcademyIDs {
 
 export enum ProtezIDs {
   Hero = 'hero',
-  PeopleTrustUs = 'peopleTrustUs',
+  PartnershipsGovernmentSupport = 'PartnershipsGovernmentSupport',
   ProstheticsForUkrainians = 'prostheticsForUkrainians',
   InNeed = 'inNeed',
   OurResults = 'ourResults',

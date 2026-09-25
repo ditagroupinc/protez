@@ -12,7 +12,7 @@
     "needAProthesis": "Потрібeн протез",
     "protezAcademy": "Protez Academy"
   },
-  "peopleTrustUs": {
+  "partnershipsGovernmentSupport": {
     "title": "Partnerships & Government Support",
     "previousSlide": "Previous slide",
     "nextSlide": "Next slide",
@@ -55,19 +55,13 @@
       },
       {
         "image": "ukraine-health-ministry-memorandum.png",
-        "description": "A memorandum on the continuation of cooperation between the Protez Foundation and the Ministry of Health of Ukraine has been signed. Our goal is unity in support and assistance to our heroes who deserve the best. Together we can achieve significant changes in the field of rehabilitation and provision of quality prosthetics.",
+        "description": "A memorandum on the continuation of cooperation between the Protez Foundation and the Ministry of Health of Ukraine has been signed. Our goal is unity in support and assistance to our heroes who deserve the best. Together we can achieve significant changes in prosthetic care and the provision of high-quality prostheses.",
         "width": 940,
         "height": 540
       },
       {
         "image": "ukraine-interior-ministry-memorandum.png",
         "description": "Collaboration and unity are the key to success in our common desire to provide prosthetics and rehabilitation of our heroes at a high level. We have extended the memorandum of cooperation with the Ministry of Internal Affairs of Ukraine and successfully implement joint projects for training specialists and prosthetics for military personnel.",
-        "width": 940,
-        "height": 540
-      },
-      {
-        "image": "valerii-zaluzhnyi-appreciation.png",
-        "description": "A huge thank you to the legendary General Valerii Zaluzhnyi for his heroism and courage in the first years of the war.",
         "width": 940,
         "height": 540
       },

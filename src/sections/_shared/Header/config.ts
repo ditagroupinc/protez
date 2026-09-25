@@ -37,7 +37,7 @@ export const headerConfig: Record<HeaderVariant, VariantConfig> = {
 
 export const HOME_NAV_IDS = [
   ProtezIDs.Hero,
-  ProtezIDs.PeopleTrustUs,
+  ProtezIDs.PartnershipsGovernmentSupport,
   ProtezIDs.ProstheticsForUkrainians,
   ProtezIDs.InNeed,
   ProtezIDs.OurResults,
