@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl'
 
-import { localeToLanguage } from '@/lib/locale'
+import { playfairDisplayItalic } from '../../../../app/fonts'
 import type { CurrentMonth } from '@/lib/date'
 import { useStatsRange } from '@/hooks/useStatsRange'
 
@@ -10,7 +10,6 @@ import Section from '@/components/Section'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import CountUp from 'react-countup'
 
-import { icons } from './icons'
 import style from './style.module.scss'
 
 import { ProtezIDs } from '@/consts'
@@ -35,7 +34,6 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
   ref: ForwardedRef<HTMLDivElement>
 ) {
   const locale = useLocale()
-  const lang = localeToLanguage(locale)
   const t = useTranslations('home.ourResults')
 
   const dateText = useStatsRange(currentMonth, 'rangeNote')
@@ -47,7 +45,14 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
     <>
       <Section id={ProtezIDs.OurResults} className={style.section} ref={ref}>
         <div className={style.left}>
-          {icons.ourResultsLogo.desktop[lang](style.title)}
+          <h2 className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
+            <span
+              className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
+            >
+              {t('title.accent')}
+            </span>{' '}
+            <span className={style.titleLine}>{t('title.plain')}</span>
+          </h2>
           <Body large className={style.date}>
             {dateText}
           </Body>
