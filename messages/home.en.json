@@ -74,13 +74,18 @@
     ]
   },
   "prostheticsForUkrainians": {
-    "description1": "We provide care for Ukrainians who have lost limbs and need prosthetics: from submitting an application through full rehabilitation.",
-    "description2": "The goal of our work is to help ukrainian children, civilians and soldiers who have lost limbs as a result of the war receive high quality prosthetics in the US free of charge.",
+    "title": {
+      "prosthetics": "Prosthetics",
+      "for": "for",
+      "ukrainians": "Ukrainians"
+    },
+    "description1": "Since the start of the full-scale invasion, we have been working consistently to restore freedom of movement and improve the quality of life for Ukrainians who have lost limbs as a result of the war. By providing high-quality prosthetic care in Ukraine and the US, we help patients regain their physical independence.",
+    "description2": "Every number in this section has been made possible by the ongoing support of our donors and everyone who contributes to the recovery of our defenders and civilians.",
     "cards": [
-      "Our goal is to help people who have lost limbs to restore their quality of life",
-      "We provide mental health and emotional support during recovery.",
-      "We bring people together to help support victims of war.",
-      "We provide state of the art prosthetics with personalized training and support in the US and follow-up care in Ukraine."
+      "Our goal is to restore mobility and independence through high-quality prosthetic care.",
+      "We provide psychological and emotional support during recovery.",
+      "We provide free, high-quality prosthetic care in the US and Ukraine, tailored to each patient's individual needs.",
+      "We provide training in prosthesis use, maintenance, and long-term patient support."
     ]
   },
   "ourResults": {

@@ -16,17 +16,41 @@
   max-width: 712px;
 }
 .title {
-  margin-bottom: 48px;
+  container-type: inline-size;
+  margin: 0 0 48px;
   width: 100%;
-  height: auto;
+  color: var(--white);
+  text-align: left;
 }
 
-.title.titleDesktop {
-  display: block;
+.titleLine {
+  display: flex;
+  align-items: baseline;
+  gap: 0.16em;
+  font-size: min(90px, 12.64cqw);
+  font-weight: 800;
+  line-height: calc(76 / 90);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.title.titleMobile {
-  display: none;
+.ukrainianTitle .titleLine {
+  font-size: min(90px, 10.8cqw);
+}
+
+.titleAccent {
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.flag {
+  align-self: flex-start;
+  flex-shrink: 0;
+  width: 0.766667em;
+  height: 0.766667em;
 }
 
 .buttonsContainer.buttonsContainerTop {
@@ -152,14 +176,6 @@
 }
 
 @media screen and (max-width: 800px) {
-  .title.titleDesktop {
-    display: none;
-  }
-
-  .title.titleMobile {
-    display: block;
-  }
-
   .mobileCardLayout {
     display: contents;
   }
@@ -192,9 +208,11 @@
   }
 
   .card {
+    height: auto;
+
     &:nth-of-type(1) {
       max-width: 100%;
-      margin-right: 27px;
+      margin-right: 25%;
       border-bottom: none;
     }
     &:nth-of-type(2) {

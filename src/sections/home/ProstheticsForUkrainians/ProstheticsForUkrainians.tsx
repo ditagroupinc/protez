@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl'
 
-import { localeToLanguage } from '@/lib/locale'
+import { playfairDisplayItalic } from '../../../../app/fonts'
 
 import Section from '@/components/Section'
 import ProtezImage from '@/components/ProtezImage'
@@ -19,7 +19,6 @@ const cardIcons = ['accessibility.svg', 'caring-hands.svg', 'community.svg', 'su
 
 const ProstheticsForUkrainians = () => {
   const locale = useLocale()
-  const lang = localeToLanguage(locale)
   const t = useTranslations('home.prostheticsForUkrainians')
   const cardsText = t.raw('cards') as string[]
 
@@ -28,8 +27,18 @@ const ProstheticsForUkrainians = () => {
   return (
     <Section id={ProtezIDs.ProstheticsForUkrainians} className={style.section}>
       <div className={style.left}>
-        {icons.prostheticsForUkrainiansLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
-        {icons.prostheticsForUkrainiansLogo.mobile[lang](`${style.title} ${style.titleMobile}`)}
+        <h2 className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
+          <span className={style.titleLine}>
+            {icons.ukrainianFlag(style.flag)}
+            <span>{t('title.prosthetics')}</span>
+          </span>{' '}
+          <span className={style.titleLine}>
+            <span className={`${style.titleAccent} ${playfairDisplayItalic.className}`}>
+              {t('title.for')}
+            </span>{' '}
+            <span>{t('title.ukrainians')}</span>
+          </span>
+        </h2>
         <H3 className={style.description1}>{t('description1')}</H3>
         <H3>{t('description2')}</H3>
         <TextAppearanceWrapper className={`${style.buttonsContainer} ${style.buttonsContainerTop}`}>
