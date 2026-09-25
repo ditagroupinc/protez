@@ -141,15 +141,31 @@
     ]
   },
   "sampleProsthesesCosts": {
-    "description": "Prosthetics are expensive life-changing devices. With help of volunteers and partners we were able to reduce the cost significantly, lower the overhead down to barebone minimum. Our program overhead is only 8%.",
-    "miscellaneous": "Miscellaneous",
+    "title": {
+      "accentFirst": "Sample",
+      "accentSecond": "Prostheses",
+      "plain": "Costs"
+    },
+    "description": [
+      "High-quality prosthetic care is a complex and costly process that requires advanced materials and the expertise of skilled specialists. For Ukrainians who have lost limbs as a result of the war, all services and prostheses provided through our program are completely free of charge.",
+      "This is made possible by the ongoing support of our donors, financial partners, and everyday contributions from people who care. We use every contribution responsibly: we optimize logistics, work with leading manufacturers, and minimize operating expenses so that as much of the funding as possible goes directly toward helping patients."
+    ],
+    "prices": [
+      "≈ $16K",
+      "≈ $20K",
+      "≈ $6K",
+      "from $600",
+      "from $500",
+      "≈ $3.5K"
+    ],
+    "miscellaneous": "Miscellaneous:",
     "prostheses": [
-      "Hand or Arm",
-      "Above the knee",
-      "Below Knee",
-      "Liners&Socks",
+      "Upper-limb prosthesis",
+      "Above-knee prosthesis",
+      "Below-knee prosthesis",
+      "Liner",
       "Components",
-      "Sport foot"
+      "Sports foot"
     ]
   },
   "protezAcademyPromo": {

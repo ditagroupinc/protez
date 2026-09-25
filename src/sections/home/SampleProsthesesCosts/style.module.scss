@@ -13,12 +13,40 @@
   max-width: 560px;
 }
 .title {
+  container-type: inline-size;
+  margin: 0 0 40px;
   width: 100%;
-  max-width: 416px;
-  margin-bottom: 40px;
+  max-width: 560px;
+  color: var(--white);
+  text-align: left;
+}
+
+.titleLine {
+  display: block;
+  font-size: min(90px, 20cqw);
+  font-style: normal;
+  font-weight: 800;
+  line-height: calc(76 / 90);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ukrainianTitle .titleLine {
+  font-size: min(90px, 18cqw);
+}
+
+.titleAccent {
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
 }
 
 .description {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   margin-bottom: 60px;
 }
 
@@ -36,7 +64,7 @@
 }
 
 @media (min-width: 801px) {
-  .left .description {
+  .left .description p {
     font-size: 18px;
     font-weight: 600;
     line-height: 26px;
@@ -109,7 +137,7 @@
   }
 }
 .pricesDivider {
-  padding-right: 195px;
+  padding-left: 30%;
 }
 
 .priceCard {
@@ -127,13 +155,16 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    flex-shrink: 0;
+    width: 180px;
+    text-align: right;
   }
 
   .priceCardText {
     color: var(--white);
     font-size: 20px;
     font-weight: 600;
-    line-height: normal;
+    line-height: 1.1;
   }
 
   .priceCardPrice {
@@ -147,6 +178,7 @@
   }
 
   .priceCardCircle {
+    flex-shrink: 0;
     border-radius: 280px;
     border: 2px solid rgba(255, 255, 255, 0.24);
     width: 90px;
@@ -198,7 +230,6 @@
   .title {
     margin-bottom: 0;
     min-width: 241px;
-    height: auto;
   }
 
   .description {
@@ -251,7 +282,7 @@
   }
 
   .right {
-    justify-content: flex-end;
+    justify-content: safe flex-end;
     margin-right: 0;
     min-width: auto;
   }
@@ -328,6 +359,10 @@
   }
 
   .priceCard {
+    .priceCardTextBlock {
+      width: 129px;
+    }
+
     .priceCardText {
       font-size: 14.283px;
     }

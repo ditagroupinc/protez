@@ -2,8 +2,6 @@
 
 import { useLocale, useTranslations } from 'next-intl'
 
-import { localeToLanguage } from '@/lib/locale'
-
 import Section from '@/components/Section'
 
 import { icons } from './icons'
@@ -17,33 +15,31 @@ import { useState } from 'react'
 import { playfairDisplayItalic } from '../../../../app/fonts'
 
 const prosthesesMeta = [
-  { price: '≈ $3,5К', icon: icons.handOrArm },
-  { price: '≈ $20К', icon: icons.aboveTheKnee },
-  { price: '$6K', icon: icons.belowKnee },
-  { price: '> $600', icon: icons.linersAndSocks },
-  { price: '> $500', icon: icons.components },
-  { price: '≈ $3,5К', icon: icons.sportFoot },
-]
+  { hoverTarget: 'Hand or Arm', icon: icons.handOrArm },
+  { hoverTarget: 'Above the knee', icon: icons.aboveTheKnee },
+  { hoverTarget: 'Below Knee', icon: icons.belowKnee },
+  { hoverTarget: '', icon: icons.linersAndSocks },
+  { hoverTarget: '', icon: icons.components },
+  { hoverTarget: 'Sport foot', icon: icons.sportFoot },
+] as const
 
-const elementsToHover = ['Hand or Arm', 'Sport foot', 'Below Knee', 'Above the knee']
-
-type HoverClasses = (typeof elementsToHover)[number] | ''
+type HoverClasses = (typeof prosthesesMeta)[number]['hoverTarget']
 
 const PriceCard = ({
   text,
   price,
   icon,
+  hoverTarget,
   setHovered,
 }: {
   text: string
   price: string
   icon: (className: string) => JSX.Element
+  hoverTarget: HoverClasses
   setHovered: (isHovered: HoverClasses) => void
 }) => {
   const handleMouseEnter = () => {
-    if (elementsToHover.find(textToHover => textToHover === text)) {
-      setHovered(text)
-    }
+    setHovered(hoverTarget)
   }
   const handleMouseLeave = () => setHovered('')
 
@@ -65,9 +61,14 @@ const PriceCard = ({
 
 const SampleProsthesesCosts = () => {
   const locale = useLocale()
-  const lang = localeToLanguage(locale)
   const t = useTranslations('home.sampleProsthesesCosts')
+  const titleLines =
+    locale === 'uk'
+      ? ['accentFirst', 'plain', 'accentSecond']
+      : ['accentFirst', 'accentSecond', 'plain']
   const prosthesesText = t.raw('prostheses') as string[]
+  const prices = t.raw('prices') as string[]
+  const description = t.raw('description') as string[]
 
   const [hovered, setHovered] = useState<HoverClasses>('')
 
@@ -83,15 +84,29 @@ const SampleProsthesesCosts = () => {
 
   const prostheses = prosthesesText.map((text, index) => ({
     text,
-    price: prosthesesMeta[index].price,
+    price: prices[index],
     icon: prosthesesMeta[index].icon,
+    hoverTarget: prosthesesMeta[index].hoverTarget,
   }))
 
   return (
     <Section id={ProtezIDs.SampleProsthesesCosts} className={style.section}>
       <div className={style.left}>
-        {icons.sampleProsthesesCostsLogo.desktop[lang](style.title)}
-        <Body className={style.description}>{t('description')}</Body>
+        <h2 className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
+          {titleLines.map(line => (
+            <span
+              key={line}
+              className={`${style.titleLine} ${line !== 'plain' ? `${style.titleAccent} ${playfairDisplayItalic.className}` : ''}`}
+            >
+              {t(`title.${line}`)}{' '}
+            </span>
+          ))}
+        </h2>
+        <div className={style.description}>
+          {description.map(paragraph => (
+            <Body key={paragraph}>{paragraph}</Body>
+          ))}
+        </div>
         <TextAppearanceWrapper className={`${style.buttonsContainer} ${style.buttonsContainerTop}`}>
           <MakeDonationButton size="normal" />
           <SupportWithAmazonButton color="white" size="normal" />
@@ -106,6 +121,7 @@ const SampleProsthesesCosts = () => {
                 text={prosthesis.text}
                 price={prosthesis.price}
                 icon={prosthesis.icon}
+                hoverTarget={prosthesis.hoverTarget}
                 setHovered={setHovered}
               />
             ))}
@@ -118,6 +134,7 @@ const SampleProsthesesCosts = () => {
                 text={prosthesis.text}
                 price={prosthesis.price}
                 icon={prosthesis.icon}
+                hoverTarget={prosthesis.hoverTarget}
                 setHovered={setHovered}
               />
             ))}
