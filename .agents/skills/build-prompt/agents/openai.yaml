@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build Prompt"
+  short_description: "Start with questions, then build a prompt"
+  default_prompt: "Use $build-prompt to ask me questions about my idea, then turn my answers into a concise prompt."
