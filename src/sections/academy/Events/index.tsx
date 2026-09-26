@@ -125,7 +125,7 @@ const Events = forwardRef<HTMLDivElement>(function (_, ref) {
   return (
     <AcademySection ref={ref} id={AcademyIDs.PastAndUpcomingEvents} className={styles.events}>
       <ProtezImage
-        src="events-background-Ukraine.png"
+        src="ourEvents-background-Ukraine.png"
         alt={t('backgroundAlt')}
         width={4096}
         height={1150}

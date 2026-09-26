@@ -37,19 +37,11 @@
   margin: 0 0 10px;
   width: 100%;
   max-width: 394px;
-  color: var(--white);
   text-align: left;
 }
 
 .titleLine {
-  display: block;
-  font-size: min(90px, 24cqw);
-  font-style: normal;
-  font-weight: 800;
-  line-height: calc(76 / 90);
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  white-space: nowrap;
+  composes: line from "../../../components/SectionTitle/style.module.scss";
 }
 
 .ukrainianTitle {
@@ -61,10 +53,7 @@
 }
 
 .titleAccent {
-  font-style: italic;
-  font-weight: 600;
-  letter-spacing: normal;
-  text-transform: none;
+  composes: accent from "../../../components/SectionTitle/style.module.scss";
 }
 
 .date {

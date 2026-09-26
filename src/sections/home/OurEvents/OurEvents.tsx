@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl'
 import { playfairDisplayItalic } from '../../../../app/fonts'
 
 import Section from '@/components/Section'
+import SectionTitle from '@/components/SectionTitle'
 
 import style from './style.module.scss'
 import { icons } from './icons'
@@ -16,13 +17,16 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { ProtezIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
-import { modifyAndSortEvents, padEventsToMinimum } from './utils'
-import { EventsProps } from './types'
+import { modifyAndSortOurEvents, padOurEventsToMinimum } from './utils'
+import { OurEventsProps } from './types'
 
-const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref) {
-  const sortedEvents = useMemo(() => padEventsToMinimum(modifyAndSortEvents(events)), [events])
+const OurEvents = forwardRef<HTMLDivElement, OurEventsProps>(function ({ ourEvents }, ref) {
+  const sortedOurEvents = useMemo(
+    () => padOurEventsToMinimum(modifyAndSortOurEvents(ourEvents)),
+    [ourEvents]
+  )
 
-  const t = useTranslations('home.events')
+  const t = useTranslations('home.ourEvents')
 
   const settings = {
     dots: false,
@@ -80,31 +84,31 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
     sliderRef.current?.slickPrev()
   }
 
-  if (sortedEvents.length === 0) return null
+  if (sortedOurEvents.length === 0) return null
 
   return (
-    <Section ref={ref} id={ProtezIDs.Events} className={style.events}>
+    <Section ref={ref} id={ProtezIDs.OurEvents} className={style.ourEvents}>
       <ProtezImage
-        src="events-background-Ukraine.png"
+        src="ourEvents-background-Ukraine.png"
         alt={t('alts.ukrainianFlag')}
         width={4096}
         height={1150}
         className={style.backgroundImage}
       />
       <div className={style.titleWrapper}>
-        <h2 className={style.title}>
+        <SectionTitle className={style.title}>
           <span
             className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
           >
             {t('title.accent')}
           </span>{' '}
           <span className={style.titleLine}>{t('title.plain')}</span>
-        </h2>
+        </SectionTitle>
       </div>
 
       <TextAppearanceWrapper className={style.sliderWrapper}>
         <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
-          {sortedEvents.map((card, index) => {
+          {sortedOurEvents.map((card, index) => {
             const slideClass = ''
 
             return (
@@ -113,7 +117,7 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
                   <a href={card.link} target="blank" className={style.card}>
                     <ProtezImage
                       src={card.photo}
-                      alt={t('alts.eventsPicture')}
+                      alt={t('alts.ourEventsPicture')}
                       width={340}
                       height={480}
                       className={style.cardPicture}
@@ -162,5 +166,5 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
   )
 })
 
-Events.displayName = 'Events'
-export default Events
+OurEvents.displayName = 'OurEvents'
+export default OurEvents

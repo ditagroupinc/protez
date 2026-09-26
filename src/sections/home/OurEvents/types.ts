@@ -16,6 +16,6 @@ export type EventData = {
   link?: string
 }
 
-export interface EventsProps {
-  events: EventData[]
+export interface OurEventsProps {
+  ourEvents: EventData[]
 }

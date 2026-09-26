@@ -32,8 +32,10 @@ const OurResults = lazy(() => import('@/sections/home/OurResults/OurResults'))
 const OurPatients = lazy(() => import('@/sections/home/OurPatients/OurPatients'))
 const OfficeLocations = lazy(() => import('@/sections/home/OfficeLocations/OfficeLocations'))
 const Veterans = lazy(() => import('@/sections/home/Veterans/Veterans'))
-const Events = lazy(() => import('@/sections/home/Events/Events'))
-const PressRelease = lazy(() => import('@/sections/home/PressRelease/PressRelease'))
+const OurEvents = lazy(() => import('@/sections/home/OurEvents/OurEvents'))
+const PritezFoundationNews = lazy(
+  () => import('@/sections/home/PritezFoundationNews/PritezFoundationNews')
+)
 const MeetOurTeam = lazy(() => import('@/sections/home/MeetOurTeam/MeetOurTeam'))
 const SpecialThanksToAllOurPartners = lazy(
   () => import('@/sections/_shared/SpecialThanksToAllOurPartners')
@@ -44,10 +46,10 @@ const Footer = lazy(() => import('@/sections/_shared/Footer'))
 
 export default function ProtezHomePage({
   currentMonth,
-  events,
+  ourEvents,
 }: {
   currentMonth: CurrentMonth
-  events: SingleEvent[] | null
+  ourEvents: SingleEvent[] | null
 }) {
   const t = useTranslations('home.root')
 
@@ -101,14 +103,14 @@ export default function ProtezHomePage({
           <Veterans />
         </SuspenseSection>
 
-        {events && events.length > 0 && (
+        {ourEvents && ourEvents.length > 0 && (
           <SuspenseSection withSmoke>
-            <Events events={events} />
+            <OurEvents ourEvents={ourEvents} />
           </SuspenseSection>
         )}
 
         <SuspenseSection>
-          <PressRelease />
+          <PritezFoundationNews />
         </SuspenseSection>
 
         <SuspenseSection>

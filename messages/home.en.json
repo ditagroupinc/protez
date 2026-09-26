@@ -201,7 +201,12 @@
       }
     ]
   },
-  "pressRelease": {
+  "pritezFoundationNews": {
+    "title": {
+      "brand": "Protez",
+      "foundation": "Foundation",
+      "news": "News"
+    },
     "releases": [
       {
         "title": "Prosthetic and Rehabilitation Center based on the Ministry of Internal Affairs: an important initiative for military personnel",
@@ -249,7 +254,7 @@
       { "country": "Ukraine", "location": "Kyiv", "address": "Coming soon" }
     ]
   },
-  "events": {
+  "ourEvents": {
     "title": {
       "accent": "Our",
       "plain": "Events"
@@ -260,7 +265,7 @@
     },
     "alts": {
       "ukrainianFlag": "Ukrainian flag",
-      "eventsPicture": "events picture"
+      "ourEventsPicture": "events picture"
     }
   },
   "root": {

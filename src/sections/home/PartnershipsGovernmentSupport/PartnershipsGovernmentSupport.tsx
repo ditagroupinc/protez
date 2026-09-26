@@ -3,6 +3,7 @@
 import { useTranslations } from 'next-intl'
 
 import Section from '@/components/Section'
+import SectionTitle from '@/components/SectionTitle'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { icons } from './icons'
@@ -122,7 +123,7 @@ const PartnershipsGovernmentSupport = () => {
 
         <div className={style.right}>
           <div className={style.titleContainer}>
-            <h2 className={style.title}>{t('title')}</h2>
+            <SectionTitle className={style.title}>{t('title')}</SectionTitle>
             <div className={`${style.sliderNavigation} ${style.sliderNavigationTop}`}>
               <button
                 type="button"

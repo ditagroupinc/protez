@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { playfairDisplayItalic } from '../../../../app/fonts'
 
 import Section from '@/components/Section'
+import SectionTitle from '@/components/SectionTitle'
 import ProtezImage from '@/components/ProtezImage'
 
 import { icons } from './icons'
@@ -27,7 +28,7 @@ const ProstheticsForUkrainians = () => {
   return (
     <Section id={ProtezIDs.ProstheticsForUkrainians} className={style.section}>
       <div className={style.left}>
-        <h2 className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
+        <SectionTitle className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
           <span className={style.titleLine}>
             {icons.ukrainianFlag(style.flag)}
             <span>{t('title.prosthetics')}</span>
@@ -38,7 +39,7 @@ const ProstheticsForUkrainians = () => {
             </span>{' '}
             <span>{t('title.ukrainians')}</span>
           </span>
-        </h2>
+        </SectionTitle>
         <H3 className={style.description1}>{t('description1')}</H3>
         <H3>{t('description2')}</H3>
         <TextAppearanceWrapper className={`${style.buttonsContainer} ${style.buttonsContainerTop}`}>

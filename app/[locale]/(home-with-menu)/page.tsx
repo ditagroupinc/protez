@@ -50,7 +50,7 @@ export default async function Home({ params }: { params: Params }) {
   const { locale } = await Promise.resolve(params)
 
   setRequestLocale(locale)
-  const { events } = await getPosts()
+  const { ourEvents } = await getPosts()
 
-  return <ProtezHomePage currentMonth={getCurrentMonth()} events={events} />
+  return <ProtezHomePage currentMonth={getCurrentMonth()} ourEvents={ourEvents} />
 }

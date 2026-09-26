@@ -3,7 +3,7 @@
 import { useRef, useEffect } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
 
-import { localeToLanguage } from '@/lib/locale'
+import { playfairDisplayItalic } from '../../../../app/fonts'
 
 import style from './style.module.scss'
 import Slider from '@/islands/SlickCarousel'
@@ -12,24 +12,38 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { icons } from './icons'
 import Section from '@/components/Section'
+import SectionTitle from '@/components/SectionTitle'
 import { ProtezIDs } from '@/consts'
 import { Body, H3 } from '@/components/Typography'
 import ProtezImage from '@/components/ProtezImage'
 
-type PressRelease = { title: string; text: string }
+type PritezFoundationNews = { title: string; text: string }
 
 const releasesMeta = [
-  { date: '12 December 2024', img: 'pressReleaseSlide2.png' },
-  { date: '25 January 2025', img: 'pressReleaseSlide3.png' },
-  { date: '2 July 2025', img: 'pressReleaseSlide5.png' },
-  { date: '04 Aug 2025', img: 'pressReleaseSlide6.png' },
+  { date: '12 December 2024', img: 'pritezFoundationNewsSlide2.png' },
+  { date: '25 January 2025', img: 'pritezFoundationNewsSlide3.png' },
+  { date: '2 July 2025', img: 'pritezFoundationNewsSlide5.png' },
+  { date: '04 Aug 2025', img: 'pritezFoundationNewsSlide6.png' },
 ]
 
-const PressRelease = () => {
+const PritezFoundationNews = () => {
   const locale = useLocale()
-  const lang = localeToLanguage(locale)
-  const t = useTranslations('home.pressRelease')
-  const releases = t.raw('releases') as PressRelease[]
+  const t = useTranslations('home.pritezFoundationNews')
+  const titleLines =
+    locale === 'uk' ? ['news', 'brand', 'foundation'] : ['brand', 'foundation', 'news']
+  const title = (
+    <SectionTitle className={style.title}>
+      {titleLines.map(line => (
+        <span
+          key={line}
+          className={`${style.titleLine} ${(locale === 'uk' ? line === 'news' : line !== 'news') ? `${style.titleAccent} ${playfairDisplayItalic.className}` : ''}`}
+        >
+          {t(`title.${line}`)}{' '}
+        </span>
+      ))}
+    </SectionTitle>
+  )
+  const releases = t.raw('releases') as PritezFoundationNews[]
 
   const imageSliderRef = useRef<Slider & React.Component>(null)
   const textSliderRef = useRef<Slider & React.Component>(null)
@@ -70,7 +84,7 @@ const PressRelease = () => {
     accessibility: false,
     responsive: [
       {
-        breakpoint: 800,
+        breakpoint: 799,
         settings: {
           slidesToShow: 2,
           swipe: true,
@@ -96,7 +110,7 @@ const PressRelease = () => {
     ],
   }
 
-  const orderedPressReleaseArray = releases
+  const orderedPritezFoundationNewsArray = releases
     .map((release, index) => ({ ...release, ...releasesMeta[index] }))
     .sort((a, b) => {
       const dateA = new Date(a.date)
@@ -106,15 +120,15 @@ const PressRelease = () => {
     })
 
   return (
-    <Section id={ProtezIDs.PressRelease} className={style.section}>
+    <Section id={ProtezIDs.PritezFoundationNews} className={style.section}>
       <div className={`${style.card} ${style.desktopCard}`}>
         <TextAppearanceWrapper className={style.left}>
           <Slider ref={imageSliderRef} {...settings} className={style.imageSlider}>
-            {orderedPressReleaseArray.map((slide, index) => (
+            {orderedPritezFoundationNewsArray.map((slide, index) => (
               <div className={style.imageSlideWrapper} key={index}>
                 <div className={style.imageSlide}>
                   <ProtezImage
-                    src={`protezPage/pressRelease/${slide.img}`}
+                    src={`protezPage/pritezFoundationNews/${slide.img}`}
                     alt={slide.date + ' ' + slide.title}
                     className={style.image}
                     width={940}
@@ -127,9 +141,9 @@ const PressRelease = () => {
         </TextAppearanceWrapper>
 
         <TextAppearanceWrapper className={style.right}>
-          {icons.pressReleaseLogo.desktop[lang](style.title)}
+          {title}
           <Slider ref={textSliderRef} {...settings} className={style.textSlider}>
-            {orderedPressReleaseArray.map((slide, index) => (
+            {orderedPritezFoundationNewsArray.map((slide, index) => (
               <div className={style.textSlideWrapper} key={index}>
                 <div className={style.textSlide}>
                   <Body large className={style.cardDate}>
@@ -154,17 +168,17 @@ const PressRelease = () => {
         </TextAppearanceWrapper>
       </div>
       <div className={style.mobileWrapper}>
-        {icons.pressReleaseLogo.desktop[lang](style.title)}
+        {title}
 
         <Slider ref={wholeCardSliderRef} {...settings} className={style.wholeCardSlider}>
-          {orderedPressReleaseArray.map((slide, index) => (
+          {orderedPritezFoundationNewsArray.map((slide, index) => (
             <div key={index}>
               <div className={style.cardWrapper}>
                 <div className={style.card}>
                   <TextAppearanceWrapper className={style.left}>
                     <div className={style.imageSlide}>
                       <ProtezImage
-                        src={`protezPage/pressRelease/${slide.img}`}
+                        src={`protezPage/pritezFoundationNews/${slide.img}`}
                         alt={slide.date + ' ' + slide.title}
                         className={style.image}
                         width={940}
@@ -188,4 +202,4 @@ const PressRelease = () => {
   )
 }
 
-export default PressRelease
+export default PritezFoundationNews

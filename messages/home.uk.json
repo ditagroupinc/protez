@@ -192,7 +192,12 @@
       }
     ]
   },
-  "pressRelease": {
+  "pritezFoundationNews": {
+    "title": {
+      "brand": "Protez",
+      "foundation": "Foundation",
+      "news": "Новини"
+    },
     "releases": [
       {
         "title": "Протезно-реабілітаційний центр на базі МВС: важлива ініціатива для військових",
@@ -240,7 +245,7 @@
       { "country": "Україна", "location": "Київ", "address": "Незабаром" }
     ]
   },
-  "events": {
+  "ourEvents": {
     "title": {
       "accent": "Наші",
       "plain": "Події"
@@ -251,7 +256,7 @@
     },
     "alts": {
       "ukrainianFlag": "Прапор України",
-      "eventsPicture": "фото події"
+      "ourEventsPicture": "фото події"
     }
   },
   "root": {

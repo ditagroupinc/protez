@@ -96,7 +96,7 @@ async function fetchAPI(query = '', { variables }: FetchAPIOptions = {}) {
 export async function getHomeSections() {
   const data = await fetchAPI(`
     query HomeSections {
-      events: posts(first: 1, where: { title: "Events" }) {
+      ourEvents: posts(first: 1, where: { title: "Events" }) {
         nodes {
           content
         }
@@ -105,7 +105,7 @@ export async function getHomeSections() {
   `)
 
   return {
-    events: data?.events?.nodes?.[0]?.content ?? '',
+    ourEvents: data?.ourEvents?.nodes?.[0]?.content ?? '',
   }
 }
 

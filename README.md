@@ -6,7 +6,7 @@ Marketing site for [protezfoundation.org](https://www.protezfoundation.org) — 
 
 - **Next.js 14** (App Router) + **TypeScript** (`strict: true`)
 - **next-intl** for i18n — English at `/`, Ukrainian at `/ua`
-- **WordPress GraphQL** for homepage Events. See the [data map](.agent-guidance/data-map.md) for the other content sources and their consumers.
+- **WordPress GraphQL** for homepage OurEvents. See the [data map](.agent-guidance/data-map.md) for the other content sources and their consumers.
 - **SCSS modules** for styles, **react-slick** for carousels, **react-countup** + **react-intersection-observer** for scroll-driven UI
 - **Mailchimp** for newsletter signup, **Nodemailer** (Gmail) for `/api/contact`
 - **GTM** + **Facebook Pixel** analytics, **Vercel Analytics** + **Speed Insights**
@@ -22,7 +22,7 @@ npm run dev
 
 Fill in `.env.local` for the integrations you need, then open <http://localhost:3000>.
 
-With Vercel project access, use `vercel link` and `vercel env pull .env.local` to obtain the configured environment instead. Missing WordPress configuration omits homepage Events; Mailchimp and email delivery require their own credentials. Localized content and static assets are stored in the repository.
+With Vercel project access, use `vercel link` and `vercel env pull .env.local` to obtain the configured environment instead. Missing WordPress configuration omits homepage OurEvents; Mailchimp and email delivery require their own credentials. Localized content and static assets are stored in the repository.
 
 ## Scripts
 

@@ -18,7 +18,7 @@ export interface SingleEvent {
   link: string
 }
 
-export interface SinglePressRelease {
+export interface SinglePritezFoundationNews {
   image: string
   date: string
   title: string
@@ -58,10 +58,10 @@ export function parseNews(postContent: string) {
   return news as SingleNews[]
 }
 
-export function parseEvents(upcomingEventsContent: string) {
-  const $ = cheerio.load(upcomingEventsContent)
+export function parseOurEvents(ourEventsContent: string) {
+  const $ = cheerio.load(ourEventsContent)
 
-  const upcomingEvents: SingleEvent[] = []
+  const ourEvents: SingleEvent[] = []
 
   $('.upcomingEventsCard').each((index, element) => {
     const $card = $(element)
@@ -83,16 +83,16 @@ export function parseEvents(upcomingEventsContent: string) {
       link,
     }
 
-    upcomingEvents.push(event as SingleEvent)
+    ourEvents.push(event as SingleEvent)
   })
 
-  return upcomingEvents as SingleEvent[]
+  return ourEvents as SingleEvent[]
 }
 
-export function parsePressRelease(postContent: string) {
+export function parsePritezFoundationNews(postContent: string) {
   const $ = cheerio.load(postContent)
 
-  const pressReleases: SinglePressRelease[] = []
+  const pritezFoundationNews: SinglePritezFoundationNews[] = []
 
   $('.wp-block-group.pressReleaseCard').each((index, element) => {
     const $element = $(element)
@@ -104,13 +104,13 @@ export function parsePressRelease(postContent: string) {
     const title = $element.find('.pressReleaseCardTitle').text().trim()
     const text = $element.find('.pressReleaseCardText').text().trim()
 
-    pressReleases.push({
+    pritezFoundationNews.push({
       image,
       date,
       title,
       text,
-    } as SinglePressRelease)
+    } as SinglePritezFoundationNews)
   })
 
-  return pressReleases as SinglePressRelease[]
+  return pritezFoundationNews as SinglePritezFoundationNews[]
 }

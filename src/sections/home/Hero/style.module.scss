@@ -54,10 +54,9 @@
   z-index: 1;
 }
 .title {
+  composes: title from "../../../components/SectionTitle/style.module.scss";
   width: min(46.354167vw, 890px);
   max-width: 100%;
-  margin: 0;
-  color: var(--white);
   font-size: min(5.833333vw, 112px);
   font-weight: 400;
   line-height: 1;

@@ -3,6 +3,7 @@
 import { useLocale, useTranslations } from 'next-intl'
 
 import Section from '@/components/Section'
+import SectionTitle from '@/components/SectionTitle'
 
 import { icons } from './icons'
 import style from './style.module.scss'
@@ -92,7 +93,7 @@ const SampleProsthesesCosts = () => {
   return (
     <Section id={ProtezIDs.SampleProsthesesCosts} className={style.section}>
       <div className={style.left}>
-        <h2 className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
+        <SectionTitle className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
           {titleLines.map(line => (
             <span
               key={line}
@@ -101,7 +102,7 @@ const SampleProsthesesCosts = () => {
               {t(`title.${line}`)}{' '}
             </span>
           ))}
-        </h2>
+        </SectionTitle>
         <div className={style.description}>
           {description.map(paragraph => (
             <Body key={paragraph}>{paragraph}</Body>

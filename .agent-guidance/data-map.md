@@ -21,22 +21,23 @@ ID секції → [Header config](../src/sections/_shared/Header/config.ts) �
 - [HomeMenu](../src/sections/_shared/Header/HomeMenu.tsx) зіставляє IDs і labels за індексом. Зміна порядку/кількості потребує узгоджених labels обох локалей та відповідних section IDs.
 - [Header](../src/sections/_shared/Header/index.tsx) розділяє `variant`, `sideMenu`, `ancorLinks` і `arrowUp`. Вибір задають route-group layouts; секція, menu anchor і режим layout мають відповідати одне одному.
 
-## WordPress Events
+## WordPress OurEvents
 
-[getHomeSections](../src/lib/api.ts) → HTML post → [parseEvents](../src/utils/parsers.ts) → [getPosts](../src/utils/getPosts.ts) → [Home page](<../app/[locale]/(home-with-menu)/page.tsx>) → [Events](../src/sections/home/Events/Events.tsx).
+[getHomeSections](../src/lib/api.ts) → HTML post → [parseOurEvents](../src/utils/parsers.ts) → [getPosts](../src/utils/getPosts.ts) → [Home page](<../app/[locale]/(home-with-menu)/page.tsx>) → [OurEvents](../src/sections/home/OurEvents/OurEvents.tsx).
 
+- Внутрішній ключ даних і anchor — `ourEvents`; для новин — `pritezFoundationNews`. Старі CMS selectors `.upcomingEventsCard*` і `.pressReleaseCard*` збережені як зовнішній контракт.
 - WP query знаходить post за **title `Events`**. Slug не є взаємозамінним ідентифікатором: у CMS лишилися slugs дубльованих drafts.
 - HTML-класи `.upcomingEventsCard*` та вкладені `img`, `p`, `h3`, `a` — контракт parser із CMS. Змінюй selectors разом із підтвердженим форматом джерела.
-- Fetch використовує revalidation/tag із `src/lib/api.ts`. Відсутня конфігурація чи помилка дає порожній контент; parser повертає порожній масив, Events приховує порожню секцію.
-- [Events utils](../src/sections/home/Events/utils.ts) визначають upcoming/past за `startDate`, сортують і доповнюють slides до мінімуму повторенням карток. Повторені картки в UI не означають дублікати CMS.
-- Наявність `parseNews`/`parsePressRelease` не означає їх виклик: поточний WP-потік отримує тільки Events.
+- Fetch використовує revalidation/tag із `src/lib/api.ts`. Відсутня конфігурація чи помилка дає порожній контент; parser повертає порожній масив, OurEvents приховує порожню секцію.
+- [OurEvents utils](../src/sections/home/OurEvents/utils.ts) визначають upcoming/past за `startDate`, сортують і доповнюють slides до мінімуму повторенням карток. Повторені картки в UI не означають дублікати CMS.
+- Наявність `parseNews`/`parsePritezFoundationNews` не означає їх виклик: поточний WP-потік отримує тільки OurEvents.
 
 ## Контент і поточні результати
 
 [Home messages](../messages/home.en.json) → [Home OurResults](../src/sections/home/OurResults/OurResults.tsx); [Academy messages](../messages/academy.en.json) → [Academy OurResults](../src/sections/academy/OurResults/index.tsx). Кожен файл має пару `.uk.json`.
 
 - Значення лічильників живуть у messages; [getCurrentMonth](../src/lib/date.ts) → [useStatsRange](../src/hooks/useStatsRange.ts) змінює лише підпис періоду, використовуючи UTC-місяць.
-- [PressRelease](../src/sections/home/PressRelease/PressRelease.tsx) читає `home.pressRelease` із messages; це окреме джерело від WordPress Events.
+- [PritezFoundationNews](../src/sections/home/PritezFoundationNews/PritezFoundationNews.tsx) читає `home.pritezFoundationNews` із messages; це окреме джерело від WordPress Events.
 
 ## Річна фінансова звітність
 

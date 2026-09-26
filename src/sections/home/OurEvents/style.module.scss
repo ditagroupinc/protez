@@ -1,4 +1,4 @@
-.events {
+.ourEvents {
   padding: 120px 0 120px 0;
   position: relative;
   overflow: hidden;
@@ -26,29 +26,17 @@
 
 .title {
   container-type: inline-size;
-  margin: 0;
   width: 100%;
   max-width: 394px;
-  color: var(--white);
   text-align: center;
 }
 
 .titleLine {
-  display: block;
-  font-size: min(90px, 24cqw);
-  font-style: normal;
-  font-weight: 800;
-  line-height: calc(76 / 90);
-  letter-spacing: -0.04em;
-  text-transform: uppercase;
-  white-space: nowrap;
+  composes: line from "../../../components/SectionTitle/style.module.scss";
 }
 
 .titleAccent {
-  font-style: italic;
-  font-weight: 600;
-  letter-spacing: normal;
-  text-transform: none;
+  composes: accent from "../../../components/SectionTitle/style.module.scss";
 }
 
 .titleLine:lang(uk):not(.titleAccent) {
@@ -293,7 +281,7 @@
 }
 
 @media (max-width: 1500px) {
-  .events {
+  .ourEvents {
     padding-top: 120px;
     padding-bottom: 100px;
   }
@@ -309,7 +297,7 @@
 }
 
 @media (max-width: 1024px) {
-  .events {
+  .ourEvents {
     padding-top: 100px;
     padding-bottom: 120px;
   }
@@ -341,7 +329,7 @@
     display: flex;
   }
 
-  .events {
+  .ourEvents {
     padding-top: 40px;
     padding-bottom: 60px;
   }
@@ -379,7 +367,7 @@
     }
   }
 
-  .pastAndUpcomingEvents {
+  .pastAndUpcomingOurEvents {
     padding: 60px 0 60px 0;
   }
 

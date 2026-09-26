@@ -7,6 +7,7 @@ import type { CurrentMonth } from '@/lib/date'
 import { useStatsRange } from '@/hooks/useStatsRange'
 
 import Section from '@/components/Section'
+import SectionTitle from '@/components/SectionTitle'
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import CountUp from 'react-countup'
 
@@ -45,14 +46,14 @@ const OurResults = forwardRef<HTMLDivElement, OurResultsProps>(function OurResul
     <>
       <Section id={ProtezIDs.OurResults} className={style.section} ref={ref}>
         <div className={style.left}>
-          <h2 className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
+          <SectionTitle className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
             <span
               className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
             >
               {t('title.accent')}
             </span>{' '}
             <span className={style.titleLine}>{t('title.plain')}</span>
-          </h2>
+          </SectionTitle>
           <Body large className={style.date}>
             {dateText}
           </Body>
