@@ -25,15 +25,34 @@
 }
 
 .title {
-  max-width: 100%;
+  container-type: inline-size;
+  margin: 0;
+  width: 100%;
+  max-width: 394px;
+  color: var(--white);
+  text-align: center;
 }
 
-.title.titleDesktop {
+.titleLine {
   display: block;
+  font-size: min(90px, 24cqw);
+  font-style: normal;
+  font-weight: 800;
+  line-height: calc(76 / 90);
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-.title.titleMobile {
-  display: none;
+.titleAccent {
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.titleLine:lang(uk):not(.titleAccent) {
+  letter-spacing: 0.08em;
 }
 
 .sliderWrapper {
@@ -310,12 +329,8 @@
 }
 
 @media (max-width: 600px) {
-  .title.titleDesktop {
-    display: none;
-  }
-
-  .title.titleMobile {
-    display: block;
+  .title {
+    max-width: 281px;
   }
 
   .sliderButton {

@@ -1,9 +1,9 @@
 'use client'
 
 import { useMemo, useRef } from 'react'
-import { useLocale, useTranslations } from 'next-intl'
+import { useTranslations } from 'next-intl'
 
-import { localeToLanguage } from '@/lib/locale'
+import { playfairDisplayItalic } from '../../../../app/fonts'
 
 import Section from '@/components/Section'
 
@@ -22,8 +22,6 @@ import { EventsProps } from './types'
 const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref) {
   const sortedEvents = useMemo(() => padEventsToMinimum(modifyAndSortEvents(events)), [events])
 
-  const locale = useLocale()
-  const lang = localeToLanguage(locale)
   const t = useTranslations('home.events')
 
   const settings = {
@@ -94,8 +92,14 @@ const Events = forwardRef<HTMLDivElement, EventsProps>(function ({ events }, ref
         className={style.backgroundImage}
       />
       <div className={style.titleWrapper}>
-        {icons.eventsLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
-        {icons.eventsLogo.mobile[lang](`${style.title} ${style.titleMobile}`)}
+        <h2 className={style.title}>
+          <span
+            className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
+          >
+            {t('title.accent')}
+          </span>{' '}
+          <span className={style.titleLine}>{t('title.plain')}</span>
+        </h2>
       </div>
 
       <TextAppearanceWrapper className={style.sliderWrapper}>

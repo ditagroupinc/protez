@@ -169,7 +169,7 @@
     ]
   },
   "protezAcademyPromo": {
-    "description": "Protez Academy is an educational project by the Protez Foundation in collaboration with Century College and contributions from specialists from University of Minnesota and Concordia University",
+    "description": "Protez Academy is an educational project by Protez Foundation in collaboration with Century College, with contributions from specialists at the University of Minnesota and Concordia University.",
     "learnMore": "Learn more",
     "applyToAcademy": "Apply to Academy"
   },
@@ -250,8 +250,12 @@
     ]
   },
   "events": {
+    "title": {
+      "accent": "Our",
+      "plain": "Events"
+    },
     "cardStatus": {
-      "upcoming": "Upcoming event",
+      "upcoming": "Postponed",
       "past": "Past event"
     },
     "alts": {

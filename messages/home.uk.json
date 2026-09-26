@@ -160,7 +160,7 @@
     ]
   },
   "protezAcademyPromo": {
-    "description": "Protez Academy — це освітній проєкт Фонду Protez у співпраці з Century College та за участі спеціалістів з Університету Міннесоти та Університету Конкордія.",
+    "description": "Protez Academy — це освітній проєкт Protez Foundation у співпраці з Century College та за участі спеціалістів з Університету Міннесоти та Університету Конкордія.",
     "learnMore": "Дізнатися більше",
     "applyToAcademy": "Доєднатися до Academy"
   },
@@ -241,8 +241,12 @@
     ]
   },
   "events": {
+    "title": {
+      "accent": "Наші",
+      "plain": "Події"
+    },
     "cardStatus": {
-      "upcoming": "Майбутня подія",
+      "upcoming": "Перенесено",
       "past": "Минула подія"
     },
     "alts": {
