@@ -12,7 +12,7 @@ import Script from 'next/script'
 import Section from '@/components/Section'
 import ProtezImage from '@/components/ProtezImage'
 import { useDonateTitle } from '@/hooks/useDonateTitle'
-import Button from '@/components/Button'
+import Button, { SupportWithAmazonButton } from '@/components/Button'
 
 export default function Donate() {
   const t = useTranslations('donate')
@@ -78,6 +78,7 @@ export default function Donate() {
                     </button>
                   </a>
                 </div>
+                <SupportWithAmazonButton className={style.amazonButton} size="normal" />
 
                 <Divider className={style.divider} />
 
@@ -186,6 +187,7 @@ export default function Donate() {
                     </button>
                   </a>
                 </div>
+                <SupportWithAmazonButton className={style.amazonButton} size="normal" />
               </div>
             </div>
             <div className={style.right}>

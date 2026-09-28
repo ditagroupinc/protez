@@ -20,6 +20,7 @@ ID секції → [Header config](../src/sections/_shared/Header/config.ts) �
 - Home-секція `PartnershipsGovernmentSupport` використовує ключ messages і каталог assets `partnershipsGovernmentSupport`; публічний anchor — `#PartnershipsGovernmentSupport`.
 - [HomeMenu](../src/sections/_shared/Header/HomeMenu.tsx) зіставляє IDs і labels за індексом. Зміна порядку/кількості потребує узгоджених labels обох локалей та відповідних section IDs.
 - [Header](../src/sections/_shared/Header/index.tsx) розділяє `variant`, `sideMenu`, `ancorLinks` і `arrowUp`. Вибір задають route-group layouts; секція, menu anchor і режим layout мають відповідати одне одному.
+- [PhoneContacts](../src/sections/_shared/Header/PhoneContacts.tsx) містить нативний dropdown із двома телефонами та посиланнями на месенджери Foundation для Home, General, ChildrenProsthetics і FinancialAudit меню; підписи — `shared.header.phoneContacts` в EN/UK. Academy має окремий телефон.
 
 ## WordPress OurEvents
 

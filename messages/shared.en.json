@@ -1,5 +1,10 @@
 {
   "header": {
+    "phoneContacts": {
+      "title": "Contact Us",
+      "usa": "For consultations and appointments in the USA",
+      "ukraine": "For consultations and appointments in Ukraine"
+    },
     "protezAcademy": "Protez Academy",
     "financialAudit": "Financial Audit",
     "protezPage": {

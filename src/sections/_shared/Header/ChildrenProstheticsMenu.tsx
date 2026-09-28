@@ -1,29 +1,24 @@
 'use client'
 
-import { Ref, useTransition } from 'react'
+import { useTransition } from 'react'
 
 import { useLocale, useTranslations } from 'next-intl'
 
-import Button, { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
+import Button, { MakeDonationButton } from '@/components/Button'
 import { H3 } from '@/components/Typography'
 import { Link, persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
+import PhoneContacts from './PhoneContacts'
 import { icons } from './icons'
 import style from './style.module.scss'
-import {
-  CHILDREN_PROSTHETICS_NAV_IDS,
-  HOME_PHONE,
-  HOME_PHONE_TEL,
-  NEED_A_PROTHESIS_URL,
-} from './config'
+import { CHILDREN_PROSTHETICS_NAV_IDS, NEED_A_PROTHESIS_URL } from './config'
 
 type Props = {
   accent: 'red' | 'blue' | 'teal'
   closeMenu: () => void
-  navRef: Ref<HTMLElement>
 }
 
-const ChildrenProstheticsMenu = ({ accent, closeMenu, navRef }: Props) => {
+const ChildrenProstheticsMenu = ({ accent, closeMenu }: Props) => {
   const t = useTranslations('childrenProsthetics')
   const tShared = useTranslations('shared.header')
 
@@ -51,7 +46,7 @@ const ChildrenProstheticsMenu = ({ accent, closeMenu, navRef }: Props) => {
         </Link>
       </div>
       <div className={style.navigationWrapper}>
-        <nav ref={navRef} className={`${style.navigation} ${accentClass}`}>
+        <nav className={`${style.navigation} ${accentClass}`}>
           <ul className={style.ancorList}>
             {CHILDREN_PROSTHETICS_NAV_IDS.map(id => (
               <li key={id} className={style.ancorItem} onClick={closeMenu}>
@@ -70,7 +65,6 @@ const ChildrenProstheticsMenu = ({ accent, closeMenu, navRef }: Props) => {
             size="normal"
             variant="primary-teal"
           />
-          <SupportWithAmazonButton className={style.lowerPartButton} size="normal" />
           <Button
             as="link"
             href={NEED_A_PROTHESIS_URL}
@@ -83,10 +77,7 @@ const ChildrenProstheticsMenu = ({ accent, closeMenu, navRef }: Props) => {
             {tShared('protezPage.actionButtons.needAProthesis')}
           </Button>
         </div>
-        <a className={style.phoneNumber} href={HOME_PHONE_TEL}>
-          {icons.call(style.icon)}
-          <span> {HOME_PHONE}</span>
-        </a>
+        <PhoneContacts />
         <div className={style.languageButtonContainer}>
           <button
             type="button"

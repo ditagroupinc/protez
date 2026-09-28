@@ -1,24 +1,24 @@
 'use client'
 
-import { Ref, useTransition } from 'react'
+import { useTransition } from 'react'
 
 import { useLocale, useTranslations } from 'next-intl'
 
-import Button, { MakeDonationButton, SupportWithAmazonButton } from '@/components/Button'
+import Button, { MakeDonationButton } from '@/components/Button'
 import { H3 } from '@/components/Typography'
 import { Link, persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
+import PhoneContacts from './PhoneContacts'
 import { icons } from './icons'
 import style from './style.module.scss'
-import { HOME_PHONE, HOME_PHONE_TEL, NEED_A_PROTHESIS_URL } from './config'
+import { NEED_A_PROTHESIS_URL } from './config'
 
 type Props = {
   accent: 'red' | 'blue' | 'teal'
   closeMenu: () => void
-  navRef: Ref<HTMLElement>
 }
 
-const GeneralMenu = ({ accent, closeMenu, navRef }: Props) => {
+const GeneralMenu = ({ accent, closeMenu }: Props) => {
   const t = useTranslations('shared.header')
 
   const locale = useLocale()
@@ -51,7 +51,6 @@ const GeneralMenu = ({ accent, closeMenu, navRef }: Props) => {
             size="normal"
             variant="primary-teal"
           />
-          <SupportWithAmazonButton className={style.lowerPartButton} size="normal" />
           <Button
             as="link"
             href={NEED_A_PROTHESIS_URL}
@@ -64,10 +63,7 @@ const GeneralMenu = ({ accent, closeMenu, navRef }: Props) => {
             {t('protezPage.actionButtons.needAProthesis')}
           </Button>
         </div>
-        <a className={style.phoneNumber} href={HOME_PHONE_TEL}>
-          {icons.call(style.icon)}
-          <span> {HOME_PHONE}</span>
-        </a>
+        <PhoneContacts />
         <div className={style.languageButtonContainer}>
           <button
             type="button"
@@ -80,7 +76,7 @@ const GeneralMenu = ({ accent, closeMenu, navRef }: Props) => {
         </div>
       </div>
       <div className={style.navigationWrapper}>
-        <nav ref={navRef} className={`${style.navigation} ${accentClass}`} />
+        <nav className={`${style.navigation} ${accentClass}`} />
       </div>
     </>
   )

@@ -1,6 +1,6 @@
 'use client'
 
-import { Ref, useTransition } from 'react'
+import { useTransition } from 'react'
 
 import { useLocale, useTranslations } from 'next-intl'
 
@@ -16,10 +16,9 @@ import { ACADEMY_NAV_IDS, ACADEMY_PHONE_TEL } from './config'
 type Props = {
   ancorLinks: boolean
   closeMenu: () => void
-  navRef: Ref<HTMLElement>
 }
 
-const AcademyMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
+const AcademyMenu = ({ ancorLinks, closeMenu }: Props) => {
   const t = useTranslations('academy')
 
   const locale = useLocale()
@@ -46,7 +45,7 @@ const AcademyMenu = ({ ancorLinks, closeMenu, navRef }: Props) => {
         </Link>
       </div>
       <div className={style.navigationWrapper}>
-        <nav ref={navRef} className={`${style.navigation} ${style.blue}`}>
+        <nav className={`${style.navigation} ${style.blue}`}>
           <ul className={style.ancorList}>
             {ACADEMY_NAV_IDS.map(id => (
               <li key={id} className={style.ancorItem} onClick={closeMenu}>

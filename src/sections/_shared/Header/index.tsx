@@ -82,23 +82,23 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
 
   const renderSideMenu = () => {
     if (resolvedSideMenu === 'home') {
-      return <HomeMenu ancorLinks={ancorLinks} closeMenu={closeMenu} navRef={ref} />
+      return <HomeMenu ancorLinks={ancorLinks} closeMenu={closeMenu} />
     }
 
     if (resolvedSideMenu === 'academy') {
-      return <AcademyMenu ancorLinks={ancorLinks} closeMenu={closeMenu} navRef={ref} />
+      return <AcademyMenu ancorLinks={ancorLinks} closeMenu={closeMenu} />
     }
 
     if (resolvedSideMenu === 'financialAudit') {
-      return <FinancialAuditMenu accent={cfg.accent} closeMenu={closeMenu} navRef={ref} />
+      return <FinancialAuditMenu accent={cfg.accent} closeMenu={closeMenu} />
     }
 
     if (resolvedSideMenu === 'childrenProsthetics') {
-      return <ChildrenProstheticsMenu accent={cfg.accent} closeMenu={closeMenu} navRef={ref} />
+      return <ChildrenProstheticsMenu accent={cfg.accent} closeMenu={closeMenu} />
     }
 
     if (resolvedSideMenu === 'general') {
-      return <GeneralMenu accent={cfg.accent} closeMenu={closeMenu} navRef={ref} />
+      return <GeneralMenu accent={cfg.accent} closeMenu={closeMenu} />
     }
 
     return null
@@ -106,7 +106,7 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
 
   return (
     <>
-      <header className={`${style.header} ${style[variant]}`}>
+      <header ref={ref} className={`${style.header} ${style[variant]}`}>
         <Link scroll={true} href={logoHref}>
           {cfg.logoRender(style.protezLogo)}
         </Link>
@@ -150,7 +150,7 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
 
         {hasSideMenu && (
           <div
-            className={`${style.sideMenu} ${style[variant]} ${headerIsOpened ? style.opened : ''}`}
+            className={`${style.sideMenu} ${style[variant]} ${resolvedSideMenu !== 'academy' ? style.expandedContacts : ''} ${headerIsOpened ? style.opened : ''}`}
           >
             {renderSideMenu()}
           </div>

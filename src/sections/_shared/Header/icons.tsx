@@ -337,6 +337,49 @@ const up = (className?: string) => (
   </svg>
 )
 
+const telegram = (className?: string) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M21.6 3.4 18.2 20c-.2 1.2-.9 1.5-1.9.9l-5.2-3.8-2.5 2.4c-.3.3-.5.5-1 .5l.4-5.3L17.7 6c.4-.4-.1-.6-.6-.3L5.1 13.3.9 12c-.9-.3-.9-.9.2-1.3L20 3.4c.9-.3 1.7.2 1.6 0Z" />
+  </svg>
+)
+
+const whatsapp = (className?: string) => (
+  <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+    <path
+      d="M20.5 3.5A11 11 0 0 0 3.2 16.7L1.7 22l5.5-1.4A11 11 0 0 0 20.5 3.5Z"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M8.2 6.5c-.3-.5-.6-.5-.9-.5H6.6c-.3 0-.6.1-.9.5-.4.4-1.2 1.2-1.2 2.8s1.2 3.2 1.4 3.4c.2.2 2.4 3.7 5.8 5 .8.3 1.5.5 2 .6.8.2 1.6.2 2.2.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.2-.3-.3-.7-.5l-2.4-1.1c-.3-.1-.6-.2-.8.2l-1.1 1.3c-.2.2-.4.3-.8.1-.4-.2-1.5-.5-2.8-1.7-1-.9-1.7-2-1.9-2.3-.2-.4 0-.6.2-.8l.6-.7.4-.7c.1-.2.1-.4 0-.6L8.2 6.5Z"
+      fill="currentColor"
+      transform="translate(2 1) scale(.8)"
+    />
+  </svg>
+)
+
+const viber = (className?: string) => (
+  <svg viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+    <path
+      d="M6.2 2.7a23 23 0 0 1 11.6 0c2 .6 3.2 2 3.5 4.1.4 2.8.4 5.7 0 8.4-.3 2.2-1.5 3.6-3.5 4.2-2.4.7-4.9.9-7.4.6l-3.5 3v-3.5c-2.4-.5-3.8-2-4.2-4.3-.4-2.7-.4-5.6 0-8.4.3-2.1 1.5-3.5 3.5-4.1Z"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M7.5 6.2c-.5-.4-1-.2-1.4.3-.5.6-.9 1.3-.7 2.2.5 3.7 3.6 6.9 7.4 8 .8.2 1.5.2 2.2-.3l1.2-1c.4-.4.4-.9 0-1.3l-2-1.5c-.4-.3-.8-.3-1.1.1l-.8.9c-.2.2-.5.2-.8.1a7.5 7.5 0 0 1-3.1-3.1c-.2-.3-.2-.6.1-.9l.6-.7c.3-.4.3-.8 0-1.2L7.5 6.2Z"
+      fill="currentColor"
+    />
+    <path
+      d="M12 5.4a6.6 6.6 0 0 1 6.6 6.6M12.3 8a3.7 3.7 0 0 1 3.7 3.7M12.6 10.4c.6 0 1 .5 1 1"
+      stroke="currentColor"
+      strokeWidth="1.3"
+      strokeLinecap="round"
+    />
+  </svg>
+)
+
 export const icons = {
   protezPage: {
     logo: protezLogo,
@@ -353,5 +396,8 @@ export const icons = {
   instagram,
   facebook,
   linkedin,
+  telegram,
+  whatsapp,
+  viber,
   up,
 }

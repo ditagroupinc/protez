@@ -1,5 +1,10 @@
 {
   "header": {
+    "phoneContacts": {
+      "title": "Зв’язатися з нами",
+      "usa": "для надання консультацій та запису в США",
+      "ukraine": "для надання консультацій та запису в Україні"
+    },
     "protezAcademy": "Protez Academy",
     "financialAudit": "Фінансовий аудит",
     "protezPage": {
