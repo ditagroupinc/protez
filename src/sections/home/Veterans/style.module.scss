@@ -25,17 +25,16 @@
 .logoContainer {
   display: flex;
   flex-direction: column;
-  max-width: 570px;
   gap: 12px;
 }
 
 .title {
-  max-width: 100%;
+  container-type: inline-size;
 }
-.ageRank {
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.56);
-  margin-left: auto;
+
+.titleLine {
+  composes: line from '../../../components/SectionTitle/style.module.scss';
+  font-size: min(90px, 15.3cqw);
 }
 
 .cardTitle {
@@ -157,23 +156,64 @@
   transform: translateX(-50%);
   bottom: 25%;
   background-color: transparent;
+  color: var(--white);
+  border-radius: 50%;
+  cursor: pointer;
+  container-type: inline-size;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 20%;
+    border-radius: 50%;
+    background-color: var(--black);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 5px;
+  }
+
+  &:hover .triangle {
+    background-color: var(--teal-dark);
+  }
 }
 .spinningName {
-  width: auto;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
+  position: absolute;
+  inset: 2%;
   animation: spin 7s linear infinite;
-  position: relative;
+}
+
+.ringCharacter {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1.2em;
+  height: 50%;
+  margin-left: -0.6em;
+  transform-origin: center bottom;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+  white-space: pre;
 }
 
 .triangle {
   position: absolute;
   width: 37%;
-  height: auto;
+  height: 43%;
   left: 50%;
   top: 50%;
   transform: translate(-40%, -50%);
+  background-color: var(--teal);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  transition: background-color var(--transitionProps);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .spinningName {
+    animation: none;
+  }
 }
 
 @keyframes spin {
@@ -192,7 +232,7 @@
   position: fixed;
   left: 50%;
   top: 50%;
-  z-index: 11;
+  z-index: 21;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, 0.9);
 }
@@ -202,7 +242,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 12;
+  z-index: 22;
 
   max-width: 100%;
   max-height: 100%;
@@ -210,7 +250,7 @@
 
 .closeVideo {
   position: fixed;
-  z-index: 13;
+  z-index: 23;
   right: 20px;
   top: 20px;
 }
@@ -248,10 +288,6 @@
 @media screen and (max-width: 1024px) {
   .logoContainer {
     max-width: 301px;
-  }
-
-  .title {
-    height: auto;
   }
 
   .linksSliderWrapper {
@@ -299,11 +335,6 @@
   .logoContainer {
     display: flex;
     flex-direction: column;
-  }
-
-  .ageRank {
-    margin-left: 0;
-    margin-right: auto;
   }
 
   .cardTitle {

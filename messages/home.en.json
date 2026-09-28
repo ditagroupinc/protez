@@ -176,28 +176,42 @@
   "veterans": {
     "share": "Share me",
     "giveHope": "Give Hope!",
-    "videoButton": "get better known",
+    "videoButton": "Get to know {name} better",
     "items": [
       {
         "ageRank": "30 years old, sergeant.",
         "name": "Vadym",
         "surname": "Fedorov",
-        "title": "Vadym has dedicated 10 years to the Ukrainian Army. ",
-        "text": "Defending Ukraine, he lost two legs with high amputations. Vadym is motivated and does not give up, he inspires everyone with his example. Vadym is currently in the USA undergoing prosthetics fitting and rehabilitation.  Only with your help we are able to fit Vadym with modern bionic prosthetics and return him to a full life. Together we are united and strong. Thank you for sharing this post and for your donations"
+        "title": "While defending Ukraine, Vadym suffered severe injuries that led to a double high-level leg amputation.",
+        "text": "The serviceman has since successfully completed his prosthetic fitting and rehabilitation in the U.S. Despite immense hardship, he demonstrated extraordinary resilience and has become an inspiration to everyone around him. Thanks to your support, we were able to equip him with state-of-the-art bionic prostheses and help him return to an active life. Together, we proved that we are a strong and united force."
       },
       {
         "ageRank": "16 years old, Mariupol.",
         "name": "Artem",
         "surname": "Svergun",
-        "title": "Artem played for the Mariupol youth soccer club, and he wanted to be a professional soccer player.",
-        "text": "Artem’s dream was to dedicate his life to soccer.  On March 2nd, 2022, he went to the local field to play a scrimmage match with his friends. While they were warming up, a Russian drone dropped a grenade on the field. Artem’s best friend Ilya, a boy of 15, was killed. Artem and another boy were severely injured. As a result of the injuries, Artem’s left leg was amputated above the knee, and his right leg is paralyzed. Artem’s dream is now to be able to walk again."
+        "title": "He played competitive soccer and dreamed of devoting his life to sports.",
+        "text": "On March 2, 2022, Artem and his friends were caught in an enemy attack while playing at a local stadium. As a result of his injuries, he suffered an above-the-knee amputation of his left leg, while his right leg was severely damaged. Despite the tragedy and an extraordinarily difficult path to recovery, Artem demonstrated incredible resilience. He successfully completed his prosthetics fitting and rehabilitation, achieving his ultimate goal: taking his first steps again and returning to an active life."
       },
       {
         "ageRank": "10 years old",
         "name": "Volodymyr",
         "surname": "Kostyria",
-        "title": "His dream is to run, jump and play football...",
+        "title": "His dream is to run, jump and play football.",
         "text": "Volodya, a 10-year-old boy from the Dnipropetrovsk region, was born with atrophied lower limbs and spent years moving on his hands and knees. After the amputation of both lower limbs, he traveled to Minneapolis with the support of the Protez Foundation and took his first steps on training prosthetics. His determination and joy were incredible, as he was able to walk proudly for the first time in his life."
+      },
+      {
+        "ageRank": "",
+        "name": "Oleksandr",
+        "surname": "",
+        "title": "From severe injury to athletic victories and active duty, powered by modern prosthetics",
+        "text": "Oleksandr, a service member with the 3rd Army Corps of the Armed Forces of Ukraine, was wounded in an enemy drone strike in March 2025. Determined to reclaim his active lifestyle, the defender reached out to the Protez Foundation for assistance. The foundation’s specialists custom-built a state-of-the-art bionic hand that allows him to drive, handle weapons, and operate gear with precision. Oleksandr was also fitted with a specialized sports prosthesis designed for high-intensity training. Driven by strong motivation and backed by high-quality prosthetic care, he is already taking home podium finishes in athletic competitions. Today, Oleksandr has successfully returned to active duty and continues to serve his country."
+      },
+      {
+        "ageRank": "",
+        "name": "Tetiana",
+        "surname": "",
+        "title": "A new prosthesis, university studies and the national team: the story of Ukrainian para-athlete Tetiana",
+        "text": "Tetiana is a member of the Ukrainian national amputee football team who has worn a prosthesis since childhood. Seeking relief from the severe pain and discomfort caused by her previous socket, she reached out to the Protez Foundation. The foundation's specialists crafted an anatomical socket tailored to her needs and provided her with a state-of-the-art Kneuro microprocessor knee unit. This customized fit properly redistributed her weight load, enabling her to return to competitive sports. Today, Tetiana is pursuing a university degree, training for upcoming tournaments, and working toward launching her own sports initiatives."
       }
     ]
   },

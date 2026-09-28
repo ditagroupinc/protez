@@ -1,33 +1,34 @@
 'use client'
 
 import { useRef, useState } from 'react'
-import { useLocale, useTranslations } from 'next-intl'
-
-import { localeToLanguage } from '@/lib/locale'
+import { useTranslations } from 'next-intl'
+import Image, { type StaticImageData } from 'next/image'
 
 import style from './style.module.scss'
 import Slider from '@/islands/SlickCarousel'
 
 import { icons } from './icons'
+import StoryVideoButton from './StoryVideoButton'
 import Section from '@/components/Section'
 import { ProtezIDs } from '@/consts'
 import { Body, H3 } from '@/components/Typography'
-import Button from '@/components/Button'
-import ProtezImage from '@/components/ProtezImage'
+import SectionTitle from '@/components/SectionTitle'
+import vadymPhoto from '../../../../public/protezPage/veterans/vadymFedorov.png'
+import artemPhoto from '../../../../public/protezPage/veterans/artemSvergun.png'
+import volodymyrPhoto from '../../../../public/protezPage/veterans/volodymyrKostyria.png'
+import oleksandrPhoto from '../../../../public/protezPage/veterans/oleksandr.png'
+import tetianaPhoto from '../../../../public/protezPage/veterans/tetiana.png'
 
 interface VeteranMeta {
-  img: string
-  icon: keyof typeof icons.titles
-  spinIcon?: keyof typeof icons.spinIcons
+  img: StaticImageData
   facebook: string
   instagram: string
-  url: string
-  videoLink: string
-  linkedin: string
+  url?: string
+  videoLink?: string
+  linkedin?: string
 }
 
 type VeteranItem = {
-  ageRank: string
   name: string
   surname: string
   title: string
@@ -36,9 +37,7 @@ type VeteranItem = {
 
 const veteransMeta: VeteranMeta[] = [
   {
-    img: 'vadymFedorov.png',
-    icon: 'vadymFedorov',
-    spinIcon: 'vadymFedorovSpinIcon',
+    img: vadymPhoto,
     facebook: 'https://www.facebook.com/donate/238890858497931/199310116131457/',
     instagram: 'https://www.instagram.com/reel/CqPla3pO_nT/?igshid=MzRlODBiNWFlZA==',
     url: 'VadymFedorov',
@@ -48,9 +47,7 @@ const veteransMeta: VeteranMeta[] = [
       'https://www.linkedin.com/posts/protez-foundation_vadym-fedorov-30-years-old-sergeant-vadym-activity-7045965954194784256-D_hH?utm_source=share&utm_medium=member_desktop',
   },
   {
-    img: 'artemSvergun.png',
-    icon: 'artemSvergun',
-    spinIcon: 'artemSvergunSpinIcon',
+    img: artemPhoto,
     facebook:
       'https://www.facebook.com/prostheticsforukrainians/posts/pfbid02ABFsNzJ81L8tBotVsVVbDwhuoeGWLsrzjbq8WRhXBYS327eFWUskaHVGXHxe9KLtl',
     instagram:
@@ -62,8 +59,7 @@ const veteransMeta: VeteranMeta[] = [
       'https://www.linkedin.com/posts/protez-foundation_our-young-hero-artem-16-years-old-activity-7086077525998583808-kZBW/?utm_source=share&utm_medium=member_ios',
   },
   {
-    img: 'volodymyrKostyria.png',
-    icon: 'volodymyrKostyria',
+    img: volodymyrPhoto,
     facebook:
       'https://www.facebook.com/prostheticsforukrainians/posts/pfbid02ABFsNzJ81L8tBotVsVVbDwhuoeGWLsrzjbq8WRhXBYS327eFWUskaHVGXHxe9KLtl',
     instagram:
@@ -74,14 +70,33 @@ const veteransMeta: VeteranMeta[] = [
     linkedin:
       'https://www.linkedin.com/posts/protez-foundation_our-young-hero-artem-16-years-old-activity-7086077525998583808-kZBW/?utm_source=share&utm_medium=member_ios',
   },
+  {
+    img: oleksandrPhoto,
+    facebook:
+      'https://www.facebook.com/prostheticsforukrainians/videos/%D0%BF%D0%BE%D0%B2%D0%B5%D1%80%D0%BD%D0%B5%D0%BD%D0%BD%D1%8F-%D0%B4%D0%BE-%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D0%B8-%D1%82%D0%B0-%D1%81%D0%BF%D0%BE%D1%80%D1%82%D1%83-%D1%96%D1%81%D1%82%D0%BE%D1%80%D1%96%D1%8F-%D0%BF%D0%B0%D1%86%D1%96%D1%94%D0%BD%D1%82%D0%B0-%D0%BE%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80%D0%B0-%D1%83-%D0%BD%D0%BE%D0%B2%D0%BE%D0%BC%D1%83-%D0%B2%D0%B8%D0%BF%D1%83%D1%81%D0%BA%D1%83-prot/1047260684682761/',
+    instagram: 'https://www.instagram.com/p/Dcs_jlkIrDj/',
+    linkedin:
+      'https://www.linkedin.com/feed/update/urn:li:ugcPost:7506283500161994752/?actorCompanyId=89729204',
+    videoLink:
+      'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F1047260684682761%2F',
+  },
+  {
+    img: tetianaPhoto,
+    facebook: 'https://www.facebook.com/prostheticsforukrainians/videos/2103728430177196/',
+    instagram: 'https://www.instagram.com/p/Daz9OPHI01W/',
+    videoLink:
+      'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fprostheticsforukrainians%2Fvideos%2F2103728430177196%2F',
+  },
 ]
 
 const Veterans = () => {
-  const locale = useLocale()
-  const lang = localeToLanguage(locale)
   const t = useTranslations('home.veterans')
   const items = t.raw('items') as VeteranItem[]
   const [iframeData, setIframeData] = useState({ opened: false, url: '' })
+
+  const openVideo = (url?: string) => {
+    if (url) setIframeData({ opened: true, url })
+  }
 
   const veterans = items.map((item, index) => ({ ...item, ...veteransMeta[index] }))
 
@@ -91,15 +106,9 @@ const Veterans = () => {
   const wholeCardSliderRef = useRef<Slider & React.Component>(null)
 
   const gotoNext = () => {
-    imageSliderRef.current?.slickNext()
-    textSliderRef.current?.slickNext()
-    linksSliderRef.current?.slickNext()
     wholeCardSliderRef.current?.slickNext()
   }
   const gotoPrev = () => {
-    imageSliderRef.current?.slickPrev()
-    textSliderRef.current?.slickPrev()
-    linksSliderRef.current?.slickPrev()
     wholeCardSliderRef.current?.slickPrev()
   }
 
@@ -110,8 +119,9 @@ const Veterans = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
-    autoplaySpeed: 5000,
+    autoplay: false,
+    // autoplaySpeed: 5000,
+    waitForAnimate: false,
 
     swipe: false,
     swipeToSlide: false,
@@ -142,10 +152,15 @@ const Veterans = () => {
               {veterans.map((slide, index) => (
                 <div key={index}>
                   <div className={style.logoContainer}>
-                    {icons.titles[slide.icon][lang](style.title)}
-                    <Body large className={style.ageRank}>
-                      {slide.ageRank}
-                    </Body>
+                    <SectionTitle className={style.title}>
+                      <span className={style.titleLine}>{slide.name}</span>
+                      {slide.surname && (
+                        <>
+                          {' '}
+                          <span className={style.titleLine}>{slide.surname}</span>
+                        </>
+                      )}
+                    </SectionTitle>
                   </div>
                   <H3 className={style.cardTitle}>{slide.title}</H3>
                   <Body className={style.cardText} large>
@@ -161,9 +176,11 @@ const Veterans = () => {
                     <div key={index}>
                       <div className={style.linksSlide}>
                         <div className={style.iconsContainer}>
-                          <a target="blank" href={slide.linkedin as string}>
-                            {icons.iconLinkedin(style.icon)}
-                          </a>
+                          {slide.linkedin && (
+                            <a target="blank" href={slide.linkedin as string}>
+                              {icons.iconLinkedin(style.icon)}
+                            </a>
+                          )}
                           <a target="blank" href={slide.facebook as string}>
                             {icons.iconFacebook(style.icon)}
                           </a>
@@ -171,7 +188,7 @@ const Veterans = () => {
                             {icons.iconInstagram(style.icon)}
                           </a>
                         </div>
-                        <Button
+                        {/* <Button
                           as="link"
                           target="_blank"
                           href={slide.url}
@@ -180,7 +197,7 @@ const Veterans = () => {
                           className={style.Button}
                         >
                           {t('giveHope')}
-                        </Button>
+                        </Button> */}
                       </div>
                     </div>
                   ))}
@@ -201,25 +218,16 @@ const Veterans = () => {
               {veterans.map((slide, index) => (
                 <div key={index}>
                   <div className={style.imageSlideWrapper}>
-                    <ProtezImage
-                      src={`protezPage/veterans/${slide.img}`}
+                    <Image
+                      src={slide.img}
                       alt={slide.name + ' ' + slide.surname}
                       className={style.image}
-                      width={1306}
-                      height={1890}
                     />
-                    {slide.spinIcon ? (
-                      <button
-                        className={style.roundButton}
-                        onClick={() => {
-                          setIframeData({ opened: true, url: slide.videoLink })
-                        }}
-                      >
-                        {icons.spinIcons[slide.spinIcon](style.spinningName)}
-                        {icons.triangle(style.triangle)}
-                      </button>
-                    ) : (
-                      ''
+                    {slide.videoLink && (
+                      <StoryVideoButton
+                        label={t('videoButton', { name: slide.name })}
+                        onClick={() => openVideo(slide.videoLink)}
+                      />
                     )}
                   </div>
                 </div>
@@ -228,40 +236,48 @@ const Veterans = () => {
           </div>
         </div>
         <div className={style.mobileWrapper}>
-          <Slider ref={wholeCardSliderRef} {...settings} className={style.wholeCardSlider}>
+          <Slider
+            ref={wholeCardSliderRef}
+            {...settings}
+            waitForAnimate
+            beforeChange={(_current, next) => {
+              imageSliderRef.current?.slickGoTo(next)
+              textSliderRef.current?.slickGoTo(next)
+              linksSliderRef.current?.slickGoTo(next)
+            }}
+            className={style.wholeCardSlider}
+          >
             {veterans.map((slide, index) => (
               <div key={index}>
                 <div className={style.card}>
                   <div className={style.right}>
                     <div className={style.imageSlideWrapper}>
-                      <ProtezImage
-                        src={`protezPage/veterans/${slide.img}`}
+                      <Image
+                        src={slide.img}
                         alt={slide.name + ' ' + slide.surname}
                         className={style.image}
-                        width={1306}
-                        height={1890}
                       />
 
-                      {slide.spinIcon ? (
-                        <button
-                          className={style.roundButton}
-                          onClick={() => {
-                            setIframeData({ opened: true, url: slide.videoLink })
-                          }}
-                        >
-                          {icons.spinIcons[slide.spinIcon](style.spinningName)}
-                          {icons.triangle(style.triangle)}
-                        </button>
-                      ) : (
-                        ''
+                      {slide.videoLink && (
+                        <StoryVideoButton
+                          label={t('videoButton', { name: slide.name })}
+                          onClick={() => openVideo(slide.videoLink)}
+                        />
                       )}
                     </div>
                   </div>
                   <div className={style.left}>
                     <div>
                       <div className={style.logoContainer}>
-                        {icons.titles[slide.icon][lang](style.title)}
-                        <Body className={style.ageRank}>{slide.ageRank}</Body>
+                        <SectionTitle className={style.title}>
+                          <span className={style.titleLine}>{slide.name}</span>
+                          {slide.surname && (
+                            <>
+                              {' '}
+                              <span className={style.titleLine}>{slide.surname}</span>
+                            </>
+                          )}
+                        </SectionTitle>
                       </div>
                       <H3 className={style.cardTitle}>{slide.title}</H3>
                       <Body className={style.cardText}>{slide.text}</Body>
@@ -269,9 +285,11 @@ const Veterans = () => {
 
                     <div className={style.linksSlide}>
                       <div className={style.iconsContainer}>
-                        <a target="blank" href={slide.linkedin as string}>
-                          {icons.iconLinkedin(style.icon)}
-                        </a>
+                        {slide.linkedin && (
+                          <a target="blank" href={slide.linkedin as string}>
+                            {icons.iconLinkedin(style.icon)}
+                          </a>
+                        )}
                         <a target="blank" href={slide.facebook as string}>
                           {icons.iconFacebook(style.icon)}
                         </a>
@@ -279,7 +297,7 @@ const Veterans = () => {
                           {icons.iconInstagram(style.icon)}
                         </a>
                       </div>
-                      <Button
+                      {/* <Button
                         as="link"
                         target="_blank"
                         href={slide.url}
@@ -288,7 +306,7 @@ const Veterans = () => {
                         className={style.Button}
                       >
                         {t('giveHope')}
-                      </Button>
+                      </Button> */}
                     </div>
                   </div>
                 </div>

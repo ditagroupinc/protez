@@ -39,6 +39,7 @@ ID секції → [Header config](../src/sections/_shared/Header/config.ts) �
 
 - Значення лічильників живуть у messages; [getCurrentMonth](../src/lib/date.ts) → [useStatsRange](../src/hooks/useStatsRange.ts) змінює лише підпис періоду, використовуючи UTC-місяць.
 - [PritezFoundationNews](../src/sections/home/PritezFoundationNews/PritezFoundationNews.tsx) читає `home.pritezFoundationNews` із messages; це окреме джерело від WordPress Events.
+- [Veterans](../src/sections/home/Veterans/Veterans.tsx) зіставляє `home.veterans.items` EN/UK із `veteransMeta` за індексом. Фото — статичні імпорти з `public/protezPage/veterans`, розміри визначає Next Image. Ім’я та прізвище — текстовий H2; `ageRank` лишається в перекладах, але не рендериться. Наявність `videoLink` вмикає [StoryVideoButton](../src/sections/home/Veterans/StoryVideoButton.tsx): круговий HTML/CSS-напис із `home.veterans.videoButton` та `{name}`. Відсутній LinkedIn не рендериться.
 
 ## Річна фінансова звітність
 

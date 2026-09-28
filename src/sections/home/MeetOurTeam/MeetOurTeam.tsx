@@ -126,15 +126,20 @@ const MemberCard = ({
   name,
   position,
   className,
+  animate = true,
 }: {
   photo: string
   links: Links
   name: string
   position: string
   className?: string
+  animate?: boolean
 }) => {
   return (
-    <TextAppearanceWrapper className={`${style.memberCard} ${className && className}`}>
+    <TextAppearanceWrapper
+      isDisabled={!animate}
+      className={`${style.memberCard} ${className && className}`}
+    >
       <ProtezImage
         src={`protezPage/meetOurTeam/${photo}`}
         alt={photo}
@@ -199,6 +204,7 @@ const MeetOurTeam = () => {
               <div key={index}>
                 <div className={style.cardWrapper}>
                   <MemberCard
+                    animate={false}
                     className={style.teamCard}
                     photo={card.photo}
                     links={card.links}
