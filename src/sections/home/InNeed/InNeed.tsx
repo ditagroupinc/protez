@@ -1,9 +1,10 @@
 'use client'
 
 import { forwardRef, ForwardedRef } from 'react'
-import { useLocale } from 'next-intl'
+import { useTranslations } from 'next-intl'
 
-import { localeToLanguage } from '@/lib/locale'
+import SectionTitle from '@/components/SectionTitle'
+import { playfairDisplayItalic } from '../../../../app/fonts'
 import style from './style.module.scss'
 import { icons } from './icons'
 import Section from '@/components/Section'
@@ -14,8 +15,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import ProtezImage from '@/components/ProtezImage'
 
 const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
-  const locale = useLocale()
-  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.inNeed')
 
   return (
     <Section id={ProtezIDs.InNeed} className={style.section} ref={ref}>
@@ -33,8 +33,24 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
       <TextAppearanceWrapper className={style.right}>
         {icons.ukrainianMapSmall(style.mapSmall)}
         <div className={style.textBlock}>
-          {icons.inNeedLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
-          {icons.inNeedLogo.mobile[lang](`${style.title} ${style.titleMobile}`)}
+          <SectionTitle className={style.title}>
+            <span className={style.number}>{t('number')}</span>{' '}
+            <span className={style.titleLine}>{t('people')}</span>{' '}
+            {(['need', 'prosthetics', 'result'] as const).map((line, index) => (
+              <span key={line}>
+                {index > 0 && ' '}
+                <span className={style.titleLine}>
+                  {t.rich(line, {
+                    accent: chunks => (
+                      <span className={`${style.accent} ${playfairDisplayItalic.className}`}>
+                        {chunks}
+                      </span>
+                    ),
+                  })}
+                </span>
+              </span>
+            ))}
+          </SectionTitle>
         </div>
       </TextAppearanceWrapper>
     </Section>

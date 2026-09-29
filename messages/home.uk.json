@@ -1,4 +1,12 @@
 {
+  "ourPatients": { "title": { "accent": "Наші", "plain": "Пацієнти" } },
+  "inNeed": {
+    "number": "59 000",
+    "people": "УКРАЇНЦІВ",
+    "need": "<accent>Потребують</accent>",
+    "prosthetics": "<accent>Протезування</accent>",
+    "result": "внаслідок ВІЙНИ"
+  },
   "hero": {
     "title": {
       "plain": "на першому місці",
@@ -110,6 +118,7 @@
     ]
   },
   "childrensProstheticsPromo": {
+    "title": { "accent": "Дитяче", "plain": "Протезування" },
     "statNumber": 25,
     "statLabel": "Дитини отримали протези",
     "quote": "Діти – наше майбутнє. Турбота про них є частиною нашої місії.",
@@ -232,6 +241,7 @@
     ]
   },
   "meetOurTeam": {
+    "title": { "accent": "Наша", "plain": "Команда" },
     "members": [
       { "name": "Юрій Арашидзе", "position": "Співзасновник, CEO “Protez Foundation”" },
       {
@@ -250,6 +260,7 @@
     ]
   },
   "officeLocations": {
+    "title": { "accent": "Протезні", "plain": "Центри" },
     "locations": [
       { "country": "США", "location": "Оакдейл", "address": "3510 Hopkins Pl" },
       { "country": "Україна", "location": "Свалява", "address": "вул. Набережна, 14, 61" },

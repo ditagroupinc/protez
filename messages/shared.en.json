@@ -55,6 +55,11 @@
     }
   },
   "footer": {
+    "title": {
+      "accent": "Thank you",
+      "prefix": "for",
+      "plain": "support!"
+    },
     "giveHope": "Give Hope!",
     "protezAcademy": "Protez Academy",
     "subscribe": "Subscribe",
@@ -66,6 +71,11 @@
     "madeBy": "2024 © Made by DITA GROUP Inc."
   },
   "mailingList": {
+    "title": {
+      "accent": "Join our",
+      "prefix": "",
+      "plain": "mailing list"
+    },
     "submitButton": {
       "default": "Subscribe!",
       "loading": "Loading...",
@@ -76,6 +86,11 @@
     "phoneNumber": "Phone number"
   },
   "specialThanksToAllOurPartners": {
+    "title": {
+      "first": "Special",
+      "accent": "Thanks to All Our",
+      "plain": "partners"
+    },
     "discoverAllPartners": "Discover all partners"
   },
   "buttons": {

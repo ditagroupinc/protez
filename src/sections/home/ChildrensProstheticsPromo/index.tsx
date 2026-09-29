@@ -10,7 +10,8 @@ import Section from '@/components/Section'
 import ProtezImage from '@/components/ProtezImage'
 import Button from '@/components/Button'
 import { ProtezIDs } from '@/consts'
-import { useChildrensProstheticsTitle } from '@/hooks/useChildrensProstheticsTitle'
+import SectionTitle from '@/components/SectionTitle'
+import { playfairDisplayItalic } from '../../../../app/fonts'
 import { useStatsRange } from '@/hooks/useStatsRange'
 import type { CurrentMonth } from '@/lib/date'
 import SlickCarousel, { type Settings } from '@/islands/SlickCarousel'
@@ -27,8 +28,6 @@ const ChildrensProstheticsPromo = ({ currentMonth }: { currentMonth: CurrentMont
   const slides = t.raw('slides') as Slide[]
   const statNumber = Number(t.raw('statNumber'))
   const statRange = useStatsRange(currentMonth)
-
-  const title = useChildrensProstheticsTitle('childrens-prosthetics-dark')
 
   const sliderRef = useRef<SlickSlider>(null)
   const { ref: countRef, inView: countInView } = useInView({ triggerOnce: true, threshold: 0.4 })
@@ -65,20 +64,14 @@ const ChildrensProstheticsPromo = ({ currentMonth }: { currentMonth: CurrentMont
     <Section id={ProtezIDs.ChildrensProstheticsPromo} className={style.section}>
       <div className={style.inner}>
         <div className={style.copy}>
-          <ProtezImage
-            src={title.desktop.src}
-            alt={title.desktop.alt}
-            width={title.desktop.width}
-            height={title.desktop.height}
-            className={`${style.title} ${style.titleDesktop}`}
-          />
-          <ProtezImage
-            src={title.mobile.src}
-            alt={title.mobile.alt}
-            width={title.mobile.width}
-            height={title.mobile.height}
-            className={`${style.title} ${style.titleMobile}`}
-          />
+          <SectionTitle className={style.title}>
+            <span
+              className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
+            >
+              {t('title.accent')}
+            </span>{' '}
+            <span className={style.titleLine}>{t('title.plain')}</span>
+          </SectionTitle>
 
           <div className={style.stat} ref={countRef}>
             <div className={style.statNum}>
