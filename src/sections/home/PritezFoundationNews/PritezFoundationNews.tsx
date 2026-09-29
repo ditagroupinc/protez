@@ -24,6 +24,7 @@ const releasesMeta = [
   { date: '25 January 2025', img: 'pritezFoundationNewsSlide3.png' },
   { date: '2 July 2025', img: 'pritezFoundationNewsSlide5.png' },
   { date: '04 Aug 2025', img: 'pritezFoundationNewsSlide6.png' },
+  { date: '23 September 2026', img: 'yura-aroshidze-presidential-award.png' },
 ]
 
 const PritezFoundationNews = () => {

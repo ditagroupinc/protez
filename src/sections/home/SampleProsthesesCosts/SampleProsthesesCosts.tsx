@@ -39,6 +39,7 @@ const PriceCard = ({
   hoverTarget: HoverClasses
   setHovered: (isHovered: HoverClasses) => void
 }) => {
+  const lastSpaceIndex = text.lastIndexOf(' ')
   const handleMouseEnter = () => {
     setHovered(hoverTarget)
   }
@@ -51,7 +52,16 @@ const PriceCard = ({
       onMouseLeave={handleMouseLeave}
     >
       <div className={style.priceCardTextBlock}>
-        <div className={`${style.priceCardText} ${playfairDisplayItalic.className}`}>{text}</div>
+        <div className={`${style.priceCardText} ${playfairDisplayItalic.className}`}>
+          {lastSpaceIndex === -1 ? (
+            text
+          ) : (
+            <>
+              <span>{text.slice(0, lastSpaceIndex)}</span>{' '}
+              <span>{text.slice(lastSpaceIndex + 1)}</span>
+            </>
+          )}
+        </div>
         <div className={style.priceCardPrice}>{price}</div>
       </div>
 

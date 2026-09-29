@@ -127,7 +127,7 @@
   }
 }
 .pricesDivider {
-  padding-left: 30%;
+  padding-right: 195px;
 }
 
 .priceCard {
@@ -145,16 +145,13 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    flex-shrink: 0;
-    width: 150px;
-    text-align: right;
   }
 
   .priceCardText {
     color: var(--white);
     font-size: 20px;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: normal;
   }
 
   .priceCardPrice {
@@ -168,7 +165,6 @@
   }
 
   .priceCardCircle {
-    flex-shrink: 0;
     border-radius: 280px;
     border: 2px solid rgba(255, 255, 255, 0.24);
     width: 90px;
@@ -238,6 +234,17 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .priceCardText {
+    text-align: right;
+
+    span {
+      display: block;
+      white-space: nowrap;
+    }
+  }
+}
+
 @media screen and (max-width: 800px) {
   .buttonsContainer.buttonsContainerTop {
     display: none;
@@ -275,7 +282,7 @@
   }
 
   .right {
-    justify-content: safe flex-end;
+    justify-content: flex-end;
     margin-right: 0;
     min-width: auto;
   }
@@ -352,10 +359,6 @@
   }
 
   .priceCard {
-    .priceCardTextBlock {
-      width: 129px;
-    }
-
     .priceCardText {
       font-size: 14.283px;
     }
@@ -382,6 +385,10 @@
 }
 
 @media screen and (max-width: 450px) {
+  .priceCard .priceCardPrice {
+    font-size: 18px;
+  }
+
   .right {
     margin-right: -98px;
   }
