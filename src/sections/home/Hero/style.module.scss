@@ -154,6 +154,14 @@
 }
 
 @media screen and (max-width: 500px) {
+  .title:not(.ukrainianTitle) {
+    font-size: 42px;
+
+    .titleAccent {
+      font-size: 70px;
+    }
+  }
+
   .ukrainianTitle {
     container-type: inline-size;
   }
@@ -171,13 +179,5 @@
 @media screen and (max-width: 375px) {
   .section {
     padding-top:105px;
-  }
-  .title:not(.ukrainianTitle) {
-    container-type: inline-size;
-
-    .titleLine,
-    .titleAccent {
-      font-size: min(96px, 26.4cqw);
-    }
   }
 }
