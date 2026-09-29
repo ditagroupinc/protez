@@ -13,22 +13,16 @@
 }
 
 .title {
-  container-type: inline-size;
   width: 100%;
-  max-width: 100%;
+  height: auto;
 }
 
-.titleLine {
-  composes: line from '../../../components/SectionTitle/style.module.scss';
-  font-size: min(90px, 13cqw);
+.title.titleDesktop {
+  display: block;
 }
 
-.titleAccent {
-  composes: accent from '../../../components/SectionTitle/style.module.scss';
-}
-
-.ukrainianTitle .titleLine {
-  font-size: min(90px, 12cqw);
+.title.titleMobile {
+  display: none;
 }
 
 .form {
@@ -232,6 +226,14 @@
 }
 
 @media screen and (max-width: 800px) {
+  .title.titleDesktop {
+    display: none;
+  }
+
+  .title.titleMobile {
+    display: block;
+  }
+
   .section {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -250,10 +252,12 @@
 
   .title {
     margin: 0 auto;
+    max-width: 350px;
   }
 }
 
 @media screen and (max-width: 600px) {
   .title {
+    max-width: 250px;
   }
 }

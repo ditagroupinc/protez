@@ -23,20 +23,8 @@
 }
 
 .title {
-  container-type: inline-size;
-  color: var(--black);
-  width: 100%;
-  text-align: center;
-  
-}
-
-.titleLine {
-  composes: line from "../../../components/SectionTitle/style.module.scss";
-  font-size: min(90px, 20cqw);
-}
-
-.titleAccent {
-  composes: accent from "../../../components/SectionTitle/style.module.scss";
+  max-width: 522px;
+  height: auto;
 }
 
 .slickSlider :global(.slick-track) {

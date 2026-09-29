@@ -9,12 +9,11 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { icons } from './icons'
 import Section from '@/components/Section'
-import SectionTitle from '@/components/SectionTitle'
 import { ProtezIDs } from '@/consts'
 import { Body, H3 } from '@/components/Typography'
 import Slider from '@/islands/SlickCarousel'
 import ProtezImage from '@/components/ProtezImage'
-import { playfairDisplayItalic } from '../../../../app/fonts'
+import { useProtezTitle } from '@/hooks/useProtezTitle'
 
 type OfficeLocation = { country: string; location: string; address: string }
 
@@ -29,6 +28,7 @@ const locationImages = [
 
 const OfficeLocations = () => {
   const t = useTranslations('home.officeLocations')
+  const { desktop: title } = useProtezTitle('prosthetic-centers')
   const locationsRaw = t.raw('locations') as OfficeLocation[]
   const sliderRef = useRef<Slider & React.Component>(null)
 
@@ -71,14 +71,7 @@ const OfficeLocations = () => {
         height={873}
       />
       <TextAppearanceWrapper className={style.heading}>
-        <SectionTitle className={style.title}>
-          <span
-            className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
-          >
-            {t('title.accent')}
-          </span>{' '}
-          <span className={style.titleLine}>{t('title.plain')}</span>
-        </SectionTitle>
+        <ProtezImage {...title} className={style.title} />
       </TextAppearanceWrapper>
 
       <Slider ref={sliderRef} {...settings} className={style.slickSlider}>

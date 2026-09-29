@@ -19,27 +19,23 @@
 }
 
 .copy {
-  min-width: 0;
-  flex: 1 1 520px;
   display: flex;
   flex-direction: column;
   gap: 0;
 }
 
 .title {
-  container-type: inline-size;
   display: block;
   width: 100%;
+  max-width: 500px;
   height: auto;
 }
 
-.titleLine {
-  composes: line from "../../../components/SectionTitle/style.module.scss";
-  font-size: min(64px, 12cqw);
+.titleDesktop {
+  display: block;
 }
-
-.titleAccent {
-  composes: accent from "../../../components/SectionTitle/style.module.scss";
+.titleMobile {
+  display: none;
 }
 
 .stat {
@@ -230,10 +226,14 @@
     gap: 32px;
   }
   .copy {
-    flex: none;
-    width: 100%;
     text-align: center;
     align-items: center;
+  }
+  .titleDesktop {
+    display: none;
+  }
+  .titleMobile {
+    display: block;
   }
   .stat {
     margin-left: auto;

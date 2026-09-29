@@ -13,7 +13,12 @@ type TitleVariant = { src: string; width: number; height: number; alt: string }
 type TitleSpec = { desktop: TitleVariant; mobile: TitleVariant }
 
 export type ChildrensProstheticsTitleName =
-  'childrens-prosthetics' | 'childrens-stories' | 'name-marijka' | 'name-oskar' | 'name-taya'
+  | 'childrens-prosthetics'
+  | 'childrens-prosthetics-dark'
+  | 'childrens-stories'
+  | 'name-marijka'
+  | 'name-oskar'
+  | 'name-taya'
 
 type Entry = {
   alt: { en: string; uk: string }
@@ -23,6 +28,11 @@ type Entry = {
 
 const TITLES: Record<ChildrensProstheticsTitleName, Entry> = {
   'childrens-prosthetics': {
+    alt: { en: "Children's Prosthetics", uk: 'Дитяче протезування' },
+    desktop: { width: 620, height: 160 },
+    mobile: { width: 420, height: 130 },
+  },
+  'childrens-prosthetics-dark': {
     alt: { en: "Children's Prosthetics", uk: 'Дитяче протезування' },
     desktop: { width: 620, height: 160 },
     mobile: { width: 420, height: 130 },

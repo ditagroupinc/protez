@@ -1,9 +1,9 @@
 'use client'
 
 import { useRef } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 
-import { playfairDisplayItalic } from '../../../../app/fonts'
+import { localeToLanguage } from '@/lib/locale'
 
 import style from './style.module.scss'
 import Slider from '@/islands/SlickCarousel'
@@ -12,7 +12,6 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { icons } from './icons'
 import Section from '@/components/Section'
-import SectionTitle from '@/components/SectionTitle'
 import { ProtezIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
 
@@ -25,7 +24,8 @@ const ourPatientsSection: OurPatientsSection = {
 }
 
 const OurPatients = () => {
-  const t = useTranslations('home.ourPatients')
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
 
   const sliderRef = useRef<Slider & React.Component>(null)
   const gotoNext = () => {
@@ -71,14 +71,7 @@ const OurPatients = () => {
   return (
     <Section id={ProtezIDs.OurPatients} className={style.section}>
       <TextAppearanceWrapper className={style.heading}>
-        <SectionTitle className={style.title}>
-          <span
-            className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
-          >
-            {t('title.accent')}
-          </span>{' '}
-          <span className={style.titleLine}>{t('title.plain')}</span>
-        </SectionTitle>
+        {icons.ourPatientsLogo.desktop[lang](style.title)}
         <div className={style.sliderNavigation}>
           <button className={style.sliderButton} onClick={gotoPrev}>
             {icons.arrowLeft(style.arrow)}

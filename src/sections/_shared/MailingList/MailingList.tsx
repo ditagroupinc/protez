@@ -1,10 +1,10 @@
 'use client'
 
-import SectionTitle from '@/components/SectionTitle'
-import { playfairDisplayItalic } from '../../../../app/fonts'
 import style from './style.module.scss'
 import { useState } from 'react'
 import { useLocale, useTranslations } from 'next-intl'
+import { localeToLanguage } from '@/lib/locale'
+import { icons } from './icons'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
@@ -34,6 +34,7 @@ type FormStatus = 'loading' | 'error' | 'sent' | 'default'
 
 const MailingList = () => {
   const locale = useLocale()
+  const lang = localeToLanguage(locale)
   const t = useTranslations('shared.mailingList')
 
   const { ref, inView } = useInView({ triggerOnce: true })
@@ -78,23 +79,8 @@ const MailingList = () => {
         })}
       </div>
       <TextAppearanceWrapper className={style.container}>
-        <SectionTitle className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
-          <span
-            className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
-          >
-            {t('title.accent')}
-          </span>{' '}
-          <span className={style.titleLine}>
-            {t('title.prefix') && (
-              <>
-                <span className={`${style.titleAccent} ${playfairDisplayItalic.className}`}>
-                  {t('title.prefix')}
-                </span>{' '}
-              </>
-            )}
-            {t('title.plain')}
-          </span>
-        </SectionTitle>
+        {icons.mailingListLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
+        {icons.mailingListLogo.mobile[lang](`${style.title} ${style.titleMobile}`)}
 
         <form className={style.form} action="POST" onSubmit={handleSubmit}>
           <input

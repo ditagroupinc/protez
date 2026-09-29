@@ -1,12 +1,11 @@
 'use client'
 
 import React, { useRef } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
-import { playfairDisplayItalic } from '../../../../app/fonts'
+import { localeToLanguage } from '@/lib/locale'
 
 import Section from '@/components/Section'
-import SectionTitle from '@/components/SectionTitle'
 
 import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
@@ -170,6 +169,8 @@ const MemberCard = ({
 }
 
 const MeetOurTeam = () => {
+  const locale = useLocale()
+  const lang = localeToLanguage(locale)
   const t = useTranslations('home.meetOurTeam')
   const teamMembers = t.raw('members') as TeamMember[]
 
@@ -195,14 +196,7 @@ const MeetOurTeam = () => {
   return (
     <Section id={ProtezIDs.MeetOurTeam} className={style.section}>
       <div className={style.mobileTeam}>
-        <SectionTitle className={style.title}>
-          <span
-            className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
-          >
-            {t('title.accent')}
-          </span>{' '}
-          <span className={style.titleLine}>{t('title.plain')}</span>
-        </SectionTitle>
+        {icons.meetOurTeamLogo.desktop[lang](style.title)}
 
         <TextAppearanceWrapper>
           <Slider {...settings} ref={sliderRef} className={style.slickSlider}>
@@ -224,16 +218,7 @@ const MeetOurTeam = () => {
         </TextAppearanceWrapper>
       </div>
       <div className={`${style.row} ${style.firstRow}`}>
-        <div className={style.titleCell}>
-          <SectionTitle className={style.title}>
-            <span
-              className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
-            >
-              {t('title.accent')}
-            </span>{' '}
-            <span className={style.titleLine}>{t('title.plain')}</span>
-          </SectionTitle>
-        </div>
+        <div className={style.titleCell}>{icons.meetOurTeamLogo.desktop[lang](style.title)}</div>
         {members.slice(0, 2).map((card, index) => (
           <MemberCard
             key={index}

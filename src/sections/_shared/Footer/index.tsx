@@ -1,12 +1,12 @@
 'use client'
 
-import SectionTitle from '@/components/SectionTitle'
-import { playfairDisplayItalic } from '../../../../app/fonts'
 import style from './style.module.scss'
 import React from 'react'
 
 import { useLocale, useTranslations } from 'next-intl'
+import { localeToLanguage } from '@/lib/locale'
 
+import { icons } from './icons'
 import Divider from '@/components/Divider'
 import ProtezImage from '@/components/ProtezImage'
 
@@ -25,6 +25,7 @@ const accentByLayout: Record<FooterLayout, 'red' | 'blue' | 'teal'> = {
 
 const Footer = forwardRef<HTMLDivElement, { layout: FooterLayout }>(function ({ layout }, ref) {
   const locale = useLocale()
+  const lang = localeToLanguage(locale)
   const t = useTranslations('shared.footer')
   const accentColor = accentByLayout[layout]
 
@@ -35,21 +36,10 @@ const Footer = forwardRef<HTMLDivElement, { layout: FooterLayout }>(function ({ 
       >
         <div className={style.footerTopContent}>
           <div className={style.left}>
-            <SectionTitle
-              className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}
-            >
-              <span
-                className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
-              >
-                {t('title.accent')}
-              </span>{' '}
-              <span className={style.titleLine}>
-                <span className={`${style.titleAccent} ${playfairDisplayItalic.className}`}>
-                  {t('title.prefix')}
-                </span>{' '}
-                {t('title.plain')}
-              </span>
-            </SectionTitle>
+            {icons.footerLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
+            {icons.footerLogo.mobile[lang](
+              `${style.title} ${style.ukrainian} ${style.titleMobile}`
+            )}
 
             <div className={style.buttonGroup}>
               {layout === 'academyPage' ? (

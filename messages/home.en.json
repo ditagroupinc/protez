@@ -1,12 +1,4 @@
 {
-  "ourPatients": { "title": { "accent": "Our", "plain": "Patients" } },
-  "inNeed": {
-    "number": "59 000",
-    "people": "UKRAINIANS",
-    "need": "are in <accent>Need</accent>",
-    "prosthetics": "of <accent>Prosthetics</accent> as a",
-    "result": "RESULT of the WAR"
-  },
   "hero": {
     "title": {
       "plain": "first",
@@ -118,7 +110,6 @@
     ]
   },
   "childrensProstheticsPromo": {
-    "title": { "accent": "Children’s", "plain": "Prosthetics" },
     "statNumber": 25,
     "statLabel": "Children fitted with prostheses",
     "quote": "Caring for them is part of our mission. Protez Foundation is one of Ukraine's leading organizations providing pediatric prosthetic care.",
@@ -250,7 +241,6 @@
     ]
   },
   "meetOurTeam": {
-    "title": { "accent": "Meet our", "plain": "Team" },
     "members": [
       { "name": "Yura Aroshidze", "position": "Co-Founder, CEO “Protez Foundation”" },
       {
@@ -269,7 +259,6 @@
     ]
   },
   "officeLocations": {
-    "title": { "accent": "Prosthetic", "plain": "Centers" },
     "locations": [
       { "country": "USA", "location": "Oakdale", "address": "3510 Hopkins Pl" },
       { "country": "Ukraine", "location": "Svalyava", "address": "Naberezhna St, 14, 61" },

@@ -236,6 +236,10 @@
     margin-top: 24px;
   }
 
+  .title {
+    max-width: 228px;
+  }
+
   .right {
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(4, minmax(124px, auto));
