@@ -27,7 +27,6 @@
 .title {
   container-type: inline-size;
   width: 100%;
-  max-width: 394px;
   text-align: center;
 }
 
@@ -317,9 +316,6 @@
 }
 
 @media (max-width: 600px) {
-  .title {
-    max-width: 281px;
-  }
 
   .sliderButton {
     display: none;

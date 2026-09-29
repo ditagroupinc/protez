@@ -2,11 +2,11 @@
 
 import Section from '@/components/Section'
 
+import SectionTitle from '@/components/SectionTitle'
+import { playfairDisplayItalic } from '../../../../app/fonts'
 import style from './style.module.scss'
-import { icons } from './icons'
 
-import { useLocale, useTranslations } from 'next-intl'
-import { localeToLanguage } from '@/lib/locale'
+import { useTranslations } from 'next-intl'
 
 import { ProtezIDs } from '@/consts'
 
@@ -34,8 +34,6 @@ const partnersIcons: string[] = [
 ]
 
 const SpecialThanksToAllOurPartners = () => {
-  const locale = useLocale()
-  const lang = localeToLanguage(locale)
   const t = useTranslations('shared.specialThanksToAllOurPartners')
 
   return (
@@ -46,12 +44,15 @@ const SpecialThanksToAllOurPartners = () => {
         </SeeAllButton>
       </div>
       <div className={style.titleCell}>
-        {icons.specialThanksToAllOurPartnersLogo.desktop[lang](
-          `${style.title} ${style.titleDesktop}`
-        )}
-        {icons.specialThanksToAllOurPartnersLogo.mobile[lang](
-          `${style.title} ${style.titleMobile}`
-        )}
+        <SectionTitle className={style.title}>
+          <span className={style.titleLine}>{t('title.first')}</span>{' '}
+          <span
+            className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
+          >
+            {t('title.accent')}
+          </span>{' '}
+          <span className={style.titleLine}>{t('title.plain')}</span>
+        </SectionTitle>
       </div>
       {partnersIcons.map((icon, index) => (
         <TextAppearanceWrapper key={index} className={style.partnerCard}>

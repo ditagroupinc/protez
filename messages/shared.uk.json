@@ -55,6 +55,11 @@
     }
   },
   "footer": {
+    "title": {
+      "accent": "Дякуємо Вам за",
+      "prefix": "вашу",
+      "plain": "підтримку!"
+    },
     "giveHope": "Дати надію!",
     "protezAcademy": "Protez Academy",
     "subscribe": "Підписатись",
@@ -66,6 +71,11 @@
     "madeBy": "2024 © Made by DITA GROUP Inc."
   },
   "mailingList": {
+    "title": {
+      "accent": "Підпишіться на",
+      "prefix": "нашу",
+      "plain": "розсилку"
+    },
     "submitButton": {
       "default": "Підписатись!",
       "loading": "Завантаження...",
@@ -76,6 +86,11 @@
     "phoneNumber": "Номер телефону"
   },
   "specialThanksToAllOurPartners": {
+    "title": {
+      "first": "Дякуємо",
+      "accent": "Всім нашим",
+      "plain": "партнерам"
+    },
     "discoverAllPartners": "Дізнатися про всіх партнерів"
   },
   "buttons": {

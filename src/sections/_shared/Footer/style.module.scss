@@ -41,16 +41,22 @@
 }
 
 .title {
+  container-type: inline-size;
+  width: 100%;
   max-width: 100%;
-  height: auto;
 }
 
-.title.titleDesktop {
-  display: block;
+.titleLine {
+  composes: line from '../../../components/SectionTitle/style.module.scss';
+  font-size: min(90px, 13cqw);
 }
 
-.title.titleMobile {
-  display: none;
+.titleAccent {
+  composes: accent from '../../../components/SectionTitle/style.module.scss';
+}
+
+.ukrainianTitle .titleLine {
+  font-size: min(90px, 10.5cqw);
 }
 
 .left {
@@ -99,14 +105,6 @@
 }
 
 @media screen and (max-width: 800px) {
-  .title.titleDesktop {
-    display: none;
-  }
-
-  .title.titleMobile {
-    display: block;
-  }
-
   .footerTop {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -128,8 +126,7 @@
   }
   .title {
     margin: 0 auto;
-    max-width: 265px;
-    &.ukrainian {
+    &.ukrainianTitle {
       max-width: 100%;
     }
   }
