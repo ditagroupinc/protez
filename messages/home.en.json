@@ -18,6 +18,18 @@
     "nextSlide": "Next slide",
     "cards": [
       {
+        "image": "yura-aroshidze-presidential-award.png",
+        "description": "President of Ukraine Volodymyr Zelenskyy awarded Protez Foundation co-founder and CEO Yura Aroshidze the Order of Merit, Third Class.",
+        "width": 940,
+        "height": 540
+      },
+      {
+        "image": "yakov-gradinar-presidential-award.png",
+        "description": "Protez Foundation Chief Medical Director and co-founder Yakov Gradinar receives an award from Ukrainian President Volodymyr Zelenskyy.",
+        "width": 940,
+        "height": 540
+      },
+      {
         "image": "direct-relief-partnership.png",
         "description": "Direct Relief has been our key and trusted partner for many years. Working side by side with us, the organization helps carry out our most critical initiatives and supports our projects at every stage. Thank you for your unwavering faith in our mission, your steadfast support, and our shared work to improve the lives of Ukrainians!",
         "width": 940,
@@ -48,12 +60,6 @@
         "height": 540
       },
       {
-        "image": "yakov-gradinar-presidential-award.png",
-        "description": "Protez Foundation Chief Medical Director and co-founder Yakov Gradinar receives an award from Ukrainian President Volodymyr Zelenskyy.",
-        "width": 940,
-        "height": 540
-      },
-      {
         "image": "ukraine-health-ministry-memorandum.png",
         "description": "A memorandum on the continuation of cooperation between the Protez Foundation and the Ministry of Health of Ukraine has been signed. Our goal is unity in support and assistance to our heroes who deserve the best. Together we can achieve significant changes in prosthetic care and the provision of high-quality prostheses.",
         "width": 940,
@@ -68,12 +74,6 @@
       {
         "image": "direct-relief-support.png",
         "description": "Direct Relief – our reliable partner who inspires us with their mission to help people around the world. Their support in achieving the goals of the Prosthetics Foundation in Ukraine is invaluable.",
-        "width": 940,
-        "height": 540
-      },
-      {
-        "image": "yura-aroshidze-presidential-award.png",
-        "description": "President of Ukraine Volodymyr Zelenskyy awarded Protez Foundation co-founder and CEO Yura Aroshidze the Order of Merit, Third Class.",
         "width": 940,
         "height": 540
       }

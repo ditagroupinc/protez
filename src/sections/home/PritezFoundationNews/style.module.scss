@@ -79,6 +79,14 @@
   composes: accent from "../../../components/SectionTitle/style.module.scss";
 }
 
+.cardDate,
+.cardTitle,
+.cardText {
+  -webkit-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
 .cardDate {
   color: var(--black);
   padding: 16px 0;

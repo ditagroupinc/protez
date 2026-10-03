@@ -52,6 +52,16 @@ const PritezFoundationNews = () => {
 
   useEffect(() => {
     const autoplayInterval = setInterval(() => {
+      const selection = window.getSelection()
+
+      if (
+        selection &&
+        !selection.isCollapsed &&
+        selection.anchorNode?.parentElement?.closest(`#${ProtezIDs.PritezFoundationNews}`)
+      ) {
+        return
+      }
+
       gotoNext()
     }, 5000)
 
@@ -111,7 +121,7 @@ const PritezFoundationNews = () => {
     ],
   }
 
-  const orderedPritezFoundationNewsArray = releases
+  const sortedReleases = releases
     .map((release, index) => ({ ...release, ...releasesMeta[index] }))
     .sort((a, b) => {
       const dateA = new Date(a.date)
@@ -119,13 +129,19 @@ const PritezFoundationNews = () => {
 
       return dateB.getTime() - dateA.getTime()
     })
+  const featuredRelease = sortedReleases.find(
+    release => release.img === 'yura-aroshidze-presidential-award.png'
+  )
+  const orderedProtezFoundationNewsArray = featuredRelease
+    ? [featuredRelease, ...sortedReleases.filter(release => release !== featuredRelease)]
+    : sortedReleases
 
   return (
     <Section id={ProtezIDs.PritezFoundationNews} className={style.section}>
       <div className={`${style.card} ${style.desktopCard}`}>
         <TextAppearanceWrapper className={style.left}>
           <Slider ref={imageSliderRef} {...settings} className={style.imageSlider}>
-            {orderedPritezFoundationNewsArray.map((slide, index) => (
+            {orderedProtezFoundationNewsArray.map((slide, index) => (
               <div className={style.imageSlideWrapper} key={index}>
                 <div className={style.imageSlide}>
                   <ProtezImage
@@ -144,7 +160,7 @@ const PritezFoundationNews = () => {
         <TextAppearanceWrapper className={style.right}>
           {title}
           <Slider ref={textSliderRef} {...settings} className={style.textSlider}>
-            {orderedPritezFoundationNewsArray.map((slide, index) => (
+            {orderedProtezFoundationNewsArray.map((slide, index) => (
               <div className={style.textSlideWrapper} key={index}>
                 <div className={style.textSlide}>
                   <Body large className={style.cardDate}>
@@ -172,7 +188,7 @@ const PritezFoundationNews = () => {
         {title}
 
         <Slider ref={wholeCardSliderRef} {...settings} className={style.wholeCardSlider}>
-          {orderedPritezFoundationNewsArray.map((slide, index) => (
+          {orderedProtezFoundationNewsArray.map((slide, index) => (
             <div key={index}>
               <div className={style.cardWrapper}>
                 <div className={style.card}>
