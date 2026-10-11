@@ -16,3 +16,5 @@
 | Форми, підписка, донати | [MailingList](../src/sections/_shared/MailingList/MailingList.tsx), [API routes](../app/api), [Nodemailer](../src/config/nodemailer.ts), [Donate](../src/sections/donate/Donate/index.tsx), [Button](../src/components/Button/index.tsx). |
 | SEO, URL, tracking | [SEO helpers](../src/lib/seo.ts), [sitemap](../app/sitemap.ts), [robots](../app/robots.ts), [locale layout](../app/[locale]/layout.tsx), [middleware](../middleware.ts), [Next config](../next.config.js), [FacebookPixelEvents](../src/components/FacebookPixelEvents/index.jsx). |
 | Збірка, env, інструменти | [README](../README.md), [package.json](../package.json), [Next config](../next.config.js), [TypeScript](../tsconfig.json), [ESLint](../.eslintrc.json), [Prettier](../.prettierrc.json), [workflows](../.github/workflows). |
+
+Межі кегля текстових заголовків Home задають `--mobile-home-heading-max-size` та `--desktop-home-heading-max-size` у [root styles](../src/sections/home/_root/style.module.scss); локальні формули зменшують довгі рядки під доступну ширину.

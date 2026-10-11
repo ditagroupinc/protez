@@ -53,7 +53,7 @@
 
 .titleLine {
   display: block;
-  font-size: min(48px, 9.8cqw);
+  font-size: min(var(--mobile-home-heading-max-size, 48px), 9.8cqw);
   font-weight: 800;
   line-height: 1.04;
   letter-spacing: -0.04em;
@@ -62,7 +62,7 @@
 .number {
   display: block;
   color: var(--white);
-  font-size: min(76px, 16cqw);
+  font-size: min(var(--mobile-home-heading-max-size, 76px), 16cqw);
   font-weight: 800;
   line-height: 1;
 }
@@ -159,13 +159,13 @@
 
   .titleLine,
   .flowingLine {
-    font-size: min(64px, 14cqw);
+    font-size: min(var(--mobile-home-heading-max-size, 64px), 14cqw);
     line-height: 1.04;
   }
 
   .ukrainianTitle .titleLine,
   .ukrainianTitle .flowingLine {
-    font-size: min(64px, 12.4cqw);
+    font-size: min(var(--mobile-home-heading-max-size, 64px), 12.4cqw);
   }
 
   .flowingLine .titleLine {
@@ -177,11 +177,11 @@
   }
 
   .accent {
-    font-size: 1.2em;
+    font-size: min(var(--mobile-home-heading-max-size, 1.2em), 1.2em);
   }
 
   .ukrainianTitle .accent {
-    font-size: 1.15em;
+    font-size: min(var(--mobile-home-heading-max-size, 1.15em), 1.15em);
   }
 }
 

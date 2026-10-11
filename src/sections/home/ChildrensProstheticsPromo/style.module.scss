@@ -35,7 +35,7 @@
 
 .titleLine {
   composes: line from "../../../components/SectionTitle/style.module.scss";
-  font-size: min(64px, 12cqw);
+  font-size: min(var(--mobile-home-heading-max-size, 64px), 12cqw);
 }
 
 .titleAccent {

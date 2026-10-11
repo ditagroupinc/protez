@@ -48,7 +48,7 @@
 
 .titleLine {
   composes: line from '../../../components/SectionTitle/style.module.scss';
-  font-size: min(90px, 13cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 13cqw);
 }
 
 .titleAccent {
@@ -56,7 +56,7 @@
 }
 
 .ukrainianTitle .titleLine {
-  font-size: min(90px, 10.5cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 10.5cqw);
 }
 
 .left {

@@ -27,11 +27,11 @@
   display: flex;
   align-items: baseline;
   gap: 0.16em;
-  font-size: min(90px, 12.64cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 12.64cqw);
 }
 
 .ukrainianTitle .titleLine {
-  font-size: min(90px, 10.8cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 10.8cqw);
 }
 
 .titleAccent {

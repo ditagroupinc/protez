@@ -5,7 +5,7 @@
 
 .line {
   display: block;
-  font-size: min(90px, 24cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 24cqw);
   font-style: normal;
   font-weight: 800;
   line-height: calc(76 / 90);

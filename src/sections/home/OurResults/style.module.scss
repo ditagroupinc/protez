@@ -49,7 +49,7 @@
 }
 
 .ukrainianTitle .titleLine {
-  font-size: min(90px, 16.4cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 16.4cqw);
 }
 
 .titleAccent {

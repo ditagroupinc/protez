@@ -16,8 +16,18 @@
   height: auto;
 }
 
+@media screen and (min-width: 801px) {
+  .main {
+    --desktop-home-heading-max-size: 85px;
+  }
+}
+
 /* phone */
 @media screen and (max-width: 600px) {
+  .main {
+    --mobile-home-heading-max-size: 65px;
+  }
+
   .americanFlag {
     max-width: 90%;
     top: 39%;

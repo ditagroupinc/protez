@@ -60,12 +60,12 @@
 
 .titleLine {
   composes: line from '../../../components/SectionTitle/style.module.scss';
-  font-size: min(84px, 13cqw);
+  font-size: min(var(--mobile-home-heading-max-size, 84px), 13cqw);
 }
 
 .titleAccent {
   composes: accent from '../../../components/SectionTitle/style.module.scss';
-  font-size: min(84px, 11.5cqw);
+  font-size: min(var(--mobile-home-heading-max-size, 84px), 11.5cqw);
 }
 
 .buttonCell {
