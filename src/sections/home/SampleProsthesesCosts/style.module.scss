@@ -9,6 +9,7 @@
 }
 
 .left {
+  position: relative;
   width: 100%;
   max-width: 560px;
 }
@@ -40,6 +41,7 @@
 }
 
 .buttonsContainer {
+  position: relative;
   display: flex;
   gap: 16px;
 }
@@ -61,6 +63,7 @@
 }
 
 .right {
+  position: relative;
   display: flex;
   flex-shrink: 0;
   align-items: center;
@@ -71,12 +74,9 @@
   flex-shrink: 0;
   width: 274px;
 
-  path[stroke="white"] {
-    stroke: var(--black);
-  }
-
-  path[fill="#131313"] {
-    fill: var(--white);
+  path {
+    stroke: var(--teal);
+    fill: var(--black);
   }
 }
 

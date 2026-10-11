@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from 'next-intl'
 
 import Section from '@/components/Section'
 import SectionTitle from '@/components/SectionTitle'
+import AnimatedGlowBackground from '@/components/AnimatedGlowBackground'
 
 import { icons } from './icons'
 import style from './style.module.scss'
@@ -102,6 +103,7 @@ const SampleProsthesesCosts = () => {
 
   return (
     <Section id={ProtezIDs.SampleProsthesesCosts} className={style.section}>
+      <AnimatedGlowBackground />
       <div className={style.left}>
         <SectionTitle className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
           {titleLines.map(line => (

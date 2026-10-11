@@ -30,6 +30,7 @@
 
 .title {
   container-type: inline-size;
+  overflow-x: clip;
 }
 
 .titleLine {

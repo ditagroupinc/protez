@@ -20,3 +20,5 @@
 Межі кегля текстових заголовків Home задають `--mobile-home-heading-max-size` та `--desktop-home-heading-max-size` у [root styles](../src/sections/home/_root/style.module.scss); локальні формули зменшують довгі рядки під доступну ширину.
 
 Білий фон body Home задають ті самі root styles. [SmokeWrapper](../src/sections/home/_root/SmokeWrapper) задає темний фон і білий текст усім блокам із димом, включно з MailingList; у світлих секціях Home диму немає. Прозорий варіант спільного Partners вмикається лише для Home; Footer зберігає власні кольори.
+
+[AnimatedGlowBackground](../src/components/AnimatedGlowBackground) — спільна анімація фону Hero фінансового звіту та Sample Prostheses Costs на Home.
