@@ -1,4 +1,6 @@
 .section {
+  --home-heading-color: var(--white);
+  color: var(--white);
   padding-top: 120px;
   padding-bottom: 120px;
   position: relative;
@@ -17,7 +19,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--black);
   opacity: 80%;
 }
 

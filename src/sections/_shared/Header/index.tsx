@@ -48,7 +48,33 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
+  const isHomePage = variant === 'home' && pathname === '/'
+  const [pastHero, setPastHero] = useState(false)
   const [, startTransition] = useTransition()
+
+  useEffect(() => {
+    if (!isHomePage) return
+    const hero = document.getElementById(cfg.homeAnchor)
+    const header = ref.current as HTMLElement | null
+
+    if (!hero) return
+
+    const updateHeader = () => {
+      setPastHero(hero.getBoundingClientRect().bottom <= (header?.offsetHeight ?? 0))
+    }
+
+    updateHeader()
+    const resizeObserver = new ResizeObserver(updateHeader)
+
+    resizeObserver.observe(hero)
+    if (header) resizeObserver.observe(header)
+    window.addEventListener('scroll', updateHeader, { passive: true })
+
+    return () => {
+      resizeObserver.disconnect()
+      window.removeEventListener('scroll', updateHeader)
+    }
+  }, [isHomePage, cfg.homeAnchor, ref])
 
   const switchLocale = (next: 'en' | 'uk') => {
     if (next === locale) return
@@ -106,14 +132,17 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
 
   return (
     <>
-      <header ref={ref} className={`${style.header} ${style[variant]}`}>
+      <header
+        ref={ref}
+        className={`${style.header} ${style[variant]} ${isHomePage ? (pastHero ? style.frosted : style.overHero) : ''}`}
+      >
         <Link scroll={true} href={logoHref}>
           {cfg.logoRender(style.protezLogo)}
         </Link>
 
         <div className={style.topMenu}>
           <div className={style.buttonsGroup}>
-            <TopBarCtas variant={variant} />
+            <TopBarCtas variant={variant} darkText={isHomePage && pastHero} />
           </div>
           <div className={style.languageWrapper}>
             {icons.world(style.worldIcon)}

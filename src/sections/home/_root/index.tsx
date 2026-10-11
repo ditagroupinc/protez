@@ -76,7 +76,7 @@ export default function ProtezHomePage({
           </div>
         </SuspenseSection>
 
-        <SuspenseSection withSmoke>
+        <SuspenseSection>
           <ProstheticsForUkrainians />
         </SuspenseSection>
 
@@ -91,11 +91,11 @@ export default function ProtezHomePage({
           <ChildrensProstheticsPromo currentMonth={currentMonth} />
         </SuspenseSection>
 
-        <SuspenseSection withSmoke>
+        <SuspenseSection>
           <SampleProsthesesCosts />
         </SuspenseSection>
 
-        <SuspenseSection withSmoke>
+        <SuspenseSection>
           <ProtezAcademy />
         </SuspenseSection>
 
@@ -126,7 +126,7 @@ export default function ProtezHomePage({
         </SuspenseSection>
 
         <SuspenseSection>
-          <SpecialThanksToAllOurPartners />
+          <SpecialThanksToAllOurPartners transparent />
         </SuspenseSection>
 
         <SuspenseSection withSmoke>

@@ -12,7 +12,9 @@
   padding-top: 32px;
   padding-bottom: 80px;
 
-  background-color: var(--light-grey);
+  &:not(.transparent) {
+    background-color: var(--light-grey);
+  }
 }
 
 .partnerCard {

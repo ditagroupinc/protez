@@ -1,6 +1,11 @@
 .main {
   // background-color: var(--dark-blue);
-  background-color: var(--black);
+  --home-heading-color: var(--black);
+  color: var(--black);
+}
+
+:global(body):has(.main) {
+  background-color: var(--white);
 }
 
 .flagsBlock {

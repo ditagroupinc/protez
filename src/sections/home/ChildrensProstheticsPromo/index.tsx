@@ -94,7 +94,7 @@ const ChildrensProstheticsPromo = ({ currentMonth }: { currentMonth: CurrentMont
               href={NEED_A_PROTHESIS_URL}
               target="_blank"
               rel="noopener noreferrer"
-              variant="secondary-white"
+              variant="secondary-black"
               size="normal"
               arrow
             >

@@ -120,7 +120,7 @@ const SampleProsthesesCosts = () => {
         </div>
         <TextAppearanceWrapper className={`${style.buttonsContainer} ${style.buttonsContainerTop}`}>
           <MakeDonationButton size="normal" />
-          <SupportWithAmazonButton color="white" size="normal" />
+          <SupportWithAmazonButton color="black" size="normal" />
         </TextAppearanceWrapper>
       </div>
       <div className={style.right}>
@@ -158,7 +158,7 @@ const SampleProsthesesCosts = () => {
         className={`${style.buttonsContainer} ${style.buttonsContainerBottom}`}
       >
         <MakeDonationButton size="normal" />
-        <SupportWithAmazonButton color="white" size="normal" />
+        <SupportWithAmazonButton color="black" size="normal" />
       </TextAppearanceWrapper>
     </Section>
   )

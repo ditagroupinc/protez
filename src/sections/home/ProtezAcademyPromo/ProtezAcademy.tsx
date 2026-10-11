@@ -13,13 +13,13 @@ import { ProtezIDs } from '@/consts'
 import Button from '@/components/Button'
 import ProtezImage from '@/components/ProtezImage'
 
-const cards = ['ottobock_white.svg', 'minnesota_white.svg', 'xtremity_white.svg']
+const cards = ['ottobock_dark.svg', 'minnesota_dark.svg', 'xtremity_dark.svg']
 
 const Card = ({ image }: { image: string }) => {
   return (
     <TextAppearanceWrapper className={style.card}>
       <ProtezImage
-        src={`partners/white/${image}`}
+        src={`partners/dark/${image}`}
         alt={image as string}
         width={150}
         height={50}
@@ -54,7 +54,7 @@ const ProtezAcademy = () => {
             as="link"
             target="_blank"
             href="https://forms.gle/Wr3Tf9UJCLCq4sAQ6"
-            variant="secondary-white"
+            variant="secondary-black"
             size="normal"
             arrow
           >
@@ -74,7 +74,7 @@ const ProtezAcademy = () => {
         <Button as="link" href="/academy" variant="primary-blue" size="normal">
           {t('learnMore')}
         </Button>
-        <Button as="link" href="/" variant="secondary-white" arrow size="normal">
+        <Button as="link" href="/" variant="secondary-black" arrow size="normal">
           {t('applyToAcademy')}
         </Button>
       </TextAppearanceWrapper>

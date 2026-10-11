@@ -70,6 +70,14 @@
 .body {
   flex-shrink: 0;
   width: 274px;
+
+  path[stroke="white"] {
+    stroke: var(--black);
+  }
+
+  path[fill="#131313"] {
+    fill: var(--white);
+  }
 }
 
 .line {
@@ -136,7 +144,7 @@
   width: fit-content;
   cursor: default;
   &:hover .priceCardCircle {
-    border: 2px solid var(--white);
+    border: 2px solid var(--black);
     background-color: var(--teal);
   }
 
@@ -147,7 +155,7 @@
   }
 
   .priceCardText {
-    color: var(--white);
+    color: var(--black);
     font-size: 20px;
     font-weight: 600;
     line-height: normal;
@@ -165,7 +173,7 @@
 
   .priceCardCircle {
     border-radius: 280px;
-    border: 2px solid rgba(255, 255, 255, 0.24);
+    border: 2px solid rgba(13, 17, 37, 0.24);
     width: 90px;
     height: 90px;
     display: flex;
@@ -365,7 +373,7 @@
     }
 
     .priceCardCircle {
-      border: 1px solid rgba(255, 255, 255, 0.24);
+      border: 1px solid rgba(13, 17, 37, 0.24);
       width: 64px;
       height: 64px;
       position: relative;

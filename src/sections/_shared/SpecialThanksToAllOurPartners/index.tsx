@@ -33,11 +33,14 @@ const partnersIcons: string[] = [
   'mhp',
 ]
 
-const SpecialThanksToAllOurPartners = () => {
+const SpecialThanksToAllOurPartners = ({ transparent = false }: { transparent?: boolean }) => {
   const t = useTranslations('shared.specialThanksToAllOurPartners')
 
   return (
-    <Section id={ProtezIDs.SpecialThanksToAllOurPartners} className={style.section}>
+    <Section
+      id={ProtezIDs.SpecialThanksToAllOurPartners}
+      className={`${style.section} ${transparent ? style.transparent : ''}`}
+    >
       <div className={style.buttonCell}>
         <SeeAllButton href="/partners" className={style.discoverAllButton}>
           <span className={style.buttonText}>{t('discoverAllPartners')}</span>

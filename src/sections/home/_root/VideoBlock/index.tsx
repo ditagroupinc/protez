@@ -1,7 +1,6 @@
 import { useRef, useState, useEffect, ReactElement, cloneElement } from 'react'
 
 import style from './style.module.scss'
-import SmokeWrapper from '../SmokeWrapper'
 import ProtezVideo from '@/components/ProtezVideo'
 
 interface VideoBlockProps {
@@ -54,7 +53,7 @@ const VideoBlock = ({ inNeedSection, ourResultsSection }: VideoBlockProps) => {
         <div className={style.filter} />
         <div className={style.overlay} />
       </div>
-      <SmokeWrapper>{inNeedSection}</SmokeWrapper>
+      {inNeedSection}
       {cloneElement(ourResultsSection, { ref: sectionRef })}
     </div>
   )
