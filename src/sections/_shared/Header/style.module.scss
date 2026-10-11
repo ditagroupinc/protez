@@ -83,6 +83,12 @@
 
 .socialMediaLink.mobileArrowUp {
   display: none;
+  background: transparent;
+  border-color: currentColor;
+
+  svg path {
+    fill: currentColor;
+  }
 }
 
 .desktopBackToTop {

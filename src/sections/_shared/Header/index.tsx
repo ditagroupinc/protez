@@ -5,6 +5,7 @@ import { useState, useEffect, useTransition } from 'react'
 import { useLocale } from 'next-intl'
 
 import useOutsideClick from '@/hooks/useOutsideClick'
+import useBackToTopContrast from '@/hooks/useBackToTopContrast'
 import SocialMediaLinks from '@/components/SocialMediaLinks'
 import { Link, persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
@@ -38,6 +39,7 @@ const socialMediaLinks = [
 
 const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props) => {
   const cfg = headerConfig[variant]
+  const mobileBackToTop = useBackToTopContrast()
   const resolvedSideMenu: HeaderSideMenu =
     sideMenu ?? (variant === 'home' || variant === 'academy' ? variant : 'general')
   const hasSideMenu = resolvedSideMenu !== 'none'
@@ -191,6 +193,8 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
           {arrowUp && (
             <Link
               href={`#${cfg.homeAnchor}`}
+              ref={mobileBackToTop.ref}
+              style={{ color: mobileBackToTop.color }}
               className={`${style.socialMediaLink} ${style.mobileArrowUp}`}
             >
               {icons.up(style.socialMediaLinkIcon)}
