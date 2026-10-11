@@ -157,6 +157,32 @@
     padding-bottom: 140px;
   }
 
+  .titleLine,
+  .flowingLine {
+    font-size: min(64px, 14cqw);
+    line-height: 1.04;
+  }
+
+  .ukrainianTitle .titleLine,
+  .ukrainianTitle .flowingLine {
+    font-size: min(64px, 12.4cqw);
+  }
+
+  .flowingLine .titleLine {
+    display: inline;
+  }
+
+  .ending {
+    white-space: nowrap;
+  }
+
+  .accent {
+    font-size: 1.2em;
+  }
+
+  .ukrainianTitle .accent {
+    font-size: 1.15em;
+  }
 }
 
 @media screen and (max-width: 600px) {

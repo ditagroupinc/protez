@@ -5,7 +5,7 @@
     "people": "УКРАЇНЦІВ",
     "need": "<accent>Потребують</accent>",
     "prosthetics": "<accent>Протезування</accent>",
-    "result": "внаслідок ВІЙНИ"
+    "result": "<ending>внаслідок ВІЙНИ</ending>"
   },
   "hero": {
     "title": {

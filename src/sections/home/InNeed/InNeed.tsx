@@ -1,7 +1,7 @@
 'use client'
 
 import { forwardRef, ForwardedRef } from 'react'
-import { useTranslations } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
 import SectionTitle from '@/components/SectionTitle'
 import { playfairDisplayItalic } from '../../../../app/fonts'
@@ -15,6 +15,7 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 import ProtezImage from '@/components/ProtezImage'
 
 const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
+  const locale = useLocale()
   const t = useTranslations('home.inNeed')
 
   return (
@@ -33,14 +34,15 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
       <TextAppearanceWrapper className={style.right}>
         {icons.ukrainianMapSmall(style.mapSmall)}
         <div className={style.textBlock}>
-          <SectionTitle className={style.title}>
+          <SectionTitle className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
             <span className={style.number}>{t('number')}</span>{' '}
             <span className={style.titleLine}>{t('people')}</span>{' '}
             {(['need', 'prosthetics', 'result'] as const).map((line, index) => (
-              <span key={line}>
+              <span key={line} className={line !== 'need' ? style.flowingLine : undefined}>
                 {index > 0 && ' '}
                 <span className={style.titleLine}>
                   {t.rich(line, {
+                    ending: chunks => <span className={style.ending}>{chunks}</span>,
                     accent: chunks => (
                       <span className={`${style.accent} ${playfairDisplayItalic.className}`}>
                         {chunks}
