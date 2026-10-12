@@ -75,8 +75,8 @@
   width: 274px;
 
   path {
-    stroke: var(--teal);
-    fill: var(--black);
+    stroke: var(--black);
+    fill: var(--white);
   }
 }
 
@@ -173,7 +173,7 @@
 
   .priceCardCircle {
     border-radius: 280px;
-    border: 2px solid rgba(13, 17, 37, 0.24);
+    border: var(--greyBorder);
     width: 90px;
     height: 90px;
     display: flex;
@@ -373,7 +373,7 @@
     }
 
     .priceCardCircle {
-      border: 1px solid rgba(13, 17, 37, 0.24);
+      border: var(--greyBorder);
       width: 64px;
       height: 64px;
       position: relative;

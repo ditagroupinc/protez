@@ -112,7 +112,7 @@
   width: 100%;
   aspect-ratio: 4 / 5;
   box-shadow: 0 20px 44px rgba(0, 0, 0, 0.4);
-  border: 1px solid var(--charcoal);
+  border: var(--greyBorder);
 
   .slickSlider,
   :global(.slick-list),

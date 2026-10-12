@@ -26,7 +26,7 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
           src={`protezPage/inNeed/inNeed.png`}
           alt="veterans"
           width={845}
-          height={1053}
+          height={969}
           className={style.image}
         />
       </div>
