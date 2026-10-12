@@ -8,6 +8,8 @@ import { playfairDisplayItalic } from '../../../../app/fonts'
 import style from './style.module.scss'
 import { icons } from './icons'
 import Section from '@/components/Section'
+import GlassBackground from '@/components/GlassBackground'
+import glassStyle from '@/components/GlassBackground/style.module.scss'
 
 import { ProtezIDs } from '@/consts'
 
@@ -19,7 +21,8 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const t = useTranslations('home.inNeed')
 
   return (
-    <Section id={ProtezIDs.InNeed} className={style.section} ref={ref}>
+    <Section id={ProtezIDs.InNeed} className={`${style.section} ${glassStyle.surface}`} ref={ref}>
+      <GlassBackground fadeTop />
       {icons.ukrainanMap(style.map)}
       <div className={style.left}>
         <ProtezImage

@@ -1,0 +1,55 @@
+.surface {
+  position: relative;
+  isolation: isolate;
+}
+
+.background {
+  --glass-fade-height: 160px;
+  --glass-fade-top: 0px;
+  --glass-fade-bottom: 0px;
+
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-color: rgba(255, 255, 255, 0.85);
+  background-image:
+    url('/textures/frosted-glass-grain.svg'),
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.35),
+      rgba(73, 204, 186, 0.16) 35%,
+      rgba(15, 158, 139, 0.1) 65%,
+      rgba(255, 255, 255, 0.25)
+    );
+  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black var(--glass-fade-top),
+    black calc(100% - var(--glass-fade-bottom)),
+    transparent
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    transparent,
+    black var(--glass-fade-top),
+    black calc(100% - var(--glass-fade-bottom)),
+    transparent
+  );
+}
+
+.fadeTop {
+  --glass-fade-top: var(--glass-fade-height);
+}
+
+.fadeBottom {
+  --glass-fade-bottom: var(--glass-fade-height);
+}
+
+@media (max-width: 800px) {
+  .background {
+    --glass-fade-height: 80px;
+  }
+}

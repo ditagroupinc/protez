@@ -22,3 +22,5 @@
 Білий фон body Home задають ті самі root styles. [SmokeWrapper](../src/sections/home/_root/SmokeWrapper) задає темний фон і білий текст усім блокам із димом, включно з MailingList; у світлих секціях Home диму немає. Прозорий варіант спільного Partners вмикається лише для Home; Footer зберігає власні кольори.
 
 [AnimatedGlowBackground](../src/components/AnimatedGlowBackground) — спільна анімація фону Hero фінансового звіту та Sample Prostheses Costs на Home.
+
+[GlassBackground](../src/components/GlassBackground) — скло для InNeed, SampleProsthesesCosts та OurPatients. Батьківська секція використовує клас `surface` із модуля стилів компонента; незалежні `fadeTop` / `fadeBottom` вмикають переходи до білого лише для фону. Світіння передавай усередину компонента, щоб воно згасало разом зі склом.

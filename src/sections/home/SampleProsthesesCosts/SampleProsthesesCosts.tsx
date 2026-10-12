@@ -3,6 +3,8 @@
 import { useLocale, useTranslations } from 'next-intl'
 
 import Section from '@/components/Section'
+import GlassBackground from '@/components/GlassBackground'
+import glassStyle from '@/components/GlassBackground/style.module.scss'
 import SectionTitle from '@/components/SectionTitle'
 import AnimatedGlowBackground from '@/components/AnimatedGlowBackground'
 
@@ -102,8 +104,13 @@ const SampleProsthesesCosts = () => {
   }))
 
   return (
-    <Section id={ProtezIDs.SampleProsthesesCosts} className={style.section}>
-      <AnimatedGlowBackground />
+    <Section
+      id={ProtezIDs.SampleProsthesesCosts}
+      className={`${style.section} ${glassStyle.surface}`}
+    >
+      <GlassBackground fadeTop fadeBottom>
+        <AnimatedGlowBackground />
+      </GlassBackground>
       <div className={style.left}>
         <SectionTitle className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
           {titleLines.map(line => (

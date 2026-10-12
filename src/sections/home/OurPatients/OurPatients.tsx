@@ -12,6 +12,8 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { icons } from './icons'
 import Section from '@/components/Section'
+import GlassBackground from '@/components/GlassBackground'
+import glassStyle from '@/components/GlassBackground/style.module.scss'
 import SectionTitle from '@/components/SectionTitle'
 import { ProtezIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
@@ -69,7 +71,8 @@ const OurPatients = () => {
   const patientsArray: string[] = [...ourPatientsSection.patients, ...ourPatientsSection.patients]
 
   return (
-    <Section id={ProtezIDs.OurPatients} className={style.section}>
+    <Section id={ProtezIDs.OurPatients} className={`${style.section} ${glassStyle.surface}`}>
+      <GlassBackground fadeTop fadeBottom />
       <TextAppearanceWrapper className={style.heading}>
         <SectionTitle className={style.title}>
           <span
