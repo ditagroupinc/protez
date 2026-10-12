@@ -9,7 +9,7 @@ import { ACADEMY_APPLY_FORM_URL } from '@academy/consts/links'
 
 import { NEED_A_PROTHESIS_URL } from './config'
 
-const HomeCtas = () => {
+const HomeCtas = ({ darkText }: { darkText: boolean }) => {
   const t = useTranslations('shared.header')
 
   return (
@@ -19,7 +19,7 @@ const HomeCtas = () => {
         as="link"
         href={NEED_A_PROTHESIS_URL}
         target="_blank"
-        variant="secondary-white"
+        variant={darkText ? 'secondary-black' : 'secondary-white'}
         size="small"
       >
         {t('protezPage.actionButtons.needAProthesis')}
@@ -93,14 +93,16 @@ const GeneralCtas = () => {
 
 const TopBarCtas = ({
   variant,
+  darkText = false,
 }: {
   variant: 'home' | 'academy' | 'childrenProsthetics' | 'general'
+  darkText?: boolean
 }) => {
   if (variant === 'academy') return <AcademyCtas />
   if (variant === 'childrenProsthetics') return <ChildrenProstheticsCtas />
   if (variant === 'general') return <GeneralCtas />
 
-  return <HomeCtas />
+  return <HomeCtas darkText={darkText} />
 }
 
 export default TopBarCtas

@@ -5,6 +5,7 @@ import { useState, useEffect, useTransition } from 'react'
 import { useLocale } from 'next-intl'
 
 import useOutsideClick from '@/hooks/useOutsideClick'
+import useBackToTopContrast from '@/hooks/useBackToTopContrast'
 import SocialMediaLinks from '@/components/SocialMediaLinks'
 import { Link, persistLocaleChoice, usePathname, useRouter } from '@/lib/i18n'
 
@@ -38,6 +39,7 @@ const socialMediaLinks = [
 
 const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props) => {
   const cfg = headerConfig[variant]
+  const mobileBackToTop = useBackToTopContrast()
   const resolvedSideMenu: HeaderSideMenu =
     sideMenu ?? (variant === 'home' || variant === 'academy' ? variant : 'general')
   const hasSideMenu = resolvedSideMenu !== 'none'
@@ -48,7 +50,33 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
   const locale = useLocale()
   const router = useRouter()
   const pathname = usePathname()
+  const isHomePage = variant === 'home' && pathname === '/'
+  const [pastHero, setPastHero] = useState(false)
   const [, startTransition] = useTransition()
+
+  useEffect(() => {
+    if (!isHomePage) return
+    const hero = document.getElementById(cfg.homeAnchor)
+    const header = ref.current as HTMLElement | null
+
+    if (!hero) return
+
+    const updateHeader = () => {
+      setPastHero(hero.getBoundingClientRect().bottom <= (header?.offsetHeight ?? 0))
+    }
+
+    updateHeader()
+    const resizeObserver = new ResizeObserver(updateHeader)
+
+    resizeObserver.observe(hero)
+    if (header) resizeObserver.observe(header)
+    window.addEventListener('scroll', updateHeader, { passive: true })
+
+    return () => {
+      resizeObserver.disconnect()
+      window.removeEventListener('scroll', updateHeader)
+    }
+  }, [isHomePage, cfg.homeAnchor, ref])
 
   const switchLocale = (next: 'en' | 'uk') => {
     if (next === locale) return
@@ -106,14 +134,17 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
 
   return (
     <>
-      <header ref={ref} className={`${style.header} ${style[variant]}`}>
+      <header
+        ref={ref}
+        className={`${style.header} ${style[variant]} ${isHomePage ? (pastHero ? style.frosted : style.overHero) : ''}`}
+      >
         <Link scroll={true} href={logoHref}>
           {cfg.logoRender(style.protezLogo)}
         </Link>
 
         <div className={style.topMenu}>
           <div className={style.buttonsGroup}>
-            <TopBarCtas variant={variant} />
+            <TopBarCtas variant={variant} darkText={isHomePage && pastHero} />
           </div>
           <div className={style.languageWrapper}>
             {icons.world(style.worldIcon)}
@@ -162,6 +193,8 @@ const Header = ({ variant, sideMenu, ancorLinks = true, arrowUp = true }: Props)
           {arrowUp && (
             <Link
               href={`#${cfg.homeAnchor}`}
+              ref={mobileBackToTop.ref}
+              style={{ color: mobileBackToTop.color }}
               className={`${style.socialMediaLink} ${style.mobileArrowUp}`}
             >
               {icons.up(style.socialMediaLinkIcon)}

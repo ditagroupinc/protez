@@ -2,11 +2,11 @@
 
 import Section from '@/components/Section'
 
+import SectionTitle from '@/components/SectionTitle'
+import { playfairDisplayItalic } from '../../../../app/fonts'
 import style from './style.module.scss'
-import { icons } from './icons'
 
-import { useLocale, useTranslations } from 'next-intl'
-import { localeToLanguage } from '@/lib/locale'
+import { useTranslations } from 'next-intl'
 
 import { ProtezIDs } from '@/consts'
 
@@ -33,25 +33,29 @@ const partnersIcons: string[] = [
   'mhp',
 ]
 
-const SpecialThanksToAllOurPartners = () => {
-  const locale = useLocale()
-  const lang = localeToLanguage(locale)
+const SpecialThanksToAllOurPartners = ({ transparent = false }: { transparent?: boolean }) => {
   const t = useTranslations('shared.specialThanksToAllOurPartners')
 
   return (
-    <Section id={ProtezIDs.SpecialThanksToAllOurPartners} className={style.section}>
+    <Section
+      id={ProtezIDs.SpecialThanksToAllOurPartners}
+      className={`${style.section} ${transparent ? style.transparent : ''}`}
+    >
       <div className={style.buttonCell}>
         <SeeAllButton href="/partners" className={style.discoverAllButton}>
           <span className={style.buttonText}>{t('discoverAllPartners')}</span>
         </SeeAllButton>
       </div>
       <div className={style.titleCell}>
-        {icons.specialThanksToAllOurPartnersLogo.desktop[lang](
-          `${style.title} ${style.titleDesktop}`
-        )}
-        {icons.specialThanksToAllOurPartnersLogo.mobile[lang](
-          `${style.title} ${style.titleMobile}`
-        )}
+        <SectionTitle className={style.title}>
+          <span className={style.titleLine}>{t('title.first')}</span>{' '}
+          <span
+            className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
+          >
+            {t('title.accent')}
+          </span>{' '}
+          <span className={style.titleLine}>{t('title.plain')}</span>
+        </SectionTitle>
       </div>
       {partnersIcons.map((icon, index) => (
         <TextAppearanceWrapper key={index} className={style.partnerCard}>

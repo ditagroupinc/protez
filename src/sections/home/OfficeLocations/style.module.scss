@@ -1,7 +1,6 @@
 .section {
   padding-top: 100px;
   padding-bottom: 100px;
-  background-color: var(--light-grey);
   position: relative;
 }
 
@@ -23,8 +22,20 @@
 }
 
 .title {
-  max-width: 522px;
-  height: auto;
+  container-type: inline-size;
+  color: var(--black);
+  width: 100%;
+  text-align: center;
+  
+}
+
+.titleLine {
+  composes: line from "../../../components/SectionTitle/style.module.scss";
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 20cqw);
+}
+
+.titleAccent {
+  composes: accent from "../../../components/SectionTitle/style.module.scss";
 }
 
 .slickSlider :global(.slick-track) {
@@ -37,6 +48,7 @@
 }
 
 .card {
+  color: var(--white);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -46,7 +58,7 @@
 
   padding: 24px 32px 32px 32px;
   overflow: hidden;
-  border: var(--whiteBorder);
+  border: var(--greyBorder);
   background-color: var(--black);
   transition: all var(--transitionProps);
 

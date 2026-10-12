@@ -1,9 +1,9 @@
 'use client'
 
 import { useRef } from 'react'
-import { useLocale } from 'next-intl'
+import { useTranslations } from 'next-intl'
 
-import { localeToLanguage } from '@/lib/locale'
+import { playfairDisplayItalic } from '../../../../app/fonts'
 
 import style from './style.module.scss'
 import Slider from '@/islands/SlickCarousel'
@@ -12,6 +12,9 @@ import { TextAppearanceWrapper } from '@/components/TextAppearanceWrapper'
 
 import { icons } from './icons'
 import Section from '@/components/Section'
+import GlassBackground from '@/components/GlassBackground'
+import glassStyle from '@/components/GlassBackground/style.module.scss'
+import SectionTitle from '@/components/SectionTitle'
 import { ProtezIDs } from '@/consts'
 import ProtezImage from '@/components/ProtezImage'
 
@@ -24,8 +27,7 @@ const ourPatientsSection: OurPatientsSection = {
 }
 
 const OurPatients = () => {
-  const locale = useLocale()
-  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.ourPatients')
 
   const sliderRef = useRef<Slider & React.Component>(null)
   const gotoNext = () => {
@@ -69,9 +71,17 @@ const OurPatients = () => {
   const patientsArray: string[] = [...ourPatientsSection.patients, ...ourPatientsSection.patients]
 
   return (
-    <Section id={ProtezIDs.OurPatients} className={style.section}>
+    <Section id={ProtezIDs.OurPatients} className={`${style.section} ${glassStyle.surface}`}>
+      <GlassBackground fadeTop fadeBottom />
       <TextAppearanceWrapper className={style.heading}>
-        {icons.ourPatientsLogo.desktop[lang](style.title)}
+        <SectionTitle className={style.title}>
+          <span
+            className={`${style.titleLine} ${style.titleAccent} ${playfairDisplayItalic.className}`}
+          >
+            {t('title.accent')}
+          </span>{' '}
+          <span className={style.titleLine}>{t('title.plain')}</span>
+        </SectionTitle>
         <div className={style.sliderNavigation}>
           <button className={style.sliderButton} onClick={gotoPrev}>
             {icons.arrowLeft(style.arrow)}

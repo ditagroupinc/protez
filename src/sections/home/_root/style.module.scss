@@ -1,6 +1,11 @@
 .main {
   // background-color: var(--dark-blue);
-  background-color: var(--black);
+  --home-heading-color: var(--black);
+  color: var(--black);
+}
+
+:global(body):has(.main) {
+  background-color: var(--white);
 }
 
 .flagsBlock {
@@ -16,8 +21,18 @@
   height: auto;
 }
 
+@media screen and (min-width: 801px) {
+  .main {
+    --desktop-home-heading-max-size: 85px;
+  }
+}
+
 /* phone */
 @media screen and (max-width: 600px) {
+  .main {
+    --mobile-home-heading-max-size: 65px;
+  }
+
   .americanFlag {
     max-width: 90%;
     top: 39%;

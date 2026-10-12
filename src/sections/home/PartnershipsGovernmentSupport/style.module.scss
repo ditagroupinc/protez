@@ -51,7 +51,7 @@
 
 .title {
   max-width: 100%;
-  font-size: clamp(28px, 2.92vw, 56px);
+  font-size: clamp(28px, 2.92vw, var(--mobile-home-heading-max-size, 56px));
   font-weight: 800;
   line-height: 1.25;
   text-align: left;
@@ -169,7 +169,7 @@
 
   .title {
     max-width: 560px;
-    font-size: clamp(28px, 4vw, 44px);
+    font-size: clamp(28px, 4vw, var(--mobile-home-heading-max-size, 44px));
   }
 
   .cardWrapper {
@@ -345,7 +345,7 @@
 @media (max-width: 600px) {
   .title {
     max-width: 100%;
-    font-size: clamp(26px, 7.2vw, 36px);
+    font-size: clamp(26px, 7.2vw, var(--mobile-home-heading-max-size, 36px));
   }
 
   .text {

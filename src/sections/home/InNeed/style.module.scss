@@ -46,16 +46,29 @@
 }
 
 .title {
+  container-type: inline-size;
   width: 100%;
-  height: auto;
+  color: var(--black);
 }
 
-.title.titleDesktop {
+.titleLine {
   display: block;
+  font-size: min(var(--mobile-home-heading-max-size, 48px), 9.8cqw);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
 }
 
-.title.titleMobile {
-  display: none;
+.number {
+  display: block;
+  font-size: min(var(--mobile-home-heading-max-size, 76px), 16cqw);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.accent {
+  font-weight: 600;
+  letter-spacing: normal;
 }
 
 .link {
@@ -97,14 +110,6 @@
 }
 
 @media screen and (max-width: 800px) {
-  .title.titleDesktop {
-    display: none;
-  }
-
-  .title.titleMobile {
-    display: block;
-  }
-
   .section {
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -150,8 +155,31 @@
     padding-bottom: 140px;
   }
 
-  .title {
-    max-width: 400px;
+  .titleLine,
+  .flowingLine {
+    font-size: min(var(--mobile-home-heading-max-size, 64px), 14cqw);
+    line-height: 1.04;
+  }
+
+  .ukrainianTitle .titleLine,
+  .ukrainianTitle .flowingLine {
+    font-size: min(var(--mobile-home-heading-max-size, 64px), 12.4cqw);
+  }
+
+  .flowingLine .titleLine {
+    display: inline;
+  }
+
+  .ending {
+    white-space: nowrap;
+  }
+
+  .accent {
+    font-size: min(var(--mobile-home-heading-max-size, 1.2em), 1.2em);
+  }
+
+  .ukrainianTitle .accent {
+    font-size: min(var(--mobile-home-heading-max-size, 1.15em), 1.15em);
   }
 }
 

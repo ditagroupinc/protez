@@ -1,7 +1,6 @@
 .section {
   padding-top: 140px;
   padding-bottom: 120px;
-  background-color: var(--light-grey);
 }
 
 .mobileWrapper {
@@ -68,11 +67,11 @@
 
 .titleLine {
   composes: line from "../../../components/SectionTitle/style.module.scss";
-  font-size: min(90px, 18cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 18cqw);
 }
 
 .titleLine:lang(uk) {
-  font-size: min(90px, 15cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 15cqw);
 }
 
 .titleAccent {
@@ -94,7 +93,7 @@
   font-style: normal;
   font-weight: 400;
   line-height: 22px;
-  border-bottom: 1px solid var(--grey);
+  border-bottom: var(--greyBorder);
 }
 
 .cardTitle {
@@ -162,7 +161,7 @@
 }
 
 .desktopCard .titleLine {
-  font-size: min(64px, 13.5cqw);
+  font-size: min(var(--mobile-home-heading-max-size, 64px), 13.5cqw);
 }
 
 .desktopCard .cardDate {

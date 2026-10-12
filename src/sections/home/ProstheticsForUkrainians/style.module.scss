@@ -27,11 +27,11 @@
   display: flex;
   align-items: baseline;
   gap: 0.16em;
-  font-size: min(90px, 12.64cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 12.64cqw);
 }
 
 .ukrainianTitle .titleLine {
-  font-size: min(90px, 10.8cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 10.8cqw);
 }
 
 .titleAccent {
@@ -84,7 +84,7 @@
   flex-direction: column;
   padding-top: 60px;
   flex: 0 0 50%;
-  border-right: var(--protezBorder);
+  border-right: var(--greyBorder);
   & .card {
     border-right: none;
   }
@@ -113,18 +113,22 @@
 
   transition: all var(--transitionProps);
 
-  border: var(--protezBorder);
+  border: var(--greyBorder);
 
-  color: var(--white);
+  color: var(--black);
 
   & .icon {
     width: 48px;
     height: 48px;
+    filter: brightness(0);
   }
 
   &:hover {
     background-color: var(--teal);
     color: var(--white);
+    & .icon {
+      filter: brightness(0) invert(1);
+    }
     & .icon path {
       transition: all var(--transitionProps);
     }

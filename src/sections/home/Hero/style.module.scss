@@ -3,6 +3,17 @@
   position: relative;
   display: flex;
   align-items: center;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 128px;
+    pointer-events: none;
+    background: linear-gradient(rgba(16, 16, 16, 1), rgba(16, 16, 16, 0));
+  }
 }
 
 .overlay {
@@ -57,7 +68,7 @@
   composes: title from "../../../components/SectionTitle/style.module.scss";
   width: min(46.354167vw, 890px);
   max-width: 100%;
-  font-size: min(4.6666664vw, 89.6px);
+  font-size: min(4.6666664vw, var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 89.6px)));
   font-weight: 400;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -72,7 +83,7 @@
 
 .titleAccent {
   color: var(--teal);
-  font-size: min(5vw, 96px);
+  font-size: min(5vw, var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 96px)));
   font-weight: 900;
   letter-spacing: -0.04em;
 }
@@ -121,15 +132,15 @@
 
   .title {
     width: 100%;
-    font-size: clamp(56px, calc(2.77778vw + 42.66667px), 64px);
+    font-size: clamp(56px, calc(2.77778vw + 42.66667px), var(--mobile-home-heading-max-size, 64px));
   }
 
   .ukrainianTitle {
-    font-size: clamp(32px, calc(11.11111vw - 21.33333px), 64px);
+    font-size: clamp(32px, calc(11.11111vw - 21.33333px), var(--mobile-home-heading-max-size, 64px));
   }
 
   .titleAccent {
-    font-size: clamp(56px, calc(13.88889vw - 10.66667px), 96px);
+    font-size: clamp(56px, calc(13.88889vw - 10.66667px), var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 96px)));
   }
 }
 
@@ -139,15 +150,15 @@
   }
 
   .title {
-    font-size: 96px;
+    font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 96px)), 96px);
   }
 
   .ukrainianTitle {
-    font-size: 56px;
+    font-size: min(var(--mobile-home-heading-max-size, 56px), 56px);
   }
 
   .titleAccent {
-    font-size: 96px;
+    font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 96px)), 96px);
     display: flex;
     justify-content: center;
   }
@@ -155,10 +166,10 @@
 
 @media screen and (max-width: 500px) {
   .title:not(.ukrainianTitle) {
-    font-size: 42px;
+    font-size: min(var(--mobile-home-heading-max-size, 42px), 42px);
 
     .titleAccent {
-      font-size: 70px;
+      font-size: min(var(--mobile-home-heading-max-size, 70px), 70px);
     }
   }
 
@@ -167,12 +178,12 @@
   }
 
   .ukrainianTitle .titleLine {
-    font-size: min(42px, 13.2cqw);
+    font-size: min(var(--mobile-home-heading-max-size, 42px), 13.2cqw);
     letter-spacing: -0.04em;
   }
 
   .ukrainianTitle .titleAccent {
-    font-size: min(70px, 22cqw);
+    font-size: min(var(--mobile-home-heading-max-size, 70px), 22cqw);
   }
 }
 

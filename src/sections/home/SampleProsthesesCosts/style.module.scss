@@ -9,6 +9,7 @@
 }
 
 .left {
+  position: relative;
   width: 100%;
   max-width: 560px;
 }
@@ -16,17 +17,16 @@
   container-type: inline-size;
   margin: 0 0 40px;
   width: 100%;
-  max-width: 560px;
   text-align: left;
 }
 
 .titleLine {
   composes: line from "../../../components/SectionTitle/style.module.scss";
-  font-size: min(90px, 20cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 20cqw);
 }
 
 .ukrainianTitle .titleLine {
-  font-size: min(90px, 18cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 18cqw);
 }
 
 .titleAccent {
@@ -41,6 +41,7 @@
 }
 
 .buttonsContainer {
+  position: relative;
   display: flex;
   gap: 16px;
 }
@@ -62,6 +63,7 @@
 }
 
 .right {
+  position: relative;
   display: flex;
   flex-shrink: 0;
   align-items: center;
@@ -71,6 +73,11 @@
 .body {
   flex-shrink: 0;
   width: 274px;
+
+  path {
+    stroke: var(--black);
+    fill: var(--white);
+  }
 }
 
 .line {
@@ -137,7 +144,7 @@
   width: fit-content;
   cursor: default;
   &:hover .priceCardCircle {
-    border: 2px solid var(--white);
+    border: 2px solid var(--black);
     background-color: var(--teal);
   }
 
@@ -148,7 +155,7 @@
   }
 
   .priceCardText {
-    color: var(--white);
+    color: var(--black);
     font-size: 20px;
     font-weight: 600;
     line-height: normal;
@@ -166,7 +173,7 @@
 
   .priceCardCircle {
     border-radius: 280px;
-    border: 2px solid rgba(255, 255, 255, 0.24);
+    border: var(--greyBorder);
     width: 90px;
     height: 90px;
     display: flex;
@@ -277,9 +284,7 @@
     padding-bottom: 60px;
   }
 
-  .title {
-    max-width: 241px;
-  }
+  
 
   .right {
     justify-content: flex-end;
@@ -368,7 +373,7 @@
     }
 
     .priceCardCircle {
-      border: 1px solid rgba(255, 255, 255, 0.24);
+      border: var(--greyBorder);
       width: 64px;
       height: 64px;
       position: relative;

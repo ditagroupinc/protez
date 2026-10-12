@@ -1,4 +1,6 @@
 .section {
+  --home-heading-color: var(--white);
+  color: var(--white);
   padding-top: 120px;
   padding-bottom: 120px;
   position: relative;
@@ -17,7 +19,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--black);
   opacity: 80%;
 }
 
@@ -49,7 +50,7 @@
 }
 
 .ukrainianTitle .titleLine {
-  font-size: min(90px, 16.4cqw);
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 16.4cqw);
 }
 
 .titleAccent {
@@ -102,7 +103,7 @@
 
   transition: all var(--transitionProps);
 
-  border: var(--protezBorder);
+  border: var(--greyBorder);
 
   color: var(--white);
 
@@ -234,10 +235,6 @@
 
   .text {
     margin-top: 24px;
-  }
-
-  .title {
-    max-width: 228px;
   }
 
   .right {

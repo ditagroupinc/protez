@@ -1,12 +1,15 @@
 'use client'
 
 import { forwardRef, ForwardedRef } from 'react'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 
-import { localeToLanguage } from '@/lib/locale'
+import SectionTitle from '@/components/SectionTitle'
+import { playfairDisplayItalic } from '../../../../app/fonts'
 import style from './style.module.scss'
 import { icons } from './icons'
 import Section from '@/components/Section'
+import GlassBackground from '@/components/GlassBackground'
+import glassStyle from '@/components/GlassBackground/style.module.scss'
 
 import { ProtezIDs } from '@/consts'
 
@@ -15,17 +18,18 @@ import ProtezImage from '@/components/ProtezImage'
 
 const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
   const locale = useLocale()
-  const lang = localeToLanguage(locale)
+  const t = useTranslations('home.inNeed')
 
   return (
-    <Section id={ProtezIDs.InNeed} className={style.section} ref={ref}>
+    <Section id={ProtezIDs.InNeed} className={`${style.section} ${glassStyle.surface}`} ref={ref}>
+      <GlassBackground fadeTop />
       {icons.ukrainanMap(style.map)}
       <div className={style.left}>
         <ProtezImage
           src={`protezPage/inNeed/inNeed.png`}
           alt="veterans"
           width={845}
-          height={1053}
+          height={969}
           className={style.image}
         />
       </div>
@@ -33,8 +37,25 @@ const InNeed = forwardRef(function (_, ref: ForwardedRef<HTMLDivElement>) {
       <TextAppearanceWrapper className={style.right}>
         {icons.ukrainianMapSmall(style.mapSmall)}
         <div className={style.textBlock}>
-          {icons.inNeedLogo.desktop[lang](`${style.title} ${style.titleDesktop}`)}
-          {icons.inNeedLogo.mobile[lang](`${style.title} ${style.titleMobile}`)}
+          <SectionTitle className={`${style.title} ${locale === 'uk' ? style.ukrainianTitle : ''}`}>
+            <span className={style.number}>{t('number')}</span>{' '}
+            <span className={style.titleLine}>{t('people')}</span>{' '}
+            {(['need', 'prosthetics', 'result'] as const).map((line, index) => (
+              <span key={line} className={line !== 'need' ? style.flowingLine : undefined}>
+                {index > 0 && ' '}
+                <span className={style.titleLine}>
+                  {t.rich(line, {
+                    ending: chunks => <span className={style.ending}>{chunks}</span>,
+                    accent: chunks => (
+                      <span className={`${style.accent} ${playfairDisplayItalic.className}`}>
+                        {chunks}
+                      </span>
+                    ),
+                  })}
+                </span>
+              </span>
+            ))}
+          </SectionTitle>
         </div>
       </TextAppearanceWrapper>
     </Section>

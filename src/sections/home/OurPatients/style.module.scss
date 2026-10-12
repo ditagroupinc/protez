@@ -2,7 +2,6 @@
   padding-top: 80px;
   padding-bottom: 80px;
   padding-right: 0;
-  background-color: var(--light-grey);
 }
 
 .directionWrapper {
@@ -18,10 +17,23 @@
 }
 
 .title {
-  max-width: 432px;
+  container-type: inline-size;
+  color: var(--black);
+  width: 100%;
+  min-width: 0;
+}
+
+.titleLine {
+  composes: line from "../../../components/SectionTitle/style.module.scss";
+  font-size: min(var(--mobile-home-heading-max-size, var(--desktop-home-heading-max-size, 90px)), 18.5cqw);
+}
+
+.titleAccent {
+  composes: accent from "../../../components/SectionTitle/style.module.scss";
 }
 
 .sliderNavigation {
+  flex-shrink: 0;
   display: flex;
   gap: 16px;
   & .sliderButton {
@@ -131,11 +143,6 @@
   .heading {
     justify-content: flex-start;
     margin-bottom: 32px;
-  }
-
-  .title {
-    max-width: 250px;
-    height: auto;
   }
 
   .sliderNavigation {

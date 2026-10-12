@@ -11,15 +11,49 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-image: linear-gradient(rgba(16, 16, 16, 1), rgba(16, 16, 16, 0));
   z-index: 20;
   padding: 24px 46px;
 
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: rgba(19, 19, 19, 0.6);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+  }
+
+  &.overHero::before {
+    display: none;
+  }
+
+  &.frosted {
+    color: var(--black);
+
+    &::before {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .protezLogo,
+    .worldIcon {
+      filter: invert(1);
+    }
+
+    .divider {
+      background-color: var(--black);
+    }
+  }
+
   &.childrenProsthetics {
-    background-image: none;
     background-color: var(--white);
     color: var(--forest);
     border-bottom: 1px solid var(--mint-grey);
+
+    &::before {
+      display: none;
+    }
 
     .protezLogo,
     .worldIcon {
@@ -49,6 +83,12 @@
 
 .socialMediaLink.mobileArrowUp {
   display: none;
+  background: transparent;
+  border-color: currentColor;
+
+  svg path {
+    fill: currentColor;
+  }
 }
 
 .desktopBackToTop {

@@ -44,7 +44,7 @@ const ProstheticsForUkrainians = () => {
         <H3>{t('description2')}</H3>
         <TextAppearanceWrapper className={`${style.buttonsContainer} ${style.buttonsContainerTop}`}>
           <MakeDonationButton size="normal" />
-          <SupportWithAmazonButton color="white" size="normal" />
+          <SupportWithAmazonButton color="black" size="normal" />
         </TextAppearanceWrapper>
       </div>
       <div className={style.right}>
@@ -95,7 +95,7 @@ const ProstheticsForUkrainians = () => {
         className={`${style.buttonsContainer} ${style.buttonsContainerBottom}`}
       >
         <MakeDonationButton className={style.button} size="normal" />
-        <SupportWithAmazonButton color="white" className={style.button} size="normal" />
+        <SupportWithAmazonButton color="black" className={style.button} size="normal" />
       </TextAppearanceWrapper>
     </Section>
   )
