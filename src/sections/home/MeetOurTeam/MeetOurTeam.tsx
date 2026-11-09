@@ -119,6 +119,18 @@ const membersMeta: MemberMeta[] = [
       email: { icon: 'email', href: 'mailto:pavlo.kurynytskyi@protezfoundation.com' },
     },
   },
+  {
+    photo: 'mariiaYurina.png',
+    links: {},
+  },
+  {
+    photo: 'liudmylaShovdra.png',
+    links: {},
+  },
+  {
+    photo: 'anastasiiaSliusarenko.png',
+    links: {},
+  },
 ]
 
 const MemberCard = ({
@@ -246,7 +258,7 @@ const MeetOurTeam = () => {
         ))}
       </div>
       <div className={`${style.row} ${style.secondRow}`}>
-        {members.slice(2, 11).map((card, index) => (
+        {members.slice(2).map((card, index) => (
           <MemberCard
             key={index}
             className={style.teamCard}

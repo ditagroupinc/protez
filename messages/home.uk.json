@@ -266,7 +266,10 @@
       { "name": "Руслан Сичов", "position": "Digital / ІТ консультант" },
       { "name": "Жанна Дзюба", "position": "Керівник з організації заходів та управління" },
       { "name": "Неля Серянікова", "position": "Food Services Manager" },
-      { "name": "Павло Куриницький", "position": "Church Relations Manager" }
+      { "name": "Павло Куриницький", "position": "Church Relations Manager" },
+      { "name": "Марія Юріна", "position": "Директорка департаменту партнерств та фандрейзингу" },
+      { "name": "Людмила Шовдра", "position": "Керівник партнерств, Міннесота" },
+      { "name": "Анастасія Слюсаренко", "position": "Керівник партнерств, Вашингтон" }
     ]
   },
   "officeLocations": {

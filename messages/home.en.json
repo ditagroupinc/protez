@@ -275,7 +275,13 @@
       { "name": "Ruslan Sychov", "position": "Digital/IT Advisor" },
       { "name": "Zhanna Dzyuba", "position": "Director of Events and Property Management" },
       { "name": "Nelia Serianikova ", "position": "Food Services Manager" },
-      { "name": "Pavlo Kurynytskyi", "position": "Church Relations Manager" }
+      { "name": "Pavlo Kurynytskyi", "position": "Church Relations Manager" },
+      {
+        "name": "Mariia Yurina",
+        "position": "Director of Partnerships & Fundraising Department"
+      },
+      { "name": "Liudmyla Shovdra", "position": "Head of Partnerships, MN" },
+      { "name": "Anastasiia Sliusarenko", "position": "Head of Partnerships, Washington D.C." }
     ]
   },
   "officeLocations": {

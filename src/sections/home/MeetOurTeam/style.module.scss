@@ -36,11 +36,12 @@
     }
   }
   &.secondRow {
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(5, 1fr);
     grid-template-areas:
       'ValentynaPavsyukova  AndreyMadan  IvannaGradinar MykolaSarazhynskyy TolyDzyuba'
-      'RuslanSychov ZhannaDzyuba NeliaSerianikova PavloKurynytskyi discoverAllButton';
+      'RuslanSychov ZhannaDzyuba NeliaSerianikova PavloKurynytskyi discoverAllButton'
+      'MariiaYurina LiudmylaShovdra AnastasiiaSliusarenko . .';
 
     & .memberCard {
       &:nth-child(1) {
@@ -69,6 +70,15 @@
       }
       &:nth-child(9) {
         grid-area: PavloKurynytskyi;
+      }
+      &:nth-child(10) {
+        grid-area: MariiaYurina;
+      }
+      &:nth-child(11) {
+        grid-area: LiudmylaShovdra;
+      }
+      &:nth-child(12) {
+        grid-area: AnastasiiaSliusarenko;
       }
     }
     & .discoverAllButton {
@@ -179,7 +189,7 @@
       grid-template-areas:
         'ValentynaPavsyukova  AndreyMadan  IvannaGradinar MykolaSarazhynskyy'
         'TolyDzyuba RuslanSychov ZhannaDzyuba NeliaSerianikova '
-        'PavloKurynytskyi . . discoverAllButton';
+        'PavloKurynytskyi MariiaYurina LiudmylaShovdra AnastasiiaSliusarenko';
     }
   }
 }
@@ -204,6 +214,7 @@
         'ValentynaPavsyukova  AndreyMadan  IvannaGradinar'
         'MykolaSarazhynskyy TolyDzyuba RuslanSychov'
         'ZhannaDzyuba NeliaSerianikova PavloKurynytskyi'
+        'MariiaYurina LiudmylaShovdra AnastasiiaSliusarenko'
         '. . discoverAllButton';
     }
   }
@@ -222,7 +233,8 @@
       grid-template-areas:
         'ValentynaPavsyukova  AndreyMadan'
         'IvannaGradinar MykolaSarazhynskyy' 'TolyDzyuba RuslanSychov'
-        'ZhannaDzyuba NeliaSerianikova' 'PavloKurynytskyi discoverAllButton';
+        'ZhannaDzyuba NeliaSerianikova' 'PavloKurynytskyi MariiaYurina'
+        'LiudmylaShovdra AnastasiiaSliusarenko';
     }
   }
 }
